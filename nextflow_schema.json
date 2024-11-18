@@ -87,7 +87,7 @@
                 "perform_screen_pathogens": {
                     "type": "boolean",
                     "description": "Screen viral pathogens for each sample",
-                    "help_text": "Turns on the option to screen viral pathogens by mapping reads against genomes of a list of viral pathogens. Bowtie2 is used for mapping of short reads and minimap2 for long reads.",
+                    "help_text": "Turn on the option to screen viral pathogens by mapping reads against genomes of a list of viral pathogens. Bowtie2 is used for mapping of short reads and minimap2 for long reads.",
                     "fa_icon": "fas fa-toggle-on"
                 },
                 "min_read_counts": {
@@ -95,6 +95,25 @@
                     "description": "Set the read count threshold for performing de novo assembly or consensus calling.",
                     "help_text": "The recommended default should be > 100, as de novo assembly will fail with too few reads or reads.",
                     "fa_icon": "fas fa-greater-than-equal"
+                },
+                "perform_longread_consensus": {
+                    "type": "boolean",
+                    "description": "Call consensus for long reads mapped to a pathogen genome.",
+                    "help_text": "Turn on the option to call consensus for long reads mapped to a pathogen genome.",
+                    "fa_icon": "fas fa-toggle-on"
+                },
+                "longread_consensus_tool": {
+                    "type": "string",
+                    "enum": ["medaka", "samtools"],
+                    "description": "Specify the tool used for consensus calling of long reads.",
+                    "help_text": "`medaka` is a tool designed for generating consensus sequences from nanopore sequencing data, and it uses a neural network to correct sequence errors, improving the accuracy of consensus sequences. However `samtools consensus` does not have a specific algorithm tailored for nanopore reads..",
+                    "fa_icon": "fas fa-tools"
+                },
+                "perform_shortread_consensus": {
+                    "type": "boolean",
+                    "description": "Call consensus for short reads mapped to a pathogen genome.",
+                    "help_text": "Turn on the option to call consensus for short reads mapped to a pathogen genome using`samtools consensus`",
+                    "fa_icon": "fas fa-toggle-on"
                 },
                 "outdir": {
                     "type": "string",
