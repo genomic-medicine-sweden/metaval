@@ -18,6 +18,7 @@ The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes d
 - [De novo assembly](#De-novo-assembly) for extracted reads of TaxID
 - [Bowtie2](#Mapping) - Map raw Illumina reads to a pathogen genome database or map Illumina reads of specific taxIDs to genomes with positive BLAST hits.
 - [minimap2](#Mapping) - Map raw Nanopore reads to a pathogen genome database or map Nanopore reads of specific taxIDs to genomes with positive BLAST hits.
+- [Call Consensus](#Call-Consensus) - Call consensus sequences from reads mapped to pathogen genomes
 - [MultiQC](#multiqc) - Aggregate report describing results and QC from the whole pipeline
 - [Pipeline information](#pipeline-information) - Report metrics generated during the workflow execution
 
@@ -134,6 +135,21 @@ Map Illumina short reads to genomes using `bowtie2` and map Nanopore long reads 
 </details>
 
 The `pathogens` directory will only be present if `--perform_screen_pathogens` is supplied.
+
+### Call Consensus
+
+Call consensus sequences from Illumina reads mapped to pathogen genomes using `samtools` and from Nanopore reads using either `samtools` or `medaka`.
+
+<details markdown="1">
+<summary>Output files</summary>
+
+- `pathogens/`
+  - `consensus`
+    - `<sample_id>_<taxID>.fasta`: Consensus sequences.
+
+</details>
+
+The `consensus` directory will only be created if `--perform_screen_pathogens` is supplied along with either `--perform_longread_consensus` or `--perform_shortread_consensus`.
 
 ### MultiQC
 

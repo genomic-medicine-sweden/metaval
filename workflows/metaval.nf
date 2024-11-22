@@ -164,7 +164,7 @@ workflow METAVAL {
     if ( params.perform_screen_pathogens ) {
         // Map short reads to the pathogens genome
         BOWTIE2_BUILD_PATHOGEN ( ch_reference )
-        ch_versions      = ch_versions.mix( BOWTIE2_BUILD_PATHOGEN.out.versions )
+        ch_versions = ch_versions.mix( BOWTIE2_BUILD_PATHOGEN.out.versions )
         FASTQ_ALIGN_BOWTIE2 (
             ch_input.short_reads,                              // ch_reads
             BOWTIE2_BUILD_PATHOGEN.out.index,                  // ch_index

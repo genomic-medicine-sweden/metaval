@@ -37,7 +37,7 @@ This workflow is activated by enabling the `--perform_screen_pathogens` option.
 
 2. **Call consensus**
 
-   - This step generates consensus sequences for a large number of reads mapped to pathogen genomes using [samtools](<(http://www.htslib.org/)>) for Illumina reads or [medaka](https://github.com/nanoporetech/medaka) for Nanopore reads. The resulting consensus sequence will then be used as input for BLAST.
+   - This step generates consensus sequences from reads mapped to pathogen genomes using [samtools](<(http://www.htslib.org/)>) or [medaka](https://github.com/nanoporetech/medaka), depending on the read type. While `medaka` is typically used for Nanopore reads, `samtools` can be utilized for generating consensus sequences from both Illumina and Nanopore reads. The resulting consensus sequence will then be used as input for `BLAST`.
 
 3. **BLAST for pathogen identification**
 
