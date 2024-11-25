@@ -13,7 +13,8 @@ Initial release of genomic-medicine-sweden/meta-val, created with the [nf-core](
 - Extract Kraken2 reads with KrakenTools
 - Extract Centrifuge reads
 - Extract DIAMOND reads
-- Screen pathogens via mapping against genomes from a list of pethogens: Bowtie2 for short reads and Minimap2 for long reads
+- Screen pathogens via mapping against genomes from a list of pathogens: Bowtie2 for short reads and Minimap2 for long reads
+- Call consensus sequences for reads mapped to the pathogen genomes.
 
 ### `Fixed`
 

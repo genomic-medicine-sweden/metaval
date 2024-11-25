@@ -106,7 +106,7 @@
                     "type": "string",
                     "enum": ["medaka", "samtools"],
                     "description": "Specify the tool used for consensus calling of long reads.",
-                    "help_text": "`medaka` is a tool designed for generating consensus sequences from nanopore sequencing data, and it uses a neural network to correct sequence errors, improving the accuracy of consensus sequences. However `samtools consensus` does not have a specific algorithm tailored for nanopore reads..",
+                    "help_text": "`medaka` is a tool designed for generating consensus sequences from nanopore sequencing data, and it uses a neural network to correct sequence errors, improving the accuracy of consensus sequences. However `samtools consensus` does not have a specific algorithm tailored for nanopore reads.",
                     "fa_icon": "fas fa-tools"
                 },
                 "perform_shortread_consensus": {

@@ -14,17 +14,21 @@ workflow LONGREAD_CONSENSUS {
     main:
     ch_versions = Channel.empty()
 
+    // Choose consensus calling tool based on params.longread_consensus_tool
     if ( params.longread_consensus_tool == 'medaka' ) {
+        // Prepare input for MEDAKA by combining BAM and reference channels
         input_medaka  = bam.combine(reference).map{ meta_bam, bam, meta_ref, reference -> [ meta_bam, bam, reference ]}
+
         MEDAKA ( input_medaka )
         ch_consensus_gz = MEDAKA.out.assembly
         ch_versions = ch_versions.mix(MEDAKA.out.versions)
 
+        // Unzip MEDAKA output
         GUNZIP ( ch_consensus_gz )
         ch_consensus = GUNZIP.out.gunzip
         ch_versions = ch_versions.mix(GUNZIP.out.versions)
     } else if ( params.longread_consensus_tool == 'samtools' ) {
-        // Combine bam and reference channels
+        // Run SAMTOOLS_CONSENSUS for consensus calling
         SAMTOOLS_CONSENSUS ( bam )
         ch_consensus = SAMTOOLS_CONSENSUS.out.fasta
         ch_versions = ch_versions.mix(SAMTOOLS_CONSENSUS.out.versions)

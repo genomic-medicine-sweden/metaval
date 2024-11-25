@@ -170,14 +170,16 @@ workflow METAVAL {
             BOWTIE2_BUILD_PATHOGEN.out.index,                  // ch_index
             false,                                             // save unaligned
             false,                                             // sort bam
-            ch_reference                                       // ch_fasta
+            ch_reference                                      // ch_fasta
         )
+
+
         ch_versions = ch_versions.mix( FASTQ_ALIGN_BOWTIE2.out.versions )
         // Map long reads to the pathogens genome
         LONGREAD_SCREENPATHOGEN ( ch_input.long_reads, ch_reference )
         ch_versions = ch_versions.mix( LONGREAD_SCREENPATHOGEN.out.versions )
 
-        // Subset bam file for each taxID
+        // Subset BAM file for each taxID
         accession2taxid_map = Channel.fromPath ( params.accession2taxid, checkIfExists: true )
 
         TAXID_BAM_FASTA_SHORTREAD ( FASTQ_ALIGN_BOWTIE2.out.bam, FASTQ_ALIGN_BOWTIE2.out.bai, accession2taxid_map, params.min_read_counts )
@@ -185,6 +187,7 @@ workflow METAVAL {
 
         TAXID_BAM_FASTA_LONGREAD( LONGREAD_SCREENPATHOGEN.out.bam, LONGREAD_SCREENPATHOGEN.out.bai, accession2taxid_map, params.min_read_counts )
         ch_versions = ch_versions.mix( TAXID_BAM_FASTA_LONGREAD.out.versions )
+
         // Calling consensus: BAM file with the number of mapped reads > params.min_read_counts
         if (params.perform_shortread_consensus) {
             SHORTREAD_SAMTOOLS_CONSENSUS ( TAXID_BAM_FASTA_SHORTREAD.out.taxid_bam )
