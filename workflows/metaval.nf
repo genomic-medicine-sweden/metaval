@@ -160,7 +160,7 @@ workflow METAVAL {
 
     // Screen pathogens
     ch_reference = Channel.fromPath( params.pathogens_genomes, checkIfExists: true)
-        .map{ file -> [ [ id: file.baseName ], file ] }
+        .map{ [ [], it ] }
     if ( params.perform_screen_pathogens ) {
         // Map short reads to the pathogens genome
         BOWTIE2_BUILD_PATHOGEN ( ch_reference )
@@ -172,7 +172,6 @@ workflow METAVAL {
             false,                                             // sort bam
             ch_reference                                      // ch_fasta
         )
-
 
         ch_versions = ch_versions.mix( FASTQ_ALIGN_BOWTIE2.out.versions )
         // Map long reads to the pathogens genome

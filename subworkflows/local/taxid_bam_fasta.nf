@@ -9,7 +9,6 @@ include { SAMTOOLS_SORT as SAMTOOLS_SORT_FAIL               } from '../../module
 include { SAMTOOLS_INDEX                                    } from '../../modules/nf-core/samtools/index/main'
 include { SAMTOOLS_IDXSTATS                                 } from '../../modules/nf-core/samtools/idxstats/main'
 include { SAMTOOLS_FASTA                                    } from '../../modules/nf-core/samtools/fasta/main'
-include { GUNZIP                                            } from '../../modules/nf-core/gunzip/main'
 
 workflow TAXID_BAM_FASTA {
     take:
@@ -102,14 +101,9 @@ workflow TAXID_BAM_FASTA {
     SAMTOOLS_FASTA(SAMTOOLS_SORT_FAIL.out.bam, false)
     ch_versions = ch_versions.mix(SAMTOOLS_FASTA.out.versions.first())
 
-    // Unzip FASTA files
-    GUNZIP(SAMTOOLS_FASTA.out.fasta.transpose())
-    ch_unzipped_fasta = GUNZIP.out.gunzip.groupTuple()
-    ch_versions = ch_versions.mix(GUNZIP.out.versions)
-
     emit:
     versions        = ch_versions
     taxid_bam       = SAMTOOLS_SORT_PASS.out.bam
     taxid_bai       = SAMTOOLS_INDEX.out.bai
-    taxid_fasta     = ch_unzipped_fasta
+    taxid_fasta     = SAMTOOLS_FASTA.out.fasta
 }
