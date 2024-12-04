@@ -4,7 +4,8 @@
 
 include { SAMTOOLS_CONSENSUS } from '../../modules/nf-core/samtools/consensus/main'
 include { MEDAKA } from '../../modules/nf-core/medaka/main'
-include { GUNZIP } from '../../modules/nf-core/gunzip/main'
+include { PIGZ_COMPRESS } from '../../modules/nf-core/pigz/compress/main'
+
 
 workflow LONGREAD_CONSENSUS {
     take:
@@ -15,18 +16,17 @@ workflow LONGREAD_CONSENSUS {
     ch_versions = Channel.empty()
 
     if ( params.longread_consensus_tool == 'medaka' ) {
-        input_medaka  = bam.combine(reference).map{ meta_bam, bam, meta_ref, reference -> [ meta_bam, bam, reference ]}
+        input_medaka  = bam.combine(reference).map{ meta_bam, bam, meta_ref, ref -> [ meta_bam, bam, ref ]}
         MEDAKA ( input_medaka )
-        ch_consensus_gz = MEDAKA.out.assembly
+        ch_consensus = MEDAKA.out.assembly
         ch_versions = ch_versions.mix(MEDAKA.out.versions)
 
-        GUNZIP ( ch_consensus_gz )
-        ch_consensus = GUNZIP.out.gunzip
-        ch_versions = ch_versions.mix(GUNZIP.out.versions)
     } else if ( params.longread_consensus_tool == 'samtools' ) {
         SAMTOOLS_CONSENSUS ( bam )
-        ch_consensus = SAMTOOLS_CONSENSUS.out.fasta
+        PIGZ_COMPRESS ( SAMTOOLS_CONSENSUS.out.fasta )
+        ch_consensus = PIGZ_COMPRESS.out.archive
         ch_versions = ch_versions.mix(SAMTOOLS_CONSENSUS.out.versions)
+        ch_versions = ch_versions.mix(PIGZ_COMPRESS.out.versions)
     }
 
     emit:

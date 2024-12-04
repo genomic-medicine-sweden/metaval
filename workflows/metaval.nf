@@ -26,6 +26,7 @@ include { SAMTOOLS_CONSENSUS as SHORTREAD_SAMTOOLS_CONSENSUS    } from '../modul
 include { TAXID_BAM_FASTA as TAXID_BAM_FASTA_SHORTREAD          } from '../subworkflows/local/taxid_bam_fasta'
 include { TAXID_BAM_FASTA as TAXID_BAM_FASTA_LONGREAD           } from '../subworkflows/local/taxid_bam_fasta'
 include { LONGREAD_CONSENSUS                                    } from '../subworkflows/local/longread_consensus'
+include { PIGZ_COMPRESS                                         } from '../modules/nf-core/pigz/compress/main'
 
 // Summary subworkflow
 include { FASTQC                                                } from '../modules/nf-core/fastqc/main'
@@ -190,7 +191,9 @@ workflow METAVAL {
         // Calling consensus: BAM file with the number of mapped reads > params.min_read_counts
         if (params.perform_shortread_consensus) {
             SHORTREAD_SAMTOOLS_CONSENSUS ( TAXID_BAM_FASTA_SHORTREAD.out.taxid_bam )
+            PIGZ_COMPRESS ( SHORTREAD_SAMTOOLS_CONSENSUS.out.fasta )
             ch_versions = ch_versions.mix(SHORTREAD_SAMTOOLS_CONSENSUS.out.versions)
+            ch_versions = ch_versions.mix(PIGZ_COMPRESS.out.versions)
         }
         if ( params.perform_longread_consensus ) {
             // Skip the consensus calling if the number of mapped reads is lower than params.min_read_counts
