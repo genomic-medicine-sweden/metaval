@@ -25,7 +25,7 @@
                 },
                 "taxid": {
                     "type": "string",
-                    "description": "The taxonomy ID of the species identified in the classification results or a list of taxids separated by spaces.",
+                    "description": "The taxonomy ID identified in the classification results, or a list of taxIDs separated by spaces.",
                     "fa_icon": "fas fa-list-alt"
                 },
                 "pathogens_genomes": {
@@ -39,13 +39,13 @@
                     "type": "string",
                     "format": "file-path",
                     "pattern": "^\\S+\\.map$",
-                    "description": "Path to a file containing the accession IDs and corresponding tax IDs for each pathogen genome.",
+                    "description": "Path to a file containing the accession IDs and corresponding taxIDs for each pathogen genome.",
                     "fa_icon": "fas fa-file-alt"
                 },
                 "perform_extract_reads": {
                     "type": "boolean",
                     "description": "Extract reads assigned to taxonomic IDs.",
-                    "help_text": "Enable the option to extract reads assigned to taxonomic IDs based on results from kraken2, centrifuge, and diamond classifiers.",
+                    "help_text": "Enable the option to extract reads assigned to taxonomic IDs based on results from `Kraken2`, `Centrifuge`, and `DIAMOND` classifiers.",
                     "fa_icon": "fas fa-toggle-on"
                 },
                 "extract_kraken2_reads": {
@@ -65,7 +65,7 @@
                 },
                 "fastq_output": {
                     "type": "boolean",
-                    "description": "Turn on saving extracted kraken2 reads in fastq format.",
+                    "description": "Turn on saving extracted kraken2 reads in FASTQ format.",
                     "fa_icon": "fas fa-file-alt"
                 },
                 "perform_shortread_denovo": {
@@ -80,7 +80,7 @@
                 },
                 "flye_mode": {
                     "type": "string",
-                    "description": "It provides Flye assembly modes. Our ONT reads were pre-processed by Guppy, so `--nano-corr` is the appropriate mode to use, as it is designed for ONT reads that have been corrected with other methods (with <3% error)",
+                    "description": "It provides `Flye` assembly modes. Our ONT reads were pre-processed by Guppy, so `--nano-corr` is the appropriate mode to use, as it is designed for ONT reads that have been corrected with other methods (with <3% error)",
                     "default": "--nano-corr",
                     "fa_icon": "fas fa-cogs"
                 },
