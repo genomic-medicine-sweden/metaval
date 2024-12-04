@@ -145,7 +145,7 @@ Use `Bowtie2` for short reads and `minimap2` for long reads.
 
 ### Call consensus
 
-Consensus sequence calling from reads mapped to pathogen genomes can be performed by enabling `--perform_screen_pathogens` and either `--perform_shortread_consensus` or `--perform_longread_consensus`. For Illumina reads, `samtools consensus` is used. For Nanopore reads, either `samtools consensus` or `medaka_consensus` (defined by `params.longread_consensus_tool`) can be used. `medaka` is specifically designed for Nanopore reads and utilizes a neural network to improve consensus accuracy, whereas `samtools consensus` does not have a specialized algorithm for Nanopore data. Therefore, `medaka` is generally recommended for Nanopore reads.
+Consensus sequence calling from reads mapped to pathogen genomes can be performed by turning on the option `--perform_screen_pathogens` and either `--perform_shortread_consensus` or `--perform_longread_consensus`. For Illumina reads, `samtools consensus` is used. For Nanopore reads, either `samtools consensus` or `medaka_consensus` (defined by `params.longread_consensus_tool`) can be used. `medaka` is specifically designed for Nanopore reads and utilizes a neural network to improve consensus accuracy, whereas `samtools consensus` does not have a specialized algorithm for Nanopore data. Therefore, `medaka` is generally recommended for Nanopore reads.
 
 It’s recommended to enable consensus calling if the number of reads mapped to pathogen genomes exceeds `params.min_read_counts`, with a minimum of 100 reads. Too few reads will cause the process to fail.
 
