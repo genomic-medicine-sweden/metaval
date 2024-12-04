@@ -18,7 +18,7 @@ The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes d
 - [De novo assembly](#De-novo-assembly) for extracted reads of TaxID
 - [Bowtie2](#Mapping) - Map raw Illumina reads to a pathogen genome database or map Illumina reads of specific taxIDs to genomes with positive BLAST hits.
 - [minimap2](#Mapping) - Map raw Nanopore reads to a pathogen genome database or map Nanopore reads of specific taxIDs to genomes with positive BLAST hits.
-- [FASTA/BAM of individual pathogen](#FASTA/BAM-of-individual-pathogen) For the pathogen screening workflow, prepare an individual FASTA/BAM file for each pathogen with mapped reads.
+- [FASTA/BAM of individual pathogen](#FASTA-BAM-of-individual-pathogen) For the pathogen screening workflow, prepare an individual FASTA/BAM file for each pathogen with mapped reads.
 - [Call Consensus](#Call-Consensus) - Call consensus sequences for reads mapped to pathogen genomes
 - [MultiQC](#multiqc) - Aggregate report describing results and QC from the whole pipeline
 - [Pipeline information](#pipeline-information) - Report metrics generated during the workflow execution
