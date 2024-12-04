@@ -30,14 +30,14 @@
                 "exists": true,
                 "format": "file-path",
                 "pattern": "^\\S+\\.f(ast)?q\\.gz$",
-                "errorMessage": "FastQ file for short reads 1, long reads or merged pair-end reads must be provided from bowtie2 or minimap2 unmapped reads against the human genome, cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'."
+                "errorMessage": "FASTQ file for short reads 1, long reads or merged pair-end reads must be provided from `Bowtie2` or `minimap2` unmapped reads against the human genome, cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'."
             },
             "fastq_2": {
                 "type": "string",
                 "exists": true,
                 "format": "file-path",
                 "pattern": "^\\S+\\.f(ast)?q\\.gz$",
-                "errorMessage": "The FastQ file for short reads 2 resulting from Bowtie2's unmapped read 2 against the human genome, cannot contain spaces and must have the extension '.fq.gz' or '.fastq.gz'."
+                "errorMessage": "The FASTQ file for short reads 2 resulting from `Bowtie2` unmapped read 2 against the human genome, cannot contain spaces and must have the extension '.fq.gz' or '.fastq.gz'."
             },
             "kraken2_report": {
                 "type": "string",
@@ -58,7 +58,7 @@
                 "exists": true,
                 "format": "file-path",
                 "pattern": "^\\S+\\.tsv$",
-                "errorMessage": "Standardized kraken2 profiling with taxonomic information obtained from taxpasta."
+                "errorMessage": "Standardized kraken2 profiling with taxonomic information obtained from `taxpasta`."
             },
             "centrifuge_report": {
                 "type": "string",
@@ -79,21 +79,21 @@
                 "exists": true,
                 "format": "file-path",
                 "pattern": "^\\S+\\.tsv$",
-                "errorMessage": "Standardized centrifuge profiling with taxonomic information obtained from taxpasta."
+                "errorMessage": "Standardized centrifuge profiling with taxonomic information obtained from `taxpasta`."
             },
             "diamond": {
                 "type": "string",
                 "exists": true,
                 "format": "file-path",
                 "pattern": "^\\S+\\.tsv$",
-                "errorMessage": "Diamond classification results should be provided."
+                "errorMessage": "`DIAMOND` classification results should be provided."
             },
             "diamond_taxpasta": {
                 "type": "string",
                 "exists": true,
                 "format": "file-path",
                 "pattern": "^\\S+\\.tsv$",
-                "errorMessage": "Standardized diamond profiling with taxonomic information obtained from taxpasta."
+                "errorMessage": "Standardized diamond profiling with taxonomic information obtained from `taxpasta`."
             }
         },
         "required": ["sample", "run_accession", "instrument_platform", "fastq_1"],
