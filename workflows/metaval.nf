@@ -160,32 +160,32 @@ workflow METAVAL {
         }
 
     // Screen pathogens
-    ch_reference = Channel.fromPath( params.pathogens_genomes, checkIfExists: true)
-        .map{ [ [], it ] }
+    ch_reference = file( params.pathogens_genomes)
+
     if ( params.perform_screen_pathogens ) {
         // Map short reads to the pathogens genome
-        BOWTIE2_BUILD_PATHOGEN ( ch_reference )
+        BOWTIE2_BUILD_PATHOGEN ( [ [], ch_reference ] )
         ch_versions = ch_versions.mix( BOWTIE2_BUILD_PATHOGEN.out.versions )
         FASTQ_ALIGN_BOWTIE2 (
             ch_input.short_reads,                              // ch_reads
             BOWTIE2_BUILD_PATHOGEN.out.index,                  // ch_index
             false,                                             // save unaligned
             false,                                             // sort bam
-            ch_reference                                      // ch_fasta
+            [ [], ch_reference ]
         )
 
         ch_versions = ch_versions.mix( FASTQ_ALIGN_BOWTIE2.out.versions )
         // Map long reads to the pathogens genome
-        LONGREAD_SCREENPATHOGEN ( ch_input.long_reads, ch_reference )
+        LONGREAD_SCREENPATHOGEN ( ch_input.long_reads, [ [], ch_reference ] )
         ch_versions = ch_versions.mix( LONGREAD_SCREENPATHOGEN.out.versions )
 
         // Subset BAM file for each taxID
-        accession2taxid_map = Channel.fromPath ( params.accession2taxid, checkIfExists: true )
+        ch_accession2taxid = Channel.fromPath ( params.accession2taxid, checkIfExists: true )
 
-        TAXID_BAM_FASTA_SHORTREAD ( FASTQ_ALIGN_BOWTIE2.out.bam, FASTQ_ALIGN_BOWTIE2.out.bai, accession2taxid_map, params.min_read_counts )
+        TAXID_BAM_FASTA_SHORTREAD ( FASTQ_ALIGN_BOWTIE2.out.bam, FASTQ_ALIGN_BOWTIE2.out.bai, ch_accession2taxid, params.min_read_counts )
         ch_versions = ch_versions.mix( TAXID_BAM_FASTA_SHORTREAD.out.versions )
 
-        TAXID_BAM_FASTA_LONGREAD( LONGREAD_SCREENPATHOGEN.out.bam, LONGREAD_SCREENPATHOGEN.out.bai, accession2taxid_map, params.min_read_counts )
+        TAXID_BAM_FASTA_LONGREAD( LONGREAD_SCREENPATHOGEN.out.bam, LONGREAD_SCREENPATHOGEN.out.bai, ch_accession2taxid, params.min_read_counts )
         ch_versions = ch_versions.mix( TAXID_BAM_FASTA_LONGREAD.out.versions )
 
         // Calling consensus: BAM file with the number of mapped reads > params.min_read_counts
@@ -197,7 +197,7 @@ workflow METAVAL {
         }
         if ( params.perform_longread_consensus ) {
             // Skip the consensus calling if the number of mapped reads is lower than params.min_read_counts
-            LONGREAD_CONSENSUS ( TAXID_BAM_FASTA_LONGREAD.out.taxid_bam, ch_reference )
+            LONGREAD_CONSENSUS ( TAXID_BAM_FASTA_LONGREAD.out.taxid_bam, [ [], ch_reference ] )
             ch_versions = ch_versions.mix( LONGREAD_CONSENSUS.out.versions )
             LONGREAD_CONSENSUS.out.consensus
         }
