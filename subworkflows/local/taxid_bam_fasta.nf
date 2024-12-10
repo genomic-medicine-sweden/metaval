@@ -22,8 +22,7 @@ workflow TAXID_BAM_FASTA {
     ch_multiqc_files  = Channel.empty()
 
     // Combine BAM and BAI files
-    input_bam = bam.combine(bai, by: 0)
-
+    input_bam = bam.join(bai, by: 0)
     // Get idxstats for input BAM
     SAMTOOLS_IDXSTATS(input_bam)
     ch_accession = SAMTOOLS_IDXSTATS.out.idxstats
