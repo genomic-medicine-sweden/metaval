@@ -23,6 +23,79 @@
                     "help_text": "You will need to create a design file with information about the samples in your experiment before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row.",
                     "fa_icon": "fas fa-file-csv"
                 },
+                "taxid": {
+                    "type": "string",
+                    "description": "The taxonomy ID of the species identified in the classification results or a list of taxids separated by spaces.",
+                    "fa_icon": "fas fa-list-alt"
+                },
+                "pathogens_genomes": {
+                    "type": "string",
+                    "format": "file-path",
+                    "pattern": "^\\S+\\.fn?a(sta)?(\\.gz)?$",
+                    "description": "Path to a concatenated genome file containing complete genomes from a list of viral pathogens.",
+                    "fa_icon": "fas fa-dna"
+                },
+                "accession2taxid": {
+                    "type": "string",
+                    "format": "file-path",
+                    "pattern": "^\\S+\\.map$",
+                    "description": "Path to a file containing the accession IDs and corresponding tax IDs for each pathogen genome.",
+                    "fa_icon": "fas fa-file-alt"
+                },
+                "perform_extract_reads": {
+                    "type": "boolean",
+                    "description": "Extract reads assigned to taxonomic IDs.",
+                    "help_text": "Enable the option to extract reads assigned to taxonomic IDs based on results from kraken2, centrifuge, and diamond classifiers.",
+                    "fa_icon": "fas fa-toggle-on"
+                },
+                "extract_kraken2_reads": {
+                    "type": "boolean",
+                    "description": "Extract reads classified by kraken2 according to taxonomic ID.",
+                    "fa_icon": "fas fa-toggle-on"
+                },
+                "extract_centrifuge_reads": {
+                    "type": "boolean",
+                    "description": "Extract reads classified by centrifuge according to taxonomic ID.",
+                    "fa_icon": "fas fa-toggle-on"
+                },
+                "extract_diamond_reads": {
+                    "type": "boolean",
+                    "description": "Extract reads classified by diamond according to taxonomic ID.",
+                    "fa_icon": "fas fa-toggle-on"
+                },
+                "fastq_output": {
+                    "type": "boolean",
+                    "description": "Turn on saving extracted kraken2 reads in fastq format.",
+                    "fa_icon": "fas fa-file-alt"
+                },
+                "perform_shortread_denovo": {
+                    "type": "boolean",
+                    "description": "Turn on de novo assembly for short reads",
+                    "fa_icon": "fas fa-times"
+                },
+                "perform_longread_denovo": {
+                    "type": "boolean",
+                    "description": "Turn on de novo assembly for long reads",
+                    "fa_icon": "fas fa-times"
+                },
+                "flye_mode": {
+                    "type": "string",
+                    "description": "It provides Flye assembly modes. Our ONT reads were pre-processed by Guppy, so `--nano-corr` is the appropriate mode to use, as it is designed for ONT reads that have been corrected with other methods (with <3% error)",
+                    "default": "--nano-corr",
+                    "fa_icon": "fas fa-cogs"
+                },
+                "perform_screen_pathogens": {
+                    "type": "boolean",
+                    "description": "Screen viral pathogens for each sample",
+                    "help_text": "Turns on the option to screen viral pathogens by mapping reads against genomes of a list of viral pathogens. Bowtie2 is used for mapping of short reads and minimap2 for long reads.",
+                    "fa_icon": "fas fa-toggle-on"
+                },
+                "min_read_counts": {
+                    "type": "integer",
+                    "description": "Set the read count threshold for performing de novo assembly or consensus calling.",
+                    "help_text": "The recommended default should be > 100, as de novo assembly will fail with too few reads or reads.",
+                    "fa_icon": "fas fa-greater-than-equal"
+                },
                 "outdir": {
                     "type": "string",
                     "format": "directory-path",
