@@ -1,8 +1,12 @@
-# genomic-medicine-sweden/metaval: Citations
+# genomic-medicine-sweden/meta-val: Citations
 
 ## [nf-core](https://pubmed.ncbi.nlm.nih.gov/32055031/)
 
 > Ewels PA, Peltzer A, Fillinger S, Patel H, Alneberg J, Wilm A, Garcia MU, Di Tommaso P, Nahnsen S. The nf-core framework for community-curated bioinformatics pipelines. Nat Biotechnol. 2020 Mar;38(3):276-278. doi: 10.1038/s41587-020-0439-x. PubMed PMID: 32055031.
+
+## [KrakenTools](https://www.nature.com/articles/s41596-022-00738-y)
+
+> Lu J, Rincon N, Wood DE, et al. Metagenome analysis using the Kraken software suite. Nat Protoc. 2022;17(12). doi:10.1038/s41596-022-00738-y
 
 ## [Nextflow](https://pubmed.ncbi.nlm.nih.gov/28398311/)
 

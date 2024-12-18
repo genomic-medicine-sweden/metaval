@@ -1,8 +1,12 @@
-# genomic-medicine-sweden/metaval: Usage
+# genomic-medicine-sweden/meta-val: Usage
 
 > _Documentation of pipeline parameters is generated automatically from the pipeline schema and can no longer be found in markdown files._
 
 ## Introduction
+
+**genomic-medicine-sweden/meta-val** is a bioinformatics pipeline for post-processing of [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler) results. It verifies the classification results by the nf-core/taxprofiler pipeline. At the moment, `genomic-medicine-sweden/meta-val` only verifies the classification results from three classifiers `Kraken2`, `Centrifuge` and `diamond`.
+
+The pipeline, constructed using the `nf-core` [template](https://nf-co.re/tools#creating-a-new-pipeline), utilizing Docker/Singularity containers for easy installation and reproducible results. The implementation follows [Nextflow DSL2](https://www.nextflow.io/docs/latest/dsl1.html), employing one container per process for simplified maintenance and dependency management. Processes are sourced from [nf-core/modules](https://github.com/nf-core/modules) for broader accessibility within the Nextflow community.
 
 <!-- TODO nf-core: Add documentation about anything specific to running your pipeline. For general topics, please point to (and add to) the main nf-core website. -->
 
@@ -15,7 +19,7 @@
 
 ### Samplesheet
 
-You will need to create a samplesheet with information about the samples you would like to analyse before running the pipeline. Use this parameter to specify its location. It has to be a comma-separated file with 3 columns, and a header row as shown in the examples below.
+You will need to create a samplesheet in csv format with information about the samples you would like to analyse before running the pipeline. It has to be a comma-separated file and a header row as shown in the examples below.
 
 ```bash
 --input '[path to samplesheet file]'
@@ -40,10 +44,9 @@ genomic-medicine-sweden/meta-val will require the information given bellow.
 | diamond_taxpasta    | Standardized diamond taxonomic profiles for all samples.                                                                                         |
 
 ```csv title="samplesheet.csv"
-sample,fastq_1,fastq_2
-CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
-CONTROL_REP1,AEG588A1_S1_L003_R1_001.fastq.gz,AEG588A1_S1_L003_R2_001.fastq.gz
-CONTROL_REP1,AEG588A1_S1_L004_R1_001.fastq.gz,AEG588A1_S1_L004_R2_001.fastq.gz
+sample,run_accession,instrument_platform,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
+sample1,run1,ILLUMINA,sample1.unmapped_1.fastq.gz,sample1.unmapped_2.fastq.gz,sample1.kraken2.kraken2.report.txt,sample1.kraken2.kraken2.classifiedreads.txt,kraken2_kraken2-db.tsv,sample1.centrifuge.txt,sample1.centrifuge.results.txt,centrifuge_centrifuge-db.tsv,sample1.diamond.tsv,diamond_diamond-db.tsv
+sample2,run1,ILLUMINA,sample2.unmapped_1.fastq.gz,sample2.unmapped_2.fastq.gz,sample2.kraken2.kraken2.report.txt,sample2.kraken2.kraken2.classifiedreads.txt,kraken2_kraken2-db.tsv,sample2.centrifuge.txt,sample2.centrifuge.results.txt,centrifuge_centrifuge-db.tsv,sample2.diamond.tsv,diamond_diamond-db.tsv
 ```
 
 ### Optional input
@@ -97,7 +100,7 @@ Pipeline settings can be provided in a `yaml` or `json` file via `-params-file <
 The above pipeline run specified with a params file in yaml format:
 
 ```bash
-nextflow run genomic-medicine-sweden/metaval -profile docker -params-file params.yaml
+nextflow run genomic-medicine-sweden/meta-val -profile docker -params-file params.yaml
 ```
 
 with:
@@ -140,14 +143,14 @@ Use `Bowtie2` for short reads and `minimap2` for long reads.
 When you run the above command, Nextflow automatically pulls the pipeline code from GitHub and stores it as a cached version. When running the pipeline after this, it will always use the cached version if available - even if the pipeline has been updated since. To make sure that you're running the latest version of the pipeline, make sure that you regularly update the cached version of the pipeline:
 
 ```bash
-nextflow pull genomic-medicine-sweden/metaval
+nextflow pull genomic-medicine-sweden/meta-val
 ```
 
 ### Reproducibility
 
 It is a good idea to specify the pipeline version when running the pipeline on your data. This ensures that a specific version of the pipeline code and software are used when you run your pipeline. If you keep using the same tag, you'll be running the same version of the pipeline, even if there have been changes to the code since.
 
-First, go to the [genomic-medicine-sweden/metaval releases page](https://github.com/genomic-medicine-sweden/metaval/releases) and find the latest pipeline version - numeric only (eg. `1.3.1`). Then specify this when running the pipeline with `-r` (one hyphen) - eg. `-r 1.3.1`. Of course, you can switch to another version by changing the number after the `-r` flag.
+First, go to the [genomic-medicine-sweden/meta-val releases page](https://github.com/genomic-medicine-sweden/meta-val/releases) and find the latest pipeline version - numeric only (eg. `1.3.1`). Then specify this when running the pipeline with `-r` (one hyphen) - eg. `-r 1.3.1`. Of course, you can switch to another version by changing the number after the `-r` flag.
 
 This version number will be logged in reports when you run the pipeline, so that you'll know what you used when you look back in the future. For example, at the bottom of the MultiQC reports.
 
@@ -159,7 +162,7 @@ To further assist in reproducibility, you can use share and reuse [parameter fil
 ## Core Nextflow arguments
 
 > [!NOTE]
-> These options are part of Nextflow and use a _single_ hyphen (pipeline parameters use a double-hyphen)
+> These options are part of Nextflow and use a _single_ hyphen (pipeline parameters use a double-hyphen).
 
 ### `-profile`
 

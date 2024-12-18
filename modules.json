@@ -1,6 +1,6 @@
 {
-    "name": "genomic-medicine-sweden/metaval",
-    "homePage": "https://github.com/genomic-medicine-sweden/metaval",
+    "name": "genomic-medicine-sweden/meta-val",
+    "homePage": "https://github.com/genomic-medicine-sweden/meta-val",
     "repos": {
         "https://github.com/nf-core/modules.git": {
             "modules": {

@@ -1,9 +1,9 @@
 #!/usr/bin/env nextflow
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    genomic-medicine-sweden/metaval
+    genomic-medicine-sweden/meta-val
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Github : https://github.com/genomic-medicine-sweden/metaval
+    Github : https://github.com/genomic-medicine-sweden/meta-val
 ----------------------------------------------------------------------------------------
 */
 
@@ -13,7 +13,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { METAVAL  } from './workflows/metaval'
+include { METAVAL                 } from './workflows/metaval'
 include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_metaval_pipeline'
 include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_metaval_pipeline'
 include { getGenomeAttribute      } from './subworkflows/local/utils_nfcore_metaval_pipeline'

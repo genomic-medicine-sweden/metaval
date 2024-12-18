@@ -177,7 +177,7 @@ workflow METAVAL {
     // MODULE: Run FastQC
     //
     FASTQC (
-        ch_samplesheet
+        ch_extract_reads.reads
     )
     ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.collect{it[1]})
     ch_versions = ch_versions.mix(FASTQC.out.versions.first())
@@ -188,7 +188,7 @@ workflow METAVAL {
     softwareVersionsToYAML(ch_versions)
         .collectFile(
             storeDir: "${params.outdir}/pipeline_info",
-            name:  'metaval_software_'  + 'mqc_'  + 'versions.yml',
+            name:  'genomic-medicine-sweden/meta-val_software_'  + 'mqc_'  + 'versions.yml',
             sort: true,
             newLine: true
         ).set { ch_collated_versions }
