@@ -3,7 +3,7 @@ tasks:
   - name: Update Nextflow and setup pre-commit
     command: |
       pre-commit install --install-hooks
-      nextflow self-update 
+      nextflow self-update
 
 vscode:
   extensions:
