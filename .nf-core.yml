@@ -1,11 +1,8 @@
 lint:
   files_exist:
     - assets/nf-core-meta-val_logo_light.png
-    - assets/nf-core-metaval_logo_light.png
     - docs/images/nf-core-meta-val_logo_light.png
     - docs/images/nf-core-meta-val_logo_dark.png
-    - docs/images/nf-core-metaval_logo_light.png
-    - docs/images/nf-core-metaval_logo_dark.png
     - assets/samplesheet.csv
     - .github/ISSUE_TEMPLATE/config.yml
   files_unchanged:
