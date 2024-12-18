@@ -18,6 +18,8 @@ The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes d
 - [De novo assembly](#De-novo-assembly) for extracted reads of TaxID
 - [Bowtie2](#Mapping) - Map raw Illumina reads to a pathogen genome database or map Illumina reads of specific taxIDs to genomes with positive BLAST hits.
 - [minimap2](#Mapping) - Map raw Nanopore reads to a pathogen genome database or map Nanopore reads of specific taxIDs to genomes with positive BLAST hits.
+- [Individual FASTA or BAM](#Individual-FASTA-or-BAM) For the pathogen screening workflow, prepare an individual FASTA/BAM file for each pathogen with mapped reads.
+- [Call Consensus](#Call-Consensus) - Call consensus sequences for reads mapped to pathogen genomes
 - [MultiQC](#multiqc) - Aggregate report describing results and QC from the whole pipeline
 - [Pipeline information](#pipeline-information) - Report metrics generated during the workflow execution
 
@@ -83,6 +85,8 @@ The `extracted_reads` directory will only be present if `--perform_extract_reads
 
 ### De novo assembly
 
+De novo assemble the extracted reads for a taxID.
+
 <details markdown="1">
 <summary>Output files</summary>
 
@@ -104,15 +108,17 @@ The `extracted_reads` directory will only be present if `--perform_extract_reads
 
 </details>
 
-The `spades` directory will only be present if `--perform_shortread_denovo` is supplied. The `centrifuge` folder will only be present if `--extract_centrifuge_reads` is specified. Similarly, the `diamond` folder will appear only if `--extract_diamond_reads` is used, and the `kraken2` folder will be created only if `--extract_kraken2_reads` is activated. Check out the [Spades documentation](https://ablab.github.io/spades/) for more information on Spades output.
+The `spades` directory will only be present if `--perform_shortread_denovo` is supplied and the number of reads for a taxID exceeds `params.min_read_counts`. The `centrifuge` folder will only be present if `--extract_centrifuge_reads` is specified. Similarly, the `diamond` folder will appear only if `--extract_diamond_reads` is used, and the `kraken2` folder will be created only if `--extract_kraken2_reads` is activated. Check out the [Spades documentation](https://ablab.github.io/spades/) for more information on Spades output.
 
-The `flye` directory will only be present if `--perform_longread_denovo` is supplied. The `centrifuge` folder will only be present if `--extract_centrifuge_reads` is specified. Similarly, the `diamond` folder will appear only if `--extract_diamond_reads` is used, and the `kraken2` folder will be created only if `--extract_kraken2_reads` is activated. Check out the [Flye documentation](https://github.com/fenderglass/Flye/blob/flye/docs/USAGE.md) for more information on Flye output.
+The `flye` directory will only be present if `--perform_longread_denovo` is supplied and the number of reads for a taxID exceeds `params.min_read_counts`. The `centrifuge` folder will only be present if `--extract_centrifuge_reads` is specified. Similarly, the `diamond` folder will appear only if `--extract_diamond_reads` is used, and the `kraken2` folder will be created only if `--extract_kraken2_reads` is activated. Check out the [Flye documentation](https://github.com/fenderglass/Flye/blob/flye/docs/USAGE.md) for more information on Flye output.
 
 ### Mapping
 
 Map Illumina short reads to genomes using `bowtie2` and map Nanopore long reads to genomes using `minimap2`
 
 #### Pathogen screening
+
+Map reads to the pathogen genomes databases.
 
 <details markdown="1">
 <summary>Output files</summary>
@@ -134,6 +140,39 @@ Map Illumina short reads to genomes using `bowtie2` and map Nanopore long reads 
 </details>
 
 The `pathogens` directory will only be present if `--perform_screen_pathogens` is supplied.
+
+### Individual FASTA or BAM
+
+After mapping reads to the pathogen genome databases, the BAM file includes multiple pathogen genomes. So we need to prepare individual BAM or FASTA files for each pathogen with mapped reads for downstream `Call consensus` and `BLAST`.
+
+<details markdown="1">
+<summary>Output files</summary>
+
+- `pathogens/`
+  - `taxid_bam/`
+    - `<sample_id>_<taxID>_sorted.bam`
+    - `<sample_id>_<taxID>_sorted.bam.bai`
+  - `taxid_fasta/`
+    - `<sample_id>_<taxID>.fasta.gz`
+
+</details>
+
+If the number of mapped reads to a pathogen genome exceeds `params.min_read_counts`, an individual BAM file will be created and placed in the `taxid_bam` folder. Otherwise, an individual FASTA file will be created and placed in the `taxid_fasta`folder.
+
+### Call consensus
+
+Call consensus sequences for Illumina reads mapped to pathogen genomes using `samtools`, and for Nanopore reads using either `samtools` or `medaka`.
+
+<details markdown="1">
+<summary>Output files</summary>
+
+- `pathogens/`
+  - `consensus`
+    - `<sample_id>_<taxID>.fasta`: Consensus sequences.
+
+</details>
+
+The `consensus` directory will only be created if `--perform_screen_pathogens` is supplied along with either `--perform_longread_consensus` or `--perform_shortread_consensus`.
 
 ### MultiQC
 

@@ -17,7 +17,7 @@
 
 ## Introduction
 
-**genomic-medicine-sweden/meta-val** is a bioinformatics pipeline for post-processing of [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler) results. It verifies the species classified by the nf-core/taxprofiler pipeline using Nanopore and Illumina shotgun metagenomic data. At the moment, `genomic-medicine-sweden/meta-val` only verifies the classification results from three taxonomic classifiers `Kraken2`, `Centrifuge` and `diamond`.
+**genomic-medicine-sweden/meta-val** is a bioinformatics pipeline for post-processing the results of [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler). It verifies the taxa classified by the nf-core/taxprofiler pipeline using Nanopore and Illumina shotgun metagenomic sequencing data. At the moment, `genomic-medicine-sweden/meta-val` only verifies the classification results from three taxonomic classifiers `Kraken2`, `Centrifuge` and `DIAMOND`.
 
 The pipeline, constructed using the `nf-core` [template](https://nf-co.re/tools#creating-a-new-pipeline), utilizing Docker/Singularity containers for easy installation and reproducible results. The implementation follows [Nextflow DSL2](https://www.nextflow.io/docs/latest/dsl1.html), employing one container per process for simplified maintenance and dependency management. Processes are sourced from [nf-core/modules](https://github.com/nf-core/modules) for broader accessibility within the Nextflow community.
 
@@ -37,7 +37,7 @@ This workflow is activated by enabling the `--perform_screen_pathogens` option.
 
 2. **Call consensus**
 
-   - This step generates consensus sequences for a large number of reads mapped to pathogen genomes using [samtools](<(http://www.htslib.org/)>) for Illumina reads or [medaka](https://github.com/nanoporetech/medaka) for Nanopore reads. The resulting consensus sequence will then be used as input for BLAST.
+   - This step calls consensus sequences for reads mapped to pathogen genomes using either [samtools](<(http://www.htslib.org/)>) or [medaka](https://github.com/nanoporetech/medaka), depending on the read type. `samtools` can be used to generate consensus sequences for both Illumina and Nanopore reads, while `medaka` is typically used for Nanopore reads. The generated consensus sequence will be used as input for `BLAST`.
 
 3. **BLAST for pathogen identification**
 
