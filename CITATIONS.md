@@ -1,4 +1,4 @@
-# genomic-medicine-sweden/meta-val: Citations
+# genomic-medicine-sweden/metaval: Citations
 
 ## [nf-core](https://pubmed.ncbi.nlm.nih.gov/32055031/)
 

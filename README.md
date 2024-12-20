@@ -1,23 +1,23 @@
 <h1>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/images/metaval_logo_dark.png">
-    <img alt="genomic-medicine-sweden/meta-val" src="docs/images/metaval_logo_light.png">
+    <img alt="genomic-medicine-sweden/metaval" src="docs/images/metaval_logo_light.png">
   </picture>
 </h1>
 
-[![GitHub Actions CI Status](https://github.com/genomic-medicine-sweden/meta-val/actions/workflows/ci.yml/badge.svg)](https://github.com/genomic-medicine-sweden/meta-val/actions/workflows/ci.yml)
-[![GitHub Actions Linting Status](https://github.com/genomic-medicine-sweden/meta-val/actions/workflows/linting.yml/badge.svg)](https://github.com/genomic-medicine-sweden/meta-val/actions/workflows/linting.yml)
+[![GitHub Actions CI Status](https://github.com/genomic-medicine-sweden/metaval/actions/workflows/ci.yml/badge.svg)](https://github.com/genomic-medicine-sweden/metaval/actions/workflows/ci.yml)
+[![GitHub Actions Linting Status](https://github.com/genomic-medicine-sweden/metaval/actions/workflows/linting.yml/badge.svg)](https://github.com/genomic-medicine-sweden/metaval/actions/workflows/linting.yml)
 [![nf-test](https://img.shields.io/badge/unit_tests-nf--test-337ab7.svg)](https://www.nf-test.com)
 
 [![Nextflow](https://img.shields.io/badge/nextflow%20DSL2-%E2%89%A524.04.2-23aa62.svg)](https://www.nextflow.io/)
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
 [![run with docker](https://img.shields.io/badge/run%20with-docker-0db7ed?labelColor=000000&logo=docker)](https://www.docker.com/)
 [![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
-[![Launch on Seqera Platform](https://img.shields.io/badge/Launch%20%F0%9F%9A%80-Seqera%20Platform-%234256e7)](https://cloud.seqera.io/launch?pipeline=https://github.com/genomic-medicine-sweden/meta-val)
+[![Launch on Seqera Platform](https://img.shields.io/badge/Launch%20%F0%9F%9A%80-Seqera%20Platform-%234256e7)](https://cloud.seqera.io/launch?pipeline=https://github.com/genomic-medicine-sweden/metaval)
 
 ## Introduction
 
-**genomic-medicine-sweden/meta-val** is a bioinformatics pipeline for post-processing the results of [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler). It verifies the taxa classified by the nf-core/taxprofiler pipeline using Nanopore and Illumina shotgun metagenomic sequencing data. At the moment, `genomic-medicine-sweden/meta-val` only verifies the classification results from three taxonomic classifiers `Kraken2`, `Centrifuge` and `DIAMOND`.
+**genomic-medicine-sweden/metaval** is a bioinformatics pipeline for post-processing the results of [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler). It verifies the taxa classified by the nf-core/taxprofiler pipeline using Nanopore and Illumina shotgun metagenomic sequencing data. At the moment, `genomic-medicine-sweden/metaval` only verifies the classification results from three taxonomic classifiers `Kraken2`, `Centrifuge` and `DIAMOND`.
 
 The pipeline, constructed using the `nf-core` [template](https://nf-co.re/tools#creating-a-new-pipeline), utilizing Docker/Singularity containers for easy installation and reproducible results. The implementation follows [Nextflow DSL2](https://www.nextflow.io/docs/latest/dsl1.html), employing one container per process for simplified maintenance and dependency management. Processes are sourced from [nf-core/modules](https://github.com/nf-core/modules) for broader accessibility within the Nextflow community.
 
@@ -115,7 +115,7 @@ Each row represents a fastq file (single-end) or a pair of fastq files (paired e
 Now, you can run the pipeline using:
 
 ```bash
-nextflow run genomic-medicine-sweden/meta-val \
+nextflow run genomic-medicine-sweden/metaval \
    -profile <docker/singularity/.../institute> \
    --input samplesheet.csv \
    --outdir <OUTDIR>
@@ -125,7 +125,7 @@ nextflow run genomic-medicine-sweden/meta-val \
 > [!WARNING]
 > Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_; see [docs](https://nf-co.re/docs/usage/getting_started/configuration#custom-configuration-files).
 
-For more details and further functionality, please refer to the [usage documentation](https://github.com/genomic-medicine-sweden/meta-val/blob/dev/docs/usage.md).
+For more details and further functionality, please refer to the [usage documentation](https://github.com/genomic-medicine-sweden/metaval/blob/dev/docs/usage.md).
 
 ## Test data
 
@@ -186,11 +186,11 @@ SRR13439790.7 0 0
 ## Pipeline output
 
 For more details about the output files and reports, please refer to the
-[output documentation](https://github.com/genomic-medicine-sweden/meta-val/blob/dev/docs/output.md).
+[output documentation](https://github.com/genomic-medicine-sweden/metaval/blob/dev/docs/output.md).
 
 ## Credits
 
-genomic-medicine-sweden/meta-val was originally written by [LilyAnderssonLee](https://github.com/LilyAnderssonLee).All PRs were reviewed by [sofstam](https://github.com/sofstam), with additional contributions from [lokeshbio](https://github.com/lokeshbio).
+genomic-medicine-sweden/metaval was originally written by [LilyAnderssonLee](https://github.com/LilyAnderssonLee).All PRs were reviewed by [sofstam](https://github.com/sofstam), with additional contributions from [lokeshbio](https://github.com/lokeshbio).
 
 We thank the following people for their extensive assistance in the development of this pipeline:
 
@@ -203,7 +203,7 @@ If you would like to contribute to this pipeline, please see the [contributing g
 ## Citations
 
 <!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
-<!-- If you use genomic-medicine-sweden/meta-val for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
+<!-- If you use genomic-medicine-sweden/metaval for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
 
 <!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
 
