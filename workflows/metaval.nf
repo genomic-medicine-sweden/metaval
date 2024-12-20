@@ -146,15 +146,6 @@ workflow METAVAL {
             ch_versions             = ch_versions.mix( FLYE.out.versions.first() )
         }
 
-        // Warning message for samples that failed to run de novo assembly due to an insufficient number of reads
-        ch_taxid_reads_result.failed
-            .map { meta, reads -> [ meta.id ] }
-            .collect()
-            .subscribe {
-                samples = it.join("\n")
-                log.warn "The following samples skipped de novo assembly due to too few reads (<$params.min_read_counts). Run BLASTx/BLASTn directly with all reads.: \n$samples"
-            }
-
         // BLAST
 
         }
