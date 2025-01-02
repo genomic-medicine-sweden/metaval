@@ -218,7 +218,7 @@ workflow METAVAL {
     softwareVersionsToYAML(ch_versions)
         .collectFile(
             storeDir: "${params.outdir}/pipeline_info",
-            name:  'metaval_software_'  + 'mqc_'  + 'versions.yml',
+            name:  'genomic-medicine-sweden/metaval_software_'  + 'mqc_'  + 'versions.yml',
             sort: true,
             newLine: true
         ).set { ch_collated_versions }
