@@ -12,7 +12,7 @@
 
 ## Introduction
 
-**genomic-medicine-sweden/metaval** is a bioinformatics pipeline that ...
+**genomic-medicine-sweden/meta-val** is a bioinformatics pipeline for post-processing the results of [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler). It verifies the taxa classified by the nf-core/taxprofiler pipeline using Nanopore and Illumina shotgun metagenomic sequencing data. At the moment, `genomic-medicine-sweden/meta-val` only verifies the classification results from three taxonomic classifiers `Kraken2`, `Centrifuge` and `DIAMOND`.
 
 <!-- TODO nf-core:
    Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
@@ -20,9 +20,79 @@
    to nf-core here, in 15-20 seconds. For an example, see https://github.com/nf-core/rnaseq/blob/master/README.md#introduction
 -->
 
-<!-- TODO nf-core: Include a figure that guides the user through the major workflow steps. Many nf-core
-     workflows use the "tube map" design for that. See https://nf-co.re/docs/contributing/design_guidelines#examples for examples.   -->
-<!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+## Pipeline summary
+
+<p align="center">
+     <img title="metaval workflow" src="docs/images/metaval_pipeline_metromap.png">
+</p>
+
+### Green Workflow - Pathogen Screening
+
+This workflow is activated by enabling the `--perform_screen_pathogens` option.
+
+1. **Map reads to pathogen genomes**
+
+   - Map reads to a predefined list of viral pathogen genomes using [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/) for Illumina reads or [minimap2](https://github.com/lh3/minimap2) for Nanopore reads. This step checks for the presence of known pathogens in the sample.
+
+2. **Call consensus**
+
+   - This step calls consensus sequences for reads mapped to pathogen genomes using either [samtools](<(http://www.htslib.org/)>) or [medaka](https://github.com/nanoporetech/medaka), depending on the read type. `samtools` can be used to generate consensus sequences for both Illumina and Nanopore reads, while `medaka` is typically used for Nanopore reads. The generated consensus sequence will be used as input for `BLAST`.
+
+3. **BLAST for pathogen identification**
+
+   - Use `BLAST` to identify the closest reference genomes for the target reads. There are two options: `BLASTx` using [DIAMOND](https://github.com/bbuchfink/diamond) based on the protein database, and [BLASTn](https://blast.ncbi.nlm.nih.gov/Blast.cgi) based on the nucleotide database.
+
+4. **Extract target reads**
+
+   - From the mapped reads, extract the target reads that match the predefined viral pathogens based on the result of `BLAST`.
+
+5. **Visualisation using IGV**
+
+   - Visualize the extracted reads using `IGV` (Integrative Genomics Viewer) to provide a graphical representation for detailed analysis.
+
+6. **Perform quality check**
+   - Conduct quality checks on the target reads using [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and [MultiQC](<(http://multiqc.info/)>) to ensure data quality and reliability.
+
+### Orange Workflow - Verify Identified Viruses
+
+This workflow is activated by enabling the `--perform_extract_reads` option and disabling the `--taxid`.
+
+1. **Decontamination**
+
+   - Filter the output files from metagenomics classifiers like [Kraken2](https://ccb.jhu.edu/software/kraken2/), [Centrifuge](https://ccb.jhu.edu/software/centrifuge/), or [DIAMOND](https://github.com/bbuchfink/diamond) to remove false positives and background contaminations. This step compares results to the negative control and identifies likely present species based on user-defined thresholds.
+
+2. **Extract viral TaxIDs**
+
+   - Extract **_viral_** TaxIDs predicted by taxonomic classification tools such as `Kraken2`, `Centrifuge`, and `DIAMOND`.
+
+3. **Extract reads**
+
+   - Extract the reads classified as viruses based on a list of identified TaxIDs.
+
+4. **de-novo assembly**
+
+   - This step performs de novo assembly for TaxIDs with a number of reads exceeding `params.min_read_counts`. [Spades](https://github.com/ablab/spades) is used for Illumina reads, and [Flye](https://github.com/mikolmogorov/Flye) is used for Nanopore reads. The resulting contig files will be used as input for `BLAST`.
+
+5. **BLAST**
+
+   - Use `BLAST` to identify the closest reference genomes for the target reads. There are two options: `BLASTx` using [DIAMOND](https://github.com/bbuchfink/diamond) based on the protein database, and [BLASTn](https://github.com/bbuchfink/diamond) based on the nucleotide database.
+
+6. **Mapping**
+
+   - Map the reads of TaxIDs to the closest reference genomes identified by `BLAST`. Use [Bowtie2](<(http://bowtie-bio.sourceforge.net/bowtie2/)>) for Illumina reads and [minimap2](https://github.com/lh3/minimap2) for Nanopore reads.
+
+7. **Visualisation using IGV**
+
+   - Visualize the mapped reads using `IGV`.
+
+8. **Perform quality check**
+   - Conduct quality checks on the classified reads using [FastQC](<(https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)>) and [MultiQC](<(http://multiqc.info/)>) to ensure the accuracy of the data.
+
+## Blue Workflow - Verify User-Defined TaxIDs
+
+This workflow is activated by enabling the `--perform_extract_reads` option and the `--taxid` option, allowing users to define a list of TaxIDs. It is not limited to `viral` TaxIDs and can include `bacteria`, `fungi`, `archaea`, `parasites`, or `plasmids`.
+
+All steps are the same as the **Orange Workflow** except using user-defined TaxIDs instead of extracting predefined viral TaxIDs.
 
 ## Usage
 

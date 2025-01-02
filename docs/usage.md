@@ -93,6 +93,36 @@ genome: 'GRCh37'
 
 You can also generate such `YAML`/`JSON` files via [nf-core/launch](https://nf-co.re/launch).
 
+### Decontamination
+
+Filtering the output files from metagenomics classifiers like `Kraken2`, `Centrifuge`, or `DIAMOND` to remove false positives and background contamination can be activated by enabling `--decontamination` option. This step compares results to the negative control to identify likely present species based on user-defined thresholds.
+
+### Extract Viral TaxIDs
+
+This step involves extracting all taxonomic IDs of viral species predicted by classifiers by enabling `--perform_extract_reads`and the `--taxid` should be empty.
+
+### Extract Reads
+
+This step either retrieves the reads of all viral TaxIDs predicted by classifiers or extracts reads from a user-defined list of TaxIDs separated by spaces when the `--taxid` option is activated. Extracting reads predicted by `Kraken2` can be activated with `--extract_kraken2_reads`, extracting reads predicted by `Centrifuge` can be activated with `--extract_centrifuge_reads` and extracting reads predicted by `DIAMOND` can be activated with `--extract_diamond_reads`.
+
+If the `--taxid` option is included in the command line, the pipeline will only extract reads for the user specified TaxIDs, in other words, `--taxid` takes priority.
+
+### de-novo assembly
+
+De-novo assembly can be performed for extracted reads of TaxIDs by enabling `--perform_shortread_denovo` for short reads or the `--perform_longread_denovo` option for long reads, provided the number of reads exceeds `params.min_read_counts`. The recommended minimum number of reads is 100. If there are too few reads, the process will fail.
+
+### Mapping
+
+To screen for the existence of pathogens in samples, map the raw reads to a pathogens genome database (`--pathogens_genomes`) by activating the `--perform_screen_pathogens` option. Alternatively, map the extract reads of taxIDs to the genomes that correspond to the positive hits from BLASTx/BLASTn.
+
+Use `Bowtie2` for short reads and `minimap2` for long reads.
+
+### Call consensus
+
+Consensus sequence calling from reads mapped to pathogen genomes can be performed by turning on the option `--perform_screen_pathogens` and either `--perform_shortread_consensus` or `--perform_longread_consensus`. For Illumina reads, `samtools consensus` is used. For Nanopore reads, either `samtools consensus` or `medaka_consensus` (defined by `params.longread_consensus_tool`) can be used. `medaka` is specifically designed for Nanopore reads and utilizes a neural network to improve consensus accuracy, whereas `samtools consensus` does not have a specialized algorithm for Nanopore data. Therefore, `medaka` is generally recommended for Nanopore reads.
+
+It’s recommended to enable consensus calling if the number of reads mapped to pathogen genomes exceeds `params.min_read_counts`, with a minimum of 100 reads. Too few reads will cause the process to fail.
+
 ### Updating the pipeline
 
 When you run the above command, Nextflow automatically pulls the pipeline code from GitHub and stores it as a cached version. When running the pipeline after this, it will always use the cached version if available - even if the pipeline has been updated since. To make sure that you're running the latest version of the pipeline, make sure that you regularly update the cached version of the pipeline:
