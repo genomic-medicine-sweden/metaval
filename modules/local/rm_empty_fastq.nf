@@ -6,14 +6,13 @@ process RM_EMPTY_FASTQ {
     path folder
 
     output:
-    path folder
+    path folder, optional: true
 
     when:
     task.ext.when == null || task.ext.when
 
     script:
     def args = task.ext.args ?: ''
-
     """
     if [ -d ${folder} ]; then
         for f in ${folder}/*.fastq; do
@@ -23,6 +22,6 @@ process RM_EMPTY_FASTQ {
         done
     else
         echo "Folder ${folder} doesn't exist."
+    fi
     """
-
 }
