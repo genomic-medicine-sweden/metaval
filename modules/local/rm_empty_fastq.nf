@@ -15,12 +15,14 @@ process RM_EMPTY_FASTQ {
     def args = task.ext.args ?: ''
 
     """
-    for f in ${folder}/*.fastq; do
-        if [ ! -s \$f ]; then
-            rm \$f
-        fi
-    done
-
+    if [ -d ${folder} ]; then
+        for f in ${folder}/*.fastq; do
+            if [ ! -s \$f ]; then
+                rm \$f
+            fi
+        done
+    else
+        echo "Folder ${folder} doesn't exist."
     """
 
 }
