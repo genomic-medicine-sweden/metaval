@@ -1,4 +1,4 @@
-# genomic-medicine-sweden/meta-val: Output
+# genomic-medicine-sweden/metaval: Output
 
 ## Introduction
 
