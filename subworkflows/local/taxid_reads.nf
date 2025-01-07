@@ -136,6 +136,7 @@ workflow TAXID_READS {
 
             EXTRACTCDIAMONDREADS(
                 diamond_params_taxid.taxid,
+                params.evalue,
                 diamond_params_taxid.diamond_tsv,
                 diamond_params_taxid.reads
             )
@@ -158,6 +159,7 @@ workflow TAXID_READS {
 
             EXTRACTCDIAMONDREADS(
                 diamond_combined_input.taxid,
+                params.evalue,
                 diamond_combined_input.diamond_tsv,
                 diamond_combined_input.reads,
             )
