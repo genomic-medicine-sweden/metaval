@@ -9,6 +9,7 @@ process EXTRACT_VIRAL_TAXID {
         'biocontainers/seqkit:2.8.2--h9ee0642_1' }"
 
     input:
+    val evalue // e-vaule threshold to filter the diamond report
     tuple val(meta), path(taxpasta_standardised_profile)
     tuple val(meta), path(report) // classification report
 
@@ -29,7 +30,7 @@ process EXTRACT_VIRAL_TAXID {
             awk -F'\t' '\$3 != 0 {print \$5}' ${report} > detected_taxid.txt
             grep -F -w -f taxpasta_viral_taxid.txt detected_taxid.txt > ${prefix}_viral_taxids.tsv
         elif [[ "${meta.tool}" == "diamond" ]]; then
-            cut -f 2 ${report} | uniq > detected_taxid.txt
+            awk '\$3 < ${evalue}' ${report} | cut -f 2 | uniq > detected_taxid.txt
             grep -F -w -f taxpasta_viral_taxid.txt detected_taxid.txt | uniq > ${prefix}_viral_taxids.tsv
         fi
     else

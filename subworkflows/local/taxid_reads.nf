@@ -49,7 +49,7 @@ workflow TAXID_READS {
             ch_versions             = ch_versions.mix( KRAKENTOOLS_EXTRACTKRAKENREADS.out.versions.first() )
 
         } else {
-            kraken2_taxids = KRAKEN2_VIRAL_TAXID( kraken2_taxpasta, kraken2_report )
+            kraken2_taxids = KRAKEN2_VIRAL_TAXID( [], kraken2_taxpasta, kraken2_report )
             kraken2_combined_input = kraken2_taxids.viral_taxid
                 .map { meta, taxid -> [ meta.subMap( meta.keySet() - 'tool' ), taxid ] }
                 .splitText()
@@ -98,7 +98,7 @@ workflow TAXID_READS {
             ch_versions                = ch_versions.mix( EXTRACTCENTRIFUGEREADS.out.versions )
 
         } else {
-            centrifuge_taxids = CENTRIFUGE_VIRAL_TAXID( centrifuge_taxpasta, centrifuge_report )
+            centrifuge_taxids = CENTRIFUGE_VIRAL_TAXID( [], centrifuge_taxpasta, centrifuge_report )
             centrifuge_combined_input = centrifuge_taxids.viral_taxid
                 .map { meta, taxid -> [ meta.subMap( meta.keySet() - 'tool' ), taxid ] }
                 .splitText()
@@ -136,7 +136,6 @@ workflow TAXID_READS {
 
             EXTRACTCDIAMONDREADS(
                 diamond_params_taxid.taxid,
-                params.evalue,
                 diamond_params_taxid.diamond_tsv,
                 diamond_params_taxid.reads
             )
@@ -145,7 +144,7 @@ workflow TAXID_READS {
             ch_versions            = ch_versions.mix( EXTRACTCDIAMONDREADS.out.versions )
 
         } else {
-            diamond_taxids = DIAMOND_VIRAL_TAXID( diamond_taxpasta, diamond_tsv )
+            diamond_taxids = DIAMOND_VIRAL_TAXID( params.evalue, diamond_taxpasta, diamond_tsv )
             diamond_combined_input = diamond_taxids.viral_taxid
                 .map { meta, taxid -> [ meta.subMap( meta.keySet() - 'tool' ), taxid ] }
                 .splitText()

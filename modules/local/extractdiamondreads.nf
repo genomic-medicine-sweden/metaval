@@ -10,7 +10,6 @@ process EXTRACTCDIAMONDREADS {
 
     input:
     val taxid
-    val evalue // e-vaule threshold to filter the diamond report
     tuple val (meta), path(tsv)
     tuple val (meta), path(fastq) // bowtie2/align *unmapped_{1,2}.fastq.gz
 
@@ -26,8 +25,7 @@ process EXTRACTCDIAMONDREADS {
     def prefix = task.ext.prefix ?: "${meta.id}"
 
     """
-    awk '\$3 < ${evalue}' $tsv | cut -f 2 | uniq > ${prefix}_filtered.tsv
-    awk -v taxID=$taxid '\$2 == taxID {print \$1}' ${prefix}_filtered.tsv > readID.txt
+    awk -v taxID=$taxid '\$2 == taxID {print \$1}' $tsv > readID.txt
     if [ ${meta.single_end} == 'true' ]; then
         seqkit grep -f readID.txt $fastq > ${prefix}_${taxid}.extracted_diamond_read.fastq
     elif [ "${meta.single_end}" == 'false' ]; then
@@ -36,7 +34,6 @@ process EXTRACTCDIAMONDREADS {
     fi
 
     rm readID.txt
-    rm ${prefix}_filtered.tsv
 
     cat <<-END_VERSIONS > versions.yml
     "${task.process}":
