@@ -37,7 +37,7 @@ nextflow run nf-core/taxprofiler -profile hasta,singularity \
 
 #### Download data
 
-First we will make a directory to run the whole tutorial in.
+First we will create a directory to run the whole tutorial in.
 
 ```bash
 mkdir metaval-tutorial
