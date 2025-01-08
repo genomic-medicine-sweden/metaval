@@ -1,6 +1,6 @@
 # genomic-medicine-sweden/metaval: Tutorials
 
-This page provides a range of tutorials to give you additional guidance on setting up `genomic-medicine-sweden/metaval` runs in the wild. In this tutorial we will walk you through different workflows of the current pipeline. It assumes that you have the output files from the [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler).
+This page provides a range of tutorials to give you additional guidance on setting up `genomic-medicine-sweden/metaval`. In this tutorial we will walk you through different workflows of the current pipeline. It assumes that you have the output files from the [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler).
 
 ## Preparation
 
