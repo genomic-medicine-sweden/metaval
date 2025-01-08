@@ -126,7 +126,7 @@ nextflow run metaval/main.nf -profile singularity --input samplesheet.csv --outd
 
 #### Verify user-defined taxIDs
 
-This workflow is activated by enabling the --perform_extract_reads option and the `--taxid` option, allowing users to define a list of TaxIDs. It is not limited to viral TaxIDs and can include bacteria, fungi, archaea, parasites, or plasmids.
+This workflow is activated by enabling the ´--perform_extract_reads´ option and the `--taxid` option, allowing users to define a list of taxIDs. It is not limited to viral taxIDs and can include bacteria, fungi, archaea, parasites, or plasmids.
 
 ```bash
 git clone https://github.com/genomic-medicine-sweden/metaval.git
