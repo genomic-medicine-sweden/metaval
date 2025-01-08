@@ -76,7 +76,7 @@ curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/
 
 ### Preparing input sample sheet
 
-You provide the output files of `nf-core/taxprofiler` via a input 'sample sheet' `.csv` file.
+You provide the output files of `nf-core/taxprofiler` via a input 'samplesheet' `.csv` file.
 This is a 13-column table if you would like to run the current pipeline for three classifiers `Kraken2`,`Centrifuge` and `DIAMOND`.
 
 Open a text editor, and create a file called `samplesheet.csv`.
