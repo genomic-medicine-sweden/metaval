@@ -97,7 +97,7 @@ If you had placed your nf-core/taxprofiler output files elsewhere, you would giv
 
 #### Pathogen screening
 
-This workflow is activated by enabling the `--perform_screen_pathogens` option. A reference database of pathogen genomes and the corresponding accession and taxid map file should be prepare.
+This workflow is activated by enabling the `--perform_screen_pathogens` option. A reference database of pathogen genomes, the corresponding accessions and taxid map file should be prepared.
 
 ```bash
 git clone https://github.com/genomic-medicine-sweden/metaval.git
