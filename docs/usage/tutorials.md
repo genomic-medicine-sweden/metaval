@@ -45,7 +45,7 @@ cd metaval-tutorial/
 
 ```
 
-Reads could be raw FASTQ files, filtered FASTQ files, or FASTQ files with host genes removed. In this example, FASTQ files with host genes removed were used.
+Reads could be raw FASTQ files, filtered FASTQ files, or FASTQ files with host genomes removed. In this example, FASTQ files with host genomes removed were used.
 
 ```bash
 # reads:
