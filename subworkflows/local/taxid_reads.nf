@@ -4,6 +4,9 @@ include { EXTRACT_VIRAL_TAXID as DIAMOND_VIRAL_TAXID      } from '../../modules/
 include { KRAKENTOOLS_EXTRACTKRAKENREADS                  } from '../../modules/nf-core/krakentools/extractkrakenreads/main'
 include { EXTRACTCENTRIFUGEREADS                          } from '../../modules/local/extractcentrifugereads'
 include { EXTRACTCDIAMONDREADS                            } from '../../modules/local/extractdiamondreads'
+include { RM_EMPTY_FASTQ as RM_EMPTY_KRAKEN2              } from '../../modules/local/rm_empty_fastq'
+include { RM_EMPTY_FASTQ as RM_EMPTY_CENTRIFUGE           } from '../../modules/local/rm_empty_fastq'
+include { RM_EMPTY_FASTQ as RM_EMPTY_DIAMOND              } from '../../modules/local/rm_empty_fastq'
 
 workflow TAXID_READS {
     params.taxid
@@ -48,6 +51,12 @@ workflow TAXID_READS {
                 .map {meta,reads -> [ meta + [tool:"kraken2"], reads ]}
             ch_versions             = ch_versions.mix( KRAKENTOOLS_EXTRACTKRAKENREADS.out.versions.first() )
 
+            // Remove empty fastq files produced by extracting reads for user defined taxIDs
+            KRAKENTOOLS_EXTRACTKRAKENREADS.out.extracted_kraken2_reads
+                .collect()
+                .map { it -> file("${params.outdir}/extracted_reads/kraken2") }
+                .set { ch_kraken2_output_dir }
+            RM_EMPTY_KRAKEN2(ch_kraken2_output_dir)
         } else {
             kraken2_taxids = KRAKEN2_VIRAL_TAXID( [], kraken2_taxpasta, kraken2_report )
             kraken2_combined_input = kraken2_taxids.viral_taxid
@@ -97,6 +106,12 @@ workflow TAXID_READS {
                 .map {meta,reads -> [ meta+[tool:"centrifuge"], reads ]}
             ch_versions                = ch_versions.mix( EXTRACTCENTRIFUGEREADS.out.versions )
 
+            // Remove empty fastq files produced by extracting reads for user defined taxIDs
+            EXTRACTCENTRIFUGEREADS.out.extracted_centrifuge_reads
+                .collect()
+                .map { it -> file("${params.outdir}/extracted_reads/centrifuge") }
+                .set { ch_centrifuge_output_dir }
+            RM_EMPTY_CENTRIFUGE(ch_centrifuge_output_dir)
         } else {
             centrifuge_taxids = CENTRIFUGE_VIRAL_TAXID( [], centrifuge_taxpasta, centrifuge_report )
             centrifuge_combined_input = centrifuge_taxids.viral_taxid
@@ -143,6 +158,12 @@ workflow TAXID_READS {
                 .map {meta,reads -> [ meta+[tool:"diamond"], reads ]}
             ch_versions            = ch_versions.mix( EXTRACTCDIAMONDREADS.out.versions )
 
+            // Remove empty fastq files produced by extracting reads for user defined taxIDs
+            EXTRACTCDIAMONDREADS.out.extracted_diamond_reads
+                .collect()
+                .map { it -> file("${params.outdir}/extracted_reads/diamond") }
+                .set { ch_diamond_output_dir }
+            RM_EMPTY_DIAMOND(ch_diamond_output_dir)
         } else {
             diamond_taxids = DIAMOND_VIRAL_TAXID( params.evalue, diamond_taxpasta, diamond_tsv )
             diamond_combined_input = diamond_taxids.viral_taxid

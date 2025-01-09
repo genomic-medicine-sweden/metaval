@@ -93,11 +93,12 @@ If you had placed your nf-core/taxprofiler output files elsewhere, you would giv
 
 ### Running the pipeline
 
-**genomic-medicine-sweden/metaval** can perform three different workflows: 
+**genomic-medicine-sweden/metaval** can perform three different workflows:
+
 - pathogen screening
-- verify identified viruses 
-- verify user-defined taxIDs. 
-In this tutorial we will go through each workflow with example command lines.
+- verify identified viruses
+- verify user-defined taxIDs.
+  In this tutorial we will go through each workflow with example command lines.
 
 #### Pathogen screening
 
