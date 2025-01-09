@@ -16,7 +16,6 @@
 include { METAVAL                 } from './workflows/metaval'
 include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_metaval_pipeline'
 include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_metaval_pipeline'
-include { getGenomeAttribute      } from './subworkflows/local/utils_nfcore_metaval_pipeline'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
