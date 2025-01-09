@@ -1,12 +1,12 @@
-include { EXTRACT_VIRAL_TAXID as KRAKEN2_VIRAL_TAXID      } from '../../modules/local/extract_viral_taxid'
-include { EXTRACT_VIRAL_TAXID as CENTRIFUGE_VIRAL_TAXID   } from '../../modules/local/extract_viral_taxid'
-include { EXTRACT_VIRAL_TAXID as DIAMOND_VIRAL_TAXID      } from '../../modules/local/extract_viral_taxid'
+include { EXTRACT_VIRAL_TAXID as KRAKEN2_VIRAL_TAXID      } from '../../modules/local/extract_viral_taxid/main'
+include { EXTRACT_VIRAL_TAXID as CENTRIFUGE_VIRAL_TAXID   } from '../../modules/local/extract_viral_taxid/main'
+include { EXTRACT_VIRAL_TAXID as DIAMOND_VIRAL_TAXID      } from '../../modules/local/extract_viral_taxid/main'
 include { KRAKENTOOLS_EXTRACTKRAKENREADS                  } from '../../modules/nf-core/krakentools/extractkrakenreads/main'
-include { EXTRACTCENTRIFUGEREADS                          } from '../../modules/local/extractcentrifugereads'
-include { EXTRACTCDIAMONDREADS                            } from '../../modules/local/extractdiamondreads'
-include { RM_EMPTY_FASTQ as RM_EMPTY_KRAKEN2              } from '../../modules/local/rm_empty_fastq'
-include { RM_EMPTY_FASTQ as RM_EMPTY_CENTRIFUGE           } from '../../modules/local/rm_empty_fastq'
-include { RM_EMPTY_FASTQ as RM_EMPTY_DIAMOND              } from '../../modules/local/rm_empty_fastq'
+include { EXTRACTCENTRIFUGEREADS                          } from '../../modules/local/extractcentrifugereads/main'
+include { EXTRACTCDIAMONDREADS                            } from '../../modules/local/extractdiamondreads/main'
+include { RM_EMPTY_FASTQ as RM_EMPTY_KRAKEN2              } from '../../modules/local/rm_empty_fastq/main'
+include { RM_EMPTY_FASTQ as RM_EMPTY_CENTRIFUGE           } from '../../modules/local/rm_empty_fastq/main'
+include { RM_EMPTY_FASTQ as RM_EMPTY_DIAMOND              } from '../../modules/local/rm_empty_fastq/main'
 
 workflow TAXID_READS {
     params.taxid
@@ -80,7 +80,6 @@ workflow TAXID_READS {
             )
             ch_taxid_reads_kraken2  = KRAKENTOOLS_EXTRACTKRAKENREADS.out.extracted_kraken2_reads
                 .map {meta,reads -> [ meta+[tool: "kraken2"]+ [taxid: meta.taxid], reads ]}
-            ch_versions             = ch_versions.mix( KRAKEN2_VIRAL_TAXID.out.versions.first(), KRAKENTOOLS_EXTRACTKRAKENREADS.out.versions.first() )
         }
         ch_taxid_reads              = ch_taxid_reads.mix(ch_taxid_reads_kraken2)
     }
@@ -132,7 +131,6 @@ workflow TAXID_READS {
             )
             ch_taxid_reads_centrifuge  = EXTRACTCENTRIFUGEREADS.out.extracted_centrifuge_reads
                 .map {meta,reads -> [ meta+[tool:"centrifuge"], reads ]}
-            ch_versions                = ch_versions.mix( CENTRIFUGE_VIRAL_TAXID.out.versions.first(), EXTRACTCENTRIFUGEREADS.out.versions )
         }
         ch_taxid_reads             = ch_taxid_reads.mix(ch_taxid_reads_centrifuge)
     }
@@ -179,13 +177,11 @@ workflow TAXID_READS {
 
             EXTRACTCDIAMONDREADS(
                 diamond_combined_input.taxid,
-                params.evalue,
                 diamond_combined_input.diamond_tsv,
                 diamond_combined_input.reads,
             )
             ch_taxid_reads_diamond = EXTRACTCDIAMONDREADS.out.extracted_diamond_reads
                 .map {meta,reads -> [ meta+[tool:"diamond"], reads ]}
-            ch_versions            = ch_versions.mix( DIAMOND_VIRAL_TAXID.out.versions.first(), EXTRACTCDIAMONDREADS.out.versions )
         }
         ch_taxid_reads         = ch_taxid_reads.mix(ch_taxid_reads_diamond)
     }
