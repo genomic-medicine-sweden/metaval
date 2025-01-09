@@ -27,8 +27,6 @@ process EXTRACT_VIRAL_TAXID {
             awk '\$3 < ${evalue}' ${report} | cut -f 2 | uniq > detected_taxid.txt
             grep -F -w -f taxpasta_viral_taxid.txt detected_taxid.txt | uniq > ${prefix}_viral_taxids.tsv
         fi
-    else
-        echo "No viral taxids found." > "no_viral_taxid.txt"
     fi
     """
 }

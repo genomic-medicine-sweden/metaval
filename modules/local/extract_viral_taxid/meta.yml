@@ -10,7 +10,7 @@ keywards:
 input:
   - evalue:
       type: ["number", "integer"]
-      description: A e-vaule threshold to filter the diamond classification result
+      description: An e-value threshold to filter the diamond classification result
   - - meta:
         type: map
         description: |

@@ -2,7 +2,7 @@ name: extractdiamondreads
 description: Use a custom python script to extract reads with specified taxonomic ID from the DIAMOND classification output
 keywards:
   - taxid
-  - DIAMOND/blastx
+  - DIAMOND
   - tsv
   - fastq
   - extract_reads
@@ -10,6 +10,9 @@ input:
   - taxid:
       type: integer
       description: A taxonomic ID to extract the reads
+  - evalue:
+      type: ["number", "integer"]
+      description: An e-value threshold to filter the diamond classification result
   - meta:
       type: map
       description: |
