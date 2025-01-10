@@ -47,7 +47,7 @@ process MEDAKA_PARALLEL {
             # Medaka can do with 2 threads and may need some extra for IO
 
     sort -nrk2 \${assembly}.fai \\
-        | cut -f1 | xargs -P \$((${task.cpus}/2-4)) \\
+        | cut -f1 | xargs -P ${task.cpus} \\
         -n1 \\
         -I{} \\
         medaka inference ${prefix}_calls_to_draft.bam \\
@@ -58,7 +58,7 @@ process MEDAKA_PARALLEL {
 
     # In medaka >= 2.0 this step is medaka sequence, in earlier versions it is stitch
     medaka sequence \\
-        --threads \$((${task.cpus}-4)) \\
+        --threads ${task.cpus} \\
         ${args3} \\
         inference/*.hdf \$assembly ${prefix}.fa
 
