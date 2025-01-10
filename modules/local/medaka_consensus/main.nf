@@ -12,7 +12,7 @@ process MEDAKA_PARALLEL {
     tuple val(meta), path(reads), path(assembly)
 
     output:
-    tuple val(meta), path("*_medaka.fa.gz"), emit: assembly
+    tuple val(meta), path("*.fa.gz"), emit: assembly
     path "versions.yml", emit: versions
 
     when:
