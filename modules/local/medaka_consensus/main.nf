@@ -24,6 +24,9 @@ process MEDAKA_PARALLEL {
     def args3 = task.ext.args3 ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
+    mkdir -p tmp
+    export TMPDIR=./tmp
+
     assembly=${assembly}
     if [[ ${assembly} == *.gz ]]; then
         gunzip ${assembly}
