@@ -33,7 +33,7 @@ process MEDAKA_PARALLEL {
     mini_align \\
         -i ${reads} \\
         -r \$assembly \\
-        -P -m \\
+        -m \\
         -t $task.cpus \\
         -p ${prefix}_calls_to_draft \\
         ${args1}
