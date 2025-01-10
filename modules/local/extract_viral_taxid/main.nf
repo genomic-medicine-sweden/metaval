@@ -24,8 +24,8 @@ process EXTRACT_VIRAL_TAXID {
             awk -F'\t' '\$3 != 0 {print \$5}' ${report} > detected_taxid.txt
             grep -F -w -f taxpasta_viral_taxid.txt detected_taxid.txt > ${prefix}_viral_taxids.tsv
         elif [[ "${meta.tool}" == "diamond" ]]; then
-            awk '\$3 < ${evalue}' ${report} | cut -f 2 | uniq > detected_taxid.txt
-            grep -F -w -f taxpasta_viral_taxid.txt detected_taxid.txt | uniq > ${prefix}_viral_taxids.tsv
+            awk '\$3 < ${evalue}' ${report} | cut -f 2 | sort | uniq > detected_taxid.txt
+            grep -F -w -f taxpasta_viral_taxid.txt detected_taxid.txt | sort | uniq > ${prefix}_viral_taxids.tsv
         fi
     fi
     """
