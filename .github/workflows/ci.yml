@@ -37,6 +37,7 @@ jobs:
           - "test"
           - "test_denovo"
           - "test_screenpathogen"
+          - "test_consensus_samtools"
           - "test_taxid"
           - "test_virus"
         isMaster:
