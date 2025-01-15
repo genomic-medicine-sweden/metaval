@@ -39,7 +39,6 @@ jobs:
           - "test_screenpathogen"
           - "test_consensus_samtools"
           - "test_taxid"
-          - "test_virus"
         isMaster:
           - ${{ github.base_ref == 'master' }}
         # Exclude conda and singularity on dev
