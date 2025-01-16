@@ -1,6 +1,6 @@
 {
-    "name": "genomic-medicine-sweden/meta-val",
-    "homePage": "https://github.com/genomic-medicine-sweden/meta-val",
+    "name": "genomic-medicine-sweden/metaval",
+    "homePage": "https://github.com/genomic-medicine-sweden/metaval",
     "repos": {
         "https://github.com/nf-core/modules.git": {
             "modules": {
@@ -22,17 +22,13 @@
                     },
                     "flye": {
                         "branch": "master",
-                        "git_sha": "666652151335353eef2fcd58880bcef5bc2928e1",
-                        "installed_by": ["modules"]
+                        "git_sha": "ce1a66562156776bb0dd1c1bb5640d368dadd4e6",
+                        "installed_by": ["modules"],
+                        "patch": "modules/nf-core/flye/flye.diff"
                     },
                     "krakentools/extractkrakenreads": {
                         "branch": "master",
                         "git_sha": "77decb880af3f0ea6d22b2383c3f1ed86aac4aa2",
-                        "installed_by": ["modules"]
-                    },
-                    "medaka": {
-                        "branch": "master",
-                        "git_sha": "666652151335353eef2fcd58880bcef5bc2928e1",
                         "installed_by": ["modules"]
                     },
                     "minimap2/align": {

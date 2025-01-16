@@ -1,10 +1,11 @@
 lint:
   files_exist:
-    - assets/nf-core-meta-val_logo_light.png
-    - docs/images/nf-core-meta-val_logo_light.png
-    - docs/images/nf-core-meta-val_logo_dark.png
+    - assets/nf-core-metaval_logo_light.png
+    - docs/images/nf-core-metaval_logo_light.png
+    - docs/images/nf-core-metaval_logo_dark.png
     - assets/samplesheet.csv
     - .github/ISSUE_TEMPLATE/config.yml
+    - conf/test_full.config
   files_unchanged:
     - assets/sendmail_template.txt
     - .github/CONTRIBUTING.md

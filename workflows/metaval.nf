@@ -6,12 +6,9 @@
 
 // Extract reads of taxIDs
 include { KRAKENTOOLS_EXTRACTKRAKENREADS                        } from '../modules/nf-core/krakentools/extractkrakenreads/main'
-include { EXTRACTCENTRIFUGEREADS                                } from '../modules/local/extractcentrifugereads'
-include { EXTRACTCDIAMONDREADS                                  } from '../modules/local/extractdiamondreads'
+include { EXTRACTCENTRIFUGEREADS                                } from '../modules/local/extractcentrifugereads/main'
+include { EXTRACTCDIAMONDREADS                                  } from '../modules/local/extractdiamondreads/main'
 include { TAXID_READS                                           } from '../subworkflows/local/taxid_reads'
-include { RM_EMPTY_FASTQ as RM_EMPTY_KRAKEN2                    } from '../modules/local/rm_empty_fastq'
-include { RM_EMPTY_FASTQ as RM_EMPTY_CENTRIFUGE                 } from '../modules/local/rm_empty_fastq'
-include { RM_EMPTY_FASTQ as RM_EMPTY_DIAMOND                    } from '../modules/local/rm_empty_fastq'
 
 // De novo for extracted taxIDs reads
 include { SPADES                                                } from '../modules/nf-core/spades/main'
@@ -96,16 +93,6 @@ workflow METAVAL {
         ch_extract_reads.diamond_tsv,
         )
         ch_versions            = ch_versions.mix( TAXID_READS.out.versions )
-        // Remove empty fastq files produced by extracting reads for user defined taxIDs
-        if (params.extract_kraken2_reads && params.taxid) {
-            RM_EMPTY_KRAKEN2(file("${params.outdir}/extracted_reads/kraken2"))
-        }
-        if (params.extract_centrifuge_reads && params.taxid) {
-            RM_EMPTY_CENTRIFUGE(file("${params.outdir}/extracted_reads/centrifuge"))
-        }
-        if (params.extract_diamond_reads && params.taxid) {
-            RM_EMPTY_DIAMOND(file("${params.outdir}/extracted_reads/diamond"))
-        }
 
         // SUBWORKFLOW: DE NOVO
 
@@ -145,15 +132,6 @@ workflow METAVAL {
             FLYE( ch_denovo_input.longreads_denovo, params.flye_mode )
             ch_versions             = ch_versions.mix( FLYE.out.versions.first() )
         }
-
-        // Warning message for samples that failed to run de novo assembly due to an insufficient number of reads
-        ch_taxid_reads_result.failed
-            .map { meta, reads -> [ meta.id ] }
-            .collect()
-            .subscribe {
-                samples = it.join("\n")
-                log.warn "The following samples skipped de novo assembly due to too few reads (<$params.min_read_counts). Run BLASTx/BLASTn directly with all reads.: \n$samples"
-            }
 
         // BLAST
 
