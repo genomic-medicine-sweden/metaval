@@ -4,11 +4,11 @@ nextflow_pipeline {
     script "../main.nf"
     tag "pipeline"
     tag "gms_metaval"
-    tag "test_taxid"
-    profile "test_taxid"
+    tag "test_screenpathogen"
+    profile "test_screenpathogen"
 
 
-    test("-profile test_taxid") {
+    test("-profile test_screenpathogen") {
 
         when {
             params {
@@ -29,8 +29,8 @@ nextflow_pipeline {
             // If a directory is fully stable, you can drop `stable_name_*`
             // If a directory contains no BAMs, you can drop `bams_*`
 
-            // Generate with: nf-test test --tag test_taxid --profile docker,test_taxid --verbose --debug --update-snapshot
-            // Test with:     nf-test test --tag test_taxid --profile docker,test_taxid
+            // Generate with: nf-test test --tag test_screenpathogen --profile docker,test_screenpathogen --verbose --debug --update-snapshot
+            // Test with:     nf-test test --tag test_screenpathogen --profile docker,test_screenpathogen
 
             //////////////////////
             // DEFINE VARIABLES //
@@ -54,14 +54,6 @@ nextflow_pipeline {
             // Check that no files are missing/added
             // Command legend:                                                  Result directory to index    , includeDir: include dirs?, ignore: exclude patterns                   , ignoreFile: exclude pattern list, include: include patterns
             def stable_name_all                          = getAllFilesFromDir("$outputDir/"                          , relative: true, includeDir: false, ignore: ['pipeline_info/*.{html,json,txt}'], ignoreFile: null, include: ['*', '**/*'])
-
-            // BLAST
-            def stable_content_blast                     = getAllFilesFromDir("$outputDir/blast"                     , relative: true, includeDir: false, ignore: ['**/*/*/*.txt']                   , ignoreFile: null, include: ['*','**/*'])
-            def stable_name_blast                        = getAllFilesFromDir("$outputDir/blast"                     , relative: true, includeDir: false, ignore: null                               , ignoreFile: null, include: ['**/*/*/*.txt'])
-
-            // FastQC
-            def stable_content_fastqc                    = getAllFilesFromDir("$outputDir/fastqc"                    , relative: true, includeDir: false, ignore: ['input/*_fastqc.{html,zip}']      , ignoreFile: null, include: ['*', '**/*'])
-            def stable_name_fastqc                       = getAllFilesFromDir("$outputDir/fastqc"                    , relative: true, includeDir: false, ignore: null                               , ignoreFile: null, include: ['input/*_fastqc.{html,zip}'])
 
             // MultiQC
             def stable_content_multiqc                   = getAllFilesFromDir("$outputDir/multiqc"                   , relative: true, includeDir: false, ignore: unstable_patterns_multiqc          , ignoreFile: null, include: ['*', '**/*'])
@@ -91,10 +83,6 @@ nextflow_pipeline {
             def stable_content_pathogens_pathogen_reads  = getAllFilesFromDir("$outputDir/pathogens/pathogen_reads", relative: true, includeDir: false, ignore: ['**/*/*.{fasta.gz,bam,bam.bai}']    , ignoreFile: null, include: ['*', '**/*'])
             def stable_name_pathogens_pathogen_reads     = getAllFilesFromDir("$outputDir/pathogens/pathogen_reads", relative: true, includeDir: false, ignore: null                                 , ignoreFile: null, include: ['**/*/*.{fasta.gz,bam,bam.bai}'])
 
-            // Spades
-            def stable_content_spades                    = getAllFilesFromDir("$outputDir/spades"                  , relative: true, includeDir: false, ignore: ['**/{centrifuge,diamond,kraken2}/*'], ignoreFile: null, include: ['*', '**/*'])
-            def stable_name_spades                       = getAllFilesFromDir("$outputDir/spades"                  , relative: true, includeDir: false, ignore: null                                 , ignoreFile: null, include: ['**/{centrifuge,diamond,kraken2}/*'])
-
             // BAM filer header
             def bam_files_bowtie2                        = getAllFilesFromDir( "$outputDir/pathogens/bowtie2/align", relative: false, includeDir: false, ignore: ['**/*.bai']                         , ignoreFile: null, include: ['**/*.bam'])
             def bam_files_minimap2                       = getAllFilesFromDir( "$outputDir/pathogens/bowtie2/align", relative: false, includeDir: false, ignore: ['**/*.bai']                         , ignoreFile: null, include: ['**/*.bam'])
@@ -115,16 +103,13 @@ nextflow_pipeline {
                 // Checking changes to contents of each section
                 // NOTE: Keep the order of the sections in the alphanumeric order of the output directories.
                 //    Each section should first check stable_content, stable_name second (if applicable).
-                { assert snapshot ( stable_content_blast                   , stable_name_blast                   ).match("blast" ) },
-                { assert snapshot ( stable_content_fastqc                  , stable_name_fastqc                  ).match("fastqc"  ) },
                 { assert snapshot ( stable_content_multiqc                 , stable_name_multiqc                 ).match("multiqc" ) },
                 { assert snapshot ( stable_content_pathogens_blastn        , stable_name_pathogens_blastn        ).match("pathogens/blast/blastn")},
                 { assert snapshot ( stable_content_pathogens_blastx        , stable_name_pathogens_blastx        ).match("pathogens/blast/blastx")},
                 { assert snapshot ( stable_content_pathogens_bowtie2       , stable_name_pathogens_bowtie2       ).match("pathogens/bowtie2/")},
                 { assert snapshot ( stable_content_pathogens_consensus     , stable_name_pathogens_consensus     ).match("pathogens/consensus")},
                 { assert snapshot ( stable_content_pathogens_minimap2      , stable_name_pathogens_minimap2      ).match("pathogens/minimap2")},
-                { assert snapshot ( stable_content_pathogens_pathogen_reads, stable_name_pathogens_pathogen_reads).match("pathogens/pathogen_reads") },
-                { assert snapshot ( stable_content_spades                  , stable_name_spades                  ).match("spades") },
+                { assert snapshot ( stable_content_pathogens_pathogen_reads, stable_name_pathogens_pathogen_reads).match("pathogens/pathogen_reads")},
                 //check the header of bam file
                 { assert snapshot( bam_files.collect{ bam(it).getHeaderMD5()}).match("Header MD5")}
 

@@ -175,9 +175,19 @@ workflow METAVAL {
 
         // BLAST
         // Prepare the query fasta file
-        SEQKIT_FQ2FA ( ch_taxid_reads_filter.blast )
-        ch_blast_query = SEQKIT_FQ2FA.out.fasta.mix( SPADES.out.contigs, FLYE.out.fasta )
-        ch_versions = ch_versions.mix( SEQKIT_FQ2FA.out.versions.first() )
+        if ( (!params.skip_blastn) || (!params.skip_blastx)) {
+            SEQKIT_FQ2FA ( ch_taxid_reads_filter.blast )
+            // Build ch_blast_query fasta file
+            ch_blast_query = SEQKIT_FQ2FA.out.fasta
+            if ( params.perform_shortread_denovo ) {
+                ch_blast_query = ch_blast_query.mix( SPADES.out.contigs )
+            }
+            if ( params.perform_longread_denovo ) {
+                ch_blast_query = ch_blast_query.mix( FLYE.out.fasta )
+            }
+            ch_versions = ch_versions.mix( SEQKIT_FQ2FA.out.versions.first() )
+        }
+
         // BLASTN
         if ( !params.skip_blastn ) {
             BLAST_BLASTN ( ch_blast_query, ch_blastn_db )
@@ -239,7 +249,7 @@ workflow METAVAL {
         ch_versions = ch_versions.mix( TAXID_BAM_FASTA_LONGREAD.out.versions )
 
         // Calling consensus: BAM file with the number of mapped reads > params.min_read_counts
-        if (params.perform_shortread_consensus) {
+        if ( params.perform_shortread_consensus ) {
             SHORTREAD_SAMTOOLS_CONSENSUS ( TAXID_BAM_FASTA_SHORTREAD.out.taxid_bam )
             ch_versions = ch_versions.mix(SHORTREAD_SAMTOOLS_CONSENSUS.out.versions)
             // Remove consensus sequences shorter than params.consensus_min_bases (default: 50 bp)
@@ -255,22 +265,26 @@ workflow METAVAL {
         }
         // BLAST
         // For pair-end reads, only use read1 for BLAST
-        ch_shortread_pathogen_blast_read1 = TAXID_BAM_FASTA_SHORTREAD.out.taxid_fasta
-            .filter { meta, reads ->
-                reads[0].countFasta() >= 1 && reads[1].countFasta() >= 1
-            }
-            .map { meta, reads -> [ meta, reads[0]] }
+        if ( (!params.skip_blastn) || (!params.skip_blastx) ) {
+            ch_shortread_pathogen_blast_read1 = TAXID_BAM_FASTA_SHORTREAD.out.taxid_fasta
+                .filter { meta, reads ->
+                    reads[0].countFasta() >= 1 && reads[1].countFasta() >= 1
+                }
+                .map { meta, reads -> [ meta, reads[0]] }
+            ch_longread_pathogen_blast = TAXID_BAM_FASTA_LONGREAD.out.taxid_fasta
+                .filter { meta, reads ->
+                    reads.countFasta() >= 1
+                }
 
-        ch_longread_pathogen_blast = TAXID_BAM_FASTA_LONGREAD.out.taxid_fasta
-            .filter { meta, reads ->
-                reads.countFasta() >= 1
+            // Build ch_blast_query_pathogen query fasta
+            ch_blast_query_pathogen = ch_shortread_pathogen_blast_read1.mix( ch_longread_pathogen_blast )
+            if ( parans.perform_shortread_consensus ) {
+                ch_blast_query_pathogen = ch_blast_query_pathogen.mix( FILTER_CONSENSUS_SHORTREAD.out.filtered_consensus.ifEmpty([]) )
             }
-
-        ch_blast_query_pathogen = ch_shortread_pathogen_blast_read1.mix(
-            ch_longread_pathogen_blast,
-            FILTER_CONSENSUS_SHORTREAD.out.filtered_consensus.ifEmpty([]),
-            FILTER_CONSENSUS_LONGREAD.out.filtered_consensus.ifEmpty([])
-        )
+            if ( params.perform_longread_consensus ) {
+                ch_blast_query_pathogen = ch_blast_query_pathogen.mix( FILTER_CONSENSUS_LONGREAD.out.filtered_consensus.ifEmpty([]) )
+            }
+        }
 
         if (!params.skip_blastn) {
             // BLASTN
