@@ -278,7 +278,7 @@ workflow METAVAL {
 
             // Build ch_blast_query_pathogen query fasta
             ch_blast_query_pathogen = ch_shortread_pathogen_blast_read1.mix( ch_longread_pathogen_blast )
-            if ( parans.perform_shortread_consensus ) {
+            if ( params.perform_shortread_consensus ) {
                 ch_blast_query_pathogen = ch_blast_query_pathogen.mix( FILTER_CONSENSUS_SHORTREAD.out.filtered_consensus.ifEmpty([]) )
             }
             if ( params.perform_longread_consensus ) {
