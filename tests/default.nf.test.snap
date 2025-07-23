@@ -135,7 +135,6 @@
                 "multiqc/multiqc_data/samtools-stats-dp.txt",
                 "multiqc/multiqc_data/samtools_alignment_plot.txt",
                 "multiqc/multiqc_report.html",
-                "pathogens/blast/blastn/SRR13439790_335341_blast.txt",
                 "pathogens/blast/blastn/SRR13439790_9606_blast.txt",
                 "pathogens/blast/blastn/SRR13439790_9606_blast_filtered.txt",
                 "pathogens/blast/blastn/SRR13439790_9606_blast_filtered_summary.txt",
@@ -143,7 +142,6 @@
                 "pathogens/blast/blastn/SRR13439799_211044_blast_filtered.txt",
                 "pathogens/blast/blastn/SRR13439799_211044_blast_filtered_summary.txt",
                 "pathogens/blast/blastn/SRR13439802_9606_blast.txt",
-                "pathogens/blast/blastx/SRR13439790_335341_blastx.txt",
                 "pathogens/blast/blastx/SRR13439790_9606_blastx.txt",
                 "pathogens/blast/blastx/SRR13439799_211044_blastx.txt",
                 "pathogens/blast/blastx/SRR13439799_211044_blastx_filtered.txt",
@@ -165,14 +163,8 @@
                 "pathogens/minimap2/align/SRR13439799_aligned_pathogens_genome_sorted.bam",
                 "pathogens/minimap2/align/SRR13439799_aligned_pathogens_genome_sorted.bam.bai",
                 "pathogens/minimap2/index/reference.mmi",
-                "pathogens/pathogen_reads/blast_input/SRR13439790_335341_1.fasta.gz",
-                "pathogens/pathogen_reads/blast_input/SRR13439790_335341_2.fasta.gz",
                 "pathogens/pathogen_reads/blast_input/SRR13439799_488241_1.fasta.gz",
                 "pathogens/pathogen_reads/blast_input/SRR13439799_9606_1.fasta.gz",
-                "pathogens/pathogen_reads/blast_input/SRR13439802_335341_1.fasta.gz",
-                "pathogens/pathogen_reads/blast_input/SRR13439802_335341_2.fasta.gz",
-                "pathogens/pathogen_reads/blast_input/SRR13439813_335341_1.fasta.gz",
-                "pathogens/pathogen_reads/blast_input/SRR13439813_335341_2.fasta.gz",
                 "pathogens/pathogen_reads/consensus_input/SRR13439790_9606_sorted.bam",
                 "pathogens/pathogen_reads/consensus_input/SRR13439790_9606_sorted.bam.bai",
                 "pathogens/pathogen_reads/consensus_input/SRR13439799_211044_sorted.bam",
@@ -203,7 +195,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-23T12:09:19.975618919"
+        "timestamp": "2025-07-23T13:16:37.312082492"
     },
     "pathogens/minimap2/align": {
         "content": [
@@ -213,7 +205,7 @@
                 "index/reference.mmi"
             ],
             [
-                
+
             ]
         ],
         "meta": {
@@ -228,7 +220,7 @@
                 "SRR13439799_211044_medaka.fa.gz"
             ],
             [
-                
+
             ]
         ],
         "meta": {
@@ -254,7 +246,7 @@
                 "build/bowtie2/reference.rev.2.bt2l"
             ],
             [
-                
+
             ]
         ],
         "meta": {
@@ -266,7 +258,6 @@
     "pathogens/blast/blastx": {
         "content": [
             [
-                "SRR13439790_335341_blastx.txt",
                 "SRR13439790_9606_blastx.txt",
                 "SRR13439799_211044_blastx.txt",
                 "SRR13439799_211044_blastx_filtered.txt",
@@ -274,14 +265,14 @@
                 "SRR13439802_9606_blastx.txt"
             ],
             [
-                
+
             ]
         ],
         "meta": {
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-23T12:09:20.046283747"
+        "timestamp": "2025-07-23T13:16:37.39164889"
     },
     "blast": {
         "content": [
@@ -350,7 +341,7 @@
                 "blastx/kraken2/SRR13439813_878220_blastx_filtered_summary.txt"
             ],
             [
-                
+
             ]
         ],
         "meta": {
@@ -362,14 +353,8 @@
     "pathogens/pathogen_reads": {
         "content": [
             [
-                "blast_input/SRR13439790_335341_1.fasta.gz",
-                "blast_input/SRR13439790_335341_2.fasta.gz",
                 "blast_input/SRR13439799_488241_1.fasta.gz",
                 "blast_input/SRR13439799_9606_1.fasta.gz",
-                "blast_input/SRR13439802_335341_1.fasta.gz",
-                "blast_input/SRR13439802_335341_2.fasta.gz",
-                "blast_input/SRR13439813_335341_1.fasta.gz",
-                "blast_input/SRR13439813_335341_2.fasta.gz",
                 "consensus_input/SRR13439790_9606_sorted.bam",
                 "consensus_input/SRR13439790_9606_sorted.bam.bai",
                 "consensus_input/SRR13439799_211044_sorted.bam",
@@ -380,18 +365,18 @@
                 "consensus_input/SRR13439813_9606_sorted.bam.bai"
             ],
             [
-                
+
             ]
         ],
         "meta": {
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-23T12:09:20.07410031"
+        "timestamp": "2025-07-23T13:16:37.431018241"
     },
     "-profile test_taxid": {
         "content": [
-            181,
+            170,
             {
                 "BLAST_BLASTN": {
                     "blast": "2.16.0+"
@@ -507,12 +492,12 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-23T12:09:19.915591048"
+        "timestamp": "2025-07-23T13:16:37.204477367"
     },
     "Header MD5": {
         "content": [
             [
-                
+
             ]
         ],
         "meta": {
@@ -564,7 +549,7 @@
                 "SRR13439813_9606_sorted.bam.bai:md5,2621e60f5ba1d1e000741fb8b629d71d"
             ],
             [
-                
+
             ]
         ],
         "meta": {
@@ -576,7 +561,7 @@
     "fastqc": {
         "content": [
             [
-                
+
             ],
             [
                 "input/SRR13439790_1920753_diamond_1_fastqc.html",
@@ -610,7 +595,6 @@
     "pathogens/blast/blastn": {
         "content": [
             [
-                "SRR13439790_335341_blast.txt",
                 "SRR13439790_9606_blast.txt",
                 "SRR13439790_9606_blast_filtered.txt",
                 "SRR13439790_9606_blast_filtered_summary.txt",
@@ -620,14 +604,14 @@
                 "SRR13439802_9606_blast.txt"
             ],
             [
-                
+
             ]
         ],
         "meta": {
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-23T12:09:20.009977142"
+        "timestamp": "2025-07-23T13:16:37.355341499"
     },
     "pathogens/minimap2": {
         "content": [
@@ -637,7 +621,7 @@
                 "index/reference.mmi"
             ],
             [
-                
+
             ]
         ],
         "meta": {
@@ -666,7 +650,7 @@
                 "kraken2/SRR13439813_878220.warnings.log"
             ],
             [
-                
+
             ]
         ],
         "meta": {
@@ -692,7 +676,7 @@
                 "build/bowtie2/reference.rev.2.bt2l"
             ],
             [
-                
+
             ]
         ],
         "meta": {
@@ -737,7 +721,7 @@
                 "multiqc_report.html"
             ],
             [
-                
+
             ]
         ],
         "meta": {
