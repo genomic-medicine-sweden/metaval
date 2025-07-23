@@ -126,8 +126,9 @@ nextflow_pipeline {
                 { assert snapshot ( stable_content_pathogens_pathogen_reads, stable_name_pathogens_pathogen_reads).match("pathogens/pathogen_reads") },
                 { assert snapshot ( stable_content_spades                  , stable_name_spades                  ).match("spades") },
                 //check the header of bam file
-                { assert snapshot( bam_files.collect{ bam(it).getHeaderMD5()}).match("Header MD5")}
-
+                { assert snapshot( bam_files.collect{ bam(it).getHeaderMD5()}).match("Header MD5")},
+                // Versions
+                { assert new File("$outputDir/pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml").exists() },
             )
         }
     }

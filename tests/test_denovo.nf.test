@@ -84,8 +84,9 @@ nextflow_pipeline {
                 //    Each section should first check stable_content, stable_name second (if applicable).
                 { assert snapshot ( stable_content_fastqc                  , stable_name_fastqc                  ).match("fastqc"  ) },
                 { assert snapshot ( stable_content_multiqc                 , stable_name_multiqc                 ).match("multiqc" ) },
-                { assert snapshot ( stable_content_spades                  , stable_name_spades                  ).match("spades") }
-
+                { assert snapshot ( stable_content_spades                  , stable_name_spades                  ).match("spades") },
+                // Versions
+                { assert new File("$outputDir/pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml").exists() },
             )
         }
     }

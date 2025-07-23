@@ -113,8 +113,9 @@ nextflow_pipeline {
                 //check the header of bam file
                 { assert snapshot( bam_files.collect{ bam(it).getHeaderMD5()}).match("Header MD5") },
                 // Check the consensus sequence
-                { assert path("$outputDir/pathogens/consensus/SRR13439799_211044_samtools.fasta").readLines().any { l -> l.contains('>NC_002023.1')} }
-
+                { assert path("$outputDir/pathogens/consensus/SRR13439799_211044_samtools.fasta").readLines().any { l -> l.contains('>NC_002023.1')} },
+                // Versions
+                { assert new File("$outputDir/pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml").exists() },
             )
         }
     }

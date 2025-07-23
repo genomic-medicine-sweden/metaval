@@ -56,10 +56,8 @@ nextflow_pipeline {
             def stable_name_all                          = getAllFilesFromDir("$outputDir/"                          , relative: true, includeDir: false, ignore: ['pipeline_info/*.{html,json,txt}'], ignoreFile: null, include: ['*', '**/*'])
 
             // MultiQC
-            //def stable_content_multiqc                   = getAllFilesFromDir("$outputDir/multiqc"                   , relative: true, includeDir: false, ignore: unstable_patterns_multiqc          , ignoreFile: null, include: ['*', '**/*'])
-            //def stable_name_multiqc                      = getAllFilesFromDir("$outputDir/multiqc"                   , relative: true, includeDir: false, ignore:  null                              , ignoreFile: null, include: unstable_patterns_multiqc)
-            // MultiQC
-            def stable_name_multiqc             = getAllFilesFromDir("$outputDir/multiqc"           , includeDir: false         , ignore: null                    , ignoreFile: null                , include: ['*', '**/*'] )
+            def stable_content_multiqc                   = getAllFilesFromDir("$outputDir/multiqc"                   , relative: true, includeDir: false, ignore: unstable_patterns_multiqc          , ignoreFile: null, include: ['*', '**/*'])
+            def stable_name_multiqc                      = getAllFilesFromDir("$outputDir/multiqc"                   , relative: true, includeDir: false, ignore:  null                              , ignoreFile: null, include: unstable_patterns_multiqc)
 
             // Pathogens/blast/blastn
             def stable_content_pathogens_blastn          = getAllFilesFromDir("$outputDir/pathogens/blast/blastn"    , relative: true, includeDir: false, ignore: ['**/*.txt']                       , ignoreFile: null, include: ['*', '**/*'])
@@ -105,8 +103,7 @@ nextflow_pipeline {
                 // Checking changes to contents of each section
                 // NOTE: Keep the order of the sections in the alphanumeric order of the output directories.
                 //    Each section should first check stable_content, stable_name second (if applicable).
-                //{ assert snapshot ( stable_content_multiqc                 , stable_name_multiqc                 ).match("multiqc" ) },
-                { assert snapshot( stable_name_multiqc).match("multiqc")},
+                { assert snapshot ( stable_content_multiqc                 , stable_name_multiqc                 ).match("multiqc" ) },
                 { assert snapshot ( stable_content_pathogens_blastn        , stable_name_pathogens_blastn        ).match("pathogens/blast/blastn")},
                 { assert snapshot ( stable_content_pathogens_blastx        , stable_name_pathogens_blastx        ).match("pathogens/blast/blastx")},
                 { assert snapshot ( stable_content_pathogens_bowtie2       , stable_name_pathogens_bowtie2       ).match("pathogens/bowtie2/")},
