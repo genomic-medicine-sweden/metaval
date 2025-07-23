@@ -29,8 +29,8 @@ nextflow_pipeline {
             // If a directory is fully stable, you can drop `stable_name_*`
             // If a directory contains no BAMs, you can drop `bams_*`
 
-            // Generate with: nf-test test --tag test_extract_kraken2_reads --profile docker,test_extract_kraken2_reads --verbose --debug --update-snapshot
-            // Test with:     nf-test test --tag test_extract_kraken2_reads --profile docker,test_extract_kraken2_reads
+            // Generate with: nf-test test --tag test_extract_kraken2_reads --profile=+singularity --verbose --debug --update-snapshot
+            // Test with:     nf-test test --tag test_extract_kraken2_reads --profile=+singularity
 
             //////////////////////
             // DEFINE VARIABLES //
