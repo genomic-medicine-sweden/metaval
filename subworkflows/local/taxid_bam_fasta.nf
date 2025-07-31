@@ -19,7 +19,6 @@ workflow TAXID_BAM_FASTA {
 
     main:
     ch_versions       = Channel.empty()
-    ch_multiqc_files  = Channel.empty()
 
     // Combine BAM and BAI files
     input_bam = bam.join(bai, by: 0)

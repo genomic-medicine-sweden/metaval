@@ -38,6 +38,11 @@ def filter_summary_blast(blast_header, input, filtered_output, summary_output, m
     # Remove entries with missing scientific name
     filtered = filtered[filtered["ssciname"].notna()]
 
+    # Check if any blast hits pass the filtering threshold
+    if filtered.empty:
+        print("No BLAST hits pass the filtering threshold. Output files not created.")
+        return
+
     # Save filtered DataFrame
     filtered.to_csv(filtered_output, index=False)
 

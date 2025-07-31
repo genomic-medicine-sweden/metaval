@@ -35,35 +35,15 @@
                 "blast/blastn/kraken2/SRR13439813_878220_blast_filtered_summary.txt",
                 "blast/blastx/centrifuge/SRR13439790_878220_blastx.txt",
                 "blast/blastx/centrifuge/SRR13439799_211044_blastx.txt",
-                "blast/blastx/centrifuge/SRR13439799_211044_blastx_filtered.txt",
-                "blast/blastx/centrifuge/SRR13439799_211044_blastx_filtered_summary.txt",
                 "blast/blastx/centrifuge/SRR13439802_878220_blastx.txt",
-                "blast/blastx/centrifuge/SRR13439802_878220_blastx_filtered.txt",
-                "blast/blastx/centrifuge/SRR13439802_878220_blastx_filtered_summary.txt",
                 "blast/blastx/centrifuge/SRR13439813_878220_blastx.txt",
-                "blast/blastx/centrifuge/SRR13439813_878220_blastx_filtered.txt",
-                "blast/blastx/centrifuge/SRR13439813_878220_blastx_filtered_summary.txt",
                 "blast/blastx/diamond/SRR13439790_1920753_blastx.txt",
-                "blast/blastx/diamond/SRR13439790_1920753_blastx_filtered.txt",
-                "blast/blastx/diamond/SRR13439790_1920753_blastx_filtered_summary.txt",
                 "blast/blastx/diamond/SRR13439813_1920753_blastx.txt",
-                "blast/blastx/diamond/SRR13439813_1920753_blastx_filtered.txt",
-                "blast/blastx/diamond/SRR13439813_1920753_blastx_filtered_summary.txt",
                 "blast/blastx/diamond/SRR13439813_878220_blastx.txt",
-                "blast/blastx/diamond/SRR13439813_878220_blastx_filtered.txt",
-                "blast/blastx/diamond/SRR13439813_878220_blastx_filtered_summary.txt",
                 "blast/blastx/kraken2/SRR13439790_1920753_blastx.txt",
-                "blast/blastx/kraken2/SRR13439790_1920753_blastx_filtered.txt",
-                "blast/blastx/kraken2/SRR13439790_1920753_blastx_filtered_summary.txt",
                 "blast/blastx/kraken2/SRR13439799_211044_blastx.txt",
-                "blast/blastx/kraken2/SRR13439799_211044_blastx_filtered.txt",
-                "blast/blastx/kraken2/SRR13439799_211044_blastx_filtered_summary.txt",
                 "blast/blastx/kraken2/SRR13439813_1920753_blastx.txt",
-                "blast/blastx/kraken2/SRR13439813_1920753_blastx_filtered.txt",
-                "blast/blastx/kraken2/SRR13439813_1920753_blastx_filtered_summary.txt",
                 "blast/blastx/kraken2/SRR13439813_878220_blastx.txt",
-                "blast/blastx/kraken2/SRR13439813_878220_blastx_filtered.txt",
-                "blast/blastx/kraken2/SRR13439813_878220_blastx_filtered_summary.txt",
                 "extracted_reads/centrifuge/SRR13439790_878220.extracted_centrifuge_read1.fastq.gz",
                 "extracted_reads/centrifuge/SRR13439790_878220.extracted_centrifuge_read2.fastq.gz",
                 "extracted_reads/centrifuge/SRR13439799_211044.extracted_centrifuge_read.fastq.gz",
@@ -84,8 +64,6 @@
                 "extracted_reads/kraken2/SRR13439813_1920753.extracted_kraken2_read_2.fastq.gz",
                 "extracted_reads/kraken2/SRR13439813_878220.extracted_kraken2_read_1.fastq.gz",
                 "extracted_reads/kraken2/SRR13439813_878220.extracted_kraken2_read_2.fastq.gz",
-                "fastqc/input/SRR13439790_1920753_diamond_1_fastqc.html",
-                "fastqc/input/SRR13439790_1920753_diamond_2_fastqc.html",
                 "fastqc/input/SRR13439790_1920753_kraken2_1_fastqc.html",
                 "fastqc/input/SRR13439790_1920753_kraken2_2_fastqc.html",
                 "fastqc/input/SRR13439790_878220_centrifuge_1_fastqc.html",
@@ -135,17 +113,15 @@
                 "multiqc/multiqc_data/samtools-stats-dp.txt",
                 "multiqc/multiqc_data/samtools_alignment_plot.txt",
                 "multiqc/multiqc_report.html",
+                "pathogens/blast/blastn/SRR13439790_335341_blast.txt",
                 "pathogens/blast/blastn/SRR13439790_9606_blast.txt",
-                "pathogens/blast/blastn/SRR13439790_9606_blast_filtered.txt",
-                "pathogens/blast/blastn/SRR13439790_9606_blast_filtered_summary.txt",
                 "pathogens/blast/blastn/SRR13439799_211044_blast.txt",
                 "pathogens/blast/blastn/SRR13439799_211044_blast_filtered.txt",
                 "pathogens/blast/blastn/SRR13439799_211044_blast_filtered_summary.txt",
                 "pathogens/blast/blastn/SRR13439802_9606_blast.txt",
+                "pathogens/blast/blastx/SRR13439790_335341_blastx.txt",
                 "pathogens/blast/blastx/SRR13439790_9606_blastx.txt",
                 "pathogens/blast/blastx/SRR13439799_211044_blastx.txt",
-                "pathogens/blast/blastx/SRR13439799_211044_blastx_filtered.txt",
-                "pathogens/blast/blastx/SRR13439799_211044_blastx_filtered_summary.txt",
                 "pathogens/blast/blastx/SRR13439802_9606_blastx.txt",
                 "pathogens/bowtie2/align/SRR13439790_aligned_pathogens_genome_sorted.bam",
                 "pathogens/bowtie2/align/SRR13439790_aligned_pathogens_genome_sorted.bam.bai",
@@ -163,8 +139,14 @@
                 "pathogens/minimap2/align/SRR13439799_aligned_pathogens_genome_sorted.bam",
                 "pathogens/minimap2/align/SRR13439799_aligned_pathogens_genome_sorted.bam.bai",
                 "pathogens/minimap2/index/reference.mmi",
+                "pathogens/pathogen_reads/blast_input/SRR13439790_335341_1.fasta.gz",
+                "pathogens/pathogen_reads/blast_input/SRR13439790_335341_2.fasta.gz",
                 "pathogens/pathogen_reads/blast_input/SRR13439799_488241_1.fasta.gz",
                 "pathogens/pathogen_reads/blast_input/SRR13439799_9606_1.fasta.gz",
+                "pathogens/pathogen_reads/blast_input/SRR13439802_335341_1.fasta.gz",
+                "pathogens/pathogen_reads/blast_input/SRR13439802_335341_2.fasta.gz",
+                "pathogens/pathogen_reads/blast_input/SRR13439813_335341_1.fasta.gz",
+                "pathogens/pathogen_reads/blast_input/SRR13439813_335341_2.fasta.gz",
                 "pathogens/pathogen_reads/consensus_input/SRR13439790_9606_sorted.bam",
                 "pathogens/pathogen_reads/consensus_input/SRR13439790_9606_sorted.bam.bai",
                 "pathogens/pathogen_reads/consensus_input/SRR13439799_211044_sorted.bam",
@@ -195,7 +177,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-23T13:16:37.312082492"
+        "timestamp": "2025-07-31T11:27:48.673172934"
     },
     "pathogens/minimap2/align": {
         "content": [
@@ -205,7 +187,7 @@
                 "index/reference.mmi"
             ],
             [
-
+                
             ]
         ],
         "meta": {
@@ -220,7 +202,7 @@
                 "SRR13439799_211044_medaka.fa.gz"
             ],
             [
-
+                
             ]
         ],
         "meta": {
@@ -246,7 +228,7 @@
                 "build/bowtie2/reference.rev.2.bt2l"
             ],
             [
-
+                
             ]
         ],
         "meta": {
@@ -258,21 +240,20 @@
     "pathogens/blast/blastx": {
         "content": [
             [
+                "SRR13439790_335341_blastx.txt",
                 "SRR13439790_9606_blastx.txt",
                 "SRR13439799_211044_blastx.txt",
-                "SRR13439799_211044_blastx_filtered.txt",
-                "SRR13439799_211044_blastx_filtered_summary.txt",
                 "SRR13439802_9606_blastx.txt"
             ],
             [
-
+                
             ]
         ],
         "meta": {
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-23T13:16:37.39164889"
+        "timestamp": "2025-07-31T11:27:48.728517325"
     },
     "blast": {
         "content": [
@@ -310,51 +291,37 @@
                 "blastn/kraken2/SRR13439813_878220_blast_filtered_summary.txt",
                 "blastx/centrifuge/SRR13439790_878220_blastx.txt",
                 "blastx/centrifuge/SRR13439799_211044_blastx.txt",
-                "blastx/centrifuge/SRR13439799_211044_blastx_filtered.txt",
-                "blastx/centrifuge/SRR13439799_211044_blastx_filtered_summary.txt",
                 "blastx/centrifuge/SRR13439802_878220_blastx.txt",
-                "blastx/centrifuge/SRR13439802_878220_blastx_filtered.txt",
-                "blastx/centrifuge/SRR13439802_878220_blastx_filtered_summary.txt",
                 "blastx/centrifuge/SRR13439813_878220_blastx.txt",
-                "blastx/centrifuge/SRR13439813_878220_blastx_filtered.txt",
-                "blastx/centrifuge/SRR13439813_878220_blastx_filtered_summary.txt",
                 "blastx/diamond/SRR13439790_1920753_blastx.txt",
-                "blastx/diamond/SRR13439790_1920753_blastx_filtered.txt",
-                "blastx/diamond/SRR13439790_1920753_blastx_filtered_summary.txt",
                 "blastx/diamond/SRR13439813_1920753_blastx.txt",
-                "blastx/diamond/SRR13439813_1920753_blastx_filtered.txt",
-                "blastx/diamond/SRR13439813_1920753_blastx_filtered_summary.txt",
                 "blastx/diamond/SRR13439813_878220_blastx.txt",
-                "blastx/diamond/SRR13439813_878220_blastx_filtered.txt",
-                "blastx/diamond/SRR13439813_878220_blastx_filtered_summary.txt",
                 "blastx/kraken2/SRR13439790_1920753_blastx.txt",
-                "blastx/kraken2/SRR13439790_1920753_blastx_filtered.txt",
-                "blastx/kraken2/SRR13439790_1920753_blastx_filtered_summary.txt",
                 "blastx/kraken2/SRR13439799_211044_blastx.txt",
-                "blastx/kraken2/SRR13439799_211044_blastx_filtered.txt",
-                "blastx/kraken2/SRR13439799_211044_blastx_filtered_summary.txt",
                 "blastx/kraken2/SRR13439813_1920753_blastx.txt",
-                "blastx/kraken2/SRR13439813_1920753_blastx_filtered.txt",
-                "blastx/kraken2/SRR13439813_1920753_blastx_filtered_summary.txt",
-                "blastx/kraken2/SRR13439813_878220_blastx.txt",
-                "blastx/kraken2/SRR13439813_878220_blastx_filtered.txt",
-                "blastx/kraken2/SRR13439813_878220_blastx_filtered_summary.txt"
+                "blastx/kraken2/SRR13439813_878220_blastx.txt"
             ],
             [
-
+                
             ]
         ],
         "meta": {
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-21T15:38:11.765932561"
+        "timestamp": "2025-07-31T09:31:36.594948775"
     },
     "pathogens/pathogen_reads": {
         "content": [
             [
+                "blast_input/SRR13439790_335341_1.fasta.gz",
+                "blast_input/SRR13439790_335341_2.fasta.gz",
                 "blast_input/SRR13439799_488241_1.fasta.gz",
                 "blast_input/SRR13439799_9606_1.fasta.gz",
+                "blast_input/SRR13439802_335341_1.fasta.gz",
+                "blast_input/SRR13439802_335341_2.fasta.gz",
+                "blast_input/SRR13439813_335341_1.fasta.gz",
+                "blast_input/SRR13439813_335341_2.fasta.gz",
                 "consensus_input/SRR13439790_9606_sorted.bam",
                 "consensus_input/SRR13439790_9606_sorted.bam.bai",
                 "consensus_input/SRR13439799_211044_sorted.bam",
@@ -365,18 +332,18 @@
                 "consensus_input/SRR13439813_9606_sorted.bam.bai"
             ],
             [
-
+                
             ]
         ],
         "meta": {
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-23T13:16:37.431018241"
+        "timestamp": "2025-07-31T11:27:48.752050997"
     },
     "-profile test_taxid": {
         "content": [
-            170,
+            180,
             {
                 "BLAST_BLASTN": {
                     "blast": "2.16.0+"
@@ -492,12 +459,12 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-23T13:16:37.204477367"
+        "timestamp": "2025-07-31T11:27:48.607435161"
     },
     "Header MD5": {
         "content": [
             [
-
+                
             ]
         ],
         "meta": {
@@ -549,7 +516,7 @@
                 "SRR13439813_9606_sorted.bam.bai:md5,2621e60f5ba1d1e000741fb8b629d71d"
             ],
             [
-
+                
             ]
         ],
         "meta": {
@@ -561,11 +528,9 @@
     "fastqc": {
         "content": [
             [
-
+                
             ],
             [
-                "input/SRR13439790_1920753_diamond_1_fastqc.html",
-                "input/SRR13439790_1920753_diamond_2_fastqc.html",
                 "input/SRR13439790_1920753_kraken2_1_fastqc.html",
                 "input/SRR13439790_1920753_kraken2_2_fastqc.html",
                 "input/SRR13439790_878220_centrifuge_1_fastqc.html",
@@ -590,28 +555,27 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-21T15:38:11.800979279"
+        "timestamp": "2025-07-31T09:31:36.621580501"
     },
     "pathogens/blast/blastn": {
         "content": [
             [
+                "SRR13439790_335341_blast.txt",
                 "SRR13439790_9606_blast.txt",
-                "SRR13439790_9606_blast_filtered.txt",
-                "SRR13439790_9606_blast_filtered_summary.txt",
                 "SRR13439799_211044_blast.txt",
                 "SRR13439799_211044_blast_filtered.txt",
                 "SRR13439799_211044_blast_filtered_summary.txt",
                 "SRR13439802_9606_blast.txt"
             ],
             [
-
+                
             ]
         ],
         "meta": {
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-23T13:16:37.355341499"
+        "timestamp": "2025-07-31T11:27:48.703125261"
     },
     "pathogens/minimap2": {
         "content": [
@@ -621,7 +585,7 @@
                 "index/reference.mmi"
             ],
             [
-
+                
             ]
         ],
         "meta": {
@@ -650,7 +614,7 @@
                 "kraken2/SRR13439813_878220.warnings.log"
             ],
             [
-
+                
             ]
         ],
         "meta": {
@@ -676,7 +640,7 @@
                 "build/bowtie2/reference.rev.2.bt2l"
             ],
             [
-
+                
             ]
         ],
         "meta": {
@@ -721,7 +685,7 @@
                 "multiqc_report.html"
             ],
             [
-
+                
             ]
         ],
         "meta": {

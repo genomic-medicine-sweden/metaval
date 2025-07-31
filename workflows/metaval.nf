@@ -60,6 +60,7 @@ workflow METAVAL {
 
     ch_versions = Channel.empty()
     ch_multiqc_files = Channel.empty()
+    ch_fastqc_files = Channel.empty()
 
     // Create input channels
     ch_input = ch_samplesheet.branch { meta, fastq_1, fastq_2, kraken2_report, kraken2_result, kraken2_taxpasta, centrifuge_report, centrifuge_result, centrifuge_taxpasta, diamond, diamond_taxpasta ->
@@ -128,7 +129,7 @@ workflow METAVAL {
         ch_extract_reads.diamond_taxpasta,
         ch_extract_reads.diamond_tsv,
         )
-        ch_versions            = ch_versions.mix( TAXID_READS.out.versions )
+        ch_versions = ch_versions.mix( TAXID_READS.out.versions )
 
         // Remove empty FASTQ files. This can happen when users want to check if the same species was identified across different classifiers.
         ch_taxid_reads = TAXID_READS.out.reads
@@ -136,16 +137,6 @@ workflow METAVAL {
                 empty: it[0].single_end ? it[1].countFastq() < 1 : it[1][0].countFastq() < 1 || it[1][1].countFastq() < 1
                 nonempty: true
             }
-
-        //
-        // MODULE: Run FastQC
-        //
-
-        FASTQC (
-            ch_taxid_reads.nonempty
-        )
-        ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.collect{it[1]})
-        ch_versions = ch_versions.mix(FASTQC.out.versions.first())
 
         // SUBWORKFLOW: DE NOVO
         // Run de novo assembly if the number of reads exceeds the params.min_read_counts
@@ -165,12 +156,12 @@ workflow METAVAL {
         // short reads de novo assembly
         if ( params.perform_shortread_denovo ) {
             SPADES( ch_denovo.shortreads, [], [] )
-            ch_versions             = ch_versions.mix( SPADES.out.versions.first() )
+            ch_versions = ch_versions.mix( SPADES.out.versions.first() )
         }
         // long reads de novo assembly
         if ( params.perform_longread_denovo ) {
             FLYE( ch_denovo.longreads, params.flye_mode )
-            ch_versions             = ch_versions.mix( FLYE.out.versions.first() )
+            ch_versions = ch_versions.mix( FLYE.out.versions.first() )
         }
 
         // BLAST
@@ -196,8 +187,18 @@ workflow METAVAL {
             ch_blastn_hits = BLAST_BLASTN.out.txt
                 .filter { meta, blastn_file -> blastn_file.size() > 0 }
 
-            FILTER_BLASTN ( ch_blastn_hits, file( params.blast_header, checkIfExists: true))
+            FILTER_BLASTN ( ch_blastn_hits, file( params.blast_header, checkIfExists: true) )
             ch_versions = ch_versions.mix( FILTER_BLASTN.out.versions.first() )
+
+            // Perform FASTQC for reads with BLASTN hits
+            ch_fastqc_blastn = ch_taxid_reads.nonempty
+                .join( FILTER_BLASTN.out.filtered_blast, by: 0 )
+                .filter { meta, reads, filtered_blast ->
+                    filtered_blast.size() >0
+                }
+                .map { meta, reads, filtered_blast -> [ meta, reads ] }
+            ch_fastqc_files = ch_fastqc_files.mix(ch_fastqc_blastn)
+
         }
         // BLASTX:DIAMOND
         if ( !params.skip_blastx ) {
@@ -210,10 +211,18 @@ workflow METAVAL {
             // Filter BLASTX hits
             ch_blastx_hits = DIAMOND_BLASTX.out.txt
                 .filter { meta, blastx_file -> blastx_file.size() > 0 }
-            FILTER_BLASTX ( ch_blastx_hits, file( params.blast_header, checkIfExists: true))
+            FILTER_BLASTX ( ch_blastx_hits, file( params.blast_header, checkIfExists: true) )
             ch_versions = ch_versions.mix( FILTER_BLASTX.out.versions.first() )
+            // Perform FASTQC for reads with BLASTX hits
+            ch_fastqc_blastx = ch_taxid_reads.nonempty
+                .join( FILTER_BLASTX.out.filtered_blast, by: 0 )
+                .filter { meta, reads, filtered_blast ->
+                    filtered_blast.size() >0
+                }
+                .map { meta, reads, filtered_blast -> [ meta, reads ] }
+            ch_fastqc_files = ch_fastqc_files.mix( ch_fastqc_blastx )
         }
-        }
+    }
 
     // Screen pathogens
     ch_reference = file( params.pathogens_genomes, checkIfExists: true)
@@ -230,9 +239,9 @@ workflow METAVAL {
             [ [], ch_reference ]
         )
         ch_versions = ch_versions.mix( FASTQ_ALIGN_BOWTIE2.out.versions )
-        ch_multiqc_files = ch_multiqc_files.mix (FASTQ_ALIGN_BOWTIE2.out.stats.collect{it[1]}.ifEmpty([]))
-        ch_multiqc_files = ch_multiqc_files.mix (FASTQ_ALIGN_BOWTIE2.out.flagstat.collect{it[1]}.ifEmpty([]))
-        ch_multiqc_files = ch_multiqc_files.mix (FASTQ_ALIGN_BOWTIE2.out.idxstats.collect{it[1]}.ifEmpty([]))
+        ch_multiqc_files = ch_multiqc_files.mix ( FASTQ_ALIGN_BOWTIE2.out.stats.collect{it[1]}.ifEmpty([]) )
+        ch_multiqc_files = ch_multiqc_files.mix ( FASTQ_ALIGN_BOWTIE2.out.flagstat.collect{it[1]}.ifEmpty([]) )
+        ch_multiqc_files = ch_multiqc_files.mix ( FASTQ_ALIGN_BOWTIE2.out.idxstats.collect{it[1]}.ifEmpty([]) )
 
         // Map long reads to the pathogens genome
         LONGREAD_SCREENPATHOGEN ( ch_input.long_reads, [ [], ch_reference ] )
@@ -294,7 +303,7 @@ workflow METAVAL {
             // Filter BLASTN hits
             ch_blastn_hits_pathogen = BLAST_BLASTN_PATHOGEN.out.txt
                 .filter { meta, blastn_file -> blastn_file.size() > 0 }
-            FILTER_BLASTN_PATHOGEN ( ch_blastn_hits_pathogen, file( params.blast_header, checkIfExists: true))
+            FILTER_BLASTN_PATHOGEN ( ch_blastn_hits_pathogen, file( params.blast_header, checkIfExists: true) )
             ch_versions = ch_versions.mix( FILTER_BLASTN_PATHOGEN.out.versions.first() )
 
         }
@@ -313,6 +322,13 @@ workflow METAVAL {
             ch_versions = ch_versions.mix( FILTER_BLASTX_PATHOGEN.out.versions.first() )
         }
     }
+
+    //
+    // MODULE: FASTQC
+    //
+        FASTQC( ch_fastqc_files )
+        ch_multiqc_files = ch_multiqc_files.mix( FASTQC.out.zip.collect{it[1]} )
+        ch_versions = ch_versions.mix( FASTQC.out.versions.first() )
 
     //
     // Collate and save software versions

@@ -184,6 +184,6 @@ workflow TAXID_READS {
     }
 
     emit:
-    reads           = ch_taxid_reads       // channel: [ val (meta), [ reads ] ]
+    reads           = ch_taxid_reads       // channel: [ meta, reads ]
     versions        = ch_versions          // channel: [ versions.yml ]
 }

@@ -46,16 +46,12 @@
                 "multiqc/multiqc_data/samtools_alignment_plot.txt",
                 "multiqc/multiqc_report.html",
                 "pathogens/blast/blastn/SRR13439790_9606_blast.txt",
-                "pathogens/blast/blastn/SRR13439790_9606_blast_filtered.txt",
-                "pathogens/blast/blastn/SRR13439790_9606_blast_filtered_summary.txt",
                 "pathogens/blast/blastn/SRR13439799_211044_blast.txt",
                 "pathogens/blast/blastn/SRR13439799_211044_blast_filtered.txt",
                 "pathogens/blast/blastn/SRR13439799_211044_blast_filtered_summary.txt",
                 "pathogens/blast/blastn/SRR13439802_9606_blast.txt",
                 "pathogens/blast/blastx/SRR13439790_9606_blastx.txt",
                 "pathogens/blast/blastx/SRR13439799_211044_blastx.txt",
-                "pathogens/blast/blastx/SRR13439799_211044_blastx_filtered.txt",
-                "pathogens/blast/blastx/SRR13439799_211044_blastx_filtered_summary.txt",
                 "pathogens/blast/blastx/SRR13439802_9606_blastx.txt",
                 "pathogens/bowtie2/align/SRR13439790_aligned_pathogens_genome_sorted.bam",
                 "pathogens/bowtie2/align/SRR13439790_aligned_pathogens_genome_sorted.bam.bai",
@@ -90,7 +86,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-22T09:35:01.996212401"
+        "timestamp": "2025-07-31T13:25:30.287498192"
     },
     "Header MD5": {
         "content": [
@@ -236,8 +232,6 @@
         "content": [
             [
                 "SRR13439790_9606_blast.txt",
-                "SRR13439790_9606_blast_filtered.txt",
-                "SRR13439790_9606_blast_filtered_summary.txt",
                 "SRR13439799_211044_blast.txt",
                 "SRR13439799_211044_blast_filtered.txt",
                 "SRR13439799_211044_blast_filtered_summary.txt",
@@ -251,7 +245,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-22T09:35:02.020218109"
+        "timestamp": "2025-07-31T13:25:30.313447206"
     },
     "pathogens/minimap2": {
         "content": [
@@ -308,8 +302,6 @@
             [
                 "SRR13439790_9606_blastx.txt",
                 "SRR13439799_211044_blastx.txt",
-                "SRR13439799_211044_blastx_filtered.txt",
-                "SRR13439799_211044_blastx_filtered_summary.txt",
                 "SRR13439802_9606_blastx.txt"
             ],
             [
@@ -320,6 +312,6 @@
             "nf-test": "0.9.2",
             "nextflow": "25.04.2"
         },
-        "timestamp": "2025-07-22T09:35:02.03060076"
+        "timestamp": "2025-07-31T13:25:30.336010119"
     }
 }
