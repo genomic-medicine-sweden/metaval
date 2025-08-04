@@ -14,7 +14,7 @@
                 "consensus_input/SRR13439813_9606_sorted.bam.bai"
             ],
             [
-                
+
             ]
         ],
         "meta": {
@@ -44,6 +44,39 @@
                 "multiqc/multiqc_data/samtools-idxstats-mapped-reads-plot_Raw_Counts.txt",
                 "multiqc/multiqc_data/samtools-stats-dp.txt",
                 "multiqc/multiqc_data/samtools_alignment_plot.txt",
+                "multiqc/multiqc_plots/pdf/samtools-flagstat-pct-table.pdf",
+                "multiqc/multiqc_plots/pdf/samtools-flagstat-table.pdf",
+                "multiqc/multiqc_plots/pdf/samtools-idxstats-mapped-reads-plot_Normalised_Counts-cnt.pdf",
+                "multiqc/multiqc_plots/pdf/samtools-idxstats-mapped-reads-plot_Normalised_Counts-log.pdf",
+                "multiqc/multiqc_plots/pdf/samtools-idxstats-mapped-reads-plot_Observed_over_Expected_Counts-cnt.pdf",
+                "multiqc/multiqc_plots/pdf/samtools-idxstats-mapped-reads-plot_Observed_over_Expected_Counts-log.pdf",
+                "multiqc/multiqc_plots/pdf/samtools-idxstats-mapped-reads-plot_Raw_Counts-cnt.pdf",
+                "multiqc/multiqc_plots/pdf/samtools-idxstats-mapped-reads-plot_Raw_Counts-log.pdf",
+                "multiqc/multiqc_plots/pdf/samtools-stats-dp.pdf",
+                "multiqc/multiqc_plots/pdf/samtools_alignment_plot-cnt.pdf",
+                "multiqc/multiqc_plots/pdf/samtools_alignment_plot-pct.pdf",
+                "multiqc/multiqc_plots/png/samtools-flagstat-pct-table.png",
+                "multiqc/multiqc_plots/png/samtools-flagstat-table.png",
+                "multiqc/multiqc_plots/png/samtools-idxstats-mapped-reads-plot_Normalised_Counts-cnt.png",
+                "multiqc/multiqc_plots/png/samtools-idxstats-mapped-reads-plot_Normalised_Counts-log.png",
+                "multiqc/multiqc_plots/png/samtools-idxstats-mapped-reads-plot_Observed_over_Expected_Counts-cnt.png",
+                "multiqc/multiqc_plots/png/samtools-idxstats-mapped-reads-plot_Observed_over_Expected_Counts-log.png",
+                "multiqc/multiqc_plots/png/samtools-idxstats-mapped-reads-plot_Raw_Counts-cnt.png",
+                "multiqc/multiqc_plots/png/samtools-idxstats-mapped-reads-plot_Raw_Counts-log.png",
+                "multiqc/multiqc_plots/png/samtools-stats-dp.png",
+                "multiqc/multiqc_plots/png/samtools_alignment_plot-cnt.png",
+                "multiqc/multiqc_plots/png/samtools_alignment_plot-pct.png",
+                "multiqc/multiqc_plots/svg/samtools-flagstat-pct-table.svg",
+                "multiqc/multiqc_plots/svg/samtools-flagstat-table.svg",
+                "multiqc/multiqc_plots/svg/samtools-idxstats-mapped-reads-plot_Normalised_Counts-cnt.svg",
+                "multiqc/multiqc_plots/svg/samtools-idxstats-mapped-reads-plot_Normalised_Counts-log.svg",
+                "multiqc/multiqc_plots/svg/samtools-idxstats-mapped-reads-plot_Observed_over_Expected_Counts-cnt.svg",
+                "multiqc/multiqc_plots/svg/samtools-idxstats-mapped-reads-plot_Observed_over_Expected_Counts-log.svg",
+                "multiqc/multiqc_plots/svg/samtools-idxstats-mapped-reads-plot_Raw_Counts-cnt.svg",
+                "multiqc/multiqc_plots/svg/samtools-idxstats-mapped-reads-plot_Raw_Counts-log.svg",
+                "multiqc/multiqc_plots/svg/samtools-stats-dp.svg",
+                "multiqc/multiqc_plots/svg/samtools_alignment_plot-cnt.svg",
+                "multiqc/multiqc_plots/svg/samtools_alignment_plot-pct.svg",
                 "multiqc/multiqc_report.html",
                 "pathogens/blast/blastn/SRR13439790_9606_blast.txt",
                 "pathogens/blast/blastn/SRR13439799_211044_blast.txt",
@@ -84,14 +117,14 @@
         ],
         "meta": {
             "nf-test": "0.9.2",
-            "nextflow": "25.04.2"
+            "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-31T13:25:30.287498192"
+        "timestamp": "2025-08-04T06:58:25.15328619"
     },
     "Header MD5": {
         "content": [
             [
-                
+
             ]
         ],
         "meta": {
@@ -106,7 +139,7 @@
                 "SRR13439799_211044_medaka.fa.gz"
             ],
             [
-                
+
             ]
         ],
         "meta": {
@@ -219,7 +252,7 @@
                 "build/bowtie2/reference.rev.2.bt2l"
             ],
             [
-                
+
             ]
         ],
         "meta": {
@@ -238,7 +271,7 @@
                 "SRR13439802_9606_blast.txt"
             ],
             [
-                
+
             ]
         ],
         "meta": {
@@ -255,7 +288,7 @@
                 "index/reference.mmi"
             ],
             [
-                
+
             ]
         ],
         "meta": {
@@ -285,17 +318,50 @@
                 "multiqc_data/samtools-idxstats-mapped-reads-plot_Raw_Counts.txt",
                 "multiqc_data/samtools-stats-dp.txt",
                 "multiqc_data/samtools_alignment_plot.txt",
+                "multiqc_plots/pdf/samtools-flagstat-pct-table.pdf",
+                "multiqc_plots/pdf/samtools-flagstat-table.pdf",
+                "multiqc_plots/pdf/samtools-idxstats-mapped-reads-plot_Normalised_Counts-cnt.pdf",
+                "multiqc_plots/pdf/samtools-idxstats-mapped-reads-plot_Normalised_Counts-log.pdf",
+                "multiqc_plots/pdf/samtools-idxstats-mapped-reads-plot_Observed_over_Expected_Counts-cnt.pdf",
+                "multiqc_plots/pdf/samtools-idxstats-mapped-reads-plot_Observed_over_Expected_Counts-log.pdf",
+                "multiqc_plots/pdf/samtools-idxstats-mapped-reads-plot_Raw_Counts-cnt.pdf",
+                "multiqc_plots/pdf/samtools-idxstats-mapped-reads-plot_Raw_Counts-log.pdf",
+                "multiqc_plots/pdf/samtools-stats-dp.pdf",
+                "multiqc_plots/pdf/samtools_alignment_plot-cnt.pdf",
+                "multiqc_plots/pdf/samtools_alignment_plot-pct.pdf",
+                "multiqc_plots/png/samtools-flagstat-pct-table.png",
+                "multiqc_plots/png/samtools-flagstat-table.png",
+                "multiqc_plots/png/samtools-idxstats-mapped-reads-plot_Normalised_Counts-cnt.png",
+                "multiqc_plots/png/samtools-idxstats-mapped-reads-plot_Normalised_Counts-log.png",
+                "multiqc_plots/png/samtools-idxstats-mapped-reads-plot_Observed_over_Expected_Counts-cnt.png",
+                "multiqc_plots/png/samtools-idxstats-mapped-reads-plot_Observed_over_Expected_Counts-log.png",
+                "multiqc_plots/png/samtools-idxstats-mapped-reads-plot_Raw_Counts-cnt.png",
+                "multiqc_plots/png/samtools-idxstats-mapped-reads-plot_Raw_Counts-log.png",
+                "multiqc_plots/png/samtools-stats-dp.png",
+                "multiqc_plots/png/samtools_alignment_plot-cnt.png",
+                "multiqc_plots/png/samtools_alignment_plot-pct.png",
+                "multiqc_plots/svg/samtools-flagstat-pct-table.svg",
+                "multiqc_plots/svg/samtools-flagstat-table.svg",
+                "multiqc_plots/svg/samtools-idxstats-mapped-reads-plot_Normalised_Counts-cnt.svg",
+                "multiqc_plots/svg/samtools-idxstats-mapped-reads-plot_Normalised_Counts-log.svg",
+                "multiqc_plots/svg/samtools-idxstats-mapped-reads-plot_Observed_over_Expected_Counts-cnt.svg",
+                "multiqc_plots/svg/samtools-idxstats-mapped-reads-plot_Observed_over_Expected_Counts-log.svg",
+                "multiqc_plots/svg/samtools-idxstats-mapped-reads-plot_Raw_Counts-cnt.svg",
+                "multiqc_plots/svg/samtools-idxstats-mapped-reads-plot_Raw_Counts-log.svg",
+                "multiqc_plots/svg/samtools-stats-dp.svg",
+                "multiqc_plots/svg/samtools_alignment_plot-cnt.svg",
+                "multiqc_plots/svg/samtools_alignment_plot-pct.svg",
                 "multiqc_report.html"
             ],
             [
-                
+
             ]
         ],
         "meta": {
             "nf-test": "0.9.2",
-            "nextflow": "25.04.2"
+            "nextflow": "25.04.6"
         },
-        "timestamp": "2025-07-23T14:29:32.107954538"
+        "timestamp": "2025-08-04T06:49:38.588611794"
     },
     "pathogens/blast/blastx": {
         "content": [
@@ -305,7 +371,7 @@
                 "SRR13439802_9606_blastx.txt"
             ],
             [
-                
+
             ]
         ],
         "meta": {
