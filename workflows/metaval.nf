@@ -217,7 +217,7 @@ workflow METAVAL {
             ch_fastqc_blastx = ch_taxid_reads.nonempty
                 .join( FILTER_BLASTX.out.filtered_blast, by: 0 )
                 .filter { meta, reads, filtered_blast ->
-                    filtered_blast.size() >0
+                    filtered_blast.size() > 0
                 }
                 .map { meta, reads, filtered_blast -> [ meta, reads ] }
             ch_fastqc_files = ch_fastqc_files.mix( ch_fastqc_blastx )
