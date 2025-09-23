@@ -107,7 +107,7 @@ This workflow is activated by enabling the `--perform_screen_pathogens` option. 
 ```bash
 git clone https://github.com/genomic-medicine-sweden/metaval.git
 nextflow run metaval/main.nf -profile singularity --input samplesheet.csv --outdir pathogen_screen_result \
---pathogens_genomes reference.fasta --accession2taxid accession2taxid.map \
+--pathogens_genomes reference.fasta.gz --accession2taxid accession2taxid.map \
 --perform_screen_pathogens --perform_longread_consensus --perform_shortread_consensus \
 --longread_consensus_tool --min_read_counts 20
 
