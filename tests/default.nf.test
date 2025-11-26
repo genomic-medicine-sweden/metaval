@@ -22,6 +22,9 @@ nextflow_pipeline {
             //blastn
             def stable_content_blastn = getAllFilesFromDir("$outputDir/blast/blastn", relative: true, includeDir: false, ignore: null, ignoreFile: 'tests/.nftignore', include: ['*','**/*'])
 
+            //blastx
+            def stable_content_blastx = getAllFilesFromDir("$outputDir/blast/blastx", relative: true, includeDir: false, ignore: null, ignoreFile: 'tests/.nftignore', include: ['*','**/*'])
+
 
             assertAll(
                 { assert workflow.success},
@@ -61,7 +64,30 @@ nextflow_pipeline {
                     file("$outputDir/blast/blastn/kraken2/SRR13439813_878220_blast_filtered.txt").text.contains("Chryseobacterium"),
                     file("$outputDir/blast/blastn/kraken2/SRR13439813_878220_blast.txt").text.contains("Chryseobacterium"),
                     stable_content_blastn).match("blastn")},
-                { assert snapshot (path("$outputDir/blast/blastx")).match("blastx")},
+                { assert snapshot(
+                    file("$outputDir/blast/blastx/centrifuge/SRR13439790_878220_blastx.txt").exists(),
+                    file("$outputDir/blast/blastx/centrifuge/SRR13439799_211044_blastx_filtered_summary.txt").text.contains("Influenza A virus"),
+                    file("$outputDir/blast/blastx/centrifuge/SRR13439799_211044_blastx_filtered.txt").text.contains("Influenza A virus"),
+                    file("$outputDir/blast/blastx/centrifuge/SRR13439799_211044_blastx.txt").text.contains("Influenza A virus"),
+                    file("$outputDir/blast/blastx/centrifuge/SRR13439802_878220_blastx.txt").text.contains("Chryseobacterium"),
+                    file("$outputDir/blast/blastx/centrifuge/SRR13439813_878220_blastx_filtered_summary.txt").text.contains("Chryseobacterium"),
+                    file("$outputDir/blast/blastx/centrifuge/SRR13439813_878220_blastx_filtered.txt").text.contains("Chryseobacterium"),
+                    file("$outputDir/blast/blastx/centrifuge/SRR13439813_878220_blastx.txt").text.contains("Chryseobacterium"),
+                    file("$outputDir/blast/blastx/diamond/SRR13439813_1920753_blastx.txt").text.contains("Shigella"),
+                    file("$outputDir/blast/blastx/diamond/SRR13439813_878220_blastx_filtered_summary.txt").text.contains("Chryseobacterium"),
+                    file("$outputDir/blast/blastx/diamond/SRR13439813_878220_blastx_filtered.txt").text.contains("Chryseobacterium"),
+                    file("$outputDir/blast/blastx/diamond/SRR13439813_878220_blastx.txt").text.contains("Chryseobacterium"),
+                    file("$outputDir/blast/blastx/kraken2/SRR13439799_211044_blastx_filtered_summary.txt").text.contains("Influenza A virus"),
+                    file("$outputDir/blast/blastx/kraken2/SRR13439799_211044_blastx_filtered.txt").text.contains("Influenza A virus"),
+                    file("$outputDir/blast/blastx/kraken2/SRR13439799_211044_blastx.txt").text.contains("Influenza A virus"),
+                    file("$outputDir/blast/blastx/kraken2/SRR13439813_1920753_blastx_filtered_summary.txt").text.contains("Escherichia phage"),
+                    file("$outputDir/blast/blastx/kraken2/SRR13439813_1920753_blastx_filtered.txt").text.contains("Shigella virus"),
+                    file("$outputDir/blast/blastx/kraken2/SRR13439813_1920753_blastx.txt").text.contains("Shigella virus"),
+                    file("$outputDir/blast/blastx/kraken2/SRR13439813_878220_blastx_filtered_summary.txt").text.contains("Chryseobacterium"),
+                    file("$outputDir/blast/blastx/kraken2/SRR13439813_878220_blastx_filtered.txt").text.contains("Chryseobacterium"),
+                    file("$outputDir/blast/blastx/kraken2/SRR13439813_878220_blastx.txt").text.contains("Chryseobacterium"),
+                    stable_content_blastx).match("blastx")},
+                { assert snapshot (path("$outputDir/extracted_reads")).match("extracted_reads")},
             )
         }
     }
