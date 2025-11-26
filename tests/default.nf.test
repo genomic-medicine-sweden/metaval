@@ -25,6 +25,9 @@ nextflow_pipeline {
             //blastx
             def stable_content_blastx = getAllFilesFromDir("$outputDir/blast/blastx", relative: true, includeDir: false, ignore: null, ignoreFile: 'tests/.nftignore', include: ['*','**/*'])
 
+            //igv
+            def stable_content_igv = getAllFilesFromDir("$outputDir/igv", relative: true, includeDir: false, ignore: null, ignoreFile: 'tests/.nftignore', include: ['*','**/*'])
+
 
             assertAll(
                 { assert workflow.success},
@@ -88,6 +91,24 @@ nextflow_pipeline {
                     file("$outputDir/blast/blastx/kraken2/SRR13439813_878220_blastx.txt").text.contains("Chryseobacterium"),
                     stable_content_blastx).match("blastx")},
                 { assert snapshot (path("$outputDir/extracted_reads")).match("extracted_reads")},
+                { assert snapshot(
+                    file("$outputDir/igv/SRR13439790_centrifuge_taxid_878220_mappingorganism_Chryseobacterium_sp._StRB126_CFB_group_bacteria_report.html").exists(),
+                    file("$outputDir/igv/SRR13439799_centrifuge_taxid_211044_mappingorganism_Influenza_A_virus_A_Puerto_Rico_8_1934_H1N1_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_Bp4_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_EC1-UPM_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_ECBP1_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_IME11_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_PGN829.1_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_phi_G17_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_St11Ph5_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_U1G_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_vB_EcoP_G7C_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_vB_EcoP_PhAPEC5_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_vB_EcoP_PhAPEC7_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_vB_EcoP_SP5M_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_vB_EcoP-ZQ2_report.html").exists(),
+                    file("$outputDir/igv/SRR13439813_kraken2_taxid_1920753_mappingorganism_Shigella_phage_pSb-1_report.html").exists(),
+                    stable_content_igv).match("igv")},
             )
         }
     }

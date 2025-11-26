@@ -10,3 +10,4 @@ multiqc/multiqc_report.html
 multiqc/multiqc_data/*.txt
 blast/blastn/*/*.txt
 blast/blastx/*/*.txt
+igv/*.html

@@ -92,7 +92,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.04.8"
         },
-        "timestamp": "2025-11-26T15:39:34.123547012"
+        "timestamp": "2025-11-26T16:25:47.261940928"
     },
     "extracted_reads": {
         "content": [
@@ -129,7 +129,50 @@
             "nf-test": "0.9.3",
             "nextflow": "25.04.8"
         },
-        "timestamp": "2025-11-26T15:39:34.362677957"
+        "timestamp": "2025-11-26T16:25:47.362822529"
+    },
+    "igv": {
+        "content": [
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            [
+                "SRR13439790_centrifuge_taxid_878220_mappingorganism_Chryseobacterium_sp._StRB126_CFB_group_bacteria_report.html",
+                "SRR13439799_kraken2_taxid_211044_mappingorganism_Influenza_A_virus_A_Puerto_Rico_8_1934_H1N1_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_Bp4_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_EC1-UPM_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_ECBP1_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_IME11_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_PGN829.1_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_St11Ph5_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_U1G_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_phi_G17_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_vB_EcoP-ZQ2_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_vB_EcoP_G7C_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_vB_EcoP_PhAPEC5_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_vB_EcoP_PhAPEC7_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_vB_EcoP_SP5M_report.html",
+                "SRR13439813_kraken2_taxid_1920753_mappingorganism_Shigella_phage_pSb-1_report.html"
+            ]
+        ],
+        "meta": {
+            "nf-test": "0.9.3",
+            "nextflow": "25.04.8"
+        },
+        "timestamp": "2025-11-26T16:25:47.425491514"
     },
     "blastx": {
         "content": [
@@ -184,7 +227,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.04.8"
         },
-        "timestamp": "2025-11-26T15:39:34.354137501"
+        "timestamp": "2025-11-26T16:25:47.353464751"
     },
     "blastn": {
         "content": [
@@ -253,6 +296,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.04.8"
         },
-        "timestamp": "2025-11-26T15:39:34.327600609"
+        "timestamp": "2025-11-26T16:25:47.323040132"
     }
 }
