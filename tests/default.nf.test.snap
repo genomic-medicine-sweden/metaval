@@ -92,47 +92,39 @@
             "nf-test": "0.9.3",
             "nextflow": "25.04.8"
         },
-        "timestamp": "2025-11-26T13:22:22.800095409"
+        "timestamp": "2025-11-26T14:33:04.093295281"
     },
-    "blastn": {
+    "blastx": {
         "content": [
             [
                 [
-                    "SRR13439790_878220_blast.txt:md5,86c284c887fae1d374adfe39eedfdcf3",
-                    "SRR13439790_878220_blast_filtered.txt:md5,b59403793d3acec8ae0f94840f5cd322",
-                    "SRR13439790_878220_blast_filtered_summary.txt:md5,9c040e5d35c9c206830aa8e54f2bb082",
-                    "SRR13439799_211044_blast.txt:md5,ae600fa45261ac3db361b7ab2bdeb337",
-                    "SRR13439799_211044_blast_filtered.txt:md5,ba74c2e8136825b320ee49db42632952",
-                    "SRR13439799_211044_blast_filtered_summary.txt:md5,ce1372e6827c2622bd4edb54611ddaca",
-                    "SRR13439802_878220_blast.txt:md5,98220590de5326c00d0ae0e91806b4f2",
-                    "SRR13439802_878220_blast_filtered.txt:md5,41e7fa50d5af148f5c5a9300badaf58f",
-                    "SRR13439802_878220_blast_filtered_summary.txt:md5,798682cb466f89d46f3276b4eaad04a3",
-                    "SRR13439813_878220_blast.txt:md5,2c88a65e3805c85f18c4ca0bcbe098f2",
-                    "SRR13439813_878220_blast_filtered.txt:md5,8a582e696f7f5406f796ae2bc6072fcb",
-                    "SRR13439813_878220_blast_filtered_summary.txt:md5,79359d7d5af52ba1838a6ea5bb578e4b"
+                    "SRR13439790_878220_blastx.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
+                    "SRR13439799_211044_blastx.txt:md5,acbbf4d89a2f8c018ddf3c2629943eb1",
+                    "SRR13439799_211044_blastx_filtered.txt:md5,635c70126c3dabb9f6204e427f89e043",
+                    "SRR13439799_211044_blastx_filtered_summary.txt:md5,0c7135e73a37f2a48e1a6b2b825f01b7",
+                    "SRR13439802_878220_blastx.txt:md5,9912811b3a68cdc5af88275f5f9089e5",
+                    "SRR13439813_878220_blastx.txt:md5,0f4bf0e695c6b1860e84a882b8b404b8",
+                    "SRR13439813_878220_blastx_filtered.txt:md5,adbc8dad9d7bd59a9df5aa369d50701a",
+                    "SRR13439813_878220_blastx_filtered_summary.txt:md5,1de1a3ac921fbc1e478817317aa04749"
                 ],
                 [
-                    "SRR13439790_1920753_blast.txt:md5,d41d8cd98f00b204e9800998ecf8427e",
-                    "SRR13439813_1920753_blast.txt:md5,925acc139cdc78439812205a2599b996",
-                    "SRR13439813_1920753_blast_filtered.txt:md5,9b65b0d4220818bf2ddfc6d107f17814",
-                    "SRR13439813_1920753_blast_filtered_summary.txt:md5,ef950cbb39895c72f5b0a018ee6f4253",
-                    "SRR13439813_878220_blast.txt:md5,521c8fae12ec5abcc53fe871d1c6c282",
-                    "SRR13439813_878220_blast_filtered.txt:md5,c369ec65eb15b36b5b22c6dfc7d919a1",
-                    "SRR13439813_878220_blast_filtered_summary.txt:md5,316990449ea178624df1f8bcf2a05e75"
+                    "SRR13439790_1920753_blastx.txt:md5,d0dea90b4a31443943e92a3a460d8180",
+                    "SRR13439813_1920753_blastx.txt:md5,655c30608a580e8cb0728e4c63b214fe",
+                    "SRR13439813_878220_blastx.txt:md5,583dc6fdc16e475808797cde08c5befb",
+                    "SRR13439813_878220_blastx_filtered.txt:md5,2f9e8de0b5d800f97fb2a27d9f5809fb",
+                    "SRR13439813_878220_blastx_filtered_summary.txt:md5,1d8922173df709be367b587b377457ff"
                 ],
                 [
-                    "SRR13439790_1920753_blast.txt:md5,b0f4d7d0d0d27214a73943bb6ae04893",
-                    "SRR13439790_1920753_blast_filtered.txt:md5,a076e04f2587c1574df4f425ea20fa84",
-                    "SRR13439790_1920753_blast_filtered_summary.txt:md5,b0cd492bd1a737ac993209a63b2d05bb",
-                    "SRR13439799_211044_blast.txt:md5,ae600fa45261ac3db361b7ab2bdeb337",
-                    "SRR13439799_211044_blast_filtered.txt:md5,ba74c2e8136825b320ee49db42632952",
-                    "SRR13439799_211044_blast_filtered_summary.txt:md5,ce1372e6827c2622bd4edb54611ddaca",
-                    "SRR13439813_1920753_blast.txt:md5,533f093b194c34c45c6dda916be2e670",
-                    "SRR13439813_1920753_blast_filtered.txt:md5,4a6826c61c326ae7c4088afb9294d284",
-                    "SRR13439813_1920753_blast_filtered_summary.txt:md5,e402c0f85a1bd3cb9059ea6c07a3c0e8",
-                    "SRR13439813_878220_blast.txt:md5,5abb636141178950bbb0980a5b78055c",
-                    "SRR13439813_878220_blast_filtered.txt:md5,689d805274609f58cef4aaeb973ea444",
-                    "SRR13439813_878220_blast_filtered_summary.txt:md5,2287727b41f215128562efab7710918d"
+                    "SRR13439790_1920753_blastx.txt:md5,bb8b7175925fd75d8366e169edb4b776",
+                    "SRR13439799_211044_blastx.txt:md5,6a2e79199dfd16a9cc523ca24c6fcd43",
+                    "SRR13439799_211044_blastx_filtered.txt:md5,bd22a51920e3ba14447f107b3c8ac981",
+                    "SRR13439799_211044_blastx_filtered_summary.txt:md5,f93255b5f8ea0fb89da9ecbb4bc4b728",
+                    "SRR13439813_1920753_blastx.txt:md5,1b806d92a4859a349cf912956f20e712",
+                    "SRR13439813_1920753_blastx_filtered.txt:md5,b4ae3b02166aa286da1dd78f1149abbe",
+                    "SRR13439813_1920753_blastx_filtered_summary.txt:md5,c61be191274d5dd541ccfc4a357ccf38",
+                    "SRR13439813_878220_blastx.txt:md5,6e9c2ca19c60e7f3ea291de1e6bef123",
+                    "SRR13439813_878220_blastx_filtered.txt:md5,69d14ebb5622f1fbf6dd0d63b055fd4b",
+                    "SRR13439813_878220_blastx_filtered_summary.txt:md5,f42318744be6850f66d5ba67402a6086"
                 ]
             ]
         ],
@@ -140,6 +132,75 @@
             "nf-test": "0.9.3",
             "nextflow": "25.04.8"
         },
-        "timestamp": "2025-11-26T13:22:22.843636396"
+        "timestamp": "2025-11-26T14:33:04.190390646"
+    },
+    "blastn": {
+        "content": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            [
+                "centrifuge/SRR13439790_878220_blast.txt",
+                "centrifuge/SRR13439790_878220_blast_filtered.txt",
+                "centrifuge/SRR13439790_878220_blast_filtered_summary.txt",
+                "centrifuge/SRR13439799_211044_blast.txt",
+                "centrifuge/SRR13439799_211044_blast_filtered.txt",
+                "centrifuge/SRR13439799_211044_blast_filtered_summary.txt",
+                "centrifuge/SRR13439802_878220_blast.txt",
+                "centrifuge/SRR13439802_878220_blast_filtered.txt",
+                "centrifuge/SRR13439802_878220_blast_filtered_summary.txt",
+                "centrifuge/SRR13439813_878220_blast.txt",
+                "centrifuge/SRR13439813_878220_blast_filtered.txt",
+                "centrifuge/SRR13439813_878220_blast_filtered_summary.txt",
+                "diamond/SRR13439790_1920753_blast.txt",
+                "diamond/SRR13439813_1920753_blast.txt",
+                "diamond/SRR13439813_1920753_blast_filtered.txt",
+                "diamond/SRR13439813_1920753_blast_filtered_summary.txt",
+                "diamond/SRR13439813_878220_blast.txt",
+                "diamond/SRR13439813_878220_blast_filtered.txt",
+                "diamond/SRR13439813_878220_blast_filtered_summary.txt",
+                "kraken2/SRR13439790_1920753_blast.txt",
+                "kraken2/SRR13439790_1920753_blast_filtered.txt",
+                "kraken2/SRR13439790_1920753_blast_filtered_summary.txt",
+                "kraken2/SRR13439799_211044_blast.txt",
+                "kraken2/SRR13439799_211044_blast_filtered.txt",
+                "kraken2/SRR13439799_211044_blast_filtered_summary.txt",
+                "kraken2/SRR13439813_1920753_blast.txt",
+                "kraken2/SRR13439813_1920753_blast_filtered.txt",
+                "kraken2/SRR13439813_1920753_blast_filtered_summary.txt",
+                "kraken2/SRR13439813_878220_blast.txt",
+                "kraken2/SRR13439813_878220_blast_filtered.txt",
+                "kraken2/SRR13439813_878220_blast_filtered_summary.txt"
+            ]
+        ],
+        "meta": {
+            "nf-test": "0.9.3",
+            "nextflow": "25.04.8"
+        },
+        "timestamp": "2025-11-26T14:33:04.173379142"
     }
 }
