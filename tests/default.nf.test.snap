@@ -92,14 +92,14 @@
             "nf-test": "0.9.3",
             "nextflow": "25.04.8"
         },
-        "timestamp": "2025-11-27T09:09:57.650724626"
+        "timestamp": "2025-11-27T11:07:28.844914872"
     },
     "bowtie2": {
         "content": [
             [
                 [
-                    "SRR13439802_centrifuge_taxid_878220_mappingorganism_Chryseobacterium_sp._StRB126_CFB_group_bacteria.bam:md5,837b1a1c5d484bc69d95f30ccb3ce7d7",
-                    "SRR13439802_centrifuge_taxid_878220_mappingorganism_Chryseobacterium_sp._StRB126_CFB_group_bacteria.bam.bai:md5,866b04385a2d07c440bc9ecc5401e110",
+                    "SRR13439790_centrifuge_taxid_878220_mappingorganism_Chryseobacterium_sp._StRB126_CFB_group_bacteria.bam:md5,f4c2dcce776974c9f8c5c9e8d7b09b3f",
+                    "SRR13439790_centrifuge_taxid_878220_mappingorganism_Chryseobacterium_sp._StRB126_CFB_group_bacteria.bam.bai:md5,ba90f1edefb3373cc0e821661a6af3a8",
                     "SRR13439813_centrifuge_taxid_878220_mappingorganism_Candidatus_Nitrosocosmicus_hydrocola_archaea.bam:md5,72f3c8c4f82ebe8aa51bc20635c4f310",
                     "SRR13439813_centrifuge_taxid_878220_mappingorganism_Candidatus_Nitrosocosmicus_hydrocola_archaea.bam.bai:md5,0d76977b2e36046cc176112776c5fa4e",
                     "SRR13439813_centrifuge_taxid_878220_mappingorganism_Homo_sapiens_human.bam:md5,0fcd771d61b7402e6e7caab52ed9dbcf",
@@ -341,7 +341,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.04.8"
         },
-        "timestamp": "2025-11-27T09:09:57.841605168"
+        "timestamp": "2025-11-27T11:07:29.042001003"
     },
     "extracted_reads": {
         "content": [
@@ -378,7 +378,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.04.8"
         },
-        "timestamp": "2025-11-27T09:09:57.751735513"
+        "timestamp": "2025-11-27T11:07:28.947418633"
     },
     "igv": {
         "content": [
@@ -400,8 +400,8 @@
             true,
             false,
             [
+                "SRR13439790_centrifuge_taxid_878220_mappingorganism_Chryseobacterium_sp._StRB126_CFB_group_bacteria_report.html",
                 "SRR13439799_centrifuge_taxid_211044_mappingorganism_Influenza_A_virus_A_Puerto_Rico_8_1934_H1N1_report.html",
-                "SRR13439802_centrifuge_taxid_878220_mappingorganism_Chryseobacterium_sp._StRB126_CFB_group_bacteria_report.html",
                 "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_Bp4_report.html",
                 "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_EC1-UPM_report.html",
                 "SRR13439813_kraken2_taxid_1920753_mappingorganism_Escherichia_phage_ECBP1_report.html",
@@ -422,7 +422,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.04.8"
         },
-        "timestamp": "2025-11-27T09:09:57.809984652"
+        "timestamp": "2025-11-27T11:07:29.009666752"
     },
     "blastx": {
         "content": [
@@ -477,7 +477,7 @@
             "nf-test": "0.9.3",
             "nextflow": "25.04.8"
         },
-        "timestamp": "2025-11-27T09:09:57.742818253"
+        "timestamp": "2025-11-27T11:07:28.937430589"
     },
     "blastn": {
         "content": [
@@ -505,7 +505,11 @@
             true,
             true,
             true,
-            false,
+            true,
+            true,
+            true,
+            true,
+            true,
             true,
             true,
             [
@@ -546,6 +550,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.04.8"
         },
-        "timestamp": "2025-11-27T09:09:57.714674762"
+        "timestamp": "2025-11-27T11:07:28.907640475"
     }
 }

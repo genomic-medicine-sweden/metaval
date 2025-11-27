@@ -11,3 +11,4 @@ multiqc/multiqc_data/*.txt
 blast/blastn/*/*.txt
 blast/blastx/*/*.txt
 igv/*.html
+extracted_reads/*/*.fa
