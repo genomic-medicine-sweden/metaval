@@ -20,7 +20,7 @@ nextflow_pipeline {
             def stable_name_all      = getAllFilesFromDir(params.outdir, relative: true, includeDir: true, ignore: ['pipeline_info/*.{html,json,txt}'])
 
             //blastn
-            def stable_content_blastn = getAllFilesFromDir("$outputDir/blast/blastn/kraken2", relative: true, includeDir: false, ignore: null, ignoreFile: 'tests/.nftignore', include: ['*','**/*'])
+            def stable_content_blastn = getAllFilesFromDir("$outputDir/blast/blastn", relative: true, includeDir: false, ignore: null, ignoreFile: 'tests/.nftignore', include: ['*','**/*'])
 
             //blastx
             def stable_content_blastx = getAllFilesFromDir("$outputDir/blast/blastx", relative: true, includeDir: false, ignore: null, ignoreFile: 'tests/.nftignore', include: ['*','**/*'])
@@ -77,7 +77,7 @@ nextflow_pipeline {
                     bam_files_minimap2_align.isEmpty() ? 'No BAM files' : bam_files_minimap2_align.collect { file -> [file.getName() + " minimap2 align md5: " + bam(file.toString()).getReadsMD5()] },
                     stable_content_minimap2_align).match("minimap2_align")},
                 //{ assert snapshot (stable_content_igv).match("igv")},
-               // { assert snapshot (stable_content_pathogens_blast).match("pathogens_blast")},
+                { assert snapshot (stable_content_pathogens_blast).match("pathogens_blast")},
             )
         }
     }

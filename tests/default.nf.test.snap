@@ -18,9 +18,9 @@
         ],
         "meta": {
             "nf-test": "0.9.3",
-            "nextflow": "25.10.0"
+            "nextflow": "25.04.8"
         },
-        "timestamp": "2026-03-27T08:26:39.215250777"
+        "timestamp": "2026-03-31T14:33:30.898047286"
     },
     "-profile test_taxid": {
         "content": [
@@ -140,9 +140,9 @@
         ],
         "meta": {
             "nf-test": "0.9.3",
-            "nextflow": "25.10.0"
+            "nextflow": "25.04.8"
         },
-        "timestamp": "2026-03-27T08:26:37.65091197"
+        "timestamp": "2026-03-31T14:33:29.305988454"
     },
     "extracted_reads": {
         "content": [
@@ -171,9 +171,9 @@
         ],
         "meta": {
             "nf-test": "0.9.3",
-            "nextflow": "25.10.0"
+            "nextflow": "25.04.8"
         },
-        "timestamp": "2026-03-27T11:47:15.227676661"
+        "timestamp": "2026-03-31T14:33:29.442259976"
     },
     "bowtie2_build": {
         "content": [
@@ -308,9 +308,9 @@
         ],
         "meta": {
             "nf-test": "0.9.3",
-            "nextflow": "25.10.0"
+            "nextflow": "25.04.8"
         },
-        "timestamp": "2026-03-27T08:26:37.961973529"
+        "timestamp": "2026-03-31T14:33:29.61565873"
     },
     "bowtie2_align": {
         "content": [
@@ -426,9 +426,9 @@
         ],
         "meta": {
             "nf-test": "0.9.3",
-            "nextflow": "25.10.0"
+            "nextflow": "25.04.8"
         },
-        "timestamp": "2026-03-27T08:26:37.900518604"
+        "timestamp": "2026-03-31T14:33:29.555657626"
     },
     "blastx": {
         "content": [
@@ -489,9 +489,9 @@
         ],
         "meta": {
             "nf-test": "0.9.3",
-            "nextflow": "25.10.0"
+            "nextflow": "25.04.8"
         },
-        "timestamp": "2026-03-27T08:26:37.781924403"
+        "timestamp": "2026-03-31T14:33:29.428354334"
     },
     "blastn": {
         "content": [
@@ -533,24 +533,66 @@
                 "SRR13439813_878220_blast_filtered_summary.txt(diamond) contains string:true"
             ],
             [
-                "SRR13439790_1920753_blast.txt",
-                "SRR13439790_1920753_blast_filtered.txt",
-                "SRR13439790_1920753_blast_filtered_summary.txt",
-                "SRR13439799_211044_blast.txt",
-                "SRR13439799_211044_blast_filtered.txt",
-                "SRR13439799_211044_blast_filtered_summary.txt",
-                "SRR13439813_1920753_blast.txt",
-                "SRR13439813_1920753_blast_filtered.txt",
-                "SRR13439813_1920753_blast_filtered_summary.txt",
-                "SRR13439813_878220_blast.txt",
-                "SRR13439813_878220_blast_filtered.txt",
-                "SRR13439813_878220_blast_filtered_summary.txt"
+                "centrifuge/SRR13439790_878220_blast.txt",
+                "centrifuge/SRR13439790_878220_blast_filtered.txt",
+                "centrifuge/SRR13439790_878220_blast_filtered_summary.txt",
+                "centrifuge/SRR13439799_211044_blast.txt",
+                "centrifuge/SRR13439799_211044_blast_filtered.txt",
+                "centrifuge/SRR13439799_211044_blast_filtered_summary.txt",
+                "centrifuge/SRR13439802_878220_blast.txt",
+                "centrifuge/SRR13439802_878220_blast_filtered.txt",
+                "centrifuge/SRR13439802_878220_blast_filtered_summary.txt",
+                "centrifuge/SRR13439813_878220_blast.txt",
+                "centrifuge/SRR13439813_878220_blast_filtered.txt",
+                "centrifuge/SRR13439813_878220_blast_filtered_summary.txt",
+                "diamond/SRR13439790_1920753_blast.txt",
+                "diamond/SRR13439813_1920753_blast.txt",
+                "diamond/SRR13439813_1920753_blast_filtered.txt",
+                "diamond/SRR13439813_1920753_blast_filtered_summary.txt",
+                "diamond/SRR13439813_878220_blast.txt",
+                "diamond/SRR13439813_878220_blast_filtered.txt",
+                "diamond/SRR13439813_878220_blast_filtered_summary.txt",
+                "kraken2/SRR13439790_1920753_blast.txt",
+                "kraken2/SRR13439790_1920753_blast_filtered.txt",
+                "kraken2/SRR13439790_1920753_blast_filtered_summary.txt",
+                "kraken2/SRR13439799_211044_blast.txt",
+                "kraken2/SRR13439799_211044_blast_filtered.txt",
+                "kraken2/SRR13439799_211044_blast_filtered_summary.txt",
+                "kraken2/SRR13439813_1920753_blast.txt",
+                "kraken2/SRR13439813_1920753_blast_filtered.txt",
+                "kraken2/SRR13439813_1920753_blast_filtered_summary.txt",
+                "kraken2/SRR13439813_878220_blast.txt",
+                "kraken2/SRR13439813_878220_blast_filtered.txt",
+                "kraken2/SRR13439813_878220_blast_filtered_summary.txt"
             ]
         ],
         "meta": {
             "nf-test": "0.9.3",
-            "nextflow": "25.10.0"
+            "nextflow": "25.04.8"
         },
-        "timestamp": "2026-03-27T08:26:37.735812226"
+        "timestamp": "2026-03-31T14:33:29.385885193"
+    },
+    "pathogens_blast": {
+        "content": [
+            [
+                "blastn/SRR13439790_Homo_sapiens_blast.txt",
+                "blastn/SRR13439790_Influenza_A_virus_H3N2_blast.txt",
+                "blastn/SRR13439799_Influenza_A_virus_H1N1_blast.txt",
+                "blastn/SRR13439799_Influenza_A_virus_H1N1_blast_filtered.txt",
+                "blastn/SRR13439799_Influenza_A_virus_H1N1_blast_filtered_summary.txt",
+                "blastn/SRR13439802_Homo_sapiens_blast.txt",
+                "blastx/SRR13439790_Homo_sapiens_blastx.txt",
+                "blastx/SRR13439790_Influenza_A_virus_H3N2_blastx.txt",
+                "blastx/SRR13439799_Influenza_A_virus_H1N1_blastx.txt",
+                "blastx/SRR13439799_Influenza_A_virus_H1N1_blastx_filtered.txt",
+                "blastx/SRR13439799_Influenza_A_virus_H1N1_blastx_filtered_summary.txt",
+                "blastx/SRR13439802_Homo_sapiens_blastx.txt"
+            ]
+        ],
+        "meta": {
+            "nf-test": "0.9.3",
+            "nextflow": "25.04.8"
+        },
+        "timestamp": "2026-03-31T14:33:32.029806168"
     }
 }
