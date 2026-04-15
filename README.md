@@ -121,7 +121,7 @@ For more details and further functionality, please refer to the [usage documenta
 
 ## Headlines of input files
 
-`kraken2_report` & `centrifuge_report`
+`kraken2_report` / `centrifuge_report`
 
 ```csv
  4.62 167021 167021 U 0 unclassified
@@ -159,6 +159,21 @@ SRR13439790.3 0 0
 SRR13439790.5 0 0
 SRR13439790.5 0 0
 SRR13439790.7 0 0
+```
+
+`taxpasta`
+
+It should contain the columns `taxonomy_id`, `name`, `rank`, and `lineage`. Please check [metaval.config](https://github.com/nf-core/taxprofiler/tree/main/conf) in `nf-core/taxprofiler` to see how to generate the correct input for `gms/metaval`
+
+All taxpasta files share the same format. Below is an example of `kraken2_taxpasta` file:
+
+```csv
+taxonomy_id name rank lineage SRR13439799_kraken2db.kraken2.kraken2.report SRR13439802_kraken2db.kraken2.kraken2.report SRR13439790_kraken2db.kraken2.kraken2.report SRR13439813_kraken2db.kraken2.kraken2.report
+0 . . . 685 165966 33304 275483
+1 root no_rank . 0 133 73 111
+131567 cellular_organisms no_rank . 13 1644 73 264
+2759 Eukaryota superkingdom Eukaryota 0 503 120 38
+33154 Opisthokonta clade Eukaryota;Opisthokonta 1 10 3 0
 ```
 
 ## Pipeline output

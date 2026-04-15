@@ -43,6 +43,18 @@
                 }
             }
         },
+        "skip_ntc": {
+            "title": "Negative control options",
+            "type": "object",
+            "properties": {
+                "skip_ntc": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Skip analysis for negative controls from downstream analysis",
+                    "fa_icon": "fas fa_ban"
+                }
+            }
+        },
         "verify_identified_species_options": {
             "title": "Verify identified species options",
             "type": "object",
@@ -429,6 +441,9 @@
     "allOf": [
         {
             "$ref": "#/$defs/input_output_options"
+        },
+        {
+            "$ref": "#/$defs/skip_ntc"
         },
         {
             "$ref": "#/$defs/verify_identified_species_options"

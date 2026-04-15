@@ -7,6 +7,10 @@ include { MINIMAP2_ALIGN                            } from '../../../modules/nf-
 include { BAM_SORT_STATS_SAMTOOLS                   } from '../../nf-core/bam_sort_stats_samtools'
 include { SAMTOOLS_FAIDX                            } from '../../../modules/nf-core/samtools/faidx'
 include { PIGZ_UNCOMPRESS                           } from '../../../modules/nf-core/pigz/uncompress'
+include { SAMTOOLS_SORT                             } from '../../../modules/nf-core/samtools/sort'
+include { getFlagstatMappedReads                    } from '../utils_nfcore_metaval_pipeline'
+include { SAMTOOLS_COVERAGE                         } from '../../../modules/nf-core/samtools/coverage'
+include { SAMTOOLS_DEPTH                            } from '../../../modules/nf-core/samtools/depth'
 
 workflow MAPPING_LONGREAD {
     take:
@@ -65,12 +69,33 @@ workflow MAPPING_LONGREAD {
 
     BAM_SORT_STATS_SAMTOOLS ( ch_bam_ref_fai.ch_bam, ch_bam_ref_fai.ch_ref_fai )
 
+    // Remove empty bam files
+    ch_flagstat = channel.empty()
+    ch_flagstat = ch_flagstat.mix(BAM_SORT_STATS_SAMTOOLS.out.flagstat)
+        .map { meta, flagstat -> [meta] + getFlagstatMappedReads(flagstat)}
+
+    ch_bam_mapped = channel.empty()
+    ch_bam_mapped = ch_bam_mapped.mix(BAM_SORT_STATS_SAMTOOLS.out.bam)
+        .join (ch_flagstat, by: [0])
+        .map { meta, bam, _mapped, pass -> if (pass) [meta, bam] }
+
+    SAMTOOLS_SORT(ch_bam_mapped, [[],[],[]], 'bai')
+
+    // Generate samtools stats for coverage and depth
+    ch_bam_bai = channel.empty()
+    ch_bam_bai = ch_bam_bai.mix(SAMTOOLS_SORT.out.bam)
+        .join(SAMTOOLS_SORT.out.index, by:0)
+
+    SAMTOOLS_COVERAGE (ch_bam_bai, [[],[],[]])
+    SAMTOOLS_DEPTH (ch_bam_bai, [[],[]])
+
     ch_multiqc_files = ch_multiqc_files.mix(BAM_SORT_STATS_SAMTOOLS.out.flagstat.collect{ _meta, flagstat_file -> flagstat_file }.ifEmpty([]))
 
     emit:
     index    = MINIMAP2_INDEX.out.index              // channel: [ val(meta), [ index ] ]
-    bam      = BAM_SORT_STATS_SAMTOOLS.out.bam       // channel: [ val(meta), [ bam ] ]
-    bai      = BAM_SORT_STATS_SAMTOOLS.out.index       // channel: [ val(meta), [ bai ] ]
-    flagstat = BAM_SORT_STATS_SAMTOOLS.out.flagstat  // channel: [ val(meta), [ flagstat ] ]
+    bam      = SAMTOOLS_SORT.out.bam                 // channel: [ val(meta), [ bam ] ]
+    bai      = SAMTOOLS_SORT.out.index               // channel: [ val(meta), [ bai ] ]
+    coverage = SAMTOOLS_COVERAGE.out.coverage        // channel: [ val(meta), [ coverage ] ]
+    depth    = SAMTOOLS_DEPTH.out.tsv                // channel: [ val(meta), [ depth ] ]
     mqc      = ch_multiqc_files
 }

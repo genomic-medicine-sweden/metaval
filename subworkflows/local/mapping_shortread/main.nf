@@ -6,6 +6,10 @@ include { BOWTIE2_BUILD                             } from '../../../modules/nf-
 include { FASTQ_ALIGN_BOWTIE2                       } from '../../nf-core/fastq_align_bowtie2'
 include { SAMTOOLS_FAIDX                            } from '../../../modules/nf-core/samtools/faidx'
 include { PIGZ_UNCOMPRESS                           } from '../../../modules/nf-core/pigz/uncompress'
+include { SAMTOOLS_SORT                             } from '../../../modules/nf-core/samtools/sort'
+include { getFlagstatMappedReads                    } from '../utils_nfcore_metaval_pipeline'
+include { SAMTOOLS_COVERAGE                         } from '../../../modules/nf-core/samtools/coverage'
+include { SAMTOOLS_DEPTH                            } from '../../../modules/nf-core/samtools/depth'
 
 workflow MAPPING_SHORTREAD {
     take:
@@ -54,12 +58,33 @@ workflow MAPPING_SHORTREAD {
         ch_reads_with_index.fasta_fai
     )
 
+    // Remove empty bam files
+    ch_flagstat = channel.empty()
+    ch_flagstat = ch_flagstat.mix(FASTQ_ALIGN_BOWTIE2.out.flagstat)
+        .map { meta, flagstat -> [meta] + getFlagstatMappedReads(flagstat)}
+
+    ch_bam_mapped = channel.empty()
+    ch_bam_mapped = ch_bam_mapped.mix(FASTQ_ALIGN_BOWTIE2.out.bam)
+        .join (ch_flagstat, by: [0])
+        .map { meta, bam, _mapped, pass -> if (pass) [meta, bam] }
+
+    SAMTOOLS_SORT(ch_bam_mapped, [[],[],[]], 'bai')
+
+    // Generate samtools stats for coverage and depth
+    ch_bam_bai = channel.empty()
+    ch_bam_bai = ch_bam_bai.mix(SAMTOOLS_SORT.out.bam)
+        .join(SAMTOOLS_SORT.out.index, by:0)
+
+    SAMTOOLS_COVERAGE (ch_bam_bai, [[],[],[]])
+    SAMTOOLS_DEPTH (ch_bam_bai, [[],[]])
+
     ch_multiqc_files = ch_multiqc_files.mix ( FASTQ_ALIGN_BOWTIE2.out.flagstat.collect{ _meta, flagstat_file -> flagstat_file }.ifEmpty([]) )
 
     emit:
-    index    = BOWTIE2_BUILD.out.index               // channel: [ val(meta), [ index ] ]
-    bam      = FASTQ_ALIGN_BOWTIE2.out.bam           // channel: [ val(meta), [ bam ] ]
-    bai      = FASTQ_ALIGN_BOWTIE2.out.index           // channel: [ val(meta), [ bai ] ]
-    flagstat = FASTQ_ALIGN_BOWTIE2.out.flagstat      // channel: [ val(meta), [ flagstat ] ]
+    index    = BOWTIE2_BUILD.out.index           // channel: [ val(meta), [ index ] ]
+    bam      = SAMTOOLS_SORT.out.bam             // channel: [ val(meta), [ bam ] ]
+    bai      = SAMTOOLS_SORT.out.index           // channel: [ val(meta), [ bai ] ]
+    coverage = SAMTOOLS_COVERAGE.out.coverage    // channel: [ val(meta), [ coverage ] ]
+    depth    = SAMTOOLS_DEPTH.out.tsv            // channel: [ val(meta), [ depth ] ]
     mqc      = ch_multiqc_files
 }

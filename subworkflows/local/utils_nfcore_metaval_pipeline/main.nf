@@ -97,7 +97,16 @@ workflow PIPELINE_INITIALISATION {
     // Create channel from input file provided through params.input
     //
 
-    ch_samplesheet = channel.fromList(samplesheetToList(input, "${projectDir}/assets/schema_input.json"))
+    // Fitler NTC or Negative controls from downstream analysis
+    if (params.skip_ntc) {
+        ch_samplesheet = channel.fromList(samplesheetToList(input, "${projectDir}/assets/schema_input.json"))
+            .filter { entry ->
+                def meta = entry[0]
+                !(meta.id =~ /(?i)(ntc|neg)/)
+            }
+    } else {
+        ch_samplesheet = channel.fromList(samplesheetToList(input, "${projectDir}/assets/schema_input.json"))
+    }
 
     emit:
     samplesheet = ch_samplesheet
