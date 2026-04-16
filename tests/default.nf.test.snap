@@ -152,15 +152,10 @@
                 ]
             ],
             [
-                "SRR13439790_aligned_pathogens_genome_mapped.bam:md5,44d0accc837541f63644cde0191a1ed0",
-                "SRR13439790_aligned_pathogens_genome_mapped.bam.bai:md5,db765cd3557612a2e2c385feafa138bf",
-                "SRR13439802_aligned_pathogens_genome_mapped.bam:md5,0838bc173a5472094d6431ddf8f6b8ae",
-                "SRR13439802_aligned_pathogens_genome_mapped.bam.bai:md5,085740950fbcacf64081a73148107c10",
-                "SRR13439813_aligned_pathogens_genome_mapped.bam:md5,49302684c095b66ff1677776d1f59549",
-                "SRR13439813_aligned_pathogens_genome_mapped.bam.bai:md5,4866cac1f35293c952b5e1e6207b5ba6"
+                
             ]
         ],
-        "timestamp": "2026-04-15T21:07:39.301661911",
+        "timestamp": "2026-04-16T08:40:01.335346858",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.0"
