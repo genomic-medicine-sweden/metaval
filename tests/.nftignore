@@ -15,3 +15,4 @@ extracted_reads/*/*.fa
 mapping/bowtie2/*/*.{bam,bai}
 pathogens/blast/*/*.txt
 pathogens/igv/*.html
+pathogens/mapping/bowtie2/*/*.{bam,bai}
