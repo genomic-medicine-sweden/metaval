@@ -3,6 +3,8 @@
     IMPORT MODULES / SUBWORKFLOWS / FUNCTIONS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+// Flag taxonomy table
+include { FLAG_TAXPASTA                                         } from '../modules/local/flag_taxpasta'
 
 // Extract reads of taxIDs
 include { TAXID_READS                                           } from '../subworkflows/local/taxid_reads'
@@ -38,7 +40,8 @@ include { paramsSummaryMap                                      } from 'plugin/n
 include { paramsSummaryMultiqc                                  } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 include { softwareVersionsToYAML                                } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 include { methodsDescriptionText                                } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
-
+include { sample_ntc_branch                                     } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
+include { taxpasta_sample_ntc_joined                            } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     RUN MAIN WORKFLOW
@@ -55,8 +58,17 @@ workflow METAVAL {
     ch_multiqc_files = channel.empty()
     ch_fastqc_files = channel.empty()
 
-    // Create input channels
-    ch_input = ch_samplesheet.branch { meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
+    // Filter samplesheet to exclude NTC if params.skip_ntc is true.
+    if (params.skip_ntc) {
+        ch_samplesheet_filtered = ch_samplesheet.filter { meta, _fastq_1, _fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
+            return !meta.is_ntc
+        }
+    } else {
+        ch_samplesheet = ch_samplesheet
+    }
+
+    // Create input channels for short reads and long reads.
+    ch_input = ch_samplesheet_filtered.branch { meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
 
         // Define single_end based on the conditions
         meta.single_end = ( fastq_1 && !fastq_2 )
@@ -73,24 +85,59 @@ workflow METAVAL {
     // Workflow: Extract reads and verification
     //
 
-    // Channels for extracting kraken2/centrifuge/diamond reads
-    ch_extract_reads = ch_samplesheet.multiMap { meta, fastq_1, fastq_2, kraken2_report, kraken2_result, kraken2_taxpasta, centrifuge_report, centrifuge_result, centrifuge_taxpasta, diamond, diamond_taxpasta ->
-        kraken2_taxpasta: [ meta + [ tool: "kraken2" ], kraken2_taxpasta ]
-        kraken2_report: [ meta + [ tool: "kraken2" ], kraken2_report ]
-        kraken2_result: [ meta, kraken2_result ]
-        reads:[ meta, fastq_2 ? [ fastq_1, fastq_2 ] : [ fastq_1 ] ]
-        centrifuge_taxpasta: [ meta + [ tool: "centrifuge" ], centrifuge_taxpasta ]
-        centrifuge_report: [ meta + [ tool: "centrifuge" ], centrifuge_report ]
-        centrifuge_result: [ meta, centrifuge_result ]
-        diamond_taxpasta: [ meta + [ tool: "diamond" ], diamond_taxpasta ]
-        diamond_tsv: [ meta + [ tool: "diamond" ], diamond ]
-    }
-
     // Verify whether the taxonomic IDs identified by classification are true or false positives.
     if ( params.perform_verify_species ) {
+
+        //
+        // LOCAL MODULE: FLAG_TAXPASTA:
+        //
+        // Flag taxonomy tables by comparing samples with the negative controls (NTC) that have the same meta.library_type and meta.batch.
+        if ( params.flag_taxpasta ) {
+            // Create taxpasta channels for each classifier
+            ch_taxpasta = ch_samplesheet.multiMap { meta, _fastq_1, _fastq_2, _kraken2_report, _kraken2_result, kraken2_taxpasta, _centrifuge_report, _centrifuge_result, centrifuge_taxpasta, _diamond, diamond_taxpasta ->
+                kraken2: [ meta + [tool: "kraken2"], kraken2_taxpasta ]
+                centrifuge: [ meta + [tool: "centrifuge"], centrifuge_taxpasta ]
+                diamond: [ meta + [tool: "diamond"], diamond_taxpasta ]
+            }
+
+            // Create sample and NTC taxpasta channels: [ [meta.library_type, meta.batch], meta, taxpasta]
+            ch_taxpasta_kraken2 = sample_ntc_branch(ch_taxpasta.kraken2)
+            ch_taxpasta_centrifuge =  sample_ntc_branch(ch_taxpasta.centrifuge)
+            ch_taxpasta_diamond = sample_ntc_branch(ch_taxpasta.diamond)
+
+            // Join sample and NTC channels for each classifier
+            ch_taxpasta_kraken2_ntc = taxpasta_sample_ntc_joined(ch_taxpasta_kraken2.sample, ch_taxpasta_kraken2.ntc)
+            ch_taxpasta_centrifuge_ntc = taxpasta_sample_ntc_joined(ch_taxpasta_centrifuge.sample, ch_taxpasta_centrifuge.ntc)
+            ch_taxpasta_diamond_ntc = taxpasta_sample_ntc_joined(ch_taxpasta_diamond.sample, ch_taxpasta_diamond.ntc)
+
+            // Create the input channel for FLAG_TAXPASTA
+            ch_taxpasta_input = channel.empty()
+            ch_taxpasta_input = ch_taxpasta_input.mix(
+                ch_taxpasta_kraken2_ntc,
+                ch_taxpasta_centrifuge_ntc,
+                ch_taxpasta_diamond_ntc
+            )
+            // The input channels to FLAG_TAXPASTA process: [ meta_sample, taxpasta_sample, meta_ntc, taxpasta_ntc ]
+            FLAG_TAXPASTA( ch_taxpasta_input )
+        }
+
         //
         // SUBWORKFLOW: TAXID_READS - extract reads
         //
+
+        // Channels for extracting kraken2/centrifuge/diamond reads
+        ch_extract_reads = ch_samplesheet_filtered.multiMap { meta, fastq_1, fastq_2, kraken2_report, kraken2_result, kraken2_taxpasta, centrifuge_report, centrifuge_result, centrifuge_taxpasta, diamond, diamond_taxpasta ->
+            kraken2_taxpasta: [ meta + [ tool: "kraken2" ], kraken2_taxpasta ]
+            kraken2_report: [ meta + [ tool: "kraken2" ], kraken2_report ]
+            kraken2_result: [ meta, kraken2_result ]
+            reads:[ meta, fastq_2 ? [ fastq_1, fastq_2 ] : [ fastq_1 ] ]
+            centrifuge_taxpasta: [ meta + [ tool: "centrifuge" ], centrifuge_taxpasta ]
+            centrifuge_report: [ meta + [ tool: "centrifuge" ], centrifuge_report ]
+            centrifuge_result: [ meta, centrifuge_result ]
+            diamond_taxpasta: [ meta + [ tool: "diamond" ], diamond_taxpasta ]
+            diamond_tsv: [ meta + [ tool: "diamond" ], diamond ]
+        }
+
         TAXID_READS (
         ch_extract_reads.reads,
         ch_extract_reads.kraken2_taxpasta,

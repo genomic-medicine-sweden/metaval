@@ -98,15 +98,8 @@ workflow PIPELINE_INITIALISATION {
     //
 
     // Fitler NTC or Negative controls from downstream analysis
-    if (params.skip_ntc) {
-        ch_samplesheet = channel.fromList(samplesheetToList(input, "${projectDir}/assets/schema_input.json"))
-            .filter { entry ->
-                def meta = entry[0]
-                !(meta.id =~ /(?i)(ntc|neg)/)
-            }
-    } else {
-        ch_samplesheet = channel.fromList(samplesheetToList(input, "${projectDir}/assets/schema_input.json"))
-    }
+
+    ch_samplesheet = channel.fromList(samplesheetToList(input, "${projectDir}/assets/schema_input.json"))
 
     emit:
     samplesheet = ch_samplesheet
@@ -265,4 +258,41 @@ def getFlagstatMappedReads(flagstat_file) {
         pass = true
     }
     return [ mapped_reads, pass ]
+}
+
+//
+// Functions to create input channles for FLAG_TAXPASTA process
+//
+
+//Create sample and NTC taxpasta channels
+def sample_ntc_branch(taxpasta_channel) {
+    return taxpasta_channel.branch { meta, taxpasta ->
+        def key = [meta.library_type, meta.batch]
+        ntc: meta.is_ntc
+        return [key, meta, taxpasta]
+        sample: !meta.is_ntc
+        return [key, meta, taxpasta]
+    }
+}
+
+// Join sample and NTC taxpasta channels by meta.library_type and meta.batch
+// The input channels to FLAG_TAXPASTA process: [meta_sample, taxpasta_sample, meta_ntc, taxpasta_ntc]
+def taxpasta_sample_ntc_joined(ch_taxpasta_sample, ch_taxpasta_ntc) {
+    return ch_taxpasta_sample
+        .join(ch_taxpasta_ntc, by: 0, remainder: true)
+        .filter { entry ->
+            // Keep sample-driven rows and discard NTC-only remainder rows from the join
+            entry.size() >= 3 && entry[0] != null && entry[1] != null && entry[2] != null
+        }
+        .map { entry ->
+            if (entry.size() == 3) {
+                // No matched NTC for this sample; emit sample data with empty NTC placeholders
+                def (_key, meta_sample, taxpasta_sample) = entry
+                return [meta_sample, taxpasta_sample, [:], []]
+            } else {
+                // Matched key between sample and NTC rows
+                def (_key, meta_sample, taxpasta_sample, meta_ntc, taxpasta_ntc) = entry
+                return [meta_sample, taxpasta_sample, meta_ntc ?: [:], taxpasta_ntc ?: []]
+            }
+        }
 }

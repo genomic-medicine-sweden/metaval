@@ -56,18 +56,18 @@ curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/
 curl -O https://github.com/genomic-medicine-sweden/test-datasets/blob/metaval/reference/reference.fasta.gz
 curl -O https://github.com/genomic-medicine-sweden/test-datasets/blob/metaval/reference/accession2taxid.map
 # kraken2
-curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439790_pe_SRR13439790_k2_pluspf.kraken2.kraken2.report.txt
-curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439790_pe_SRR13439790_k2_pluspf.kraken2.kraken2.classifiedreads.txt
-curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439799_se_SRR13439799_k2_pluspf.kraken2.kraken2.report.txt
-curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439799_se_SRR13439799_k2_pluspf.kraken2.kraken2.classifiedreads.txt
+curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439790_k2_pluspf.kraken2.kraken2.report.txt
+curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439790_k2_pluspf.kraken2.kraken2.classifiedreads.txt
+curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439799_k2_pluspf.kraken2.kraken2.report.txt
+curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439799_k2_pluspf.kraken2.kraken2.classifiedreads.txt
 # centrifuge
-curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439790_pe_SRR13439790_p_compressed+h+v.centrifuge.txt
-curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439790_pe_SRR13439790_p_compressed+h+v.centrifuge.results.txt
-curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439799_se_SRR13439799_p_compressed+h+v.centrifuge.txt
-curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439799_se_SRR13439799_p_compressed+h+v.centrifuge.results.txt
+curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439790_p_compressed+h+v.centrifuge.txt
+curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439790_p_compressed+h+v.centrifuge.results.txt
+curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439799_p_compressed+h+v.centrifuge.txt
+curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439799_p_compressed+h+v.centrifuge.results.txt
 # diamond
-curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439790_pe_SRR13439790_diamond.diamond.tsv
-curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439799_se_SRR13439799_diamond.diamond.tsv
+curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439790_diamond.diamond.tsv
+curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/SRR13439799_diamond.diamond.tsv
 # taxpasta
 curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/kraken2_k2_pluspf.tsv
 curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/testdata/centrifuge_p_compressed+h+v.tsv
@@ -84,8 +84,8 @@ Copy and paste the following lines into the file and save it.
 
 ```csv title="samplesheet.csv"
 sample,instrument_platform,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
-SRR13439790,ILLUMINA,SRR13439790_SRR13439790.unmapped_1.fastq.gz,SRR13439790_SRR13439790.unmapped_2.fastq.gz,SRR13439790_pe_SRR13439790_k2_pluspf.kraken2.kraken2.report.txt,SRR13439790_pe_SRR13439790_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439790_pe_SRR13439790_p_compressed+h+v.centrifuge.txt,SRR13439790_pe_SRR13439790_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439790_pe_SRR13439790_diamond.diamond.tsv,diamond_diamond.tsv
-SRR13439799,OXFORD_NANOPORE,SRR13439799_SRR13439799.unmapped_other.fastq.gz,,SRR13439799_se_SRR13439799_k2_pluspf.kraken2.kraken2.report.txt,SRR13439799_se_SRR13439799_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439799_se_SRR13439799_p_compressed+h+v.centrifuge.txt,SRR13439799_se_SRR13439799_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439799_se_SRR13439799_diamond.diamond.tsv,diamond_diamond.tsv
+SRR13439790,ILLUMINA,SRR13439790_SRR13439790.unmapped_1.fastq.gz,SRR13439790_SRR13439790.unmapped_2.fastq.gz,SRR13439790_k2_pluspf.kraken2.kraken2.report.txt,SRR13439790_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439790_p_compressed+h+v.centrifuge.txt,SRR13439790_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439790_diamond.diamond.tsv,diamond_diamond.tsv
+SRR13439799,OXFORD_NANOPORE,SRR13439799_SRR13439799.unmapped_other.fastq.gz,,SRR13439799_k2_pluspf.kraken2.kraken2.report.txt,SRR13439799_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439799_p_compressed+h+v.centrifuge.txt,SRR13439799_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439799_diamond.diamond.tsv,diamond_diamond.tsv
 
 ```
 

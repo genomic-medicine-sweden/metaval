@@ -66,6 +66,12 @@
                     "help_text": "Enable the option to extract reads assigned to taxonomic IDs based on results from `Kraken2`, `Centrifuge`, and `DIAMOND` classifiers.",
                     "fa_icon": "fas fa-toggle-on"
                 },
+                "flag_taxpasta": {
+                    "type": "boolean",
+                    "description": "Flag sample taxpasta tables by comparing each sample to a matched NTC table.",
+                    "help_text": "When enabled, the workflow compares each sample taxpasta result to its matched NTC result and reports whether taxa are found only in the sample, only in the NTC, or are enriched/depleted in the sample. If no matched NTC is available, the workflow still exports a sample-only taxpasta table without NTC comparison columns.",
+                    "fa_icon": "fa fa-toggle-on"
+                },
                 "taxid": {
                     "type": "string",
                     "format": "file-path",
@@ -172,7 +178,7 @@
                 },
                 "consensus_min_bases": {
                     "type": "number",
-                    "default": 50,
+                    "default": 50.0,
                     "description": "The minimum number of bases used to filter consensus sequences. The default is 50.",
                     "fa-icon": "filter"
                 }
@@ -198,7 +204,8 @@
                     "type": "string",
                     "format": "file-path",
                     "description": "A header file for BLASTN/BLASTX hits.",
-                    "fa_icon": "fa-file-lines"
+                    "fa_icon": "fa-file-lines",
+                    "default": "/Users/lili.li.2/project/metaval_proj/metaval_report_new/assets/blast_outfmt10_header.txt"
                 },
                 "skip_blastx": {
                     "type": "boolean",
@@ -227,14 +234,14 @@
                 },
                 "blastn_min_pident": {
                     "type": "number",
-                    "default": 50,
+                    "default": 50.0,
                     "description": "The minimum percentage of identical matches (--min_pident) used to filter BLASTN results",
                     "help_text": "Specify the minimum percentage of identical matches for filtering BLASTN results.\n\n> Modifies tool parameter(s):\n> - filter_blast.py: `min_pident=`",
                     "fa_icon": "filter"
                 },
                 "blastx_min_pident": {
                     "type": "number",
-                    "default": 50,
+                    "default": 50.0,
                     "description": "The minimum percentage of identical matches (--min_pident) used to filter DIAMOND/BLASTX results",
                     "help_text": "Specify the minimum percentage of identical matches for filtering DIAMOND/BLASTX results.\n\n> Modifies tool parameter(s):\n> - filter_blast.py: `min_pident=`",
                     "fa_icon": "filter"
