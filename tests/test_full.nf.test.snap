@@ -127,7 +127,113 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-04-17T16:20:54.361111908"
+        "timestamp": "2026-04-17T19:48:26.482926198"
+    },
+    "blastx": {
+        "content": [
+            [
+                "SRR13439790_taxid_2886042_Shigella-virus-Moo19_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439790_taxid_2886042_Shigella-virus-Moo19_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_1173749_Salmonella-phage-FSL-SP-031_blastx_filtered.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_1173749_Salmonella-phage-FSL-SP-031_blastx_filtered_summary.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_1282995_Serratia-phage-Eta_blastx_filtered.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_1282995_Serratia-phage-Eta_blastx_filtered_summary.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_1623289_Dhillonvirus_blastx_filtered.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_1623289_Dhillonvirus_blastx_filtered_summary.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_1910976_Guernseyvirinae_blastx_filtered.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_1910976_Guernseyvirinae_blastx_filtered_summary.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_1910993_Cornellvirus_blastx_filtered.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_1910993_Cornellvirus_blastx_filtered_summary.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_1911928_Vequintavirinae_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_1911928_Vequintavirinae_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_1920753_Gamaleyavirus_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_1920753_Gamaleyavirus_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2024312_Salmonella-phage-St162_blastx_filtered.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_2024312_Salmonella-phage-St162_blastx_filtered_summary.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2234086_Escherichia-phage-phi-G17_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2234086_Escherichia-phage-phi-G17_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2301721_Salmonella-virus-VSiP_blastx_filtered.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_2301721_Salmonella-virus-VSiP_blastx_filtered_summary.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_2304001_unclassified-Cornellvirus_blastx_filtered.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_2304001_unclassified-Cornellvirus_blastx_filtered_summary.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_2491323_Salmonella-phage-TS6_blastx_filtered.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_2491323_Salmonella-phage-TS6_blastx_filtered_summary.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_2731619_Caudoviricetes_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2731619_Caudoviricetes_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2750853_Escherichia-phage-vB-EcoP-SP5M_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2750853_Escherichia-phage-vB-EcoP-SP5M_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2787014_Serratia-phage-Tsm2_blastx_filtered.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_2787014_Serratia-phage-Tsm2_blastx_filtered_summary.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_2842329_Schitoviridae_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2842329_Schitoviridae_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2842412_Enquatrovirinae_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2842412_Enquatrovirinae_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2842586_Cbunavirus_blastx_filtered.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_2842586_Cbunavirus_blastx_filtered_summary.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_2842972_Pokkenvirus_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2842972_Pokkenvirus_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2852703_unclassified-Pokkenvirus_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2852703_unclassified-Pokkenvirus_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2853091_Escherichia-phage-U1G_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2853091_Escherichia-phage-U1G_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2859653_Stenotrophomonas-phage-Paxi_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2859653_Stenotrophomonas-phage-Paxi_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2859656_Stenotrophomonas-phage-Piffle_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2859656_Stenotrophomonas-phage-Piffle_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2886042_Shigella-virus-Moo19_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2886042_Shigella-virus-Moo19_blastx_filtered_summary.txt(kraken2) contains string:true",
+                "SRR13439813_taxid_2932867_Serratia-phage-vB-SmaM-Otaku_blastx_filtered.txt(kraken2) contains string:false",
+                "SRR13439813_taxid_2932867_Serratia-phage-vB-SmaM-Otaku_blastx_filtered_summary.txt(kraken2) contains string:false"
+            ],
+            [
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered.txt(centrifuge) contains string:true",
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered_summary.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_blastx_filtered.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_blastx_filtered_summary.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_10752_Enquatrovirus-N4_blastx_filtered.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_10752_Enquatrovirus-N4_blastx_filtered_summary.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1173749_Salmonella-phage-FSL-SP-031_blastx_filtered.txt(centrifuge) exists:true",
+                "SRR13439813_taxid_1173749_Salmonella-phage-FSL-SP-031_blastx_filtered_summary.txt(centrifuge) exists:true",
+                "SRR13439813_taxid_1204528_Salmonella-phage-SKML-39_blastx_filtered.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1204528_Salmonella-phage-SKML-39_blastx_filtered_summary.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1239384_Escherichia-phage-IME11_blastx_filtered.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1239384_Escherichia-phage-IME11_blastx_filtered_summary.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1282995_Serratia-phage-Eta_blastx_filtered.txt(centrifuge) exists:true",
+                "SRR13439813_taxid_1282995_Serratia-phage-Eta_blastx_filtered_summary.txt(centrifuge) exists:true",
+                "SRR13439813_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_blastx_filtered.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_blastx_filtered_summary.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_blastx_filtered.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_blastx_filtered_summary.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1414738_Shigella-phage-pSb-1_blastx_filtered.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1414738_Shigella-phage-pSb-1_blastx_filtered_summary.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1416009_Achromobacter-phage-JWAlpha_blastx_filtered.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1416009_Achromobacter-phage-JWAlpha_blastx_filtered_summary.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1458848_Escherichia-phage-Bp4_blastx_filtered.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1458848_Escherichia-phage-Bp4_blastx_filtered_summary.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_blastx_filtered.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_blastx_filtered_summary.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_1701257_Enterobacter-phage-phiEap-2_blastx_filtered.txt(centrifuge) exists:true",
+                "SRR13439813_taxid_1701257_Enterobacter-phage-phiEap-2_blastx_filtered_summary.txt(centrifuge) exists:true",
+                "SRR13439813_taxid_371730_Enquatrovirus_blastx_filtered.txt(centrifuge) contains string:true",
+                "SRR13439813_taxid_371730_Enquatrovirus_blastx_filtered_summary.txt(centrifuge) contains string:true"
+            ],
+            [
+                
+            ]
+        ],
+        "meta": {
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-04-17T19:48:26.857366012"
     },
     "blastn": {
         "content": [
@@ -289,6 +395,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-04-17T16:20:54.706324651"
+        "timestamp": "2026-04-21T16:26:39.511805404"
     }
 }
