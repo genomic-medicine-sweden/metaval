@@ -204,8 +204,7 @@
                     "type": "string",
                     "format": "file-path",
                     "description": "A header file for BLASTN/BLASTX hits.",
-                    "fa_icon": "fa-file-lines",
-                    "default": "/Users/lili.li.2/project/metaval_proj/metaval_report_new/assets/blast_outfmt10_header.txt"
+                    "fa_icon": "fa-file-lines"
                 },
                 "skip_blastx": {
                     "type": "boolean",

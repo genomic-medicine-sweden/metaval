@@ -83,9 +83,9 @@ Open a text editor, and create a file called `samplesheet.csv`.
 Copy and paste the following lines into the file and save it.
 
 ```csv title="samplesheet.csv"
-sample,instrument_platform,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
-SRR13439790,ILLUMINA,SRR13439790_SRR13439790.unmapped_1.fastq.gz,SRR13439790_SRR13439790.unmapped_2.fastq.gz,SRR13439790_k2_pluspf.kraken2.kraken2.report.txt,SRR13439790_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439790_p_compressed+h+v.centrifuge.txt,SRR13439790_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439790_diamond.diamond.tsv,diamond_diamond.tsv
-SRR13439799,OXFORD_NANOPORE,SRR13439799_SRR13439799.unmapped_other.fastq.gz,,SRR13439799_k2_pluspf.kraken2.kraken2.report.txt,SRR13439799_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439799_p_compressed+h+v.centrifuge.txt,SRR13439799_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439799_diamond.diamond.tsv,diamond_diamond.tsv
+sample,instrument_platform,library_type,is_ntc,batch,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
+SRR13439790,ILLUMINA,DNA,false,batch1,SRR13439790_SRR13439790.unmapped_1.fastq.gz,SRR13439790_SRR13439790.unmapped_2.fastq.gz,SRR13439790_k2_pluspf.kraken2.kraken2.report.txt,SRR13439790_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439790_p_compressed+h+v.centrifuge.txt,SRR13439790_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439790_diamond.diamond.tsv,diamond_diamond.tsv
+SRR13439799,OXFORD_NANOPORE,OTHER,false,batch3,SRR13439799_SRR13439799.unmapped_other.fastq.gz,,SRR13439799_k2_pluspf.kraken2.kraken2.report.txt,SRR13439799_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439799_p_compressed+h+v.centrifuge.txt,SRR13439799_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439799_diamond.diamond.tsv,diamond_diamond.tsv
 
 ```
 
@@ -106,10 +106,11 @@ This workflow is activated by enabling the `--perform_screen_pathogens` option. 
 
 ```bash
 git clone https://github.com/genomic-medicine-sweden/metaval.git
-nextflow run metaval/main.nf -profile singularity --input samplesheet.csv --outdir pathogen_screen_result \
---pathogens_genomes reference.fasta --accession2taxid accession2taxid.map \
---perform_screen_pathogens --perform_longread_consensus --perform_shortread_consensus \
---longread_consensus_tool --min_read_counts 20
+nextflow run metaval/main.nf -profile singularity \
+  --input samplesheet.csv --outdir pathogen_screen_result \
+  --pathogens_genomes reference.fasta --accession2taxid accession2taxid.map \
+  --perform_screen_pathogens --perform_longread_consensus --perform_shortread_consensus \
+  --longread_consensus_tool 'medaka' --consensus_min_bases 50
 
 ```
 
@@ -119,9 +120,12 @@ This workflow is activated by enabling the `--perform_verify_species` option and
 
 ```bash
 git clone https://github.com/genomic-medicine-sweden/metaval.git
-nextflow run metaval/main.nf -profile singularity --input samplesheet.csv --outdir identified_viruses_results \
---perform_verify_species --extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads \
---perform_shortread_denovo --perform_longread_denovo --min_read_counts 20
+nextflow run metaval/main.nf -profile singularity \
+  --input samplesheet.csv --outdir identified_viruses_results \
+  --flag_taxpasta --skip_ntc --perform_verify_species \
+  --extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads \
+  --perform_shortread_denovo --perform_longread_denovo \
+  --min_read_counts 20 --perform_mapping
 
 ```
 
@@ -131,9 +135,12 @@ This workflow is activated by enabling the ´--perform_verify_species´ option a
 
 ```bash
 git clone https://github.com/genomic-medicine-sweden/metaval.git
-nextflow run metaval/main.nf -profile singularity --input samplesheet.csv --outdir identified_viruses_results \
---perform_verify_species --taxid taxid_list.txt \
---extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads \
---perform_shortread_denovo --perform_longread_denovo --min_read_counts 20
+nextflow run metaval/main.nf -profile singularity \
+  --input samplesheet.csv --outdir identified_viruses_results \
+  --flag_taxpasta --skip_ntc --perform_verify_species \
+  --taxid taxid_list.txt --extract_kraken2_reads \
+  --extract_centrifuge_reads --extract_diamond_reads \
+  --perform_shortread_denovo --perform_longread_denovo \
+  --min_read_counts 20 --perform_mapping
 
 ```

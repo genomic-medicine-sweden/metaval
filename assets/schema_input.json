@@ -107,14 +107,7 @@
                 "errorMessage": "Standardized diamond profiling with taxonomic information obtained from `taxpasta`."
             }
         },
-        "required": [
-            "sample",
-            "instrument_platform",
-            "library_type",
-            "is_ntc",
-            "batch",
-            "fastq_1"
-        ],
+        "required": ["sample", "instrument_platform", "library_type", "is_ntc", "batch", "fastq_1"],
         "dependentRequired": {
             "kraken2_result": ["kraken2_report"],
             "kraken2_taxpasta": ["kraken2_report", "kraken2_result"],

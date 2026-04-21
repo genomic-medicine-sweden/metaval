@@ -31,6 +31,9 @@ genomic-medicine-sweden/metaval will require the information given bellow.
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | sample              | Unique sample name [required].                                                                                                                   |
 | instrument_platform | Sequencing platform reads generated on, either ILLUMINA or OXFORD_NANOPORE [required].                                                           |
+| library_type        | Library type for the sample, e.g. `DNA`, `RNA`, or `OTHER` [required].                                                                           |
+| is_ntc              | Whether the row corresponds to a negative control (`true` or `false`) [required].                                                                |
+| batch               | Batch or preparation workflow [required].                                                                                                        |
 | fastq_1             | Unmapped human reads from bowtie2/minimap2, filtered reads from bbduk/nanoq/FiltLong or raw sequencing reads. Gzipped compressed files accepted. |
 | fastq_2             | Unmapped human reads from bowtie2, filtered reads from bbduk/nanoq/FiltLong or raw reads. Gzipped compressed files accepted.                     |
 | kraken2_report      | Kraken2 report containing stats about classified and not classified reads.                                                                       |
@@ -43,9 +46,10 @@ genomic-medicine-sweden/metaval will require the information given bellow.
 | diamond_taxpasta    | Standardized diamond taxonomic profiles for all samples.                                                                                         |
 
 ```csv title="samplesheet.csv"
-sample,instrument_platform,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
-sample1,ILLUMINA,sample1.unmapped_1.fastq.gz,sample1.unmapped_2.fastq.gz,sample1.kraken2.kraken2.report.txt,sample1.kraken2.kraken2.classifiedreads.txt,kraken2_kraken2-db.tsv,sample1.centrifuge.txt,sample1.centrifuge.results.txt,centrifuge_centrifuge-db.tsv,sample1.diamond.tsv,diamond_diamond-db.tsv
-sample2,ILLUMINA,sample2.unmapped_1.fastq.gz,sample2.unmapped_2.fastq.gz,sample2.kraken2.kraken2.report.txt,sample2.kraken2.kraken2.classifiedreads.txt,kraken2_kraken2-db.tsv,sample2.centrifuge.txt,sample2.centrifuge.results.txt,centrifuge_centrifuge-db.tsv,sample2.diamond.tsv,diamond_diamond-db.tsv
+sample,instrument_platform,library_type,is_ntc,batch,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
+sample1,ILLUMINA,DNA,false,batch1,sample1.unmapped_1.fastq.gz,sample1.unmapped_2.fastq.gz,sample1.kraken2.kraken2.report.txt,sample1.kraken2.kraken2.classifiedreads.txt,kraken2_kraken2-db.tsv,sample1.centrifuge.txt,sample1.centrifuge.results.txt,centrifuge_centrifuge-db.tsv,sample1.diamond.tsv,diamond_diamond-db.tsv
+sample1_ntc,ILLUMINA,DNA,true,batch1,sample1_ntc.unmapped_1.fastq.gz,sample1_ntc.unmapped_2.fastq.gz,sample1_ntc.kraken2.kraken2.report.txt,sample1_ntc.kraken2.kraken2.classifiedreads.txt,kraken2_kraken2-db.tsv,sample1_ntc.centrifuge.txt,sample1_ntc.centrifuge.results.txt,centrifuge_centrifuge-db.tsv,sample1_ntc.diamond.tsv,diamond_diamond-db.tsv
+sample2,OXFORD_NANOPORE,RNA,false,batch2,sample2.unmapped.fastq.gz,,sample2.kraken2.kraken2.report.txt,sample2.kraken2.kraken2.classifiedreads.txt,kraken2_kraken2-db.tsv,sample2.centrifuge.txt,sample2.centrifuge.results.txt,centrifuge_centrifuge-db.tsv,sample2.diamond.tsv,diamond_diamond-db.tsv
 ```
 
 #### BLASTn database
@@ -131,10 +135,10 @@ The example commands for running each workflow are as follows:
 
 ```bash
 # Green Workflow - pathogen screening
-nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results -profile docker --perform_screen_pathogens --pathogens_genomes /path/to/reference.fna --accession2taxid /path/to/accession2taxid.map
+nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results -profile docker --perform_screen_pathogens --pathogens_genomes /path/to/reference.fna --accession2taxid /path/to/accession2taxid.map --perform_shortread_consensus --perform_longread_consensus --longread_consensus_tool 'medaka' --consensus_min_bases 50
 
 # Orange Workflow - Verify Identified Viruses
-nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results -profile docker --perform_verify_species --extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads --perform_mapping --taxid2genome /path/to/taxid2genome.map --perform_shortread_denovo --perform_longread_denovo
+nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results -profile docker --perform_verify_species --skip_ntc --flag_taxpasta --extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads --perform_mapping --taxid2genome /path/to/taxid2genome.map --perform_shortread_denovo --perform_longread_denovo --perform_mapping
 
 # Blue Workflow - Verify User-Defined TaxIDs
 nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results -profile docker --taxid 211044 2886042 --perform_verify_species --extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads --perform_mapping --taxid2genome /path/to/taxid2genome.map --perform_shortread_denovo --perform_longread_denovo --perform_shortread_consensus --perform_longread_consensus --longread_consensus_tool 'medaka'
@@ -176,9 +180,15 @@ genome: 'GRCh37'
 
 You can also generate such `YAML`/`JSON` files via [nf-core/launch](https://nf-co.re/launch).
 
-### Decontamination
+### Flag taxpasta
 
-Filtering the output files from metagenomics classifiers like `Kraken2`, `Centrifuge`, or `DIAMOND` to remove false positives and background contamination can be activated by enabling `--decontamination` option. This step compares results to the negative control to identify likely present species based on user-defined thresholds.
+Flag taxonomy tables generated by `taxpasta` by enabling `--flag_taxpasta`. This step compares each sample against the matched negative control from the same `library_type` and `batch`, as defined in the samplesheet, and can help identify background noise or likely contaminants.
+
+If no matching negative control is available for a sample, the pipeline still writes the sample taxonomy table without NTC comparison columns.
+
+### Skip NTC
+
+`--skip_ntc` can be used to skip downstream analysis for negative control samples. This is useful when you have many negative controls and want to reduce computational cost. The default is `true`.
 
 ### Extract Viral TaxIDs
 
@@ -220,6 +230,12 @@ To reduce false positives hits in BLAST result, we apply filtering. Filtering th
 To screen for the existence of pathogens in samples, map the raw reads to a pathogens genome database (`--pathogens_genomes`) by activating the `--perform_screen_pathogens` option. Alternatively, map the extract reads of taxIDs to the genomes that correspond to the positive hits from BLASTx/BLASTn.
 
 Use `Bowtie2` for short reads and `minimap2` for long reads.
+
+### Coverage and depth
+
+Coverage and depth are calculated after the mapping step. This applies both to raw reads mapped to a pathogen genome database in the pathogen screening workflow and to extracted reads mapped to genomes selected from positive `BLASTn` or `BLASTx` hits in the verification workflow.
+
+Coverage summarises how much of a reference genome is covered by mapped reads, while depth describes how many reads support each covered position. Together, these outputs help assess whether a detected organism has broad genome support or only limited local alignment.
 
 ### Call consensus
 

@@ -20,6 +20,7 @@ The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes d
 - [BLAST](#BLAST) - Run BLASTN or BLASTX
 - [Bowtie2](#Mapping) - Map raw Illumina reads to a pathogen genome database or map Illumina reads of specific taxIDs to genomes with positive BLAST hits.
 - [minimap2](#Mapping) - Map raw Nanopore reads to a pathogen genome database or map Nanopore reads of specific taxIDs to genomes with positive BLAST hits.
+- [Coverage and depth](#Coverage-and-depth) - Calculate coverage and depth of mapped reads across genomes.
 - [IGV](#IGV) - Report for visualizing reads mapped to the genomes identified.
 - [Pathogen reads](#Pathogen-reads) For the pathogen screening workflow, prepare an individual FASTA/BAM file for each pathogen with mapped reads.
 - [Call Consensus](#Call-Consensus) - Call consensus sequences for reads mapped to pathogen genomes
@@ -277,6 +278,33 @@ Map reads to the pathogen genomes databases.
 </details>
 
 The `pathogens` directory will only be present if `--perform_screen_pathogens` is supplied.
+
+### Coverage and depth
+
+#### Verify identified species
+
+Calculate the coverage and depth of the reads mapped to the genomes based on BLAST hits.
+
+<details markdown="1">
+<summary>Output files</summary>
+- `samtools/`
+  - `coverage/`
+    - `<sample_id>_<classifer>_taxid_<taxid>_<species>_mappingorganism_<organism>_<genome_id>.txt`: Tab-delimited file containing coverage statics for reads mapped to the genomes.
+  - `depth/`
+    - `<sample_id>_<classifer>_taxid_<taxid>_<species>_mappingorganism_<organism>_<genome_id>.tsv`: Tab-delimited file containing depth information for reads mapped to the genomes.
+
+#### Pathogen screening
+
+Calculate the coverage and depth of the reads mapped to a pathogen genome database.
+
+<details markdown="1">
+<summary>Output files</summary>
+- `pathogens/
+  - samtools/`
+    - `coverage/`
+      - `<sample_id>_<classifer>_taxid_<taxid>_<species>_mappingorganism_<organism>_<genome_id>.txt`: Tab-delimited file containing coverage statics for reads mapped to the genomes.
+    - `depth/`
+      - `<sample_id>_<classifer>_taxid_<taxid>_<species>_mappingorganism_<organism>_<genome_id>.tsv`: Tab-delimited file containing depth information for reads mapped to the genomes.
 
 ### IGV
 
