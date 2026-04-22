@@ -8,7 +8,7 @@ nextflow_pipeline {
     profile "test"
 
 
-    test("-profile test_taxid") {
+    test("-profile test") {
 
         when {
             params {
