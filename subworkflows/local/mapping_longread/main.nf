@@ -11,6 +11,7 @@ include { SAMTOOLS_SORT                             } from '../../../modules/nf-
 include { getFlagstatMappedReads                    } from '../utils_nfcore_metaval_pipeline'
 include { SAMTOOLS_COVERAGE                         } from '../../../modules/nf-core/samtools/coverage'
 include { SAMTOOLS_DEPTH                            } from '../../../modules/nf-core/samtools/depth'
+include { COVERAGE_PLOT                             } from '../../../modules/local/coverage_plot'
 
 workflow MAPPING_LONGREAD {
     take:
@@ -88,6 +89,12 @@ workflow MAPPING_LONGREAD {
 
     SAMTOOLS_COVERAGE (ch_bam_bai, [[],[],[]])
     SAMTOOLS_DEPTH (ch_bam_bai, [[],[]])
+
+    ch_coverage_plot = channel.empty()
+    ch_coverage_plot = ch_coverage_plot.mix(SAMTOOLS_DEPTH.out.tsv)
+        .join(SAMTOOLS_COVERAGE.out.coverage, by:0)
+
+    COVERAGE_PLOT (ch_coverage_plot)
 
     ch_multiqc_files = ch_multiqc_files.mix(BAM_SORT_STATS_SAMTOOLS.out.flagstat.collect{ _meta, flagstat_file -> flagstat_file }.ifEmpty([]))
 

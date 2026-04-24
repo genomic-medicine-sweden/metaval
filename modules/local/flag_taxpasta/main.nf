@@ -27,7 +27,7 @@ process FLAG_TAXPASTA {
         --sample_taxpasta ${sample_taxpasta} \\
         --sample_name ${meta1.id} \\
         ${ntc_cmd} \\
-        --prefix ${prefix} \\
+        --output ${prefix}.tsv \\
         ${args}
     """
 }

@@ -24,15 +24,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--sample_name", required=True, help="Sample column name to select.")
     p.add_argument("--ntc_taxpasta", help="Optional NTC taxpasta TSV.")
     p.add_argument("--ntc_name", help="Optional NTC column name to select.")
-    p.add_argument(
-        "--prefix",
-        help="Output filename stem. Defaults to '<sample_taxpasta_stem>_<sample_name>'.",
-    )
-    p.add_argument("-o", "--outdir", help="Output directory. Defaults to sample taxpasta directory.")
+    p.add_argument("--output", required=True, help="Output TSV file path.")
     return p.parse_args(argv)
-
-#def safe_filename_part(name: str) -> str:
-#    return re.sub(r"[^A-Za-z0-9._-]+", "-", name).strip("-_.")
 
 def load_taxpasta_file(path: str) -> pd.DataFrame:
     df = pd.read_csv(path, sep="\t")
@@ -108,7 +101,7 @@ def build_output(
     merged[["rank", "lineage"]] = merged[["rank", "lineage"]].fillna("")
 
     merged = merged.loc[(merged[sample_col] > 0) | (merged[ntc_label] > 0)].copy()
-    cmp_label = f"{sample_label}_vs_{ntc_label}"
+    cmp_label = f"{sample_label}_vsNTC"
     merged[cmp_label] = [flag(sample_reads_count, ntc_reads_count) for sample_reads_count, ntc_reads_count in zip(merged[sample_col], merged[ntc_label])]
     merged = merged.rename(columns={sample_col: sample_label})
 
@@ -126,16 +119,11 @@ def main(argv: list[str] | None = None) -> None:
         ntc_df = load_taxpasta_file(args.ntc_taxpasta)
         ntc_col = find_profile_column(ntc_df, args.ntc_name, args.ntc_taxpasta)
 
-    outdir = Path(args.outdir) if args.outdir else Path(args.sample_taxpasta).parent
-    outdir.mkdir(parents=True, exist_ok=True)
-
     output_df = build_output(sample_df, sample_col, args.sample_name, ntc_df, ntc_col, args.ntc_name)
-    filename_stem = args.prefix or f"{Path(args.sample_taxpasta).stem}_{safe_filename_part(args.sample_name)}"
-    out_path = outdir / f"{filename_stem}.tsv"
-    output_df.to_csv(out_path, sep="\t", index=False)
+    output_df.to_csv(args.output, sep="\t", index=False)
 
     ntc_info = args.ntc_name if ntc_col else "none"
-    print(f"Wrote {out_path} (sample={args.sample_name}, ntc={ntc_info})")
+    print(f"Wrote {args.output} (sample={args.sample_name}, ntc={ntc_info})")
 
 
 if __name__ == "__main__":

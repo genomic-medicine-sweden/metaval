@@ -1,0 +1,7 @@
+name: coverage_plot
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - matplotlib=3.5.1

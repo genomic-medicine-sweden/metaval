@@ -55,7 +55,7 @@ def filter_summary_blast(blast_header, input, filtered_output, summary_output, m
 
     # Summarize filtered results
     summary = (
-        filtered.groupby(["qseqid", "staxid", "ssciname"])
+        filtered.groupby(["qseqid", "staxid", "ssciname", "stitle"])
         .agg(
             count=("staxid", "count"),
             min_pident=("pident", "min"),
