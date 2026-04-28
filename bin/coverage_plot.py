@@ -29,12 +29,6 @@ def parse_args():
         required=True,
         help="Output PNG file path. Defaults to the input file stem with .png.",
     )
-    parser.add_argument(
-        "--window_size",
-        type=int,
-        default=51,
-        help="Rolling mean window size for the smoothed depth line. Default: %(default)s",
-    )
     return parser.parse_args()
 
 
@@ -65,22 +59,7 @@ def read_coverage_file(path):
     return coverage_by_ref
 
 
-def rolling_mean(values, window_size):
-    if window_size <= 1 or len(values) < 3:
-        return values
-
-    # Smooth the per-position depth signal for display only; the underlying
-    # coverage metrics below are still calculated from the raw depth values.
-    radius = window_size // 2
-    smoothed = []
-    for idx in range(len(values)):
-        start = max(0, idx - radius)
-        end = min(len(values), idx + radius + 1)
-        smoothed.append(sum(values[start:end]) / (end - start))
-    return smoothed
-
-
-def plot_depth_file(depth_file, output, window_size, coverage_file=None):
+def plot_depth_file(depth_file, output, coverage_file=None):
     refs = read_depth_file(depth_file)
     coverage_by_ref = read_coverage_file(coverage_file)
     ref_summaries = []
@@ -88,7 +67,6 @@ def plot_depth_file(depth_file, output, window_size, coverage_file=None):
     for ref, values in refs.items():
         positions = values["positions"]
         depths = values["depths"]
-        smoothed_depths = rolling_mean(depths, window_size)
         coverage_row = coverage_by_ref.get(ref, {})
         covered_bases = sum(1 for x in depths if x > 0)
         coverage_pct = 100 * covered_bases / len(depths) if depths else 0
@@ -98,7 +76,6 @@ def plot_depth_file(depth_file, output, window_size, coverage_file=None):
                 "ref": ref,
                 "plot_positions": positions,
                 "plot_depths": depths,
-                "smoothed_depths": smoothed_depths,
                 "coverage_pct": coverage_pct,
                 "max_depth": max_depth,
                 "mapped_reads": coverage_row.get("numreads"),
@@ -123,7 +100,7 @@ def plot_depth_file(depth_file, output, window_size, coverage_file=None):
     for ax, summary in zip(axes.flat, ref_summaries):
         ax.plot(
             summary["plot_positions"],
-            summary["smoothed_depths"],
+            summary["plot_depths"],
             linewidth=1.6,
             color="#3f6fb5",
             alpha=0.95,
@@ -131,7 +108,7 @@ def plot_depth_file(depth_file, output, window_size, coverage_file=None):
             solid_joinstyle="round",
         )
         ax.set_title(
-            f"{summary['ref']} | mapped_reads={summary['mapped_reads'] or 'NA'} | coverage={summary['coverage_pct']:.2f}% | max_depth={summary['max_depth']} | window={window_size}",
+            f"{summary['ref']} | mapped_reads={summary['mapped_reads'] or 'NA'} | coverage={summary['coverage_pct']:.2f}% | max_depth={summary['max_depth']}",
             fontsize=9,
         )
         ax.set_xlabel("Position")
@@ -154,7 +131,7 @@ def plot_depth_file(depth_file, output, window_size, coverage_file=None):
 def main():
     args = parse_args()
     output = args.output
-    outfile = plot_depth_file(args.depth_file, output, args.window_size, args.coverage_file)
+    outfile = plot_depth_file(args.depth_file, output, args.coverage_file)
     print(outfile)
 
 

@@ -53,9 +53,9 @@ def flag(sample_reads_count: int, ntc_reads_count: int) -> str:
     if sample_reads_count == 0 and ntc_reads_count > 0:
         return "in_NTC"
     if sample_reads_count > ntc_reads_count:
-        return "more"
+        return "> NTC"
     if sample_reads_count < ntc_reads_count:
-        return "less"
+        return "< NTC"
     else:
         return "equal"
 
@@ -101,7 +101,7 @@ def build_output(
     merged[["rank", "lineage"]] = merged[["rank", "lineage"]].fillna("")
 
     merged = merged.loc[(merged[sample_col] > 0) | (merged[ntc_label] > 0)].copy()
-    cmp_label = f"{sample_label}_vsNTC"
+    cmp_label = f"{sample_label}_vs_NTC"
     merged[cmp_label] = [flag(sample_reads_count, ntc_reads_count) for sample_reads_count, ntc_reads_count in zip(merged[sample_col], merged[ntc_label])]
     merged = merged.rename(columns={sample_col: sample_label})
 
