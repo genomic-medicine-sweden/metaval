@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ sample }} {{ classifier }} {{ organism }}</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --line: #d7dde5;
+      --text: #1e2933;
+      --muted: #5f6b76;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .page {
+      max-width: 2100px;
+      margin: 0 auto;
+      padding: 28px 20px 40px;
+    }
+
+    .header {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+    }
+
+    .back-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      color: var(--muted);
+    }
+
+    .back-link {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    .back-separator {
+      color: #c1c8d1;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.7rem;
+      line-height: 1.2;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 14px;
+      color: var(--muted);
+    }
+
+    details {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 16px 18px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      background: #f7f9fb;
+    }
+
+    .section-body {
+      padding: 16px 18px 20px;
+    }
+
+    .subsection + .subsection {
+      margin-top: 18px;
+    }
+
+    .subsection h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .table-wrap {
+      overflow: auto;
+      max-height: 420px;
+      border: 1px solid #e5eaf0;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #e8edf2;
+      border-right: 1px solid #e8edf2;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    th:last-child, td:last-child {
+      border-right: none;
+    }
+
+    th {
+      background: #f7fafc;
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .coverage-help th {
+      cursor: help;
+    }
+
+    .detail-sort {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .detail-sort::after {
+      content: " \2195";
+      color: #a7b2be;
+      font-size: 0.8em;
+    }
+
+    .detail-sort.is-asc::after {
+      content: " \2191";
+      color: #0f4c81;
+    }
+
+    .detail-sort.is-desc::after {
+      content: " \2193";
+      color: #0f4c81;
+    }
+
+    pre {
+      margin: 0;
+      padding: 14px;
+      overflow: auto;
+      border: 1px solid #e5eaf0;
+      border-radius: 12px;
+      background: #fbfcfd;
+      font-size: 0.84rem;
+      line-height: 1.35;
+    }
+
+    .plot {
+      border: 1px solid #e5eaf0;
+      border-radius: 12px;
+      background: #fff;
+      padding: 8px;
+    }
+
+    .plot img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .reads-toolbar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .reads-action {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--text);
+      text-decoration: none;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .reads-action:hover {
+      background: #f7f9fb;
+    }
+
+    .reads-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .read-entry {
+      border: 1px solid #e5eaf0;
+      border-radius: 12px;
+      background: #fbfcfd;
+      overflow: hidden;
+    }
+
+    .read-entry-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-bottom: 1px solid #e5eaf0;
+      font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .read-entry-label input {
+      margin: 0;
+    }
+
+    .read-entry pre {
+      border: none;
+      border-radius: 0;
+    }
+
+    .report-footer {
+      margin-top: 22px;
+      padding: 8px 8px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    .report-footer strong {
+      color: var(--text);
+    }
+
+    .report-footer a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .report-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .report-footer-logo {
+      display: block;
+      margin: 0 auto 10px;
+      max-width: 130px;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="header">
+      <div class="back-bar">
+        <a class="back-link" href="{{ back_href }}">&#8592; Back</a>
+        <span class="back-separator">/</span>
+        <span>{{ sample }}</span>
+      </div>
+      <div class="eyebrow">Metaval details</div>
+      <h1>{{ organism }}</h1>
+      <div class="meta">
+        <div>Sample: {{ sample }}</div>
+        <div>Taxid: {{ taxid }}</div>
+        <div>Assigned reads: {{ assigned_reads or "NA" }}</div>
+        <div>Classifier: {{ classifier }}</div>
+      </div>
+    </section>
+
+    <details open>
+      <summary>BLAST section</summary>
+      <div class="section-body">
+        <div class="subsection">
+          <h3>blastn</h3>
+          {% if blastn.headers %}
+          <div class="table-wrap">
+            <table data-sortable-blast>
+              <thead>
+                <tr>
+                  {% for header in blastn.headers %}
+                  <th class="detail-sort" data-sort-index="{{ loop.index0 }}" title="{{ header_help(header) }}">{{ header }}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in blastn.rows %}
+                <tr>
+                  {% for cell in row %}
+                  <td>{{ cell }}</td>
+                  {% endfor %}
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+          <div class="muted">No blastn results found.</div>
+          {% endif %}
+        </div>
+
+        <div class="subsection">
+          <h3>blastx</h3>
+          {% if blastx.headers %}
+          <div class="table-wrap">
+            <table data-sortable-blast>
+              <thead>
+                <tr>
+                  {% for header in blastx.headers %}
+                  <th class="detail-sort" data-sort-index="{{ loop.index0 }}" title="{{ header_help(header) }}">{{ header }}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in blastx.rows %}
+                <tr>
+                  {% for cell in row %}
+                  <td>{{ cell }}</td>
+                  {% endfor %}
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+          <div class="muted">No blastx results found.</div>
+          {% endif %}
+        </div>
+      </div>
+    </details>
+
+    <details open>
+      <summary>Mapping section</summary>
+      <div class="section-body">
+        {% if coverage_tables %}
+        {% for table in coverage_tables %}
+        <div class="subsection">
+          <div class="table-wrap">
+            <table class="coverage-help">
+              <thead>
+                <tr>
+                  {% for header in table.headers %}
+                  <th title="{{ header_help(header) }}">{{ header }}</th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in table.rows %}
+                <tr>
+                  {% for cell in row %}
+                  <td>{{ cell }}</td>
+                  {% endfor %}
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="muted">No coverage stats found.</div>
+        {% endif %}
+      </div>
+    </details>
+
+    <details open>
+      <summary>Coverage plots</summary>
+      <div class="section-body">
+        {% if coverage_plot_sections %}
+        {% for section in coverage_plot_sections %}
+        <div class="subsection">
+          <div class="plot">
+            <img src="{{ section.src }}" alt="{{ section.name }}" />
+          </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="muted">No coverage plots found.</div>
+        {% endif %}
+      </div>
+    </details>
+
+    <details open>
+      <summary>Reads section</summary>
+      <div class="section-body">
+        {% if reads_sections %}
+        {% for section in reads_sections %}
+        <div class="subsection">
+          <div class="reads-toolbar">
+            <button type="button" class="reads-action" data-select-all-reads>Select all</button>
+            <button type="button" class="reads-action" data-copy-reads>Copy selected reads</button>
+            <button type="button" class="reads-action" data-blast-reads>NCBI BLAST</button>
+          </div>
+          <div class="reads-list">
+            {% for entry in section.entries %}
+            <div class="read-entry">
+              <label class="read-entry-label">
+                <input type="checkbox" data-read-checkbox />
+                <span>{{ entry.header }}</span>
+              </label>
+              <pre data-read-content>{{ entry.content }}</pre>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="muted">No extracted reads found.</div>
+        {% endif %}
+      </div>
+    </details>
+    <footer class="report-footer">
+      <img class="report-footer-logo" src="{{ footer_logo }}" alt="metaval logo" />
+      <div>
+        Generated automatically from
+        <a href="https://github.com/genomic-medicine-sweden/metaval" target="_blank" rel="noreferrer">genomic-medicine-sweden/metaval</a>.
+      </div>
+    </footer>
+  </main>
+  <script>
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+
+      const area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand("copy");
+      area.remove();
+    }
+
+    function openBlastWithReads(reads) {
+      const form = document.createElement("form");
+      form.method = "post";
+      form.action = "https://blast.ncbi.nlm.nih.gov/Blast.cgi";
+      form.target = "_blank";
+      form.style.display = "none";
+
+      const fields = {
+        PROGRAM: "blastn",
+        PAGE_TYPE: "BlastSearch",
+        LINK_LOC: "blasthome",
+        QUERY: reads,
+      };
+
+      Object.entries(fields).forEach(([name, value]) => {
+        const input = document.createElement(name === "QUERY" ? "textarea" : "input");
+        input.name = name;
+        input.value = value;
+        form.appendChild(input);
+      });
+
+      document.body.appendChild(form);
+      form.submit();
+      form.remove();
+    }
+
+    function getSelectedReads(section) {
+      const selected = Array.from(section.querySelectorAll("[data-read-checkbox]:checked"))
+        .map((checkbox) => checkbox.closest(".read-entry")?.querySelector("[data-read-content]")?.textContent || "")
+        .filter(Boolean);
+      if (selected.length) {
+        return selected.join("\n");
+      }
+      return Array.from(section.querySelectorAll("[data-read-content]"))
+        .map((block) => block.textContent || "")
+        .filter(Boolean)
+        .join("\n");
+    }
+
+    document.querySelectorAll("[data-copy-reads]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const section = button.closest(".subsection");
+        if (!section) {
+          return;
+        }
+        await copyText(getSelectedReads(section));
+        button.textContent = "Copied";
+        window.setTimeout(() => {
+          button.textContent = "Copy selected reads";
+        }, 1200);
+      });
+    });
+
+    document.querySelectorAll("[data-select-all-reads]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const section = button.closest(".subsection");
+        if (!section) {
+          return;
+        }
+        section.querySelectorAll("[data-read-checkbox]").forEach((checkbox) => {
+          checkbox.checked = true;
+        });
+      });
+    });
+
+    document.querySelectorAll("[data-blast-reads]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const section = button.closest(".subsection");
+        if (!section) {
+          return;
+        }
+        openBlastWithReads(getSelectedReads(section));
+      });
+    });
+
+    function compareBlastValues(leftValue, rightValue, direction) {
+      const leftNumber = Number(leftValue);
+      const rightNumber = Number(rightValue);
+      const bothNumeric = leftValue !== "" && rightValue !== "" && !Number.isNaN(leftNumber) && !Number.isNaN(rightNumber);
+      const order = direction === "asc" ? 1 : -1;
+      if (bothNumeric) {
+        return (leftNumber - rightNumber) * order;
+      }
+      return leftValue.localeCompare(rightValue, undefined, { numeric: true, sensitivity: "base" }) * order;
+    }
+
+    document.querySelectorAll("[data-sortable-blast]").forEach((table) => {
+      const headers = Array.from(table.querySelectorAll(".detail-sort"));
+      const tbody = table.querySelector("tbody");
+      let sortState = { index: 0, direction: "asc" };
+
+      function updateHeaders() {
+        headers.forEach((header) => {
+          const isActive = Number(header.dataset.sortIndex) === sortState.index;
+          header.classList.toggle("is-asc", isActive && sortState.direction === "asc");
+          header.classList.toggle("is-desc", isActive && sortState.direction === "desc");
+        });
+      }
+
+      headers.forEach((header) => {
+        header.addEventListener("click", () => {
+          const index = Number(header.dataset.sortIndex);
+          sortState = {
+            index,
+            direction: sortState.index === index && sortState.direction === "asc" ? "desc" : "asc",
+          };
+          Array.from(tbody.querySelectorAll("tr"))
+            .sort((leftRow, rightRow) => {
+              const leftValue = (leftRow.children[index]?.textContent || "").trim();
+              const rightValue = (rightRow.children[index]?.textContent || "").trim();
+              return compareBlastValues(leftValue, rightValue, sortState.direction);
+            })
+            .forEach((row) => tbody.appendChild(row));
+          updateHeaders();
+        });
+      });
+
+      updateHeaders();
+    });
+  </script>
+</body>
+</html>

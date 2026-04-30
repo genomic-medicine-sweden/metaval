@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ report_title }}</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --line: #d7dde5;
+      --text: #1e2933;
+      --muted: #5f6b76;
+      --accent: #dcecff;
+      --accent-strong: #0f4c81;
+      --header-bg: linear-gradient(135deg, #f7fbff 0%, #e8f1fa 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .page {
+      max-width: 2100px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+
+    .hero {
+      background: var(--header-bg);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 16px 36px rgba(15, 76, 129, 0.08);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .meta-card {
+      min-width: 210px;
+      padding: 16px 18px;
+      border: 1px solid rgba(15, 76, 129, 0.12);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    .meta-label {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .meta-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .panel {
+      margin-top: 24px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(19, 34, 51, 0.06);
+    }
+
+    .panel-header {
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfdff;
+    }
+
+    .panel-header h2 {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+    }
+
+    .table-wrap {
+      max-height: 520px;
+      overflow: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid #e8edf2;
+      border-right: 1px solid #e8edf2;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: none;
+    }
+
+    th {
+      background: #f7fafc;
+      font-size: 0.84rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .sample-sort {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .sample-sort::after {
+      content: " \2195";
+      color: #a7b2be;
+      font-size: 0.8em;
+    }
+
+    .sample-sort.is-asc::after {
+      content: " \2191";
+      color: #0f4c81;
+    }
+
+    .sample-sort.is-desc::after {
+      content: " \2193";
+      color: #0f4c81;
+    }
+
+    .filter-row th {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-transform: none;
+      letter-spacing: normal;
+      background: #fcfdff;
+    }
+
+    .filter-row select {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+    }
+
+    tbody tr:hover {
+      background: #fafcff;
+    }
+
+    .sample-row {
+      cursor: pointer;
+    }
+
+    .sample-row.is-active {
+      background: #eef6ff;
+    }
+
+    .ntc-true,
+    .ntc-false {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .ntc-true {
+      background: #fff3d6;
+      color: #8a5b00;
+    }
+
+    .ntc-false {
+      background: #dff6e8;
+      color: #17653c;
+    }
+
+    .details-panel {
+      margin-top: 24px;
+      padding: 22px;
+      border-top: 1px solid var(--line);
+      background: #fcfdff;
+    }
+
+    .details-panel[hidden] {
+      display: none;
+    }
+
+    .details-title {
+      margin: 0 0 14px;
+      font-size: 1.15rem;
+    }
+
+    .detail-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      color: var(--muted);
+    }
+
+    .detail-back {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 1.08rem;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .detail-back:hover {
+      color: var(--text);
+    }
+
+    .detail-separator {
+      color: #c1c8d1;
+    }
+
+    .detail-sample {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .classifier-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .classifier-tab {
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .classifier-tab.is-active {
+      background: #0f4c81;
+      border-color: #0f4c81;
+      color: #fff;
+    }
+
+    .taxpasta-summary {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(160px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .taxpasta-filters {
+      display: grid;
+      grid-template-columns: minmax(240px, 1fr) minmax(180px, 220px) minmax(160px, 200px) minmax(150px, 180px);
+      gap: 12px;
+      margin-bottom: 14px;
+      align-items: end;
+    }
+
+    .taxpasta-stat {
+      padding: 8px 12px;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+      background: #f3f4f6;
+    }
+
+    .taxpasta-stat-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .taxpasta-stat-value {
+      font-size: 0.98rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+
+    .taxpasta-filter {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .taxpasta-filter label {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .taxpasta-filter select {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      font-size: 0.98rem;
+    }
+
+    .taxpasta-filter input {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      font-size: 0.98rem;
+    }
+
+    .taxpasta-toggle-button {
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+      font-size: 0.98rem;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .taxpasta-toggle-button.is-active {
+      background: #0f4c81;
+      border-color: #0f4c81;
+      color: #fff;
+    }
+
+    .extracted-reads {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .extracted-reads-label {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .extracted-reads-label span {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .extracted-reads-label strong {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .extracted-reads-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .extracted-reads-list [hidden] {
+      display: none !important;
+    }
+
+    .extracted-read-chip {
+      padding: 5px 10px;
+      border: 1px solid #d7dde5;
+      border-radius: 999px;
+      background: #f8fafc;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    a.extracted-read-chip {
+      text-decoration: none;
+    }
+
+    button.extracted-read-chip {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .extracted-reads-toggle {
+      margin-top: 10px;
+      padding: 0;
+      border: none;
+      background: transparent;
+      color: var(--accent-strong);
+      font: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .extracted-reads-toggle:hover {
+      text-decoration: underline;
+    }
+
+    .taxpasta-view[hidden] {
+      display: none;
+    }
+
+    .taxpasta-wrap {
+      max-height: 420px;
+      overflow: auto;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .taxpasta-table {
+      width: auto;
+      min-width: 100%;
+      table-layout: fixed;
+      font-size: 0.98rem;
+    }
+
+    .taxpasta-table th,
+    .taxpasta-table td {
+      position: relative;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 10px 12px;
+    }
+
+    .taxpasta-table thead th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #f7fafc;
+      font-size: 0.84rem;
+      letter-spacing: 0.02em;
+    }
+
+    .taxpasta-lineage-row[hidden] {
+      display: none;
+    }
+
+    .taxpasta-lineage-row td {
+      white-space: normal;
+      background: #eef6ff;
+      color: #29506f;
+      border-top: 1px solid #d6e7f8;
+    }
+
+    .taxonomy-classifiers {
+      white-space: normal;
+      line-height: 1.2;
+    }
+
+    .taxonomy-row[data-metaval-panel]:not([data-metaval-panel=""]) {
+      cursor: pointer;
+    }
+
+    .taxonomy-classifier-line {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .taxonomy-classifier-line + .taxonomy-classifier-line {
+      margin-top: 1px;
+    }
+
+    .taxonomy-classifier-label {
+      color: var(--muted);
+      flex: 0 0 20px;
+      cursor: help;
+    }
+
+    .taxonomy-classifier-value {
+      flex: 1 1 auto;
+      text-align: right;
+    }
+
+    .lineage-toggle {
+      padding: 3px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: #35506a;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .lineage-toggle.is-open {
+      background: #0f4c81;
+      border-color: #0f4c81;
+      color: #fff;
+    }
+
+    .lineage-text {
+      line-height: 1.45;
+      word-break: break-word;
+      color: #29506f;
+    }
+
+    .col-resizer {
+      position: absolute;
+      top: 0;
+      right: -4px;
+      width: 8px;
+      height: 100%;
+      cursor: col-resize;
+      user-select: none;
+      touch-action: none;
+    }
+
+    .is-resizing {
+      cursor: col-resize;
+    }
+
+    .taxpasta-empty {
+      padding: 18px;
+      border: 1px solid #e8edf2;
+      border-radius: 12px;
+      background: #fff;
+      color: var(--muted);
+    }
+
+    .organism-detail-panel {
+      background: #fcfdff;
+    }
+
+    .organism-detail-header {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+    }
+
+    .organism-back-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      color: var(--muted);
+    }
+
+    .organism-back {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 1.08rem;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .organism-back:hover {
+      color: var(--text);
+    }
+
+    .organism-eyebrow {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+    }
+
+    .organism-title {
+      margin: 0;
+      font-size: 1.7rem;
+      line-height: 1.2;
+    }
+
+    .organism-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 14px;
+      color: var(--muted);
+    }
+
+    .organism-sections details {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .organism-sections summary {
+      cursor: pointer;
+      padding: 16px 18px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      background: #f7f9fb;
+    }
+
+    .section-body {
+      padding: 16px 18px 20px;
+    }
+
+    .subsection + .subsection {
+      margin-top: 18px;
+    }
+
+    .subsection h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .detail-table-wrap {
+      display: block;
+      overflow-x: auto;
+      overflow-y: auto;
+      max-height: 420px;
+      border: 1px solid #e5eaf0;
+      border-radius: 12px;
+      background: #fff;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .detail-table-wrap table {
+      width: max-content;
+      min-width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .detail-table-wrap th,
+    .detail-table-wrap td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #e8edf2;
+      border-right: 1px solid #e8edf2;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .detail-table-wrap th:last-child,
+    .detail-table-wrap td:last-child {
+      border-right: none;
+    }
+
+    .detail-table-wrap th {
+      background: #f7fafc;
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .detail-table-wrap table[data-sortable-blast] thead th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: #f7fafc;
+    }
+
+    .coverage-help th {
+      cursor: help;
+    }
+
+    .detail-sort {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .detail-sort::after {
+      content: " \2195";
+      color: #a7b2be;
+      font-size: 0.8em;
+    }
+
+    .detail-sort.is-asc::after {
+      content: " \2191";
+      color: #0f4c81;
+    }
+
+    .detail-sort.is-desc::after {
+      content: " \2193";
+      color: #0f4c81;
+    }
+
+    .plot {
+      border: 1px solid #e5eaf0;
+      border-radius: 12px;
+      background: #fff;
+      padding: 8px;
+    }
+
+    .plot img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .coverage-plots-scroll {
+      max-height: 640px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 4px;
+    }
+
+    .mapping-section-scroll {
+      max-height: 520px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 4px;
+    }
+
+    .reads-toolbar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .reads-action {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--text);
+      text-decoration: none;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .reads-action:hover {
+      background: #f7f9fb;
+    }
+
+    .reads-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .read-entry {
+      border: 1px solid #e5eaf0;
+      border-radius: 12px;
+      background: #fbfcfd;
+      overflow: hidden;
+    }
+
+    .read-entry-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-bottom: 1px solid #e5eaf0;
+      font-weight: 700;
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .read-entry-label input {
+      margin: 0;
+    }
+
+    .read-entry pre {
+      margin: 0;
+      padding: 14px;
+      overflow: auto;
+      background: #fbfcfd;
+      font-size: 0.84rem;
+      line-height: 1.35;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        padding: 20px 14px 36px;
+      }
+
+      .hero,
+      .panel {
+        border-radius: 14px;
+      }
+
+      h1 {
+        font-size: 1.65rem;
+      }
+
+      th,
+      td {
+        padding: 12px 13px;
+      }
+    }
+
+    .report-footer {
+      margin-top: 22px;
+      padding: 16px 8px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    .report-footer strong {
+      color: var(--text);
+    }
+
+    .report-footer a {
+      color: var(--accent-strong);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .report-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .report-footer-logo {
+      display: block;
+      margin: 0 auto 10px;
+      max-width: 130px;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1>{{ report_title }}</h1>
+      <div class="meta">
+        <div class="meta-card">
+          <div class="meta-label">Ticket Number</div>
+          <div class="meta-value">{{ ticket }}</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">metaval version</div>
+          <div class="meta-value">{{ version }}</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Created Date</div>
+          <div class="meta-value">{{ created_date }}</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Sample List</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="sample-sort" data-sort-key="sample">sample</th>
+              <th class="sample-sort" data-sort-key="instrument_platform">instrument_platform</th>
+              <th class="sample-sort" data-sort-key="library_type">library_type</th>
+              <th class="sample-sort" data-sort-key="is_ntc">Sample_type</th>
+              <th class="sample-sort" data-sort-key="batch">batch</th>
+            </tr>
+            <tr class="filter-row">
+              <th></th>
+              <th>
+                <select data-filter-key="instrument_platform">
+                  <option value="">All</option>
+                </select>
+              </th>
+              <th>
+                <select data-filter-key="library_type">
+                  <option value="">All</option>
+                </select>
+              </th>
+              <th>
+                <select data-filter-key="is_ntc">
+                  <option value="">All</option>
+                </select>
+              </th>
+              <th>
+                <select data-filter-key="batch">
+                  <option value="">All</option>
+                </select>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in rows %}
+            <tr
+              class="sample-row"
+              data-sample-id="{{ row.sample_id }}"
+              data-instrument_platform="{{ row.instrument_platform }}"
+              data-library_type="{{ row.library_type }}"
+              data-is_ntc="{{ row.is_ntc }}"
+              data-batch="{{ row.batch }}"
+            >
+              <td>{{ row.sample }}</td>
+              <td>{{ row.instrument_platform }}</td>
+              <td>{{ row.library_type }}</td>
+              <td><span class="{{ row.ntc_class }}">{{ row.ntc_label }}</span></td>
+              <td>{{ row.batch }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% for row in rows %}
+      <section id="{{ row.sample_id }}" class="details-panel" hidden>
+        <div class="detail-bar">
+          <button type="button" class="detail-back" data-close-panel="{{ row.sample_id }}">&#8592; Back</button>
+          <span class="detail-separator">/</span>
+          <span class="detail-sample">{{ row.sample }}</span>
+        </div>
+        <div class="classifier-tabs">
+          {% for classifier_key, classifier in row.classifiers.items() %}
+          <button
+            type="button"
+            class="classifier-tab"
+            data-classifier-tab="{{ classifier_key }}"
+          >
+            {{ classifier.label }}
+          </button>
+          {% endfor %}
+        </div>
+        {% for classifier_key, classifier in row.classifiers.items() %}
+        <div class="taxpasta-view" data-classifier-view="{{ classifier_key }}" hidden>
+          {% if classifier.table %}
+          {% if classifier.extracted_organisms %}
+          <div class="extracted-reads">
+            <div class="extracted-reads-label"><strong>METAVAL</strong> <span>checked organisms:</span></div>
+            <div class="extracted-reads-list">
+              {% for organism in classifier.extracted_organisms %}
+              {% if organism.href %}
+              {% if detail_sections_zip_b64 is defined and organism.panel_id %}
+              <button
+                type="button"
+                class="extracted-read-chip"
+                {% if loop.index > 10 %}hidden data-extra-organism{% endif %}
+                data-open-organism="{{ organism.panel_id }}"
+                data-sample-id="{{ row.sample_id }}"
+                data-classifier="{{ classifier_key }}"
+              >{{ organism.name }}</button>
+              {% else %}
+              <a class="extracted-read-chip" {% if loop.index > 10 %}hidden data-extra-organism{% endif %} href="{{ organism.href }}">{{ organism.name }}</a>
+              {% endif %}
+              {% else %}
+              <span class="extracted-read-chip" {% if loop.index > 10 %}hidden data-extra-organism{% endif %}>{{ organism.name }}</span>
+              {% endif %}
+              {% endfor %}
+            </div>
+            {% if classifier.extracted_organisms|length > 10 %}
+            <button
+              type="button"
+              class="extracted-reads-toggle"
+              data-toggle-organisms
+              data-collapsed-label="Show more species ({{ classifier.extracted_organisms|length - 10 }})"
+              data-expanded-label="Show fewer species"
+            >Show more species ({{ classifier.extracted_organisms|length - 10 }})</button>
+            {% endif %}
+          </div>
+          {% endif %}
+          <div class="taxpasta-filters">
+            <div class="taxpasta-filter">
+              <label>Search organism</label>
+              <input type="text" placeholder="Search organism..." data-organism-search />
+            </div>
+            <div class="taxpasta-filter">
+              <label>Superkingdom</label>
+              <select data-superkingdom-filter>
+                <option value="all">All</option>
+                <option value="virus">Virus</option>
+                <option value="bacteria">Bacteria</option>
+                <option value="archaea">Archaea</option>
+                <option value="fungi">Fungi</option>
+                <option value="eukaryote">Eukaryote</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="taxpasta-filter">
+              <label>Flag</label>
+              <select data-flag-filter>
+                <option value="all">All</option>
+                <option value="in_sample">in_sample</option>
+                <option value="in_NTC">in_NTC</option>
+                <option value="more">&gt; NTC</option>
+                <option value="less">&lt; NTC</option>
+                <option value="equal">equal</option>
+              </select>
+            </div>
+            <div class="taxpasta-filter">
+              <label>Metaval only</label>
+              <button type="button" class="taxpasta-toggle-button" data-metaval-only>Off</button>
+            </div>
+          </div>
+          <div class="taxpasta-summary">
+            <div class="taxpasta-stat">
+              <div class="taxpasta-stat-label">Total classified reads</div>
+              <div class="taxpasta-stat-value">{{ classifier.table.total_classified_reads or "NA" }}</div>
+            </div>
+            <div class="taxpasta-stat">
+              <div class="taxpasta-stat-label">Total unclassified reads</div>
+              <div class="taxpasta-stat-value">{{ classifier.table.total_unclassified_reads or "0" }}</div>
+            </div>
+            <div class="taxpasta-stat">
+              <div class="taxpasta-stat-label">Host reads</div>
+              <div class="taxpasta-stat-value">{{ classifier.table.host_reads or "0" }}</div>
+            </div>
+            <div class="taxpasta-stat">
+              <div class="taxpasta-stat-label">Organisms shown</div>
+              <div class="taxpasta-stat-value" data-organisms-shown>0</div>
+            </div>
+          </div>
+          <div class="taxpasta-wrap">
+            <table class="taxpasta-table">
+              <colgroup>
+                <col>
+                {% for _ in classifier.table.headers %}
+                <col>
+                {% endfor %}
+              </colgroup>
+              <thead>
+                <tr>
+                  <th title="lineage">lineage<span class="col-resizer"></span></th>
+                  {% for header in classifier.table.headers %}
+                  <th title="{{ header }}">{{ "TAXID" if header == "taxonomy_id" else header }}<span class="col-resizer"></span></th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for table_row in classifier.table.rows %}
+                <tr
+                  class="taxonomy-row"
+                  data-superkingdom="{{ classifier.table.superkingdoms[loop.index0] }}"
+                  data-flag="{{ classifier.table.flags[loop.index0] }}"
+                  data-metaval-checked="{{ 'true' if classifier.table.metaval_checked[loop.index0] else 'false' }}"
+                  data-metaval-panel="{{ classifier.table.metaval_panel_ids[loop.index0] }}"
+                >
+                  <td>
+                    {% if classifier.table.lineages[loop.index0] %}
+                    <button
+                      type="button"
+                      class="lineage-toggle"
+                      data-lineage-target="{{ row.sample_id }}-{{ classifier_key }}-{{ loop.index0 }}"
+                    >
+                      Show
+                    </button>
+                    {% endif %}
+                  </td>
+                  {% for cell in table_row %}
+                  {% if classifier.table.headers[loop.index0] == "classifiers" %}
+                  <td class="taxonomy-classifiers">
+                    {% for label, value in cell %}
+                    <div class="taxonomy-classifier-line">
+                      <span
+                        class="taxonomy-classifier-label"
+                        title="{{ 'Kraken2' if label == 'K' else 'Centrifuge' if label == 'C' else 'Diamond' }}"
+                      >{{ label }}:</span>
+                      <span class="taxonomy-classifier-value">{{ value }}</span>
+                    </div>
+                    {% endfor %}
+                  </td>
+                  {% else %}
+                  <td title="{{ cell }}">{{ cell }}</td>
+                  {% endif %}
+                  {% endfor %}
+                </tr>
+                <tr
+                  class="taxpasta-lineage-row"
+                  id="{{ row.sample_id }}-{{ classifier_key }}-{{ loop.index0 }}"
+                  hidden
+                >
+                  <td colspan="{{ classifier.table.headers|length + 1 }}">
+                    <div class="lineage-text">
+                      <strong>lineage:</strong> {{ classifier.table.lineages[loop.index0] or "No lineage available." }}
+                    </div>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+          <div class="taxpasta-empty">No {{ classifier.label }} taxpasta table found for this sample.</div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </section>
+      {% endfor %}
+
+      {% if detail_sections_zip_b64 is defined %}
+      <section
+        id="organism-detail-panel"
+        class="details-panel organism-detail-panel"
+        data-organism-panel
+        hidden
+      >
+        <div data-organism-detail-root></div>
+      </section>
+      <script id="detail-sections-data" type="text/plain">{{ detail_sections_zip_b64 }}</script>
+      {% endif %}
+    </section>
+    <footer class="report-footer">
+      <img class="report-footer-logo" src="{{ footer_logo }}" alt="metaval logo" />
+      <div>
+        Generated automatically from
+        <a href="https://github.com/genomic-medicine-sweden/metaval" target="_blank" rel="noreferrer">genomic-medicine-sweden/metaval</a>.
+      </div>
+    </footer>
+  </main>
+  <script>
+    const detailHeaderHelp = {{ header_help_map|default({})|tojson|safe }};
+    const rows = Array.from(document.querySelectorAll(".sample-row"));
+    const filters = Array.from(document.querySelectorAll("[data-filter-key]"));
+    const panels = Array.from(document.querySelectorAll(".details-panel:not([data-organism-panel])"));
+    const organismPanels = Array.from(document.querySelectorAll("[data-organism-panel]"));
+    const organismPanel = document.getElementById("organism-detail-panel");
+    const detailSectionsArchive = (() => {
+      const node = document.getElementById("detail-sections-data");
+      return node ? node.textContent.trim() : "";
+    })();
+    const sampleSortHeaders = Array.from(document.querySelectorAll(".sample-sort"));
+    const sampleTableBody = document.querySelector(".panel .table-wrap table tbody");
+    let sampleSortState = { key: "sample", direction: "asc" };
+    let detailZipStatePromise = null;
+    const detailCache = new Map();
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function renderDetailTable(headers, rows, options = {}) {
+      if (!headers || !headers.length) {
+        return options.emptyMessage
+          ? `<div class="muted">${escapeHtml(options.emptyMessage)}</div>`
+          : "";
+      }
+
+      const headerClass = options.sortable ? ' class="detail-sort"' : "";
+      const tableClass = options.coverage ? ' class="coverage-help"' : "";
+      return `
+        <div class="detail-table-wrap">
+          <table${options.sortable ? ' data-sortable-blast' : ''}${tableClass}>
+            <thead>
+              <tr>
+                ${headers.map((header, index) => `
+                  <th${headerClass}${options.sortable ? ` data-sort-index="${index}"` : ""} title="${escapeHtml(options.headerHelp?.[header.toLowerCase()] || header)}">${escapeHtml(header)}</th>
+                `).join("")}
+              </tr>
+            </thead>
+            <tbody>
+              ${rows.map((row) => `
+                <tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>
+              `).join("")}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    function renderReadsSections(readsSections) {
+      if (!readsSections || !readsSections.length) {
+        return '<div class="muted">No extracted reads found.</div>';
+      }
+
+      return readsSections.map((section) => `
+        <div class="subsection">
+          <div class="reads-toolbar">
+            <button type="button" class="reads-action" data-select-all-reads>Select all</button>
+            <button type="button" class="reads-action" data-copy-reads>Copy selected reads</button>
+            <button type="button" class="reads-action" data-blast-reads>NCBI BLAST</button>
+          </div>
+          <div class="reads-list">
+            ${(section.entries || []).map((entry) => `
+              <div class="read-entry">
+                <label class="read-entry-label">
+                  <input type="checkbox" data-read-checkbox />
+                  <span>${escapeHtml(entry.header)}</span>
+                </label>
+                <pre data-read-content>${escapeHtml(entry.content)}</pre>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function decodeBase64ToBytes(base64Text) {
+      const binary = atob(base64Text);
+      const bytes = new Uint8Array(binary.length);
+      for (let index = 0; index < binary.length; index += 1) {
+        bytes[index] = binary.charCodeAt(index);
+      }
+      return bytes;
+    }
+
+    function parseZipStoredEntries(bytes) {
+      const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+      let eocdOffset = -1;
+      for (let offset = bytes.length - 22; offset >= 0; offset -= 1) {
+        if (view.getUint32(offset, true) === 0x06054b50) {
+          eocdOffset = offset;
+          break;
+        }
+      }
+      if (eocdOffset < 0) {
+        throw new Error("ZIP end-of-central-directory not found.");
+      }
+
+      const totalEntries = view.getUint16(eocdOffset + 10, true);
+      const centralDirectoryOffset = view.getUint32(eocdOffset + 16, true);
+      const textDecoder = new TextDecoder();
+      const entries = new Map();
+      let cursor = centralDirectoryOffset;
+
+      for (let index = 0; index < totalEntries; index += 1) {
+        if (view.getUint32(cursor, true) !== 0x02014b50) {
+          throw new Error("Invalid ZIP central directory entry.");
+        }
+        const compressionMethod = view.getUint16(cursor + 10, true);
+        const compressedSize = view.getUint32(cursor + 20, true);
+        const filenameLength = view.getUint16(cursor + 28, true);
+        const extraLength = view.getUint16(cursor + 30, true);
+        const commentLength = view.getUint16(cursor + 32, true);
+        const localHeaderOffset = view.getUint32(cursor + 42, true);
+        const filenameBytes = bytes.slice(cursor + 46, cursor + 46 + filenameLength);
+        const filename = textDecoder.decode(filenameBytes);
+        entries.set(filename, {
+          compressionMethod,
+          compressedSize,
+          localHeaderOffset,
+        });
+        cursor += 46 + filenameLength + extraLength + commentLength;
+      }
+
+      return { bytes, entries };
+    }
+
+    async function loadDetailZipState() {
+      if (!detailSectionsArchive) {
+        return { bytes: new Uint8Array(), entries: new Map() };
+      }
+      if (!detailZipStatePromise) {
+        detailZipStatePromise = Promise.resolve(parseZipStoredEntries(decodeBase64ToBytes(detailSectionsArchive)));
+      }
+      return detailZipStatePromise;
+    }
+
+    function readStoredZipEntry(archive, filename) {
+      const entry = archive.entries.get(filename);
+      if (!entry || entry.compressionMethod !== 0) {
+        return null;
+      }
+
+      const view = new DataView(archive.bytes.buffer, archive.bytes.byteOffset, archive.bytes.byteLength);
+      const offset = entry.localHeaderOffset;
+      if (view.getUint32(offset, true) !== 0x04034b50) {
+        throw new Error("Invalid ZIP local file header.");
+      }
+      const filenameLength = view.getUint16(offset + 26, true);
+      const extraLength = view.getUint16(offset + 28, true);
+      const dataStart = offset + 30 + filenameLength + extraLength;
+      return archive.bytes.slice(dataStart, dataStart + entry.compressedSize);
+    }
+
+    async function gunzipBytes(bytes) {
+      if (!("DecompressionStream" in window)) {
+        throw new Error("This browser does not support gzip detail payloads.");
+      }
+      const response = new Response(
+        new Response(bytes).body.pipeThrough(new DecompressionStream("gzip"))
+      );
+      return response.text();
+    }
+
+    async function loadDetailData(panelId) {
+      if (detailCache.has(panelId)) {
+        return detailCache.get(panelId);
+      }
+      const archive = await loadDetailZipState();
+      const entryBytes = readStoredZipEntry(archive, `details/${panelId}.json.gz`);
+      if (!entryBytes) {
+        return null;
+      }
+      const detail = JSON.parse(await gunzipBytes(entryBytes));
+      detailCache.set(panelId, detail);
+      return detail;
+    }
+
+    function bindDetailPanelActions(panel) {
+      panel.querySelectorAll("[data-sortable-blast]").forEach((table) => {
+        initSortableBlastTable(table);
+      });
+
+      panel.querySelectorAll("[data-copy-reads]").forEach((button) => {
+        button.addEventListener("click", async () => {
+          const section = button.closest(".subsection");
+          if (!section) {
+            return;
+          }
+          await copyText(getSelectedReads(section));
+          button.textContent = "Copied";
+          window.setTimeout(() => {
+            button.textContent = "Copy selected reads";
+          }, 1200);
+        });
+      });
+
+      panel.querySelectorAll("[data-blast-reads]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const section = button.closest(".subsection");
+          if (!section) {
+            return;
+          }
+          const reads = getSelectedReads(section);
+          if (reads) {
+            openBlastWithReads(reads);
+          }
+        });
+      });
+
+      panel.querySelectorAll("[data-select-all-reads]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const section = button.closest(".subsection");
+          if (!section) {
+            return;
+          }
+          section.querySelectorAll("[data-read-checkbox]").forEach((checkbox) => {
+            checkbox.checked = true;
+          });
+        });
+      });
+
+      panel.querySelectorAll("[data-close-organism-panel]").forEach((button) => {
+        button.addEventListener("click", () => {
+          openPanel(button.dataset.sampleId, button.dataset.classifier, false, "auto");
+        });
+      });
+    }
+
+    function renderOrganismPanel(detail) {
+      if (!organismPanel || !detail) {
+        return;
+      }
+
+      organismPanel.dataset.sampleId = detail.sample_id;
+      organismPanel.dataset.classifier = detail.classifier_key;
+      organismPanel.dataset.panelId = detail.panel_id;
+
+      const root = organismPanel.querySelector("[data-organism-detail-root]");
+      if (!root) {
+        return;
+      }
+
+      const coveragePlots = detail.coverage_plot_sections && detail.coverage_plot_sections.length
+        ? `
+            <div class="coverage-plots-scroll">
+              ${detail.coverage_plot_sections.map((section) => `
+              <div class="plot">
+                <img src="${escapeHtml(section.src)}" alt="${escapeHtml(section.name || section.src)}" />
+              </div>
+              `).join("")}
+            </div>
+          `
+        : '<div class="muted">No coverage plots found.</div>';
+
+      const coverageTables = detail.coverage_tables && detail.coverage_tables.length
+        ? detail.coverage_tables.map((table) => `
+            <div class="subsection">
+              ${renderDetailTable(table.headers || [], table.rows || [], {
+                coverage: true,
+                headerHelp: detailHeaderHelp
+              })}
+            </div>
+          `).join("")
+        : '<div class="muted">No coverage stats found.</div>';
+
+      root.innerHTML = `
+        <div class="organism-detail-header">
+          <div class="organism-back-bar">
+            <button
+              type="button"
+              class="organism-back"
+              data-close-organism-panel="${escapeHtml(detail.panel_id)}"
+              data-sample-id="${escapeHtml(detail.sample_id)}"
+              data-classifier="${escapeHtml(detail.classifier_key)}"
+            >&#8592; Back</button>
+            <span class="detail-separator">/</span>
+            <span class="detail-sample">${escapeHtml(detail.sample)}</span>
+          </div>
+          <div class="organism-eyebrow">Metaval details</div>
+          <h2 class="organism-title">${escapeHtml(detail.organism)}</h2>
+          <div class="organism-meta">
+            <div>Sample: ${escapeHtml(detail.sample)}</div>
+            <div>Taxid: ${escapeHtml(detail.taxid)}</div>
+            <div>Assigned reads: ${escapeHtml(detail.assigned_reads || "NA")}</div>
+            <div>Classifier: ${escapeHtml(detail.classifier)}</div>
+          </div>
+        </div>
+
+        <div class="organism-sections">
+          <details open>
+            <summary>BLAST section</summary>
+            <div class="section-body">
+              <div class="subsection">
+                <h3>blastn</h3>
+                ${renderDetailTable((detail.blastn || {}).headers || [], (detail.blastn || {}).rows || [], {
+                  sortable: true,
+                  emptyMessage: "No blastn results found.",
+                  headerHelp: detailHeaderHelp
+                })}
+              </div>
+              <div class="subsection">
+                <h3>blastx</h3>
+                ${renderDetailTable((detail.blastx || {}).headers || [], (detail.blastx || {}).rows || [], {
+                  sortable: true,
+                  emptyMessage: "No blastx results found.",
+                  headerHelp: detailHeaderHelp
+                })}
+              </div>
+            </div>
+          </details>
+
+          <details open>
+            <summary>Mapping section</summary>
+            <div class="section-body">
+              <div class="mapping-section-scroll">${coverageTables}</div>
+            </div>
+          </details>
+
+          <details open>
+            <summary>Coverage plots</summary>
+            <div class="section-body">${coveragePlots}</div>
+          </details>
+
+          <details open>
+            <summary>Reads section</summary>
+            <div class="section-body">${renderReadsSections(detail.reads_sections || [])}</div>
+          </details>
+        </div>
+      `;
+
+      bindDetailPanelActions(organismPanel);
+    }
+
+    function populateFilterOptions(select) {
+      const key = select.dataset.filterKey;
+      const values = [...new Set(rows.map((row) => row.dataset[key]).filter(Boolean))].sort();
+
+      for (const value of values) {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = key === "is_ntc"
+          ? (value === "true" ? "NTC" : "Sample")
+          : value;
+        select.appendChild(option);
+      }
+    }
+
+    function applyFilters() {
+      rows.forEach((row) => {
+        const visible = filters.every((select) => {
+          return !select.value || row.dataset[select.dataset.filterKey] === select.value;
+        });
+        row.style.display = visible ? "" : "none";
+      });
+
+      const activeRow = rows.find(
+        (row) => row.classList.contains("is-active") && row.style.display !== "none"
+      );
+      if (!activeRow) {
+        rows.forEach((row) => row.classList.remove("is-active"));
+        panels.forEach((panel) => {
+          panel.hidden = true;
+        });
+        organismPanels.forEach((panel) => {
+          panel.hidden = true;
+        });
+      }
+    }
+
+    function compareSampleRows(left, right, key, direction) {
+      const leftValue = (left.dataset[key] || "").trim().toLowerCase();
+      const rightValue = (right.dataset[key] || "").trim().toLowerCase();
+      const order = direction === "asc" ? 1 : -1;
+      return leftValue.localeCompare(rightValue, undefined, { numeric: true, sensitivity: "base" }) * order;
+    }
+
+    function updateSampleSortHeaders() {
+      sampleSortHeaders.forEach((header) => {
+        header.classList.toggle("is-asc", header.dataset.sortKey === sampleSortState.key && sampleSortState.direction === "asc");
+        header.classList.toggle("is-desc", header.dataset.sortKey === sampleSortState.key && sampleSortState.direction === "desc");
+      });
+    }
+
+    function sortSampleRows(key) {
+      sampleSortState = {
+        key,
+        direction: sampleSortState.key === key && sampleSortState.direction === "asc" ? "desc" : "asc",
+      };
+      rows
+        .slice()
+        .sort((left, right) => compareSampleRows(left, right, sampleSortState.key, sampleSortState.direction))
+        .forEach((row) => sampleTableBody.appendChild(row));
+      updateSampleSortHeaders();
+      applyFilters();
+    }
+
+    function setClassifier(panel, classifier) {
+      panel.querySelectorAll("[data-classifier-tab]").forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.classifierTab === classifier);
+      });
+      panel.querySelectorAll("[data-classifier-view]").forEach((view) => {
+        view.hidden = view.dataset.classifierView !== classifier;
+      });
+    }
+
+    function closePanel(sampleId) {
+      const panel = document.getElementById(sampleId);
+      const row = rows.find((item) => item.dataset.sampleId === sampleId);
+      if (panel) {
+        panel.hidden = true;
+      }
+      organismPanels.forEach((item) => {
+        item.hidden = true;
+      });
+      if (row) {
+        row.classList.remove("is-active");
+        row.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+
+    function applyTaxpastaFilter(view) {
+      if (!view) {
+        return;
+      }
+
+      const filter = view.querySelector("[data-superkingdom-filter]");
+      const flagFilter = view.querySelector("[data-flag-filter]");
+      const search = view.querySelector("[data-organism-search]");
+      const metavalOnlyButton = view.querySelector("[data-metaval-only]");
+      const counter = view.querySelector("[data-organisms-shown]");
+      const taxonomyRows = Array.from(view.querySelectorAll(".taxonomy-row"));
+      let shown = 0;
+      const searchValue = search ? search.value.trim().toLowerCase() : "";
+      const metavalOnly = metavalOnlyButton ? metavalOnlyButton.dataset.active === "true" : false;
+
+      taxonomyRows.forEach((row) => {
+        const matchesSuperkingdom =
+          !filter || filter.value === "all" || row.dataset.superkingdom === filter.value;
+        const matchesFlag =
+          !flagFilter || flagFilter.value === "all" || row.dataset.flag === flagFilter.value;
+        const matchesSearch = !searchValue || row.textContent.toLowerCase().includes(searchValue);
+        const matchesMetaval = !metavalOnly || row.dataset.metavalChecked === "true";
+        const matches = matchesSuperkingdom && matchesFlag && matchesSearch && matchesMetaval;
+        row.hidden = !matches;
+
+        const lineageRow = row.nextElementSibling;
+        if (lineageRow && lineageRow.classList.contains("taxpasta-lineage-row") && !matches) {
+          lineageRow.hidden = true;
+          const toggle = row.querySelector(".lineage-toggle");
+          if (toggle) {
+            toggle.textContent = "Show";
+          }
+        }
+
+        if (matches) {
+          shown += 1;
+        }
+      });
+
+      if (counter) {
+        counter.textContent = String(shown);
+      }
+    }
+
+    function defaultTaxonomyWidth(headerName, measuredWidth) {
+      let initialWidth = Math.max(measuredWidth + 16, 96);
+      if (headerName === "name") {
+        initialWidth = 190;
+      } else if (headerName === "classifiers") {
+        initialWidth = 118;
+      } else if (headerName === "lineage") {
+        initialWidth = 88;
+      } else if (headerName === "taxid") {
+        initialWidth = 90;
+      } else if (headerName === "rank") {
+        initialWidth = 116;
+      } else if (headerName.includes("_vs_")) {
+        initialWidth = 170;
+      } else if (headerName.includes("_ntc")) {
+        initialWidth = 140;
+      } else if (headerName.startsWith("srr")) {
+        initialWidth = 140;
+      } else if (headerName.includes("-dna") || headerName.includes("-rna")) {
+        initialWidth = 140;
+      }
+      return initialWidth;
+    }
+
+    function syncTaxonomyTableWidth(table) {
+      const cols = Array.from(table.querySelectorAll("col"));
+      const totalWidth = cols.reduce((sum, col) => {
+        return sum + parseFloat(col.style.width || 0);
+      }, 0);
+      table.style.width = `${Math.max(totalWidth, table.parentElement.clientWidth)}px`;
+    }
+
+    function initResizableTable(table) {
+      if (!table || table.dataset.resizableReady === "true") {
+        return;
+      }
+
+      const cols = Array.from(table.querySelectorAll("col"));
+      const headers = Array.from(table.querySelectorAll("thead th"));
+      if (!cols.length || !headers.length) {
+        return;
+      }
+
+      headers.forEach((header, index) => {
+        const col = cols[index];
+        if (!col) {
+          return;
+        }
+
+        const headerName = header.textContent.trim().toLowerCase();
+        const initialWidth = defaultTaxonomyWidth(headerName, header.getBoundingClientRect().width);
+        col.style.width = `${initialWidth}px`;
+
+        const handle = header.querySelector(".col-resizer");
+        if (!handle) {
+          return;
+        }
+
+        handle.addEventListener("mousedown", (event) => {
+          event.preventDefault();
+          const startX = event.clientX;
+          const startWidth = parseFloat(col.style.width || initialWidth);
+
+          document.body.classList.add("is-resizing");
+
+          function onMouseMove(moveEvent) {
+            const nextWidth = Math.max(80, startWidth + moveEvent.clientX - startX);
+            col.style.width = `${nextWidth}px`;
+            syncTaxonomyTableWidth(table);
+          }
+
+          function onMouseUp() {
+            document.body.classList.remove("is-resizing");
+            window.removeEventListener("mousemove", onMouseMove);
+            window.removeEventListener("mouseup", onMouseUp);
+          }
+
+          window.addEventListener("mousemove", onMouseMove);
+          window.addEventListener("mouseup", onMouseUp);
+        });
+      });
+
+      syncTaxonomyTableWidth(table);
+      table.dataset.resizableReady = "true";
+    }
+
+    function scrollPanelIntoView(panel, classifier, behavior = "smooth") {
+      const classifierView = panel.querySelector(`[data-classifier-view="${classifier}"]`);
+      const target = classifierView || panel;
+      window.requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior, block: "start" });
+      });
+    }
+
+    function openPanel(sampleId, classifier = "kraken2", allowToggle = true, scrollBehavior = "smooth") {
+      const panel = document.getElementById(sampleId);
+      const activeRow = rows.find((row) => row.classList.contains("is-active"));
+      const isSameRow = activeRow && activeRow.dataset.sampleId === sampleId;
+
+      if (allowToggle && isSameRow && panel && !panel.hidden) {
+        closePanel(sampleId);
+        return;
+      }
+
+      panels.forEach((panel) => {
+        panel.hidden = panel.id !== sampleId;
+      });
+      organismPanels.forEach((panel) => {
+        panel.hidden = true;
+      });
+      rows.forEach((row) => {
+        row.classList.toggle("is-active", row.dataset.sampleId === sampleId);
+      });
+
+      if (!panel) {
+        return;
+      }
+
+      setClassifier(panel, classifier);
+      panel.querySelectorAll(".taxpasta-table").forEach((table) => initResizableTable(table));
+      applyTaxpastaFilter(panel.querySelector(`[data-classifier-view="${classifier}"]`));
+      if (scrollBehavior) {
+        scrollPanelIntoView(panel, classifier, scrollBehavior);
+      }
+    }
+
+    async function openOrganismPanel(panelId, scrollBehavior = "smooth") {
+      const detail = await loadDetailData(panelId);
+      if (!organismPanel || !detail) {
+        return;
+      }
+
+      renderOrganismPanel(detail);
+      panels.forEach((item) => {
+        item.hidden = true;
+      });
+      organismPanels.forEach((item) => {
+        item.hidden = item !== organismPanel;
+      });
+      rows.forEach((row) => {
+        row.classList.toggle("is-active", row.dataset.sampleId === detail.sample_id);
+      });
+
+      if (scrollBehavior) {
+        window.requestAnimationFrame(() => {
+          organismPanel.scrollIntoView({ behavior: scrollBehavior, block: "start" });
+        });
+      }
+    }
+
+    function sortDetailTable(table, index, direction) {
+      const tbody = table.tBodies[0];
+      if (!tbody) {
+        return;
+      }
+      const order = direction === "asc" ? 1 : -1;
+      Array.from(tbody.rows)
+        .sort((left, right) => {
+          const leftValue = (left.cells[index]?.textContent || "").trim();
+          const rightValue = (right.cells[index]?.textContent || "").trim();
+          return leftValue.localeCompare(rightValue, undefined, { numeric: true, sensitivity: "base" }) * order;
+        })
+        .forEach((row) => tbody.appendChild(row));
+    }
+
+    function initSortableBlastTable(table) {
+      if (!table || table.dataset.sortableReady === "true") {
+        return;
+      }
+      table.querySelectorAll(".detail-sort").forEach((header) => {
+        header.addEventListener("click", () => {
+          const direction = header.dataset.direction === "asc" ? "desc" : "asc";
+          table.querySelectorAll(".detail-sort").forEach((item) => {
+            item.classList.remove("is-asc", "is-desc");
+            delete item.dataset.direction;
+          });
+          header.dataset.direction = direction;
+          header.classList.add(direction === "asc" ? "is-asc" : "is-desc");
+          sortDetailTable(table, Number(header.dataset.sortIndex), direction);
+        });
+      });
+      table.dataset.sortableReady = "true";
+    }
+
+    async function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return;
+      }
+
+      const area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand("copy");
+      area.remove();
+    }
+
+    function openBlastWithReads(reads) {
+      const form = document.createElement("form");
+      form.method = "post";
+      form.action = "https://blast.ncbi.nlm.nih.gov/Blast.cgi";
+      form.target = "_blank";
+      form.style.display = "none";
+
+      const fields = {
+        PROGRAM: "blastn",
+        PAGE_TYPE: "BlastSearch",
+        LINK_LOC: "blasthome",
+        QUERY: reads,
+      };
+
+      Object.entries(fields).forEach(([name, value]) => {
+        const input = document.createElement(name === "QUERY" ? "textarea" : "input");
+        input.name = name;
+        input.value = value;
+        form.appendChild(input);
+      });
+
+      document.body.appendChild(form);
+      form.submit();
+      form.remove();
+    }
+
+    function getSelectedReads(section) {
+      const selected = Array.from(section.querySelectorAll("[data-read-checkbox]:checked"))
+        .map((checkbox) => checkbox.closest(".read-entry")?.querySelector("[data-read-content]")?.textContent || "")
+        .filter(Boolean);
+      if (selected.length) {
+        return selected.join("\n");
+      }
+      return Array.from(section.querySelectorAll("[data-read-content]"))
+        .map((block) => block.textContent || "")
+        .filter(Boolean)
+        .join("\n");
+    }
+
+    function restorePanelFromUrl() {
+      const hashId = window.location.hash.startsWith("#")
+        ? window.location.hash.slice(1)
+        : "";
+      if (hashId.startsWith("detail-")) {
+        openOrganismPanel(hashId, "auto");
+        return;
+      }
+      const params = new URLSearchParams(window.location.search);
+      const hashSampleId = window.location.hash.startsWith("#sample-")
+        ? window.location.hash.slice(1)
+        : "";
+      const sampleId = params.get("sample") || hashSampleId;
+      const classifier = params.get("classifier") || "kraken2";
+      if (!sampleId) {
+        return;
+      }
+      openPanel(sampleId, classifier, false, "auto");
+      const panel = document.getElementById(sampleId);
+      if (panel) {
+        window.setTimeout(() => {
+          scrollPanelIntoView(panel, classifier, "auto");
+        }, 0);
+      }
+    }
+
+    filters.forEach((select) => {
+      populateFilterOptions(select);
+      select.addEventListener("change", applyFilters);
+    });
+
+    sampleSortHeaders.forEach((header) => {
+      header.addEventListener("click", () => sortSampleRows(header.dataset.sortKey));
+    });
+
+    rows.forEach((row) => {
+      row.addEventListener("click", () => openPanel(row.dataset.sampleId));
+    });
+
+    panels.forEach((panel) => {
+      panel.querySelectorAll("[data-classifier-tab]").forEach((button) => {
+        button.addEventListener("click", () => {
+          setClassifier(panel, button.dataset.classifierTab);
+          panel.querySelectorAll(".taxpasta-table").forEach((table) => initResizableTable(table));
+          applyTaxpastaFilter(panel.querySelector(`[data-classifier-view="${button.dataset.classifierTab}"]`));
+        });
+      });
+    });
+
+    document.querySelectorAll("[data-close-panel]").forEach((button) => {
+      button.addEventListener("click", () => closePanel(button.dataset.closePanel));
+    });
+
+    document.querySelectorAll("[data-open-organism]").forEach((button) => {
+      button.addEventListener("click", () => {
+        openOrganismPanel(button.dataset.openOrganism);
+      });
+    });
+
+    document.querySelectorAll("[data-toggle-organisms]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const box = button.closest(".extracted-reads");
+        if (!box) {
+          return;
+        }
+        const hiddenItems = Array.from(box.querySelectorAll("[data-extra-organism]"));
+        const expand = hiddenItems.some((item) => item.hidden);
+        hiddenItems.forEach((item) => {
+          item.hidden = !expand;
+        });
+        button.textContent = expand
+          ? button.dataset.expandedLabel
+          : button.dataset.collapsedLabel;
+      });
+    });
+
+    document.querySelectorAll(".taxpasta-view").forEach((view) => {
+      const filter = view.querySelector("[data-superkingdom-filter]");
+      const flagFilter = view.querySelector("[data-flag-filter]");
+      const search = view.querySelector("[data-organism-search]");
+      const metavalOnlyButton = view.querySelector("[data-metaval-only]");
+      if (filter) {
+        filter.addEventListener("change", () => applyTaxpastaFilter(view));
+      }
+      if (flagFilter) {
+        flagFilter.addEventListener("change", () => applyTaxpastaFilter(view));
+      }
+      if (search) {
+        search.addEventListener("input", () => applyTaxpastaFilter(view));
+      }
+      if (metavalOnlyButton) {
+        metavalOnlyButton.dataset.active = "false";
+        metavalOnlyButton.addEventListener("click", () => {
+          const nextState = metavalOnlyButton.dataset.active !== "true";
+          metavalOnlyButton.dataset.active = nextState ? "true" : "false";
+          metavalOnlyButton.classList.toggle("is-active", nextState);
+          metavalOnlyButton.textContent = nextState ? "On" : "Off";
+          applyTaxpastaFilter(view);
+        });
+      }
+      applyTaxpastaFilter(view);
+    });
+
+    document.querySelectorAll(".lineage-toggle").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const target = document.getElementById(button.dataset.lineageTarget);
+        if (!target) {
+          return;
+        }
+        const isHidden = target.hidden;
+        target.hidden = !isHidden;
+        button.textContent = isHidden ? "Hide" : "Show";
+        button.classList.toggle("is-open", isHidden);
+      });
+    });
+
+    document.querySelectorAll(".taxonomy-row").forEach((row) => {
+      if (!row.dataset.metavalPanel) {
+        return;
+      }
+      row.addEventListener("click", () => {
+        openOrganismPanel(row.dataset.metavalPanel);
+      });
+    });
+
+    restorePanelFromUrl();
+    updateSampleSortHeaders();
+  </script>
+</body>
+</html>
