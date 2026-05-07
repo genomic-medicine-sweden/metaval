@@ -289,7 +289,7 @@ workflow METAVAL {
         ch_blastx_report = ch_blastx_report.mix( BLAST.out.blastx_filtered )
         // Coverage tables
         ch_coverage_tables = channel.empty()
-        ch_coverage_tables= ch_coverage_tables.mix( MAPPING_SHORTREAD.out.coverage )
+        ch_coverage_tables = ch_coverage_tables.mix( MAPPING_SHORTREAD.out.coverage, MAPPING_LONGREAD.out.coverage )
         // Coverager plots
         ch_coverage_plots = channel.empty()
         ch_coverage_plots = ch_coverage_plots.mix( MAPPING_SHORTREAD.out.coverage_plot, MAPPING_LONGREAD.out.coverage_plot )

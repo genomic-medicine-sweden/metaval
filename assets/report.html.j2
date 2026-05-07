@@ -700,6 +700,54 @@
       color: #0f4c81;
     }
 
+    .blast-align-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 10px;
+      border: 1px solid #d7e0ea;
+      border-radius: 999px;
+      background: #fff;
+      color: var(--accent-strong);
+      font: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .blast-align-button:hover {
+      background: #f7f9fb;
+    }
+
+    .blast-align-row td {
+      padding: 0;
+      border-right: none;
+      white-space: normal;
+      background: #fbfcfd;
+    }
+
+    .blast-align-panel {
+      padding: 14px 16px;
+      border-top: 1px solid #e8edf2;
+      background: #fbfcfd;
+    }
+
+    .blast-align-pre {
+      margin: 0;
+      overflow: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.84rem;
+      line-height: 1.55;
+      white-space: pre;
+      color: #1b2633;
+    }
+
+    .blast-align-empty {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
     .plot {
       border: 1px solid #e5eaf0;
       border-radius: 12px;
@@ -1150,6 +1198,209 @@
         .replace(/'/g, "&#39;");
     }
 
+    function normaliseHeaderKey(header) {
+      return String(header || "").trim().toLowerCase();
+    }
+
+    function advanceAlignmentCoord(start, segment, step) {
+      let next = Number(start);
+      let last = null;
+      for (const character of String(segment || "")) {
+        if (character !== "-") {
+          last = next;
+          next += step;
+        }
+      }
+      return {
+        last: last ?? Number(start),
+        next,
+      };
+    }
+
+    function translateCodon(codon) {
+      const table = {
+        TTT: "F", TTC: "F", TTA: "L", TTG: "L",
+        TCT: "S", TCC: "S", TCA: "S", TCG: "S",
+        TAT: "Y", TAC: "Y", TAA: "*", TAG: "*",
+        TGT: "C", TGC: "C", TGA: "*", TGG: "W",
+        CTT: "L", CTC: "L", CTA: "L", CTG: "L",
+        CCT: "P", CCC: "P", CCA: "P", CCG: "P",
+        CAT: "H", CAC: "H", CAA: "Q", CAG: "Q",
+        CGT: "R", CGC: "R", CGA: "R", CGG: "R",
+        ATT: "I", ATC: "I", ATA: "I", ATG: "M",
+        ACT: "T", ACC: "T", ACA: "T", ACG: "T",
+        AAT: "N", AAC: "N", AAA: "K", AAG: "K",
+        AGT: "S", AGC: "S", AGA: "R", AGG: "R",
+        GTT: "V", GTC: "V", GTA: "V", GTG: "V",
+        GCT: "A", GCC: "A", GCA: "A", GCG: "A",
+        GAT: "D", GAC: "D", GAA: "E", GAG: "E",
+        GGT: "G", GGC: "G", GGA: "G", GGG: "G",
+      };
+      return table[codon] || "X";
+    }
+
+    function translateBlastxQuery(sequence) {
+      const cleaned = String(sequence || "").toUpperCase().replace(/\s+/g, "");
+      let translated = "";
+      let codon = "";
+
+      for (const character of cleaned) {
+        if (character === "-") {
+          if (codon.length === 0) {
+            translated += "-";
+          }
+          continue;
+        }
+        codon += character;
+        if (codon.length === 3) {
+          translated += translateCodon(codon);
+          codon = "";
+        }
+      }
+
+      return translated;
+    }
+
+    function isBlastxLikeAlignment(qseq, sseq) {
+      const query = String(qseq || "");
+      const subject = String(sseq || "");
+      if (!query || !subject) {
+        return false;
+      }
+      const aaLike = /^[A-Z*\-]+$/i.test(subject);
+      return aaLike && query.length > subject.length * 2;
+    }
+
+    function buildProteinAlignment(queryAa, subjectAa, qstart, qend, sstart, send, width = 60) {
+      const querySequence = String(queryAa || "");
+      const subjectSequence = String(subjectAa || "");
+      const queryNtStart = Number(qstart);
+      const queryNtEnd = Number(qend);
+      const subjectStart = Number(sstart);
+      const subjectEnd = Number(send);
+
+      if (!querySequence || !subjectSequence) {
+        return '<div class="blast-align-empty">No translated alignment available for this hit.</div>';
+      }
+
+      const subjectStep = subjectEnd >= subjectStart ? 1 : -1;
+      const labelWidth = 5;
+      const coordinateWidth = Math.max(
+        String(subjectStart).length,
+        String(subjectEnd).length,
+        String(Math.ceil(queryNtStart / 3)).length,
+        String(Math.ceil(queryNtEnd / 3)).length,
+        3
+      );
+      const padLabel = (value) => String(value).padEnd(labelWidth, " ");
+      const padCoordinate = (value) => String(value).padStart(coordinateWidth, " ");
+      const lines = [
+        `Query nt range: ${escapeHtml(`${queryNtStart}-${queryNtEnd}`)}`,
+        "",
+      ];
+      let queryAaCursor = 1;
+      let subjectCursor = subjectStart;
+      const maxLength = Math.max(querySequence.length, subjectSequence.length);
+
+      for (let offset = 0; offset < maxLength; offset += width) {
+        const queryChunk = querySequence.slice(offset, offset + width);
+        const subjectChunk = subjectSequence.slice(offset, offset + width);
+        const matchChunk = Array.from({ length: Math.max(queryChunk.length, subjectChunk.length) }, (_, index) => {
+          const queryBase = queryChunk[index] || " ";
+          const subjectBase = subjectChunk[index] || " ";
+          return queryBase !== "-" && subjectBase !== "-" && queryBase.toUpperCase() === subjectBase.toUpperCase() ? "|" : " ";
+        }).join("");
+
+        const queryRange = advanceAlignmentCoord(queryAaCursor, queryChunk, 1);
+        const subjectRange = advanceAlignmentCoord(subjectCursor, subjectChunk, subjectStep);
+
+        lines.push(
+          `${padLabel("Query")} ${padCoordinate(queryAaCursor)}  ${escapeHtml(queryChunk)}  ${padCoordinate(queryRange.last)}`,
+          `${padLabel("")} ${" ".repeat(coordinateWidth)}  ${escapeHtml(matchChunk)}`,
+          `${padLabel("Sbjct")} ${padCoordinate(subjectCursor)}  ${escapeHtml(subjectChunk)}  ${padCoordinate(subjectRange.last)}`
+        );
+
+        queryAaCursor = queryRange.next;
+        subjectCursor = subjectRange.next;
+
+        if (offset + width < maxLength) {
+          lines.push("");
+        }
+      }
+
+      return `<pre class="blast-align-pre">${lines.join("\n")}</pre>`;
+    }
+
+    function buildBlastAlignment(rowMap, width = 60) {
+      const qseq = String(rowMap.qseq || "");
+      const sseq = String(rowMap.sseq || "");
+      const qstart = Number(rowMap.qstart);
+      const qend = Number(rowMap.qend);
+      const sstart = Number(rowMap.sstart);
+      const send = Number(rowMap.send);
+
+      if (!qseq || !sseq || !Number.isFinite(qstart) || !Number.isFinite(qend) || !Number.isFinite(sstart) || !Number.isFinite(send)) {
+        return '<div class="blast-align-empty">No alignment sequence available for this hit.</div>';
+      }
+
+      if (isBlastxLikeAlignment(qseq, sseq)) {
+        return buildProteinAlignment(
+          translateBlastxQuery(qseq),
+          sseq,
+          qstart,
+          qend,
+          sstart,
+          send,
+          width
+        );
+      }
+
+      const queryStep = qend >= qstart ? 1 : -1;
+      const subjectStep = send >= sstart ? 1 : -1;
+      const labelWidth = 5;
+      const coordinateWidth = Math.max(
+        String(qstart).length,
+        String(qend).length,
+        String(sstart).length,
+        String(send).length,
+        3
+      );
+      const padLabel = (value) => String(value).padEnd(labelWidth, " ");
+      const padCoordinate = (value) => String(value).padStart(coordinateWidth, " ");
+      const lines = [];
+      let queryCursor = qstart;
+      let subjectCursor = sstart;
+      const maxLength = Math.max(qseq.length, sseq.length);
+
+      for (let offset = 0; offset < maxLength; offset += width) {
+        const queryChunk = qseq.slice(offset, offset + width);
+        const subjectChunk = sseq.slice(offset, offset + width);
+        const matchChunk = Array.from({ length: Math.max(queryChunk.length, subjectChunk.length) }, (_, index) => {
+          const queryBase = queryChunk[index] || " ";
+          const subjectBase = subjectChunk[index] || " ";
+          return queryBase !== "-" && subjectBase !== "-" && queryBase.toUpperCase() === subjectBase.toUpperCase() ? "|" : " ";
+        }).join("");
+
+        const queryRange = advanceAlignmentCoord(queryCursor, queryChunk, queryStep);
+        const subjectRange = advanceAlignmentCoord(subjectCursor, subjectChunk, subjectStep);
+
+        lines.push(
+          `${padLabel("Query")} ${padCoordinate(queryCursor)}  ${escapeHtml(queryChunk)}  ${padCoordinate(queryRange.last)}`,
+          `${padLabel("")} ${" ".repeat(coordinateWidth)}  ${escapeHtml(matchChunk)}`,
+          `${padLabel("Sbjct")} ${padCoordinate(subjectCursor)}  ${escapeHtml(subjectChunk)}  ${padCoordinate(subjectRange.last)}`
+        );
+
+        queryCursor = queryRange.next;
+        subjectCursor = subjectRange.next;
+
+        if (offset + width < maxLength) {
+          lines.push("");
+        }
+      }
+
+      return `<pre class="blast-align-pre">${lines.join("\n")}</pre>`;
+    }
+
     function renderDetailTable(headers, rows, options = {}) {
       if (!headers || !headers.length) {
         return options.emptyMessage
@@ -1159,20 +1410,72 @@
 
       const headerClass = options.sortable ? ' class="detail-sort"' : "";
       const tableClass = options.coverage ? ' class="coverage-help"' : "";
+      const headerKeys = headers.map(normaliseHeaderKey);
+      const hiddenColumns = options.blastAlignment
+        ? new Set(["qstart", "qend", "sstart", "send", "qseq", "sseq"])
+        : new Set();
+      const alignmentKey = options.blastAlignmentKey || "blast";
+      const visibleIndices = headers
+        .map((header, index) => ({ header, index, key: headerKeys[index] }))
+        .filter((item) => !hiddenColumns.has(item.key));
+      const alignmentInsertIndex = options.blastAlignment
+        ? Math.max(visibleIndices.findIndex((item) => item.key === "sscinames"), -1) + 1
+        : -1;
+
       return `
         <div class="detail-table-wrap">
-          <table${options.sortable ? ' data-sortable-blast' : ''}${tableClass}>
+          <table${options.sortable ? ' data-sortable-blast' : ''}${tableClass}${options.blastAlignment ? ' data-blast-alignment="true"' : ''}>
             <thead>
               <tr>
-                ${headers.map((header, index) => `
-                  <th${headerClass}${options.sortable ? ` data-sort-index="${index}"` : ""} title="${escapeHtml(options.headerHelp?.[header.toLowerCase()] || header)}">${escapeHtml(header)}</th>
+                ${visibleIndices.map((item, visibleIndex) => `
+                  <th${headerClass}${options.sortable ? ` data-sort-index="${visibleIndex}"` : ""} title="${escapeHtml(options.headerHelp?.[item.key] || item.header)}">${escapeHtml(item.header)}</th>
+                  ${options.blastAlignment && visibleIndex + 1 === alignmentInsertIndex ? '<th title="alignment preview">alignment</th>' : ''}
                 `).join("")}
+                ${options.blastAlignment && alignmentInsertIndex === 0 ? '<th title="alignment preview">alignment</th>' : ""}
               </tr>
             </thead>
             <tbody>
-              ${rows.map((row) => `
-                <tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>
-              `).join("")}
+              ${rows.map((row, rowIndex) => {
+                if (!options.blastAlignment) {
+                  return `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>`;
+                }
+
+                const rowMap = Object.fromEntries(headers.map((header, headerIndex) => [headerKeys[headerIndex], row[headerIndex] ?? ""]));
+                return `
+                  <tr class="blast-summary-row">
+                    ${visibleIndices.map((item, visibleIndex) => `
+                      <td>${escapeHtml(row[item.index])}</td>
+                      ${visibleIndex + 1 === alignmentInsertIndex ? `
+                        <td>
+                          <button
+                            type="button"
+                            class="blast-align-button"
+                            data-blast-align-toggle
+                            data-blast-align-target="${alignmentKey}-align-${rowIndex}"
+                            aria-expanded="false"
+                          >View alignment</button>
+                        </td>
+                      ` : ""}
+                    `).join("")}
+                    ${alignmentInsertIndex === 0 ? `
+                      <td>
+                        <button
+                          type="button"
+                          class="blast-align-button"
+                          data-blast-align-toggle
+                          data-blast-align-target="${alignmentKey}-align-${rowIndex}"
+                          aria-expanded="false"
+                        >View alignment</button>
+                      </td>
+                    ` : ""}
+                  </tr>
+                  <tr class="blast-align-row" id="${alignmentKey}-align-${rowIndex}" hidden>
+                    <td colspan="${visibleIndices.length + 1}">
+                      <div class="blast-align-panel">${buildBlastAlignment(rowMap)}</div>
+                    </td>
+                  </tr>
+                `;
+              }).join("")}
             </tbody>
           </table>
         </div>
@@ -1313,6 +1616,19 @@
         initSortableBlastTable(table);
       });
 
+      panel.querySelectorAll("[data-blast-align-toggle]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const target = panel.querySelector(`#${CSS.escape(button.dataset.blastAlignTarget || "")}`);
+          if (!target) {
+            return;
+          }
+          const isExpanded = button.getAttribute("aria-expanded") === "true";
+          target.hidden = isExpanded;
+          button.setAttribute("aria-expanded", isExpanded ? "false" : "true");
+          button.textContent = isExpanded ? "View alignment" : "Hide alignment";
+        });
+      });
+
       panel.querySelectorAll("[data-copy-reads]").forEach((button) => {
         button.addEventListener("click", async () => {
           const section = button.closest(".subsection");
@@ -1427,6 +1743,8 @@
                 <h3>blastn</h3>
                 ${renderDetailTable((detail.blastn || {}).headers || [], (detail.blastn || {}).rows || [], {
                   sortable: true,
+                  blastAlignment: true,
+                  blastAlignmentKey: "blastn",
                   emptyMessage: "No blastn results found.",
                   headerHelp: detailHeaderHelp
                 })}
@@ -1435,6 +1753,8 @@
                 <h3>blastx</h3>
                 ${renderDetailTable((detail.blastx || {}).headers || [], (detail.blastx || {}).rows || [], {
                   sortable: true,
+                  blastAlignment: true,
+                  blastAlignmentKey: "blastx",
                   emptyMessage: "No blastx results found.",
                   headerHelp: detailHeaderHelp
                 })}
@@ -1751,6 +2071,27 @@
         return;
       }
       const order = direction === "asc" ? 1 : -1;
+
+      if (table.dataset.blastAlignment === "true") {
+        Array.from(tbody.querySelectorAll(".blast-summary-row"))
+          .map((summaryRow) => ({
+            summaryRow,
+            detailRow: summaryRow.nextElementSibling?.classList.contains("blast-align-row") ? summaryRow.nextElementSibling : null,
+          }))
+          .sort((left, right) => {
+            const leftValue = (left.summaryRow.cells[index]?.textContent || "").trim();
+            const rightValue = (right.summaryRow.cells[index]?.textContent || "").trim();
+            return leftValue.localeCompare(rightValue, undefined, { numeric: true, sensitivity: "base" }) * order;
+          })
+          .forEach(({ summaryRow, detailRow }) => {
+            tbody.appendChild(summaryRow);
+            if (detailRow) {
+              tbody.appendChild(detailRow);
+            }
+          });
+        return;
+      }
+
       Array.from(tbody.rows)
         .sort((left, right) => {
           const leftValue = (left.cells[index]?.textContent || "").trim();

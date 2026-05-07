@@ -72,7 +72,7 @@ workflow BLAST {
             ch_query_for_blastx,
             ch_blastx_db,
             'txt',
-            'qseqid staxids sscinames stitle pident qlen length mismatch gapopen qstart qend sstart send evalue bitscore sseqid qseq sseq'
+            'qseqid staxids sscinames pident qlen length mismatch gapopen qstart qend sstart send evalue bitscore sseqid qseq sseq'
         )
 
         // Filter BLASTX hits
