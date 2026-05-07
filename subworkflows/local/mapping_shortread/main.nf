@@ -88,10 +88,11 @@ workflow MAPPING_SHORTREAD {
     ch_multiqc_files = ch_multiqc_files.mix ( FASTQ_ALIGN_BOWTIE2.out.flagstat.collect{ _meta, flagstat_file -> flagstat_file }.ifEmpty([]) )
 
     emit:
-    index    = BOWTIE2_BUILD.out.index           // channel: [ val(meta), [ index ] ]
-    bam      = SAMTOOLS_SORT.out.bam             // channel: [ val(meta), [ bam ] ]
-    bai      = SAMTOOLS_SORT.out.index           // channel: [ val(meta), [ bai ] ]
-    coverage = SAMTOOLS_COVERAGE.out.coverage    // channel: [ val(meta), [ coverage ] ]
-    depth    = SAMTOOLS_DEPTH.out.tsv            // channel: [ val(meta), [ depth ] ]
-    mqc      = ch_multiqc_files
+    index         = BOWTIE2_BUILD.out.index           // channel: [ val(meta), [ index ] ]
+    bam           = SAMTOOLS_SORT.out.bam             // channel: [ val(meta), [ bam ] ]
+    bai           = SAMTOOLS_SORT.out.index           // channel: [ val(meta), [ bai ] ]
+    coverage      = SAMTOOLS_COVERAGE.out.coverage    // channel: [ val(meta), [ coverage ] ]
+    depth         = SAMTOOLS_DEPTH.out.tsv            // channel: [ val(meta), [ depth ] ]
+    coverage_plot = COVERAGE_PLOT.out.png            // channel: [ val(meta), [ coverage_plot ] ]
+    mqc           = ch_multiqc_files
 }

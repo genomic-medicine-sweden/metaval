@@ -1,0 +1,63 @@
+name: static_report
+description: Generate a static HTML routine report from metaval outputs
+keywords:
+  - report
+  - html
+  - metaval
+  - taxpasta
+  - blast
+input:
+  - - ticket:
+        type: string
+        description: The ticket ID
+  - - samplesheet:
+        type: file
+        description: Samplesheet CSV used to populate the report sample table
+        pattern: "*.{csv,tsv}"
+  - - flagged_taxpasta:
+        type: directory
+        description: Directory containing flagged taxpasta TSV files
+  - - reads:
+        type: directory
+        description: Directory containing extracted reads or contigs/scaffolds grouped by classifier
+  - - blastn:
+        type: directory
+        description: Directory containing BLASTn result files
+  - - blastx:
+        type: directory
+        description: Directory containing BLASTx result files
+  - - coverage_tables:
+        type: directory
+        description: Directory containing samtools coverage files
+  - - coverage_plots:
+        type: directory
+        description: Directory containing coverage plot image files
+output:
+  report:
+    - - "*.html":
+          type: file
+          description: Static HTML report
+          pattern: "*.html"
+  versions_python:
+    - - ${task.process}:
+          type: string
+          description: The name of the process
+      - python:
+          type: string
+          description: The name of the tool
+      - "python --version | sed -e 's/Python //g'":
+          type: eval
+          description: The expression to obtain the version of the tool
+topics:
+  versions:
+    - - ${task.process}:
+          type: string
+          description: The name of the process
+      - python:
+          type: string
+          description: The name of the tool
+      - "python --version | sed -e 's/Python //g'":
+          type: eval
+          description: The expression to obtain the version of the tool
+authors:
+  - "@LilyAnderssonLee"

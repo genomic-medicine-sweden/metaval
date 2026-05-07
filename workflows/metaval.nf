@@ -28,6 +28,9 @@ include { MAPPING_LONGREAD as MAPPING_LONGREAD_PATHOGEN         } from '../subwo
 include { IGV                                                   } from '../subworkflows/local/igv'
 include { IGV as IGV_PATHOGEN                                   } from '../subworkflows/local/igv'
 
+// Metaval static report
+include { METAVAL_REPORT                                        } from '../modules/local/metaval_report'
+
 // Calling consensus
 include { TAXID_BAM_FASTA as TAXID_BAM_FASTA_SHORTREAD          } from '../subworkflows/local/taxid_bam_fasta'
 include { TAXID_BAM_FASTA as TAXID_BAM_FASTA_LONGREAD           } from '../subworkflows/local/taxid_bam_fasta'
@@ -272,6 +275,59 @@ workflow METAVAL {
             ch_igv_input = ch_igv_input.mix ( ch_igv_input_shortread, ch_igv_input_longread )
             IGV( ch_igv_input )
         }
+
+        //
+        // SUBWORKFLOW: STATIC REPORT
+        //
+
+        ch_samplesheet_report = channel.fromPath ( params.input, checkIfExists: true )
+        // BLASTn results
+        ch_blastn_report = channel.empty()
+        ch_blastn_report = ch_blastn_report.mix( BLAST.out.blastn_filtered )
+        // BLASTx results
+        ch_blastx_report = channel.empty()
+        ch_blastx_report = ch_blastx_report.mix( BLAST.out.blastx_filtered )
+        // Coverage tables
+        ch_coverage_tables = channel.empty()
+        ch_coverage_tables= ch_coverage_tables.mix( MAPPING_SHORTREAD.out.coverage )
+        // Coverager plots
+        ch_coverage_plots = channel.empty()
+        ch_coverage_plots = ch_coverage_plots.mix( MAPPING_SHORTREAD.out.coverage_plot, MAPPING_LONGREAD.out.coverage_plot )
+
+        // Prepare reads folder for the report, if the reads went through de novo assembly, only include the assembly fasta file in the report.
+        ch_reads_fa = channel.empty()
+        ch_reads_fa = ch_reads_fa.mix(PIGZ_UNCOMPRESS.out.file)
+            .groupTuple(by:0)
+            .map { meta, reads -> [ meta, reads ] }
+
+        ch_assembly = channel.empty()
+        if ( params.perform_shortread_denovo ) {
+            ch_assembly = ch_assembly.mix( SPADES.out.scaffolds.ifEmpty(SPADES.out.contigs) )
+        }
+        if ( params.perform_longread_denovo ) {
+            ch_assembly = ch_assembly.mix( FLYE.out.fasta )
+        }
+
+        ch_reads_report = channel.empty()
+        ch_reads_report = ch_reads_fa.mix(ch_assembly)
+            .groupTuple(by:0)
+            .map { meta, files ->
+                def assembly = files.find { it instanceof Path }
+                def reads = files.find { it instanceof List }
+                [ meta, assembly ?: reads ]
+            }
+
+        METAVAL_REPORT (
+            params.ticket,
+            ch_samplesheet_report,
+            FLAG_TAXPASTA.out.tsv.collect{it[1]},
+            ch_reads_report.collect{it[1]},
+            ch_blastn_report.collect{it[1]},
+            ch_blastx_report.collect{it[1]},
+            ch_coverage_tables.collect{it[1]},
+            ch_coverage_plots.collect{it[1]}
+        )
+
     }
 
     //

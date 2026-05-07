@@ -1,1 +1,1 @@
-qseqid	sseqid	stitle	slen	pident	qlen	length	qcovs	nident	evalue	bitscore	staxid	ssciname
+qseqid	staxids	sscinames	stitle	pident	qlen	length	mismatch	gapopen	qstart	qend	sstart	send	evalue	bitscore	sseqid	qseq	sseq

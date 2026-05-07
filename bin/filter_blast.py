@@ -27,11 +27,11 @@ def filter_summary_blast(blast_header, input, filtered_output, summary_output, m
     # Load BLASTn results
     raw_results = pd.read_csv(input, sep="\t", header=None, names=column_names, keep_default_na=False)
 
-    # Remove entries with missing or invalid staxid
+    # Remove entries with missing or invalid staxids
     raw_results = raw_results[
-        raw_results["staxid"].notna() &
-        (raw_results["staxid"].astype(str).str.strip() != "") &
-        (~raw_results["staxid"].astype(str).isin(["NA", "N/A"]))
+        raw_results["staxids"].notna() &
+        (raw_results["staxids"].astype(str).str.strip() != "") &
+        (~raw_results["staxids"].astype(str).isin(["NA", "N/A"]))
     ]
 
     # Apply filtering
@@ -43,7 +43,7 @@ def filter_summary_blast(blast_header, input, filtered_output, summary_output, m
     ]
 
     # Remove entries with missing scientific name
-    filtered = filtered[filtered["ssciname"].notna()]
+    filtered = filtered[filtered["sscinames"].notna()]
 
     # Check if any blast hits pass the filtering threshold
     if filtered.empty:
@@ -55,9 +55,9 @@ def filter_summary_blast(blast_header, input, filtered_output, summary_output, m
 
     # Summarize filtered results
     summary = (
-        filtered.groupby(["qseqid", "staxid", "ssciname", "stitle"])
+        filtered.groupby(["qseqid", "staxids", "sscinames", "stitle"])
         .agg(
-            count=("staxid", "count"),
+            count=("staxids", "count"),
             min_pident=("pident", "min"),
             max_pident=("pident", "max"),
             median_pident=("pident", "median"),

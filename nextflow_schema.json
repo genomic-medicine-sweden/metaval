@@ -128,6 +128,12 @@
                     "default": "--nano-corr",
                     "description": "It provides `Flye` assembly modes. Our ONT reads were pre-processed by Guppy, so `--nano-corr` is the appropriate mode to use, as it is designed for ONT reads that have been corrected with other methods (with <3% error)",
                     "fa_icon": "fas fa-cogs"
+                },
+                "ticket": {
+                    "type": ["string", "number"],
+                    "default": "NA",
+                    "description": "A ticket number to add to the metaval report.",
+                    "fa_icon": "fas fa-ticket-alt"
                 }
             }
         },

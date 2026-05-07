@@ -13,6 +13,67 @@ from datetime import date
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+ASSETS_DIR = SCRIPT_DIR.parent / "assets"
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Generate a static HTML metaval report from a samplesheet."
+    )
+    parser.add_argument(
+        "--samplesheet",
+        help="Path to the input samplesheet CSV.",
+    )
+    parser.add_argument(
+        "--ticket",
+        default="NA",
+        help="Ticket number to show in the report header.",
+    )
+    parser.add_argument(
+        "--version",
+        default="dev",
+        help="Report or workflow version to show in the report header.",
+    )
+    parser.add_argument(
+        "--output",
+        default="metaval_report.html",
+        help="Path to the output HTML report.",
+    )
+    parser.add_argument(
+        "--template",
+        default=str(ASSETS_DIR / "report.html.j2"),
+        help="Path to the Jinja template file.",
+    )
+    parser.add_argument(
+        "--flagged-dir",
+        help="Path to flagged taxpasta TSV files.",
+    )
+    parser.add_argument(
+        "--reads-dir",
+        help="Path to extracted read files grouped by classifier.",
+    )
+    parser.add_argument(
+        "--blastn-dir",
+        help="Path to BLASTN result files.",
+    )
+    parser.add_argument(
+        "--blastx-dir",
+        help="Path to BLASTX result files.",
+    )
+    parser.add_argument(
+        "--coverage-dir",
+        help="Path to samtools coverage files.",
+    )
+    parser.add_argument(
+        "--coverage-plots-dir",
+        help="Path to coverage plot image files.",
+    )
+    parser.add_argument(
+        "--logo",
+        default=str(ASSETS_DIR / "metaval_logo_light.png"),
+        help="Path to the footer logo image.",
+    )
+    return parser.parse_args()
 
 REPORT_TITLE = "Clinical Metagenomics Report"
 CLASSIFIERS = ("kraken2", "centrifuge", "diamond")
@@ -54,77 +115,17 @@ HEADER_HELP = {
 }
 
 
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        description="Generate a static HTML metaval report from a samplesheet."
-    )
-    parser.add_argument(
-        "--samplesheet",
-        default="real_data/samplesheet.csv",
-        help="Path to the input samplesheet CSV.",
-    )
-    parser.add_argument(
-        "--ticket",
-        default="1007645",
-        help="Ticket number to show in the report header.",
-    )
-    parser.add_argument(
-        "--version",
-        default="dev",
-        help="Report or workflow version to show in the report header.",
-    )
-    parser.add_argument(
-        "--output",
-        default="metaval_static_report.html",
-        help="Path to the output HTML report.",
-    )
-    parser.add_argument(
-        "--template",
-        default="templates/report.html.j2",
-        help="Path to the Jinja template file.",
-    )
-    parser.add_argument(
-        "--flagged-dir",
-        default="real_data/taxpasta_flagged",
-        help="Path to flagged taxpasta TSV files.",
-    )
-    parser.add_argument(
-        "--reads-dir",
-        default="real_data/extracted_reads",
-        help="Path to extracted read files grouped by classifier.",
-    )
-    parser.add_argument(
-        "--detail-template",
-        default="templates/detail_report.html.j2",
-        help="Path to the Jinja template file for per-organism detail pages.",
-    )
-    parser.add_argument(
-        "--detail-pages-dir",
-        default=".",
-        help="Directory where per-organism detail pages will be written. Use . to place them next to the main report.",
-    )
-    parser.add_argument(
-        "--blast-dir",
-        default="real_data/blast",
-        help="Path to BLAST result files.",
-    )
-    parser.add_argument(
-        "--coverage-dir",
-        default="real_data/samtools/coverage",
-        help="Path to samtools coverage files.",
-    )
-    parser.add_argument(
-        "--coverage-plots-dir",
-        default="real_data/samtools/coverage_plot",
-        help="Path to coverage plot image files.",
-    )
-    parser.add_argument(
-        "--logo",
-        default="metaval_logo_dark.png",
-        help="Path to the footer logo image.",
-    )
-    return parser.parse_args()
-
+def file_to_data_uri(path: Path) -> str:
+    suffix = path.suffix.lower()
+    mime_type = {
+        ".png": "image/png",
+        ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg",
+        ".svg": "image/svg+xml",
+        ".webp": "image/webp",
+    }.get(suffix, "application/octet-stream")
+    encoded = base64.b64encode(path.read_bytes()).decode("ascii")
+    return f"data:{mime_type};base64,{encoded}"
 
 def read_samplesheet(samplesheet_path: Path) -> list[dict[str, str]]:
     if not samplesheet_path.exists():
@@ -224,29 +225,32 @@ def detect_flag(row: list[str]) -> str:
 
 def load_extracted_read_index(reads_dir: Path) -> dict[str, dict[str, list[dict[str, str]]]]:
     index: dict[str, dict[str, list[dict[str, str]]]] = {}
-    pattern = re.compile(r"^(?P<sample>.+?)_taxid_(?P<taxid>\d+)_(?P<organism>.+?)\.extracted_")
+    extracted_pattern = re.compile(
+        r"^(?P<sample>.+?)_taxid_(?P<taxid>\d+)_(?P<organism>.+?)\.extracted_(?P<classifier>kraken2|centrifuge|diamond)_"
+    )
+    assembly_pattern = re.compile(
+        r"^(?P<sample>.+?)_taxid_(?P<taxid>\d+)_(?P<organism>.+?)_(?P<classifier>kraken2|centrifuge|diamond)\.(?:scaffolds|contigs)\.fa(?:sta)?$"
+    )
 
     if not reads_dir.exists():
         return index
 
-    for classifier_dir in reads_dir.iterdir():
-        if not classifier_dir.is_dir():
+    for file_path in reads_dir.iterdir():
+        if not file_path.is_file():
             continue
-        classifier = classifier_dir.name
-        for file_path in classifier_dir.iterdir():
-            if not file_path.is_file():
-                continue
-            match = pattern.match(file_path.name)
-            if not match:
-                continue
 
-            sample = match.group("sample")
-            taxid = match.group("taxid")
-            organism = match.group("organism")
-            index.setdefault(sample, {}).setdefault(classifier, [])
-            entry = {"taxid": taxid, "organism": organism}
-            if entry not in index[sample][classifier]:
-                index[sample][classifier].append(entry)
+        match = extracted_pattern.match(file_path.name) or assembly_pattern.match(file_path.name)
+        if not match:
+            continue
+
+        sample = match.group("sample")
+        taxid = match.group("taxid")
+        organism = match.group("organism")
+        classifier = match.group("classifier")
+        index.setdefault(sample, {}).setdefault(classifier, [])
+        entry = {"taxid": taxid, "organism": organism}
+        if entry not in index[sample][classifier]:
+            index[sample][classifier].append(entry)
 
     return index
 
@@ -311,7 +315,18 @@ def select_reads_source(
     organism: str,
 ) -> list[Path]:
     base_name = f"{sample}_taxid_{taxid}_{organism}"
-    return sorted((reads_dir / classifier).glob(f"{base_name}.extracted_*"))
+    candidates = []
+    candidates.extend(reads_dir.glob(f"{base_name}.extracted_{classifier}_*"))
+    candidates.extend(reads_dir.glob(f"{base_name}_{classifier}.scaffolds.fa*"))
+    candidates.extend(reads_dir.glob(f"{base_name}_{classifier}.contigs.fa*"))
+    return sorted({path for path in candidates if path.is_file()})
+
+
+def resolve_blast_path(blast_dir: Path, classifier: str, filename: str) -> Path:
+    flat_path = blast_dir / filename
+    if flat_path.exists():
+        return flat_path
+    return flat_path
 
 
 def header_help(header: str) -> str:
@@ -325,14 +340,22 @@ def build_detail_context(
     organism: str,
     assigned_reads: str,
     footer_logo: str,
-    detail_page_dir: Path,
     reads_files: list[Path],
-    blast_dir: Path,
+    blastn_dir: Path,
+    blastx_dir: Path,
     coverage_dir: Path,
     coverage_plots_dir: Path,
 ) -> dict[str, object]:
-    blastn_summary = blast_dir / "blastn" / classifier / f"{sample}_taxid_{taxid}_{organism}_blast_filtered.txt"
-    blastx_summary = blast_dir / "blastx" / classifier / f"{sample}_taxid_{taxid}_{organism}_blastx_filtered.txt"
+    blastn_summary = resolve_blast_path(
+        blastn_dir,
+        classifier,
+        f"{sample}_taxid_{taxid}_{organism}_{classifier}_blast_filtered.txt",
+    )
+    blastx_summary = resolve_blast_path(
+        blastx_dir,
+        classifier,
+        f"{sample}_taxid_{taxid}_{organism}_{classifier}_blastx_filtered.txt",
+    )
 
     blastn = read_tsv_table(blastn_summary) if blastn_summary.exists() else {"headers": [], "rows": []}
     blastx = read_tsv_table(blastx_summary) if blastx_summary.exists() else {"headers": [], "rows": []}
@@ -350,7 +373,7 @@ def build_detail_context(
     coverage_plot_sections = [
         {
             "name": path.name,
-            "src": os.path.relpath(path, detail_page_dir),
+            "src": file_to_data_uri(path),
         }
         for path in coverage_plot_files
     ]
@@ -386,7 +409,8 @@ def collect_detail_sections(
     flagged_dir: Path,
     extracted_reads_index: dict[str, dict[str, list[dict[str, str]]]],
     reads_dir: Path,
-    blast_dir: Path,
+    blastn_dir: Path,
+    blastx_dir: Path,
     coverage_dir: Path,
     coverage_plots_dir: Path,
 ) -> tuple[dict[tuple[str, str, str, str], str], dict[str, dict[str, object]]]:
@@ -415,10 +439,10 @@ def collect_detail_sections(
                     taxid=taxid,
                     organism=organism,
                     assigned_reads=load_assigned_reads(flagged_path, sample, taxid),
-                    footer_logo=os.path.relpath(logo_path, report_path.parent),
-                    detail_page_dir=report_path.parent,
+                    footer_logo=file_to_data_uri(logo_path),
                     reads_files=reads_files,
-                    blast_dir=blast_dir,
+                    blastn_dir=blastn_dir,
+                    blastx_dir=blastx_dir,
                     coverage_dir=coverage_dir,
                     coverage_plots_dir=coverage_plots_dir,
                 )
@@ -652,7 +676,8 @@ def build_html(
     reads_dir: Path,
     report_path: Path,
     logo_path: Path,
-    blast_dir: Path,
+    blastn_dir: Path,
+    blastx_dir: Path,
     coverage_dir: Path,
     coverage_plots_dir: Path,
 ) -> str:
@@ -666,7 +691,8 @@ def build_html(
         flagged_dir=flagged_dir,
         extracted_reads_index=extracted_reads_index,
         reads_dir=reads_dir,
-        blast_dir=blast_dir,
+        blastn_dir=blastn_dir,
+        blastx_dir=blastx_dir,
         coverage_dir=coverage_dir,
         coverage_plots_dir=coverage_plots_dir,
     )
@@ -692,7 +718,7 @@ def build_html(
         report_title=REPORT_TITLE,
         header_help=header_help,
         header_help_map=HEADER_HELP,
-        footer_logo=os.path.relpath(logo_path, report_path.parent),
+        footer_logo=file_to_data_uri(logo_path),
         ticket=ticket,
         version=version,
         created_date=created_date,
@@ -708,7 +734,8 @@ def main() -> None:
     template_path = Path(args.template)
     flagged_dir = Path(args.flagged_dir)
     reads_dir = Path(args.reads_dir)
-    blast_dir = Path(args.blast_dir)
+    blastn_dir = Path(args.blastn_dir)
+    blastx_dir = Path(args.blastx_dir)
     coverage_dir = Path(args.coverage_dir)
     coverage_plots_dir = Path(args.coverage_plots_dir)
     logo_path = Path(args.logo)
@@ -725,7 +752,8 @@ def main() -> None:
         reads_dir,
         output_path,
         logo_path,
-        blast_dir,
+        blastn_dir,
+        blastx_dir,
         coverage_dir,
         coverage_plots_dir,
     )

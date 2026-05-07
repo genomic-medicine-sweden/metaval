@@ -45,10 +45,10 @@ workflow BLAST {
         ch_blastn_hits_taxid = FILTER_BLASTN.out.filtered_blast
             .flatMap { meta, blastn_hits ->
                 blastn_hits.splitCsv( sep: '\t', header: true )
-                    .collect { row -> [ row.staxid, meta, blastn_hits ] }
+                    .collect { row -> [ row.staxids, meta, blastn_hits ] }
             }
-            .unique { staxid, meta, _blastn_hits -> [staxid, meta.id, meta.taxid, meta.tool]}
-            .map { staxid, meta, _blastn_hits -> [ staxid, meta ] }
+            .unique { staxids, meta, _blastn_hits -> [staxids, meta.id, meta.taxid, meta.tool]}
+            .map { staxids, meta, _blastn_hits -> [ staxids, meta ] }
         ch_blast_hits_taxid = ch_blast_hits_taxid.mix( ch_blastn_hits_taxid )
     }
 
@@ -72,7 +72,7 @@ workflow BLAST {
             ch_query_for_blastx,
             ch_blastx_db,
             'txt',
-            'qseqid sseqid slen pident qlen length qcovhsp nident evalue bitscore staxids sscinames'
+            'qseqid staxids sscinames stitle pident qlen length mismatch gapopen qstart qend sstart send evalue bitscore sseqid qseq sseq'
         )
 
         // Filter BLASTX hits
@@ -83,15 +83,15 @@ workflow BLAST {
         ch_blastx_hits_taxid = FILTER_BLASTX.out.filtered_blast
             .flatMap { meta, blastx_hits ->
                 blastx_hits.splitCsv( sep: '\t', header: true )
-                    .collect { row -> [ row.staxid, meta, blastx_hits ] }
+                    .collect { row -> [ row.staxids, meta, blastx_hits ] }
             }
-            .unique { staxid, meta, _blastx_hits -> [staxid, meta.id, meta.taxid, meta.tool]}
-            .map { staxid, meta, _blastx_hits -> [ staxid, meta ] }
+            .unique { staxids, meta, _blastx_hits -> [staxids, meta.id, meta.taxid, meta.tool]}
+            .map { staxids, meta, _blastx_hits -> [ staxids, meta ] }
             ch_blast_hits_taxid = ch_blast_hits_taxid.mix ( ch_blastx_hits_taxid )
     }
     // Make blast taxid unique per meta.id, meta_taxid and meta.tool combination
     ch_blast_hits_taxid_uniq = ch_blast_hits_taxid
-        .unique { staxid, meta -> [staxid, meta.id, meta.taxid, meta.tool] }
+        .unique { staxids, meta -> [staxids, meta.id, meta.taxid, meta.tool] }
 
     emit:
     unique_taxid = ch_blast_hits_taxid_uniq // eg: ['211044', ['id':'SRR13439799', 'instrument_platform':'OXFORD_NANOPORE', 'single_end':true, 'taxid':'211044', 'tool':'centrifuge']]
