@@ -20,6 +20,8 @@ lint:
     - docs/usage.md
     - viralPathogenList.csv
     - README.md
+  template_strings:
+    - assets/templates/
   multiqc_config:
     - report_comment
   nextflow_config:

@@ -395,7 +395,6 @@ The report combines all analysed samples into a single document and includes:
 
 The report is self-contained, so images needed for interpretation, such as coverage plots and the pipeline logo, are embedded directly in the HTML file.
 
-
 ### MultiQC
 
 <details markdown="1">
