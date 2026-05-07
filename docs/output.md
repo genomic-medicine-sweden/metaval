@@ -24,6 +24,7 @@ The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes d
 - [IGV](#IGV) - Report for visualizing reads mapped to the genomes identified.
 - [Pathogen reads](#Pathogen-reads) For the pathogen screening workflow, prepare an individual FASTA/BAM file for each pathogen with mapped reads.
 - [Call Consensus](#Call-Consensus) - Call consensus sequences for reads mapped to pathogen genomes
+- [Report](#Report) - Generate a report summarising the results of the pipeline.
 - [MultiQC](#multiqc) - Aggregate report describing results and QC from the whole pipeline
 - [Pipeline information](#pipeline-information) - Report metrics generated during the workflow execution
 
@@ -367,6 +368,33 @@ Call consensus sequences for Illumina reads mapped to pathogen genomes using `sa
 </details>
 
 The `consensus` directory will only be created if `--perform_screen_pathogens` is supplied along with either `--perform_longread_consensus` or `--perform_shortread_consensus`.
+
+### Report
+
+Generate a standalone HTML report that summarises the results of the verify-species workflow. At the moment, this report does not include the pathogen-screening workflow.
+
+<details markdown="1">
+<summary>Output files</summary>
+
+- `metaval_reports/`
+  - `metaval_report.html`: Standalone HTML report for all samples included in the run.
+
+</details>
+
+The report combines all analysed samples into a single document and includes:
+
+- A sample list with metadata from the input samplesheet.
+- Classifier-specific taxpasta tables flagged against the matched negative controls.
+- A list of taxa checked by metaval for each sample and classifier.
+- Per-taxon metaval detail panels containing:
+  - `BLASTN` and `BLASTX` result tables
+  - expandable alignment views for individual BLAST hits
+  - mapping statistics tables
+  - embedded coverage plots
+  - extracted reads or assemblies used for species verification
+
+The report is self-contained, so images needed for interpretation, such as coverage plots and the pipeline logo, are embedded directly in the HTML file.
+
 
 ### MultiQC
 
