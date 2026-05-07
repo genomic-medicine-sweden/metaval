@@ -131,7 +131,6 @@
                 },
                 "ticket": {
                     "type": ["string", "number"],
-                    "default": "NA",
                     "description": "A ticket number to add to the metaval report.",
                     "fa_icon": "fas fa-ticket-alt"
                 }

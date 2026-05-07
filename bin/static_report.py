@@ -41,7 +41,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--template",
-        default=str(ASSETS_DIR / "report.html.j2"),
+        default=str(ASSETS_DIR / "templates" / "report.html.j2"),
         help="Path to the Jinja template file.",
     )
     parser.add_argument(
