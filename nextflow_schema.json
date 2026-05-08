@@ -209,7 +209,8 @@
                     "type": "string",
                     "format": "file-path",
                     "description": "A header file for BLASTN/BLASTX hits.",
-                    "fa_icon": "fa-file-lines"
+                    "fa_icon": "fa-file-lines",
+                    "default": "assets/blast_outfmt10_header.txt"
                 },
                 "skip_blastx": {
                     "type": "boolean",

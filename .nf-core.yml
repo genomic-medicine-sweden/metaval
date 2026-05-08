@@ -6,6 +6,7 @@ lint:
     - assets/samplesheet.csv
     - .github/ISSUE_TEMPLATE/config.yml
     - conf/test_full.config
+    - docs/CONTRIBUTING.md
   files_unchanged:
     - assets/sendmail_template.txt
     - .github/CONTRIBUTING.md
@@ -21,7 +22,7 @@ lint:
     - viralPathogenList.csv
     - README.md
   template_strings:
-    - assets/templates/
+    - assets/templates/report.html.j2
   multiqc_config:
     - report_comment
   nextflow_config:
