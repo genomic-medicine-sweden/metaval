@@ -7,7 +7,7 @@ include { EXTRACT_VIRAL_TAXID as CENTRIFUGE_VIRAL_TAXID   } from '../../../modul
 include { EXTRACT_VIRAL_TAXID as DIAMOND_VIRAL_TAXID      } from '../../../modules/local/extract_viral_taxid'
 include { KRAKENTOOLS_EXTRACTKRAKENREADS                  } from '../../../modules/nf-core/krakentools/extractkrakenreads'
 include { EXTRACTCENTRIFUGEREADS                          } from '../../../modules/local/extractcentrifugereads'
-include { EXTRACTDIAMONDREADS                            } from '../../../modules/local/extractdiamondreads'
+include { EXTRACTDIAMONDREADS                             } from '../../../modules/local/extractdiamondreads'
 
 workflow TAXID_READS {
 
@@ -27,10 +27,10 @@ workflow TAXID_READS {
     ch_versions      = channel.empty()
     ch_taxid_reads   = channel.empty()
 
-    ch_phages_taxid = params.phages_taxid ?
+    ch_phages_taxid  = params.phages_taxid ?
         channel.fromPath(params.phages_taxid, checkIfExists: true).first() :
         channel.value([])
-    ch_taxid_list = params.taxid ?
+    ch_taxid_list    = params.taxid ?
         channel.fromPath(params.taxid, checkIfExists: true)
             .splitCsv(sep: '\t')
             .map { row ->
@@ -44,7 +44,7 @@ workflow TAXID_READS {
             .collect()
         : channel.value([])
 
-    // Exyxtract kraken2 reads
+    // Extract kraken2 reads
     if ( params.extract_kraken2_reads ) {
         if ( params.taxid ) {
             kraken2_combined = ch_kraken2_report.map { meta, kraken2_report -> [ meta.subMap(meta.keySet() - 'tool'), kraken2_report ] }
@@ -92,7 +92,7 @@ workflow TAXID_READS {
                 kraken2_combined.kraken2_report
                 )
             ch_taxid_reads_kraken2  = KRAKENTOOLS_EXTRACTKRAKENREADS.out.extracted_kraken2_reads
-                .map {meta,reads -> [ meta+[tool: "kraken2"]+ [taxid: meta.taxid], reads ]}
+                .map {meta,reads -> [ meta+[tool: "kraken2"], reads ]}
             ch_versions             = ch_versions.mix( KRAKENTOOLS_EXTRACTKRAKENREADS.out.versions.first() )
         }
         ch_taxid_reads              = ch_taxid_reads.mix(ch_taxid_reads_kraken2)

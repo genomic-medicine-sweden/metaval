@@ -24,6 +24,10 @@ Initial release of genomic-medicine-sweden/metaval, created with the [nf-core](h
 
 ### `Fixed`
 
+- Removed stale `patch` references for `blast/blastn` and `seqkit/fq2fa` in `modules.json`
+- Fixed bowtie2 / minimap2 BAM globs in `tests/default.nf.test` to specific subpaths so each assertion only sees its own outputs
+- Removed redundant `[taxid: meta.taxid]` re-merge in `subworkflows/local/taxid_reads/main.nf`
+
 ### `Dependencies`
 
 ### `Deprecated`

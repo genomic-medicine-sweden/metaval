@@ -13,8 +13,7 @@
                     "blast/blastn": {
                         "branch": "master",
                         "git_sha": "3a9acfe9865ac6f63bc48667657bfb8293613f56",
-                        "installed_by": ["modules"],
-                        "patch": "modules/nf-core/blast/blastn/blast-blastn.diff"
+                        "installed_by": ["modules"]
                     },
                     "bowtie2/align": {
                         "branch": "master",
@@ -115,8 +114,7 @@
                     "seqkit/fq2fa": {
                         "branch": "master",
                         "git_sha": "bf70cbf44b42ff4a81afcb673fcef604f5ef3a85",
-                        "installed_by": ["modules"],
-                        "patch": "modules/nf-core/seqkit/fq2fa/seqkit-fq2fa.diff"
+                        "installed_by": ["modules"]
                     },
                     "spades": {
                         "branch": "master",
