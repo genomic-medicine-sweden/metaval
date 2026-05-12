@@ -54,11 +54,11 @@ Extract all taxonomic IDs of viral species predicted by classifiers.
 
 </details>
 
-This directory will only be present if `--perform_verify_species` is supplied, while `--taxid` is not specified.
+This directory will only be present if `--perform_verify_species` is supplied, while `--taxid_list` is not specified.
 
 ### Extract Reads
 
-Retrieve the reads of all viral TaxIDs predicted by classifiers or extracts reads from a user-defined list of TaxIDs separated by spaces when the `--taxid` option is activated
+Retrieve the reads of all viral TaxIDs predicted by classifiers or extracts reads from a user-defined list of TaxIDs separated by spaces when the `--taxid_list` option is activated
 
 <details markdown="1">
 <summary>Output files</summary>

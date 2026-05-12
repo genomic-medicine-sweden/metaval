@@ -53,7 +53,7 @@ This workflow is activated by enabling the `--perform_screen_pathogens` option.
 
 ### Orange Workflow - Verify Identified Viruses
 
-This workflow is activated by enabling the `--perform_verify_species` option and disabling the `--taxid`.
+This workflow is activated by enabling the `--perform_verify_species` option and disabling the `--taxid_list`.
 
 1. **Decontamination**
    - Filter the output files from metagenomics classifiers like [Kraken2](https://ccb.jhu.edu/software/kraken2/), [Centrifuge](https://ccb.jhu.edu/software/centrifuge/), or [DIAMOND](https://github.com/bbuchfink/diamond) to remove false positives and background contaminations. This step compares results to the negative control and identifies likely present species based on user-defined thresholds.
@@ -81,7 +81,7 @@ This workflow is activated by enabling the `--perform_verify_species` option and
 
 ## Blue Workflow - Verify User-Defined TaxIDs
 
-This workflow is activated by enabling the `--perform_verify_species` option and the `--taxid` option, allowing users to define a list of TaxIDs. It is not limited to `viral` TaxIDs and can include `bacteria`, `fungi`, `archaea`, `parasites`, or `plasmids`.
+This workflow is activated by enabling the `--perform_verify_species` option and the `--taxid_list` option, allowing users to define a list of TaxIDs. It is not limited to `viral` TaxIDs and can include `bacteria`, `fungi`, `archaea`, `parasites`, or `plasmids`.
 
 All steps are the same as the **Orange Workflow** except using user-defined TaxIDs instead of extracting predefined viral TaxIDs.
 

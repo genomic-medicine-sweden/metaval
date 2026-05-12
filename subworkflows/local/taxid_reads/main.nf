@@ -30,8 +30,8 @@ workflow TAXID_READS {
     ch_phages_taxid  = params.phages_taxid ?
         channel.fromPath(params.phages_taxid, checkIfExists: true).first() :
         channel.value([])
-    ch_taxid_list    = params.taxid ?
-        channel.fromPath(params.taxid, checkIfExists: true)
+    ch_taxid_list    = params.taxid_list ?
+        channel.fromPath(params.taxid_list, checkIfExists: true)
             .splitCsv(sep: '\t')
             .map { row ->
                 def taxid = row[0]
@@ -46,7 +46,7 @@ workflow TAXID_READS {
 
     // Extract kraken2 reads
     if ( params.extract_kraken2_reads ) {
-        if ( params.taxid ) {
+        if ( params.taxid_list ) {
             kraken2_combined = ch_kraken2_report.map { meta, kraken2_report -> [ meta.subMap(meta.keySet() - 'tool'), kraken2_report ] }
                 .join (ch_kraken2_result, by: 0)
                 .join( ch_reads, by: 0)
@@ -100,7 +100,7 @@ workflow TAXID_READS {
 
     // Extract centrifuge reads
     if ( params.extract_centrifuge_reads ) {
-        if ( params.taxid ) {
+        if ( params.taxid_list ) {
             centrifuge_combined = ch_centrifuge_result
                 .join( ch_reads, by: 0 )
                 .combine ( ch_taxid_list.flatten().collate(2))
@@ -144,7 +144,7 @@ workflow TAXID_READS {
 
     // Extract diamond reads
     if ( params.extract_diamond_reads ) {
-        if ( params.taxid ) {
+        if ( params.taxid_list ) {
             diamond_combined = ch_diamond_tsv.map { meta, diamond_tsv -> [meta.subMap( meta.keySet() - 'tool' ), diamond_tsv ] }
                 .join( ch_reads, by:0)
                 .combine ( ch_taxid_list.flatten().collate(2))
