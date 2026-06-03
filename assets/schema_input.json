@@ -13,81 +13,19 @@
                 "errorMessage": "Sample name must be provided and cannot contain spaces",
                 "meta": ["id"]
             },
-            "instrument_platform": {
-                "type": "string",
-                "enum": ["ILLUMINA", "OXFORD_NANOPORE"],
-                "errorMessage": "Sequencing platform must be provided, must be a string value and must be one of 'ILLUMINA' or 'OXFORD_NANOPORE`.",
-                "meta": ["instrument_platform"]
-            },
             "fastq_1": {
                 "type": "string",
-                "exists": true,
                 "format": "file-path",
+                "exists": true,
                 "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.f(ast)?q\\.gz$",
-                "errorMessage": "The FASTQ file for short reads 1, long reads or merged paired-end reads must be provided, either from raw or filtered reads from `bbduk`/`nanoq`/`FiltLong` or from `Bowtie2`/`minimap2` unmapped reads against the human genome, cannot contain spaces and must have the extension '.fq.gz' or '.fastq.gz'."
+                "errorMessage": "FastQ file for reads 1 must be provided, cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
             },
             "fastq_2": {
                 "type": "string",
-                "exists": true,
                 "format": "file-path",
+                "exists": true,
                 "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.f(ast)?q\\.gz$",
-                "errorMessage": "The FASTQ file for short reads 2, either from raw or filtered reads from `bbduk` or from`Bowtie2` unmapped read 2 against the human genome, cannot contain spaces and must have the extension '.fq.gz' or '.fastq.gz'."
-            },
-            "kraken2_report": {
-                "type": "string",
-                "exists": true,
-                "format": "file-path",
-                "pattern": "^\\S+\\.kraken2\\.kraken2\\.report\\.txt$",
-                "errorMessage": "Kraken2 classification report must be provided."
-            },
-            "kraken2_result": {
-                "type": "string",
-                "exists": true,
-                "format": "file-path",
-                "pattern": "^\\S+\\.kraken2\\.kraken2\\.classifiedreads\\.txt$",
-                "errorMessage": "Kraken2 classification results must be provided."
-            },
-            "kraken2_taxpasta": {
-                "type": "string",
-                "exists": true,
-                "format": "file-path",
-                "pattern": "^\\S+\\.tsv$",
-                "errorMessage": "Standardized kraken2 profiling with taxonomic information obtained from `taxpasta`."
-            },
-            "centrifuge_report": {
-                "type": "string",
-                "exists": true,
-                "format": "file-path",
-                "pattern": "^\\S+\\.centrifuge.txt$",
-                "errorMessage": "Centrifuge kreport file must be provided."
-            },
-            "centrifuge_result": {
-                "type": "string",
-                "exists": true,
-                "format": "file-path",
-                "pattern": "^\\S+\\.centrifuge.results.txt$",
-                "errorMessage": "Centrifuge result file must be provided and it should contain eight columns: readID, seqID, taxID, score, 2ndBestScore, hitLength, queryLength, numMatches."
-            },
-            "centrifuge_taxpasta": {
-                "type": "string",
-                "exists": true,
-                "format": "file-path",
-                "pattern": "^\\S+\\.tsv$",
-                "errorMessage": "Standardized centrifuge profiling with taxonomic information obtained from `taxpasta`."
-            },
-            "diamond": {
-                "type": "string",
-                "exists": true,
-                "format": "file-path",
-                "pattern": "^\\S+\\.tsv$",
-                "errorMessage": "`DIAMOND` classification results should be provided."
-            },
-            "diamond_taxpasta": {
-                "type": "string",
-                "exists": true,
-                "format": "file-path",
-                "pattern": "^\\S+\\.tsv$",
-                "errorMessage": "Standardized diamond profiling with taxonomic information obtained from `taxpasta`."
+                "errorMessage": "FastQ file for reads 2 cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
             }
         },
         "required": ["sample", "instrument_platform", "fastq_1"],

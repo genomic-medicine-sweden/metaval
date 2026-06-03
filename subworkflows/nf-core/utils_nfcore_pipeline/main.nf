@@ -17,7 +17,7 @@ workflow UTILS_NFCORE_PIPELINE {
     checkProfileProvided(nextflow_cli_args)
 
     emit:
-    valid_config
+    valid_config = valid_config
 }
 
 /*
@@ -353,6 +353,7 @@ def completionSummary(monochrome_logs=true) {
         log.info("-${colors.purple}[${workflow.manifest.name}]${colors.red} Pipeline completed with errors${colors.reset}-")
     }
 }
+<<<<<<< HEAD
 
 //
 // Construct and send a notification to a web server as JSON e.g. Microsoft Teams and Slack
@@ -417,3 +418,5 @@ def imNotification(summary_params, hook_url) {
         log.warn(post.getErrorStream().getText())
     }
 }
+=======
+>>>>>>> TEMPLATE
