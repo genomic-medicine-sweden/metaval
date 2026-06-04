@@ -95,34 +95,30 @@ workflow METAVAL {
         // LOCAL MODULE: FLAG_TAXPASTA:
         //
         // Flag taxonomy tables by comparing samples with the negative controls (NTC) that have the same meta.library_type and meta.batch.
-        if ( params.flag_taxpasta ) {
-            // Create taxpasta channels for each classifier
-            ch_taxpasta = ch_samplesheet.multiMap { meta, _fastq_1, _fastq_2, _kraken2_report, _kraken2_result, kraken2_taxpasta, _centrifuge_report, _centrifuge_result, centrifuge_taxpasta, _diamond, diamond_taxpasta ->
-                kraken2: [ meta + [tool: "kraken2"], kraken2_taxpasta ]
-                centrifuge: [ meta + [tool: "centrifuge"], centrifuge_taxpasta ]
-                diamond: [ meta + [tool: "diamond"], diamond_taxpasta ]
-            }
 
-            // Create sample and NTC taxpasta channels: [ [meta.library_type, meta.batch], meta, taxpasta]
-            ch_taxpasta_kraken2 = sample_ntc_branch(ch_taxpasta.kraken2)
-            ch_taxpasta_centrifuge =  sample_ntc_branch(ch_taxpasta.centrifuge)
-            ch_taxpasta_diamond = sample_ntc_branch(ch_taxpasta.diamond)
-
-            // Join sample and NTC channels for each classifier
-            ch_taxpasta_kraken2_ntc = taxpasta_sample_ntc_joined(ch_taxpasta_kraken2.sample, ch_taxpasta_kraken2.ntc)
-            ch_taxpasta_centrifuge_ntc = taxpasta_sample_ntc_joined(ch_taxpasta_centrifuge.sample, ch_taxpasta_centrifuge.ntc)
-            ch_taxpasta_diamond_ntc = taxpasta_sample_ntc_joined(ch_taxpasta_diamond.sample, ch_taxpasta_diamond.ntc)
-
-            // Create the input channel for FLAG_TAXPASTA
-            ch_taxpasta_input = channel.empty()
-            ch_taxpasta_input = ch_taxpasta_input.mix(
-                ch_taxpasta_kraken2_ntc,
-                ch_taxpasta_centrifuge_ntc,
-                ch_taxpasta_diamond_ntc
-            )
-            // The input channels to FLAG_TAXPASTA process: [ meta_sample, taxpasta_sample, meta_ntc, taxpasta_ntc ]
-            FLAG_TAXPASTA( ch_taxpasta_input )
+        // Create taxpasta channels for each classifier
+        ch_taxpasta = ch_samplesheet.multiMap { meta, _fastq_1, _fastq_2, _kraken2_report, _kraken2_result, kraken2_taxpasta, _centrifuge_report, _centrifuge_result, centrifuge_taxpasta, _diamond, diamond_taxpasta ->
+            kraken2: [ meta + [tool: "kraken2"], kraken2_taxpasta ]
+            centrifuge: [ meta + [tool: "centrifuge"], centrifuge_taxpasta ]
+            diamond: [ meta + [tool: "diamond"], diamond_taxpasta ]
         }
+        // Create sample and NTC taxpasta channels: [ [meta.library_type, meta.batch], meta, taxpasta]
+        ch_taxpasta_kraken2 = sample_ntc_branch(ch_taxpasta.kraken2)
+        ch_taxpasta_centrifuge =  sample_ntc_branch(ch_taxpasta.centrifuge)
+        ch_taxpasta_diamond = sample_ntc_branch(ch_taxpasta.diamond)
+        // Join sample and NTC channels for each classifier
+        ch_taxpasta_kraken2_ntc = taxpasta_sample_ntc_joined(ch_taxpasta_kraken2.sample, ch_taxpasta_kraken2.ntc)
+        ch_taxpasta_centrifuge_ntc = taxpasta_sample_ntc_joined(ch_taxpasta_centrifuge.sample, ch_taxpasta_centrifuge.ntc)
+        ch_taxpasta_diamond_ntc = taxpasta_sample_ntc_joined(ch_taxpasta_diamond.sample, ch_taxpasta_diamond.ntc)
+        // Create the input channel for FLAG_TAXPASTA
+        ch_taxpasta_input = channel.empty()
+        ch_taxpasta_input = ch_taxpasta_input.mix(
+            ch_taxpasta_kraken2_ntc,
+            ch_taxpasta_centrifuge_ntc,
+            ch_taxpasta_diamond_ntc
+        )
+        // The input channels to FLAG_TAXPASTA process: [ meta_sample, taxpasta_sample, meta_ntc, taxpasta_ntc ]
+        FLAG_TAXPASTA( ch_taxpasta_input )
 
         //
         // SUBWORKFLOW: TAXID_READS - extract reads
@@ -302,7 +298,7 @@ workflow METAVAL {
 
         ch_assembly = channel.empty()
         if ( params.perform_shortread_denovo ) {
-            ch_assembly = ch_assembly.mix( SPADES.out.scaffolds.ifEmpty(SPADES.out.contigs) )
+            ch_assembly = ch_assembly.mix( SPADES.out.scaffolds, SPADES.out.contigs )
         }
         if ( params.perform_longread_denovo ) {
             ch_assembly = ch_assembly.mix( FLYE.out.fasta )
@@ -312,20 +308,29 @@ workflow METAVAL {
         ch_reads_report = ch_reads_fa.mix(ch_assembly)
             .groupTuple(by:0)
             .map { meta, files ->
-                def assembly = files.find { it instanceof Path }
+                def assembly = files.find { it instanceof Path && it.name.endsWith('.scaffolds.fa') } ?:
+                    files.find { it instanceof Path && it.name.endsWith('.contigs.fa') } ?:
+                    files.find { it instanceof Path }
                 def reads = files.find { it instanceof List }
                 [ meta, assembly ?: reads ]
             }
 
+        ch_flagged_taxpasta_report = FLAG_TAXPASTA.out.tsv.map { _meta, tsv -> tsv }.collect()
+        ch_reads_report_files      = ch_reads_report.map { _meta, files -> files }.flatten().collect()
+        ch_blastn_report_files     = ch_blastn_report.map { _meta, blastn -> blastn }.collect()
+        ch_blastx_report_files     = ch_blastx_report.map { _meta, blastx -> blastx }.collect()
+        ch_coverage_table_files    = ch_coverage_tables.map { _meta, table -> table }.collect()
+        ch_coverage_plot_files     = ch_coverage_plots.map { _meta, plot -> plot }.collect()
+
         METAVAL_REPORT (
             params.ticket,
             ch_samplesheet_report,
-            FLAG_TAXPASTA.out.tsv.collect{it[1]},
-            ch_reads_report.collect{it[1]},
-            ch_blastn_report.collect{it[1]},
-            ch_blastx_report.collect{it[1]},
-            ch_coverage_tables.collect{it[1]},
-            ch_coverage_plots.collect{it[1]}
+            ch_flagged_taxpasta_report,
+            ch_reads_report_files,
+            ch_blastn_report_files,
+            ch_blastx_report_files,
+            ch_coverage_table_files,
+            ch_coverage_plot_files
         )
 
     }
