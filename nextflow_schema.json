@@ -366,13 +366,6 @@
                     "fa_icon": "fas fa-palette",
                     "hidden": true
                 },
-                "hook_url": {
-                    "type": "string",
-                    "description": "Incoming hook URL for messaging service",
-                    "fa_icon": "fas fa-people-group",
-                    "help_text": "Incoming hook URL for messaging service. Currently, MS Teams and Slack are supported.",
-                    "hidden": true
-                },
                 "multiqc_config": {
                     "type": "string",
                     "format": "file-path",
@@ -402,7 +395,11 @@
                     "type": "string",
                     "fa_icon": "far fa-check-circle",
                     "description": "Base URL or local path to location of pipeline test dataset files",
+<<<<<<< HEAD
                     "default": "https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/",
+=======
+                    "default": "https://raw.githubusercontent.com/nf-core/test-datasets/",
+>>>>>>> TEMPLATE
                     "hidden": true
                 },
                 "trace_report_suffix": {
