@@ -52,10 +52,15 @@ workflow METAVAL {
 
     take:
     ch_samplesheet // channel: samplesheet read in from --input
+    multiqc_config
+    multiqc_logo
+    multiqc_methods_description
+
+    outdir
     main:
 
-    ch_versions = channel.empty()
-    ch_multiqc_files = channel.empty()
+    def ch_versions = channel.empty()
+    def ch_multiqc_files = channel.empty()
     ch_fastqc_files = channel.empty()
 
     // Create input channels
@@ -252,8 +257,6 @@ workflow METAVAL {
         }
     }
 
-    def ch_versions = channel.empty()
-    def ch_multiqc_files = channel.empty()
     //
     // WORKFLOW: Screen pathogens
     //
