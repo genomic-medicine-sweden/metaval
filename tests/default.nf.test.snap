@@ -9,15 +9,137 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,481e4fddfe11018be67ff5dcce3eb748"
             ]
         ],
-        "timestamp": "2026-06-08T20:10:55.258006",
+        "timestamp": "2026-06-08T21:19:42.851885",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
         }
     },
     "-profile test_taxid": {
-        "content": null,
-        "timestamp": "2026-06-08T16:26:29.468069",
+        "content": [
+            {
+                "BEDTOOLS_GENOMECOV": {
+                    "bedtools": "2.31.1"
+                },
+                "BLAST_BLASTN": {
+                    "blastn": "2.17.0+"
+                },
+                "BOWTIE2_ALIGN": {
+                    "bowtie2": "2.5.4",
+                    "pigz": 2.8,
+                    "samtools": 1.21
+                },
+                "BOWTIE2_BUILD": {
+                    "bowtie2": "2.5.4"
+                },
+                "DIAMOND_BLASTX": {
+                    "diamond": "2.1.16"
+                },
+                "EXTRACTCENTRIFUGEREADS": {
+                    "pigz": 2.8,
+                    "seqkit": "2.9.0"
+                },
+                "EXTRACTDIAMONDREADS": {
+                    "pigz": 2.8,
+                    "python": "3.13.1"
+                },
+                "FASTQC": {
+                    "fastqc": "0.12.1"
+                },
+                "FILTER_BLASTN": {
+                    "python": "3.12.3"
+                },
+                "FILTER_BLASTX": {
+                    "python": "3.12.3"
+                },
+                "FILTER_CONSENSUS_LONGREAD": {
+                    "python": "3.13.2"
+                },
+                "FILTER_CONSENSUS_SHORTREAD": {
+                    "python": "3.13.2"
+                },
+                "KRAKENTOOLS_EXTRACTKRAKENREADS": {
+                    "extract_kraken_reads.py": "1.2.1"
+                },
+                "MEDAKA": {
+                    "medaka": "2.0.1",
+                    "seqkit": "2.9.0"
+                },
+                "MINIMAP2_ALIGN": {
+                    "minimap2": "2.29-r1283"
+                },
+                "MINIMAP2_INDEX": {
+                    "minimap2": "2.29-r1283"
+                },
+                "PIGZ_UNCOMPRESS": {
+                    "pigz": 2.8
+                },
+                "SAMTOOLS_CONSENSUS_SHORTREAD": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_FAIDX": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_FASTA": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_FLAGSTAT": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_IDXSTATS": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_INDEX": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_INDEX_FAIL": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_INDEX_PASS": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_SORT_FAIL": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_SORT_LONGREAD": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_SORT_PASS": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_SORT_SHORTREAD": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.23.1"
+                },
+                "SEQKIT_FQ2FA": {
+                    "seqkit": "2.9.0"
+                },
+                "SEQKIT_FQ2FA_READS": {
+                    "seqkit": "2.9.0"
+                },
+                "SPADES": {
+                    "spades": "4.1.0"
+                },
+                "SUBSET_BAM_FAIL": {
+                    "samtools": 1.21
+                },
+                "SUBSET_BAM_PASS": {
+                    "samtools": 1.21
+                },
+                "UNTAR_BLASTN": {
+                    "untar": 1.34
+                },
+                "Workflow": {
+                    "genomic-medicine-sweden/metaval": "v1.0dev"
+                }
+            }
+        ],
+        "timestamp": "2026-06-08T21:19:39.245052",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -32,7 +154,7 @@
                 "SRR13439813_Homo_sapiens_samtools.fasta:md5,a06778a8d2ca667eb4f12d1fd7a43f87"
             ]
         ],
-        "timestamp": "2026-06-08T20:10:56.651935",
+        "timestamp": "2026-06-08T21:19:46.773091",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -44,10 +166,10 @@
                 
             ]
         ],
-        "timestamp": "2026-04-15T11:49:41.68983821",
+        "timestamp": "2026-06-08T21:19:39.4713",
         "meta": {
-            "nf-test": "0.9.3",
-            "nextflow": "25.10.4"
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.3"
         }
     },
     "minimap2_index": {
@@ -56,10 +178,10 @@
                 
             ]
         ],
-        "timestamp": "2026-04-15T11:49:43.084743194",
+        "timestamp": "2026-06-08T21:19:41.55146",
         "meta": {
-            "nf-test": "0.9.3",
-            "nextflow": "25.10.4"
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.3"
         }
     },
     "bowtie2_build": {
@@ -175,7 +297,7 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-06-08T20:10:53.788013",
+        "timestamp": "2026-06-08T21:19:39.783958",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -282,7 +404,7 @@
                 
             ]
         ],
-        "timestamp": "2026-06-08T20:10:52.60234",
+        "timestamp": "2026-06-08T21:19:39.687342",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -316,10 +438,10 @@
                 "SRR13439813_kraken2_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-04-15T11:49:45.165006106",
+        "timestamp": "2026-06-08T21:19:44.153702",
         "meta": {
-            "nf-test": "0.9.3",
-            "nextflow": "25.10.4"
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.3"
         }
     },
     "blastx": {
@@ -342,10 +464,10 @@
                 
             ]
         ],
-        "timestamp": "2026-04-15T11:49:41.679106348",
+        "timestamp": "2026-06-08T21:19:39.456562",
         "meta": {
-            "nf-test": "0.9.3",
-            "nextflow": "25.10.4"
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.3"
         }
     },
     "blastn": {
@@ -380,10 +502,10 @@
                 
             ]
         ],
-        "timestamp": "2026-04-15T11:49:41.650016713",
+        "timestamp": "2026-06-08T21:19:39.396697",
         "meta": {
-            "nf-test": "0.9.3",
-            "nextflow": "25.10.4"
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.3"
         }
     },
     "pathogens_igv": {
@@ -395,10 +517,10 @@
                 "SRR13439813_Homo_sapiens_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-04-15T11:49:48.126604783",
+        "timestamp": "2026-06-08T21:19:48.068054",
         "meta": {
-            "nf-test": "0.9.3",
-            "nextflow": "25.10.4"
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.3"
         }
     },
     "pathogens_blast": {
@@ -415,10 +537,10 @@
                 
             ]
         ],
-        "timestamp": "2026-04-15T11:49:46.164678703",
+        "timestamp": "2026-06-08T21:19:45.476536",
         "meta": {
-            "nf-test": "0.9.3",
-            "nextflow": "25.10.4"
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.3"
         }
     }
 }
