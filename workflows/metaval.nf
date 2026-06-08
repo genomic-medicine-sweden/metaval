@@ -330,7 +330,7 @@ workflow METAVAL {
     //
     // MODULE: FASTQC
     //
-    FASTQC(ch_samplesheet)
+    FASTQC(ch_fastqc_files )
     ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.map{ _meta, file -> file })
 
     //
