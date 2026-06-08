@@ -13,20 +13,14 @@ repos:
         exclude: |
           (?x)^(
               .*ro-crate-metadata.json$|
-<<<<<<< HEAD
-              modules/nf-core/.*|
-              subworkflows/nf-core/.*|
-=======
-          )$
-      - id: end-of-file-fixer
-          (?x)^(
-              .*ro-crate-metadata.json$|
-<<<<<<< HEAD
-              modules/nf-core/.*|
-              subworkflows/nf-core/.*|
+              modules/(?!local/).*|
+              subworkflows/(?!local/).*|
               .*\.snap$
           )$
-=======
+      - id: end-of-file-fixer
+        exclude: |
+          (?x)^(
+              .*ro-crate-metadata.json$|
               modules/(?!local/).*|
               subworkflows/(?!local/).*|
               .*\.snap$
@@ -37,4 +31,3 @@ repos:
       - id: nextflow-lint
         files: '\.nf$|nextflow\.config$'
         args: ["-output", "json"]
->>>>>>> TEMPLATE
