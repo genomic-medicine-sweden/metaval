@@ -93,7 +93,7 @@
             },
             "mentions": [
                 {
-                    "@id": "#622c4c7e-981d-45da-9c43-8501e8022d8f"
+                    "@id": "#95a2fa6d-e9b6-4021-80cd-cc5a224b5652"
                 }
             ],
             "name": "genomic-medicine-sweden/metaval"
@@ -120,13 +120,13 @@
                 "SoftwareSourceCode",
                 "ComputationalWorkflow"
             ],
-            "creator": [
+            "contributor": [
                 {
-                    "@id": "#64467552+LilyAnderssonLee@users.noreply.github.com"
+                    "@id": "#02066a59-c73c-42ed-9746-9c2ab994ea54"
                 }
             ],
             "dateCreated": "",
-            "dateModified": "2026-02-16T09:44:46Z",
+            "dateModified": "2026-06-08T15:35:01Z",
             "dct:conformsTo": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/",
             "keywords": [
                 "nf-core",
@@ -162,14 +162,14 @@
             "url": {
                 "@id": "https://www.nextflow.io/"
             },
-            "version": "!>=25.04.0"
+            "version": "!>=25.10.4"
         },
         {
-            "@id": "#622c4c7e-981d-45da-9c43-8501e8022d8f",
+            "@id": "#95a2fa6d-e9b6-4021-80cd-cc5a224b5652",
             "@type": "TestSuite",
             "instance": [
                 {
-                    "@id": "#332ae3f8-09cb-439a-b444-18984ed6639b"
+                    "@id": "#a728772b-b948-48e2-b57e-a0474bd3c2ca"
                 }
             ],
             "mainEntity": {
@@ -178,7 +178,7 @@
             "name": "Test suite for genomic-medicine-sweden/metaval"
         },
         {
-            "@id": "#332ae3f8-09cb-439a-b444-18984ed6639b",
+            "@id": "#a728772b-b948-48e2-b57e-a0474bd3c2ca",
             "@type": "TestInstance",
             "name": "GitHub Actions workflow for testing genomic-medicine-sweden/metaval",
             "resource": "repos/genomic-medicine-sweden/metaval/actions/workflows/nf-test.yml",
@@ -297,10 +297,10 @@
             "url": "https://nf-co.re/"
         },
         {
-            "@id": "#64467552+LilyAnderssonLee@users.noreply.github.com",
+            "@id": "#02066a59-c73c-42ed-9746-9c2ab994ea54",
             "@type": "Person",
             "email": "64467552+LilyAnderssonLee@users.noreply.github.com",
-            "name": "Lili Andersson-Li"
+            "name": "LilyAnderssonLee"
         }
     ]
 }

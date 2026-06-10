@@ -1,5 +1,7 @@
 .DS_Store
+fastqc/*_fastqc.{html,zip}
 multiqc/multiqc_data/fastqc_top_overrepresented_sequences_table.txt
+multiqc/multiqc_data/llms-full.txt
 multiqc/multiqc_data/multiqc.parquet
 multiqc/multiqc_data/multiqc.log
 multiqc/multiqc_data/multiqc_data.json
@@ -16,3 +18,4 @@ mapping/bowtie2/*/*.{bam,bai}
 pathogens/blast/*/*.txt
 pathogens/igv/*.html
 pathogens/mapping/bowtie2/*/*.{bam,bai}
+pipeline_info/*.{html,json,txt,yml}
