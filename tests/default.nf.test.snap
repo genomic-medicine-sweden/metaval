@@ -9,9 +9,9 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,481e4fddfe11018be67ff5dcce3eb748"
             ]
         ],
-        "timestamp": "2026-06-08T21:19:42.851885",
+        "timestamp": "2026-06-10T10:07:43.626086848",
         "meta": {
-            "nf-test": "0.9.5",
+            "nf-test": "0.9.4",
             "nextflow": "26.04.3"
         }
     },
@@ -139,9 +139,9 @@
                 }
             }
         ],
-        "timestamp": "2026-06-08T21:19:39.245052",
+        "timestamp": "2026-06-10T10:07:20.996422618",
         "meta": {
-            "nf-test": "0.9.5",
+            "nf-test": "0.9.4",
             "nextflow": "26.04.3"
         }
     },
@@ -154,9 +154,9 @@
                 "SRR13439813_Homo_sapiens_samtools.fasta:md5,a06778a8d2ca667eb4f12d1fd7a43f87"
             ]
         ],
-        "timestamp": "2026-06-08T21:19:46.773091",
+        "timestamp": "2026-06-10T10:07:46.608356638",
         "meta": {
-            "nf-test": "0.9.5",
+            "nf-test": "0.9.4",
             "nextflow": "26.04.3"
         }
     },
@@ -166,9 +166,9 @@
                 
             ]
         ],
-        "timestamp": "2026-06-08T21:19:39.4713",
+        "timestamp": "2026-06-10T10:07:23.537304637",
         "meta": {
-            "nf-test": "0.9.5",
+            "nf-test": "0.9.4",
             "nextflow": "26.04.3"
         }
     },
@@ -178,9 +178,9 @@
                 
             ]
         ],
-        "timestamp": "2026-06-08T21:19:41.55146",
+        "timestamp": "2026-06-10T10:07:42.354147094",
         "meta": {
-            "nf-test": "0.9.5",
+            "nf-test": "0.9.4",
             "nextflow": "26.04.3"
         }
     },
@@ -297,9 +297,9 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-06-08T21:19:39.783958",
+        "timestamp": "2026-06-10T10:07:27.14566439",
         "meta": {
-            "nf-test": "0.9.5",
+            "nf-test": "0.9.4",
             "nextflow": "26.04.3"
         }
     },
@@ -404,9 +404,9 @@
                 
             ]
         ],
-        "timestamp": "2026-06-08T21:19:39.687342",
+        "timestamp": "2026-06-10T10:07:27.025912141",
         "meta": {
-            "nf-test": "0.9.5",
+            "nf-test": "0.9.4",
             "nextflow": "26.04.3"
         }
     },
@@ -438,9 +438,9 @@
                 "SRR13439813_kraken2_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-06-08T21:19:44.153702",
+        "timestamp": "2026-06-10T10:07:44.614984213",
         "meta": {
-            "nf-test": "0.9.5",
+            "nf-test": "0.9.4",
             "nextflow": "26.04.3"
         }
     },
@@ -464,9 +464,9 @@
                 
             ]
         ],
-        "timestamp": "2026-06-08T21:19:39.456562",
+        "timestamp": "2026-06-10T10:07:23.511338321",
         "meta": {
-            "nf-test": "0.9.5",
+            "nf-test": "0.9.4",
             "nextflow": "26.04.3"
         }
     },
@@ -502,9 +502,9 @@
                 
             ]
         ],
-        "timestamp": "2026-06-08T21:19:39.396697",
+        "timestamp": "2026-06-10T10:07:21.452129665",
         "meta": {
-            "nf-test": "0.9.5",
+            "nf-test": "0.9.4",
             "nextflow": "26.04.3"
         }
     },
@@ -517,9 +517,9 @@
                 "SRR13439813_Homo_sapiens_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-06-08T21:19:48.068054",
+        "timestamp": "2026-06-10T10:07:47.677657917",
         "meta": {
-            "nf-test": "0.9.5",
+            "nf-test": "0.9.4",
             "nextflow": "26.04.3"
         }
     },
@@ -537,9 +537,9 @@
                 
             ]
         ],
-        "timestamp": "2026-06-08T21:19:45.476536",
+        "timestamp": "2026-06-10T10:07:45.576082971",
         "meta": {
-            "nf-test": "0.9.5",
+            "nf-test": "0.9.4",
             "nextflow": "26.04.3"
         }
     }
