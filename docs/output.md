@@ -288,6 +288,7 @@ Calculate the coverage and depth of the reads mapped to the genomes based on BLA
 
 <details markdown="1">
 <summary>Output files</summary>
+
 - `samtools/`
   - `coverage/`
     - `<sample_id>_<classifer>_taxid_<taxid>_<species>_mappingorganism_<organism>_<genome_id>.txt`: Tab-delimited file containing coverage statics for reads mapped to the genomes.
@@ -300,6 +301,7 @@ Calculate the coverage and depth of the reads mapped to a pathogen genome databa
 
 <details markdown="1">
 <summary>Output files</summary>
+
 - `pathogens/
   - samtools/`
     - `coverage/`
