@@ -9,7 +9,7 @@ process EXTRACT_VIRAL_TAXID {
     tuple val(meta), path(taxpasta_standardised_profile), path(report)
 
     output:
-    tuple val(meta), path("*viral_taxids.tsv"), optional: true, emit: viral_taxid
+    tuple val(meta), path("*viral_taxids_nophages.tsv"), optional: true, emit: viral_taxid
 
     when:
     task.ext.when == null || task.ext.when
