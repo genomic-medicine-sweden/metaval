@@ -90,7 +90,7 @@
                 "phages_taxid": {
                     "type": "string",
                     "format": "file-path",
-                    "description": "Path to a file containing a list of taxid taht should be excluded from downstream analysis",
+                    "description": "Path to a file containing a list of taxid that should be excluded from downstream analysis",
                     "help_text": "It could be a list of phages taxid, or contamination/reagent species.",
                     "fa_icon": "fas fa-filter"
                 },
