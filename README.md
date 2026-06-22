@@ -1,7 +1,7 @@
 <h1>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/images/metaval_logo_dark.png">
-    <img alt="genomic-medicine-sweden/metaval" src="docs/images/metaval_logo_light.png">
+    <img alt="genomic-medicine-sweden/metaval" src="docs/images/metaval_logo_light.png", width="250">
   </picture>
 </h1>
 
@@ -26,7 +26,7 @@ The pipeline, constructed using the `nf-core` [template](https://nf-co.re/tools#
 ## Pipeline summary
 
 <p align="center">
-     <img title="metaval workflow" src="docs/images/metaval_pipeline_metromap.png">
+     <img title="metaval workflow" src="docs/images/metaval_pipeline_metromap.svg">
 </p>
 
 ### Green Workflow - Pathogen Screening
