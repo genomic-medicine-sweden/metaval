@@ -36,49 +36,49 @@
   <text class="label bold" x="212.5" y="402" text-anchor="middle"><tspan x="212.5">Taxonomic</tspan><tspan x="212.5" dy="20">classification</tspan></text>
   <g transform="translate(183 444)"><use href="#file-icon"/><text class="file-format" x="40" y="52" text-anchor="middle">tsv</text></g>
   <text class="label small" x="212.5" y="568" text-anchor="middle"><tspan class="bold" x="212.5">Classifiers:</tspan><tspan x="212.5" dy="23">Kraken2</tspan><tspan x="212.5" dy="23">DIAMOND</tspan><tspan x="212.5" dy="23">Centrifuge</tspan></text>
-  <path class="route green" d="M294 140H1204C1248 140 1285 181 1285 222V349H1915"/>
-  <path class="route green" d="M841 349V254C841 226 863 203 891 203H1423C1443 203 1460 219 1460 239V349"/>
-  <path class="route green" d="M841 349H879C904 349 914 308 948 308S991 349 1030 349H1100C1129 349 1138 312 1168 312S1205 349 1232 349H1915"/>
-  <path class="route orange" d="M294 356H635C665 356 668 315 714 315S763 356 803 356H879C904 356 914 315 948 315S991 356 1030 356H1915"/>
-  <path class="route blue" d="M582 363H635C665 363 668 322 714 322S763 363 803 363H879C904 363 914 322 948 322S991 363 1030 363H1915"/>
-  <path class="route orange" d="M635 356H803"/>
-  <path class="route blue" d="M635 363H803"/>
-  <path class="route orange" d="M879 356H1030"/>
-  <path class="route blue" d="M879 363H1030"/>
-  <path class="route blue" d="M582 363V495"/>
-  <circle class="station" cx="377" cy="356" r="10"/>
-  <circle class="station" cx="484" cy="356" r="10"/>
-  <rect class="interchange" x="575" y="342" width="14" height="34" rx="5"/>
-  <rect class="interchange" x="707" y="303" width="14" height="35" rx="5"/>
-  <rect class="interchange" x="949" y="301" width="14" height="35" rx="5"/>
-  <rect class="interchange" x="949" y="340" width="14" height="35" rx="5"/>
+  <path class="route green" d="M294 140H1204C1248 140 1280 181 1280 222V349H1775"/>
+  <path class="route green" d="M860 349V254C860 226 882 203 910 203H1388C1410 203 1425 219 1425 239V349"/>
+  <path class="route green" d="M860 349H900C925 349 940 308 980 308S1025 349 1060 349H1100C1129 349 1138 312 1168 312S1205 349 1232 349H1775"/>
+  <path class="route orange" d="M294 356H700C730 356 735 315 780 315S825 356 860 356H900C925 356 940 315 980 315S1025 356 1060 356H1775"/>
+  <path class="route blue" d="M630 363H700C730 363 735 322 780 322S825 363 860 363H900C925 363 940 322 980 322S1025 363 1060 363H1775"/>
+  <path class="route orange" d="M700 356H860"/>
+  <path class="route blue" d="M700 363H860"/>
+  <path class="route orange" d="M900 356H1060"/>
+  <path class="route blue" d="M900 363H1060"/>
+  <path class="route blue" d="M630 363V495"/>
+  <circle class="station" cx="370" cy="356" r="10"/>
+  <circle class="station" cx="500" cy="356" r="10"/>
+  <rect class="interchange" x="623" y="342" width="14" height="34" rx="5"/>
+  <rect class="interchange" x="773" y="303" width="14" height="35" rx="5"/>
+  <rect class="interchange" x="973" y="301" width="14" height="35" rx="5"/>
+  <rect class="interchange" x="973" y="340" width="14" height="35" rx="5"/>
   <circle class="station" cx="1090" cy="200" r="10"/>
   <circle class="station" cx="1168" cy="312" r="10"/>
-  <rect class="interchange" x="1277" y="338" width="14" height="35" rx="5"/>
-  <rect class="interchange" x="1453" y="338" width="14" height="35" rx="5"/>
-  <rect class="interchange" x="1633" y="338" width="14" height="35" rx="5"/>
-  <rect class="interchange" x="1793" y="338" width="14" height="35" rx="5"/>
-  <g transform="translate(1930 318) scale(.8)">
+  <rect class="interchange" x="1273" y="338" width="14" height="35" rx="5"/>
+  <rect class="interchange" x="1418" y="338" width="14" height="35" rx="5"/>
+  <rect class="interchange" x="1563" y="338" width="14" height="35" rx="5"/>
+  <rect class="interchange" x="1698" y="338" width="14" height="35" rx="5"/>
+  <g transform="translate(1790 318) scale(.8)">
     <use href="#file-icon"/>
     <text class="file-format" x="40" y="52" text-anchor="middle">html</text>
   </g>
-  <text class="label side pipeline-name" x="309" y="408">FlagTaxpasta</text>
-  <text class="label bold" x="483" y="297" text-anchor="middle"><tspan x="483">Extract</tspan><tspan x="483" dy="21">Viral TaxIDs</tspan></text>
-  <text class="label bold" x="590" y="297" text-anchor="middle"><tspan x="590">Extract</tspan><tspan x="590" dy="21">Reads</tspan></text>
-  <text class="label" x="715" y="267" text-anchor="middle"><tspan class="bold" x="715">de-novo assembly</tspan><tspan x="715" dy="20">(SPAdes, Flye)</tspan></text>
-  <text class="label" x="956" y="267" text-anchor="middle"><tspan class="bold" x="956">BLASTx</tspan><tspan x="956" dy="20">(DIAMOND)</tspan></text>
-  <text class="label bold" x="967" y="408" text-anchor="middle">BLASTn</text>
+  <text class="label side pipeline-name" x="302" y="408">FlagTaxpasta</text>
+  <text class="label bold" x="500" y="297" text-anchor="middle"><tspan x="500">Extract</tspan><tspan x="500" dy="21">Viral TaxIDs</tspan></text>
+  <text class="label bold" x="630" y="297" text-anchor="middle"><tspan x="630">Extract</tspan><tspan x="630" dy="21">Reads</tspan></text>
+  <text class="label" x="765" y="267" text-anchor="middle"><tspan class="bold" x="765">de-novo assembly</tspan><tspan x="765" dy="20">(SPAdes, Flye)</tspan></text>
+  <text class="label" x="980" y="267" text-anchor="middle"><tspan class="bold" x="980">BLASTx</tspan><tspan x="980" dy="20">(DIAMOND)</tspan></text>
+  <text class="label bold" x="980" y="408" text-anchor="middle">BLASTn</text>
   <text class="label bold" x="1090" y="181" text-anchor="middle">Extract Target Reads</text>
   <text class="label" x="1168" y="267" text-anchor="middle"><tspan class="bold" x="1168">Consensus</tspan><tspan x="1168" dy="20">(SAMtools, medaka)</tspan></text>
-  <text class="label" x="1284" y="408" text-anchor="middle"><tspan class="bold" x="1284">Mapping</tspan><tspan x="1284" dy="20">(Bowtie2, minimap2)</tspan></text>
-  <text class="label bold" x="1460" y="408" text-anchor="middle">Coverage &amp; depth</text>
-  <text class="label bold" x="1640" y="408" text-anchor="middle">IGV</text>
-  <text class="label side" x="1772" y="408">report</text>
-  <g transform="translate(542 478) scale(.72)">
+  <text class="label" x="1280" y="408" text-anchor="middle"><tspan class="bold" x="1280">Mapping</tspan><tspan x="1280" dy="20">(Bowtie2, minimap2)</tspan></text>
+  <text class="label bold" x="1425" y="408" text-anchor="middle">Coverage &amp; depth</text>
+  <text class="label bold" x="1570" y="408" text-anchor="middle">IGV</text>
+  <text class="label bold" x="1705" y="408" text-anchor="middle">report</text>
+  <g transform="translate(590 478) scale(.72)">
     <use href="#file-icon"/>
     <text class="file-format" x="40" y="52" text-anchor="middle">txt</text>
   </g>
-  <text class="label bold" x="571" y="559" text-anchor="middle">TaxID List</text>
+  <text class="label bold" x="619" y="559" text-anchor="middle">TaxID List</text>
   <path class="route green" d="M1229 577H1340"/>
   <path class="route orange" d="M1229 619H1340"/>
   <path class="route blue" d="M1229 663H1340"/>
@@ -88,28 +88,28 @@
   <g aria-label="Animated workflow direction">
     <!-- Timings are proportional to path length so markers keep a steady visual speed. -->
     <!-- Green: mapping, optional consensus, BLASTn/BLASTx, target-read extraction, IGV and report. -->
-    <circle class="flow-marker" r="6" fill="#22ad64" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.422;1" calcMode="linear" path="M294 140H1204C1248 140 1285 181 1285 222V349H1232"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;.418;.422;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#22ad64" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.422;1" calcMode="linear" path="M294 140H1204C1248 140 1280 181 1280 222V349H1232"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;.418;.422;1"/></circle>
     <circle class="flow-marker" r="6" fill="#22ad64" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.422;.476;1" calcMode="linear" path="M1232 349C1205 349 1198 312 1168 312S1129 349 1100 349"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.418;.422;.472;.476;1"/></circle>
     <circle class="flow-marker" r="6" fill="#22ad64" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.422;.476;1" calcMode="linear" path="M1232 349H1100"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.418;.422;.472;.476;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#22ad64" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.476;.500;1" calcMode="linear" path="M1100 349H1030"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.472;.476;.496;.500;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#22ad64" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.500;.574;1" calcMode="linear" path="M1030 349C991 349 982 308 948 308S904 349 879 349H841"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.496;.500;.570;.574;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#22ad64" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.500;.574;1" calcMode="linear" path="M1030 349H841"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.496;.500;.570;.574;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#22ad64" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1" keyTimes="0;.574;1" calcMode="linear" path="M841 349V254C841 226 863 203 891 203H1423C1443 203 1460 219 1460 239V349H1915"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;.570;.574;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#22ad64" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.476;.490;1" calcMode="linear" path="M1100 349H1060"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.472;.476;.486;.490;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#22ad64" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.490;.574;1" calcMode="linear" path="M1060 349C1025 349 1020 308 980 308S925 349 900 349H860"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.486;.490;.570;.574;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#22ad64" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.490;.574;1" calcMode="linear" path="M1060 349H860"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.486;.490;.570;.574;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#22ad64" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1" keyTimes="0;.574;1" calcMode="linear" path="M860 349V254C860 226 882 203 910 203H1388C1410 203 1425 219 1425 239V349H1775"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;.570;.574;1"/></circle>
 
     <!-- Orange: one marker, optional de-novo split, rejoin, BLASTn/BLASTx split. -->
-    <circle class="flow-marker" r="6" fill="#ff9d38" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.205;1" calcMode="linear" path="M294 356H635"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;.201;.205;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#ff9d38" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.205;.319;1" calcMode="linear" path="M635 356C665 356 668 315 714 315S763 356 803 356"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.201;.205;.315;.319;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#ff9d38" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.205;.319;1" calcMode="linear" path="M635 356H803"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.201;.205;.315;.319;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#ff9d38" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.319;.365;1" calcMode="linear" path="M803 356H879"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.315;.319;.361;.365;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#ff9d38" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1" keyTimes="0;.365;1" calcMode="linear" path="M879 356C904 356 914 315 948 315S991 356 1030 356H1915"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;.361;.365;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#ff9d38" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1" keyTimes="0;.365;1" calcMode="linear" path="M879 356H1915"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;.361;.365;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#ff9d38" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.245;1" calcMode="linear" path="M294 356H700"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;.241;.245;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#ff9d38" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.245;.353;1" calcMode="linear" path="M700 356C730 356 735 315 780 315S825 356 860 356"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.241;.245;.349;.353;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#ff9d38" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.245;.353;1" calcMode="linear" path="M700 356H860"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.241;.245;.349;.353;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#ff9d38" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.353;.380;1" calcMode="linear" path="M860 356H900"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.349;.353;.376;.380;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#ff9d38" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1" keyTimes="0;.380;1" calcMode="linear" path="M900 356C925 356 940 315 980 315S1025 356 1060 356H1775"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;.376;.380;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#ff9d38" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1" keyTimes="0;.380;1" calcMode="linear" path="M900 356H1775"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;.376;.380;1"/></circle>
 
     <!-- Blue: the same sequence, beginning at the user-supplied TaxID list. -->
-    <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.123;1" calcMode="linear" path="M582 495V363H635"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;.119;.123;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.123;.249;1" calcMode="linear" path="M635 363C665 363 668 322 714 322S763 363 803 363"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.119;.123;.245;.249;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.123;.249;1" calcMode="linear" path="M635 363H803"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.119;.123;.245;.249;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.249;.299;1" calcMode="linear" path="M803 363H879"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.245;.249;.295;.299;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1" keyTimes="0;.299;1" calcMode="linear" path="M879 363C904 363 914 322 948 322S991 363 1030 363H1915"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;.295;.299;1"/></circle>
-    <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1" keyTimes="0;.299;1" calcMode="linear" path="M879 363H1915"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;.295;.299;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;1;1" keyTimes="0;.135;1" calcMode="linear" path="M630 495V363H700"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;.131;.135;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.135;.261;1" calcMode="linear" path="M700 363C730 363 735 322 780 322S825 363 860 363"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.131;.135;.257;.261;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.135;.261;1" calcMode="linear" path="M700 363H860"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.131;.135;.257;.261;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.261;.293;1" calcMode="linear" path="M860 363H900"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.257;.261;.289;.293;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1" keyTimes="0;.293;1" calcMode="linear" path="M900 363C925 363 940 322 980 322S1025 363 1060 363H1775"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;.289;.293;1"/></circle>
+    <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="14s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1" keyTimes="0;.293;1" calcMode="linear" path="M900 363H1775"/><animate attributeName="opacity" dur="14s" begin="0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;.289;.293;1"/></circle>
   </g>
 </svg>
