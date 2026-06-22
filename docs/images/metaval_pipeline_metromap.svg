@@ -38,11 +38,11 @@
   <rect x="146" y="195" width="133" height="480" rx="20" fill="#fff" stroke="#f7931a" stroke-width="5"/>
   <rect x="146" y="18" width="133" height="326" rx="20" fill="none" stroke="#22ad64" stroke-width="5"/>
   <text class="label bold" x="212.5" y="49" text-anchor="middle">Reference</text>
-  <g transform="translate(183 61)"><use href="#file-icon"/><text class="file-format" x="40" y="52" text-anchor="middle">fasta</text></g>
+  <g transform="translate(172.5 61)"><use href="#file-icon"/><text class="file-format" x="40" y="52" text-anchor="middle">fasta</text></g>
   <text class="label bold" x="212.5" y="225" text-anchor="middle">Reads</text>
-  <g transform="translate(183 239)"><use href="#file-icon"/><text class="file-format" x="40" y="52" text-anchor="middle">fastq</text></g>
+  <g transform="translate(172.5 239)"><use href="#file-icon"/><text class="file-format" x="40" y="52" text-anchor="middle">fastq</text></g>
   <text class="label bold" x="212.5" y="402" text-anchor="middle"><tspan x="212.5">Taxonomic</tspan><tspan x="212.5" dy="20">classification</tspan></text>
-  <g transform="translate(183 444)"><use href="#file-icon"/><text class="file-format" x="40" y="52" text-anchor="middle">tsv</text></g>
+  <g transform="translate(172.5 444)"><use href="#file-icon"/><text class="file-format" x="40" y="52" text-anchor="middle">tsv</text></g>
   <text class="label small" x="212.5" y="568" text-anchor="middle"><tspan class="bold" x="212.5">Classifiers:</tspan><tspan x="212.5" dy="23">Kraken2</tspan><tspan x="212.5" dy="23">DIAMOND</tspan><tspan x="212.5" dy="23">Centrifuge</tspan></text>
   <path class="route green" d="M294 140H1204C1248 140 1280 181 1280 222V349H1775"/>
   <path class="route green" d="M860 349V254C860 226 882 203 910 203H1388C1410 203 1425 219 1425 239V349"/>
@@ -83,14 +83,14 @@
   <text class="label bold" x="1090" y="181" text-anchor="middle">Extract Target Reads</text>
   <text class="label" x="1168" y="267" text-anchor="middle"><tspan class="bold" x="1168">Consensus</tspan><tspan x="1168" dy="20">(SAMtools, medaka)</tspan></text>
   <text class="label" x="1280" y="408" text-anchor="middle"><tspan class="bold" x="1280">Mapping</tspan><tspan x="1280" dy="20">(Bowtie2, minimap2)</tspan></text>
-  <text class="label bold" x="1425" y="408" text-anchor="middle">Coverage &amp; depth</text>
+  <text class="label bold" x="1425" y="408" text-anchor="middle"><tspan x="1425">Coverage</tspan><tspan x="1425" dy="20">&amp; depth</tspan></text>
   <text class="label bold" x="1570" y="408" text-anchor="middle">IGV</text>
   <text class="label bold" x="1705" y="408" text-anchor="middle">report</text>
-  <g transform="translate(590 478) scale(.72)">
+  <g transform="translate(601 478) scale(.72)">
     <use href="#file-icon"/>
     <text class="file-format" x="40" y="52" text-anchor="middle">txt</text>
   </g>
-  <text class="label bold" x="619" y="559" text-anchor="middle">TaxID List</text>
+  <text class="label bold" x="630" y="559" text-anchor="middle">TaxID List</text>
   <!-- Legend aligned beneath the report/HTML endpoint. -->
   <path class="route green" d="M1490 577H1600"/>
   <path class="route orange" d="M1490 619H1600"/>
