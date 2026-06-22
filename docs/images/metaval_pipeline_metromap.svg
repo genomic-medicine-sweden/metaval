@@ -100,7 +100,7 @@
   <text class="label bold" x="1854" y="669" text-anchor="end">Verify user defined TaxIDs</text>
   <!-- This is intentionally the final visual group so every animated dot
        renders above routes, stations, labels and file icons. -->
-  <g aria-label="Animated workflow direction" style="isolation:isolate">
+  <g aria-label="Legacy segmented workflow animation" style="display:none">
     <!-- All colors travel at about 110 px/s. Green defines the 26-second cycle;
          orange and blue reach the report first and wait there for the restart. -->
     <!-- Green: mapping, optional consensus, BLASTn/BLASTx, target-read extraction, IGV and report. -->
@@ -133,5 +133,44 @@
     <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="26s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.150;.206;1" calcMode="linear" path="M900 363H1060"/><animate attributeName="opacity" dur="26s" begin="0s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;.146;.150;.202;.206;1"/></circle>
     <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="26s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.215;.465;1" calcMode="linear" path="M1060 363H1775"/><animate attributeName="opacity" dur="26s" begin="0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;.211;.215;1"/></circle>
     <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="26s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.206;.456;1" calcMode="linear" path="M1060 363H1775"/><animate attributeName="opacity" dur="26s" begin="0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;.202;.206;1"/></circle>
+  </g>
+
+  <!-- Two persistent markers per color. Each pair starts fully overlapped,
+       travels at the same speed, splits at alternatives, and remains separate
+       afterward. Green BLASTn and BLASTx both continue through Extract Target
+       Reads before Mapping. -->
+  <g aria-label="Animated workflow direction" style="isolation:isolate">
+    <circle class="flow-marker" r="6" fill="#22ad64">
+      <animateMotion dur="26s" begin="0s" repeatCount="indefinite"
+        keyPoints="0;1;1" keyTimes="0;.979;1" calcMode="linear"
+        path="M294 140H1204C1248 140 1280 181 1280 222V349H1232C1205 349 1198 312 1168 312S1129 349 1100 349H1060C1025 349 1020 308 980 308S925 349 900 349H860V254C860 226 882 203 910 203H1388C1410 203 1425 219 1425 239V349H1775"/>
+    </circle>
+    <circle class="flow-marker" r="6" fill="#22ad64">
+      <animateMotion dur="26s" begin="0s" repeatCount="indefinite"
+        keyPoints="0;1;1" keyTimes="0;.962;1" calcMode="linear"
+        path="M294 140H1204C1248 140 1280 181 1280 222V349H1100H1060H860V254C860 226 882 203 910 203H1388C1410 203 1425 219 1425 239V349H1775"/>
+    </circle>
+
+    <circle class="flow-marker" r="6" fill="#ff9d38">
+      <animateMotion dur="26s" begin="0s" repeatCount="indefinite"
+        keyPoints="0;1;1" keyTimes="0;.536;1" calcMode="linear"
+        path="M294 356H700C730 356 735 315 780 315S825 356 860 356H900C925 356 940 315 980 315S1025 356 1060 356H1775"/>
+    </circle>
+    <circle class="flow-marker" r="6" fill="#ff9d38">
+      <animateMotion dur="26s" begin="0s" repeatCount="indefinite"
+        keyPoints="0;1;1" keyTimes="0;.518;1" calcMode="linear"
+        path="M294 356H1060H1775"/>
+    </circle>
+
+    <circle class="flow-marker" r="6" fill="#79add8">
+      <animateMotion dur="26s" begin="0s" repeatCount="indefinite"
+        keyPoints="0;1;1" keyTimes="0;.465;1" calcMode="linear"
+        path="M630 495V363H700C730 363 735 322 780 322S825 363 860 363H900C925 363 940 322 980 322S1025 363 1060 363H1775"/>
+    </circle>
+    <circle class="flow-marker" r="6" fill="#79add8">
+      <animateMotion dur="26s" begin="0s" repeatCount="indefinite"
+        keyPoints="0;1;1" keyTimes="0;.447;1" calcMode="linear"
+        path="M630 495V363H1060H1775"/>
+    </circle>
   </g>
 </svg>
