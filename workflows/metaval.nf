@@ -72,7 +72,7 @@ workflow METAVAL {
             return !meta.is_ntc
         }
     } else {
-        ch_samplesheet = ch_samplesheet
+        ch_samplesheet_filtered = ch_samplesheet
     }
 
     // Create input channels for short reads and long reads.
@@ -222,8 +222,13 @@ workflow METAVAL {
         // SUBWORKFLOW: BLAST
         //
 
+        ch_blast_unique_taxid = channel.empty()
+        ch_blastn_report      = channel.empty()
+        ch_blastx_report      = channel.empty()
+
         // Prepare the query fasta file
         if ( (!params.skip_blastn) || (!params.skip_blastx)) {
+
             SEQKIT_FQ2FA ( ch_blast_reads )
             // Build ch_blast_query fasta file
             ch_blast_query = SEQKIT_FQ2FA.out.fasta
@@ -233,28 +238,37 @@ workflow METAVAL {
             if ( params.perform_longread_denovo ) {
                 ch_blast_query = ch_blast_query.mix( FLYE.out.fasta )
             }
+
+            BLAST(ch_blast_query, params.blastn_db, params.blastx_db, params.blast_header )
+
+            ch_blast_unique_taxid = ch_blast_unique_taxid.mix(BLAST.out.unique_taxid)
+            ch_blastn_report = ch_blastn_report.mix(BLAST.out.blastn_filtered)
+            ch_blastx_report = ch_blastx_report.mix(BLAST.out.blastx_filtered)
+
+            // Perform FASTQC for reads with BLASTN hits
+            ch_fastqc_blastn = ch_taxid_reads.nonempty
+                .join( BLAST.out.blastn_filtered, by: 0 )
+                .map { meta, reads, _filtered_blast -> [ meta, reads ] }
+
+            ch_fastqc_blastx = ch_taxid_reads.nonempty
+                .join( BLAST.out.blastx_filtered, by: 0 )
+                .map { meta, reads, _filtered_blast -> [ meta, reads ] }
+
+            ch_fastqc_files = ch_fastqc_files.mix( ch_fastqc_blastn, ch_fastqc_blastx )
+
         }
-
-        BLAST(ch_blast_query, params.blastn_db, params.blastx_db, params.blast_header )
-
-        // Perform FASTQC for reads with BLASTN hits
-        ch_fastqc_blastn = ch_taxid_reads.nonempty
-            .join( BLAST.out.blastn_filtered, by: 0 )
-            .map { meta, reads, _filtered_blast -> [ meta, reads ] }
-
-        ch_fastqc_blastx = ch_taxid_reads.nonempty
-            .join( BLAST.out.blastx_filtered, by: 0 )
-            .map { meta, reads, _filtered_blast -> [ meta, reads ] }
-
-        ch_fastqc_files = ch_fastqc_files.mix( ch_fastqc_blastn, ch_fastqc_blastx )
 
         //
         // SUBWORKFLOW: MAPPING
         //
 
+        // Optional mapping outputs for the static report
+        ch_coverage_tables = channel.empty()
+        ch_coverage_plots  = channel.empty()
+
         if (params.perform_mapping) {
             // Fetch genomes of blast hits
-            FETCH_BLAST_GENOMES ( params.taxid2genome, BLAST.out.unique_taxid, ch_taxid_reads.nonempty )
+            FETCH_BLAST_GENOMES ( params.taxid2genome, ch_blast_unique_taxid, ch_taxid_reads.nonempty )
             // Mapping - short reads
             ch_mapping_input_shortread = FETCH_BLAST_GENOMES.out.shortreads.join(FETCH_BLAST_GENOMES.out.shortreads_genome, by:0)
             MAPPING_SHORTREAD ( ch_mapping_input_shortread )
@@ -262,6 +276,11 @@ workflow METAVAL {
             // Mapping - long reads
             ch_mapping_input_longread = FETCH_BLAST_GENOMES.out.longreads.join(FETCH_BLAST_GENOMES.out.longreads_genome, by:0)
             MAPPING_LONGREAD ( ch_mapping_input_longread )
+
+            // Coverage tables
+            ch_coverage_tables = ch_coverage_tables.mix( MAPPING_SHORTREAD.out.coverage, MAPPING_LONGREAD.out.coverage )
+            // Coverage plots
+            ch_coverage_plots = ch_coverage_plots.mix( MAPPING_SHORTREAD.out.coverage_plot, MAPPING_LONGREAD.out.coverage_plot )
 
             //
             // SUBWORKFLOW: IGV
@@ -291,18 +310,6 @@ workflow METAVAL {
         //
 
         ch_samplesheet_report = channel.fromPath ( params.input, checkIfExists: true )
-        // BLASTn results
-        ch_blastn_report = channel.empty()
-        ch_blastn_report = ch_blastn_report.mix( BLAST.out.blastn_filtered )
-        // BLASTx results
-        ch_blastx_report = channel.empty()
-        ch_blastx_report = ch_blastx_report.mix( BLAST.out.blastx_filtered )
-        // Coverage tables
-        ch_coverage_tables = channel.empty()
-        ch_coverage_tables = ch_coverage_tables.mix( MAPPING_SHORTREAD.out.coverage, MAPPING_LONGREAD.out.coverage )
-        // Coverager plots
-        ch_coverage_plots = channel.empty()
-        ch_coverage_plots = ch_coverage_plots.mix( MAPPING_SHORTREAD.out.coverage_plot, MAPPING_LONGREAD.out.coverage_plot )
 
         // Prepare reads folder for the report, if the reads went through de novo assembly, only include the assembly fasta file in the report.
         ch_reads_fa = channel.empty()
@@ -356,6 +363,7 @@ workflow METAVAL {
     //
     // SUBWORKFLOW: MAPPING
     //
+
     if ( params.perform_screen_pathogens ) {
         ch_reference = file( params.pathogens_genomes, checkIfExists: true)
         // Map short reads to the pathogens genome

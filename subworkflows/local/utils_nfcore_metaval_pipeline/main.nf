@@ -100,6 +100,44 @@ workflow PIPELINE_INITIALISATION {
 
     ch_samplesheet = channel.fromList(samplesheetToList(input, "${projectDir}/assets/schema_input.json"))
 
+    //
+    // Validate parameter inputs
+    //
+
+    if (params.perform_verify_species && params.perform_mapping) {
+        if (!params.taxid2genome) {
+            error ("ERROR: --taxid2genome is required when --perform_mapping is enabled")
+        }
+        if (params.skip_blastn && params.skip_blastx) {
+            error("ERROR: --perform_mapping requires BLASTN or BLASTX. Enable at least one BLAST mode.")
+        }
+    }
+
+    // At least one BLAST workflow is active.
+    def run_blast = params.perform_verify_species || params.perform_screen_pathogens
+
+    if (run_blast && !params.skip_blastn && !params.blastn_db) {
+        error ("ERROR: --blastn_db is required when BLASTN is enabled.")
+    }
+
+    if (run_blast && !params.skip_blastx && !params.blastx_db) {
+        error("ERROR: --blastx_db is required when BLASTX is enabled.")
+    }
+
+    if (params.perform_screen_pathogens && params.skip_blastn && params.skip_blastx) {
+        error ("ERROR: Pathogen screening requires BLASTN or BLASTX. Enable at least one BLAST mode.")
+    }
+
+    if (params.perform_screen_pathogens) {
+        if (!params.pathogens_genomes) {
+            error ("ERROR: --pathogens_genomes is required with --perform_screen_pathogens.")
+        }
+
+        if (!params.accession2taxid) {
+            error ("ERROR: --accession2taxid is required with --perform_screen_pathogens.")
+        }
+    }
+
     emit:
     samplesheet = ch_samplesheet
     versions    = ch_versions

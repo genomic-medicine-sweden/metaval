@@ -216,7 +216,7 @@ def load_assigned_reads(flagged_path: Path, sample_name: str, taxid: str) -> str
 
 
 def detect_flag(row: list[str]) -> str:
-    valid_flags = {"in_sample", "in_NTC", "more", "less", "equal"}
+    valid_flags = {"in_sample", "in_NTC", "> NTC", "< NTC", "equal"}
     for value in row:
         if value in valid_flags:
             return value

@@ -96,6 +96,7 @@
                 },
                 "evalue_threshold": {
                     "type": ["number", "integer"],
+                    "default": 0.001,
                     "description": "An expected value to report an alignment during BLAST",
                     "help_text": "This value is used to filter classification results produced by DIAMOND/BLASTX. The default e-value is 0.001 (high sensitivity, lower specificity) when running DIAMOND/BLASTX. An e-value between 1e-10 and 1e-5 represents moderate filtering (balanced sensitivity and specificity). An e-value < 1e-20 is considered strict filtering (high specificity, lower sensitivity). \n\n> Modifies tool parameter(s):\n> - extractdiamondreads.py: `evalue=",
                     "fa_icon": "filter"
@@ -279,8 +280,9 @@
                 },
                 "min_read_counts": {
                     "type": "integer",
+                    "default": 100,
                     "description": "Set the read count threshold for performing de novo assembly or consensus calling.",
-                    "help_text": "The recommended default should be > 100, as de novo assembly will fail with too few reads or reads.",
+                    "help_text": "The recommended minimum read-count threshold is 100, as de novo assembly may fail with too few reads.",
                     "fa_icon": "filter"
                 }
             }
