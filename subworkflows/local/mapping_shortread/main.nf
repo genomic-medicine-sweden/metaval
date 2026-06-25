@@ -15,9 +15,13 @@ include { COVERAGE_PLOT                             } from '../../../modules/loc
 workflow MAPPING_SHORTREAD {
     take:
     ch_reads_reference // [ [ meta ], [ reads ], [ reference ] ]
+    generate_coverage // Boolean: whether to generate coverage and depth files for the BAM files
 
     main:
     ch_multiqc_files = channel.empty()
+    ch_coverage      = channel.empty()
+    ch_depth         = channel.empty()
+    ch_coverage_plot = channel.empty()
 
     // Build the bowtie2 index
     BOWTIE2_BUILD (
@@ -72,18 +76,26 @@ workflow MAPPING_SHORTREAD {
     SAMTOOLS_SORT(ch_bam_mapped, [[],[],[]], 'bai')
 
     // Generate samtools stats for coverage and depth
-    ch_bam_bai = channel.empty()
-    ch_bam_bai = ch_bam_bai.mix(SAMTOOLS_SORT.out.bam)
-        .join(SAMTOOLS_SORT.out.index, by:0)
+    if (generate_coverage) {
+        ch_bam_bai = channel.empty()
+        ch_bam_bai = ch_bam_bai.mix(SAMTOOLS_SORT.out.bam)
+            .join(SAMTOOLS_SORT.out.index, by:0)
 
-    SAMTOOLS_COVERAGE (ch_bam_bai, [[],[],[]])
-    SAMTOOLS_DEPTH (ch_bam_bai, [[],[]])
+        SAMTOOLS_COVERAGE (ch_bam_bai, [[],[],[]])
+        SAMTOOLS_DEPTH (ch_bam_bai, [[],[]])
 
-    ch_coverage_plot = channel.empty()
-    ch_coverage_plot = ch_coverage_plot.mix(SAMTOOLS_DEPTH.out.tsv)
-        .join(SAMTOOLS_COVERAGE.out.coverage, by:0)
+        ch_coverage_plot_input = channel.empty()
+        ch_coverage_plot_input = ch_coverage_plot_input.mix(SAMTOOLS_DEPTH.out.tsv.filter {_meta, depth_file -> depth_file.size() > 0 })
+            .join(SAMTOOLS_COVERAGE.out.coverage, by:0)
 
-    COVERAGE_PLOT (ch_coverage_plot)
+        COVERAGE_PLOT (ch_coverage_plot_input)
+
+        ch_coverage = SAMTOOLS_COVERAGE.out.coverage
+        ch_depth = SAMTOOLS_DEPTH.out.tsv
+        ch_coverage_plot = COVERAGE_PLOT.out.png
+
+    }
+
 
     ch_multiqc_files = ch_multiqc_files.mix ( FASTQ_ALIGN_BOWTIE2.out.flagstat.collect{ _meta, flagstat_file -> flagstat_file }.ifEmpty([]) )
 
@@ -91,8 +103,8 @@ workflow MAPPING_SHORTREAD {
     index         = BOWTIE2_BUILD.out.index           // channel: [ val(meta), [ index ] ]
     bam           = SAMTOOLS_SORT.out.bam             // channel: [ val(meta), [ bam ] ]
     bai           = SAMTOOLS_SORT.out.index           // channel: [ val(meta), [ bai ] ]
-    coverage      = SAMTOOLS_COVERAGE.out.coverage    // channel: [ val(meta), [ coverage ] ]
-    depth         = SAMTOOLS_DEPTH.out.tsv            // channel: [ val(meta), [ depth ] ]
-    coverage_plot = COVERAGE_PLOT.out.png            // channel: [ val(meta), [ coverage_plot ] ]
+    coverage      = ch_coverage                       // channel: [ val(meta), [ coverage ] ]
+    depth         = ch_depth                          // channel: [ val(meta), [ depth ] ]
+    coverage_plot = ch_coverage_plot                  // channel: [ val(meta), [ coverage_plot ] ]
     mqc           = ch_multiqc_files
 }

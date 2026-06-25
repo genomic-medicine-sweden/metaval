@@ -45,11 +45,14 @@ This workflow is activated by enabling the `--perform_screen_pathogens` option.
 4. **Extract target reads**
    - From the mapped reads, extract the target reads that match the predefined viral pathogens based on the result of `BLAST`.
 
-5. **Visualisation using IGV**
+5. **Calculate coverage and depth**
+   - Calculate the coverage and depth of the reads mapped to a pathogen genome database using [samtools](<(http://www.htslib.org/)>).
+
+6. **Visualisation using IGV**
    - Visualize the extracted reads using `IGV` (Integrative Genomics Viewer) to provide a graphical representation for detailed analysis.
 
-6. **Perform quality check**
-   - Conduct quality checks on the target reads using [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and [MultiQC](<(http://multiqc.info/)>) to ensure data quality and reliability.
+7. **Generate report**
+   - Generate a static html report summarizing the results of the pathogen screening workflow (It will be included in the future).
 
 ### Orange Workflow - Verify Identified Viruses
 
@@ -79,8 +82,8 @@ This workflow is activated by enabling the `--perform_verify_species` option and
 8. **Visualisation using IGV**
    - Visualize the mapped reads using [igv-reports](https://github.com/igvteam/igv-reports)
 
-9. **Perform quality check**
-   - Conduct quality checks on the classified reads using [FastQC](<(https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)>) and [MultiQC](<(http://multiqc.info/)>) to ensure the accuracy of the data.
+9. **Generate report**
+   - Generate a standalone HTML report that summarises the results of the verify-species workflow. It includes the sample metadata, taxonomic table, BLAST results, coverage plot, and extracted reads for a TaxID.
 
 ## Blue Workflow - Verify User-Defined TaxIDs
 

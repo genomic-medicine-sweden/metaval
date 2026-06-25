@@ -99,6 +99,22 @@ workflow PIPELINE_INITIALISATION {
     // Fitler NTC or Negative controls from downstream analysis
 
     ch_samplesheet = channel.fromList(samplesheetToList(input, "${projectDir}/assets/schema_input.json"))
+        .map {meta, fastq_1, fastq_2, kraken2_report, kraken2_result, kraken2_taxpasta, centrifuge_report, centrifuge_result, centrifuge_taxpasta, diamond, diamond_taxpasta ->
+            def new_meta = meta + [single_end: fastq_1 && !fastq_2]
+            [
+            new_meta,
+            fastq_1,
+            fastq_2,
+            kraken2_report,
+            kraken2_result,
+            kraken2_taxpasta,
+            centrifuge_report,
+            centrifuge_result,
+            centrifuge_taxpasta,
+            diamond,
+            diamond_taxpasta
+            ]
+        }
 
     //
     // Validate parameter inputs

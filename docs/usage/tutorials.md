@@ -1,6 +1,14 @@
 # genomic-medicine-sweden/metaval: Tutorials
 
-This page provides a range of tutorials to give you additional guidance on setting up `genomic-medicine-sweden/metaval`. In this tutorial we will walk you through different workflows of the current pipeline. It assumes that you have the output files from the [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler), generated using the following three classifiers: Kraken2, Centrifuge, and DIAMOND.
+This page provides guidance on setting up `genomic-medicine-sweden/metaval`. The tutorials walk through the following workflows supported by the pipeline:
+
+- **Verify identified species**, using either automatically detected viral TaxIDs or a user-defined list of TaxIDs.
+- **Pathogen screening** against a predefined pathogen genome database.
+
+The pipeline post-processes sequencing reads and classification output from
+[nf-core/taxprofiler](https://github.com/nf-core/taxprofiler). It supports
+Illumina and Oxford Nanopore reads and classification results from Kraken2,
+Centrifuge, and DIAMOND.
 
 ## Preparation
 
@@ -8,31 +16,48 @@ This page provides a range of tutorials to give you additional guidance on setti
 
 The datasets used should be small enough to run on your own laptop or a single server node.
 
-If you wish to use a HPC cluster or cloud, and don't wish to use an 'interactive' session submitted to your scheduler, please see the [nf-core documentation](https://nf-co.re/docs/usage/configuration#introduction) on how to make a relevant config file.
+If you wish to use an HPC cluster or cloud environment without running an interactive session through your scheduler, see the [nf-core documentation](https://nf-co.re/docs/usage/configuration#introduction) for guidance on creating an appropriate configuration file.
 
-You will need internet access and at least 1.5 GB of hardrive space.
+You will need internet access and at least 1.5 GB of hard-drive space.
 
 ### Software
 
-The tutorial assumes you are on a Unix based operating system, and have already installed Nextflow as well a software environment system such as [Conda](https://docs.conda.io/en/latest/miniconda.html), [Docker](https://www.docker.com/), or [Singularity/Apptainer](https://apptainer.org/).
-The tutorial will use Docker, however you can simply replace references to `docker` with `conda`, `singularity`, or `apptainer` accordingly.
+The tutorial assumes that you are using a Unix-based operating system and have already installed Nextflow and a software environment system such as [Conda](https://docs.conda.io/en/latest/miniconda.html), [Docker](https://www.docker.com/), or [Singularity/Apptainer](https://apptainer.org/).
+
+The tutorial uses Docker. However, you can replace references to `docker` with `conda`, `singularity`, or `apptainer`, as appropriate.
 
 ### Data
 
-**genomic-medicine-sweden/metaval** is a bioinformatics pipeline for post-processing the results of [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler). In this tutorial, we will use the output files from `nf-core/taxprofilers` for a subset of metagenomic sequencing data, including one Illumina sample and one Nanopore sample. The taxonomy path should be specified when running nf-core/taxprofiler, as this information from the `taxpasta` output will be used by `genomic-medicine-sweden/metaval`. Below is an example or running `nf-core/taxprofiler`. Please check the [usage of nf-core/taxprofiler](https://github.com/nf-core/taxprofiler/tree/master/docs) for detailed instructions on how to run it.
+**genomic-medicine-sweden/metaval** is a bioinformatics pipeline for post-processing results from [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler). This tutorial uses nf-core/taxprofiler output for a subset of metagenomic sequencing data containing one Illumina sample and one Nanopore sample.
+
+Specify the taxonomy directory when running nf-core/taxprofiler because `genomic-medicine-sweden/metaval` uses taxonomic information from the Taxpasta output. An example nf-core/taxprofiler command is shown below. See the [nf-core/taxprofiler usage documentation](https://github.com/nf-core/taxprofiler/tree/master/docs) for detailed instructions.
 
 #### Run nf-core/taxprofiler
 
 ```bash
-nextflow run nf-core/taxprofiler -profile hasta,singularity \
---input samplesheet.csv --databases databases.csv --outdir taxprofiler_results \
---perform_shortread_qc --perform_longread_qc --perform_shortread_hostremoval \
---perform_longread_hostremoval --hostremoval_reference GCF_009914755.1_T2T-CHM13v2.0_genomic.fna \
---save_hostremoval_index --save_hostremoval_unmapped \
---run_kraken2 --kraken2_save_reads --kraken2_save_readclassifications \
---run_centrifuge --centrifuge_save_reads --run_diamond \
---run_profile_standardisation --taxpasta_taxonomy_dir taxonomy --taxpasta_add_lineage
-
+nextflow run nf-core/taxprofiler \
+  -profile hasta,singularity \
+  --input samplesheet.csv \
+  --databases databases.csv \
+  --outdir taxprofiler_results \
+  --perform_shortread_qc \
+  --perform_longread_qc \
+  --perform_shortread_hostremoval \
+  --perform_longread_hostremoval \
+  --hostremoval_reference /path/to/host_genome.fna \
+  --save_hostremoval_index \
+  --save_hostremoval_unmapped \
+  --run_kraken2 \
+  --kraken2_save_reads \
+  --kraken2_save_readclassifications \
+  --run_centrifuge \
+  --centrifuge_save_reads \
+  --run_diamond \
+  --run_profile_standardisation \
+  --taxpasta_taxonomy_dir /path/to/taxonomy \
+  --taxpasta_add_lineage \
+  --taxpasta_add_rank \
+  --taxpasta_add_name
 ```
 
 #### Download data
@@ -76,71 +101,156 @@ curl -O https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/
 
 ### Preparing input samplesheet
 
-You provide the output files of `nf-core/taxprofiler` via a input 'samplesheet' `.csv` file.
-This is a 13-column table if you would like to run the current pipeline for three classifiers `Kraken2`,`Centrifuge` and `DIAMOND`.
+Provide the nf-core/taxprofiler output files in an input samplesheet in CSV format.
+The samplesheet contains 15 columns when using all three supported classifiers: Kraken2, Centrifuge, and DIAMOND.
 
-Open a text editor, and create a file called `samplesheet.csv`.
-Copy and paste the following lines into the file and save it.
+Create a file named `samplesheet.csv`, copy the following lines into it, and save the file:
 
 ```csv title="samplesheet.csv"
 sample,instrument_platform,library_type,is_ntc,batch,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
 SRR13439790,ILLUMINA,DNA,false,batch1,SRR13439790_SRR13439790.unmapped_1.fastq.gz,SRR13439790_SRR13439790.unmapped_2.fastq.gz,SRR13439790_k2_pluspf.kraken2.kraken2.report.txt,SRR13439790_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439790_p_compressed+h+v.centrifuge.txt,SRR13439790_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439790_diamond.diamond.tsv,diamond_diamond.tsv
 SRR13439799,OXFORD_NANOPORE,OTHER,false,batch3,SRR13439799_SRR13439799.unmapped_other.fastq.gz,,SRR13439799_k2_pluspf.kraken2.kraken2.report.txt,SRR13439799_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439799_p_compressed+h+v.centrifuge.txt,SRR13439799_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439799_diamond.diamond.tsv,diamond_diamond.tsv
-
 ```
 
-If you had placed your nf-core/taxprofiler output files elsewhere, you would give the full path (i.e., with relevant directories) to the `fastq_1`, `fastq_2` and `fasta` columns.
+If your nf-core/taxprofiler output files are stored elsewhere, provide their full paths in the corresponding samplesheet columns.
 
-### Running the pipeline
+## Running the pipeline
 
-**genomic-medicine-sweden/metaval** can perform three different workflows:
+**genomic-medicine-sweden/metaval** supports three tutorial scenarios:
 
-- pathogen screening
-- verify identified viruses
-- verify user-defined taxIDs.
-  In this tutorial we will go through each workflow with example command lines.
+- Pathogen screening
+- Verification of automatically identified viral TaxIDs
+- Verification of user-defined TaxIDs
 
-#### Pathogen screening
+The following sections provide an example command for each scenario.
 
-This workflow is activated by enabling the `--perform_screen_pathogens` option. A reference database of pathogen genomes, the corresponding accessions and taxid map file should be prepared.
+### Tutorial 1: Pathogen screening
+
+Enable this workflow with `--perform_screen_pathogens`. Prepare a pathogen genome reference database and the corresponding accession-to-TaxID map file.
 
 ```bash
 git clone https://github.com/genomic-medicine-sweden/metaval.git
-nextflow run metaval/main.nf -profile singularity \
-  --input samplesheet.csv --outdir pathogen_screen_result \
-  --pathogens_genomes reference.fasta --accession2taxid accession2taxid.map \
-  --perform_screen_pathogens --perform_longread_consensus --perform_shortread_consensus \
-  --longread_consensus_tool 'medaka' --consensus_min_bases 50
-
+nextflow run metaval/main.nf \
+    -profile singularity \
+    --input samplesheet.csv \
+    --outdir pathogen_screen_result \
+    --perform_screen_pathogens \
+    --pathogens_genomes reference.fasta \
+    --accession2taxid /path/to/accession2taxid.map \
+    --blastn_db /path/to/blastn_database \
+    --skip_blastx \
+    --perform_longread_consensus \
+    --perform_shortread_consensus \
+    --longread_consensus_tool 'medaka' \
+    --consensus_min_bases 50
 ```
 
-#### Verify identified viruses
+`--perform_shortread_consensus` uses `samtools consensus` for Illumina reads. For Nanopore reads, `--longread_consensus_tool` accepts `medaka` or `samtools`.
 
-This workflow is activated by enabling the `--perform_verify_species` option and disabling the `--taxid`.
+The main results are written to `pathogens/`, including mapping files, pathogen-specific reads, consensus sequences, BLAST results, coverage tables, coverage plots, and IGV reports.
+
+### Tutorial 2: Verify automatically identified viral TaxIDs
+
+Enable `--perform_verify_species` without supplying `--taxid` to identify viral TaxIDs automatically from the selected classifier outputs.
+
+Enable at least one classifier:
+
+```text
+--extract_kraken2_reads
+--extract_centrifuge_reads
+--extract_diamond_reads
+```
+
+You can optionally exclude phages, contaminants, or reagent-associated TaxIDs by providing a one-column file:
+
+```text
+--phages_taxid /path/to/excluded_taxids.txt
+```
+
+Taxpasta profiles are automatically compared with negative controls that share the same `library_type` and `batch`.
+
+By default, `--skip_ntc` is `true`, so negative controls are used for Taxpasta comparison but excluded from downstream extraction and validation. To process the controls downstream as well, use:
+
+```bash
+--skip_ntc false
+```
+
+The following example enables extraction from all three classifiers, de novo assembly, both BLAST modes, and mapping:
 
 ```bash
 git clone https://github.com/genomic-medicine-sweden/metaval.git
-nextflow run metaval/main.nf -profile singularity \
-  --input samplesheet.csv --outdir identified_viruses_results \
-  --flag_taxpasta --skip_ntc --perform_verify_species \
-  --extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads \
-  --perform_shortread_denovo --perform_longread_denovo \
-  --min_read_counts 20 --perform_mapping
-
+nextflow run metaval/main.nf \
+    -profile singularity \
+    --input samplesheet.csv \
+    --outdir identified_viruses_results \
+    --perform_verify_species \
+    --extract_kraken2_reads \
+    --extract_centrifuge_reads \
+    --extract_diamond_reads \
+    --blastn_db /path/to/blastn_database \
+    --blastx_db /path/to/diamond_database.dmnd \
+    --perform_shortread_denovo \
+    --perform_longread_denovo \
+    --min_read_counts 20 \
+    --perform_mapping \
+    --taxid2genome /path/to/taxid2genome.tsv
 ```
 
-#### Verify user-defined taxIDs
+### Tutorial 3: Verify user-defined TaxIDs
 
-This workflow is activated by enabling the ´--perform_verify_species´ option and the `--taxid` option, allowing users to define a list of taxIDs. It is not limited to viral taxIDs and can include bacteria, fungi, archaea, parasites, or plasmids.
+Enable this workflow with `--perform_verify_species` and `--taxid`. The user-defined TaxIDs are not limited to viruses and can represent bacteria, fungi, archaea, parasites, or plasmids.
 
 ```bash
 git clone https://github.com/genomic-medicine-sweden/metaval.git
-nextflow run metaval/main.nf -profile singularity \
-  --input samplesheet.csv --outdir identified_viruses_results \
-  --flag_taxpasta --skip_ntc --perform_verify_species \
-  --taxid taxid_list.txt --extract_kraken2_reads \
-  --extract_centrifuge_reads --extract_diamond_reads \
-  --perform_shortread_denovo --perform_longread_denovo \
-  --min_read_counts 20 --perform_mapping
-
+nextflow run genomic-medicine-sweden/metaval \
+    -profile singularity \
+    --input samplesheet.csv \
+    --outdir results \
+    --perform_verify_species \
+    --taxid /path/to/taxid_list.tsv \
+    --extract_kraken2_reads \
+    --extract_centrifuge_reads \
+    --extract_diamond_reads \
+    --blastn_db /path/to/blastn_db.tar.gz \
+    --blastx_db /path/to/diamond.dmnd \
+    --perform_shortread_denovo \
+    --perform_longread_denovo \
+    --perform_mapping \
+    --taxid2genome /path/to/taxid2genome.tsv
 ```
+
+## Run with a parameter file
+
+For reproducible runs, pipeline parameters can be stored in a YAML or JSON file and passed with `-params-file`:
+
+```bash
+nextflow run genomic-medicine-sweden/metaval \
+    -profile docker \
+    -params-file params.yaml
+```
+
+Example:
+
+```yaml title="params.yaml"
+input: samplesheet.csv
+outdir: identified_species_results
+perform_verify_species: true
+extract_kraken2_reads: true
+blastn_db: /path/to/blastn_database
+skip_blastx: true
+```
+
+Use `-params-file` or command-line parameters for pipeline options. The Nextflow `-c` option is intended for execution settings such as resources, executors, containers, and process-specific configuration.
+
+## Resume a run
+
+If a run stops and you correct its inputs or parameters, reuse completed tasks with:
+
+```bash
+nextflow run genomic-medicine-sweden/metaval \
+    -profile docker \
+    -params-file params.yaml \
+    -resume
+```
+
+Do not change or delete the Nextflow `work` directory before resuming.

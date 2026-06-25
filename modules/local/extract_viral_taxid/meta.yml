@@ -13,7 +13,7 @@ input:
       description: An e-value threshold to filter the diamond classification result
   - phages_taxid:
       type: file
-      description: A list of phage taxids to exclude from the extracted viral taxids
+      description: Optional list of phages TaxIDs to exclude from the detected viral TaxIDs
   - - meta:
         type: map
         description: |
@@ -21,7 +21,8 @@ input:
           e.g. [ id:'test', single_end:false ]
     - taxpasta_standardised_profile:
         type: file
-        description: Path to the taxpasta standardised profile
+        description: Path to the standardized Taxpasta profile containing taxonomic information
+        pattern: "*.tsv"
     - report:
         type: file
         description: |
@@ -36,7 +37,7 @@ output:
             e.g. [ id:'test', single_end:false ]
       - "*viral_taxids.tsv":
           type: file
-          description: Extracted viral taxid table
+          description: Detected viral TaxIDs after optional exclusion filtering
           pattern: "*viral_taxids.tsv"
 authors:
   - "@LilyAnderssonLee"

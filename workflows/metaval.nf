@@ -79,7 +79,7 @@ workflow METAVAL {
     ch_input = ch_samplesheet_filtered.branch { meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
 
         // Define single_end based on the conditions
-        meta.single_end = ( fastq_1 && !fastq_2 )
+        //meta.single_end = ( fastq_1 && !fastq_2 )
 
         // reads channels
         short_reads: meta.instrument_platform != 'OXFORD_NANOPORE'
@@ -271,11 +271,11 @@ workflow METAVAL {
             FETCH_BLAST_GENOMES ( params.taxid2genome, ch_blast_unique_taxid, ch_taxid_reads.nonempty )
             // Mapping - short reads
             ch_mapping_input_shortread = FETCH_BLAST_GENOMES.out.shortreads.join(FETCH_BLAST_GENOMES.out.shortreads_genome, by:0)
-            MAPPING_SHORTREAD ( ch_mapping_input_shortread )
+            MAPPING_SHORTREAD ( ch_mapping_input_shortread, true )
 
             // Mapping - long reads
             ch_mapping_input_longread = FETCH_BLAST_GENOMES.out.longreads.join(FETCH_BLAST_GENOMES.out.longreads_genome, by:0)
-            MAPPING_LONGREAD ( ch_mapping_input_longread )
+            MAPPING_LONGREAD ( ch_mapping_input_longread, true )
 
             // Coverage tables
             ch_coverage_tables = ch_coverage_tables.mix( MAPPING_SHORTREAD.out.coverage, MAPPING_LONGREAD.out.coverage )
@@ -369,13 +369,13 @@ workflow METAVAL {
         // Map short reads to the pathogens genome
         ch_mapping_pathogen_shortread = ch_input.short_reads
             .map { meta, reads -> [ meta, reads, ch_reference]}
-        MAPPING_SHORTREAD_PATHOGEN ( ch_mapping_pathogen_shortread )
+        MAPPING_SHORTREAD_PATHOGEN ( ch_mapping_pathogen_shortread, false )
         ch_multiqc_files = ch_multiqc_files.mix(MAPPING_SHORTREAD_PATHOGEN.out.mqc)
 
         // Map long reads to the pathogens genome
         ch_mapping_pathogen_longread = ch_input.long_reads
             .map { meta, reads -> [ meta, reads, ch_reference]}
-        MAPPING_LONGREAD_PATHOGEN ( ch_mapping_pathogen_longread )
+        MAPPING_LONGREAD_PATHOGEN ( ch_mapping_pathogen_longread, false )
         ch_multiqc_files = ch_multiqc_files.mix(MAPPING_LONGREAD_PATHOGEN.out.mqc)
 
         // Subset BAM file for each taxID
