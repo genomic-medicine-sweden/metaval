@@ -97,6 +97,10 @@ workflow PIPELINE_INITIALISATION {
     //
 
     ch_samplesheet = channel.fromList(samplesheetToList(input, "${projectDir}/assets/schema_input.json"))
+        .map {meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
+            def new_meta = meta + [single_end: fastq_1 && !fastq_2]
+            [new_meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta]
+        }
 
     emit:
     samplesheet = ch_samplesheet
