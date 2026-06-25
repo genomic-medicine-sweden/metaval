@@ -36,23 +36,23 @@ Provide the input CSV with:
 
 Each row represents one sample. Illumina samples can be single-end or paired-end; Nanopore samples use `fastq_1`.
 
-| Column | Required | Description |
-| ------ | -------- | ----------- |
-| `sample` | Yes | Unique sample name. |
-| `instrument_platform` | Yes | `ILLUMINA` or `OXFORD_NANOPORE`. |
-| `library_type` | Yes | `DNA`, `RNA`, or `OTHER`. |
-| `is_ntc` | Yes | `true` for a negative control; otherwise `false`. |
-| `batch` | Yes | Batch identifier used to match samples and negative controls. |
-| `fastq_1` | Yes | Gzipped FASTQ containing read 1, single-end reads, or Nanopore reads. |
-| `fastq_2` | No | Gzipped FASTQ containing read 2 for paired-end Illumina data. |
-| `kraken2_report` | For Kraken2 extraction | Kraken2 classification report. |
-| `kraken2_result` | For Kraken2 extraction | Per-read Kraken2 classification output. |
-| `kraken2_taxpasta` | For Kraken2 extraction | Standardized Taxpasta profile. |
-| `centrifuge_report` | For Centrifuge extraction | Centrifuge report in Kraken-style format. |
-| `centrifuge_result` | For Centrifuge extraction | Per-read Centrifuge classification output. |
-| `centrifuge_taxpasta` | For Centrifuge extraction | Standardized Taxpasta profile. |
-| `diamond` | For DIAMOND extraction | Tab-separated per-read DIAMOND classification output. |
-| `diamond_taxpasta` | For DIAMOND extraction | Standardized Taxpasta profile. |
+| Column                | Required                  | Description                                                           |
+| --------------------- | ------------------------- | --------------------------------------------------------------------- |
+| `sample`              | Yes                       | Unique sample name.                                                   |
+| `instrument_platform` | Yes                       | `ILLUMINA` or `OXFORD_NANOPORE`.                                      |
+| `library_type`        | Yes                       | `DNA`, `RNA`, or `OTHER`.                                             |
+| `is_ntc`              | Yes                       | `true` for a negative control; otherwise `false`.                     |
+| `batch`               | Yes                       | Batch identifier used to match samples and negative controls.         |
+| `fastq_1`             | Yes                       | Gzipped FASTQ containing read 1, single-end reads, or Nanopore reads. |
+| `fastq_2`             | No                        | Gzipped FASTQ containing read 2 for paired-end Illumina data.         |
+| `kraken2_report`      | For Kraken2 extraction    | Kraken2 classification report.                                        |
+| `kraken2_result`      | For Kraken2 extraction    | Per-read Kraken2 classification output.                               |
+| `kraken2_taxpasta`    | For Kraken2 extraction    | Standardized Taxpasta profile.                                        |
+| `centrifuge_report`   | For Centrifuge extraction | Centrifuge report in Kraken-style format.                             |
+| `centrifuge_result`   | For Centrifuge extraction | Per-read Centrifuge classification output.                            |
+| `centrifuge_taxpasta` | For Centrifuge extraction | Standardized Taxpasta profile.                                        |
+| `diamond`             | For DIAMOND extraction    | Tab-separated per-read DIAMOND classification output.                 |
+| `diamond_taxpasta`    | For DIAMOND extraction    | Standardized Taxpasta profile.                                        |
 
 Example:
 
@@ -299,16 +299,16 @@ nextflow run genomic-medicine-sweden/metaval \
 
 Filtered BLAST outputs use the following defaults:
 
-| Parameter | Default | Meaning |
-| --------- | ------- | ------- |
-| `--blastn_min_qlen` | `50` | Minimum BLASTN query length. |
-| `--blastn_min_pident` | `50` | Minimum BLASTN percentage identity. |
-| `--blastn_min_length` | `50` | Minimum BLASTN alignment length. |
-| `--blastn_max_evalue` | `0.001` | Maximum BLASTN e-value. |
-| `--blastx_min_qlen` | `50` | Minimum BLASTX query length. |
-| `--blastx_min_pident` | `50` | Minimum BLASTX percentage identity. |
-| `--blastx_min_length` | `50` | Minimum BLASTX alignment length. |
-| `--blastx_max_evalue` | `0.001` | Maximum BLASTX e-value. |
+| Parameter             | Default | Meaning                             |
+| --------------------- | ------- | ----------------------------------- |
+| `--blastn_min_qlen`   | `50`    | Minimum BLASTN query length.        |
+| `--blastn_min_pident` | `50`    | Minimum BLASTN percentage identity. |
+| `--blastn_min_length` | `50`    | Minimum BLASTN alignment length.    |
+| `--blastn_max_evalue` | `0.001` | Maximum BLASTN e-value.             |
+| `--blastx_min_qlen`   | `50`    | Minimum BLASTX query length.        |
+| `--blastx_min_pident` | `50`    | Minimum BLASTX percentage identity. |
+| `--blastx_min_length` | `50`    | Minimum BLASTX alignment length.    |
+| `--blastx_max_evalue` | `0.001` | Maximum BLASTX e-value.             |
 
 BLASTX is not run on reads originally extracted from DIAMOND results.
 
