@@ -7,16 +7,13 @@ Writes one TSV with columns:
   or with NTC: ..., <sample>_vs_<ntc>, <ntc>
 """
 
-from __future__ import annotations
-
 import argparse
 import re
-from pathlib import Path
-
 import pandas as pd
 
 META_COLS = ["taxonomy_id", "name", "rank", "lineage"]
 REQ_COLS = {"taxonomy_id", "name"}
+
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Flag taxpasta tables against NTC tables.")
@@ -25,7 +22,13 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--ntc_taxpasta", help="Optional NTC taxpasta TSV.")
     p.add_argument("--ntc_name", help="Optional NTC column name to select.")
     p.add_argument("--output", required=True, help="Output TSV file path.")
-    return p.parse_args(argv)
+    args = p.parse_args(argv)
+
+    if bool(args.ntc_taxpasta) != bool(args.ntc_name):
+        p.error("--ntc_taxpasta and --ntc_name must be provided together.")
+
+    return args
+
 
 def load_taxpasta_file(path: str) -> pd.DataFrame:
     df = pd.read_csv(path, sep="\t")
@@ -47,7 +50,7 @@ def load_taxpasta_file(path: str) -> pd.DataFrame:
     return df
 
 
-def flag(sample_reads_count: int, ntc_reads_count: int) -> str:
+def compare_counts(sample_reads_count: int, ntc_reads_count: int) -> str:
     if sample_reads_count > 0 and ntc_reads_count == 0:
         return "in_sample"
     if sample_reads_count == 0 and ntc_reads_count > 0:
@@ -56,8 +59,8 @@ def flag(sample_reads_count: int, ntc_reads_count: int) -> str:
         return "> NTC"
     if sample_reads_count < ntc_reads_count:
         return "< NTC"
-    else:
-        return "equal"
+    return "equal"
+
 
 def find_profile_column(df: pd.DataFrame, name: str, path: str) -> str:
     profile_cols = [c for c in df.columns if c not in META_COLS]
@@ -102,7 +105,10 @@ def build_output(
 
     merged = merged.loc[(merged[sample_col] > 0) | (merged[ntc_label] > 0)].copy()
     cmp_label = f"{sample_label}_vs_NTC"
-    merged[cmp_label] = [flag(sample_reads_count, ntc_reads_count) for sample_reads_count, ntc_reads_count in zip(merged[sample_col], merged[ntc_label])]
+    merged[cmp_label] = [
+        compare_counts(sample_reads_count, ntc_reads_count)
+        for sample_reads_count, ntc_reads_count in zip(merged[sample_col], merged[ntc_label])
+    ]
     merged = merged.rename(columns={sample_col: sample_label})
 
     return merged[META_COLS + [sample_label, cmp_label, ntc_label]]
@@ -121,10 +127,6 @@ def main(argv: list[str] | None = None) -> None:
 
     output_df = build_output(sample_df, sample_col, args.sample_name, ntc_df, ntc_col, args.ntc_name)
     output_df.to_csv(args.output, sep="\t", index=False)
-
-    ntc_info = args.ntc_name if ntc_col else "none"
-    print(f"Wrote {args.output} (sample={args.sample_name}, ntc={ntc_info})")
-
 
 if __name__ == "__main__":
     main()
