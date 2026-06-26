@@ -13,6 +13,7 @@ process FLAG_TAXPASTA {
     output:
     tuple val(meta1), path("*.tsv"), emit: tsv
     tuple val("${task.process}"), val("python"), eval("python --version | sed -e 's/Python //g'"), emit: versions_python, topic: versions
+    tuple val("${task.process}"), val("pandas"), eval("python -c \"import pandas; print(pandas.__version__)\""), emit: versions_pandas, topic: versions
 
     when:
     task.ext.when == null || task.ext.when

@@ -19,6 +19,7 @@ process METAVAL_REPORT {
     output:
     path("*.html"), emit: metaval_report
     tuple val("${task.process}"), val("python"), eval("python --version | sed -e 's/Python //g'"), emit: versions_python, topic: versions
+    tuple val("${task.process}"), val("jinja2"), eval("python -c \"import jinja2; print(jinja2.__version__)\""), emit: versions_jinja2, topic: versions
 
     when:
     task.ext.when == null || task.ext.when

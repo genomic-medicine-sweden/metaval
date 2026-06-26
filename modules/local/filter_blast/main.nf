@@ -15,6 +15,7 @@ process FILTER_BLAST {
     tuple val(meta), path('*_filtered.txt')        , emit: filtered_blast, optional: true
     tuple val(meta), path('*_summary.txt')         , emit: summary       , optional: true
     tuple val("${task.process}"), val("python"), eval("python --version | sed -e 's/Python //g'"), emit: versions_python, topic: versions
+    tuple val("${task.process}"), val("pandas"), eval("python -c \"import pandas; print(pandas.__version__)\""), emit: versions_pandas, topic: versions
 
     when:
     task.ext.when == null || task.ext.when
