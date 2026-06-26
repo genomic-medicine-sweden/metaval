@@ -4,7 +4,6 @@ Filter FASTA sequences by removing those with fewer than min_bases A, T, C, or G
 Ignores N and other ambiguous bases in the count.
 """
 
-import sys
 import argparse
 import gzip
 from pathlib import Path
@@ -71,16 +70,7 @@ def filter_fasta(input_file, output_file, min_bases=50):
             else:
                 sequences_removed += 1
 
-    # Print summary
-    if sequences_kept > 0:
-        print(f"Filtering complete:")
-        print(f"  Sequences kept: {sequences_kept}")
-        print(f"  Sequences removed: {sequences_removed}")
-        print(f"  Minimum ATCG bases required: {min_bases}")
-    else:
-        print(f"No sequences passed the filtering criteria (min {min_bases} ATCG bases).")
-        print(f"  Total sequences processed: {sequences_removed}")
-        # Remove the empty output file
+    if sequences_kept == 0:
         Path(output_file).unlink(missing_ok=True)
 
 def main():
@@ -102,22 +92,7 @@ Examples:
 
     args = parser.parse_args()
 
-    # Check if input file exists
-    if not Path(args.input_file).exists():
-        print(f"Error: Input file '{args.input_file}' not found.", file=sys.stderr)
-        sys.exit(1)
-
-    # Check if output directory exists
-    output_dir = Path(args.output_file).parent
-    if not output_dir.exists():
-        print(f"Error: Output directory '{output_dir}' does not exist.", file=sys.stderr)
-        sys.exit(1)
-
-    try:
-        filter_fasta(args.input_file, args.output_file, args.min_bases)
-    except Exception as e:
-        print(f"Error processing files: {e}", file=sys.stderr)
-        sys.exit(1)
+    filter_fasta(args.input_file, args.output_file, args.min_bases)
 
 if __name__ == "__main__":
     main()
