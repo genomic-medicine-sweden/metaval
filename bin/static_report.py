@@ -6,7 +6,6 @@ import csv
 import gzip
 import io
 import json
-import os
 import re
 import zipfile
 from datetime import date
@@ -22,6 +21,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--samplesheet",
+        required=True,
         help="Path to the input samplesheet CSV.",
     )
     parser.add_argument(
@@ -46,26 +46,32 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--flagged-dir",
+        required=True,
         help="Path to flagged taxpasta TSV files.",
     )
     parser.add_argument(
         "--reads-dir",
+        required=True,
         help="Path to extracted read files grouped by classifier.",
     )
     parser.add_argument(
         "--blastn-dir",
+        required=True,
         help="Path to BLASTN result files.",
     )
     parser.add_argument(
         "--blastx-dir",
+        required=True,
         help="Path to BLASTX result files.",
     )
     parser.add_argument(
         "--coverage-dir",
+        required=True,
         help="Path to samtools coverage files.",
     )
     parser.add_argument(
         "--coverage-plots-dir",
+        required=True,
         help="Path to coverage plot image files.",
     )
     parser.add_argument(
@@ -128,9 +134,6 @@ def file_to_data_uri(path: Path) -> str:
     return f"data:{mime_type};base64,{encoded}"
 
 def read_samplesheet(samplesheet_path: Path) -> list[dict[str, str]]:
-    if not samplesheet_path.exists():
-        return []
-
     with samplesheet_path.open(newline="", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
         missing = [column for column in SAMPLE_COLUMNS if column not in reader.fieldnames]
@@ -226,10 +229,12 @@ def detect_flag(row: list[str]) -> str:
 def load_extracted_read_index(reads_dir: Path) -> dict[str, dict[str, list[dict[str, str]]]]:
     index: dict[str, dict[str, list[dict[str, str]]]] = {}
     extracted_pattern = re.compile(
-        r"^(?P<sample>.+?)_taxid_(?P<taxid>\d+)_(?P<organism>.+?)\.extracted_(?P<classifier>kraken2|centrifuge|diamond)_"
+        r"^(?P<sample>.+?)_taxid_(?P<taxid>\d+)_(?P<organism>.+?)"
+        r"\.extracted_(?P<classifier>kraken2|centrifuge|diamond)_"
     )
     assembly_pattern = re.compile(
-        r"^(?P<sample>.+?)_taxid_(?P<taxid>\d+)_(?P<organism>.+?)_(?P<classifier>kraken2|centrifuge|diamond)\.(?:scaffolds|contigs)\.fa(?:sta)?$"
+        r"^(?P<sample>.+?)_taxid_(?P<taxid>\d+)_(?P<organism>.+?)_"
+        r"(?P<classifier>kraken2|centrifuge|diamond)\.(?:scaffolds|contigs)\.fa(?:sta)?$"
     )
 
     if not reads_dir.exists():
@@ -322,13 +327,6 @@ def select_reads_source(
     return sorted({path for path in candidates if path.is_file()})
 
 
-def resolve_blast_path(blast_dir: Path, classifier: str, filename: str) -> Path:
-    flat_path = blast_dir / filename
-    if flat_path.exists():
-        return flat_path
-    return flat_path
-
-
 def header_help(header: str) -> str:
     return HEADER_HELP.get(header.lower(), header)
 
@@ -339,23 +337,14 @@ def build_detail_context(
     taxid: str,
     organism: str,
     assigned_reads: str,
-    footer_logo: str,
     reads_files: list[Path],
     blastn_dir: Path,
     blastx_dir: Path,
     coverage_dir: Path,
     coverage_plots_dir: Path,
 ) -> dict[str, object]:
-    blastn_summary = resolve_blast_path(
-        blastn_dir,
-        classifier,
-        f"{sample}_taxid_{taxid}_{organism}_{classifier}_blast_filtered.txt",
-    )
-    blastx_summary = resolve_blast_path(
-        blastx_dir,
-        classifier,
-        f"{sample}_taxid_{taxid}_{organism}_{classifier}_blastx_filtered.txt",
-    )
+    blastn_summary = blastn_dir / f"{sample}_taxid_{taxid}_{organism}_{classifier}_blast_filtered.txt"
+    blastx_summary = blastx_dir / f"{sample}_taxid_{taxid}_{organism}_{classifier}_blastx_filtered.txt"
 
     blastn = read_tsv_table(blastn_summary) if blastn_summary.exists() else {"headers": [], "rows": []}
     blastx = read_tsv_table(blastx_summary) if blastx_summary.exists() else {"headers": [], "rows": []}
@@ -388,7 +377,6 @@ def build_detail_context(
     ]
 
     return {
-        "footer_logo": footer_logo,
         "sample": sample,
         "classifier": CLASSIFIER_LABELS[classifier],
         "taxid": taxid,
@@ -404,8 +392,6 @@ def build_detail_context(
 
 def collect_detail_sections(
     rows: list[dict[str, str]],
-    report_path: Path,
-    logo_path: Path,
     flagged_dir: Path,
     extracted_reads_index: dict[str, dict[str, list[dict[str, str]]]],
     reads_dir: Path,
@@ -439,7 +425,6 @@ def collect_detail_sections(
                     taxid=taxid,
                     organism=organism,
                     assigned_reads=load_assigned_reads(flagged_path, sample, taxid),
-                    footer_logo=file_to_data_uri(logo_path),
                     reads_files=reads_files,
                     blastn_dir=blastn_dir,
                     blastx_dir=blastx_dir,
@@ -674,7 +659,6 @@ def build_html(
     template_path: Path,
     flagged_dir: Path,
     reads_dir: Path,
-    report_path: Path,
     logo_path: Path,
     blastn_dir: Path,
     blastx_dir: Path,
@@ -686,8 +670,6 @@ def build_html(
     extracted_reads_index = load_extracted_read_index(reads_dir)
     detail_links, detail_sections = collect_detail_sections(
         rows=rows,
-        report_path=report_path,
-        logo_path=logo_path,
         flagged_dir=flagged_dir,
         extracted_reads_index=extracted_reads_index,
         reads_dir=reads_dir,
@@ -750,7 +732,6 @@ def main() -> None:
         template_path,
         flagged_dir,
         reads_dir,
-        output_path,
         logo_path,
         blastn_dir,
         blastx_dir,
