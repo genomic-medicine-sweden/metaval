@@ -14,6 +14,9 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = SCRIPT_DIR.parent / "assets"
+STATIC_REPORT_DIR = ASSETS_DIR / "static_report"
+REPORT_CSS = STATIC_REPORT_DIR / "report.css"
+REPORT_JS = STATIC_REPORT_DIR / "report.js"
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -41,7 +44,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--template",
-        default=str(ASSETS_DIR / "templates" / "report.html.j2"),
+        default=str(STATIC_REPORT_DIR / "report.html.j2"),
         help="Path to the Jinja template file.",
     )
     parser.add_argument(
@@ -325,10 +328,6 @@ def select_reads_source(
     candidates.extend(reads_dir.glob(f"{base_name}_{classifier}.scaffolds.fa*"))
     candidates.extend(reads_dir.glob(f"{base_name}_{classifier}.contigs.fa*"))
     return sorted({path for path in candidates if path.is_file()})
-
-
-def header_help(header: str) -> str:
-    return HEADER_HELP.get(header.lower(), header)
 
 
 def build_detail_context(
@@ -667,6 +666,8 @@ def build_html(
 ) -> str:
     created_date = date.today().isoformat()
     template_dir = template_path.parent
+    report_css = REPORT_CSS.read_text(encoding="utf-8")
+    report_js = REPORT_JS.read_text(encoding="utf-8")
     extracted_reads_index = load_extracted_read_index(reads_dir)
     detail_links, detail_sections = collect_detail_sections(
         rows=rows,
@@ -698,8 +699,9 @@ def build_html(
     detail_sections_zip_b64 = base64.b64encode(archive_buffer.getvalue()).decode("ascii")
     return template.render(
         report_title=REPORT_TITLE,
-        header_help=header_help,
         header_help_map=HEADER_HELP,
+        report_css=report_css,
+        report_js=report_js,
         footer_logo=file_to_data_uri(logo_path),
         ticket=ticket,
         version=version,

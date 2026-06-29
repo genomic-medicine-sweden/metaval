@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ report_title }}</title>
+  <style>{{ report_css|safe }}</style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1>{{ report_title }}</h1>
+      <div class="meta">
+        <div class="meta-card">
+          <div class="meta-label">Ticket Number</div>
+          <div class="meta-value">{{ ticket }}</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">metaval version</div>
+          <div class="meta-value">{{ version }}</div>
+        </div>
+        <div class="meta-card">
+          <div class="meta-label">Created Date</div>
+          <div class="meta-value">{{ created_date }}</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Sample List</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="sample-sort" data-sort-key="sample">sample</th>
+              <th class="sample-sort" data-sort-key="instrument_platform">instrument_platform</th>
+              <th class="sample-sort" data-sort-key="library_type">library_type</th>
+              <th class="sample-sort" data-sort-key="is_ntc">Sample_type</th>
+              <th class="sample-sort" data-sort-key="batch">batch</th>
+            </tr>
+            <tr class="filter-row">
+              <th></th>
+              <th>
+                <select data-filter-key="instrument_platform">
+                  <option value="">All</option>
+                </select>
+              </th>
+              <th>
+                <select data-filter-key="library_type">
+                  <option value="">All</option>
+                </select>
+              </th>
+              <th>
+                <select data-filter-key="is_ntc">
+                  <option value="">All</option>
+                </select>
+              </th>
+              <th>
+                <select data-filter-key="batch">
+                  <option value="">All</option>
+                </select>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in rows %}
+            <tr
+              class="sample-row"
+              data-sample-id="{{ row.sample_id }}"
+              data-instrument_platform="{{ row.instrument_platform }}"
+              data-library_type="{{ row.library_type }}"
+              data-is_ntc="{{ row.is_ntc }}"
+              data-batch="{{ row.batch }}"
+            >
+              <td>{{ row.sample }}</td>
+              <td>{{ row.instrument_platform }}</td>
+              <td>{{ row.library_type }}</td>
+              <td><span class="{{ row.ntc_class }}">{{ row.ntc_label }}</span></td>
+              <td>{{ row.batch }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% for row in rows %}
+      <section id="{{ row.sample_id }}" class="details-panel" hidden>
+        <div class="detail-bar">
+          <button type="button" class="detail-back" data-close-panel="{{ row.sample_id }}">&#8592; Back</button>
+          <span class="detail-separator">/</span>
+          <span class="detail-sample">{{ row.sample }}</span>
+        </div>
+        <div class="classifier-tabs">
+          {% for classifier_key, classifier in row.classifiers.items() %}
+          <button
+            type="button"
+            class="classifier-tab"
+            data-classifier-tab="{{ classifier_key }}"
+          >
+            {{ classifier.label }}
+          </button>
+          {% endfor %}
+        </div>
+        {% for classifier_key, classifier in row.classifiers.items() %}
+        <div class="taxpasta-view" data-classifier-view="{{ classifier_key }}" hidden>
+          {% if classifier.table %}
+          {% if classifier.extracted_organisms %}
+          <div class="extracted-reads">
+            <div class="extracted-reads-label"><strong>METAVAL</strong> <span>checked organisms:</span></div>
+            <div class="extracted-reads-list">
+              {% for organism in classifier.extracted_organisms %}
+              {% if organism.href %}
+              {% if detail_sections_zip_b64 is defined and organism.panel_id %}
+              <button
+                type="button"
+                class="extracted-read-chip"
+                {% if loop.index > 10 %}hidden data-extra-organism{% endif %}
+                data-open-organism="{{ organism.panel_id }}"
+                data-sample-id="{{ row.sample_id }}"
+                data-classifier="{{ classifier_key }}"
+              >{{ organism.name }}</button>
+              {% else %}
+              <a class="extracted-read-chip" {% if loop.index > 10 %}hidden data-extra-organism{% endif %} href="{{ organism.href }}">{{ organism.name }}</a>
+              {% endif %}
+              {% else %}
+              <span class="extracted-read-chip" {% if loop.index > 10 %}hidden data-extra-organism{% endif %}>{{ organism.name }}</span>
+              {% endif %}
+              {% endfor %}
+            </div>
+            {% if classifier.extracted_organisms|length > 10 %}
+            <button
+              type="button"
+              class="extracted-reads-toggle"
+              data-toggle-organisms
+              data-collapsed-label="Show more species ({{ classifier.extracted_organisms|length - 10 }})"
+              data-expanded-label="Show fewer species"
+            >Show more species ({{ classifier.extracted_organisms|length - 10 }})</button>
+            {% endif %}
+          </div>
+          {% endif %}
+          <div class="taxpasta-filters">
+            <div class="taxpasta-filter">
+              <label>Search organism</label>
+              <input type="text" placeholder="Search organism..." data-organism-search />
+            </div>
+            <div class="taxpasta-filter">
+              <label>Superkingdom</label>
+              <select data-superkingdom-filter>
+                <option value="all">All</option>
+                <option value="virus">Virus</option>
+                <option value="bacteria">Bacteria</option>
+                <option value="archaea">Archaea</option>
+                <option value="fungi">Fungi</option>
+                <option value="eukaryote">Eukaryote</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="taxpasta-filter">
+              <label>Flag</label>
+              <select data-flag-filter>
+                <option value="all">All</option>
+                <option value="in_sample">in_sample</option>
+                <option value="in_NTC">in_NTC</option>
+                <option value="> NTC">&gt; NTC</option>
+                <option value="< NTC">&lt; NTC</option>
+                <option value="equal">equal</option>
+              </select>
+            </div>
+            <div class="taxpasta-filter">
+              <label>Metaval only</label>
+              <button type="button" class="taxpasta-toggle-button" data-metaval-only>Off</button>
+            </div>
+          </div>
+          <div class="taxpasta-summary">
+            <div class="taxpasta-stat">
+              <div class="taxpasta-stat-label">Total classified reads</div>
+              <div class="taxpasta-stat-value">{{ classifier.table.total_classified_reads or "NA" }}</div>
+            </div>
+            <div class="taxpasta-stat">
+              <div class="taxpasta-stat-label">Total unclassified reads</div>
+              <div class="taxpasta-stat-value">{{ classifier.table.total_unclassified_reads or "0" }}</div>
+            </div>
+            <div class="taxpasta-stat">
+              <div class="taxpasta-stat-label">Host reads</div>
+              <div class="taxpasta-stat-value">{{ classifier.table.host_reads or "0" }}</div>
+            </div>
+            <div class="taxpasta-stat">
+              <div class="taxpasta-stat-label">Organisms shown</div>
+              <div class="taxpasta-stat-value" data-organisms-shown>0</div>
+            </div>
+          </div>
+          <div class="taxpasta-wrap">
+            <table class="taxpasta-table">
+              <colgroup>
+                <col>
+                {% for _ in classifier.table.headers %}
+                <col>
+                {% endfor %}
+              </colgroup>
+              <thead>
+                <tr>
+                  <th title="lineage">lineage<span class="col-resizer"></span></th>
+                  {% for header in classifier.table.headers %}
+                  <th title="{{ header }}">{{ "TAXID" if header == "taxonomy_id" else header }}<span class="col-resizer"></span></th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for table_row in classifier.table.rows %}
+                <tr
+                  class="taxonomy-row"
+                  data-superkingdom="{{ classifier.table.superkingdoms[loop.index0] }}"
+                  data-flag="{{ classifier.table.flags[loop.index0] }}"
+                  data-metaval-checked="{{ 'true' if classifier.table.metaval_checked[loop.index0] else 'false' }}"
+                  data-metaval-panel="{{ classifier.table.metaval_panel_ids[loop.index0] }}"
+                >
+                  <td>
+                    {% if classifier.table.lineages[loop.index0] %}
+                    <button
+                      type="button"
+                      class="lineage-toggle"
+                      data-lineage-target="{{ row.sample_id }}-{{ classifier_key }}-{{ loop.index0 }}"
+                    >
+                      Show
+                    </button>
+                    {% endif %}
+                  </td>
+                  {% for cell in table_row %}
+                  {% if classifier.table.headers[loop.index0] == "classifiers" %}
+                  <td class="taxonomy-classifiers">
+                    {% for label, value in cell %}
+                    <div class="taxonomy-classifier-line">
+                      <span
+                        class="taxonomy-classifier-label"
+                        title="{{ 'Kraken2' if label == 'K' else 'Centrifuge' if label == 'C' else 'Diamond' }}"
+                      >{{ label }}:</span>
+                      <span class="taxonomy-classifier-value">{{ value }}</span>
+                    </div>
+                    {% endfor %}
+                  </td>
+                  {% else %}
+                  <td title="{{ cell }}">{{ cell }}</td>
+                  {% endif %}
+                  {% endfor %}
+                </tr>
+                <tr
+                  class="taxpasta-lineage-row"
+                  id="{{ row.sample_id }}-{{ classifier_key }}-{{ loop.index0 }}"
+                  hidden
+                >
+                  <td colspan="{{ classifier.table.headers|length + 1 }}">
+                    <div class="lineage-text">
+                      <strong>lineage:</strong> {{ classifier.table.lineages[loop.index0] or "No lineage available." }}
+                    </div>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+          <div class="taxpasta-empty">No {{ classifier.label }} taxpasta table found for this sample.</div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </section>
+      {% endfor %}
+
+      {% if detail_sections_zip_b64 is defined %}
+      <section
+        id="organism-detail-panel"
+        class="details-panel organism-detail-panel"
+        data-organism-panel
+        hidden
+      >
+        <div data-organism-detail-root></div>
+      </section>
+      <script id="detail-sections-data" type="text/plain">{{ detail_sections_zip_b64 }}</script>
+      {% endif %}
+    </section>
+    <footer class="report-footer">
+      <img class="report-footer-logo" src="{{ footer_logo }}" alt="metaval logo" />
+      <div>
+        Generated automatically from
+        <a href="https://github.com/genomic-medicine-sweden/metaval" target="_blank" rel="noreferrer">genomic-medicine-sweden/metaval</a>.
+      </div>
+    </footer>
+  </main>
+  <script>
+    const detailHeaderHelp = {{ header_help_map|default({})|tojson|safe }};
+{{ report_js|safe }}
+  </script>
+</body>
+</html>
