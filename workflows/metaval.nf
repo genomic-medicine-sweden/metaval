@@ -239,7 +239,7 @@ workflow METAVAL {
                 ch_blast_query = ch_blast_query.mix( FLYE.out.fasta )
             }
 
-            BLAST(ch_blast_query, params.blastn_db, params.blastx_db, params.blast_header )
+            BLAST(ch_blast_query, params.blastn_db, params.blastx_db )
 
             ch_blast_unique_taxid = ch_blast_unique_taxid.mix(BLAST.out.unique_taxid)
             ch_blastn_report = ch_blastn_report.mix(BLAST.out.blastn_filtered)
@@ -424,7 +424,7 @@ workflow METAVAL {
             ch_longread_pathogen_blast,
             CONSENSUS.out.consensus.ifEmpty([])
         )
-        BLAST_PATHOGEN ( ch_blast_query_pathogen, params.blastn_db, params.blastx_db, params.blast_header )
+        BLAST_PATHOGEN ( ch_blast_query_pathogen, params.blastn_db, params.blastx_db )
     }
 
     //

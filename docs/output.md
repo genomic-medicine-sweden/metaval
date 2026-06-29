@@ -157,6 +157,8 @@ Provide the relevant databases with `--blastn_db` and `--blastx_db`. Filtering t
 - `--blastn_min_qlen`, `--blastn_min_pident`, `--blastn_min_length`, and `--blastn_max_evalue`
 - `--blastx_min_qlen`, `--blastx_min_pident`, `--blastx_min_length`, and `--blastx_max_evalue`
 
+Filtered BLASTN and DIAMOND BLASTX tables use the fixed tabular columns configured in `conf/modules.config` and described by `assets/blast_outfmt10_header.txt`: `qseqid`, `staxids`, `sscinames`, `pident`, `qlen`, `length`, `mismatch`, `gapopen`, `qstart`, `qend`, `sstart`, `send`, `evalue`, `bitscore`, `sseqid`, `qseq`, and `sseq`. Filtering uses `staxids` and `sscinames` to remove incomplete hits, then applies threshold parameters to `qlen`, `pident`, `length`, and `evalue`.
+
 ### Verify-species mapping
 
 Mapping is enabled with `--perform_mapping`. Illumina reads are aligned with `Bowtie2` and Nanopore reads with `minimap2`. Reference genomes are selected from the filtered BLAST hits using the map supplied with `--taxid2genome`.

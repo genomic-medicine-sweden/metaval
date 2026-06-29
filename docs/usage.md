@@ -310,6 +310,14 @@ Filtered BLAST outputs use the following defaults:
 | `--blastx_min_length` | `50`    | Minimum BLASTX alignment length.    |
 | `--blastx_max_evalue` | `0.001` | Maximum BLASTX e-value.             |
 
+Metaval uses a fixed tabular BLAST output format for BLASTN and DIAMOND BLASTX so that downstream filtering and the HTML report can parse the same columns. The output columns are defined in `conf/modules.config` and described by the internal header file `assets/blast_outfmt10_header.txt`:
+
+```text
+qseqid	staxids	sscinames	pident	qlen	length	mismatch	gapopen	qstart	qend	sstart	send	evalue	bitscore	sseqid	qseq	sseq
+```
+
+Filtering removes hits without a usable `staxids` or `sscinames`, then applies the configured thresholds to `qlen`, `pident`, `length`, and `evalue`.
+
 BLASTX is not run on reads originally extracted from DIAMOND results.
 
 ## Parameter files

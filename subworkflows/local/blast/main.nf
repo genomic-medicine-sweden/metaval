@@ -14,13 +14,13 @@ workflow BLAST {
     query           // channel: [ val(meta), path(fasta) ]
     blastn_db       // channel: [ val(meta), path(db) ]
     blastx_db       // channel: [ val(meta), path(db) ]
-    blast_header    // channel: [ path(header) ]
 
     main:
     ch_blast_hits_taxid = channel.empty()
 
     ch_blastn_filtered = channel.empty()
     ch_blastx_filtered = channel.empty()
+    blast_header = file("${projectDir}/assets/blast_outfmt10_header.txt", checkIfExists: true)
 
     // BLASTN
     if ( !params.skip_blastn ) {
@@ -39,7 +39,7 @@ workflow BLAST {
 
         // Filter BLASTN hits
         ch_blastn_hits = BLAST_BLASTN.out.txt.filter { _meta, blastn_hits -> blastn_hits.size() >0 }
-        FILTER_BLASTN ( ch_blastn_hits, file( blast_header, checkIfExists: true ))
+        FILTER_BLASTN ( ch_blastn_hits, blast_header )
         ch_blastn_filtered = ch_blastn_filtered.mix( FILTER_BLASTN.out.filtered_blast )
         // Extract unique taxids from BLASTN hit results
         ch_blastn_hits_taxid = FILTER_BLASTN.out.filtered_blast
@@ -77,7 +77,7 @@ workflow BLAST {
 
         // Filter BLASTX hits
         ch_blastx_hits = DIAMOND_BLASTX.out.txt.filter { _meta, blastx_hits -> blastx_hits.size() > 0 }
-        FILTER_BLASTX ( ch_blastx_hits, file( blast_header, checkIfExists: true ))
+        FILTER_BLASTX ( ch_blastx_hits, blast_header )
         ch_blastx_filtered = ch_blastx_filtered.mix( FILTER_BLASTX.out.filtered_blast)
         // Extract unique taxids from BLASTX hit results
         ch_blastx_hits_taxid = FILTER_BLASTX.out.filtered_blast
