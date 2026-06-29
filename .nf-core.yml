@@ -22,7 +22,7 @@ lint:
     - viralPathogenList.csv
     - README.md
   template_strings:
-    - assets/templates/report.html.j2
+    - assets/static_report/report.html.j2
   multiqc_config:
     - report_comment
   nextflow_config:
