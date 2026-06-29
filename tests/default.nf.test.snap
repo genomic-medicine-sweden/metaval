@@ -10,7 +10,7 @@
                 "reference.fasta.rev.2.bt2l:md5,061d25379a3f57db6e974ba06aeed404"
             ]
         ],
-        "timestamp": "2026-06-25T16:19:53.266713838",
+        "timestamp": "2026-06-29T09:23:25.150184066",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
@@ -57,7 +57,7 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-06-25T16:19:49.226286774",
+        "timestamp": "2026-06-29T09:23:21.171298662",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
@@ -83,7 +83,7 @@
                 
             ]
         ],
-        "timestamp": "2026-06-25T16:19:54.506617335",
+        "timestamp": "2026-06-29T09:23:26.271089904",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
@@ -121,7 +121,7 @@
                 
             ]
         ],
-        "timestamp": "2026-06-25T16:19:48.532896425",
+        "timestamp": "2026-06-29T09:23:19.109659143",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
@@ -136,7 +136,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-06-25T16:19:52.911100144",
+        "timestamp": "2026-06-29T09:23:24.816942528",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
@@ -156,7 +156,7 @@
                 
             ]
         ],
-        "timestamp": "2026-06-25T16:19:52.063695679",
+        "timestamp": "2026-06-29T09:23:23.692918458",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
@@ -172,7 +172,7 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,481e4fddfe11018be67ff5dcce3eb748"
             ]
         ],
-        "timestamp": "2026-06-25T16:19:51.349364807",
+        "timestamp": "2026-06-29T09:23:22.948709567",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
@@ -213,9 +213,11 @@
                     "fastqc": "0.12.1"
                 },
                 "FILTER_BLASTN": {
+                    "pandas": "2.2.1",
                     "python": "3.12.3"
                 },
                 "FILTER_BLASTX": {
+                    "pandas": "2.2.1",
                     "python": "3.12.3"
                 },
                 "FILTER_CONSENSUS_LONGREAD": {
@@ -225,6 +227,7 @@
                     "python": "3.13.2"
                 },
                 "FLAG_TAXPASTA": {
+                    "pandas": "2.2.1",
                     "python": "3.12.3"
                 },
                 "KRAKENTOOLS_EXTRACTKRAKENREADS": {
@@ -235,6 +238,7 @@
                     "seqkit": "2.9.0"
                 },
                 "METAVAL_REPORT": {
+                    "jinja2": "3.1.6",
                     "python": "3.13.2"
                 },
                 "MINIMAP2_ALIGN": {
@@ -311,7 +315,7 @@
                 }
             }
         ],
-        "timestamp": "2026-06-25T16:19:48.307894041",
+        "timestamp": "2026-06-29T09:23:18.904259646",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
@@ -326,7 +330,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens_samtools.fasta:md5,a06778a8d2ca667eb4f12d1fd7a43f87"
             ]
         ],
-        "timestamp": "2026-06-25T16:19:52.499593657",
+        "timestamp": "2026-06-29T09:23:24.402051112",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
@@ -338,7 +342,7 @@
                 
             ]
         ],
-        "timestamp": "2026-06-25T16:19:48.712539214",
+        "timestamp": "2026-06-29T09:23:19.326886012",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
@@ -350,7 +354,7 @@
                 
             ]
         ],
-        "timestamp": "2026-06-25T16:19:50.971836133",
+        "timestamp": "2026-06-29T09:23:22.587312124",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
@@ -427,7 +431,7 @@
                 
             ]
         ],
-        "timestamp": "2026-06-25T16:19:49.124862276",
+        "timestamp": "2026-06-29T09:23:21.083416793",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
@@ -451,7 +455,7 @@
                 "SRR13439813_kraken2_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-06-25T16:19:51.709176759",
+        "timestamp": "2026-06-29T09:23:23.305471593",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
@@ -477,7 +481,7 @@
                 
             ]
         ],
-        "timestamp": "2026-06-25T16:19:48.677676289",
+        "timestamp": "2026-06-29T09:23:19.30726362",
         "meta": {
             "nf-test": "0.9.4",
             "nextflow": "25.10.4"
