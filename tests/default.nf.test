@@ -35,9 +35,6 @@ nextflow_pipeline {
             def stable_content_bowtie2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['mapping/bowtie2/align'], ignoreFile: 'tests/.nftignore')
             def bam_files_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['mapping/bowtie2/align/*.bam'])
 
-            //taxpasta
-            def stable_content_taxpasta     = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include: ["taxpasta/**"]     , ignoreFile: 'tests/.nftignore')
-
             //bowtie2 build
             def stable_content_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['mapping/bowtie2/build/**/**/*'], ignoreFile: 'tests/.nftignore')
 
@@ -68,6 +65,7 @@ nextflow_pipeline {
             //pathogens
             def stable_content_pathogens_reads_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/pathogen_reads/consensus_input/*'], ignoreFile: 'tests/.nftignore')
             def bam_files_pathogens_reads_consensus  = getAllFilesFromDir(params.outdir, include: ['pathogens/pathogen_reads/consensus_input/*.bam'])
+
 
             assertAll(
                 { assert workflow.success},
