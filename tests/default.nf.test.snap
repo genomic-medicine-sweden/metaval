@@ -1,4 +1,30 @@
 {
+    "spades_centrifuge": {
+        "content": [
+            [
+                "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.contigs.fa exists: true",
+                "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.scaffolds.fa exists: true"
+            ]
+        ],
+        "timestamp": "2026-07-06T16:25:04.758751437",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.3"
+        }
+    },
+    "spades_diamond": {
+        "content": [
+            [
+                "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.contigs.fa exists: true",
+                "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.scaffolds.fa exists: true"
+            ]
+        ],
+        "timestamp": "2026-07-06T16:25:05.747402735",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.3"
+        }
+    },
     "bowtie2_build": {
         "content": [
             [
@@ -112,7 +138,22 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-07-06T15:42:27.815512852",
+        "timestamp": "2026-07-06T16:24:54.386252279",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.3"
+        }
+    },
+    "spades_kraken2": {
+        "content": [
+            [
+                "SRR13439813_taxid_1920753_Gamaleyavirus.contigs.fa exists: true",
+                "SRR13439813_taxid_1920753_Gamaleyavirus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.contigs.fa exists: true",
+                "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.scaffolds.fa exists: true"
+            ]
+        ],
+        "timestamp": "2026-07-06T16:25:03.756882073",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -150,7 +191,7 @@
                 
             ]
         ],
-        "timestamp": "2026-07-06T15:42:27.638501941",
+        "timestamp": "2026-07-06T16:24:54.194059751",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -165,7 +206,7 @@
                 "SRR13439813_Homo_sapiens_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-07-06T15:42:33.951859808",
+        "timestamp": "2026-07-06T16:25:00.755259004",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -179,7 +220,7 @@
                 "SRR13439799_Influenza_A_virus_H2N2_1.fasta.gz:md5,d41d8cd98f00b204e9800998ecf8427e"
             ]
         ],
-        "timestamp": "2026-07-06T15:42:34.896405034",
+        "timestamp": "2026-07-06T16:25:01.737682448",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -199,7 +240,7 @@
                 
             ]
         ],
-        "timestamp": "2026-07-06T15:42:32.05754232",
+        "timestamp": "2026-07-06T16:24:58.781781075",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -222,7 +263,7 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,481e4fddfe11018be67ff5dcce3eb748"
             ]
         ],
-        "timestamp": "2026-07-06T15:42:30.101025132",
+        "timestamp": "2026-07-06T16:24:56.75718692",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -352,7 +393,7 @@
                 }
             }
         ],
-        "timestamp": "2026-07-06T15:42:27.519752607",
+        "timestamp": "2026-07-06T16:24:54.099376673",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -362,23 +403,23 @@
         "content": [
             [
                 [
-                    "SRR13439790_Homo_sapiens_sorted.bam pathogens reads consensus md5: 4940893a2ce058be9906b55f8a33375e"
+                    "SRR13439790_Homo_sapiens_sorted.bam pathogens reads consensus md5: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:NC_002205.1\tLN:2313, @SQ\tSN:NC_002206.1\tLN:2204, @SQ\tSN:NC_002207.1\tLN:1882, @SQ\tSN:NC_002208.1\tLN:1841, @SQ\tSN:NC_002209.1\tLN:1557, @SQ\tSN:NC_002210.1\tLN:1191, @SQ\tSN:NC_002211.1\tLN:1096, @SQ\tSN:NC_002204.1\tLN:2368, @SQ\tSN:NC_004910.1\tLN:2341, @SQ\tSN:NC_004911.1\tLN:2328, @SQ\tSN:NC_004912.1\tLN:2225, @SQ\tSN:NC_004908.1\tLN:1714, @SQ\tSN:NC_004905.2\tLN:1557, @SQ\tSN:NC_004909.1\tLN:1418, @SQ\tSN:NC_004907.1\tLN:1025, @SQ\tSN:NC_004906.1\tLN:890, @SQ\tSN:NC_006307.2\tLN:2365, @SQ\tSN:NC_006308.2\tLN:2363, @SQ\tSN:NC_006309.2\tLN:2183, @SQ\tSN:NC_006310.2\tLN:2073, @SQ\tSN:NC_006311.1\tLN:1807, @SQ\tSN:NC_006312.2\tLN:1180, @SQ\tSN:NC_006306.2\tLN:935, @SQ\tSN:NC_007357.1\tLN:2341, @SQ\tSN:NC_007358.1\tLN:2341, @SQ\tSN:NC_007359.1\tLN:2233, @SQ\tSN:NC_007362.1\tLN:1760, @SQ\tSN:NC_007360.1\tLN:1565, @SQ\tSN:NC_007361.1\tLN:1458, @SQ\tSN:NC_007363.1\tLN:1027, @SQ\tSN:NC_007364.1\tLN:865, @SQ\tSN:NC_007373.1\tLN:2341, @SQ\tSN:NC_007372.1\tLN:2341, @SQ\tSN:NC_007371.1\tLN:2233, @SQ\tSN:NC_007366.1\tLN:1762, @SQ\tSN:NC_007369.1\tLN:1566, @SQ\tSN:NC_007368.1\tLN:1467, @SQ\tSN:NC_007367.1\tLN:1027, @SQ\tSN:NC_007370.1\tLN:890, @SQ\tSN:NC_002023.1\tLN:2341, @SQ\tSN:NC_002021.1\tLN:2341, @SQ\tSN:NC_002022.1\tLN:2233, @SQ\tSN:NC_002017.1\tLN:1778, @SQ\tSN:NC_002019.1\tLN:1565, @SQ\tSN:NC_002018.1\tLN:1413, @SQ\tSN:NC_002016.1\tLN:1027, @SQ\tSN:NC_002020.1\tLN:890, @SQ\tSN:NC_007378.1\tLN:2341, @SQ\tSN:NC_007375.1\tLN:2341, @SQ\tSN:NC_007376.1\tLN:2233, @SQ\tSN:NC_007374.1\tLN:1773, @SQ\tSN:NC_007381.1\tLN:1497, @SQ\tSN:NC_007382.1\tLN:1410, @SQ\tSN:NC_007377.1\tLN:1027, @SQ\tSN:NC_007380.1\tLN:838, @SQ\tSN:NC_026422.1\tLN:2280, @SQ\tSN:NC_026423.1\tLN:2297, @SQ\tSN:NC_026424.1\tLN:2176, @SQ\tSN:NC_026425.1\tLN:1708, @SQ\tSN:NC_026426.1\tLN:1506, @SQ\tSN:NC_026429.1\tLN:1398, @SQ\tSN:NC_026427.1\tLN:985, @SQ\tSN:NC_026428.1\tLN:841, @SQ\tSN:NC_026438.1\tLN:2280, @SQ\tSN:NC_026435.1\tLN:2274, @SQ\tSN:NC_026437.1\tLN:2151, @SQ\tSN:NC_026433.1\tLN:1701, @SQ\tSN:NC_026436.1\tLN:1497, @SQ\tSN:NC_026434.1\tLN:1410, @SQ\tSN:NC_026431.1\tLN:982, @SQ\tSN:NC_026432.1\tLN:863, @SQ\tSN:NC_036616.1\tLN:2364, @SQ\tSN:NC_036615.1\tLN:2330, @SQ\tSN:NC_036619.1\tLN:2195, @SQ\tSN:NC_036618.1\tLN:2049, @SQ\tSN:NC_036617.1\tLN:1775, @SQ\tSN:NC_036620.1\tLN:1219, @SQ\tSN:NC_036621.1\tLN:868, @SQ\tSN:NC_060925.1\tLN:10001, @SQ\tSN:NC_060926.1\tLN:10001, @SQ\tSN:NC_060927.1\tLN:10001, @SQ\tSN:NC_060928.1\tLN:10001, @SQ\tSN:NC_060929.1\tLN:10001, @SQ\tSN:NC_060930.1\tLN:10001, @SQ\tSN:NC_060931.1\tLN:10001, @SQ\tSN:NC_060932.1\tLN:10001, @SQ\tSN:NC_060933.1\tLN:10001, @SQ\tSN:NC_060934.1\tLN:10001, @SQ\tSN:NC_060935.1\tLN:10001, @SQ\tSN:NC_060936.1\tLN:10001, @SQ\tSN:NC_060937.1\tLN:10001, @SQ\tSN:NC_060938.1\tLN:10001, @SQ\tSN:NC_060939.1\tLN:10001, @SQ\tSN:NC_060940.1\tLN:10001, @SQ\tSN:NC_060941.1\tLN:10001, @SQ\tSN:NC_060942.1\tLN:10001, @SQ\tSN:NC_060943.1\tLN:10001, @SQ\tSN:NC_060944.1\tLN:10001, @SQ\tSN:NC_060945.1\tLN:10001, @SQ\tSN:NC_060946.1\tLN:10001, @SQ\tSN:NC_060947.1\tLN:10001, @SQ\tSN:NC_060948.1\tLN:10001, @RG\tID:SRR13439790\tSM:SRR13439790, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-l --wrapper basic-0 -x ./bowtie2/reference.fasta --threads 4 --rg-id SRR13439790 --rg SM:SRR13439790 --passthrough -1 SRR13439790.unmapped_1.fastq.gz -2 SRR13439790.unmapped_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439790.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439790.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439790_aligned_pathogens_genome_sorted --threads 4 --reference reference.fasta -o SRR13439790_aligned_pathogens_genome_sorted.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.21\tCL:samtools view -o SRR13439790_taxid_9606_Homo_sapiens.bam SRR13439790_aligned_pathogens_genome_sorted.bam NC_060927.1 NC_060928.1 NC_060933.1 NC_060935.1 NC_060936.1 NC_060937.1 NC_060938.1 NC_060939.1 NC_060942.1 NC_060943.1 NC_060944.1 NC_060945.1 NC_060946.1 NC_060947.1 NC_060948.1, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools cat SRR13439790_taxid_9606_Homo_sapiens.bam, @PG\tID:samtools.5\tPN:samtools\tPP:samtools.4\tVN:1.23.1\tCL:samtools sort -T SRR13439790_Homo_sapiens_sorted --threads 4 -o SRR13439790_Homo_sapiens_sorted.bam##idx##SRR13439790_Homo_sapiens_sorted.bam.bai --write-index -]"
                 ],
                 [
-                    "SRR13439799_Influenza_A_virus_H1N1_sorted.bam pathogens reads consensus md5: cda4dd1ae67d1feafac47485b4b24cf8"
+                    "SRR13439799_Influenza_A_virus_H1N1_sorted.bam pathogens reads consensus md5: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:NC_002205.1\tLN:2313, @SQ\tSN:NC_002206.1\tLN:2204, @SQ\tSN:NC_002207.1\tLN:1882, @SQ\tSN:NC_002208.1\tLN:1841, @SQ\tSN:NC_002209.1\tLN:1557, @SQ\tSN:NC_002210.1\tLN:1191, @SQ\tSN:NC_002211.1\tLN:1096, @SQ\tSN:NC_002204.1\tLN:2368, @SQ\tSN:NC_004910.1\tLN:2341, @SQ\tSN:NC_004911.1\tLN:2328, @SQ\tSN:NC_004912.1\tLN:2225, @SQ\tSN:NC_004908.1\tLN:1714, @SQ\tSN:NC_004905.2\tLN:1557, @SQ\tSN:NC_004909.1\tLN:1418, @SQ\tSN:NC_004907.1\tLN:1025, @SQ\tSN:NC_004906.1\tLN:890, @SQ\tSN:NC_006307.2\tLN:2365, @SQ\tSN:NC_006308.2\tLN:2363, @SQ\tSN:NC_006309.2\tLN:2183, @SQ\tSN:NC_006310.2\tLN:2073, @SQ\tSN:NC_006311.1\tLN:1807, @SQ\tSN:NC_006312.2\tLN:1180, @SQ\tSN:NC_006306.2\tLN:935, @SQ\tSN:NC_007357.1\tLN:2341, @SQ\tSN:NC_007358.1\tLN:2341, @SQ\tSN:NC_007359.1\tLN:2233, @SQ\tSN:NC_007362.1\tLN:1760, @SQ\tSN:NC_007360.1\tLN:1565, @SQ\tSN:NC_007361.1\tLN:1458, @SQ\tSN:NC_007363.1\tLN:1027, @SQ\tSN:NC_007364.1\tLN:865, @SQ\tSN:NC_007373.1\tLN:2341, @SQ\tSN:NC_007372.1\tLN:2341, @SQ\tSN:NC_007371.1\tLN:2233, @SQ\tSN:NC_007366.1\tLN:1762, @SQ\tSN:NC_007369.1\tLN:1566, @SQ\tSN:NC_007368.1\tLN:1467, @SQ\tSN:NC_007367.1\tLN:1027, @SQ\tSN:NC_007370.1\tLN:890, @SQ\tSN:NC_002023.1\tLN:2341, @SQ\tSN:NC_002021.1\tLN:2341, @SQ\tSN:NC_002022.1\tLN:2233, @SQ\tSN:NC_002017.1\tLN:1778, @SQ\tSN:NC_002019.1\tLN:1565, @SQ\tSN:NC_002018.1\tLN:1413, @SQ\tSN:NC_002016.1\tLN:1027, @SQ\tSN:NC_002020.1\tLN:890, @SQ\tSN:NC_007378.1\tLN:2341, @SQ\tSN:NC_007375.1\tLN:2341, @SQ\tSN:NC_007376.1\tLN:2233, @SQ\tSN:NC_007374.1\tLN:1773, @SQ\tSN:NC_007381.1\tLN:1497, @SQ\tSN:NC_007382.1\tLN:1410, @SQ\tSN:NC_007377.1\tLN:1027, @SQ\tSN:NC_007380.1\tLN:838, @SQ\tSN:NC_026422.1\tLN:2280, @SQ\tSN:NC_026423.1\tLN:2297, @SQ\tSN:NC_026424.1\tLN:2176, @SQ\tSN:NC_026425.1\tLN:1708, @SQ\tSN:NC_026426.1\tLN:1506, @SQ\tSN:NC_026429.1\tLN:1398, @SQ\tSN:NC_026427.1\tLN:985, @SQ\tSN:NC_026428.1\tLN:841, @SQ\tSN:NC_026438.1\tLN:2280, @SQ\tSN:NC_026435.1\tLN:2274, @SQ\tSN:NC_026437.1\tLN:2151, @SQ\tSN:NC_026433.1\tLN:1701, @SQ\tSN:NC_026436.1\tLN:1497, @SQ\tSN:NC_026434.1\tLN:1410, @SQ\tSN:NC_026431.1\tLN:982, @SQ\tSN:NC_026432.1\tLN:863, @SQ\tSN:NC_036616.1\tLN:2364, @SQ\tSN:NC_036615.1\tLN:2330, @SQ\tSN:NC_036619.1\tLN:2195, @SQ\tSN:NC_036618.1\tLN:2049, @SQ\tSN:NC_036617.1\tLN:1775, @SQ\tSN:NC_036620.1\tLN:1219, @SQ\tSN:NC_036621.1\tLN:868, @SQ\tSN:NC_060925.1\tLN:10001, @SQ\tSN:NC_060926.1\tLN:10001, @SQ\tSN:NC_060927.1\tLN:10001, @SQ\tSN:NC_060928.1\tLN:10001, @SQ\tSN:NC_060929.1\tLN:10001, @SQ\tSN:NC_060930.1\tLN:10001, @SQ\tSN:NC_060931.1\tLN:10001, @SQ\tSN:NC_060932.1\tLN:10001, @SQ\tSN:NC_060933.1\tLN:10001, @SQ\tSN:NC_060934.1\tLN:10001, @SQ\tSN:NC_060935.1\tLN:10001, @SQ\tSN:NC_060936.1\tLN:10001, @SQ\tSN:NC_060937.1\tLN:10001, @SQ\tSN:NC_060938.1\tLN:10001, @SQ\tSN:NC_060939.1\tLN:10001, @SQ\tSN:NC_060940.1\tLN:10001, @SQ\tSN:NC_060941.1\tLN:10001, @SQ\tSN:NC_060942.1\tLN:10001, @SQ\tSN:NC_060943.1\tLN:10001, @SQ\tSN:NC_060944.1\tLN:10001, @SQ\tSN:NC_060945.1\tLN:10001, @SQ\tSN:NC_060946.1\tLN:10001, @SQ\tSN:NC_060947.1\tLN:10001, @SQ\tSN:NC_060948.1\tLN:10001, @PG\tID:minimap2\tPN:minimap2\tVN:2.29-r1283\tCL:minimap2 --sam-hit-only -t 4 -a reference.fasta.mmi SRR13439799.unmapped_other.fastq.gz, @PG\tID:samtools\tPN:samtools\tPP:minimap2\tVN:1.21\tCL:samtools sort -@ 3 -o SRR13439799.bam##idx##SRR13439799.bam.bai --write-index, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439799.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439799_aligned_pathogens_genome_sorted --threads 4 --reference reference.fasta -o SRR13439799_aligned_pathogens_genome_sorted.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.21\tCL:samtools view -o SRR13439799_taxid_211044_Influenza_A_virus_H1N1.bam SRR13439799_aligned_pathogens_genome_sorted.bam NC_002023.1 NC_002022.1 NC_002019.1 NC_002020.1, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools cat SRR13439799_taxid_211044_Influenza_A_virus_H1N1.bam, @PG\tID:samtools.5\tPN:samtools\tPP:samtools.4\tVN:1.23.1\tCL:samtools sort -T SRR13439799_Influenza_A_virus_H1N1_sorted --threads 4 -o SRR13439799_Influenza_A_virus_H1N1_sorted.bam##idx##SRR13439799_Influenza_A_virus_H1N1_sorted.bam.bai --write-index -]"
                 ],
                 [
-                    "SRR13439802_Homo_sapiens_sorted.bam pathogens reads consensus md5: eb7c159f7b3d497a694c23249a3bc54a"
+                    "SRR13439802_Homo_sapiens_sorted.bam pathogens reads consensus md5: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:NC_002205.1\tLN:2313, @SQ\tSN:NC_002206.1\tLN:2204, @SQ\tSN:NC_002207.1\tLN:1882, @SQ\tSN:NC_002208.1\tLN:1841, @SQ\tSN:NC_002209.1\tLN:1557, @SQ\tSN:NC_002210.1\tLN:1191, @SQ\tSN:NC_002211.1\tLN:1096, @SQ\tSN:NC_002204.1\tLN:2368, @SQ\tSN:NC_004910.1\tLN:2341, @SQ\tSN:NC_004911.1\tLN:2328, @SQ\tSN:NC_004912.1\tLN:2225, @SQ\tSN:NC_004908.1\tLN:1714, @SQ\tSN:NC_004905.2\tLN:1557, @SQ\tSN:NC_004909.1\tLN:1418, @SQ\tSN:NC_004907.1\tLN:1025, @SQ\tSN:NC_004906.1\tLN:890, @SQ\tSN:NC_006307.2\tLN:2365, @SQ\tSN:NC_006308.2\tLN:2363, @SQ\tSN:NC_006309.2\tLN:2183, @SQ\tSN:NC_006310.2\tLN:2073, @SQ\tSN:NC_006311.1\tLN:1807, @SQ\tSN:NC_006312.2\tLN:1180, @SQ\tSN:NC_006306.2\tLN:935, @SQ\tSN:NC_007357.1\tLN:2341, @SQ\tSN:NC_007358.1\tLN:2341, @SQ\tSN:NC_007359.1\tLN:2233, @SQ\tSN:NC_007362.1\tLN:1760, @SQ\tSN:NC_007360.1\tLN:1565, @SQ\tSN:NC_007361.1\tLN:1458, @SQ\tSN:NC_007363.1\tLN:1027, @SQ\tSN:NC_007364.1\tLN:865, @SQ\tSN:NC_007373.1\tLN:2341, @SQ\tSN:NC_007372.1\tLN:2341, @SQ\tSN:NC_007371.1\tLN:2233, @SQ\tSN:NC_007366.1\tLN:1762, @SQ\tSN:NC_007369.1\tLN:1566, @SQ\tSN:NC_007368.1\tLN:1467, @SQ\tSN:NC_007367.1\tLN:1027, @SQ\tSN:NC_007370.1\tLN:890, @SQ\tSN:NC_002023.1\tLN:2341, @SQ\tSN:NC_002021.1\tLN:2341, @SQ\tSN:NC_002022.1\tLN:2233, @SQ\tSN:NC_002017.1\tLN:1778, @SQ\tSN:NC_002019.1\tLN:1565, @SQ\tSN:NC_002018.1\tLN:1413, @SQ\tSN:NC_002016.1\tLN:1027, @SQ\tSN:NC_002020.1\tLN:890, @SQ\tSN:NC_007378.1\tLN:2341, @SQ\tSN:NC_007375.1\tLN:2341, @SQ\tSN:NC_007376.1\tLN:2233, @SQ\tSN:NC_007374.1\tLN:1773, @SQ\tSN:NC_007381.1\tLN:1497, @SQ\tSN:NC_007382.1\tLN:1410, @SQ\tSN:NC_007377.1\tLN:1027, @SQ\tSN:NC_007380.1\tLN:838, @SQ\tSN:NC_026422.1\tLN:2280, @SQ\tSN:NC_026423.1\tLN:2297, @SQ\tSN:NC_026424.1\tLN:2176, @SQ\tSN:NC_026425.1\tLN:1708, @SQ\tSN:NC_026426.1\tLN:1506, @SQ\tSN:NC_026429.1\tLN:1398, @SQ\tSN:NC_026427.1\tLN:985, @SQ\tSN:NC_026428.1\tLN:841, @SQ\tSN:NC_026438.1\tLN:2280, @SQ\tSN:NC_026435.1\tLN:2274, @SQ\tSN:NC_026437.1\tLN:2151, @SQ\tSN:NC_026433.1\tLN:1701, @SQ\tSN:NC_026436.1\tLN:1497, @SQ\tSN:NC_026434.1\tLN:1410, @SQ\tSN:NC_026431.1\tLN:982, @SQ\tSN:NC_026432.1\tLN:863, @SQ\tSN:NC_036616.1\tLN:2364, @SQ\tSN:NC_036615.1\tLN:2330, @SQ\tSN:NC_036619.1\tLN:2195, @SQ\tSN:NC_036618.1\tLN:2049, @SQ\tSN:NC_036617.1\tLN:1775, @SQ\tSN:NC_036620.1\tLN:1219, @SQ\tSN:NC_036621.1\tLN:868, @SQ\tSN:NC_060925.1\tLN:10001, @SQ\tSN:NC_060926.1\tLN:10001, @SQ\tSN:NC_060927.1\tLN:10001, @SQ\tSN:NC_060928.1\tLN:10001, @SQ\tSN:NC_060929.1\tLN:10001, @SQ\tSN:NC_060930.1\tLN:10001, @SQ\tSN:NC_060931.1\tLN:10001, @SQ\tSN:NC_060932.1\tLN:10001, @SQ\tSN:NC_060933.1\tLN:10001, @SQ\tSN:NC_060934.1\tLN:10001, @SQ\tSN:NC_060935.1\tLN:10001, @SQ\tSN:NC_060936.1\tLN:10001, @SQ\tSN:NC_060937.1\tLN:10001, @SQ\tSN:NC_060938.1\tLN:10001, @SQ\tSN:NC_060939.1\tLN:10001, @SQ\tSN:NC_060940.1\tLN:10001, @SQ\tSN:NC_060941.1\tLN:10001, @SQ\tSN:NC_060942.1\tLN:10001, @SQ\tSN:NC_060943.1\tLN:10001, @SQ\tSN:NC_060944.1\tLN:10001, @SQ\tSN:NC_060945.1\tLN:10001, @SQ\tSN:NC_060946.1\tLN:10001, @SQ\tSN:NC_060947.1\tLN:10001, @SQ\tSN:NC_060948.1\tLN:10001, @RG\tID:SRR13439802\tSM:SRR13439802, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-l --wrapper basic-0 -x ./bowtie2/reference.fasta --threads 4 --rg-id SRR13439802 --rg SM:SRR13439802 --passthrough -1 SRR13439802.unmapped_1.fastq.gz -2 SRR13439802.unmapped_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439802.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439802.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439802_aligned_pathogens_genome_sorted --threads 4 --reference reference.fasta -o SRR13439802_aligned_pathogens_genome_sorted.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.21\tCL:samtools view -o SRR13439802_taxid_9606_Homo_sapiens.bam SRR13439802_aligned_pathogens_genome_sorted.bam NC_060935.1 NC_060937.1 NC_060939.1 NC_060944.1 NC_060945.1 NC_060946.1 NC_060947.1, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools cat SRR13439802_taxid_9606_Homo_sapiens.bam, @PG\tID:samtools.5\tPN:samtools\tPP:samtools.4\tVN:1.23.1\tCL:samtools sort -T SRR13439802_Homo_sapiens_sorted --threads 4 -o SRR13439802_Homo_sapiens_sorted.bam##idx##SRR13439802_Homo_sapiens_sorted.bam.bai --write-index -]"
                 ],
                 [
-                    "SRR13439813_Homo_sapiens_sorted.bam pathogens reads consensus md5: ce72525c51a01970cae51aeef20561fb"
+                    "SRR13439813_Homo_sapiens_sorted.bam pathogens reads consensus md5: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:NC_002205.1\tLN:2313, @SQ\tSN:NC_002206.1\tLN:2204, @SQ\tSN:NC_002207.1\tLN:1882, @SQ\tSN:NC_002208.1\tLN:1841, @SQ\tSN:NC_002209.1\tLN:1557, @SQ\tSN:NC_002210.1\tLN:1191, @SQ\tSN:NC_002211.1\tLN:1096, @SQ\tSN:NC_002204.1\tLN:2368, @SQ\tSN:NC_004910.1\tLN:2341, @SQ\tSN:NC_004911.1\tLN:2328, @SQ\tSN:NC_004912.1\tLN:2225, @SQ\tSN:NC_004908.1\tLN:1714, @SQ\tSN:NC_004905.2\tLN:1557, @SQ\tSN:NC_004909.1\tLN:1418, @SQ\tSN:NC_004907.1\tLN:1025, @SQ\tSN:NC_004906.1\tLN:890, @SQ\tSN:NC_006307.2\tLN:2365, @SQ\tSN:NC_006308.2\tLN:2363, @SQ\tSN:NC_006309.2\tLN:2183, @SQ\tSN:NC_006310.2\tLN:2073, @SQ\tSN:NC_006311.1\tLN:1807, @SQ\tSN:NC_006312.2\tLN:1180, @SQ\tSN:NC_006306.2\tLN:935, @SQ\tSN:NC_007357.1\tLN:2341, @SQ\tSN:NC_007358.1\tLN:2341, @SQ\tSN:NC_007359.1\tLN:2233, @SQ\tSN:NC_007362.1\tLN:1760, @SQ\tSN:NC_007360.1\tLN:1565, @SQ\tSN:NC_007361.1\tLN:1458, @SQ\tSN:NC_007363.1\tLN:1027, @SQ\tSN:NC_007364.1\tLN:865, @SQ\tSN:NC_007373.1\tLN:2341, @SQ\tSN:NC_007372.1\tLN:2341, @SQ\tSN:NC_007371.1\tLN:2233, @SQ\tSN:NC_007366.1\tLN:1762, @SQ\tSN:NC_007369.1\tLN:1566, @SQ\tSN:NC_007368.1\tLN:1467, @SQ\tSN:NC_007367.1\tLN:1027, @SQ\tSN:NC_007370.1\tLN:890, @SQ\tSN:NC_002023.1\tLN:2341, @SQ\tSN:NC_002021.1\tLN:2341, @SQ\tSN:NC_002022.1\tLN:2233, @SQ\tSN:NC_002017.1\tLN:1778, @SQ\tSN:NC_002019.1\tLN:1565, @SQ\tSN:NC_002018.1\tLN:1413, @SQ\tSN:NC_002016.1\tLN:1027, @SQ\tSN:NC_002020.1\tLN:890, @SQ\tSN:NC_007378.1\tLN:2341, @SQ\tSN:NC_007375.1\tLN:2341, @SQ\tSN:NC_007376.1\tLN:2233, @SQ\tSN:NC_007374.1\tLN:1773, @SQ\tSN:NC_007381.1\tLN:1497, @SQ\tSN:NC_007382.1\tLN:1410, @SQ\tSN:NC_007377.1\tLN:1027, @SQ\tSN:NC_007380.1\tLN:838, @SQ\tSN:NC_026422.1\tLN:2280, @SQ\tSN:NC_026423.1\tLN:2297, @SQ\tSN:NC_026424.1\tLN:2176, @SQ\tSN:NC_026425.1\tLN:1708, @SQ\tSN:NC_026426.1\tLN:1506, @SQ\tSN:NC_026429.1\tLN:1398, @SQ\tSN:NC_026427.1\tLN:985, @SQ\tSN:NC_026428.1\tLN:841, @SQ\tSN:NC_026438.1\tLN:2280, @SQ\tSN:NC_026435.1\tLN:2274, @SQ\tSN:NC_026437.1\tLN:2151, @SQ\tSN:NC_026433.1\tLN:1701, @SQ\tSN:NC_026436.1\tLN:1497, @SQ\tSN:NC_026434.1\tLN:1410, @SQ\tSN:NC_026431.1\tLN:982, @SQ\tSN:NC_026432.1\tLN:863, @SQ\tSN:NC_036616.1\tLN:2364, @SQ\tSN:NC_036615.1\tLN:2330, @SQ\tSN:NC_036619.1\tLN:2195, @SQ\tSN:NC_036618.1\tLN:2049, @SQ\tSN:NC_036617.1\tLN:1775, @SQ\tSN:NC_036620.1\tLN:1219, @SQ\tSN:NC_036621.1\tLN:868, @SQ\tSN:NC_060925.1\tLN:10001, @SQ\tSN:NC_060926.1\tLN:10001, @SQ\tSN:NC_060927.1\tLN:10001, @SQ\tSN:NC_060928.1\tLN:10001, @SQ\tSN:NC_060929.1\tLN:10001, @SQ\tSN:NC_060930.1\tLN:10001, @SQ\tSN:NC_060931.1\tLN:10001, @SQ\tSN:NC_060932.1\tLN:10001, @SQ\tSN:NC_060933.1\tLN:10001, @SQ\tSN:NC_060934.1\tLN:10001, @SQ\tSN:NC_060935.1\tLN:10001, @SQ\tSN:NC_060936.1\tLN:10001, @SQ\tSN:NC_060937.1\tLN:10001, @SQ\tSN:NC_060938.1\tLN:10001, @SQ\tSN:NC_060939.1\tLN:10001, @SQ\tSN:NC_060940.1\tLN:10001, @SQ\tSN:NC_060941.1\tLN:10001, @SQ\tSN:NC_060942.1\tLN:10001, @SQ\tSN:NC_060943.1\tLN:10001, @SQ\tSN:NC_060944.1\tLN:10001, @SQ\tSN:NC_060945.1\tLN:10001, @SQ\tSN:NC_060946.1\tLN:10001, @SQ\tSN:NC_060947.1\tLN:10001, @SQ\tSN:NC_060948.1\tLN:10001, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-l --wrapper basic-0 -x ./bowtie2/reference.fasta --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813.unmapped_1.fastq.gz -2 SRR13439813.unmapped_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_aligned_pathogens_genome_sorted --threads 4 --reference reference.fasta -o SRR13439813_aligned_pathogens_genome_sorted.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.21\tCL:samtools view -o SRR13439813_taxid_9606_Homo_sapiens.bam SRR13439813_aligned_pathogens_genome_sorted.bam NC_060928.1 NC_060937.1 NC_060939.1 NC_060946.1 NC_060947.1, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools cat SRR13439813_taxid_9606_Homo_sapiens.bam, @PG\tID:samtools.5\tPN:samtools\tPP:samtools.4\tVN:1.23.1\tCL:samtools sort -T SRR13439813_Homo_sapiens_sorted --threads 4 -o SRR13439813_Homo_sapiens_sorted.bam##idx##SRR13439813_Homo_sapiens_sorted.bam.bai --write-index -]"
                 ]
             ],
             [
                 
             ]
         ],
-        "timestamp": "2026-07-06T15:42:35.884577218",
+        "timestamp": "2026-07-06T16:25:02.7479449",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -393,7 +434,7 @@
                 "SRR13439813_Homo_sapiens_samtools.fasta:md5,a06778a8d2ca667eb4f12d1fd7a43f87"
             ]
         ],
-        "timestamp": "2026-07-06T15:42:33.001119798",
+        "timestamp": "2026-07-06T16:24:59.766723386",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -405,7 +446,7 @@
                 
             ]
         ],
-        "timestamp": "2026-07-06T15:42:27.68703472",
+        "timestamp": "2026-07-06T16:24:54.24317177",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -417,7 +458,7 @@
                 
             ]
         ],
-        "timestamp": "2026-07-06T15:42:29.034053564",
+        "timestamp": "2026-07-06T16:24:55.651592197",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -494,7 +535,7 @@
                 
             ]
         ],
-        "timestamp": "2026-07-06T15:42:27.778536364",
+        "timestamp": "2026-07-06T16:24:54.348705085",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -528,7 +569,7 @@
                 "SRR13439813_kraken2_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-07-06T15:42:31.083059842",
+        "timestamp": "2026-07-06T16:24:57.772624415",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -554,7 +595,7 @@
                 
             ]
         ],
-        "timestamp": "2026-07-06T15:42:27.674825909",
+        "timestamp": "2026-07-06T16:24:54.231198069",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"

@@ -67,6 +67,8 @@ nextflow_pipeline {
             def bam_files_pathogens_reads_consensus  = getAllFilesFromDir(params.outdir, include: ['pathogens/pathogen_reads/consensus_input/*.bam'])
 
 
+
+
             assertAll(
                 { assert workflow.success},
                 { assert snapshot(
@@ -114,8 +116,25 @@ nextflow_pipeline {
 
                 //pathogens reads consensus
                  { assert snapshot (
-                    bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file -> [file.getName() + " pathogens reads consensus md5: " + bam(file.toString()).getReadsMD5()] },
+                    bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file -> [file.getName() + " pathogens reads consensus md5: " + bam(file.toString()).getHeader()] },
                     stable_content_pathogens_reads_consensus).match("pathogens_reads_consensus")},
+
+
+                // spades kraken2
+                { assert snapshot(
+                        getAllFilesFromDir("$outputDir/spades/kraken2", include: ['*.fa']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    ).match("spades_kraken2")
+                },
+
+                 { assert snapshot(
+                        getAllFilesFromDir("$outputDir/spades/centrifuge", include: ['*.fa']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    ).match("spades_centrifuge")
+                },
+
+                 { assert snapshot(
+                        getAllFilesFromDir("$outputDir/spades/diamond", include: ['*.fa']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    ).match("spades_diamond")
+                },
 
                   // { assert snapshot (stable_content_pathogens_bowtie2_build).match("pathogens_bowtie2_build")},
                   // { assert snapshot (
