@@ -65,7 +65,9 @@ nextflow_pipeline {
             //pathogens reads blast input
             def stable_content_pathogens_reads_blast = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/pathogen_reads/blast_input/*'], ignoreFile: 'tests/.nftignore')
 
-
+            //pathogens
+            def stable_content_pathogens_reads_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/pathogen_reads/consensus_input/*'], ignoreFile: 'tests/.nftignore')
+            def bam_files_pathogens_reads_consensus  = getAllFilesFromDir(params.outdir, include: ['pathogens/pathogen_reads/consensus_input/*.bam'])
 
             assertAll(
                 { assert workflow.success},
@@ -111,6 +113,11 @@ nextflow_pipeline {
                 },
                  //pathogens reads blast input
                 { assert snapshot (stable_content_pathogens_reads_blast).match("pathogens_reads_blast")},
+
+                //pathogens reads consensus
+                 { assert snapshot (
+                    bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file -> [file.getName() + " pathogens reads consensus md5: " + bam(file.toString()).getReadsMD5()] },
+                    stable_content_pathogens_reads_consensus).match("pathogens_reads_consensus")},
 
                   // { assert snapshot (stable_content_pathogens_bowtie2_build).match("pathogens_bowtie2_build")},
                   // { assert snapshot (
