@@ -32,7 +32,7 @@ nextflow_pipeline {
 
             //bowtie2 align
             def stable_content_bowtie2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['mapping/bowtie2/align'], ignoreFile: 'tests/.nftignore')
-            def bam_files_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['**/**/**/*.bam'])
+            def bam_files_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['mapping/bowtie2/align/*.bam'])
 
             //taxpasta
             def stable_content_taxpasta     = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include: ["taxpasta/**"]     , ignoreFile: 'tests/.nftignore')
@@ -46,7 +46,7 @@ nextflow_pipeline {
 
             //minimap2 align
             def stable_content_minimap2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['mapping/minimap2/align/*'], ignoreFile: 'tests/.nftignore')
-            def bam_files_minimap2_align  = getAllFilesFromDir(params.outdir, include: ['*.bam'])
+            def bam_files_minimap2_align  = getAllFilesFromDir(params.outdir, include: ['mapping/minimap2/align/*bam'])
 
             //pathogens blast
              def stable_content_pathogens_blast = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/blast/**/*'], ignoreFile: 'tests/.nftignore')
@@ -59,7 +59,7 @@ nextflow_pipeline {
 
              //bowtie2 align
             def stable_content_pathogens_bowtie2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/bowtie2/align/*'], ignoreFile: 'tests/.nftignore')
-            def bam_files_pathogens_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['**/**/**/**/*.bam'])
+            def bam_files_pathogens_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['pathogens/mapping/bowtie2/align/*.bam'])
 
 
 
