@@ -37,4 +37,15 @@ process EXTRACTDIAMONDREADS {
     # Compress the resulting fastq files
     pigz -p ${task.cpus} *.fastq
     """
+
+    stub:
+    def prefix = task.ext.prefix ?: "${meta.id}"
+    """
+    if [ "${meta.single_end}" == 'true' ]; then
+        touch ${prefix}.extracted_diamond_read.fastq.gz
+    else
+        touch ${prefix}.extracted_diamond_read_1.fastq.gz
+        touch ${prefix}.extracted_diamond_read_2.fastq.gz
+    fi
+    """
 }

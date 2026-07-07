@@ -32,4 +32,11 @@ process FILTER_BLAST {
         ${args}
 
     """
+
+    stub:
+    def prefix = task.ext.prefix ?: "${meta.id}"
+    """
+    touch ${prefix}_filtered.txt
+    touch ${prefix}_filtered_summary.txt
+    """
 }
