@@ -38,4 +38,15 @@ process EXTRACTCENTRIFUGEREADS {
 
     rm -f readID.txt
     """
+
+    stub:
+    def prefix = task.ext.prefix ?: "${meta.id}"
+    """
+    if [ "${meta.single_end}" == 'true' ]; then
+        touch ${prefix}.extracted_centrifuge_read.fastq.gz
+    else
+        touch ${prefix}.extracted_centrifuge_read_1.fastq.gz
+        touch ${prefix}.extracted_centrifuge_read_2.fastq.gz
+    fi
+    """
 }
