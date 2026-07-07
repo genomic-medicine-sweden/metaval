@@ -26,4 +26,10 @@ process SUBSET_BAM {
     """
     samtools view ${bam} ${accessions} -o ${prefix}.bam
     """
+
+    stub:
+    def prefix = task.ext.prefix ?: "${meta.id}"
+    """
+    touch ${prefix}.bam
+    """
 }

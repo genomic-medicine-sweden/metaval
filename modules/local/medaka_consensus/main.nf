@@ -70,4 +70,10 @@ process MEDAKA_PARALLEL {
     # Sort the consensus by reads ID
     seqkit sort -n ${prefix}.fa > ${prefix}_sorted.fasta
     """
+
+    stub:
+    def prefix = task.ext.prefix ?: "${meta.id}"
+    """
+    touch ${prefix}_sorted.fasta
+    """
 }
