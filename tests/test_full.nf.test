@@ -8,7 +8,7 @@ nextflow_pipeline {
     profile "test"
 
 
-    test("-profile test -stub") {
+    test("-profile test") {
     options "-stub"
 
         when {
