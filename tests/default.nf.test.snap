@@ -1,4 +1,425 @@
 {
+    "all_files": {
+        "content": [
+            [
+                "blast",
+                "blast/blastn",
+                "blast/blastn/centrifuge",
+                "blast/blastn/centrifuge/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_blast_filtered.txt",
+                "blast/blastn/centrifuge/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_blast_filtered_summary.txt",
+                "blast/blastn/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered.txt",
+                "blast/blastn/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered_summary.txt",
+                "blast/blastn/centrifuge/SRR13439802_taxid_878220_Chryseobacterium-sp-StRB126_blast_filtered.txt",
+                "blast/blastn/centrifuge/SRR13439802_taxid_878220_Chryseobacterium-sp-StRB126_blast_filtered_summary.txt",
+                "blast/blastn/centrifuge/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_blast_filtered.txt",
+                "blast/blastn/centrifuge/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_blast_filtered_summary.txt",
+                "blast/blastn/diamond",
+                "blast/blastn/diamond/SRR13439813_taxid_1920753_Gamaleyavirus_blast_filtered.txt",
+                "blast/blastn/diamond/SRR13439813_taxid_1920753_Gamaleyavirus_blast_filtered_summary.txt",
+                "blast/blastn/diamond/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_blast_filtered.txt",
+                "blast/blastn/diamond/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_blast_filtered_summary.txt",
+                "blast/blastn/kraken2",
+                "blast/blastn/kraken2/SRR13439790_taxid_1920753_Gamaleyavirus_blast_filtered.txt",
+                "blast/blastn/kraken2/SRR13439790_taxid_1920753_Gamaleyavirus_blast_filtered_summary.txt",
+                "blast/blastn/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered.txt",
+                "blast/blastn/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered_summary.txt",
+                "blast/blastn/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus_blast_filtered.txt",
+                "blast/blastn/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus_blast_filtered_summary.txt",
+                "blast/blastn/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_blast_filtered.txt",
+                "blast/blastn/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_blast_filtered_summary.txt",
+                "blast/blastx",
+                "blast/blastx/centrifuge",
+                "blast/blastx/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered.txt",
+                "blast/blastx/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered_summary.txt",
+                "blast/blastx/centrifuge/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_blastx_filtered.txt",
+                "blast/blastx/centrifuge/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_blastx_filtered_summary.txt",
+                "blast/blastx/kraken2",
+                "blast/blastx/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered.txt",
+                "blast/blastx/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered_summary.txt",
+                "blast/blastx/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus_blastx_filtered.txt",
+                "blast/blastx/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus_blastx_filtered_summary.txt",
+                "blast/blastx/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_blastx_filtered.txt",
+                "blast/blastx/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_blastx_filtered_summary.txt",
+                "extracted_reads",
+                "extracted_reads/centrifuge",
+                "extracted_reads/centrifuge/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1.extracted_centrifuge_read.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_878220_Chryseobacterium-sp-StRB126.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_878220_Chryseobacterium-sp-StRB126.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.extracted_centrifuge_read_2.fa",
+                "extracted_reads/diamond",
+                "extracted_reads/diamond/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_diamond_read_1.fa",
+                "extracted_reads/diamond/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_diamond_read_2.fa",
+                "extracted_reads/diamond/SRR13439813_taxid_1920753_Gamaleyavirus.extracted_diamond_read_1.fa",
+                "extracted_reads/diamond/SRR13439813_taxid_1920753_Gamaleyavirus.extracted_diamond_read_2.fa",
+                "extracted_reads/diamond/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.extracted_diamond_read_1.fa",
+                "extracted_reads/diamond/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.extracted_diamond_read_2.fa",
+                "extracted_reads/kraken2",
+                "extracted_reads/kraken2/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1.extracted_kraken2_read.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.extracted_kraken2_read_2.fa",
+                "fastqc",
+                "fastqc/input",
+                "fastqc/input/SRR13439790_taxid_1920753_Gamaleyavirus_kraken2_1_fastqc.html",
+                "fastqc/input/SRR13439790_taxid_1920753_Gamaleyavirus_kraken2_2_fastqc.html",
+                "fastqc/input/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_centrifuge_1_fastqc.html",
+                "fastqc/input/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_centrifuge_2_fastqc.html",
+                "fastqc/input/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_fastqc.html",
+                "fastqc/input/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_fastqc.html",
+                "fastqc/input/SRR13439802_taxid_878220_Chryseobacterium-sp-StRB126_centrifuge_1_fastqc.html",
+                "fastqc/input/SRR13439802_taxid_878220_Chryseobacterium-sp-StRB126_centrifuge_2_fastqc.html",
+                "fastqc/input/SRR13439813_taxid_1920753_Gamaleyavirus_diamond_1_fastqc.html",
+                "fastqc/input/SRR13439813_taxid_1920753_Gamaleyavirus_diamond_2_fastqc.html",
+                "fastqc/input/SRR13439813_taxid_1920753_Gamaleyavirus_kraken2_1_fastqc.html",
+                "fastqc/input/SRR13439813_taxid_1920753_Gamaleyavirus_kraken2_2_fastqc.html",
+                "fastqc/input/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_centrifuge_1_fastqc.html",
+                "fastqc/input/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_centrifuge_2_fastqc.html",
+                "fastqc/input/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_diamond_1_fastqc.html",
+                "fastqc/input/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_diamond_2_fastqc.html",
+                "fastqc/input/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_kraken2_1_fastqc.html",
+                "fastqc/input/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_kraken2_2_fastqc.html",
+                "igv",
+                "igv/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html",
+                "igv/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
+                "igv/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html",
+                "igv/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html",
+                "igv/SRR13439802_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html",
+                "igv/SRR13439813_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html",
+                "igv/SRR13439813_diamond_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-PGN829-1_GCA_003575565.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-St11Ph5_GCA_002956185.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC7_GCA_000924215.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-phage-pSb-1_GCA_000915775.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html",
+                "mapping",
+                "mapping/bowtie2",
+                "mapping/bowtie2/align",
+                "mapping/bowtie2/align/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439802_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439802_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_diamond_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_diamond_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-PGN829-1_GCA_003575565.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-PGN829-1_GCA_003575565.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-St11Ph5_GCA_002956185.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-St11Ph5_GCA_002956185.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC7_GCA_000924215.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC7_GCA_000924215.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-phage-pSb-1_GCA_000915775.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-phage-pSb-1_GCA_000915775.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam.bai",
+                "mapping/bowtie2/build",
+                "mapping/bowtie2/build/mappingorganism_Candidatus-Nitrosocosmicus-hydrocola",
+                "mapping/bowtie2/build/mappingorganism_Candidatus-Nitrosocosmicus-hydrocola/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Candidatus-Nitrosocosmicus-hydrocola/bowtie2/GCA_001870125.1_ASM187012v1_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Candidatus-Nitrosocosmicus-hydrocola/bowtie2/GCA_001870125.1_ASM187012v1_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Candidatus-Nitrosocosmicus-hydrocola/bowtie2/GCA_001870125.1_ASM187012v1_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Candidatus-Nitrosocosmicus-hydrocola/bowtie2/GCA_001870125.1_ASM187012v1_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Candidatus-Nitrosocosmicus-hydrocola/bowtie2/GCA_001870125.1_ASM187012v1_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Candidatus-Nitrosocosmicus-hydrocola/bowtie2/GCA_001870125.1_ASM187012v1_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126",
+                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-Bp4",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-Bp4/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-Bp4/bowtie2/GCA_000922735.2_ViralProj248626_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-Bp4/bowtie2/GCA_000922735.2_ViralProj248626_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-Bp4/bowtie2/GCA_000922735.2_ViralProj248626_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-Bp4/bowtie2/GCA_000922735.2_ViralProj248626_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-Bp4/bowtie2/GCA_000922735.2_ViralProj248626_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-Bp4/bowtie2/GCA_000922735.2_ViralProj248626_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2/GCA_002617245.1_ASM261724v1_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2/GCA_002617245.1_ASM261724v1_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2/GCA_002617245.1_ASM261724v1_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2/GCA_002617245.1_ASM261724v1_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2/GCA_002617245.1_ASM261724v1_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2/GCA_002617245.1_ASM261724v1_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-ECBP1",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-ECBP1/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-ECBP1/bowtie2/GCA_000900235.1_ViralProj177527_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-ECBP1/bowtie2/GCA_000900235.1_ViralProj177527_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-ECBP1/bowtie2/GCA_000900235.1_ViralProj177527_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-ECBP1/bowtie2/GCA_000900235.1_ViralProj177527_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-ECBP1/bowtie2/GCA_000900235.1_ViralProj177527_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-ECBP1/bowtie2/GCA_000900235.1_ViralProj177527_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-IME11",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-IME11/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-IME11/bowtie2/GCA_000903115.1_ViralProj179425_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-IME11/bowtie2/GCA_000903115.1_ViralProj179425_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-IME11/bowtie2/GCA_000903115.1_ViralProj179425_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-IME11/bowtie2/GCA_000903115.1_ViralProj179425_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-IME11/bowtie2/GCA_000903115.1_ViralProj179425_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-IME11/bowtie2/GCA_000903115.1_ViralProj179425_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-PGN829-1",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-PGN829-1/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-PGN829-1/bowtie2/GCA_003575565.1_ASM357556v1_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-PGN829-1/bowtie2/GCA_003575565.1_ASM357556v1_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-PGN829-1/bowtie2/GCA_003575565.1_ASM357556v1_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-PGN829-1/bowtie2/GCA_003575565.1_ASM357556v1_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-PGN829-1/bowtie2/GCA_003575565.1_ASM357556v1_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-PGN829-1/bowtie2/GCA_003575565.1_ASM357556v1_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-St11Ph5",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-St11Ph5/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-St11Ph5/bowtie2/GCA_002956185.1_ASM295618v1_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-St11Ph5/bowtie2/GCA_002956185.1_ASM295618v1_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-St11Ph5/bowtie2/GCA_002956185.1_ASM295618v1_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-St11Ph5/bowtie2/GCA_002956185.1_ASM295618v1_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-St11Ph5/bowtie2/GCA_002956185.1_ASM295618v1_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-St11Ph5/bowtie2/GCA_002956185.1_ASM295618v1_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-U1G",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-U1G/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-U1G/bowtie2/GCA_020475385.1_ASM2047538v1_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-U1G/bowtie2/GCA_020475385.1_ASM2047538v1_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-U1G/bowtie2/GCA_020475385.1_ASM2047538v1_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-U1G/bowtie2/GCA_020475385.1_ASM2047538v1_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-U1G/bowtie2/GCA_020475385.1_ASM2047538v1_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-U1G/bowtie2/GCA_020475385.1_ASM2047538v1_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2/GCA_003307555.1_ASM330755v1_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2/GCA_003307555.1_ASM330755v1_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2/GCA_003307555.1_ASM330755v1_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2/GCA_003307555.1_ASM330755v1_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2/GCA_003307555.1_ASM330755v1_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2/GCA_003307555.1_ASM330755v1_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-G7C",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-G7C/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-G7C/bowtie2/GCA_000891295.1_ViralProj72371_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-G7C/bowtie2/GCA_000891295.1_ViralProj72371_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-G7C/bowtie2/GCA_000891295.1_ViralProj72371_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-G7C/bowtie2/GCA_000891295.1_ViralProj72371_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-G7C/bowtie2/GCA_000891295.1_ViralProj72371_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-G7C/bowtie2/GCA_000891295.1_ViralProj72371_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5/bowtie2/GCA_000922515.1_ViralProj260483_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5/bowtie2/GCA_000922515.1_ViralProj260483_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5/bowtie2/GCA_000922515.1_ViralProj260483_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5/bowtie2/GCA_000922515.1_ViralProj260483_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5/bowtie2/GCA_000922515.1_ViralProj260483_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5/bowtie2/GCA_000922515.1_ViralProj260483_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC7",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC7/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC7/bowtie2/GCA_000924215.1_ViralProj260485_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC7/bowtie2/GCA_000924215.1_ViralProj260485_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC7/bowtie2/GCA_000924215.1_ViralProj260485_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC7/bowtie2/GCA_000924215.1_ViralProj260485_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC7/bowtie2/GCA_000924215.1_ViralProj260485_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC7/bowtie2/GCA_000924215.1_ViralProj260485_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-SP5M",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-SP5M/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-SP5M/bowtie2/GCA_013426605.1_ASM1342660v1_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-SP5M/bowtie2/GCA_013426605.1_ASM1342660v1_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-SP5M/bowtie2/GCA_013426605.1_ASM1342660v1_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-SP5M/bowtie2/GCA_013426605.1_ASM1342660v1_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-SP5M/bowtie2/GCA_013426605.1_ASM1342660v1_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-SP5M/bowtie2/GCA_013426605.1_ASM1342660v1_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-ZQ2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-ZQ2/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-ZQ2/bowtie2/GCA_019095225.1_ASM1909522v1_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-ZQ2/bowtie2/GCA_019095225.1_ASM1909522v1_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-ZQ2/bowtie2/GCA_019095225.1_ASM1909522v1_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-ZQ2/bowtie2/GCA_019095225.1_ASM1909522v1_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-ZQ2/bowtie2/GCA_019095225.1_ASM1909522v1_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-ZQ2/bowtie2/GCA_019095225.1_ASM1909522v1_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Homo-sapiens",
+                "mapping/bowtie2/build/mappingorganism_Homo-sapiens/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Homo-sapiens/bowtie2/GCA_009914755.4_T2T-CHM13v2.0_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Homo-sapiens/bowtie2/GCA_009914755.4_T2T-CHM13v2.0_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Homo-sapiens/bowtie2/GCA_009914755.4_T2T-CHM13v2.0_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Homo-sapiens/bowtie2/GCA_009914755.4_T2T-CHM13v2.0_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Homo-sapiens/bowtie2/GCA_009914755.4_T2T-CHM13v2.0_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Homo-sapiens/bowtie2/GCA_009914755.4_T2T-CHM13v2.0_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-phage-pSb-1",
+                "mapping/bowtie2/build/mappingorganism_Shigella-phage-pSb-1/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-phage-pSb-1/bowtie2/GCA_000915775.1_ViralProj240039_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-phage-pSb-1/bowtie2/GCA_000915775.1_ViralProj240039_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-phage-pSb-1/bowtie2/GCA_000915775.1_ViralProj240039_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-phage-pSb-1/bowtie2/GCA_000915775.1_ViralProj240039_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-phage-pSb-1/bowtie2/GCA_000915775.1_ViralProj240039_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-phage-pSb-1/bowtie2/GCA_000915775.1_ViralProj240039_genomic.fna.rev.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19",
+                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.2.bt2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.3.bt2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.4.bt2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.rev.1.bt2",
+                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2",
+                "mapping/minimap2",
+                "mapping/minimap2/align",
+                "mapping/minimap2/align/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam",
+                "mapping/minimap2/align/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai",
+                "mapping/minimap2/align/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam",
+                "mapping/minimap2/align/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai",
+                "mapping/minimap2/index",
+                "mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1",
+                "mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1/GCA_037915385.1_ASM3791538v1_genomic.fna.mmi",
+                "multiqc",
+                "multiqc/multiqc_data",
+                "multiqc/multiqc_data/fastqc-status-check-heatmap.txt",
+                "multiqc/multiqc_data/fastqc_overrepresented_sequences_plot.txt",
+                "multiqc/multiqc_data/fastqc_per_base_n_content_plot.txt",
+                "multiqc/multiqc_data/fastqc_per_base_sequence_quality_plot.txt",
+                "multiqc/multiqc_data/fastqc_per_sequence_gc_content_plot_Counts.txt",
+                "multiqc/multiqc_data/fastqc_per_sequence_gc_content_plot_Percentages.txt",
+                "multiqc/multiqc_data/fastqc_per_sequence_quality_scores_plot.txt",
+                "multiqc/multiqc_data/fastqc_sequence_counts_plot.txt",
+                "multiqc/multiqc_data/fastqc_sequence_duplication_levels_plot.txt",
+                "multiqc/multiqc_data/fastqc_sequence_length_distribution_plot.txt",
+                "multiqc/multiqc_data/fastqc_top_overrepresented_sequences_table.txt",
+                "multiqc/multiqc_data/llms-full.txt",
+                "multiqc/multiqc_data/multiqc.log",
+                "multiqc/multiqc_data/multiqc.parquet",
+                "multiqc/multiqc_data/multiqc_citations.txt",
+                "multiqc/multiqc_data/multiqc_data.json",
+                "multiqc/multiqc_data/multiqc_fastqc.txt",
+                "multiqc/multiqc_data/multiqc_general_stats.txt",
+                "multiqc/multiqc_data/multiqc_samtools_flagstat.txt",
+                "multiqc/multiqc_data/multiqc_software_versions.txt",
+                "multiqc/multiqc_data/multiqc_sources.txt",
+                "multiqc/multiqc_data/samtools-flagstat-pct-table.txt",
+                "multiqc/multiqc_data/samtools-flagstat-table.txt",
+                "multiqc/multiqc_plots",
+                "multiqc/multiqc_plots/pdf",
+                "multiqc/multiqc_plots/png",
+                "multiqc/multiqc_plots/svg",
+                "multiqc/multiqc_report.html",
+                "pathogens",
+                "pathogens/blast",
+                "pathogens/blast/blastn",
+                "pathogens/blast/blastn/SRR13439799_Influenza_A_virus_H1N1_blast_filtered.txt",
+                "pathogens/blast/blastn/SRR13439799_Influenza_A_virus_H1N1_blast_filtered_summary.txt",
+                "pathogens/blast/blastx",
+                "pathogens/blast/blastx/SRR13439799_Influenza_A_virus_H1N1_blastx_filtered.txt",
+                "pathogens/blast/blastx/SRR13439799_Influenza_A_virus_H1N1_blastx_filtered_summary.txt",
+                "pathogens/consensus",
+                "pathogens/consensus/SRR13439790_Homo_sapiens_samtools.fasta",
+                "pathogens/consensus/SRR13439799_Influenza_A_virus_H1N1_medaka_sorted.fasta",
+                "pathogens/consensus/SRR13439802_Homo_sapiens_samtools.fasta",
+                "pathogens/consensus/SRR13439813_Homo_sapiens_samtools.fasta",
+                "pathogens/igv",
+                "pathogens/igv/SRR13439790_Homo_sapiens_report.html",
+                "pathogens/igv/SRR13439799_Influenza_A_virus_H1N1_report.html",
+                "pathogens/igv/SRR13439802_Homo_sapiens_report.html",
+                "pathogens/igv/SRR13439813_Homo_sapiens_report.html",
+                "pathogens/mapping",
+                "pathogens/mapping/bowtie2",
+                "pathogens/mapping/bowtie2/align",
+                "pathogens/mapping/bowtie2/align/SRR13439790_aligned_pathogens_genome_sorted.bam",
+                "pathogens/mapping/bowtie2/align/SRR13439790_aligned_pathogens_genome_sorted.bam.bai",
+                "pathogens/mapping/bowtie2/align/SRR13439802_aligned_pathogens_genome_sorted.bam",
+                "pathogens/mapping/bowtie2/align/SRR13439802_aligned_pathogens_genome_sorted.bam.bai",
+                "pathogens/mapping/bowtie2/align/SRR13439813_aligned_pathogens_genome_sorted.bam",
+                "pathogens/mapping/bowtie2/align/SRR13439813_aligned_pathogens_genome_sorted.bam.bai",
+                "pathogens/mapping/bowtie2/build",
+                "pathogens/mapping/bowtie2/build/bowtie2",
+                "pathogens/mapping/bowtie2/build/bowtie2/reference.fasta.1.bt2l",
+                "pathogens/mapping/bowtie2/build/bowtie2/reference.fasta.2.bt2l",
+                "pathogens/mapping/bowtie2/build/bowtie2/reference.fasta.3.bt2l",
+                "pathogens/mapping/bowtie2/build/bowtie2/reference.fasta.4.bt2l",
+                "pathogens/mapping/bowtie2/build/bowtie2/reference.fasta.rev.1.bt2l",
+                "pathogens/mapping/bowtie2/build/bowtie2/reference.fasta.rev.2.bt2l",
+                "pathogens/mapping/minimap2",
+                "pathogens/mapping/minimap2/align",
+                "pathogens/mapping/minimap2/align/SRR13439799_aligned_pathogens_genome_sorted.bam",
+                "pathogens/mapping/minimap2/align/SRR13439799_aligned_pathogens_genome_sorted.bam.bai",
+                "pathogens/mapping/minimap2/index",
+                "pathogens/mapping/minimap2/index/reference.fasta.mmi",
+                "pathogens/pathogen_reads",
+                "pathogens/pathogen_reads/blast_input",
+                "pathogens/pathogen_reads/blast_input/SRR13439790_Influenza_A_virus_H3N2_1.fasta.gz",
+                "pathogens/pathogen_reads/blast_input/SRR13439790_Influenza_A_virus_H3N2_2.fasta.gz",
+                "pathogens/pathogen_reads/blast_input/SRR13439799_Influenza_A_virus_H2N2_1.fasta.gz",
+                "pathogens/pathogen_reads/consensus_input",
+                "pathogens/pathogen_reads/consensus_input/SRR13439790_Homo_sapiens_sorted.bam",
+                "pathogens/pathogen_reads/consensus_input/SRR13439790_Homo_sapiens_sorted.bam.bai",
+                "pathogens/pathogen_reads/consensus_input/SRR13439799_Influenza_A_virus_H1N1_sorted.bam",
+                "pathogens/pathogen_reads/consensus_input/SRR13439799_Influenza_A_virus_H1N1_sorted.bam.bai",
+                "pathogens/pathogen_reads/consensus_input/SRR13439802_Homo_sapiens_sorted.bam",
+                "pathogens/pathogen_reads/consensus_input/SRR13439802_Homo_sapiens_sorted.bam.bai",
+                "pathogens/pathogen_reads/consensus_input/SRR13439813_Homo_sapiens_sorted.bam",
+                "pathogens/pathogen_reads/consensus_input/SRR13439813_Homo_sapiens_sorted.bam.bai",
+                "pipeline_info",
+                "pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml",
+                "spades",
+                "spades/centrifuge",
+                "spades/centrifuge/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.contigs.fa",
+                "spades/centrifuge/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.scaffolds.fa",
+                "spades/centrifuge/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.spades.log",
+                "spades/diamond",
+                "spades/diamond/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.contigs.fa",
+                "spades/diamond/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.scaffolds.fa",
+                "spades/diamond/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.spades.log",
+                "spades/diamond/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.warnings.log",
+                "spades/kraken2",
+                "spades/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus.contigs.fa",
+                "spades/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus.scaffolds.fa",
+                "spades/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus.spades.log",
+                "spades/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.contigs.fa",
+                "spades/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.scaffolds.fa",
+                "spades/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.spades.log",
+                "spades/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.warnings.log"
+            ]
+        ],
+        "meta": {
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:36:56.187678197"
+    },
     "spades_centrifuge": {
         "content": [
             [
@@ -7,11 +428,11 @@
                 "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.spades.log exists: true"
             ]
         ],
-        "timestamp": "2026-07-07T15:37:00.831540552",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:37:10.033417264"
     },
     "spades_diamond": {
         "content": [
@@ -22,11 +443,11 @@
                 "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.warnings.log exists: true"
             ]
         ],
-        "timestamp": "2026-07-07T15:37:01.796598791",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:37:10.983336582"
     },
     "bowtie2_build": {
         "content": [
@@ -141,11 +562,11 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-07-07T15:36:49.306390134",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:36:56.951858192"
     },
     "spades_kraken2": {
         "content": [
@@ -159,11 +580,11 @@
                 "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.warnings.log exists: true"
             ]
         ],
-        "timestamp": "2026-07-07T15:36:59.860985494",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:37:08.870354874"
     },
     "blastn": {
         "content": [
@@ -194,11 +615,11 @@
                 "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_blast_filtered_summary.txt(diamond) true"
             ]
         ],
-        "timestamp": "2026-07-07T15:36:48.156827565",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:36:56.303365265"
     },
     "pathogens_igv": {
         "content": [
@@ -209,11 +630,11 @@
                 "SRR13439813_Homo_sapiens_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-07-07T15:36:56.915383828",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:37:05.771134781"
     },
     "pathogens_reads_blast": {
         "content": [
@@ -223,11 +644,11 @@
                 "SRR13439799_Influenza_A_virus_H2N2_1.fasta.gz:md5,d41d8cd98f00b204e9800998ecf8427e"
             ]
         ],
-        "timestamp": "2026-07-07T15:36:57.860715739",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:37:06.747931043"
     },
     "pathogens_blast": {
         "content": [
@@ -240,11 +661,11 @@
                 "SRR13439799_Influenza_A_virus_H1N1_blastx_filtered_summary.txt contains string:true"
             ]
         ],
-        "timestamp": "2026-07-07T15:36:54.965697849",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:37:03.727347087"
     },
     "minimap2_align": {
         "content": [
@@ -263,11 +684,11 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,481e4fddfe11018be67ff5dcce3eb748"
             ]
         ],
-        "timestamp": "2026-07-07T15:36:52.955497566",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:37:01.707800148"
     },
     "-profile test_taxid": {
         "content": [
@@ -393,11 +814,11 @@
                 }
             }
         ],
-        "timestamp": "2026-07-07T15:36:47.740261522",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:36:56.163599775"
     },
     "pathogens_reads_consensus": {
         "content": [
@@ -416,11 +837,11 @@
                 ]
             ]
         ],
-        "timestamp": "2026-07-07T15:36:58.876643337",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:37:07.769799937"
     },
     "pathogens_consensus": {
         "content": [
@@ -431,11 +852,11 @@
                 "SRR13439813_Homo_sapiens_samtools.fasta:md5,a06778a8d2ca667eb4f12d1fd7a43f87"
             ]
         ],
-        "timestamp": "2026-07-07T15:36:55.929808947",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:37:04.745250282"
     },
     "extracted_reads": {
         "content": [
@@ -466,11 +887,11 @@
                 "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true"
             ]
         ],
-        "timestamp": "2026-07-07T15:36:48.880995789",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:36:56.750173769"
     },
     "minimap2_index": {
         "content": [
@@ -478,11 +899,11 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-07-07T15:36:51.799351001",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:37:00.575631016"
     },
     "bowtie2_align": {
         "content": [
@@ -552,11 +973,11 @@
                 ]
             ]
         ],
-        "timestamp": "2026-07-07T15:36:49.271496724",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:36:56.886015701"
     },
     "igv": {
         "content": [
@@ -586,11 +1007,11 @@
                 "SRR13439813_kraken2_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-07-07T15:36:53.974499579",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:37:02.818106292"
     },
     "blastx": {
         "content": [
@@ -609,10 +1030,10 @@
                 "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_blastx_filtered_summary.txt(centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-07-07T15:36:48.42751836",
         "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
-        }
+            "nf-test": "0.9.2",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-07-08T09:36:56.441796728"
     }
 }
