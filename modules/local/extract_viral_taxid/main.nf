@@ -52,4 +52,10 @@ process EXTRACT_VIRAL_TAXID {
         ${exclude_phages}
     fi
     """
+
+    stub:
+    def prefix = task.ext.prefix ?: "${meta.id}_${meta.tool}"
+    """
+    touch ${prefix}_viral_taxids.tsv
+    """
 }

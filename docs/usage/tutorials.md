@@ -28,9 +28,7 @@ The tutorial uses Docker. However, you can replace references to `docker` with `
 
 ### Data
 
-**genomic-medicine-sweden/metaval** is a bioinformatics pipeline for post-processing results from [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler). This tutorial uses nf-core/taxprofiler output for a subset of metagenomic sequencing data containing one Illumina sample and one Nanopore sample.
-
-Specify the taxonomy directory when running nf-core/taxprofiler because `genomic-medicine-sweden/metaval` uses taxonomic information from the Taxpasta output. An example nf-core/taxprofiler command is shown below. See the [nf-core/taxprofiler usage documentation](https://github.com/nf-core/taxprofiler/tree/master/docs) for detailed instructions.
+**genomic-medicine-sweden/metaval** is a bioinformatics pipeline for post-processing the results of [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler). In this tutorial, we will use the output files from `nf-core/taxprofilers` for a subset of metagenomic sequencing data, including one Illumina sample and one Nanopore sample. The taxonomy path should be specified when running nf-core/taxprofiler, as this information from the `taxpasta` output will be used by `genomic-medicine-sweden/metaval`. Below is an example or running `nf-core/taxprofiler`. Please check the [usage of nf-core/taxprofiler](https://github.com/nf-core/taxprofiler/tree/main/docs) for detailed instructions on how to run it.
 
 #### Run nf-core/taxprofiler
 

@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/genomic-medicine-sweden/metaval/master/nextflow_schema.json",
+    "$id": "https://raw.githubusercontent.com/genomic-medicine-sweden/metaval/main/nextflow_schema.json",
     "title": "genomic-medicine-sweden/metaval pipeline parameters",
     "description": "nf-core/taxprofiler post processing",
     "type": "object",
