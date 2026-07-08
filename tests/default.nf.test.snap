@@ -418,7 +418,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:36:56.187678197"
+        "timestamp": "2026-07-08T11:06:40.473904839"
     },
     "spades_centrifuge": {
         "content": [
@@ -432,7 +432,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:37:10.033417264"
+        "timestamp": "2026-07-08T11:06:55.074940148"
     },
     "spades_diamond": {
         "content": [
@@ -447,7 +447,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:37:10.983336582"
+        "timestamp": "2026-07-08T11:06:56.138927176"
     },
     "bowtie2_build": {
         "content": [
@@ -566,7 +566,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:36:56.951858192"
+        "timestamp": "2026-07-08T11:06:41.522343267"
     },
     "spades_kraken2": {
         "content": [
@@ -584,7 +584,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:37:08.870354874"
+        "timestamp": "2026-07-08T11:06:54.042950549"
     },
     "blastn": {
         "content": [
@@ -619,7 +619,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:36:56.303365265"
+        "timestamp": "2026-07-08T11:06:40.601124619"
     },
     "pathogens_igv": {
         "content": [
@@ -634,7 +634,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:37:05.771134781"
+        "timestamp": "2026-07-08T11:06:50.780255751"
     },
     "pathogens_reads_blast": {
         "content": [
@@ -648,7 +648,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:37:06.747931043"
+        "timestamp": "2026-07-08T11:06:51.8591619"
     },
     "pathogens_blast": {
         "content": [
@@ -665,7 +665,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:37:03.727347087"
+        "timestamp": "2026-07-08T11:06:48.548182858"
     },
     "minimap2_align": {
         "content": [
@@ -688,7 +688,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:37:01.707800148"
+        "timestamp": "2026-07-08T11:06:46.329184164"
     },
     "-profile test_taxid": {
         "content": [
@@ -818,7 +818,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:36:56.163599775"
+        "timestamp": "2026-07-08T11:06:40.446577524"
     },
     "pathogens_reads_consensus": {
         "content": [
@@ -841,7 +841,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:37:07.769799937"
+        "timestamp": "2026-07-08T11:06:52.972031295"
     },
     "pathogens_consensus": {
         "content": [
@@ -856,7 +856,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:37:04.745250282"
+        "timestamp": "2026-07-08T11:06:49.640959792"
     },
     "extracted_reads": {
         "content": [
@@ -891,7 +891,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:36:56.750173769"
+        "timestamp": "2026-07-08T11:06:41.076508046"
     },
     "minimap2_index": {
         "content": [
@@ -903,7 +903,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:37:00.575631016"
+        "timestamp": "2026-07-08T11:06:45.103413767"
     },
     "bowtie2_align": {
         "content": [
@@ -977,7 +977,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:36:56.886015701"
+        "timestamp": "2026-07-08T11:06:41.406485699"
     },
     "igv": {
         "content": [
@@ -1011,7 +1011,7 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:37:02.818106292"
+        "timestamp": "2026-07-08T11:06:47.489459869"
     },
     "blastx": {
         "content": [
@@ -1034,6 +1034,6 @@
             "nf-test": "0.9.2",
             "nextflow": "25.10.4"
         },
-        "timestamp": "2026-07-08T09:36:56.441796728"
+        "timestamp": "2026-07-08T11:06:40.739498784"
     }
 }
