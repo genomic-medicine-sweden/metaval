@@ -175,6 +175,7 @@ We thank the following people for their assistance in the development of this pi
 [mashehu](https://github.com/mashehu)
 [ryanjameskennedy](https://github.com/ryanjameskennedy)
 [rannick](https://github.com/rannick)
+
 <!-- TODO nf-core: If applicable, make list of people who have also contributed -->
 
 ## Contributions and Support
