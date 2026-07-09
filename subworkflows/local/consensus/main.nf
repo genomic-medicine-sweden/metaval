@@ -31,7 +31,7 @@ workflow CONSENSUS {
         SAMTOOLS_CONSENSUS_SHORTREAD ( ch_bam_bai_consensus.shortreads )
         // Remove consensus sequences shorter than params.consensus_min_bases (default: 50 bp)
         FILTER_CONSENSUS_SHORTREAD ( SAMTOOLS_CONSENSUS_SHORTREAD.out.fasta, params.consensus_min_bases )
-        ch_consensus = ch_consensus.mix( FILTER_CONSENSUS_SHORTREAD.out.filtered_consensus.ifEmpty([]) )
+        ch_consensus = ch_consensus.mix( FILTER_CONSENSUS_SHORTREAD.out.filtered_consensus )
     }
     // Long read consensus
     if ( params.perform_longread_consensus ) {
@@ -45,7 +45,7 @@ workflow CONSENSUS {
         }
         // Remove consensus sequences shorter than params.consensus_min_bases (default: 50 bp)
         FILTER_CONSENSUS_LONGREAD ( ch_consensus_longread, consensus_min_bases )
-        ch_consensus = ch_consensus.mix( FILTER_CONSENSUS_LONGREAD.out.filtered_consensus.ifEmpty([]) )
+        ch_consensus = ch_consensus.mix( FILTER_CONSENSUS_LONGREAD.out.filtered_consensus )
     }
 
     emit:

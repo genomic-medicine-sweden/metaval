@@ -2,13 +2,10 @@ nextflow_pipeline {
 
     name "Test pipeline"
     script "../main.nf"
-    tag "pipeline"
-    tag "gms_metaval"
-    tag "test"
     profile "test"
 
 
-    test("-profile test") {
+    test("-profile test_complete") {
 
         when {
             params {
@@ -16,7 +13,7 @@ nextflow_pipeline {
             }
         }
 
-         then {
+        then {
 
             def stable_name_all      = getAllFilesFromDir(params.outdir, relative: true, includeDir: true, ignore: ['pipeline_info/*.{html,json,txt}'])
 
@@ -43,7 +40,7 @@ nextflow_pipeline {
             //pathogens blast: partly unstable files, see custom assertions
 
             //pathogens consensus
-             def stable_content_pathogens_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/consensus/*'], ignoreFile: 'tests/.nftignore')
+            def stable_content_pathogens_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/consensus/*'], ignoreFile: 'tests/.nftignore')
 
              //pathogens mapping bowtie2 build
             def stable_content_pathogens_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/bowtie2/build/bowtie2/*'], ignoreFile: 'tests/.nftignore')
@@ -78,11 +75,11 @@ nextflow_pipeline {
                     getAllFilesFromDir("$outputDir/blast/blastn/centrifuge", include: ['*.txt']).collect{file -> file.getName() + '(centrifuge) contains string:' + (file.text.contains("Chryseobacterium") || file.text.contains("Influenza") || file.text.contains("Shigella")) },
                     getAllFilesFromDir("$outputDir/blast/blastn/diamond", include: ['*.txt']).collect{file -> file.getName() + "(diamond) " + (file.exists() && (file.text.contains("Chryseobacterium") || file.text.contains("Influenza") || file.text.contains("Shigella")) ? "contains string:true" : file.exists() ? "exists:true" : "exists:false")})
                 .match("blastn")},
-                 { assert snapshot(
+                { assert snapshot(
                     getAllFilesFromDir("$outputDir/blast/blastx/kraken2", include: ['*.txt']).collect{file -> file.getName() + '(kraken2) contains string:' + (file.text.contains("Chryseobacterium") || file.text.contains("Influenza") || file.text.contains("Shigella")) },
                     getAllFilesFromDir("$outputDir/blast/blastx/centrifuge", include: ['*.txt']).collect{file -> file.getName() + "(centrifuge) " + (file.exists() && (file.text.contains("Chryseobacterium") || file.text.contains("Influenza") || file.text.contains("Shigella")) ? "contains string:true" : file.exists() ? "exists:true" : "exists:false")})
                     .match("blastx")},
-                 { assert snapshot(
+                { assert snapshot(
                     getAllFilesFromDir("$outputDir/extracted_reads/kraken2", include: ['*.fa']).collect{file -> file.getName() + '(extracted reads kraken2) contains string:' + (file.text.contains("SRR13439790") || file.text.contains("SRR13439813") || file.text.contains("SRR13439799")) },
                     getAllFilesFromDir("$outputDir/extracted_reads/centrifuge", include: ['*.fa']).collect{file -> file.getName() + '(extracted reads centrifuge) contains string:' + (file.text.contains("SRR13439790") || file.text.contains("SRR13439799") || file.text.contains("SRR13439802") || file.text.contains("SRR13439813")) },
                     getAllFilesFromDir("$outputDir/extracted_reads/diamond", include: ['*.fa']).collect{file -> file.getName() + '(extracted reads diamond) contains string:' + (file.text.contains("SRR13439790") ||  file.text.contains("SRR13439813")) } )
@@ -90,7 +87,7 @@ nextflow_pipeline {
                 { assert snapshot (
                     bam_files_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] },
                     stable_content_bowtie2_align).match("bowtie2_align")},
-                 { assert snapshot (stable_content_bowtie2_build).match("bowtie2_build")},
+                { assert snapshot (stable_content_bowtie2_build).match("bowtie2_build")},
                 //minimap2 index
                 { assert snapshot(
                         getAllFilesFromDir("$outputDir/mapping/minimap2/index", include: ['**/*.mmi']).collect { file -> file.getName() + " exists: "+ file.exists() }
@@ -109,18 +106,18 @@ nextflow_pipeline {
                     getAllFilesFromDir("$outputDir/pathogens/blast/blastn", include: ['*.txt']).collect{file -> file.getName() + ' contains string:' + (file.exists() && file.text.contains("NC_060947.1") || file.text.contains("NC_002023.1_0") || file.text.contains("")) },
                     getAllFilesFromDir("$outputDir/pathogens/blast/blastx", include: ['*.txt']).collect{file -> file.getName() + ' contains string:' + (file.exists() && file.text.contains("NC_002019.1_0")) })
                 .match("pathogens_blast")},
-                 { assert snapshot (stable_content_pathogens_consensus).match("pathogens_consensus")},
+                { assert snapshot (stable_content_pathogens_consensus).match("pathogens_consensus")},
                  // pathogens igv
-                  { assert snapshot(
+                { assert snapshot(
                         getAllFilesFromDir("$outputDir/pathogens/igv", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
                     ).match("pathogens_igv")
-                  },
+                },
 
                 //pathogens reads blast input
                 { assert snapshot (stable_content_pathogens_reads_blast).match("pathogens_reads_blast")},
 
                 //pathogens reads consensus
-                 { assert snapshot (
+                { assert snapshot (
                     bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file -> [file.getName() + " pathogens reads consensus md5: " + bam(file.toString()).getHeader()] },
                     stable_content_pathogens_reads_consensus).match("pathogens_reads_consensus")},
 
@@ -131,12 +128,12 @@ nextflow_pipeline {
                     ).match("spades_kraken2")
                 },
 
-                 { assert snapshot(
+                { assert snapshot(
                         getAllFilesFromDir("$outputDir/spades/centrifuge", include: ['*.fa','*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
                     ).match("spades_centrifuge")
                 },
 
-                 { assert snapshot(
+                { assert snapshot(
                         getAllFilesFromDir("$outputDir/spades/diamond", include: ['*.fa','*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
                     ).match("spades_diamond")
                 },
@@ -146,5 +143,4 @@ nextflow_pipeline {
             )
         }
     }
-
 }
