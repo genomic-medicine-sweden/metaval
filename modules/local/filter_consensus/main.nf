@@ -28,4 +28,10 @@ process FILTER_CONSENSUS {
         --min-bases ${consensus_min_bases}
 
     """
+
+    stub:
+    def prefix = task.ext.prefix ?: "${meta.id}"
+    """
+    touch ${prefix}_filtered.fasta
+    """
 }

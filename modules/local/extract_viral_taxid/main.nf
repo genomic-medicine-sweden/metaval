@@ -43,4 +43,10 @@ process EXTRACT_VIRAL_TAXID {
         fi
     fi
     """
+
+    stub:
+    def prefix = task.ext.prefix ?: "${meta.id}_${meta.tool}"
+    """
+    touch ${prefix}_viral_taxids.tsv
+    """
 }
