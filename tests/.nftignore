@@ -17,4 +17,7 @@ extracted_reads/*/*.fa
 mapping/bowtie2/*/*.{bam,bai}
 pathogens/blast/*/*.txt
 pathogens/igv/*.html
+pathogens/pathogen_reads/blast_input/*.{bam,bai}
+pathogens/pathogen_reads/consensus_input/*.{bam,bai}
+spades/*/*.fa
 pipeline_info/*.{html,json,txt,yml}
