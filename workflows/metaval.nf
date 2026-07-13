@@ -99,6 +99,7 @@ workflow METAVAL {
         //
         // SUBWORKFLOW: TAXID_READS - extract reads
         //
+
         TAXID_READS (
         ch_extract_reads.reads,
         ch_extract_reads.kraken2_taxpasta,
@@ -112,15 +113,8 @@ workflow METAVAL {
         )
         ch_versions            = ch_versions.mix( TAXID_READS.out.versions )
 
-        // Remove empty FASTQ files. This can happen when users want to check if the same species was identified across different classifiers.
-        ch_taxid_reads = TAXID_READS.out.reads
-            .branch { it ->
-                empty: it[0].single_end ? it[1].countFastq() < 1 : it[1][0].countFastq() < 1 || it[1][1].countFastq() < 1
-                nonempty: true
-            }
-
         // Transpose to handle both single and paired-end reads
-        ch_taxid_reads_transpose = ch_taxid_reads.nonempty
+        ch_taxid_reads_transpose = TAXID_READS.out.reads
             .map { meta, reads ->
                 def read_list = reads instanceof List ? reads: [reads]
                 [meta, read_list]
@@ -135,7 +129,7 @@ workflow METAVAL {
         //
 
         // Run de novo assembly if the number of reads exceeds the params.min_read_counts
-        ch_taxid_reads_filter = ch_taxid_reads.nonempty
+        ch_taxid_reads_filter = TAXID_READS.out.reads
             .branch { meta, reads ->
                 blast: meta.single_end ? reads.countFastq() < params.min_read_counts : reads[0].countFastq() < params.min_read_counts || reads[1].countFastq() < params.min_read_counts
                 denovo: true
@@ -186,11 +180,11 @@ workflow METAVAL {
         BLAST(ch_blast_query, params.blastn_db, params.blastx_db, params.blast_header )
 
         // Perform FASTQC for reads with BLASTN hits
-        ch_fastqc_blastn = ch_taxid_reads.nonempty
+        ch_fastqc_blastn = TAXID_READS.out.reads
             .join( BLAST.out.blastn_filtered, by: 0 )
             .map { meta, reads, _filtered_blast -> [ meta, reads ] }
 
-        ch_fastqc_blastx = ch_taxid_reads.nonempty
+        ch_fastqc_blastx = TAXID_READS.out.reads
             .join( BLAST.out.blastx_filtered, by: 0 )
             .map { meta, reads, _filtered_blast -> [ meta, reads ] }
 
@@ -202,7 +196,7 @@ workflow METAVAL {
 
         if (params.perform_mapping) {
             // Fetch genomes of blast hits
-            FETCH_BLAST_GENOMES ( params.taxid2genome, BLAST.out.unique_taxid, ch_taxid_reads.nonempty )
+            FETCH_BLAST_GENOMES ( params.taxid2genome, BLAST.out.unique_taxid, TAXID_READS.out.reads )
             // Mapping - short reads
             ch_mapping_input_shortread = FETCH_BLAST_GENOMES.out.shortreads.join(FETCH_BLAST_GENOMES.out.shortreads_genome, by:0)
             MAPPING_SHORTREAD ( ch_mapping_input_shortread )
