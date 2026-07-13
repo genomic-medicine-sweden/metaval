@@ -65,7 +65,7 @@ workflow BLAST {
         }
 
         // Filter out blastx if meta.tools is "diamond"
-        ch_query_for_blastx = query.filter { meta, fasta -> meta.tool != 'diamond' }
+        ch_query_for_blastx = query.filter { meta, _fasta -> meta.tool != 'diamond' }
 
         // BLASTX:DIAMOND
         DIAMOND_BLASTX (
