@@ -137,7 +137,7 @@ nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir 
 nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results -profile docker --perform_verify_species --extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads --perform_mapping --taxid2genome /path/to/taxid2genome.map --perform_shortread_denovo --perform_longread_denovo
 
 # Blue Workflow - Verify User-Defined TaxIDs
-nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results -profile docker --taxid 211044 2886042 --perform_verify_species --extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads --perform_mapping --taxid2genome /path/to/taxid2genome.map --perform_shortread_denovo --perform_longread_denovo --perform_shortread_consensus --perform_longread_consensus --longread_consensus_tool 'medaka'
+nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results -profile docker --taxid_list /path/to/taxids.tsv --perform_verify_species --extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads --perform_mapping --taxid2genome /path/to/taxid2genome.map --perform_shortread_denovo --perform_longread_denovo --perform_shortread_consensus --perform_longread_consensus --longread_consensus_tool 'medaka'
 
 ```
 
@@ -182,15 +182,15 @@ Filtering the output files from metagenomics classifiers like `Kraken2`, `Centri
 
 ### Extract Viral TaxIDs
 
-This step involves extracting all taxonomic IDs of viral species predicted by classifiers by enabling `--perform_verify_species`and the `--taxid` should be empty.
+This step involves extracting all taxonomic IDs of viral species predicted by classifiers by enabling `--perform_verify_species` and leaving `--taxid_list` unset. When provided, `--taxid_list` is a path to a tab-separated file with one `taxid<TAB>species` per line.
 
 ### Extract Reads
 
-This step either retrieves the reads of all viral TaxIDs predicted by classifiers or extracts reads from a user-defined list of TaxIDs separated by spaces when the `--taxid` option is activated. Extracting reads predicted by `Kraken2` can be activated with `--extract_kraken2_reads`, extracting reads predicted by `Centrifuge` can be activated with `--extract_centrifuge_reads` and extracting reads predicted by `DIAMOND` can be activated with `--extract_diamond_reads`.
+This step either retrieves the reads of all viral TaxIDs predicted by classifiers or extracts reads for the TaxIDs listed in the `--taxid_list` TSV file (one `taxid<TAB>species` per line) when `--taxid_list` is supplied. Extracting reads predicted by `Kraken2` can be activated with `--extract_kraken2_reads`, extracting reads predicted by `Centrifuge` can be activated with `--extract_centrifuge_reads` and extracting reads predicted by `DIAMOND` can be activated with `--extract_diamond_reads`.
 
 When extracting `Kraken2` reads, the `--include-children` option is used to include reads classified at lower taxonomic ranks than the specified taxonomy ID level. If you only want to extract reads classified at the specified taxonomy id, you can disable this option by defining it in the custom config file.
 
-If the `--taxid` option is included in the command line, the pipeline will only extract reads for the user specified TaxIDs, in other words, `--taxid` takes priority.
+If `--taxid_list` is supplied, the pipeline only extracts reads for the TaxIDs listed in that file; in other words, `--taxid_list` takes priority over classifier-predicted TaxIDs.
 
 ### de-novo assembly
 

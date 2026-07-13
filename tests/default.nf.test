@@ -114,7 +114,7 @@ nextflow_pipeline {
                 { assert snapshot (stable_content_pathogens_reads_blast).match("pathogens_reads_blast")},
 
                 //pathogens reads consensus
-                 { assert snapshot (
+                { assert snapshot (
                     bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file -> [file.getName() + " pathogens reads consensus md5: " + bam(file.toString()).getHeader()] })
                     .match("pathogens_reads_consensus")},
 
@@ -124,12 +124,12 @@ nextflow_pipeline {
                     ).match("spades_kraken2")
                 },
 
-                 { assert snapshot(
+                { assert snapshot(
                         getAllFilesFromDir("$outputDir/spades/centrifuge", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
                     ).match("spades_centrifuge")
                 },
 
-                 { assert snapshot(
+                { assert snapshot(
                         getAllFilesFromDir("$outputDir/spades/diamond", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
                     ).match("spades_diamond")
                 },

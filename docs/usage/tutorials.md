@@ -115,7 +115,7 @@ nextflow run metaval/main.nf -profile singularity --input samplesheet.csv --outd
 
 #### Verify identified viruses
 
-This workflow is activated by enabling the `--perform_verify_species` option and disabling the `--taxid`.
+This workflow is activated by enabling the `--perform_verify_species` option and disabling the `--taxid_list`.
 
 ```bash
 git clone https://github.com/genomic-medicine-sweden/metaval.git
@@ -127,12 +127,12 @@ nextflow run metaval/main.nf -profile singularity --input samplesheet.csv --outd
 
 #### Verify user-defined taxIDs
 
-This workflow is activated by enabling the ´--perform_verify_species´ option and the `--taxid` option, allowing users to define a list of taxIDs. It is not limited to viral taxIDs and can include bacteria, fungi, archaea, parasites, or plasmids.
+This workflow is activated by enabling the ´--perform_verify_species´ option and the `--taxid_list` option, allowing users to define a list of taxIDs. It is not limited to viral taxIDs and can include bacteria, fungi, archaea, parasites, or plasmids.
 
 ```bash
 git clone https://github.com/genomic-medicine-sweden/metaval.git
 nextflow run metaval/main.nf -profile singularity --input samplesheet.csv --outdir identified_viruses_results \
---perform_verify_species --taxid taxid_list.txt \
+--perform_verify_species --taxid_list taxid_list.txt \
 --extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads \
 --perform_shortread_denovo --perform_longread_denovo --min_read_counts 20
 
