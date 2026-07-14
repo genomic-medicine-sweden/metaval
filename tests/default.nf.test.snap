@@ -332,10 +332,6 @@
                 "multiqc/multiqc_data/multiqc_sources.txt",
                 "multiqc/multiqc_data/samtools-flagstat-pct-table.txt",
                 "multiqc/multiqc_data/samtools-flagstat-table.txt",
-                "multiqc/multiqc_plots",
-                "multiqc/multiqc_plots/pdf",
-                "multiqc/multiqc_plots/png",
-                "multiqc/multiqc_plots/svg",
                 "multiqc/multiqc_report.html",
                 "pathogens",
                 "pathogens/blast",
@@ -414,9 +410,9 @@
                 "spades/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.warnings.log"
             ]
         ],
-        "timestamp": "2026-07-13T16:06:41.964715013",
+        "timestamp": "2026-07-14T09:14:51.275095",
         "meta": {
-            "nf-test": "0.9.4",
+            "nf-test": "0.9.5",
             "nextflow": "25.10.4"
         }
     },
