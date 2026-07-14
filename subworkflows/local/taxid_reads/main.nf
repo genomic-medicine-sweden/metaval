@@ -41,7 +41,7 @@ workflow TAXID_READS {
                     .replaceAll(/[^A-Za-z0-9]/, '-')  // Replace special chars with dashes
                     .replaceAll(/-+/, '-')            // Replace multiple dashes with single dash
                     .replaceAll(/^-+|-+$/, '')        // Remove leading and trailing dashes
-                [ meta, classifer, taxid, species,  ]
+                [ meta, classifer, taxid, species ]
             }
         : channel.empty()
 
