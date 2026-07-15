@@ -181,7 +181,12 @@ def toolCitationText() {
     // Uncomment function in methodsDescriptionText to render in MultiQC report
     def citation_text = [
             "Tools used in the workflow included:",
-            "FastQC (Andrews 2010),",
+            "Sequencing quality control with: FastQC (Andrews 2010),",
+            "Mapping reads to a list of viral pathogens genomes with: Bowtie2 (Langmead and Salzberg 2012) for short reads and minimap2 (Li 2018) for long reads,",
+            "Consensus calling with either SAMtools (Danecek et al. 2021) or medaka (distributed under the terms of the Oxford Nanopore Technologies PLC. Public License Version 1.0),",
+            "De-novo  assembly with: SPAdes (Bankevich et al. 2012) for short reads and Flye (Kolmogorov et al. 2019) for long reads,",
+            "Pathogen identification with BLAST (Altschul et al. 1990),",
+            "Visualisation of results with IGV (Robinson et al. 2011),",
             "MultiQC (Ewels et al. 2016)",
             "."
         ].join(' ').trim()
