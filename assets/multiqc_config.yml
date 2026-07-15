@@ -12,3 +12,8 @@ report_section_order:
 export_plots: true
 
 disable_version_detection: true
+
+
+exclude_modules:
+  - fastqc
+  - samtools
