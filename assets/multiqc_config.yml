@@ -9,7 +9,7 @@ report_section_order:
   "genomic-medicine-sweden-metaval-summary":
     order: -1002
 
-export_plots: true
+export_plots: false
 
 disable_version_detection: true
 
