@@ -4,7 +4,7 @@ nextflow_pipeline {
     script "../main.nf"
     tag "pipeline"
     tag "gms_metaval"
-    tag "test"
+    tag "test_complete"
     profile "test"
 
 
