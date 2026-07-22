@@ -48,7 +48,6 @@ This workflow is activated by enabling the `--perform_screen_pathogens` option.
 5. **Visualisation using IGV**
    - Visualize the extracted reads using `IGV` (Integrative Genomics Viewer) to provide a graphical representation for detailed analysis.
 
-
 ### Orange Workflow - Verify Identified Viruses
 
 This workflow is activated by enabling the `--perform_verify_species` option and disabling the `--taxid_list`.
