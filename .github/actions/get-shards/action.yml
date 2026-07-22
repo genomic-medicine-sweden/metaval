@@ -28,8 +28,14 @@ runs:
       id: shards
       shell: bash
       run: |
+        mapfile -t test_files < <(
+          find ${{ inputs.paths }} \
+            -type f \
+            -name "*.nf.test" \
+            ! -name 'test_complete.nf.test'
+        )
         # Run nf-test with dynamic parameter
-        nftest_output=$(nf-test test \
+        nftest_output=$(nf-test test "${test_files[@]}" \
           --profile +docker \
           $(if [ -n "${{ inputs.tags }}" ]; then echo "--tag ${{ inputs.tags }}"; fi) \
           --dry-run \
