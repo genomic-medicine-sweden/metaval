@@ -30,27 +30,38 @@ workflow TAXID_READS {
     ch_phages_taxid = params.phages_taxid ?
         channel.fromPath(params.phages_taxid, checkIfExists: true).first() :
         channel.value([])
-    ch_taxid_list = params.taxid ?
-        channel.fromPath(params.taxid, checkIfExists: true)
+    ch_taxid_list = params.taxid_list ?
+        channel.fromPath(params.taxid_list, checkIfExists: true)
             .splitCsv(sep: '\t')
             .map { row ->
-                def taxid = row[0]
-                def species = row[1]
+                def meta = row[0].trim()               // sample name
+                def classifer = row[1].trim().toLowerCase()
+                def taxid = row[2].trim()
+                def species = row[3].trim()
                     .replaceAll(/[^A-Za-z0-9]/, '-')  // Replace special chars with dashes
-                    .replaceAll(/-+/, '-') // Replace multiple dashes with single dash
+                    .replaceAll(/-+/, '-')            // Replace multiple dashes with single dash
                     .replaceAll(/^-+|-+$/, '')        // Remove leading and trailing dashes
-                [ taxid, species ]
+                [ meta, classifer, taxid, species ]
             }
-        : channel.value([])
+        : channel.empty()
+
+    ch_taxid_list_classifer = ch_taxid_list.branch{ _meta, classifer, _taxid, _species ->
+        kraken2: classifer == 'kraken2'
+        centrifuge: classifer == 'centrifuge'
+        diamond: classifer == 'diamond'
+    }
 
     // Exyxtract kraken2 reads
     if ( params.extract_kraken2_reads ) {
-        if ( params.taxid ) {
+        if ( params.taxid_list ) {
             kraken2_combined = ch_kraken2_report.map { meta, kraken2_report -> [ meta.subMap(meta.keySet() - 'tool'), kraken2_report ] }
                 .join (ch_kraken2_result, by: 0)
                 .join( ch_reads, by: 0)
-                .combine ( ch_taxid_list)
-                .multiMap { meta, kraken2_report, kraken2_result, reads, taxid, species ->
+                .map { meta, kraken2_report, kraken2_result, reads ->
+                    [ meta.id, meta, kraken2_report, kraken2_result, reads ]
+                }
+                .combine ( ch_taxid_list_classifer.kraken2, by:0)
+                .multiMap { _samplename, meta, kraken2_report, kraken2_result, reads, _classifer, taxid, species ->
                     def new_meta = meta + [taxid: taxid, species: species]
                     taxid: taxid
                     kraken2_result : [ new_meta, kraken2_result ]
@@ -102,11 +113,14 @@ workflow TAXID_READS {
 
     // Extract centrifuge reads
     if ( params.extract_centrifuge_reads ) {
-        if ( params.taxid ) {
+        if ( params.taxid_list ) {
             centrifuge_combined = ch_centrifuge_result
                 .join( ch_reads, by: 0 )
-                .combine ( ch_taxid_list)
-                .multiMap { meta, centrifuge_result, reads, taxid, species ->
+                .map { meta, centrifuge_result, reads ->
+                    [ meta.id, meta, centrifuge_result, reads ]
+                }
+                .combine ( ch_taxid_list_classifer.centrifuge, by:0 )
+                .multiMap { _samplename, meta, centrifuge_result, reads, _classifer, taxid, species ->
                     taxid: taxid
                     centrifuge_result: [ meta + [taxid: taxid, species: species ], centrifuge_result, reads ]
                 }
@@ -146,11 +160,14 @@ workflow TAXID_READS {
 
     // Extract diamond reads
     if ( params.extract_diamond_reads ) {
-        if ( params.taxid ) {
+        if ( params.taxid_list ) {
             diamond_combined = ch_diamond_tsv.map { meta, diamond_tsv -> [meta.subMap( meta.keySet() - 'tool' ), diamond_tsv ] }
                 .join( ch_reads, by:0)
-                .combine ( ch_taxid_list)
-                .multiMap { meta, diamond_tsv, reads, taxid, species ->
+                .map { meta, diamond_tsv, reads ->
+                    [ meta.id, meta, diamond_tsv, reads ]
+                }
+                .combine ( ch_taxid_list_classifer.diamond, by:0 )
+                .multiMap { _samplename, meta, diamond_tsv, reads, _classifer, taxid, species ->
                     taxid: taxid
                     diamond_tsv: [ meta + [ taxid: taxid, species: species ], diamond_tsv, reads ]
                 }

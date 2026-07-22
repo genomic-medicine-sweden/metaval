@@ -134,12 +134,21 @@ DIAMOND classifications are filtered using `--evalue_threshold`, which defaults 
 
 ### Using user-defined TaxIDs
 
-`--taxid` expects a tab-separated file, not a list of command-line numbers. Each row contains a TaxID and species name:
+`--taxid` expects a tab-separated file, not a list of command-line numbers. Each row contains sample name, classifer, taxid and corresponding species name:
 
 ```text
-211044	Influenza A virus
-1920753	Gamaleyavirus
-878220	Chryseobacterium sp. StRB126
+SRR13439799	centrifuge	211044	Influenza A virus (A/Puerto Rico/8/1934(H1N1))
+SRR13439799	kraken2	211044	Influenza A virus (A/Puerto Rico/8/1934(H1N1))
+SRR13439790	diamond	1920753	Gamaleyavirus
+SRR13439813	diamond	1920753	Gamaleyavirus
+SRR13439790	kraken2	1920753	Gamaleyavirus
+SRR13439813	kraken2	1920753	Gamaleyavirus
+SRR13439790	centrifuge	878220	Chryseobacterium sp. StRB126
+SRR13439802	centrifuge	878220	Chryseobacterium sp. StRB126
+SRR13439813	centrifuge	878220	Chryseobacterium sp. StRB126
+SRR13439813	kraken2	878220	Chryseobacterium sp. StRB126
+SRR13439813	diamond	878220	Chryseobacterium sp. StRB126
+
 ```
 
 Run with:
@@ -343,75 +352,7 @@ skip_blastx: true
 
 Do not use `-c` to provide pipeline parameters. The `-c` option is for Nextflow configuration such as resources, executors, containers, and process-specific arguments.
 
-## Core Nextflow arguments
-
-Nextflow arguments use one hyphen; pipeline parameters use two.
-
-### `-profile`
-
-Use a profile to select the software-management or execution environment:
-
-```bash
--profile docker
--profile singularity
--profile apptainer
--profile podman
--profile conda
-```
-
-Multiple profiles can be combined:
-
-```bash
--profile my_institution,docker
-```
-
-### `-resume`
-
-Resume a previous run using cached task results:
-
-```bash
-nextflow run genomic-medicine-sweden/metaval ... -resume
-```
-
-### `-r`
-
-For reproducibility, select a released pipeline version:
-
-```bash
-nextflow run genomic-medicine-sweden/metaval -r <version> ...
-```
-
-### `-c`
-
-Load a custom Nextflow configuration:
-
-```bash
-nextflow run genomic-medicine-sweden/metaval -c custom.config ...
-```
-
-Use custom configuration files for resource requests, executors, containers, and process arguments—not pipeline parameters.
-
 ## Updating the pipeline
-
-Update the locally cached pipeline:
-
-```bash
-nextflow pull genomic-medicine-sweden/metaval
-```
-
-## Running in the background
-
-Nextflow must remain running until the workflow completes. Use `-bg`, `screen`, `tmux`, or an HPC batch job when the launching terminal may disconnect.
-
-```bash
-nextflow run genomic-medicine-sweden/metaval ... -bg
-```
-
-## Output
-
-See [the output documentation](output.md) for workflow-specific output directories and filenames.
-
-### Updating the pipeline
 
 When you run the above command, Nextflow automatically pulls the pipeline code from GitHub and stores it as a cached version. When running the pipeline after this, it will always use the cached version if available - even if the pipeline has been updated since. To make sure that you're running the latest version of the pipeline, make sure that you regularly update the cached version of the pipeline:
 
@@ -419,7 +360,7 @@ When you run the above command, Nextflow automatically pulls the pipeline code f
 nextflow pull genomic-medicine-sweden/metaval
 ```
 
-### Reproducibility
+## Reproducibility
 
 It is a good idea to specify the pipeline version when running the pipeline on your data. This ensures that a specific version of the pipeline code and software are used when you run your pipeline. If you keep using the same tag, you'll be running the same version of the pipeline, even if there have been changes to the code since.
 

@@ -66,10 +66,10 @@
                     "help_text": "Enable the option to extract reads assigned to taxonomic IDs based on results from `Kraken2`, `Centrifuge`, and `DIAMOND` classifiers.",
                     "fa_icon": "fas fa-toggle-on"
                 },
-                "taxid": {
+                "taxid_list": {
                     "type": "string",
                     "format": "file-path",
-                    "description": "A file containing a list taxids and corresponding species name separated by tabs.",
+                    "description": "A tab-separated separated file containing four columns: sample name, classifer, taxid and corresponding species name.",
                     "fa_icon": "fa-file-alt"
                 },
                 "extract_kraken2_reads": {
