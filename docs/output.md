@@ -20,7 +20,7 @@ This workflow is enabled with `--perform_verify_species`. It supports two ways o
 
 The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes data using the following steps:
 
-- [Flag Taxpasta](#flag-taxpasta) - Flag taxonomy tables against matched negative controls
+- [Decontamination](#decontamination) - Flag taxonomy tables against matched negative controls
 - [Extract Viral TaxIDs](#Extract-Viral-TaxIDs) - Extract all viral TaxIDs identified by classifiers.
 - [Extract Reads](#Extract-Reads) - Extract reads assigned by Kraken2, Centrifuge, or DIAMOND.
 - [De novo assembly](#De-novo-assembly) - Optionally perform de novo assembly.
@@ -31,7 +31,7 @@ The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes d
 - [Report](#Static-metaval-Report) - Generate a report summarising the results of the pipeline.
 - [FastQC](#fastqc) - QC of reads of TaxIDs assigned by classifiers
 
-### Flag Taxpasta
+### Decontamination
 
 Compare classifier-specific [Taxpasta](https://github.com/taxprofiler/taxpasta) profiles with negative controls that have the same `library_type` and `batch`. This helps distinguish sample-specific classifications from background signal or contamination.
 

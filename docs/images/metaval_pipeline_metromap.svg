@@ -74,7 +74,7 @@
     <use href="#file-icon"/>
     <text class="file-format" x="40" y="52" text-anchor="middle">html</text>
   </g>
-  <text class="label side pipeline-name" x="302" y="408">FlagTaxpasta</text>
+  <text class="label side pipeline-name" x="302" y="408">Decontamination</text>
   <text class="label bold" x="500" y="297" text-anchor="middle"><tspan x="500">Extract</tspan><tspan x="500" dy="21">Viral TaxIDs</tspan></text>
   <text class="label bold" x="630" y="297" text-anchor="middle"><tspan x="630">Extract</tspan><tspan x="630" dy="21">Reads</tspan></text>
   <text class="label" x="765" y="267" text-anchor="middle"><tspan class="bold" x="765">de-novo assembly</tspan><tspan x="765" dy="20">(SPAdes, Flye)</tspan></text>

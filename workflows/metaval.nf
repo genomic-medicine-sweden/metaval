@@ -322,10 +322,10 @@ workflow METAVAL {
         ch_reads_report = ch_reads_fa.mix(ch_assembly)
             .groupTuple(by:0)
             .map { meta, files ->
-                def assembly = files.find { it instanceof Path && it.name.endsWith('.scaffolds.fa') } ?:
-                    files.find { it instanceof Path && it.name.endsWith('.contigs.fa') } ?:
-                    files.find { it instanceof Path }
-                def reads = files.find { it instanceof List }
+                def assembly = files.find { file -> file instanceof Path && file.name.endsWith('.scaffolds.fa') } ?:
+                    files.find { file -> file instanceof Path && file.name.endsWith('.contigs.fa') } ?:
+                    files.find { file -> file instanceof Path }
+                def reads = files.find { file -> file instanceof List }
                 [ meta, assembly ?: reads ]
             }
 
