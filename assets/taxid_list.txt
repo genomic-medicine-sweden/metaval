@@ -1,3 +1,11 @@
-211044	Influenza A virus (A/Puerto Rico/8/1934(H1N1))
-1920753	Gamaleyavirus
-878220	Chryseobacterium sp. StRB126
+SRR13439799	centrifuge	211044	Influenza A virus (A/Puerto Rico/8/1934(H1N1))
+SRR13439799	kraken2	211044	Influenza A virus (A/Puerto Rico/8/1934(H1N1))
+SRR13439790	diamond	1920753	Gamaleyavirus
+SRR13439813	diamond	1920753	Gamaleyavirus
+SRR13439790	kraken2	1920753	Gamaleyavirus
+SRR13439813	kraken2	1920753	Gamaleyavirus
+SRR13439790	centrifuge	878220	Chryseobacterium sp. StRB126
+SRR13439802	centrifuge	878220	Chryseobacterium sp. StRB126
+SRR13439813	centrifuge	878220	Chryseobacterium sp. StRB126
+SRR13439813	kraken2	878220	Chryseobacterium sp. StRB126
+SRR13439813	diamond	878220	Chryseobacterium sp. StRB126
