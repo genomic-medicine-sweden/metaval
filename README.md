@@ -48,8 +48,6 @@ This workflow is activated by enabling the `--perform_screen_pathogens` option.
 5. **Visualisation using IGV**
    - Visualize the extracted reads using `IGV` (Integrative Genomics Viewer) to provide a graphical representation for detailed analysis.
 
-6. **Perform quality check**
-   - Conduct quality checks on the target reads using [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) and [MultiQC](<(http://multiqc.info/)>) to ensure data quality and reliability.
 
 ### Orange Workflow - Verify Identified Viruses
 
@@ -73,10 +71,13 @@ This workflow is activated by enabling the `--perform_verify_species` option and
 6. **Mapping**
    - Map the reads of TaxIDs to the closest reference genomes identified by `BLAST`. Use [Bowtie2](<(http://bowtie-bio.sourceforge.net/bowtie2/)>) for Illumina reads and [minimap2](https://github.com/lh3/minimap2) for Nanopore reads.
 
-7. **Visualisation using IGV**
+7. **Depth and coverage statistics**
+   - Generate alignment coverage and per-base depth statistics from mapped BAM files using samtools .
+
+8. **Visualisation using IGV**
    - Visualize the mapped reads using [igv-reports](https://github.com/igvteam/igv-reports)
 
-8. **Perform quality check**
+9. **Perform quality check**
    - Conduct quality checks on the classified reads using [FastQC](<(https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)>) and [MultiQC](<(http://multiqc.info/)>) to ensure the accuracy of the data.
 
 ## Blue Workflow - Verify User-Defined TaxIDs

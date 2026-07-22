@@ -182,7 +182,7 @@ def toolCitationText() {
     def screen_pathogens = [
         "Mapping reads to a list of viral pathogens genomes with: Bowtie2 (Langmead and Salzberg 2012) for short reads and minimap2 (Li 2018) for long reads,",
         "Consensus calling with either SAMtools (Danecek et al. 2021) or medaka (distributed under the terms of the Oxford Nanopore Technologies PLC. Public License Version 1.0),",
-        "Pathogen identification with BLAST (Altschul et al. 1990),",
+        "Pathogen identification with BLAST (Altschul et al. 1990, Camacho et al. 2009),",
         "Visualisation of results with IGV (Robinson et al. 2011),",
         ].join(' ').trim()
 
@@ -193,6 +193,7 @@ def toolCitationText() {
         "De novo assembly of viral reads with SPAdes (Bankevich et al. 2012) for Illumina reads and Flye (Kolmogorov et al. 2018) for Nanopore reads ,",
         "Reference genome identification with BLAST (Altschul et al. 1990),",
         "Mapping reads to the reference genome with either Bowtie2 (Langmead and Salzberg 2012) for short reads and minimap2 (Li 2018) for long reads,",
+        "Depth and coverage statistics with SAMtools (Danecek et al. 2021),",
         "Visualisation of results with IGV (Robinson et al. 2011),",
         ].join(' ').trim()
 
