@@ -69,14 +69,6 @@ runs:
             ! -name 'test_complete.nf.test'
         )
 
-        if [ "${#test_files[@]}" -eq 0 ]; then
-          echo "No nf-test files to execute after filtering."
-          exit 0
-        fi
-
-        printf 'Running nf-test files:\n'
-        printf '%s\n' "${test_files[@]}"
-
         nf-test test "${test_files[@]}" \
           --profile=+${{ inputs.profile }} \
           $(if [ -n "${{ inputs.tags }}" ]; then echo "--tag ${{ inputs.tags }}"; fi) \
