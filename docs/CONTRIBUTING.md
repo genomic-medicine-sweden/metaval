@@ -85,7 +85,6 @@ In `genomic-medicine-sweden/metaval`, there are two nf-tests: `default.nf.test` 
 
 Currently, GitHub Actions only run `default.nf.test`, while `test_complete.nf.test` is ignored because it launches a large number of processes which may cause the Github Actions workflow to fail. Ensure that `test_complete.nf.test` runs successfully locally.
 
-
 ### Patch release
 
 > [!WARNING]
