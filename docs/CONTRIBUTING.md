@@ -47,14 +47,14 @@ Once you have made your changes, run the pipeline with nf-test to test them loca
 For additional information, use the `--verbose` flag to view the Nextflow console log output.
 
 ```bash
-nf-test test --tag test --profile +docker --verbose
+nf-test test --tag test --profile=+docker --verbose
 ```
 
 If you have added new functionality, ensure you update the test assertions in the `.nf.test` files in the `tests/` directory.
 Update the snapshots with the following command:
 
 ```bash
-nf-test test --tag test --profile +docker --verbose --update-snapshots
+nf-test test --tag test --profile=+docker --verbose --update-snapshots
 ```
 
 When you create a pull request with changes, GitHub Actions will run automatic tests.
@@ -80,6 +80,11 @@ Each nf-core pipeline should be set up with a minimal set of test data.
 GitHub Actions runs the pipeline on this data to ensure it runs through and exits successfully.
 If there are any failures then the automated tests fail.
 These tests are run with the latest available version of Nextflow and the minimum required version specified in the pipeline code.
+
+In `genomic-medicine-sweden/metaval`, there are two nf-tests: `default.nf.test` and `test_complete.nf.test`.
+
+Currently, GitHub Actions only run `default.nf.test`, while `test_complete.nf.test` is ignored. Ensure that `test_complete.nf.test` runs successfully locally.
+
 
 ### Patch release
 
