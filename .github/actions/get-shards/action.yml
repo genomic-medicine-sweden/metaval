@@ -7,6 +7,7 @@ inputs:
   paths:
     description: "Component paths to test"
     required: false
+    default: "."
   tags:
     description: "Tags to pass as argument for nf-test --tag parameter"
     required: false
@@ -34,6 +35,17 @@ runs:
             -name "*.nf.test" \
             ! -name 'test_complete.nf.test'
         )
+
+        if [ "${#test_files[@]}" -eq 0 ]; then
+          echo "No nf-test files to execute after filtering."
+          echo "shard=[]" >> $GITHUB_OUTPUT
+          echo "total_shards=0" >> $GITHUB_OUTPUT
+          exit 0
+        fi
+
+        printf 'Checking changed nf-test files:\n'
+        printf '%s\n' "${test_files[@]}"
+
         # Run nf-test with dynamic parameter
         nftest_output=$(nf-test test "${test_files[@]}" \
           --profile +docker \
