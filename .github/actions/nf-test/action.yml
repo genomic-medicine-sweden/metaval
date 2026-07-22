@@ -61,12 +61,12 @@ runs:
       env:
         NFT_WORKDIR: ${{ env.NFT_WORKDIR }}
       run: |
-        mapfile -t test_files <<(
-          find ${{ input.tags }} \
+        mapfile -t test_files < <(
+          find ${{ inputs.tags }} \
             -type f \
             -name "*.nf.test" \
             ! -name 'test_complete.nf.test'
-          )
+        )
 
 
         nf-test test "${test_files[@]}" \
