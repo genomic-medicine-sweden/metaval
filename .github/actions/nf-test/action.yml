@@ -61,7 +61,15 @@ runs:
       env:
         NFT_WORKDIR: ${{ env.NFT_WORKDIR }}
       run: |
-        nf-test test \
+        mapfile -t test_files <<(
+          find ${{ input.tags }} \
+            -type f \
+            -name "*.nf.test" \
+            ! -name 'test_complete.nf.test'
+          )
+
+
+        nf-test test "${test_files[@]}" \
           --profile=+${{ inputs.profile }} \
           $(if [ -n "${{ inputs.tags }}" ]; then echo "--tag ${{ inputs.tags }}"; fi) \
           --ci \
