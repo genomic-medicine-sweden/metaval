@@ -180,7 +180,6 @@ def toolCitationText() {
     // Can use ternary operators to dynamically construct based conditions, e.g. params["run_xyz"] ? "Tool (Foo et al. 2023)" : "",
     // Uncomment function in methodsDescriptionText to render in MultiQC report
     def screen_pathogens = [
-        "Sequencing quality control with: FastQC (Andrews 2010),",
         "Mapping reads to a list of viral pathogens genomes with: Bowtie2 (Langmead and Salzberg 2012) for short reads and minimap2 (Li 2018) for long reads,",
         "Consensus calling with either SAMtools (Danecek et al. 2021) or medaka (distributed under the terms of the Oxford Nanopore Technologies PLC. Public License Version 1.0),",
         "Pathogen identification with BLAST (Altschul et al. 1990),",
