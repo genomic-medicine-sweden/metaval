@@ -179,12 +179,30 @@ def toolCitationText() {
     // TODO nf-core: Optionally add in-text citation tools to this list.
     // Can use ternary operators to dynamically construct based conditions, e.g. params["run_xyz"] ? "Tool (Foo et al. 2023)" : "",
     // Uncomment function in methodsDescriptionText to render in MultiQC report
-    def citation_text = [
-            "Tools used in the workflow included:",
-            "FastQC (Andrews 2010),",
-            "MultiQC (Ewels et al. 2016)",
-            "."
+    def screen_pathogens = [
+        "Mapping reads to a list of viral pathogens genomes with: Bowtie2 (Langmead and Salzberg 2012) for short reads and minimap2 (Li 2018) for long reads,",
+        "Consensus calling with either SAMtools (Danecek et al. 2021) or medaka (distributed under the terms of the Oxford Nanopore Technologies PLC. Public License Version 1.0),",
+        "Pathogen identification with BLAST (Altschul et al. 1990, Camacho et al. 2009),",
+        "Visualisation of results with IGV (Robinson et al. 2011),",
         ].join(' ').trim()
+
+    def verify_species = [
+        "Sequencing quality control with: FastQC (Andrews 2010),",
+        "Remove false positive findings and background contamination,",
+        "Extract reads classified as viruses,",
+        "De novo assembly of viral reads with SPAdes (Bankevich et al. 2012) for Illumina reads and Flye (Kolmogorov et al. 2018) for Nanopore reads ,",
+        "Reference genome identification with BLAST (Altschul et al. 1990),",
+        "Mapping reads to the reference genome with either Bowtie2 (Langmead and Salzberg 2012) for short reads and minimap2 (Li 2018) for long reads,",
+        "Depth and coverage statistics with SAMtools (Danecek et al. 2021),",
+        "Visualisation of results with IGV (Robinson et al. 2011),",
+        ].join(' ').trim()
+
+        def citation_text = [
+        "Tools used in the workflow included:",
+        params.perform_screen_pathogens ? screen_pathogens : "",
+        params.perform_verify_species ? verify_species : "",
+        "MultiQC (Ewels et al. 2016)."
+    ].join(' ').trim().replaceAll("\\s+", " ").replaceAll("[,|.] +\\.", ".")
 
     return citation_text
 }
@@ -222,7 +240,7 @@ def methodsDescriptionText(mqc_methods_yaml) {
     meta["nodoi_text"] = meta.manifest_map.doi ? "" : "<li>If available, make sure to update the text to include the Zenodo DOI of version of the pipeline used. </li>"
 
     // Tool references
-    meta["tool_citations"] = ""
+    meta["tool_citations"] = toolCitationText().replaceAll(", \\.", ".").replaceAll("\\. \\.", ".").replaceAll(", \\.", ".")
     meta["tool_bibliography"] = ""
 
     // TODO nf-core: Only uncomment below if logic in toolCitationText/toolBibliographyText has been filled!
