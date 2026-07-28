@@ -98,6 +98,5 @@
             "centrifuge_taxpasta": ["centrifuge_report", "centrifuge_result"],
             "diamond_taxpasta": ["diamond"]
         }
-    },
-    "uniqueEntries": ["sample"]
+    }
 }
