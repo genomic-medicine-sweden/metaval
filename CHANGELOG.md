@@ -9,6 +9,7 @@ Initial release of genomic-medicine-sweden/metaval, created with the [nf-core](h
 
 ### `Added`
 
+- Support for multiple FASTQ files for the same sample. These will be merged at the start of the pipeline []
 - Extract taxIDs of viruses
 - Extract Kraken2 reads with KrakenTools
 - Extract Centrifuge reads
