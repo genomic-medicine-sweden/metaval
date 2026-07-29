@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 <h1>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/images/metaval_logo_dark.png">
     <img alt="genomic-medicine-sweden/metaval" src="docs/images/metaval_logo_light.png", width="250">
   </picture>
 </h1>
-=======
-# genomic-medicine-sweden/metaval
->>>>>>> TEMPLATE
 
 [![Open in GitHub Codespaces](https://img.shields.io/badge/Open_In_GitHub_Codespaces-black?labelColor=grey&logo=github)](https://github.com/codespaces/new/genomic-medicine-sweden/metaval)
 [![GitHub Actions CI Status](https://github.com/genomic-medicine-sweden/metaval/actions/workflows/nf-test.yml/badge.svg)](https://github.com/genomic-medicine-sweden/metaval/actions/workflows/nf-test.yml)
@@ -15,11 +11,7 @@
 [![nf-test](https://img.shields.io/badge/unit_tests-nf--test-337ab7.svg)](https://www.nf-test.com)
 
 [![Nextflow](https://img.shields.io/badge/version-%E2%89%A525.10.4-green?style=flat&logo=nextflow&logoColor=white&color=%230DC09D&link=https%3A%2F%2Fnextflow.io)](https://www.nextflow.io/)
-<<<<<<< HEAD
-[![nf-core template version](https://img.shields.io/badge/nf--core_template-4.0.2-green?style=flat&logo=nfcore&logoColor=white&color=%2324B064&link=https%3A%2F%2Fnf-co.re)](https://github.com/nf-core/tools/releases/tag/4.0.2)
-=======
 [![nf-core template version](https://img.shields.io/badge/nf--core_template-4.0.3-green?style=flat&logo=nfcore&logoColor=white&color=%2324B064&link=https%3A%2F%2Fnf-co.re)](https://github.com/nf-core/tools/releases/tag/4.0.3)
->>>>>>> TEMPLATE
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
 [![run with docker](https://img.shields.io/badge/run%20with-docker-0db7ed?labelColor=000000&logo=docker)](https://www.docker.com/)
 [![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
@@ -27,15 +19,10 @@
 
 ## Introduction
 
-<<<<<<< HEAD
 **genomic-medicine-sweden/metaval** is a bioinformatics pipeline for post-processing the results of [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler). It verifies the taxa classified by the nf-core/taxprofiler pipeline using Nanopore and Illumina shotgun metagenomic sequencing data. At the moment, `genomic-medicine-sweden/metaval` only verifies the classification results from three taxonomic classifiers `Kraken2`, `Centrifuge` and `DIAMOND`.
-=======
-**genomic-medicine-sweden/metaval** is a bioinformatics pipeline that ...
->>>>>>> TEMPLATE
 
 The pipeline, constructed using the `nf-core` [template](https://nf-co.re/tools#creating-a-new-pipeline), utilizing Docker/Singularity containers for easy installation and reproducible results. The implementation follows [Nextflow DSL2](https://www.nextflow.io/docs/latest/dsl1.html), employing one container per process for simplified maintenance and dependency management. Processes are sourced from [nf-core/modules](https://github.com/nf-core/modules) for broader accessibility within the Nextflow community.
 
-<<<<<<< HEAD
 ## Pipeline summary
 
 <p align="center">
@@ -97,23 +84,14 @@ This workflow is activated by enabling the `--perform_verify_species` option and
 This workflow is activated by enabling the `--perform_verify_species` option and the `--taxid_list` option, allowing users to define a list of TaxIDs. It is not limited to `viral` TaxIDs and can include `bacteria`, `fungi`, `archaea`, `parasites`, or `plasmids`.
 
 All steps are the same as the **Orange Workflow** except using user-defined TaxIDs instead of extracting predefined viral TaxIDs.
-=======
-<!-- TODO nf-core: Include a figure that guides the user through the major workflow steps. Many nf-core
-     workflows use the "tube map" design for that. See https://nf-co.re/docs/community/brand/workflow-schematics#examples for examples.   -->
-<!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
->>>>>>> TEMPLATE
 
 ## Usage
 
 > [!NOTE]
-<<<<<<< HEAD
-> If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/usage/installation) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline) with `-profile test` before running the workflow on actual data.
-=======
 > If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/get_started/environment_setup/overview) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/get_started/run-your-first-pipeline) with `-profile test` before running the workflow on actual data.
 
 <!-- TODO nf-core: Describe the minimum required steps to execute the pipeline, e.g. how to prepare samplesheets.
      Explain what rows and columns represent. For instance (please edit as appropriate):
->>>>>>> TEMPLATE
 
 First, prepare a samplesheet with your input data that looks as follows:
 
@@ -140,7 +118,6 @@ nextflow run genomic-medicine-sweden/metaval \
 ```
 
 > [!WARNING]
-<<<<<<< HEAD
 > Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_; see [docs](https://nf-co.re/docs/usage/getting_started/configuration#custom-configuration-files).
 
 For more details and further functionality, please refer to the [usage documentation](https://github.com/genomic-medicine-sweden/metaval/blob/dev/docs/usage.md).
@@ -195,13 +172,6 @@ For more details about the output files and reports, please refer to the
 ## Credits
 
 genomic-medicine-sweden/metaval was originally written by [LilyAnderssonLee](https://github.com/LilyAnderssonLee). Most of PRs were reviewed by [sofstam](https://github.com/sofstam).
-=======
-> Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_; see [docs](https://nf-co.re/docs/running/run-pipelines#using-parameter-files).
-
-## Credits
-
-genomic-medicine-sweden/metaval was originally written by LilyAnderssonLee.
->>>>>>> TEMPLATE
 
 We thank the following people for their assistance in the development of this pipeline:
 [maxulysse](https://github.com/maxulysse)
