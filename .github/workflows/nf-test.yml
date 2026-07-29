@@ -155,8 +155,6 @@ jobs:
           echo "DEBUG: toJSON(needs) = ${{ toJSON(needs) }}"
           echo "DEBUG: toJSON(needs.*.result) = ${{ toJSON(needs.*.result) }}"
           echo "::endgroup::"
-<<<<<<< HEAD
-=======
 
       - name: Download PR comment fragments
         if: ${{ always() }}
@@ -198,4 +196,3 @@ jobs:
         with:
           name: pr-comment
           path: pr-comment/
->>>>>>> TEMPLATE
