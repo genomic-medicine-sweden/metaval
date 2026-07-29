@@ -64,7 +64,6 @@ workflow METAVAL {
     multiqc_config
     multiqc_logo
     multiqc_methods_description
-<<<<<<< HEAD
 
     outdir
     main:
@@ -260,18 +259,12 @@ workflow METAVAL {
             IGV( ch_igv_input )
         }
     }
-=======
-    outdir
-
-    main:
->>>>>>> TEMPLATE
 
     def ch_versions = channel.empty()
     def ch_multiqc_files = channel.empty()
     //
     // WORKFLOW: Screen pathogens
     //
-<<<<<<< HEAD
 
     //
     // SUBWORKFLOW: MAPPING
@@ -346,12 +339,6 @@ workflow METAVAL {
     ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.map{ _meta, file -> file })
 
     //
-=======
-    FASTQC(ch_samplesheet)
-    ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.map{ _meta, file -> file })
-
-    //
->>>>>>> TEMPLATE
     // Collate and save software versions
     //
     def topic_versions = channel.topic("versions")
