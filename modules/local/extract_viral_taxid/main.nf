@@ -16,6 +16,16 @@ process EXTRACT_VIRAL_TAXID {
 
     script:
     def prefix = task.ext.prefix ?: "${meta.id}_${meta.tool}"
+    def exclude_phages = phages_taxid
+        ? """
+        awk 'NR==FNR{phage[\$1]; next} !(\$1 in phage)' \
+            ${phages_taxid} \
+            viral_taxids_unfiltered.tsv \
+            > ${prefix}_viral_taxids.tsv
+        """
+        : """
+        mv viral_taxids_unfiltered.tsv ${prefix}_viral_taxids.tsv
+        """
 
     """
     if grep -qi "virus" ${taxpasta_standardised_profile}; then
@@ -33,14 +43,13 @@ process EXTRACT_VIRAL_TAXID {
             # Extract all taxids identified in the classification report
             awk -F'\t' '\$3 != 0 {print \$5}' ${report} > detected_taxid.txt
             # Extract only viral taxids found in a given sample
-            awk 'NR==FNR{taxid[\$1]=\$2; next} (\$1 in taxid) {print \$1"\t"taxid[\$1]}' taxpasta_viral_taxid_edit.txt detected_taxid.txt > ${prefix}_viral_taxids.tsv
-            # Exclude phage taxids
-            awk 'NR==FNR{phage[\$1]; next} !(\$1 in phage)' ${phages_taxid} ${prefix}_viral_taxids.tsv > ${prefix}_viral_taxids_nophages.tsv
+            awk 'NR==FNR{taxid[\$1]=\$2; next} (\$1 in taxid) {print \$1"\t"taxid[\$1]}' taxpasta_viral_taxid_edit.txt detected_taxid.txt > viral_taxids_unfiltered.tsv
         elif [[ "${meta.tool}" == "diamond" ]]; then
             awk '\$3 < ${evalue_threshold}' ${report} | cut -f 2 | sort | uniq > detected_taxid.txt
-            awk 'NR==FNR{taxid[\$1]=\$2; next} (\$1 in taxid) {print \$1"\t"taxid[\$1]}' taxpasta_viral_taxid_edit.txt detected_taxid.txt > ${prefix}_viral_taxids.tsv
-            awk 'NR==FNR{phage[\$1]; next} !(\$1 in phage)' ${phages_taxid} ${prefix}_viral_taxids.tsv > ${prefix}_viral_taxids_nophages.tsv
+            awk 'NR==FNR{taxid[\$1]=\$2; next} (\$1 in taxid) {print \$1"\t"taxid[\$1]}' taxpasta_viral_taxid_edit.txt detected_taxid.txt > viral_taxids_unfiltered.tsv
         fi
+
+        ${exclude_phages}
     fi
     """
 
