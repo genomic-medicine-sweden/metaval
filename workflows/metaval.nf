@@ -250,9 +250,6 @@ workflow METAVAL {
             IGV( ch_igv_input )
         }
     }
-
-    def ch_versions = channel.empty()
-    def ch_multiqc_files = channel.empty()
     //
     // WORKFLOW: Screen pathogens
     //
