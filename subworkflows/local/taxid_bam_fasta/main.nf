@@ -134,7 +134,8 @@ workflow TAXID_BAM_FASTA {
     SAMTOOLS_DEPTH (ch_pathogen_bam_bai, [[],[]])
 
     ch_coverage_plot_input = channel.empty()
-    ch_coverage_plot_input = ch_coverage_plot_input.mix(SAMTOOLS_DEPTH.out.tsv.filter {_meta, depth_file -> depth_file.size() > 0 })
+    ch_coverage_plot_input = ch_coverage_plot_input
+        .mix(SAMTOOLS_DEPTH.out.tsv.filter {_meta, depth_file -> depth_file.size() > 0 })
         .join(SAMTOOLS_COVERAGE.out.coverage, by:0)
 
     COVERAGE_PLOT(ch_coverage_plot_input)

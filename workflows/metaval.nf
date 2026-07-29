@@ -68,7 +68,19 @@ workflow METAVAL {
 
     // Filter samplesheet to exclude NTC if params.skip_ntc is true.
     if (params.skip_ntc) {
-        ch_samplesheet_filtered = ch_samplesheet.filter { meta, _fastq_1, _fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
+        ch_samplesheet_filtered = ch_samplesheet.filter {
+            meta,
+            _fastq_1,
+            _fastq_2,
+            _kraken2_report,
+            _kraken2_result,
+            _kraken2_taxpasta,
+            _centrifuge_report,
+            _centrifuge_result,
+            _centrifuge_taxpasta,
+            _diamond,
+            _diamond_taxpasta ->
+
             return !meta.is_ntc
         }
     } else {
@@ -76,10 +88,18 @@ workflow METAVAL {
     }
 
     // Create input channels for short reads and long reads.
-    ch_input = ch_samplesheet_filtered.branch { meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
-
-        // Define single_end based on the conditions
-        //meta.single_end = ( fastq_1 && !fastq_2 )
+    ch_input = ch_samplesheet_filtered.branch {
+        meta,
+        fastq_1,
+        fastq_2,
+        _kraken2_report,
+        _kraken2_result,
+        _kraken2_taxpasta,
+        _centrifuge_report,
+        _centrifuge_result,
+        _centrifuge_taxpasta,
+        _diamond,
+        _diamond_taxpasta ->
 
         // reads channels
         short_reads: meta.instrument_platform != 'OXFORD_NANOPORE'
@@ -105,7 +125,19 @@ workflow METAVAL {
         ch_taxpasta_input = channel.empty()
         // Kraken2
         if ( params.extract_kraken2_reads ) {
-            ch_taxpasta_kraken2 = ch_samplesheet.map { meta, _fastq_1, _fastq_2, _kraken2_report, _kraken2_result, kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
+            ch_taxpasta_kraken2 = ch_samplesheet.map {
+                meta,
+                _fastq_1,
+                _fastq_2,
+                _kraken2_report,
+                _kraken2_result,
+                kraken2_taxpasta,
+                _centrifuge_report,
+                _centrifuge_result,
+                _centrifuge_taxpasta,
+                _diamond,
+                _diamond_taxpasta ->
+
                 [ meta + [ tool: "kraken2" ], kraken2_taxpasta ]
             }
             ch_taxpasta_kraken2 = sample_ntc_branch(ch_taxpasta_kraken2)
@@ -114,7 +146,19 @@ workflow METAVAL {
         }
         // Centrifuge
         if ( params.extract_centrifuge_reads ) {
-            ch_taxpasta_centrifuge = ch_samplesheet.map { meta, _fastq_1, _fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
+            ch_taxpasta_centrifuge = ch_samplesheet.map {
+                meta,
+                _fastq_1,
+                _fastq_2,
+                _kraken2_report,
+                _kraken2_result,
+                _kraken2_taxpasta,
+                _centrifuge_report,
+                _centrifuge_result,
+                centrifuge_taxpasta,
+                _diamond,
+                _diamond_taxpasta ->
+
                 [ meta + [ tool: "centrifuge" ], centrifuge_taxpasta ]
             }
             ch_taxpasta_centrifuge = sample_ntc_branch(ch_taxpasta_centrifuge)
@@ -123,7 +167,19 @@ workflow METAVAL {
         }
         // DIAMOND
         if ( params.extract_diamond_reads ) {
-            ch_taxpasta_diamond = ch_samplesheet.map { meta, _fastq_1, _fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, diamond_taxpasta ->
+            ch_taxpasta_diamond = ch_samplesheet.map {
+                meta,
+                _fastq_1,
+                _fastq_2,
+                _kraken2_report,
+                _kraken2_result,
+                _kraken2_taxpasta,
+                _centrifuge_report,
+                _centrifuge_result,
+                _centrifuge_taxpasta,
+                _diamond,
+                diamond_taxpasta ->
+
                 [ meta + [ tool: "diamond" ], diamond_taxpasta ]
             }
             ch_taxpasta_diamond = sample_ntc_branch(ch_taxpasta_diamond)
@@ -139,7 +195,19 @@ workflow METAVAL {
         //
 
         // Channels for extracting kraken2/centrifuge/diamond reads
-        ch_extract_reads = ch_samplesheet_filtered.multiMap { meta, fastq_1, fastq_2, kraken2_report, kraken2_result, kraken2_taxpasta, centrifuge_report, centrifuge_result, centrifuge_taxpasta, diamond, diamond_taxpasta ->
+        ch_extract_reads = ch_samplesheet_filtered.multiMap {
+            meta,
+            fastq_1,
+            fastq_2,
+            kraken2_report,
+            kraken2_result,
+            kraken2_taxpasta,
+            centrifuge_report,
+            centrifuge_result,
+            centrifuge_taxpasta,
+            diamond,
+            diamond_taxpasta ->
+
             kraken2_taxpasta: [ meta + [ tool: "kraken2" ], kraken2_taxpasta ]
             kraken2_report: [ meta + [ tool: "kraken2" ], kraken2_report ]
             kraken2_result: [ meta, kraken2_result ]
@@ -182,7 +250,11 @@ workflow METAVAL {
         // Run de novo assembly if the number of reads exceeds the params.min_read_counts
         ch_taxid_reads_filter = TAXID_READS.out.reads
             .branch { meta, reads ->
-                blast: meta.single_end ? reads.countFastq() < params.min_read_counts : reads[0].countFastq() < params.min_read_counts || reads[1].countFastq() < params.min_read_counts
+                blast: meta.single_end
+                    ? reads.countFastq() < params.min_read_counts
+                    : reads[0].countFastq() < params.min_read_counts ||
+                    reads[1].countFastq() < params.min_read_counts
+
                 denovo: true
             }
         // Then select first read for BLAST
@@ -261,19 +333,26 @@ workflow METAVAL {
 
         if (params.perform_mapping) {
             // Fetch genomes of blast hits
-            FETCH_BLAST_GENOMES ( params.taxid2genome, BLAST.out.unique_taxid, TAXID_READS.out.reads )
+            FETCH_BLAST_GENOMES (
+                params.taxid2genome,
+                BLAST.out.unique_taxid,
+                TAXID_READS.out.reads )
             // Mapping - short reads
-            ch_mapping_input_shortread = FETCH_BLAST_GENOMES.out.shortreads.join(FETCH_BLAST_GENOMES.out.shortreads_genome, by:0)
+            ch_mapping_input_shortread = FETCH_BLAST_GENOMES.out.shortreads
+                .join(FETCH_BLAST_GENOMES.out.shortreads_genome, by:0)
             MAPPING_SHORTREAD ( ch_mapping_input_shortread, true )
 
             // Mapping - long reads
-            ch_mapping_input_longread = FETCH_BLAST_GENOMES.out.longreads.join(FETCH_BLAST_GENOMES.out.longreads_genome, by:0)
+            ch_mapping_input_longread = FETCH_BLAST_GENOMES.out.longreads
+                .join(FETCH_BLAST_GENOMES.out.longreads_genome, by:0)
             MAPPING_LONGREAD ( ch_mapping_input_longread, true )
 
             // Coverage tables
-            ch_coverage_tables = ch_coverage_tables.mix( MAPPING_SHORTREAD.out.coverage, MAPPING_LONGREAD.out.coverage )
+            ch_coverage_tables = ch_coverage_tables
+                .mix( MAPPING_SHORTREAD.out.coverage, MAPPING_LONGREAD.out.coverage )
             // Coverage plots
-            ch_coverage_plots = ch_coverage_plots.mix( MAPPING_SHORTREAD.out.coverage_plot, MAPPING_LONGREAD.out.coverage_plot )
+            ch_coverage_plots = ch_coverage_plots
+                .mix( MAPPING_SHORTREAD.out.coverage_plot, MAPPING_LONGREAD.out.coverage_plot )
 
             //
             // SUBWORKFLOW: IGV
@@ -282,13 +361,15 @@ workflow METAVAL {
             // Filter channels to get bam files which contains mapped reads
             // short reads
             ch_igv_input_shortread = channel.empty()
-            ch_igv_input_shortread = ch_igv_input_shortread.mix(MAPPING_SHORTREAD.out.bam)
+            ch_igv_input_shortread = ch_igv_input_shortread
+                .mix(MAPPING_SHORTREAD.out.bam)
                 .join(MAPPING_SHORTREAD.out.bai, by:0)
                 .join(FETCH_BLAST_GENOMES.out.shortreads_genome, by:0)
 
             // long reads
             ch_igv_input_longread = channel.empty()
-            ch_igv_input_longread = ch_igv_input_longread.mix(MAPPING_LONGREAD.out.bam)
+            ch_igv_input_longread = ch_igv_input_longread
+                .mix(MAPPING_LONGREAD.out.bam)
                 .join(MAPPING_LONGREAD.out.bai, by:0)
                 .join(FETCH_BLAST_GENOMES.out.longreads_genome, by:0)
 
@@ -374,8 +455,17 @@ workflow METAVAL {
         // Subset BAM file for each taxID
         ch_accession2taxid = channel.fromPath ( params.accession2taxid, checkIfExists: true )
 
-        TAXID_BAM_FASTA_SHORTREAD ( MAPPING_SHORTREAD_PATHOGEN.out.bam, MAPPING_SHORTREAD_PATHOGEN.out.bai, ch_accession2taxid, params.min_read_counts )
-        TAXID_BAM_FASTA_LONGREAD( MAPPING_LONGREAD_PATHOGEN.out.bam, MAPPING_LONGREAD_PATHOGEN.out.bai, ch_accession2taxid, params.min_read_counts )
+        TAXID_BAM_FASTA_SHORTREAD (
+            MAPPING_SHORTREAD_PATHOGEN.out.bam,
+            MAPPING_SHORTREAD_PATHOGEN.out.bai,
+            ch_accession2taxid,
+            params.min_read_counts )
+
+        TAXID_BAM_FASTA_LONGREAD(
+            MAPPING_LONGREAD_PATHOGEN.out.bam,
+            MAPPING_LONGREAD_PATHOGEN.out.bai,
+            ch_accession2taxid,
+            params.min_read_counts )
 
         // IGV
         ch_igv_input_pathogen_shortread = TAXID_BAM_FASTA_SHORTREAD.out.taxid_bam
@@ -396,8 +486,10 @@ workflow METAVAL {
         //
 
         ch_bam_filtered = channel.empty()
-        ch_bam_filtered_shortread = TAXID_BAM_FASTA_SHORTREAD.out.taxid_bam.join(TAXID_BAM_FASTA_SHORTREAD.out.taxid_bai, by:0)
-        ch_bam_filtered_longread = TAXID_BAM_FASTA_LONGREAD.out.taxid_bam.join(TAXID_BAM_FASTA_LONGREAD.out.taxid_bai, by:0)
+        ch_bam_filtered_shortread = TAXID_BAM_FASTA_SHORTREAD.out.taxid_bam
+            .join(TAXID_BAM_FASTA_SHORTREAD.out.taxid_bai, by:0)
+        ch_bam_filtered_longread = TAXID_BAM_FASTA_LONGREAD.out.taxid_bam
+            .join(TAXID_BAM_FASTA_LONGREAD.out.taxid_bai, by:0)
         ch_bam_filtered = ch_bam_filtered.mix(ch_bam_filtered_shortread, ch_bam_filtered_longread)
 
         CONSENSUS ( ch_bam_filtered, [ [], ch_reference ], params.consensus_min_bases )
