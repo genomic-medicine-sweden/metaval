@@ -43,39 +43,18 @@ genomic-medicine-sweden/metaval will require the information given bellow.
 | diamond_taxpasta    | Standardized diamond taxonomic profiles for all samples.                                                                                         |
 
 ```csv title="samplesheet.csv"
-<<<<<<< HEAD
 sample,instrument_platform,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
 sample1,ILLUMINA,sample1.unmapped_1.fastq.gz,sample1.unmapped_2.fastq.gz,sample1.kraken2.kraken2.report.txt,sample1.kraken2.kraken2.classifiedreads.txt,kraken2_kraken2-db.tsv,sample1.centrifuge.txt,sample1.centrifuge.results.txt,centrifuge_centrifuge-db.tsv,sample1.diamond.tsv,diamond_diamond-db.tsv
 sample2,ILLUMINA,sample2.unmapped_1.fastq.gz,sample2.unmapped_2.fastq.gz,sample2.kraken2.kraken2.report.txt,sample2.kraken2.kraken2.classifiedreads.txt,kraken2_kraken2-db.tsv,sample2.centrifuge.txt,sample2.centrifuge.results.txt,centrifuge_centrifuge-db.tsv,sample2.diamond.tsv,diamond_diamond-db.tsv
-=======
-sample,fastq_1,fastq_2
-CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
-CONTROL_REP1,AEG588A1_S1_L003_R1_001.fastq.gz,AEG588A1_S1_L003_R2_001.fastq.gz
-CONTROL_REP1,AEG588A1_S1_L004_R1_001.fastq.gz,AEG588A1_S1_L004_R2_001.fastq.gz
->>>>>>> TEMPLATE
 ```
 
 #### BLASTn database
 
 Use a custom database or download available [NCBI databases](https://ftp.ncbi.nlm.nih.gov/blast/db/). See the [documentation](https://ftp.ncbi.nlm.nih.gov/blast/documents/blastdb.html). To speed up the BLAST process, be cautious with the choice of database. For example, for viruses, one could use `ref_viruses_rep_genomes` or `nt_viruses` instead of the `nt` database for BLASTn. The following example code downloads the BLASTn `nt_viruses` database:
 
-<<<<<<< HEAD
 ```sh
 conda install bioconda::blast
 update_blastdb.pl --decompress nt_viruses [*]
-=======
-A final samplesheet file consisting of both single- and paired-end data may look something like the one below. This is for 6 samples, where `TREATMENT_REP3` has been sequenced twice.
-
-```csv title="samplesheet.csv"
-sample,fastq_1,fastq_2
-CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
-CONTROL_REP2,AEG588A2_S2_L002_R1_001.fastq.gz,AEG588A2_S2_L002_R2_001.fastq.gz
-CONTROL_REP3,AEG588A3_S3_L002_R1_001.fastq.gz,AEG588A3_S3_L002_R2_001.fastq.gz
-TREATMENT_REP1,AEG588A4_S4_L003_R1_001.fastq.gz,
-TREATMENT_REP2,AEG588A5_S5_L003_R1_001.fastq.gz,
-TREATMENT_REP3,AEG588A6_S6_L003_R1_001.fastq.gz,
-TREATMENT_REP3,AEG588A6_S6_L004_R1_001.fastq.gz,
->>>>>>> TEMPLATE
 ```
 
 #### BLASTx (DIAMOND) database
@@ -151,7 +130,6 @@ Users need to prepare a file containing accession IDs of pathogens and their cor
 The example commands for running each workflow are as follows:
 
 ```bash
-<<<<<<< HEAD
 # Green Workflow - pathogen screening
 nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results -profile docker --perform_screen_pathogens --pathogens_genomes /path/to/reference.fna --accession2taxid /path/to/accession2taxid.map
 
@@ -161,9 +139,6 @@ nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir 
 # Blue Workflow - Verify User-Defined TaxIDs
 nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results -profile docker --taxid_list /path/to/taxids.tsv --perform_verify_species --extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads --perform_mapping --taxid2genome /path/to/taxid2genome.map --perform_shortread_denovo --perform_longread_denovo --perform_shortread_consensus --perform_longread_consensus --longread_consensus_tool 'medaka'
 
-=======
-nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results --genome GRCh37 -profile docker
->>>>>>> TEMPLATE
 ```
 
 This will launch the pipeline with the `docker` configuration profile. See below for more information about profiles.
@@ -182,11 +157,7 @@ If you wish to repeatedly use the same parameters for multiple runs, rather than
 Pipeline settings can be provided in a `yaml` or `json` file via `-params-file <file>`.
 
 > [!WARNING]
-<<<<<<< HEAD
-> Do not use `-c <file>` to specify parameters as this will result in errors. Custom config files specified with `-c` must only be used for [tuning process resource specifications](https://nf-co.re/docs/usage/configuration#tuning-workflow-resources), other infrastructural tweaks (such as output directories), or module arguments (args).
-=======
 > Do not use `-c <file>` to specify parameters as this will result in errors. Custom config files specified with `-c` must only be used for [tuning process resource specifications](https://nf-co.re/docs/running/run-pipelines#configuring-pipelines), other infrastructural tweaks (such as output directories), or module arguments (args).
->>>>>>> TEMPLATE
 
 The above pipeline run specified with a params file in yaml format:
 
