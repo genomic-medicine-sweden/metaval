@@ -90,7 +90,6 @@ All steps are the same as the **Orange Workflow** except using user-defined TaxI
 > [!NOTE]
 > If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/get_started/environment_setup/overview) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/get_started/run-your-first-pipeline) with `-profile test` before running the workflow on actual data.
 
-
 First, prepare a samplesheet with your input data that looks as follows:
 
 `samplesheet.csv`:
@@ -104,7 +103,6 @@ sample2,ILLUMINA,sample2.unmapped_1.fastq.gz,sample2.unmapped_2.fastq.gz,sample2
 Each row represents a fastq file (single-end) or a pair of fastq files (paired end).
 
 Now, you can run the pipeline using:
-
 
 ```bash
 nextflow run genomic-medicine-sweden/metaval \
@@ -175,7 +173,6 @@ We thank the following people for their assistance in the development of this pi
 [mashehu](https://github.com/mashehu)
 [ryanjameskennedy](https://github.com/ryanjameskennedy)
 [rannick](https://github.com/rannick)
-
 
 ## Contributions and Support
 
