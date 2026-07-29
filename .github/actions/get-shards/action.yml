@@ -7,7 +7,6 @@ inputs:
   paths:
     description: "Component paths to test"
     required: false
-    default: "."
   tags:
     description: "Tags to pass as argument for nf-test --tag parameter"
     required: false
@@ -29,15 +28,8 @@ runs:
       id: shards
       shell: bash
       run: |
-        mapfile -t test_files < <(
-          find ${{ inputs.paths }} \
-            -type f \
-            -name "*.nf.test" \
-            ! -name 'test_complete.nf.test'
-        )
-
         # Run nf-test with dynamic parameter
-        nftest_output=$(nf-test test "${test_files[@]}" \
+        nftest_output=$(nf-test test \
           --profile +docker \
           $(if [ -n "${{ inputs.tags }}" ]; then echo "--tag ${{ inputs.tags }}"; fi) \
           --dry-run \
