@@ -47,14 +47,22 @@ Once you have made your changes, run the pipeline with nf-test to test them loca
 For additional information, use the `--verbose` flag to view the Nextflow console log output.
 
 ```bash
+<<<<<<< HEAD
 nf-test test --tag test --profile=+docker --verbose
+=======
+nf-test test --tag test --profile +docker --verbose
+>>>>>>> TEMPLATE
 ```
 
 If you have added new functionality, ensure you update the test assertions in the `.nf.test` files in the `tests/` directory.
 Update the snapshots with the following command:
 
 ```bash
+<<<<<<< HEAD
 nf-test test --tag test --profile=+docker --verbose --update-snapshots
+=======
+nf-test test --tag test --profile +docker --verbose --update-snapshots
+>>>>>>> TEMPLATE
 ```
 
 When you create a pull request with changes, GitHub Actions will run automatic tests.
@@ -81,10 +89,13 @@ GitHub Actions runs the pipeline on this data to ensure it runs through and exit
 If there are any failures then the automated tests fail.
 These tests are run with the latest available version of Nextflow and the minimum required version specified in the pipeline code.
 
+<<<<<<< HEAD
 In `genomic-medicine-sweden/metaval`, there are two nf-tests: `default.nf.test` and `test_complete.nf.test`.
 
 Currently, GitHub Actions only run `default.nf.test`, while `test_complete.nf.test` is ignored because it launches a large number of processes which may cause the Github Actions workflow to fail. Ensure that `test_complete.nf.test` runs successfully locally.
 
+=======
+>>>>>>> TEMPLATE
 ### Patch release
 
 > [!WARNING]
@@ -166,6 +177,7 @@ If you update images or graphics, follow the nf-core [style guidelines](https://
 
 ## Pipeline specific contribution guidelines
 
+<<<<<<< HEAD
 # `genomic-medicine-sweden/metaval`: Contributing Guidelines
 
 Hi there!
@@ -284,3 +296,6 @@ To get started:
 Devcontainer specs:
 
 - [DevContainer config](.devcontainer/devcontainer.json)
+=======
+<!-- TODO nf-core: Add any pipeline specific contribution guidelines here, such as coding styles, procedures, checklists etc. -->
+>>>>>>> TEMPLATE

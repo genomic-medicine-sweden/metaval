@@ -25,6 +25,7 @@
 - [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
 > Andrews, S. (2010). FastQC: A Quality Control Tool for High Throughput Sequence Data [Online].
+<<<<<<< HEAD
 
 - [Flye](https://doi.org/10.1038/s41592-020-00971-x)
 
@@ -39,10 +40,13 @@
 - [minimap2](https://doi.org/10.1093/bioinformatics/bty191)
 
   > Li, H. (2018). Minimap2: pairwise alignment for nucleotide sequences. Bioinformatics , 34(18), 3094–3100. https://doi.org/10.1093/bioinformatics/bty191.
+=======
+>>>>>>> TEMPLATE
 
 - [MultiQC](https://pubmed.ncbi.nlm.nih.gov/27312411/)
 
 > Ewels P, Magnusson M, Lundin S, Käller M. MultiQC: summarize analysis results for multiple tools and samples in a single report. Bioinformatics. 2016 Oct 1;32(19):3047-8. doi: 10.1093/bioinformatics/btw354. Epub 2016 Jun 16. PubMed PMID: 27312411; PubMed Central PMCID: PMC5039924.
+<<<<<<< HEAD
 
 - [SAMTools](https://doi.org/10.1093/gigascience/giab008)
 
@@ -55,6 +59,8 @@
 - [SPAdes](https://www.ncbi.nlm.nih.gov/pubmed/24093227/)
 
   > Nurk S, Bankevich A, Antipov D, Gurevich AA, Korobeynikov A, Lapidus A, Prjibelski AD, Pyshkin A, Sirotkin A, Sirotkin Y, Stepanauskas R, Clingenpeel SR, Woyke T, McLean JS, Lasken R, Tesler G, Alekseyev MA, Pevzner PA. Assembling single-cell genomes and mini-metagenomes from chimeric MDA products. J Comput Biol. 2013 Oct;20(10):714-37. https://doi: 10.1089/cmb.2013.0084.
+=======
+>>>>>>> TEMPLATE
 
 ## Software packaging/containerisation tools
 

@@ -20,16 +20,9 @@ include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_meta
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     NAMED WORKFLOWS FOR PIPELINE
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
 //
-// WORKFLOW: Run main analysis pipeline depending on type of input
-//
-workflow GENOMICMEDICINESWEDEN_METAVAL {
-
-    take:
-    samplesheet // channel: samplesheet read in from --input
 
     main:
 

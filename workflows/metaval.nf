@@ -3,6 +3,7 @@
     IMPORT MODULES / SUBWORKFLOWS / FUNCTIONS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+<<<<<<< HEAD
 
 // Extract reads of taxIDs
 include { TAXID_READS                                           } from '../subworkflows/local/taxid_reads'
@@ -41,6 +42,14 @@ include { paramsSummaryMultiqc                                  } from '../subwo
 include { softwareVersionsToYAML                                } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 include { methodsDescriptionText                                } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
 include { getFlagstatMappedReads                                } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
+=======
+include { FASTQC                 } from '../modules/nf-core/fastqc/main'
+include { MULTIQC                } from '../modules/nf-core/multiqc/main'
+include { paramsSummaryMap       } from 'plugin/nf-schema'
+include { paramsSummaryMultiqc   } from '../subworkflows/nf-core/utils_nfcore_pipeline'
+include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
+include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
+>>>>>>> TEMPLATE
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,6 +64,7 @@ workflow METAVAL {
     multiqc_config
     multiqc_logo
     multiqc_methods_description
+<<<<<<< HEAD
 
     outdir
     main:
@@ -250,10 +260,18 @@ workflow METAVAL {
             IGV( ch_igv_input )
         }
     }
+=======
+    outdir
 
+    main:
+>>>>>>> TEMPLATE
+
+    def ch_versions = channel.empty()
+    def ch_multiqc_files = channel.empty()
     //
     // WORKFLOW: Screen pathogens
     //
+<<<<<<< HEAD
 
     //
     // SUBWORKFLOW: MAPPING
@@ -328,6 +346,12 @@ workflow METAVAL {
     ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.map{ _meta, file -> file })
 
     //
+=======
+    FASTQC(ch_samplesheet)
+    ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.map{ _meta, file -> file })
+
+    //
+>>>>>>> TEMPLATE
     // Collate and save software versions
     //
     def topic_versions = channel.topic("versions")
@@ -351,7 +375,11 @@ workflow METAVAL {
         .mix(topic_versions_string)
         .collectFile(
             storeDir: "${outdir}/pipeline_info",
+<<<<<<< HEAD
             name:  'genomic-medicine-sweden_'  +  'metaval_software_'  + 'mqc_'  + 'versions.yml',
+=======
+            name:  'metaval_software_'  + 'mqc_'  + 'versions.yml',
+>>>>>>> TEMPLATE
             sort: true,
             newLine: true
         )
@@ -371,7 +399,11 @@ workflow METAVAL {
     MULTIQC(
         ch_multiqc_files.flatten().collect().map { files ->
             [
+<<<<<<< HEAD
                 [id: 'gms/metaval'],
+=======
+                [id: 'metaval'],
+>>>>>>> TEMPLATE
                 files,
                 multiqc_config
                     ? file(multiqc_config, checkIfExists: true)
