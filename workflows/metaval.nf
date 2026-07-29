@@ -337,7 +337,7 @@ workflow METAVAL {
         ch_coverage_plot_files     = ch_coverage_plots.map { _meta, plot -> plot }.collect()
 
         METAVAL_REPORT (
-            params.ticket,
+            params.ticket_id,
             ch_samplesheet_report,
             ch_flagged_taxpasta_report,
             ch_reads_report_files,
