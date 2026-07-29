@@ -1,6 +1,6 @@
 {
     "@context": [
-        "https://w3id.org/ro/crate/1.1/context",
+        "https://w3id.org/ro/crate/1.2/context",
         {
             "GithubService": "https://w3id.org/ro/terms/test#GithubService",
             "JenkinsService": "https://w3id.org/ro/terms/test#JenkinsService",
@@ -93,7 +93,11 @@
             },
             "mentions": [
                 {
+<<<<<<< HEAD
                     "@id": "#95a2fa6d-e9b6-4021-80cd-cc5a224b5652"
+=======
+                    "@id": "#d8990976-589e-46f9-8566-245bd7ae15e2"
+>>>>>>> TEMPLATE
                 }
             ],
             "name": "genomic-medicine-sweden/metaval"
@@ -106,7 +110,11 @@
             },
             "conformsTo": [
                 {
+<<<<<<< HEAD
                     "@id": "https://w3id.org/ro/crate/1.1"
+=======
+                    "@id": "https://w3id.org/ro/crate/1.2"
+>>>>>>> TEMPLATE
                 },
                 {
                     "@id": "https://w3id.org/workflowhub/workflow-ro-crate/1.0"
@@ -122,11 +130,19 @@
             ],
             "contributor": [
                 {
+<<<<<<< HEAD
                     "@id": "#02066a59-c73c-42ed-9746-9c2ab994ea54"
                 }
             ],
             "dateCreated": "",
             "dateModified": "2026-06-08T15:35:01Z",
+=======
+                    "@id": "#ecfb38d8-dc2a-448c-b51d-ebfeda356dae"
+                }
+            ],
+            "dateCreated": "",
+            "dateModified": "2026-07-29T10:26:11Z",
+>>>>>>> TEMPLATE
             "dct:conformsTo": "https://bioschemas.org/profiles/ComputationalWorkflow/1.0-RELEASE/",
             "keywords": [
                 "nf-core",
@@ -165,11 +181,19 @@
             "version": "!>=25.10.4"
         },
         {
+<<<<<<< HEAD
             "@id": "#95a2fa6d-e9b6-4021-80cd-cc5a224b5652",
             "@type": "TestSuite",
             "instance": [
                 {
                     "@id": "#a728772b-b948-48e2-b57e-a0474bd3c2ca"
+=======
+            "@id": "#d8990976-589e-46f9-8566-245bd7ae15e2",
+            "@type": "TestSuite",
+            "instance": [
+                {
+                    "@id": "#1be4917b-1659-447f-963f-87012b10d123"
+>>>>>>> TEMPLATE
                 }
             ],
             "mainEntity": {
@@ -178,7 +202,11 @@
             "name": "Test suite for genomic-medicine-sweden/metaval"
         },
         {
+<<<<<<< HEAD
             "@id": "#a728772b-b948-48e2-b57e-a0474bd3c2ca",
+=======
+            "@id": "#1be4917b-1659-447f-963f-87012b10d123",
+>>>>>>> TEMPLATE
             "@type": "TestInstance",
             "name": "GitHub Actions workflow for testing genomic-medicine-sweden/metaval",
             "resource": "repos/genomic-medicine-sweden/metaval/actions/workflows/nf-test.yml",
@@ -297,7 +325,11 @@
             "url": "https://nf-co.re/"
         },
         {
+<<<<<<< HEAD
             "@id": "#02066a59-c73c-42ed-9746-9c2ab994ea54",
+=======
+            "@id": "#ecfb38d8-dc2a-448c-b51d-ebfeda356dae",
+>>>>>>> TEMPLATE
             "@type": "Person",
             "email": "64467552+LilyAnderssonLee@users.noreply.github.com",
             "name": "LilyAnderssonLee"

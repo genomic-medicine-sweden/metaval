@@ -251,6 +251,8 @@ workflow METAVAL {
         }
     }
 
+    def ch_versions = channel.empty()
+    def ch_multiqc_files = channel.empty()
     //
     // WORKFLOW: Screen pathogens
     //
@@ -351,7 +353,7 @@ workflow METAVAL {
         .mix(topic_versions_string)
         .collectFile(
             storeDir: "${outdir}/pipeline_info",
-            name:  'genomic-medicine-sweden_'  +  'metaval_software_'  + 'mqc_'  + 'versions.yml',
+            name:  'metaval_software_'  + 'mqc_'  + 'versions.yml',
             sort: true,
             newLine: true
         )
@@ -371,7 +373,7 @@ workflow METAVAL {
     MULTIQC(
         ch_multiqc_files.flatten().collect().map { files ->
             [
-                [id: 'gms/metaval'],
+                [id: 'metaval'],
                 files,
                 multiqc_config
                     ? file(multiqc_config, checkIfExists: true)

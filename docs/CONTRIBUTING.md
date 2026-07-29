@@ -47,14 +47,14 @@ Once you have made your changes, run the pipeline with nf-test to test them loca
 For additional information, use the `--verbose` flag to view the Nextflow console log output.
 
 ```bash
-nf-test test --tag test --profile=+docker --verbose
+nf-test test --tag test --profile +docker --verbose
 ```
 
 If you have added new functionality, ensure you update the test assertions in the `.nf.test` files in the `tests/` directory.
 Update the snapshots with the following command:
 
 ```bash
-nf-test test --tag test --profile=+docker --verbose --update-snapshots
+nf-test test --tag test --profile +docker --verbose --update-snapshots
 ```
 
 When you create a pull request with changes, GitHub Actions will run automatic tests.
@@ -166,6 +166,7 @@ If you update images or graphics, follow the nf-core [style guidelines](https://
 
 ## Pipeline specific contribution guidelines
 
+<<<<<<< HEAD
 # `genomic-medicine-sweden/metaval`: Contributing Guidelines
 
 Hi there!
@@ -284,3 +285,6 @@ To get started:
 Devcontainer specs:
 
 - [DevContainer config](.devcontainer/devcontainer.json)
+=======
+<!-- TODO nf-core: Add any pipeline specific contribution guidelines here, such as coding styles, procedures, checklists etc. -->
+>>>>>>> TEMPLATE
