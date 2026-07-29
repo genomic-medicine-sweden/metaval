@@ -166,7 +166,6 @@ If you update images or graphics, follow the nf-core [style guidelines](https://
 
 ## Pipeline specific contribution guidelines
 
-<<<<<<< HEAD
 # `genomic-medicine-sweden/metaval`: Contributing Guidelines
 
 Hi there!
@@ -285,6 +284,3 @@ To get started:
 Devcontainer specs:
 
 - [DevContainer config](.devcontainer/devcontainer.json)
-=======
-<!-- TODO nf-core: Add any pipeline specific contribution guidelines here, such as coding styles, procedures, checklists etc. -->
->>>>>>> TEMPLATE
