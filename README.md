@@ -52,7 +52,10 @@ This workflow is activated by enabling the `--perform_screen_pathogens` option.
    - Visualize the extracted reads using `IGV` (Integrative Genomics Viewer) to provide a graphical representation for detailed analysis.
 
 7. **Generate report**
-   - Generate a static html report summarizing the results of the pathogen screening workflow (It will be included in the future).
+   - Generate a static HTML report summarizing the results of the pathogen screening workflow (It will be included in the future).
+
+8. **Generate MultiQC report**
+   - Generate a MultiQC HTML report. This report currently only includes information about the software versions and command lines used for the analysis.
 
 ### Orange Workflow - Verify Identified Viruses
 
@@ -84,6 +87,10 @@ This workflow is activated by enabling the `--perform_verify_species` option and
 
 9. **Generate report**
    - Generate a standalone HTML report that summarises the results of the verify-species workflow. It includes the sample metadata, taxonomic table, BLAST results, coverage plot, and extracted reads for a TaxID.
+
+10. **Generate MultiQC report**
+
+- Generate a MultiQC HTML report. This report currently only includes information about the software versions and command lines used for the analysis.
 
 ## Blue Workflow - Verify User-Defined TaxIDs
 
@@ -125,7 +132,11 @@ nextflow run genomic-medicine-sweden/metaval \
 
 For more details and further functionality, please refer to the [usage documentation](https://github.com/genomic-medicine-sweden/metaval/blob/dev/docs/usage.md).
 
-## Headlines of input files
+## Expected input formats
+
+The examples below show the expected content format for each file type listed in the samplesheet: `kraken2_report`, `kraken2_result`, `centrifuge_report`, `centrifuge_result`, `diamond`, and the classifier-specific `taxpasta` columns.
+
+### Classification files
 
 `kraken2_report` / `centrifuge_report`
 
