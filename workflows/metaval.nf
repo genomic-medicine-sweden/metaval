@@ -375,11 +375,7 @@ workflow METAVAL {
         .mix(topic_versions_string)
         .collectFile(
             storeDir: "${outdir}/pipeline_info",
-<<<<<<< HEAD
             name:  'genomic-medicine-sweden_'  +  'metaval_software_'  + 'mqc_'  + 'versions.yml',
-=======
-            name:  'metaval_software_'  + 'mqc_'  + 'versions.yml',
->>>>>>> TEMPLATE
             sort: true,
             newLine: true
         )
@@ -399,11 +395,7 @@ workflow METAVAL {
     MULTIQC(
         ch_multiqc_files.flatten().collect().map { files ->
             [
-<<<<<<< HEAD
                 [id: 'gms/metaval'],
-=======
-                [id: 'metaval'],
->>>>>>> TEMPLATE
                 files,
                 multiqc_config
                     ? file(multiqc_config, checkIfExists: true)
