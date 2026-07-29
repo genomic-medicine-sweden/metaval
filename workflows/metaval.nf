@@ -3,6 +3,8 @@
     IMPORT MODULES / SUBWORKFLOWS / FUNCTIONS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+// Merge fastq files
+include { CAT_FASTQ                                             } from '../modules/nf-core/cat/fastq/main'
 
 // Extract reads of taxIDs
 include { TAXID_READS                                           } from '../subworkflows/local/taxid_reads'
@@ -75,7 +77,20 @@ workflow METAVAL {
 
         long_reads: meta.instrument_platform == 'OXFORD_NANOPORE'
             return [ meta, [ fastq_1 ] ]
+
+        to_merge: meta.fastq_1.size() > 1
+
+        no_merge: true
     }
+
+        CAT_FASTQ(
+            ch_fastqs_merge.to_merge,
+        )
+
+        def ch_fastqs_merged = CAT_FASTQ.out.reads
+            .mix(ch_fastqs_merge.no_merge)
+
+
 
     //
     // Workflow: Extract reads and verification

@@ -25,6 +25,11 @@
                         "git_sha": "2221f422f008714c13816bc5c3346d7346a56ed0",
                         "installed_by": ["modules"]
                     },
+                    "cat/fastq": {
+                        "branch": "master",
+                        "git_sha": "6d46786420b4d7bc88eba026eb389c0c5535d120",
+                        "installed_by": ["modules"]
+                    },
                     "diamond/blastx": {
                         "branch": "master",
                         "git_sha": "8d52ac1b6f035f46c005a27b3510873c2a67ea41",
