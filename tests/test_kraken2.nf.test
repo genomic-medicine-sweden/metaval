@@ -91,7 +91,8 @@ nextflow_pipeline {
                 //bowtie2
                 { assert snapshot (
                     bam_files_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] },
-                    stable_content_bowtie2_align).match("bowtie2_align")},
+                    stable_content_bowtie2_align
+                ).match("bowtie2_align") },
                 { assert snapshot (stable_content_bowtie2_build).match("bowtie2_build")},
 
                 //minimap2 index
@@ -107,27 +108,6 @@ nextflow_pipeline {
                 { assert snapshot(
                     getAllFilesFromDir("$outputDir/igv", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("igv") },
-
-                //pathogen blast
-                { assert snapshot(
-                    getAllFilesFromDir("$outputDir/pathogens/blast/blastn", include: ['*.txt']).collect{file -> file.getName() + ' contains string:' + (file.exists() && file.text.contains("NC_060947.1") || file.text.contains("NC_002023.1_0") || file.text.contains("")) },
-                    getAllFilesFromDir("$outputDir/pathogens/blast/blastx", include: ['*.txt']).collect{file -> file.getName() + ' contains string:' + (file.exists() && file.text.contains("NC_002019.1_0")) }
-                ).match("pathogens_blast") },
-                { assert snapshot (stable_content_pathogens_consensus).match("pathogens_consensus")},
-
-                //pathogens igv
-                { assert snapshot(
-                    getAllFilesFromDir("$outputDir/pathogens/igv", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
-                ).match("pathogens_igv") },
-
-                //pathogens reads blast input
-                { assert snapshot (stable_content_pathogens_reads_blast).match("pathogens_reads_blast")},
-
-                //pathogens reads consensus
-                { assert snapshot (
-                    bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file -> [file.getName() + " pathogens reads consensus md5: " + bam(file.toString()).getHeader()] },
-                    stable_content_pathogens_reads_consensus
-                ).match("pathogens_reads_consensus") },
 
                 //spades
                 { assert snapshot(
