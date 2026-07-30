@@ -1,0 +1,506 @@
+{
+    "all_files": {
+        "content": [
+            [
+                "blast",
+                "blast/blastn",
+                "blast/blastn/centrifuge",
+                "blast/blastn/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered.txt",
+                "blast/blastn/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered_summary.txt",
+                "blast/blastx",
+                "blast/blastx/centrifuge",
+                "blast/blastx/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered.txt",
+                "blast/blastx/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered_summary.txt",
+                "extracted_reads",
+                "extracted_reads/centrifuge",
+                "extracted_reads/centrifuge/SRR13439790_taxid_335341_Influenza-A-virus-A-New-York-392-2004-H3N2.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439790_taxid_335341_Influenza-A-virus-A-New-York-392-2004-H3N2.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439790_taxid_687349_Torque-teno-virus-10.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439790_taxid_687349_Torque-teno-virus-10.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439799_taxid_1450746_Pithovirus-sibericum.extracted_centrifuge_read.fa",
+                "extracted_reads/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1.extracted_centrifuge_read.fa",
+                "extracted_reads/centrifuge/SRR13439799_taxid_693272_Cafeteria-roenbergensis-virus-BV-PW1.extracted_centrifuge_read.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_1349410_Pandoravirus-salinus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_1349410_Pandoravirus-salinus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_159150_Shamonda-virus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_159150_Shamonda-virus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_364745_Choristoneura-occidentalis-granulovirus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_364745_Choristoneura-occidentalis-granulovirus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_37665_Ectocarpus-siliculosus-virus-1.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_37665_Ectocarpus-siliculosus-virus-1.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_687369_Torque-teno-mini-virus-1.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_687369_Torque-teno-mini-virus-1.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_687370_Torque-teno-mini-virus-2.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439802_taxid_687370_Torque-teno-mini-virus-2.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_103442_Triatoma-virus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_103442_Triatoma-virus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_10407_Hepatitis-B-virus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_10407_Hepatitis-B-virus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_10454_Spodoptera-exigua-multiple-nucleopolyhedrovirus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_10454_Spodoptera-exigua-multiple-nucleopolyhedrovirus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_10699_Caudoviricetes.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_10699_Caudoviricetes.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1128118_Parrot-hepatitis-B-virus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1128118_Parrot-hepatitis-B-virus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1206545_Taipeivirus-0507KN21.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1206545_Taipeivirus-0507KN21.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1269028_Acanthamoeba-polyphaga-moumouvirus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1269028_Acanthamoeba-polyphaga-moumouvirus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1303386_Bat-hepatitis-virus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1303386_Bat-hepatitis-virus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1349409_Pandoravirus-dulcis.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1349409_Pandoravirus-dulcis.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1349410_Pandoravirus-salinus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1349410_Pandoravirus-salinus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1511914_Tetraparvovirus-ungulate1.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1511914_Tetraparvovirus-ungulate1.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1543207_Rose-leaf-rosette-associated-virus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1543207_Rose-leaf-rosette-associated-virus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1579460_Parapoxvirus-red-deer-HL953.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1579460_Parapoxvirus-red-deer-HL953.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1580591_Sulfolobus-monocaudavirus-SMV2.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1580591_Sulfolobus-monocaudavirus-SMV2.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_159150_Shamonda-virus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_159150_Shamonda-virus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1678078_Mollivirus-sibericum.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1678078_Mollivirus-sibericum.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1735722_Haloarcula-californiae-icosahedral-virus-1.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1735722_Haloarcula-californiae-icosahedral-virus-1.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1826170_Tokyovirus-A1.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_1826170_Tokyovirus-A1.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_188763_Panine-betaherpesvirus-2.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_188763_Panine-betaherpesvirus-2.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_212035_Acanthamoeba-polyphaga-mimivirus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_212035_Acanthamoeba-polyphaga-mimivirus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_28874_Volepox-virus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_28874_Volepox-virus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_345585_Invertebrate-iridescent-virus-30.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_345585_Invertebrate-iridescent-virus-30.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_439491_Solenopsis-invicta-virus-2.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_439491_Solenopsis-invicta-virus-2.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_44561_Murine-type-C-retrovirus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_44561_Murine-type-C-retrovirus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_50290_Aotine-betaherpesvirus-1.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_50290_Aotine-betaherpesvirus-1.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_50292_Cercopithecine-betaherpesvirus-5.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_50292_Cercopithecine-betaherpesvirus-5.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_548914_Elephant-endotheliotropic-herpesvirus-4.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_548914_Elephant-endotheliotropic-herpesvirus-4.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.extracted_centrifuge_read_2.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_697227_Escherichia-phage-IME08.extracted_centrifuge_read_1.fa",
+                "extracted_reads/centrifuge/SRR13439813_taxid_697227_Escherichia-phage-IME08.extracted_centrifuge_read_2.fa",
+                "fastqc",
+                "fastqc/input",
+                "fastqc/input/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_fastqc.html",
+                "igv",
+                "igv/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html",
+                "mapping",
+                "mapping/minimap2",
+                "mapping/minimap2/align",
+                "mapping/minimap2/align/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam",
+                "mapping/minimap2/align/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai",
+                "mapping/minimap2/index",
+                "mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1",
+                "mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1/GCA_037915385.1_ASM3791538v1_genomic.fna.mmi",
+                "multiqc",
+                "multiqc/multiqc_data",
+                "multiqc/multiqc_data/llms-full.txt",
+                "multiqc/multiqc_data/multiqc.log",
+                "multiqc/multiqc_data/multiqc.parquet",
+                "multiqc/multiqc_data/multiqc_citations.txt",
+                "multiqc/multiqc_data/multiqc_data.json",
+                "multiqc/multiqc_data/multiqc_software_versions.txt",
+                "multiqc/multiqc_data/multiqc_sources.txt",
+                "multiqc/multiqc_report.html",
+                "pipeline_info",
+                "pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml",
+                "spades",
+                "spades/centrifuge",
+                "spades/centrifuge/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.contigs.fa",
+                "spades/centrifuge/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.scaffolds.fa",
+                "spades/centrifuge/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.spades.log",
+                "spades/centrifuge/SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.contigs.fa",
+                "spades/centrifuge/SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.scaffolds.fa",
+                "spades/centrifuge/SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.spades.log",
+                "spades/centrifuge/SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.warnings.log",
+                "spades/centrifuge/SRR13439813_taxid_10407_Hepatitis-B-virus.contigs.fa",
+                "spades/centrifuge/SRR13439813_taxid_10407_Hepatitis-B-virus.scaffolds.fa",
+                "spades/centrifuge/SRR13439813_taxid_10407_Hepatitis-B-virus.spades.log",
+                "spades/centrifuge/SRR13439813_taxid_10407_Hepatitis-B-virus.warnings.log",
+                "spades/centrifuge/SRR13439813_taxid_1128118_Parrot-hepatitis-B-virus.contigs.fa",
+                "spades/centrifuge/SRR13439813_taxid_1128118_Parrot-hepatitis-B-virus.scaffolds.fa",
+                "spades/centrifuge/SRR13439813_taxid_1128118_Parrot-hepatitis-B-virus.spades.log",
+                "spades/centrifuge/SRR13439813_taxid_1303386_Bat-hepatitis-virus.contigs.fa",
+                "spades/centrifuge/SRR13439813_taxid_1303386_Bat-hepatitis-virus.scaffolds.fa",
+                "spades/centrifuge/SRR13439813_taxid_1303386_Bat-hepatitis-virus.spades.log",
+                "spades/centrifuge/SRR13439813_taxid_1303386_Bat-hepatitis-virus.warnings.log",
+                "spades/centrifuge/SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.contigs.fa",
+                "spades/centrifuge/SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.scaffolds.fa",
+                "spades/centrifuge/SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.spades.log",
+                "spades/centrifuge/SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.warnings.log",
+                "spades/centrifuge/SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.contigs.fa",
+                "spades/centrifuge/SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.scaffolds.fa",
+                "spades/centrifuge/SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.spades.log",
+                "spades/centrifuge/SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.warnings.log",
+                "spades/centrifuge/SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.contigs.fa",
+                "spades/centrifuge/SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.scaffolds.fa",
+                "spades/centrifuge/SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.spades.log",
+                "spades/centrifuge/SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.warnings.log",
+                "spades/centrifuge/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.contigs.fa",
+                "spades/centrifuge/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.scaffolds.fa",
+                "spades/centrifuge/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.spades.log",
+                "spades/centrifuge/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.warnings.log",
+                "viral_taxids",
+                "viral_taxids/SRR13439790_centrifuge_viral_taxids.tsv",
+                "viral_taxids/SRR13439799_centrifuge_viral_taxids.tsv",
+                "viral_taxids/SRR13439802_centrifuge_viral_taxids.tsv",
+                "viral_taxids/SRR13439813_centrifuge_viral_taxids.tsv"
+            ]
+        ],
+        "timestamp": "2026-07-30T12:38:01.533451",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "minimap2_align": {
+        "content": [
+            [
+                [
+                    "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam minimap2 align md5: 5d0b38684ae7b768a8fe27ffbf828d39"
+                ]
+            ],
+            [
+                "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam:md5,0c4eebe80b802f47b455904450a8f6ac",
+                "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,173d8a22abee914b929b07536ea001f4"
+            ]
+        ],
+        "timestamp": "2026-07-30T12:38:02.124735",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "spades_centrifuge": {
+        "content": [
+            [
+                "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.contigs.fa exists: true",
+                "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.scaffolds.fa exists: true",
+                "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.spades.log exists: true",
+                "SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.spades.log exists: true",
+                "SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.warnings.log exists: true",
+                "SRR13439813_taxid_10407_Hepatitis-B-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_10407_Hepatitis-B-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_10407_Hepatitis-B-virus.spades.log exists: true",
+                "SRR13439813_taxid_10407_Hepatitis-B-virus.warnings.log exists: true",
+                "SRR13439813_taxid_1128118_Parrot-hepatitis-B-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_1128118_Parrot-hepatitis-B-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_1128118_Parrot-hepatitis-B-virus.spades.log exists: true",
+                "SRR13439813_taxid_1303386_Bat-hepatitis-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_1303386_Bat-hepatitis-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_1303386_Bat-hepatitis-virus.spades.log exists: true",
+                "SRR13439813_taxid_1303386_Bat-hepatitis-virus.warnings.log exists: true",
+                "SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.spades.log exists: true",
+                "SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.warnings.log exists: true",
+                "SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.spades.log exists: true",
+                "SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.warnings.log exists: true",
+                "SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.spades.log exists: true",
+                "SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.warnings.log exists: true",
+                "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.spades.log exists: true",
+                "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.warnings.log exists: true"
+            ]
+        ],
+        "timestamp": "2026-07-30T12:38:02.170154",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "viral_taxids": {
+        "content": [
+            [
+                "SRR13439790_centrifuge_viral_taxids.tsv:md5,1c0190b425d6ac35b363becd49e009c8",
+                "SRR13439799_centrifuge_viral_taxids.tsv:md5,abb49cb0fce3bfde912b7103a92f3add",
+                "SRR13439802_centrifuge_viral_taxids.tsv:md5,ea5574744d8c4e152ee38c2304f991bb",
+                "SRR13439813_centrifuge_viral_taxids.tsv:md5,b00bfd64f02acdd3cdf3ebfd4e3d3049"
+            ]
+        ],
+        "timestamp": "2026-07-30T12:38:02.18788",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "extracted_reads": {
+        "content": [
+            [
+                "SRR13439790_taxid_335341_Influenza-A-virus-A-New-York-392-2004-H3N2.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439790_taxid_335341_Influenza-A-virus-A-New-York-392-2004-H3N2.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439790_taxid_687349_Torque-teno-virus-10.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439790_taxid_687349_Torque-teno-virus-10.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439799_taxid_1450746_Pithovirus-sibericum.extracted_centrifuge_read.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1.extracted_centrifuge_read.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439799_taxid_693272_Cafeteria-roenbergensis-virus-BV-PW1.extracted_centrifuge_read.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_1349410_Pandoravirus-salinus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_1349410_Pandoravirus-salinus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_159150_Shamonda-virus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_159150_Shamonda-virus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_364745_Choristoneura-occidentalis-granulovirus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_364745_Choristoneura-occidentalis-granulovirus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_37665_Ectocarpus-siliculosus-virus-1.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_37665_Ectocarpus-siliculosus-virus-1.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_687369_Torque-teno-mini-virus-1.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_687369_Torque-teno-mini-virus-1.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_687370_Torque-teno-mini-virus-2.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439802_taxid_687370_Torque-teno-mini-virus-2.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_103442_Triatoma-virus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_103442_Triatoma-virus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_10407_Hepatitis-B-virus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_10407_Hepatitis-B-virus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_10454_Spodoptera-exigua-multiple-nucleopolyhedrovirus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_10454_Spodoptera-exigua-multiple-nucleopolyhedrovirus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_10699_Caudoviricetes.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_10699_Caudoviricetes.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1128118_Parrot-hepatitis-B-virus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1128118_Parrot-hepatitis-B-virus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1206545_Taipeivirus-0507KN21.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1206545_Taipeivirus-0507KN21.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1269028_Acanthamoeba-polyphaga-moumouvirus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1269028_Acanthamoeba-polyphaga-moumouvirus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1303386_Bat-hepatitis-virus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1303386_Bat-hepatitis-virus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1349409_Pandoravirus-dulcis.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1349409_Pandoravirus-dulcis.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1349410_Pandoravirus-salinus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1349410_Pandoravirus-salinus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1511914_Tetraparvovirus-ungulate1.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1511914_Tetraparvovirus-ungulate1.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1543207_Rose-leaf-rosette-associated-virus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1543207_Rose-leaf-rosette-associated-virus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1579460_Parapoxvirus-red-deer-HL953.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1579460_Parapoxvirus-red-deer-HL953.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1580591_Sulfolobus-monocaudavirus-SMV2.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1580591_Sulfolobus-monocaudavirus-SMV2.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_159150_Shamonda-virus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_159150_Shamonda-virus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1678078_Mollivirus-sibericum.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1678078_Mollivirus-sibericum.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1735722_Haloarcula-californiae-icosahedral-virus-1.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1735722_Haloarcula-californiae-icosahedral-virus-1.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1826170_Tokyovirus-A1.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_1826170_Tokyovirus-A1.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_188763_Panine-betaherpesvirus-2.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_188763_Panine-betaherpesvirus-2.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_212035_Acanthamoeba-polyphaga-mimivirus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_212035_Acanthamoeba-polyphaga-mimivirus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_28874_Volepox-virus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_28874_Volepox-virus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_345585_Invertebrate-iridescent-virus-30.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_345585_Invertebrate-iridescent-virus-30.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_439491_Solenopsis-invicta-virus-2.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_439491_Solenopsis-invicta-virus-2.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_44561_Murine-type-C-retrovirus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_44561_Murine-type-C-retrovirus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_50290_Aotine-betaherpesvirus-1.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_50290_Aotine-betaherpesvirus-1.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_50292_Cercopithecine-betaherpesvirus-5.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_50292_Cercopithecine-betaherpesvirus-5.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_548914_Elephant-endotheliotropic-herpesvirus-4.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_548914_Elephant-endotheliotropic-herpesvirus-4.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_697227_Escherichia-phage-IME08.extracted_centrifuge_read_1.fa(extracted reads centrifuge) contains string:true",
+                "SRR13439813_taxid_697227_Escherichia-phage-IME08.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true"
+            ]
+        ],
+        "timestamp": "2026-07-30T12:38:02.018806",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "minimap2_index": {
+        "content": [
+            [
+                "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
+            ]
+        ],
+        "timestamp": "2026-07-30T12:38:02.073346",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "bowtie2_build": {
+        "content": [
+            [
+                
+            ]
+        ],
+        "timestamp": "2026-07-30T12:38:02.057237",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "-profile test_centrifuge": {
+        "content": [
+            {
+                "BEDTOOLS_GENOMECOV": {
+                    "bedtools": "2.31.1"
+                },
+                "BLAST_BLASTN": {
+                    "blastn": "2.17.0+"
+                },
+                "DIAMOND_BLASTX": {
+                    "diamond": "2.1.16"
+                },
+                "EXTRACTCENTRIFUGEREADS": {
+                    "pigz": 2.8,
+                    "seqkit": "2.9.0"
+                },
+                "FASTQC": {
+                    "fastqc": "0.12.1"
+                },
+                "FILTER_BLASTN": {
+                    "python": "3.12.3"
+                },
+                "FILTER_BLASTX": {
+                    "python": "3.12.3"
+                },
+                "MINIMAP2_ALIGN": {
+                    "minimap2": "2.29-r1283"
+                },
+                "MINIMAP2_INDEX": {
+                    "minimap2": "2.29-r1283"
+                },
+                "PIGZ_UNCOMPRESS": {
+                    "pigz": 2.8
+                },
+                "SAMTOOLS_FAIDX": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_FLAGSTAT": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_IDXSTATS": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_INDEX": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_SORT_LONGREAD": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.23.1"
+                },
+                "SEQKIT_FQ2FA": {
+                    "seqkit": "2.9.0"
+                },
+                "SEQKIT_FQ2FA_READS": {
+                    "seqkit": "2.9.0"
+                },
+                "SPADES": {
+                    "spades": "4.1.0"
+                },
+                "UNTAR_BLASTN": {
+                    "untar": 1.34
+                },
+                "Workflow": {
+                    "genomic-medicine-sweden/metaval": "v1.0dev"
+                }
+            }
+        ],
+        "timestamp": "2026-07-30T12:38:01.497544",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "bowtie2_align": {
+        "content": [
+            "No BAM files",
+            [
+                
+            ]
+        ],
+        "timestamp": "2026-07-30T12:38:02.039442",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "igv": {
+        "content": [
+            [
+                "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html exists: true"
+            ]
+        ],
+        "timestamp": "2026-07-30T12:38:02.145518",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "blastx": {
+        "content": [
+            [
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered.txt(centrifuge) contains string:true",
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered_summary.txt(centrifuge) contains string:true"
+            ]
+        ],
+        "timestamp": "2026-07-30T12:38:01.628009",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "blastn": {
+        "content": [
+            [
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered.txt(centrifuge) contains string:true",
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered_summary.txt(centrifuge) contains string:true"
+            ]
+        ],
+        "timestamp": "2026-07-30T12:38:01.606729",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    }
+}
