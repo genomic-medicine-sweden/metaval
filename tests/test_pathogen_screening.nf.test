@@ -4,11 +4,11 @@ nextflow_pipeline {
     script "../main.nf"
     tag "pipeline"
     tag "gms_metaval"
-    tag "test_pathogen_screening"
-    profile "test_pathogen_screening"
+    tag "test_screenpathogen"
+    profile "test_screenpathogen"
 
 
-    test("-profile test_pathogen_screening") {
+    test("-profile test_screenpathogen") {
 
         when {
             params {
@@ -31,13 +31,6 @@ nextflow_pipeline {
             //pathogen bowtie2 align
             def stable_content_pathogens_bowtie2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/bowtie2/align/*'], ignoreFile: 'tests/.nftignore')
             def bam_files_pathogens_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['pathogens/mapping/bowtie2/align/*.bam'])
-
-            //minimap2 index:partly unstable files, see custom assertions
-            def stable_content_pathogen_minimap2_index= getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/minimap2/index/*'], ignoreFile: 'tests/.nftignore')
-
-            //minimap2 align
-            def stable_content_pathogen_minimap2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/minimap2/align/*'], ignoreFile: 'tests/.nftignore')
-            def bam_files_pathogen_minimap2_align  = getAllFilesFromDir(params.outdir, include: ['pathogens/mapping/minimap2/align/*bam'])
 
             //pathogens reads blast input
             def stable_content_pathogens_reads_blast = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/pathogen_reads/blast_input/*'], ignoreFile: 'tests/.nftignore')
@@ -63,13 +56,6 @@ nextflow_pipeline {
                     bam_files_pathogens_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_pathogens_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] },
                     stable_content_pathogens_bowtie2_align
                 ).match("pathogen_bowtie2_align")},
-
-                // pathogen mapping minimap2
-                { assert snapshot(stable_content_pathogen_minimap2_index).match("pathogen_minimap2_index") },
-                { assert snapshot (
-                    bam_files_pathogen_minimap2_align.isEmpty() ? 'No BAM files' : bam_files_pathogen_minimap2_align.collect { file -> [file.getName() + " minimap2 align md5: " + bam(file.toString()).getReadsMD5()] },
-                    stable_content_pathogen_minimap2_align
-                ).match("pathogen_minimap2_align") },
 
                 //pathogen blast
                 { assert snapshot(

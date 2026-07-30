@@ -39,25 +39,6 @@ nextflow_pipeline {
             def stable_content_minimap2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['mapping/minimap2/align/*'], ignoreFile: 'tests/.nftignore')
             def bam_files_minimap2_align  = getAllFilesFromDir(params.outdir, include: ['mapping/minimap2/align/*bam'])
 
-            //pathogens blast: partly unstable files, see custom assertions
-
-            //pathogens consensus
-            def stable_content_pathogens_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/consensus/*'], ignoreFile: 'tests/.nftignore')
-
-            //pathogens mapping bowtie2 build
-            def stable_content_pathogens_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/bowtie2/build/bowtie2/*'], ignoreFile: 'tests/.nftignore')
-
-            //bowtie2 align
-            def stable_content_pathogens_bowtie2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/bowtie2/align/*'], ignoreFile: 'tests/.nftignore')
-            def bam_files_pathogens_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['pathogens/mapping/bowtie2/align/*.bam'])
-
-            //pathogens reads blast input
-            def stable_content_pathogens_reads_blast = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/pathogen_reads/blast_input/*'], ignoreFile: 'tests/.nftignore')
-
-            //pathogens
-            def stable_content_pathogens_reads_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/pathogen_reads/consensus_input/*'], ignoreFile: 'tests/.nftignore')
-            def bam_files_pathogens_reads_consensus  = getAllFilesFromDir(params.outdir, include: ['pathogens/pathogen_reads/consensus_input/*.bam'])
-
             //viral taxid
             def stable_content_viral_taxids = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['viral_taxids/*'], ignoreFile: 'tests/.nftignore')
 
