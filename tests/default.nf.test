@@ -138,12 +138,12 @@ nextflow_pipeline {
                 { assert snapshot(
                         getAllFilesFromDir("$outputDir/spades/kraken2", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("spades_kraken2") },
-                
+
                 // spades centrifuge
                 { assert snapshot(
                         getAllFilesFromDir("$outputDir/spades/centrifuge", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("spades_centrifuge") },
-               
+
                  // spades diamond
                 { assert snapshot(
                         getAllFilesFromDir("$outputDir/spades/diamond", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
