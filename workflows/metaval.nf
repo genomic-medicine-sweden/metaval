@@ -250,7 +250,6 @@ workflow METAVAL {
             IGV( ch_igv_input )
         }
     }
-
     //
     // WORKFLOW: Screen pathogens
     //
