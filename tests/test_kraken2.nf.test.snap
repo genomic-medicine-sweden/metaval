@@ -1,0 +1,475 @@
+{
+    "all_files": {
+        "content": [
+            [
+                "blast",
+                "blast/blastn",
+                "blast/blastn/kraken2",
+                "blast/blastn/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered.txt",
+                "blast/blastn/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered_summary.txt",
+                "blast/blastx",
+                "blast/blastx/kraken2",
+                "blast/blastx/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered.txt",
+                "blast/blastx/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered_summary.txt",
+                "extracted_reads",
+                "extracted_reads/kraken2",
+                "extracted_reads/kraken2/SRR13439790_taxid_10804_adeno-associated-virus-2.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439790_taxid_10804_adeno-associated-virus-2.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439790_taxid_335341_Influenza-A-virus-A-New-York-392-2004-H3N2.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439790_taxid_335341_Influenza-A-virus-A-New-York-392-2004-H3N2.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439790_taxid_687358_Torque-teno-virus-19.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439790_taxid_687358_Torque-teno-virus-19.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1.extracted_kraken2_read.fa",
+                "extracted_reads/kraken2/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439802_taxid_1605721_Pandoravirus-inopinatum.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439802_taxid_1605721_Pandoravirus-inopinatum.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439802_taxid_56947_Choristoneura-fumiferana-granulovirus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439802_taxid_56947_Choristoneura-fumiferana-granulovirus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439802_taxid_687369_Torque-teno-mini-virus-1.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439802_taxid_687369_Torque-teno-mini-virus-1.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_10404_Hepadnaviridae.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_10404_Hepadnaviridae.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_10405_Orthohepadnavirus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_10405_Orthohepadnavirus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_11676_Human-immunodeficiency-virus-1.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_11676_Human-immunodeficiency-virus-1.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_1293539_Choristoneura-rosaceana-entomopoxvirus-L.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_1293539_Choristoneura-rosaceana-entomopoxvirus-L.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_1349409_Pandoravirus-dulcis.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_1349409_Pandoravirus-dulcis.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_1678078_Mollivirus-sibericum.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_1678078_Mollivirus-sibericum.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2050037_Long-fingered-bat-hepatitis-B-virus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2050037_Long-fingered-bat-hepatitis-B-virus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2107574_Domestic-cat-hepadnavirus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2107574_Domestic-cat-hepadnavirus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2107708_Pandoravirus-neocaledonia.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2107708_Pandoravirus-neocaledonia.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_212035_Acanthamoeba-polyphaga-mimivirus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_212035_Acanthamoeba-polyphaga-mimivirus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2557875_Tai-Forest-hepadnavirus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2557875_Tai-Forest-hepadnavirus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2731643_Autographiviridae.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2731643_Autographiviridae.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2849741_Asian-grey-shrew-hepatitis-B-virus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_2849741_Asian-grey-shrew-hepatitis-B-virus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_3052771_Tetraparvovirus-ungulate1.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_3052771_Tetraparvovirus-ungulate1.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_44561_Murine-type-C-retrovirus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_44561_Murine-type-C-retrovirus.extracted_kraken2_read_2.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.extracted_kraken2_read_1.fa",
+                "extracted_reads/kraken2/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.extracted_kraken2_read_2.fa",
+                "fastqc",
+                "fastqc/input",
+                "fastqc/input/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_fastqc.html",
+                "igv",
+                "igv/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html",
+                "mapping",
+                "mapping/minimap2",
+                "mapping/minimap2/align",
+                "mapping/minimap2/align/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam",
+                "mapping/minimap2/align/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai",
+                "mapping/minimap2/index",
+                "mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1",
+                "mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1/GCA_037915385.1_ASM3791538v1_genomic.fna.mmi",
+                "multiqc",
+                "multiqc/multiqc_data",
+                "multiqc/multiqc_data/llms-full.txt",
+                "multiqc/multiqc_data/multiqc.log",
+                "multiqc/multiqc_data/multiqc.parquet",
+                "multiqc/multiqc_data/multiqc_citations.txt",
+                "multiqc/multiqc_data/multiqc_data.json",
+                "multiqc/multiqc_data/multiqc_software_versions.txt",
+                "multiqc/multiqc_data/multiqc_sources.txt",
+                "multiqc/multiqc_report.html",
+                "pipeline_info",
+                "pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml",
+                "spades",
+                "spades/kraken2",
+                "spades/kraken2/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.contigs.fa",
+                "spades/kraken2/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.scaffolds.fa",
+                "spades/kraken2/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.spades.log",
+                "spades/kraken2/SRR13439813_taxid_10404_Hepadnaviridae.contigs.fa",
+                "spades/kraken2/SRR13439813_taxid_10404_Hepadnaviridae.scaffolds.fa",
+                "spades/kraken2/SRR13439813_taxid_10404_Hepadnaviridae.spades.log",
+                "spades/kraken2/SRR13439813_taxid_10404_Hepadnaviridae.warnings.log",
+                "spades/kraken2/SRR13439813_taxid_10405_Orthohepadnavirus.contigs.fa",
+                "spades/kraken2/SRR13439813_taxid_10405_Orthohepadnavirus.scaffolds.fa",
+                "spades/kraken2/SRR13439813_taxid_10405_Orthohepadnavirus.spades.log",
+                "spades/kraken2/SRR13439813_taxid_10405_Orthohepadnavirus.warnings.log",
+                "spades/kraken2/SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.contigs.fa",
+                "spades/kraken2/SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.scaffolds.fa",
+                "spades/kraken2/SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.spades.log",
+                "spades/kraken2/SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.warnings.log",
+                "spades/kraken2/SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.contigs.fa",
+                "spades/kraken2/SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.scaffolds.fa",
+                "spades/kraken2/SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.spades.log",
+                "spades/kraken2/SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.warnings.log",
+                "spades/kraken2/SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus.contigs.fa",
+                "spades/kraken2/SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus.scaffolds.fa",
+                "spades/kraken2/SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus.spades.log",
+                "spades/kraken2/SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus.warnings.log",
+                "spades/kraken2/SRR13439813_taxid_2050037_Long-fingered-bat-hepatitis-B-virus.contigs.fa",
+                "spades/kraken2/SRR13439813_taxid_2050037_Long-fingered-bat-hepatitis-B-virus.scaffolds.fa",
+                "spades/kraken2/SRR13439813_taxid_2050037_Long-fingered-bat-hepatitis-B-virus.spades.log",
+                "spades/kraken2/SRR13439813_taxid_2050037_Long-fingered-bat-hepatitis-B-virus.warnings.log",
+                "spades/kraken2/SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.contigs.fa",
+                "spades/kraken2/SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.scaffolds.fa",
+                "spades/kraken2/SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.spades.log",
+                "spades/kraken2/SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.warnings.log",
+                "spades/kraken2/SRR13439813_taxid_2557875_Tai-Forest-hepadnavirus.contigs.fa",
+                "spades/kraken2/SRR13439813_taxid_2557875_Tai-Forest-hepadnavirus.scaffolds.fa",
+                "spades/kraken2/SRR13439813_taxid_2557875_Tai-Forest-hepadnavirus.spades.log",
+                "spades/kraken2/SRR13439813_taxid_2557875_Tai-Forest-hepadnavirus.warnings.log",
+                "spades/kraken2/SRR13439813_taxid_2731643_Autographiviridae.contigs.fa",
+                "spades/kraken2/SRR13439813_taxid_2731643_Autographiviridae.scaffolds.fa",
+                "spades/kraken2/SRR13439813_taxid_2731643_Autographiviridae.spades.log",
+                "spades/kraken2/SRR13439813_taxid_2731643_Autographiviridae.warnings.log",
+                "spades/kraken2/SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.contigs.fa",
+                "spades/kraken2/SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.scaffolds.fa",
+                "spades/kraken2/SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.spades.log",
+                "spades/kraken2/SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.warnings.log",
+                "spades/kraken2/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.contigs.fa",
+                "spades/kraken2/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.scaffolds.fa",
+                "spades/kraken2/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.spades.log",
+                "spades/kraken2/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.warnings.log",
+                "viral_taxids",
+                "viral_taxids/SRR13439790_kraken2_viral_taxids.tsv",
+                "viral_taxids/SRR13439799_kraken2_viral_taxids.tsv",
+                "viral_taxids/SRR13439802_kraken2_viral_taxids.tsv",
+                "viral_taxids/SRR13439813_kraken2_viral_taxids.tsv"
+            ]
+        ],
+        "timestamp": "2026-07-30T13:32:55.951368",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "minimap2_align": {
+        "content": [
+            [
+                [
+                    "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam minimap2 align md5: ad5fd71b4ba43ead431967aad5e13949"
+                ]
+            ],
+            [
+                "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam:md5,c74fb8c23c1e00b4ce54eacf3ccf8711",
+                "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,481e4fddfe11018be67ff5dcce3eb748"
+            ]
+        ],
+        "timestamp": "2026-07-30T13:32:56.496152",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "viral_taxids": {
+        "content": [
+            [
+                "SRR13439790_kraken2_viral_taxids.tsv:md5,5bb05e1a27594795a7c62bfff03d7c3e",
+                "SRR13439799_kraken2_viral_taxids.tsv:md5,2b5a1f281006a8ee4d373f3c4d9ac5d0",
+                "SRR13439802_kraken2_viral_taxids.tsv:md5,21e837139fecbd752289e273652e9fbb",
+                "SRR13439813_kraken2_viral_taxids.tsv:md5,ede3be052be3a9a23a0150a51e09d3a0"
+            ]
+        ],
+        "timestamp": "2026-07-30T13:32:56.563826",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "-profile test_kraken2": {
+        "content": [
+            {
+                "BEDTOOLS_GENOMECOV": {
+                    "bedtools": "2.31.1"
+                },
+                "BLAST_BLASTN": {
+                    "blastn": "2.17.0+"
+                },
+                "DIAMOND_BLASTX": {
+                    "diamond": "2.1.16"
+                },
+                "FASTQC": {
+                    "fastqc": "0.12.1"
+                },
+                "FILTER_BLASTN": {
+                    "python": "3.12.3"
+                },
+                "FILTER_BLASTX": {
+                    "python": "3.12.3"
+                },
+                "KRAKENTOOLS_EXTRACTKRAKENREADS": {
+                    "extract_kraken_reads.py": "1.2.1"
+                },
+                "MINIMAP2_ALIGN": {
+                    "minimap2": "2.29-r1283"
+                },
+                "MINIMAP2_INDEX": {
+                    "minimap2": "2.29-r1283"
+                },
+                "PIGZ_UNCOMPRESS": {
+                    "pigz": 2.8
+                },
+                "SAMTOOLS_FAIDX": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_FLAGSTAT": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_IDXSTATS": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_INDEX": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_SORT_LONGREAD": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.23.1"
+                },
+                "SEQKIT_FQ2FA": {
+                    "seqkit": "2.9.0"
+                },
+                "SEQKIT_FQ2FA_READS": {
+                    "seqkit": "2.9.0"
+                },
+                "SPADES": {
+                    "spades": "4.1.0"
+                },
+                "UNTAR_BLASTN": {
+                    "untar": 1.34
+                },
+                "Workflow": {
+                    "genomic-medicine-sweden/metaval": "v1.0dev"
+                }
+            }
+        ],
+        "timestamp": "2026-07-30T13:32:55.912391",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "extracted_reads": {
+        "content": [
+            [
+                "SRR13439790_taxid_10804_adeno-associated-virus-2.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439790_taxid_10804_adeno-associated-virus-2.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439790_taxid_335341_Influenza-A-virus-A-New-York-392-2004-H3N2.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439790_taxid_335341_Influenza-A-virus-A-New-York-392-2004-H3N2.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439790_taxid_687358_Torque-teno-virus-19.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439790_taxid_687358_Torque-teno-virus-19.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1.extracted_kraken2_read.fa(extracted reads kraken2) contains string:true",
+                "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:false",
+                "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:false",
+                "SRR13439802_taxid_1605721_Pandoravirus-inopinatum.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:false",
+                "SRR13439802_taxid_1605721_Pandoravirus-inopinatum.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:false",
+                "SRR13439802_taxid_56947_Choristoneura-fumiferana-granulovirus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:false",
+                "SRR13439802_taxid_56947_Choristoneura-fumiferana-granulovirus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:false",
+                "SRR13439802_taxid_687369_Torque-teno-mini-virus-1.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:false",
+                "SRR13439802_taxid_687369_Torque-teno-mini-virus-1.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:false",
+                "SRR13439813_taxid_10404_Hepadnaviridae.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_10404_Hepadnaviridae.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_10405_Orthohepadnavirus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_10405_Orthohepadnavirus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_11676_Human-immunodeficiency-virus-1.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_11676_Human-immunodeficiency-virus-1.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_1293539_Choristoneura-rosaceana-entomopoxvirus-L.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_1293539_Choristoneura-rosaceana-entomopoxvirus-L.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_1349409_Pandoravirus-dulcis.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_1349409_Pandoravirus-dulcis.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_1508711_Horseshoe-bat-hepatitis-B-virus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_1678078_Mollivirus-sibericum.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_1678078_Mollivirus-sibericum.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2050037_Long-fingered-bat-hepatitis-B-virus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2050037_Long-fingered-bat-hepatitis-B-virus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2107574_Domestic-cat-hepadnavirus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2107574_Domestic-cat-hepadnavirus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2107708_Pandoravirus-neocaledonia.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2107708_Pandoravirus-neocaledonia.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_212035_Acanthamoeba-polyphaga-mimivirus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_212035_Acanthamoeba-polyphaga-mimivirus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2557875_Tai-Forest-hepadnavirus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2557875_Tai-Forest-hepadnavirus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2731643_Autographiviridae.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2731643_Autographiviridae.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2849741_Asian-grey-shrew-hepatitis-B-virus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_2849741_Asian-grey-shrew-hepatitis-B-virus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_3052771_Tetraparvovirus-ungulate1.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_3052771_Tetraparvovirus-ungulate1.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_44561_Murine-type-C-retrovirus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_44561_Murine-type-C-retrovirus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.extracted_kraken2_read_1.fa(extracted reads kraken2) contains string:true",
+                "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true"
+            ]
+        ],
+        "timestamp": "2026-07-30T13:32:56.411557",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "minimap2_index": {
+        "content": [
+            [
+                "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
+            ]
+        ],
+        "timestamp": "2026-07-30T13:32:56.444683",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "bowtie2_build": {
+        "content": [
+            [
+                
+            ]
+        ],
+        "timestamp": "2026-07-30T13:32:56.434843",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "bowtie2_align": {
+        "content": [
+            "No BAM files",
+            [
+                
+            ]
+        ],
+        "timestamp": "2026-07-30T13:32:56.421021",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "igv": {
+        "content": [
+            [
+                "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html exists: true"
+            ]
+        ],
+        "timestamp": "2026-07-30T13:32:56.518117",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "blastx": {
+        "content": [
+            [
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered.txt(kraken2) contains string:true",
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blastx_filtered_summary.txt(kraken2) contains string:true"
+            ]
+        ],
+        "timestamp": "2026-07-30T13:32:56.001598",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "spades_kraken2": {
+        "content": [
+            [
+                "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.contigs.fa exists: true",
+                "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.scaffolds.fa exists: true",
+                "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.spades.log exists: true",
+                "SRR13439813_taxid_10404_Hepadnaviridae.contigs.fa exists: true",
+                "SRR13439813_taxid_10404_Hepadnaviridae.scaffolds.fa exists: true",
+                "SRR13439813_taxid_10404_Hepadnaviridae.spades.log exists: true",
+                "SRR13439813_taxid_10404_Hepadnaviridae.warnings.log exists: true",
+                "SRR13439813_taxid_10405_Orthohepadnavirus.contigs.fa exists: true",
+                "SRR13439813_taxid_10405_Orthohepadnavirus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_10405_Orthohepadnavirus.spades.log exists: true",
+                "SRR13439813_taxid_10405_Orthohepadnavirus.warnings.log exists: true",
+                "SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.spades.log exists: true",
+                "SRR13439813_taxid_10406_Ground-squirrel-hepatitis-virus.warnings.log exists: true",
+                "SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.spades.log exists: true",
+                "SRR13439813_taxid_1508710_Roundleaf-bat-hepatitis-B-virus.warnings.log exists: true",
+                "SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus.spades.log exists: true",
+                "SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus.warnings.log exists: true",
+                "SRR13439813_taxid_2050037_Long-fingered-bat-hepatitis-B-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_2050037_Long-fingered-bat-hepatitis-B-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_2050037_Long-fingered-bat-hepatitis-B-virus.spades.log exists: true",
+                "SRR13439813_taxid_2050037_Long-fingered-bat-hepatitis-B-virus.warnings.log exists: true",
+                "SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.spades.log exists: true",
+                "SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.warnings.log exists: true",
+                "SRR13439813_taxid_2557875_Tai-Forest-hepadnavirus.contigs.fa exists: true",
+                "SRR13439813_taxid_2557875_Tai-Forest-hepadnavirus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_2557875_Tai-Forest-hepadnavirus.spades.log exists: true",
+                "SRR13439813_taxid_2557875_Tai-Forest-hepadnavirus.warnings.log exists: true",
+                "SRR13439813_taxid_2731643_Autographiviridae.contigs.fa exists: true",
+                "SRR13439813_taxid_2731643_Autographiviridae.scaffolds.fa exists: true",
+                "SRR13439813_taxid_2731643_Autographiviridae.spades.log exists: true",
+                "SRR13439813_taxid_2731643_Autographiviridae.warnings.log exists: true",
+                "SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.spades.log exists: true",
+                "SRR13439813_taxid_35269_Woodchuck-hepatitis-virus.warnings.log exists: true",
+                "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.contigs.fa exists: true",
+                "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.scaffolds.fa exists: true",
+                "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.spades.log exists: true",
+                "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.warnings.log exists: true"
+            ]
+        ],
+        "timestamp": "2026-07-30T13:32:56.533594",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "blastn": {
+        "content": [
+            [
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered.txt(kraken2) contains string:true",
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered_summary.txt(kraken2) contains string:true"
+            ]
+        ],
+        "timestamp": "2026-07-30T13:32:55.989703",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    }
+}
