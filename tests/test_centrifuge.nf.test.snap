@@ -174,24 +174,6 @@
             "nextflow": "25.10.4"
         }
     },
-    "minimap2_align": {
-        "content": [
-            [
-                [
-                    "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam minimap2 align md5: 5d0b38684ae7b768a8fe27ffbf828d39"
-                ]
-            ],
-            [
-                "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam:md5,0c4eebe80b802f47b455904450a8f6ac",
-                "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,173d8a22abee914b929b07536ea001f4"
-            ]
-        ],
-        "timestamp": "2026-07-30T12:38:02.124735",
-        "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
-        }
-    },
     "spades_centrifuge": {
         "content": [
             [
@@ -247,6 +229,115 @@
             ]
         ],
         "timestamp": "2026-07-30T12:38:02.18788",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "blastn": {
+        "content": [
+            [
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered.txt(centrifuge) contains string:true",
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered_summary.txt(centrifuge) contains string:true"
+            ]
+        ],
+        "timestamp": "2026-07-30T12:38:01.606729",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "minimap2_align": {
+        "content": [
+            [
+                [
+                    "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam minimap2 align md5: 5d0b38684ae7b768a8fe27ffbf828d39"
+                ]
+            ],
+            [
+                "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam:md5,0c4eebe80b802f47b455904450a8f6ac",
+                "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,173d8a22abee914b929b07536ea001f4"
+            ]
+        ],
+        "timestamp": "2026-07-30T12:38:02.124735",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "-profile test_verifyspecies_centrifuge": {
+        "content": [
+            {
+                "BEDTOOLS_GENOMECOV": {
+                    "bedtools": "2.31.1"
+                },
+                "BLAST_BLASTN": {
+                    "blastn": "2.17.0+"
+                },
+                "DIAMOND_BLASTX": {
+                    "diamond": "2.1.16"
+                },
+                "EXTRACTCENTRIFUGEREADS": {
+                    "pigz": 2.8,
+                    "seqkit": "2.9.0"
+                },
+                "FASTQC": {
+                    "fastqc": "0.12.1"
+                },
+                "FILTER_BLASTN": {
+                    "python": "3.12.3"
+                },
+                "FILTER_BLASTX": {
+                    "python": "3.12.3"
+                },
+                "MINIMAP2_ALIGN": {
+                    "minimap2": "2.29-r1283"
+                },
+                "MINIMAP2_INDEX": {
+                    "minimap2": "2.29-r1283"
+                },
+                "PIGZ_UNCOMPRESS": {
+                    "pigz": 2.8
+                },
+                "SAMTOOLS_FAIDX": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_FLAGSTAT": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_IDXSTATS": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_INDEX": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_SORT": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_SORT_LONGREAD": {
+                    "samtools": "1.23.1"
+                },
+                "SAMTOOLS_STATS": {
+                    "samtools": "1.23.1"
+                },
+                "SEQKIT_FQ2FA": {
+                    "seqkit": "2.9.0"
+                },
+                "SEQKIT_FQ2FA_READS": {
+                    "seqkit": "2.9.0"
+                },
+                "SPADES": {
+                    "spades": "4.1.0"
+                },
+                "UNTAR_BLASTN": {
+                    "untar": 1.34
+                },
+                "Workflow": {
+                    "genomic-medicine-sweden/metaval": "v1.0dev"
+                }
+            }
+        ],
+        "timestamp": "2026-07-31T11:55:17.67591",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -362,109 +453,6 @@
             "nextflow": "25.10.4"
         }
     },
-    "bowtie2_build": {
-        "content": [
-            [
-                
-            ]
-        ],
-        "timestamp": "2026-07-30T12:38:02.057237",
-        "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
-        }
-    },
-    "-profile test_centrifuge": {
-        "content": [
-            {
-                "BEDTOOLS_GENOMECOV": {
-                    "bedtools": "2.31.1"
-                },
-                "BLAST_BLASTN": {
-                    "blastn": "2.17.0+"
-                },
-                "DIAMOND_BLASTX": {
-                    "diamond": "2.1.16"
-                },
-                "EXTRACTCENTRIFUGEREADS": {
-                    "pigz": 2.8,
-                    "seqkit": "2.9.0"
-                },
-                "FASTQC": {
-                    "fastqc": "0.12.1"
-                },
-                "FILTER_BLASTN": {
-                    "python": "3.12.3"
-                },
-                "FILTER_BLASTX": {
-                    "python": "3.12.3"
-                },
-                "MINIMAP2_ALIGN": {
-                    "minimap2": "2.29-r1283"
-                },
-                "MINIMAP2_INDEX": {
-                    "minimap2": "2.29-r1283"
-                },
-                "PIGZ_UNCOMPRESS": {
-                    "pigz": 2.8
-                },
-                "SAMTOOLS_FAIDX": {
-                    "samtools": "1.23.1"
-                },
-                "SAMTOOLS_FLAGSTAT": {
-                    "samtools": "1.23.1"
-                },
-                "SAMTOOLS_IDXSTATS": {
-                    "samtools": "1.23.1"
-                },
-                "SAMTOOLS_INDEX": {
-                    "samtools": "1.23.1"
-                },
-                "SAMTOOLS_SORT": {
-                    "samtools": "1.23.1"
-                },
-                "SAMTOOLS_SORT_LONGREAD": {
-                    "samtools": "1.23.1"
-                },
-                "SAMTOOLS_STATS": {
-                    "samtools": "1.23.1"
-                },
-                "SEQKIT_FQ2FA": {
-                    "seqkit": "2.9.0"
-                },
-                "SEQKIT_FQ2FA_READS": {
-                    "seqkit": "2.9.0"
-                },
-                "SPADES": {
-                    "spades": "4.1.0"
-                },
-                "UNTAR_BLASTN": {
-                    "untar": 1.34
-                },
-                "Workflow": {
-                    "genomic-medicine-sweden/metaval": "v1.0dev"
-                }
-            }
-        ],
-        "timestamp": "2026-07-30T12:38:01.497544",
-        "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
-        }
-    },
-    "bowtie2_align": {
-        "content": [
-            "No BAM files",
-            [
-                
-            ]
-        ],
-        "timestamp": "2026-07-30T12:38:02.039442",
-        "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
-        }
-    },
     "igv": {
         "content": [
             [
@@ -485,19 +473,6 @@
             ]
         ],
         "timestamp": "2026-07-30T12:38:01.628009",
-        "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
-        }
-    },
-    "blastn": {
-        "content": [
-            [
-                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered.txt(centrifuge) contains string:true",
-                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_blast_filtered_summary.txt(centrifuge) contains string:true"
-            ]
-        ],
-        "timestamp": "2026-07-30T12:38:01.606729",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
