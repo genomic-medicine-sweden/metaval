@@ -47,13 +47,13 @@ The comparison column can contain:
 
 - `in_sample`: reads are present only in the sample.
 - `in_NTC`: reads are present only in the corresponding negative control.
-- `> NTC`: the reads count is higher in the sample than the corresponding negative control.
-- `< NTC`: the reads count is lower in the sample than the corresponding negative control.
+- `> NTC`: the reads count is higher in the sample than in the corresponding negative control.
+- `< NTC`: the reads count is lower in the sample than in the corresponding negative control.
 - `equal`: the reads count is equal in the sample and the corresponding negative control.
 
 If no matching negative control is available, the pipeline still creates a sample-specific table without the NTC comparison columns.
 
-The input Taxpasta table must contain `taxonomy_id`, `name`, `rank`, and `lineage`. When generating the table with [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler), use:
+The input TAXPASTA table must contain `taxonomy_id`, `name`, `rank`, and `lineage`. When generating the table with [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler), use:
 
 - `--run_profile_standardisation`
 - `--taxpasta_add_lineage`
@@ -61,7 +61,7 @@ The input Taxpasta table must contain `taxonomy_id`, `name`, `rank`, and `lineag
 - `--taxpasta_add_name`
 - `--taxpasta_taxonomy_dir`
 
-When running [Taxpasta](https://github.com/taxprofiler/taxpasta) directly, include `--add_lineage`, `--add_rank`, and `--add_name` options.
+When running [TAXPASTA](https://github.com/taxprofiler/taxpasta) directly, include `--add_lineage`, `--add_rank`, and `--add_name` options.
 
 ### Extract Viral TaxIDs
 

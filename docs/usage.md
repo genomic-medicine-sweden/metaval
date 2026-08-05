@@ -108,7 +108,7 @@ Rules enforced by the pipeline:
 - An enabled BLAST mode requires its corresponding database.
 - Verify-species mapping requires at least one BLAST mode.
 - Pathogen screening requires at least one BLAST mode.
-- Both modes may be disabled for verify-species runs when mapping is not enabled, such as when you only want to generate a flagged Taxpasta table.
+- Both modes may be disabled for verify-species runs when mapping is not enabled, such as when you only want to generate a flagged TAXPASTA table.
 
 ## Verify identified species
 
