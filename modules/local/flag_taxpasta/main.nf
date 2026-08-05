@@ -21,12 +21,12 @@ process FLAG_TAXPASTA {
     script:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta1.id}"
-    def ntc_cmd = ntc_taxpasta ? "--ntc_taxpasta ${ntc_taxpasta} --ntc_name ${meta2.id}" : ''
+    def ntc_cmd = ntc_taxpasta ? "--ntc-taxpasta ${ntc_taxpasta} --ntc-name ${meta2.id}" : ''
 
     """
     flag_taxpasta.py \\
-        --sample_taxpasta ${sample_taxpasta} \\
-        --sample_name ${meta1.id} \\
+        --sample-taxpasta ${sample_taxpasta} \\
+        --sample-name ${meta1.id} \\
         ${ntc_cmd} \\
         --output ${prefix}.tsv \\
         ${args}

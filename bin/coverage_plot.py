@@ -15,12 +15,12 @@ def parse_args():
         description="Plot depth across reference positions from samtools depth TSV files."
     )
     parser.add_argument(
-        "--depth_file",
+        "--depth-file",
         required=True,
         help="samtools depth TSV file with columns: reference, position, depth.",
     )
     parser.add_argument(
-        "--coverage_file",
+        "--coverage-file",
         help="Optional samtools coverage file used to extract numreads per reference.",
     )
     parser.add_argument(

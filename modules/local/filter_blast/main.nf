@@ -28,8 +28,8 @@ process FILTER_BLAST {
     filter_blast.py \\
         --header ${header} \\
         --input ${blast_hits} \\
-        --filtered_output ${prefix}_filtered.txt \\
-        --summary_output ${prefix}_filtered_summary.txt \\
+        --filtered-output ${prefix}_filtered.txt \\
+        --summary-output ${prefix}_filtered_summary.txt \\
         ${args}
 
     """

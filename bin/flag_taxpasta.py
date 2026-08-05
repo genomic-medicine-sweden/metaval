@@ -17,15 +17,15 @@ REQ_COLS = {"taxonomy_id", "name"}
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Flag taxpasta tables against NTC tables.")
-    p.add_argument("--sample_taxpasta", required=True, help="Taxpasta TSV containing sample columns.")
-    p.add_argument("--sample_name", required=True, help="Sample column name to select.")
-    p.add_argument("--ntc_taxpasta", help="Optional NTC taxpasta TSV.")
-    p.add_argument("--ntc_name", help="Optional NTC column name to select.")
+    p.add_argument("--sample-taxpasta", required=True, help="Taxpasta TSV containing sample columns.")
+    p.add_argument("--sample-name", required=True, help="Sample column name to select.")
+    p.add_argument("--ntc-taxpasta", help="Optional NTC taxpasta TSV.")
+    p.add_argument("--ntc-name", help="Optional NTC column name to select.")
     p.add_argument("--output", required=True, help="Output TSV file path.")
     args = p.parse_args(argv)
 
     if bool(args.ntc_taxpasta) != bool(args.ntc_name):
-        p.error("--ntc_taxpasta and --ntc_name must be provided together.")
+        p.error("--ntc-taxpasta and --ntc-name must be provided together.")
 
     return args
 

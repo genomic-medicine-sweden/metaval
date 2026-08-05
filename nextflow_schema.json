@@ -221,49 +221,49 @@
                 "blastx_min_qlen": {
                     "type": "integer",
                     "default": 50,
-                    "description": "The minimum query length (--min_qlen) used to filter the DIAMOND/BLASTX results",
+                    "description": "The minimum query length (--min-qlen) used to filter the DIAMOND/BLASTX results",
                     "help_text": "Specify the minimum query length for filtering DIAMOND/BLASTX results.\n\n> Modifies tool parameter(s):\n> - filter_blast.py: `min_qlen=`",
                     "fa_icon": "filter"
                 },
                 "blastn_min_pident": {
                     "type": "number",
                     "default": 50.0,
-                    "description": "The minimum percentage of identical matches (--min_pident) used to filter BLASTN results",
+                    "description": "The minimum percentage of identical matches (--min-pident) used to filter BLASTN results",
                     "help_text": "Specify the minimum percentage of identical matches for filtering BLASTN results.\n\n> Modifies tool parameter(s):\n> - filter_blast.py: `min_pident=`",
                     "fa_icon": "filter"
                 },
                 "blastx_min_pident": {
                     "type": "number",
                     "default": 50.0,
-                    "description": "The minimum percentage of identical matches (--min_pident) used to filter DIAMOND/BLASTX results",
+                    "description": "The minimum percentage of identical matches (--min-pident) used to filter DIAMOND/BLASTX results",
                     "help_text": "Specify the minimum percentage of identical matches for filtering DIAMOND/BLASTX results.\n\n> Modifies tool parameter(s):\n> - filter_blast.py: `min_pident=`",
                     "fa_icon": "filter"
                 },
                 "blastn_min_length": {
                     "type": "integer",
                     "default": 50,
-                    "description": "The minimum alignment length (--min_length) used to filter BLASTN results",
+                    "description": "The minimum alignment length (--min-length) used to filter BLASTN results",
                     "help_text": "Specify the minimum alignment length for filtering BLASTN results.\n\n> Modifies tool parameter(s):\n> - filter_blast.py: `min_length=`",
                     "fa_icon": "filter"
                 },
                 "blastx_min_length": {
                     "type": "integer",
                     "default": 50,
-                    "description": "The minimum alignment length (--min_length) used to filter DIAMOND/BLASTX results",
+                    "description": "The minimum alignment length (--min-length) used to filter DIAMOND/BLASTX results",
                     "help_text": "Specify the minimum alignment length for filtering DIAMOND/BLASTX results.\n\n> Modifies tool parameter(s):\n> - filter_blast.py: `min_length=`",
                     "fa_icon": "filter"
                 },
                 "blastn_max_evalue": {
                     "type": "number",
                     "default": 0.001,
-                    "description": "The maximum e-value (--max_evalue) used to filter BLASTN results",
+                    "description": "The maximum e-value (--max-evalue) used to filter BLASTN results",
                     "help_text": "Specify the maximum expected value for filtering BLASTN results.\n\n> Modifies tool parameter(s):\n> - filter_blast.py: `max_evalue=`",
                     "fa_icon": "filter"
                 },
                 "blastx_max_evalue": {
                     "type": "number",
                     "default": 0.001,
-                    "description": "The maximum e-value (--max_evalue) used to filter DIAMOND/BLASTX results",
+                    "description": "The maximum e-value (--max-evalue) used to filter DIAMOND/BLASTX results",
                     "help_text": "Specify the maximum expected value for filtering DIAMOND/BLASTX results.\n\n> Modifies tool parameter(s):\n> - filter_blast.py: `max_evalue=`",
                     "fa_icon": "filter"
                 },

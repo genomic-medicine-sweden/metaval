@@ -9,12 +9,12 @@ def parse_args(args=None):
     parser = argparse.ArgumentParser(description=Description)
     parser.add_argument("--header", required=True, help="Path to a BLASTn header file.")
     parser.add_argument("--input", required=True, help="Path to the raw BLASTn result file.")
-    parser.add_argument("--filtered_output", required=True, help="Output file for filtered BLASTn results.")
-    parser.add_argument("--summary_output", required=True, help="Output file for summarized BLASTn results.")
-    parser.add_argument("--min_qlen", type=int, default=50, help="Minimum query sequence length (default: 50)")
-    parser.add_argument("--min_pident", type=int, default=50, help="Minimum percentage of identical matches (default: 50)")
-    parser.add_argument("--min_length", type=int, default=50, help="Minimum alignment length (default: 50)")
-    parser.add_argument("--max_evalue", type=float, default=0.001, help="Maximum expected value (default: 0.001)")
+    parser.add_argument("--filtered-output", required=True, help="Output file for filtered BLASTn results.")
+    parser.add_argument("--summary-output", required=True, help="Output file for summarized BLASTn results.")
+    parser.add_argument("--min-qlen", type=int, default=50, help="Minimum query sequence length (default: 50)")
+    parser.add_argument("--min-pident", type=int, default=50, help="Minimum percentage of identical matches (default: 50)")
+    parser.add_argument("--min-length", type=int, default=50, help="Minimum alignment length (default: 50)")
+    parser.add_argument("--max-evalue", type=float, default=0.001, help="Maximum expected value (default: 0.001)")
 
     return parser.parse_args(args)
 

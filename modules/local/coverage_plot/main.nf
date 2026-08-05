@@ -23,8 +23,8 @@ process COVERAGE_PLOT {
 
     """
     coverage_plot.py \\
-        --depth_file ${depth_file} \\
-        --coverage_file ${coverage_file} \\
+        --depth-file ${depth_file} \\
+        --coverage-file ${coverage_file} \\
         --output ${prefix}.png \\
         ${args}
     """
