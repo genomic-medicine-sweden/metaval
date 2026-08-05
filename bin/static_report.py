@@ -103,7 +103,7 @@ HEADER_HELP = {
     "qseqid": "Query sequence identifier.",
     "sseqid": "Subject or reference sequence identifier.",
     "slen": "Length of the subject or reference sequence.",
-    "pident": "Percent identity across the aligned region.",
+    "pident": "Percentage identity across the aligned region.",
     "qlen": "Length of the query sequence.",
     "length": "Alignment length.",
     "qcovs": "Query coverage per subject, as a percentage.",
