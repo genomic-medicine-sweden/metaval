@@ -134,7 +134,7 @@ For more details and further functionality, please refer to the [usage documenta
 
 ## Expected input formats
 
-The examples below show the expected content format for each file type listed in the samplesheet: `kraken2_report`, `kraken2_result`, `centrifuge_report`, `centrifuge_result`, `diamond`, and the classifier-specific `taxpasta` columns.
+The examples below show the expected content format for each file type listed in the samplesheet: `kraken2_report`, `kraken2_results`, `centrifuge_report`, `centrifuge_results`, `diamond`, and the classifier-specific `taxpasta` columns.
 
 ### Classification files
 
