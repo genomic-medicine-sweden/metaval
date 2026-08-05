@@ -9,11 +9,11 @@ Initial release of genomic-medicine-sweden/metaval, created with the [nf-core](h
 
 ### `Added`
 
-- Extract taxIDs of viruses
+- Extract TaxIDs of viruses
 - Extract Kraken2 reads with KrakenTools
 - Extract Centrifuge reads
 - Extract DIAMOND reads
-- de-novo assembly
+- De novo assembly
 - BLASTn and BLASTx
 - Mapping
 - IGV
