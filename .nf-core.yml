@@ -4,9 +4,7 @@ lint:
     - docs/images/nf-core-metaval_logo_light.png
     - docs/images/nf-core-metaval_logo_dark.png
     - assets/samplesheet.csv
-    - .github/ISSUE_TEMPLATE/config.yml
     - conf/test_full.config
-    - docs/CONTRIBUTING.md
   files_unchanged:
     - assets/sendmail_template.txt
     - .github/CONTRIBUTING.md
@@ -14,6 +12,7 @@ lint:
     - .github/PULL_REQUEST_TEMPLATE.md
     - .github/workflows/linting.yml
     - .github/workflows/branch.yml
+    - .github/ISSUE_TEMPLATE/config.yml
     - .github/ISSUE_TEMPLATE/feature_request.yml
     - assets/email_template.html
     - assets/email_template.txt
@@ -28,7 +27,7 @@ lint:
   nextflow_config:
     - manifest.name
     - manifest.homePage
-nf_core_version: 4.0.2
+nf_core_version: 4.0.3
 repository_type: pipeline
 template:
   author: LilyAnderssonLee

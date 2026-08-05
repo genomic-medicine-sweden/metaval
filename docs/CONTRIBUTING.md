@@ -81,6 +81,10 @@ GitHub Actions runs the pipeline on this data to ensure it runs through and exit
 If there are any failures then the automated tests fail.
 These tests are run with the latest available version of Nextflow and the minimum required version specified in the pipeline code.
 
+In `genomic-medicine-sweden/metaval`, there are two nf-tests: `default.nf.test` and `test_complete.nf.test`.
+
+Currently, GitHub Actions only run `default.nf.test`, while `test_complete.nf.test` is ignored because it launches a large number of processes which may cause the Github Actions workflow to fail. Ensure that `test_complete.nf.test` runs successfully locally.
+
 ### Patch release
 
 > [!WARNING]

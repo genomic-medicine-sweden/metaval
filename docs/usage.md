@@ -350,7 +350,8 @@ blastn_db: /path/to/blastn_db.tar.gz
 skip_blastx: true
 ```
 
-Do not use `-c` to provide pipeline parameters. The `-c` option is for Nextflow configuration such as resources, executors, containers, and process-specific arguments.
+> [!WARNING]
+> Do not use `-c <file>` to specify parameters as this will result in errors. Custom config files specified with `-c` must only be used for [tuning process resource specifications](https://nf-co.re/docs/running/run-pipelines#configuring-pipelines), other infrastructural tweaks (such as output directories), or module arguments (args).
 
 ## Updating the pipeline
 

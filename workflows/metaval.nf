@@ -429,7 +429,6 @@ workflow METAVAL {
         )
 
     }
-
     //
     // WORKFLOW: Screen pathogens
     //

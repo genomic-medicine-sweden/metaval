@@ -2825,7 +2825,7 @@
                 "viral_taxids/SRR13439813_kraken2_viral_taxids.tsv"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:01.516733428",
+        "timestamp": "2026-07-29T16:23:09.583346762",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -2945,7 +2945,7 @@
                 "SRR13439813_taxid_889338_Salmonella-phage-PVPSE1.warnings.log exists: true"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:25.991935955",
+        "timestamp": "2026-07-29T16:23:33.842309819",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -2968,7 +2968,7 @@
                 "SRR13439813_kraken2_viral_taxids.tsv:md5,29abf33cf1cec5c257ed50832b7ce9c9"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:28.27981776",
+        "timestamp": "2026-07-29T16:23:36.102037888",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -3071,7 +3071,7 @@
                 "SRR13439813_taxid_2943001_Casjensviridae.warnings.log exists: true"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:27.142929103",
+        "timestamp": "2026-07-29T16:23:34.976617918",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -3184,7 +3184,7 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:11.938684788",
+        "timestamp": "2026-07-29T16:23:19.917568074",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -3411,7 +3411,7 @@
                 "SRR13439813_taxid_998086_Pseudomonas-phage-PhiPA3.warnings.log exists: true"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:24.84425519",
+        "timestamp": "2026-07-29T16:23:32.693528678",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -3570,7 +3570,7 @@
                 "SRR13439813_taxid_2886042_Shigella-virus-Moo19_blast_filtered_summary.txt(diamond) contains string:true"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:01.990330994",
+        "timestamp": "2026-07-29T16:23:10.019085641",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -3585,7 +3585,7 @@
                 "SRR13439813_Homo_sapiens_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:21.362181557",
+        "timestamp": "2026-07-29T16:23:29.278314485",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -3599,7 +3599,7 @@
                 "SRR13439799_Influenza_A_virus_H2N2_1.fasta.gz:md5,d41d8cd98f00b204e9800998ecf8427e"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:22.485996589",
+        "timestamp": "2026-07-29T16:23:30.395400807",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -3616,7 +3616,7 @@
                 "SRR13439799_Influenza_A_virus_H1N1_blastx_filtered_summary.txt contains string:true"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:18.978961822",
+        "timestamp": "2026-07-29T16:23:26.96082319",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -3644,7 +3644,7 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,481e4fddfe11018be67ff5dcce3eb748"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:16.676377455",
+        "timestamp": "2026-07-29T16:23:24.689523632",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -3670,7 +3670,7 @@
                 
             ]
         ],
-        "timestamp": "2026-07-22T11:14:23.686274309",
+        "timestamp": "2026-07-29T16:23:31.554306264",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -3685,7 +3685,7 @@
                 "SRR13439813_Homo_sapiens_samtools.fasta:md5,a06778a8d2ca667eb4f12d1fd7a43f87"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:20.091683531",
+        "timestamp": "2026-07-29T16:23:28.089329061",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -4545,7 +4545,7 @@
                 "SRR13439813_taxid_665032_Delftia-phage-PhiW-14.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:08.895122286",
+        "timestamp": "2026-07-29T16:23:17.09187906",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -4557,7 +4557,7 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:15.463401344",
+        "timestamp": "2026-07-29T16:23:23.51180434",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -4687,7 +4687,7 @@
                 }
             }
         ],
-        "timestamp": "2026-07-22T11:14:01.47283128",
+        "timestamp": "2026-07-29T16:23:09.540997488",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -5610,7 +5610,7 @@
                 
             ]
         ],
-        "timestamp": "2026-07-22T11:14:11.436372268",
+        "timestamp": "2026-07-29T16:23:19.420083373",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -5927,7 +5927,7 @@
                 "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:17.834958688",
+        "timestamp": "2026-07-29T16:23:25.831482499",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -6030,7 +6030,7 @@
                 "SRR13439813_taxid_371730_Enquatrovirus_blastx_filtered_summary.txt(centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-07-22T11:14:02.906122054",
+        "timestamp": "2026-07-29T16:23:10.84789702",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
