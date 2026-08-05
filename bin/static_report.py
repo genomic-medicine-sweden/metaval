@@ -117,7 +117,7 @@ HEADER_HELP = {
     "endpos": "End position on the reference.",
     "numreads": "Number of reads mapped to the reference region.",
     "covbases": "Number of reference bases covered by reads.",
-    "coverage": "Percent of the reference covered by reads.",
+    "coverage": "Percentage of the reference covered by reads.",
     "meandepth": "Mean read depth across covered bases.",
     "meanbaseq": "Mean base quality of mapped reads.",
     "meanmapq": "Mean mapping quality of mapped reads.",
