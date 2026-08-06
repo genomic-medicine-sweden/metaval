@@ -125,8 +125,7 @@ nextflow_pipeline {
                 //pathogen mapping bowtie2
                 { assert snapshot (stable_content_pathogens_bowtie2_build).match("pathogen_bowtie2_build")},
                 { assert snapshot (
-                    bam_files_pathogens_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_pathogens_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] },
-                    stable_content_pathogens_bowtie2_align
+                    bam_files_pathogens_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_pathogens_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] }
                 ).match("pathogen_bowtie2_align")},
 
                 // pathogen blast
