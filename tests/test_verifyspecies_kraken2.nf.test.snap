@@ -795,7 +795,7 @@
                 "viral_taxids/SRR13439813_kraken2_viral_taxids.tsv"
             ]
         ],
-        "timestamp": "2026-08-05T12:30:48.549441",
+        "timestamp": "2026-08-06T17:56:38.391913",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -828,7 +828,7 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,481e4fddfe11018be67ff5dcce3eb748"
             ]
         ],
-        "timestamp": "2026-07-30T13:32:56.496152",
+        "timestamp": "2026-08-06T17:56:42.011963",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -916,7 +916,7 @@
                 }
             }
         ],
-        "timestamp": "2026-08-05T12:30:48.458855",
+        "timestamp": "2026-08-06T17:56:38.309023",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1026,7 +1026,7 @@
                 "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true"
             ]
         ],
-        "timestamp": "2026-08-05T12:30:49.837409",
+        "timestamp": "2026-08-06T17:56:39.801784",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1139,7 +1139,7 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-08-05T12:30:50.414784",
+        "timestamp": "2026-08-06T17:56:41.209424",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1624,12 +1624,9 @@
                 [
                     "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_2886925_Escherichia-phage-N4.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_2886925_Escherichia-phage-N4.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
                 ]
-            ],
-            [
-                
             ]
         ],
-        "timestamp": "2026-08-05T12:30:50.317511",
+        "timestamp": "2026-08-06T17:56:40.153084",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"

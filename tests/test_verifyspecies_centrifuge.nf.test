@@ -29,7 +29,6 @@ nextflow_pipeline {
             //minimap2 index:partly unstable files, see custom assertions
 
             //bowtie2 align
-            def stable_content_bowtie2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['mapping/bowtie2/align'], ignoreFile: 'tests/.nftignore')
             def bam_files_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['mapping/bowtie2/align/*.bam'])
 
             //bowtie2 build
@@ -82,8 +81,7 @@ nextflow_pipeline {
 
                 //bowtie2
                 { assert snapshot (
-                    bam_files_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] },
-                    stable_content_bowtie2_align
+                    bam_files_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] }
                 ).match("bowtie2_align")},
                 { assert snapshot (stable_content_bowtie2_build).match("bowtie2_build")},
 

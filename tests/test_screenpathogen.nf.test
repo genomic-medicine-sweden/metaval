@@ -29,14 +29,12 @@ nextflow_pipeline {
             def stable_content_pathogens_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/bowtie2/build/bowtie2/*'], ignoreFile: 'tests/.nftignore')
 
             //pathogen bowtie2 align
-            def stable_content_pathogens_bowtie2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/bowtie2/align/*'], ignoreFile: 'tests/.nftignore')
             def bam_files_pathogens_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['pathogens/mapping/bowtie2/align/*.bam'])
 
             //pathogens reads blast input
             def stable_content_pathogens_reads_blast = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/pathogen_reads/blast_input/*'], ignoreFile: 'tests/.nftignore')
 
             //pathogens
-            def stable_content_pathogens_reads_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/pathogen_reads/consensus_input/*'], ignoreFile: 'tests/.nftignore')
             def bam_files_pathogens_reads_consensus  = getAllFilesFromDir(params.outdir, include: ['pathogens/pathogen_reads/consensus_input/*.bam'])
 
             assertAll(
@@ -53,8 +51,7 @@ nextflow_pipeline {
                 //pathogen mapping bowtie2
                 { assert snapshot (stable_content_pathogens_bowtie2_build).match("pathogen_bowtie2_build")},
                 { assert snapshot (
-                    bam_files_pathogens_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_pathogens_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] },
-                    stable_content_pathogens_bowtie2_align
+                    bam_files_pathogens_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_pathogens_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] }
                 ).match("pathogen_bowtie2_align")},
 
                 //pathogen blast
@@ -74,8 +71,7 @@ nextflow_pipeline {
 
                 //pathogens reads consensus
                 { assert snapshot (
-                    bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file -> [file.getName() + " pathogens reads consensus md5: " + bam(file.toString()).getHeader()] },
-                    stable_content_pathogens_reads_consensus
+                    bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file -> [file.getName() + " pathogens reads consensus md5: " + bam(file.toString()).getHeader()] }
                 ).match("pathogens_reads_consensus") },
             )
         }
