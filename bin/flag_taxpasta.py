@@ -3,8 +3,8 @@
 Compare one sample taxpasta profile against one optional NTC taxpasta profile.
 
 Writes one TSV with columns:
-  taxonomy_id, name, rank, lineage, <sample>
-  or with NTC: ..., <sample>_vs_<ntc>, <ntc>
+taxonomy_id, name, rank, lineage, <sample>
+or with NTC: ..., <sample>_vs_<ntc>, <ntc>
 """
 
 import argparse
@@ -31,6 +31,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 
 def load_taxpasta_file(path: str) -> pd.DataFrame:
+    """Load a taxpasta TSV and normalize metadata and profile columns.
+
+    Required metadata columns are taxonomy_id and name. Missing rank and
+    lineage columns are added as empty strings, and profile columns are
+    converted to integer read counts.
+    """
     df = pd.read_csv(path, sep="\t")
 
     if missing := REQ_COLS - set(df.columns):
@@ -51,6 +57,16 @@ def load_taxpasta_file(path: str) -> pd.DataFrame:
 
 
 def compare_counts(sample_reads_count: int, ntc_reads_count: int) -> str:
+    """Compare sample and NTC read counts and return the matching flag.
+
+    Flags:
+    in_sample: reads are present only in the sample.
+    in_NTC: reads are present only in the NTC.
+    > NTC: sample read count is higher than NTC.
+    < NTC: sample read count is lower than NTC.
+    equal: sample and NTC read counts are equal.
+    """
+
     if sample_reads_count > 0 and ntc_reads_count == 0:
         return "in_sample"
     if sample_reads_count == 0 and ntc_reads_count > 0:
@@ -63,6 +79,11 @@ def compare_counts(sample_reads_count: int, ntc_reads_count: int) -> str:
 
 
 def find_profile_column(df: pd.DataFrame, name: str, path: str) -> str:
+    """Find the sample/NTC profile column.
+
+    Prefer an exact match, otherwise accept a unique shortest match with a
+    dot, underscore, or hyphen suffix.
+    """
     profile_cols = [c for c in df.columns if c not in META_COLS]
     if name in profile_cols:
         return name
@@ -91,6 +112,12 @@ def build_output(
     ntc_col: str | None = None,
     ntc_label: str | None = None,
 ) -> pd.DataFrame:
+    """Build the flagged taxpasta output table for one sample.
+
+    Without an NTC table, keep sample rows with reads. With an NTC table, merge
+    sample and NTC rows, keep rows present in either table, and add the
+    sample-vs-NTC comparison flag.
+    """
     base = sample_df[META_COLS + [sample_col]].copy()
 
     if ntc_df is None or ntc_col is None or ntc_label is None:

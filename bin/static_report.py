@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Generate a self-contained static HTML report from metaval pipeline outputs."""
 
 import argparse
 import base64
@@ -18,70 +19,22 @@ STATIC_REPORT_DIR = ASSETS_DIR / "static_report"
 REPORT_CSS = STATIC_REPORT_DIR / "report.css"
 REPORT_JS = STATIC_REPORT_DIR / "report.js"
 
+
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        description="Generate a static HTML metaval report from a samplesheet."
-    )
-    parser.add_argument(
-        "--samplesheet",
-        required=True,
-        help="Path to the input samplesheet CSV.",
-    )
-    parser.add_argument(
-        "--ticket",
-        default="NA",
-        help="Ticket number to show in the report header.",
-    )
-    parser.add_argument(
-        "--version",
-        default="dev",
-        help="Report or workflow version to show in the report header.",
-    )
-    parser.add_argument(
-        "--output",
-        default="metaval_report.html",
-        help="Path to the output HTML report.",
-    )
-    parser.add_argument(
-        "--template",
-        default=str(STATIC_REPORT_DIR / "report.html.j2"),
-        help="Path to the Jinja template file.",
-    )
-    parser.add_argument(
-        "--flagged-dir",
-        required=True,
-        help="Path to flagged taxpasta TSV files.",
-    )
-    parser.add_argument(
-        "--reads-dir",
-        required=True,
-        help="Path to extracted read files grouped by classifier.",
-    )
-    parser.add_argument(
-        "--blastn-dir",
-        required=True,
-        help="Path to BLASTN result files.",
-    )
-    parser.add_argument(
-        "--blastx-dir",
-        required=True,
-        help="Path to BLASTX result files.",
-    )
-    parser.add_argument(
-        "--coverage-dir",
-        required=True,
-        help="Path to samtools coverage files.",
-    )
-    parser.add_argument(
-        "--coverage-plots-dir",
-        required=True,
-        help="Path to coverage plot image files.",
-    )
-    parser.add_argument(
-        "--logo",
-        default=str(ASSETS_DIR / "metaval_logo_light.png"),
-        help="Path to the footer logo image.",
-    )
+    parser = argparse.ArgumentParser(description="Generate a static HTML metaval report from a samplesheet.")
+    parser.add_argument("--samplesheet", required=True, help="Path to the input samplesheet CSV.")
+    parser.add_argument("--ticket", default="NA", help="Ticket number to show in the report header.")
+    parser.add_argument("--version", default="dev", help="Report or workflow version to show in the report header.")
+    parser.add_argument("--output", default="metaval_report.html", help="Path to the output HTML report.")
+    parser.add_argument("--template", default=str(STATIC_REPORT_DIR / "report.html.j2"), help="Path to the Jinja template file.")
+    parser.add_argument("--flagged-dir", required=True, help="Path to flagged taxpasta TSV files.")
+    parser.add_argument("--reads-dir", required=True, help="Path to extracted read files grouped by classifier.")
+    parser.add_argument("--blastn-dir", required=True, help="Path to BLASTN result files.")
+    parser.add_argument("--blastx-dir", required=True, help="Path to BLASTX result files.")
+    parser.add_argument("--coverage-dir", required=True, help="Path to samtools coverage files.")
+    parser.add_argument("--coverage-plots-dir", required=True, help="Path to coverage plot image files.")
+    parser.add_argument("--logo", default=str(ASSETS_DIR / "metaval_logo_light.png"), help="Path to the footer logo image.")
+
     return parser.parse_args()
 
 REPORT_TITLE = "Clinical Metagenomics Report"
@@ -125,6 +78,7 @@ HEADER_HELP = {
 
 
 def file_to_data_uri(path: Path) -> str:
+    """Encode an image file as a data URI for embedding in the report."""
     suffix = path.suffix.lower()
     mime_type = {
         ".png": "image/png",
@@ -136,7 +90,9 @@ def file_to_data_uri(path: Path) -> str:
     encoded = base64.b64encode(path.read_bytes()).decode("ascii")
     return f"data:{mime_type};base64,{encoded}"
 
+
 def read_samplesheet(samplesheet_path: Path) -> list[dict[str, str]]:
+    """Read the report samplesheet and keep the required sample columns."""
     with samplesheet_path.open(newline="", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
         missing = [column for column in SAMPLE_COLUMNS if column not in reader.fieldnames]
@@ -151,6 +107,7 @@ def read_samplesheet(samplesheet_path: Path) -> list[dict[str, str]]:
 
 
 def infer_rows_from_flagged_dir(flagged_dir: Path) -> list[dict[str, str]]:
+    """Infer sample rows from flagged taxpasta filenames when the samplesheet is empty."""
     samples = sorted({
         file_path.stem.rsplit("_", 1)[0]
         for file_path in flagged_dir.glob("*.tsv")
@@ -201,6 +158,7 @@ def parse_read_count(value: str) -> int:
 
 
 def load_assigned_reads(flagged_path: Path, sample_name: str, taxid: str) -> str:
+    """Return the formatted read count assigned to a taxid in a flagged table."""
     if not flagged_path.exists():
         return ""
 
@@ -222,6 +180,7 @@ def load_assigned_reads(flagged_path: Path, sample_name: str, taxid: str) -> str
 
 
 def detect_flag(row: list[str]) -> str:
+    """Return the first sample-vs-NTC flag found in a taxpasta row."""
     valid_flags = {"in_sample", "in_NTC", "> NTC", "< NTC", "equal"}
     for value in row:
         if value in valid_flags:
@@ -230,6 +189,7 @@ def detect_flag(row: list[str]) -> str:
 
 
 def load_extracted_read_index(reads_dir: Path) -> dict[str, dict[str, list[dict[str, str]]]]:
+    """Index extracted read and assembly files by sample and classifier."""
     index: dict[str, dict[str, list[dict[str, str]]]] = {}
     extracted_pattern = re.compile(
         r"^(?P<sample>.+?)_taxid_(?P<taxid>\d+)_(?P<organism>.+?)"
@@ -264,6 +224,7 @@ def load_extracted_read_index(reads_dir: Path) -> dict[str, dict[str, list[dict[
 
 
 def resolve_flagged_path(row: dict[str, str], flagged_dir: Path, classifier: str) -> Path:
+    """Resolve the expected flagged taxpasta path for a sample and classifier."""
     candidates = [
         flagged_dir / f"{row['sample']}_{row['library_type']}_{row['batch']}_{classifier}.tsv",
         flagged_dir / f"{row['sample']}_{classifier}.tsv",
@@ -279,6 +240,7 @@ def slugify(value: str) -> str:
 
 
 def read_tsv_table(path: Path) -> dict[str, list[list[str]]]:
+    """Read a TSV file into report table headers and rows."""
     with path.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.reader(handle, delimiter="\t"))
     if not rows:
@@ -287,6 +249,7 @@ def read_tsv_table(path: Path) -> dict[str, list[list[str]]]:
 
 
 def parse_read_entries(path: Path, max_lines: int = 80) -> list[dict[str, str]]:
+    """Parse FASTA, FASTQ, or plain text read snippets for report display."""
     lines = path.read_text(encoding="utf-8").splitlines()[:max_lines]
     if not lines:
         return []
@@ -322,6 +285,7 @@ def select_reads_source(
     taxid: str,
     organism: str,
 ) -> list[Path]:
+    """Select read or assembly files matching a sample, taxid, organism, and classifier."""
     base_name = f"{sample}_taxid_{taxid}_{organism}"
     candidates = []
     candidates.extend(reads_dir.glob(f"{base_name}.extracted_{classifier}_*"))
@@ -342,6 +306,7 @@ def build_detail_context(
     coverage_dir: Path,
     coverage_plots_dir: Path,
 ) -> dict[str, object]:
+    """Build the lazy-loaded detail panel context for one extracted organism."""
     blastn_summary = blastn_dir / f"{sample}_taxid_{taxid}_{organism}_{classifier}_blast_filtered.txt"
     blastx_summary = blastx_dir / f"{sample}_taxid_{taxid}_{organism}_{classifier}_blastx_filtered.txt"
 
@@ -399,6 +364,7 @@ def collect_detail_sections(
     coverage_dir: Path,
     coverage_plots_dir: Path,
 ) -> tuple[dict[tuple[str, str, str, str], str], dict[str, dict[str, object]]]:
+    """Collect detail panel links and contexts for extracted organisms."""
     links: dict[tuple[str, str, str, str], str] = {}
     detail_sections: dict[str, dict[str, object]] = {}
 
@@ -451,6 +417,7 @@ def collect_detail_sections(
 
 
 def read_taxpasta_table(path: Path, sample_name: str) -> dict[str, list[list[str]]]:
+    """Read a flagged taxpasta table and derive report display metadata."""
     with path.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.reader(handle, delimiter="\t"))
     if not rows:
@@ -545,6 +512,7 @@ def read_taxpasta_table(path: Path, sample_name: str) -> dict[str, list[list[str
 
 
 def add_cross_classifier_counts(classifiers: dict[str, dict[str, object]], sample_name: str) -> None:
+    """Add Kraken2/Centrifuge/Diamond counts beside each classifier row."""
     count_maps = {key: {} for key in CLASSIFIERS}
 
     for key in CLASSIFIERS:
@@ -589,6 +557,7 @@ def prepare_rows(
     extracted_reads_index: dict[str, dict[str, list[dict[str, str]]]],
     detail_links: dict[tuple[str, str, str, str], str],
 ) -> list[dict[str, str]]:
+    """Prepare sample rows with classifier tables and links for rendering."""
     prepared_rows = []
     for index, row in enumerate(rows, start=1):
         prepared = dict(row)
@@ -664,6 +633,7 @@ def build_html(
     coverage_dir: Path,
     coverage_plots_dir: Path,
 ) -> str:
+    """Render the static report HTML and embed lazy-loaded detail data."""
     created_date = date.today().isoformat()
     template_dir = template_path.parent
     report_css = REPORT_CSS.read_text(encoding="utf-8")

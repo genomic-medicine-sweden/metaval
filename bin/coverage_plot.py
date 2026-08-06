@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Generate per-reference coverage depth plots from samtools output files."""
 
 import argparse
 import csv
@@ -33,6 +34,7 @@ def parse_args():
 
 
 def read_depth_file(path):
+    """Read a samtools depth TSV file with reference, position, and depth columns."""
     refs = {}
     with open(path, newline="") as handle:
         reader = csv.reader(handle, delimiter="\t")
@@ -44,6 +46,11 @@ def read_depth_file(path):
 
 
 def read_coverage_file(path):
+    """Read samtools coverage file.
+
+    Expected columns: rname, startpos, endpos, numreads, covbases, coverage,
+    meandepth, meanbaseq, meanmapq.
+    """
     coverage_by_ref = {}
     if not path:
         return coverage_by_ref
@@ -60,6 +67,7 @@ def read_coverage_file(path):
 
 
 def plot_depth_file(depth_file, output, coverage_file=None):
+    """Plot depth by reference"""
     refs = read_depth_file(depth_file)
     coverage_by_ref = read_coverage_file(coverage_file)
     ref_summaries = []

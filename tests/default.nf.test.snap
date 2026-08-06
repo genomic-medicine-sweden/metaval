@@ -199,8 +199,6 @@
                 "mapping/minimap2/index",
                 "mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1",
                 "mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1/GCA_037915385.1_ASM3791538v1_genomic.fna.mmi",
-                "metaval_reports",
-                "metaval_reports/metaval_report.html",
                 "multiqc",
                 "multiqc/multiqc_data",
                 "multiqc/multiqc_data/llms-full.txt",
@@ -289,6 +287,8 @@
                 "pathogens/samtools/depth/SRR13439813_taxid_9606_Homo_sapiens.tsv",
                 "pipeline_info",
                 "pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml",
+                "report",
+                "report/metaval_report.html",
                 "samtools",
                 "samtools/coverage",
                 "samtools/coverage/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1.txt",
@@ -365,9 +365,9 @@
                 "taxpasta_flagged/SRR13439813_DNA_batch2_kraken2.tsv"
             ]
         ],
-        "timestamp": "2026-07-22T16:03:37.669570946",
+        "timestamp": "2026-08-06T11:38:01.844005",
         "meta": {
-            "nf-test": "0.9.4",
+            "nf-test": "0.9.5",
             "nextflow": "25.10.4"
         }
     },
