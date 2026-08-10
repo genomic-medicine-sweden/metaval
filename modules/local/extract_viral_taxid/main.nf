@@ -57,5 +57,6 @@ process EXTRACT_VIRAL_TAXID {
     def prefix = task.ext.prefix ?: "${meta.id}_${meta.tool}"
     """
     touch ${prefix}_viral_taxids.tsv
+    echo -e '211044\tInfluenza-A-virus-A-Puerto-Rico-8-1934-H1N1' >> ${prefix}_viral_taxids.tsv
     """
 }

@@ -41,12 +41,26 @@ process EXTRACTCENTRIFUGEREADS {
 
     stub:
     def prefix = task.ext.prefix ?: "${meta.id}"
+    def gzip_reads_command = meta.single_end ?
+        "gzip ${prefix}.extracted_centrifuge_read.fastq" :
+        "gzip ${prefix}.extracted_centrifuge_read_1.fastq; gzip ${prefix}.extracted_centrifuge_read_2.fastq"
     """
     if [ "${meta.single_end}" == 'true' ]; then
-        touch ${prefix}.extracted_centrifuge_read.fastq.gz
+        echo '@stub_read' > ${prefix}.extracted_centrifuge_read.fastq
+        echo 'ACGT' >> ${prefix}.extracted_centrifuge_read.fastq
+        echo '+' >> ${prefix}.extracted_centrifuge_read.fastq
+        echo '!!!!' >> ${prefix}.extracted_centrifuge_read.fastq
+        $gzip_reads_command
     else
-        touch ${prefix}.extracted_centrifuge_read_1.fastq.gz
-        touch ${prefix}.extracted_centrifuge_read_2.fastq.gz
+        echo '@stub_read/1' > ${prefix}.extracted_centrifuge_read_1.fastq
+        echo 'ACGT' >> ${prefix}.extracted_centrifuge_read_1.fastq
+        echo '+' >> ${prefix}.extracted_centrifuge_read_1.fastq
+        echo '!!!!' >> ${prefix}.extracted_centrifuge_read_1.fastq
+        echo '@stub_read/2' > ${prefix}.extracted_centrifuge_read_2.fastq
+        echo 'TGCA' >> ${prefix}.extracted_centrifuge_read_2.fastq
+        echo '+' >> ${prefix}.extracted_centrifuge_read_2.fastq
+        echo '!!!!' >> ${prefix}.extracted_centrifuge_read_2.fastq
+        $gzip_reads_command
     fi
     """
 }
