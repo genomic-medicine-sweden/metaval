@@ -16,6 +16,7 @@ blast/blastx/*/*.txt
 igv/*.html
 extracted_reads/*/*.fa
 mapping/bowtie2/*/*.{bam,bai}
+pathogens/mapping/bowtie2/*/*.{bam,bai}
 pathogens/blast/*/*.txt
 pathogens/igv/*.html
 pathogens/pathogen_reads/blast_input/*.{bam,bai}
