@@ -21,6 +21,7 @@ Initial release of genomic-medicine-sweden/metaval, created with the [nf-core](h
   - Map reads to the pathogen genome database using Bowtie2 for short reads and Minimap2 for long reads
   - Call consensus sequences for reads mapped to the pathogen genomes
   - IGV
+- nf-test
 
 ### `Fixed`
 
