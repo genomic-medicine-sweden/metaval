@@ -187,8 +187,14 @@ workflow METAVAL {
             ch_taxpasta_input = ch_taxpasta_input.mix(ch_taxpasta_diamond_ntc)
         }
 
-        // The input channels to FLAG_TAXPASTA process: [ meta_sample, taxpasta_sample, meta_ntc, taxpasta_ntc ]
-        FLAG_TAXPASTA( ch_taxpasta_input )
+        // The input channels to FLAG_TAXPASTA process: [ meta_sample, taxpasta_sample]; [ meta_ntc, taxpasta_ntc ]
+
+        FLAG_TAXPASTA(
+            ch_taxpasta_input.map {meta_sample, taxpasta_sample, _meta_ntc, _taxpasta_ntc ->
+                [meta_sample, taxpasta_sample]},
+            ch_taxpasta_input.map {_meta_sample, _taxpasta_sample, meta_ntc, taxpasta_ntc ->
+                [meta_ntc, taxpasta_ntc]}
+            )
 
         //
         // SUBWORKFLOW: TAXID_READS - extract reads
@@ -328,6 +334,7 @@ workflow METAVAL {
                 FASTQC(ch_fastqc_files )
                 ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.map{ _meta, file -> file })
             }
+
         }
 
         //
@@ -367,16 +374,12 @@ workflow METAVAL {
 
             // Filter channels to get bam files which contains mapped reads
             // short reads
-            ch_igv_input_shortread = channel.empty()
-            ch_igv_input_shortread = ch_igv_input_shortread
-                .mix(MAPPING_SHORTREAD.out.bam)
+            ch_igv_input_shortread = MAPPING_SHORTREAD.out.bam
                 .join(MAPPING_SHORTREAD.out.bai, by:0)
                 .join(FETCH_BLAST_GENOMES.out.shortreads_genome, by:0)
 
             // long reads
-            ch_igv_input_longread = channel.empty()
-            ch_igv_input_longread = ch_igv_input_longread
-                .mix(MAPPING_LONGREAD.out.bam)
+            ch_igv_input_longread = MAPPING_LONGREAD.out.bam
                 .join(MAPPING_LONGREAD.out.bai, by:0)
                 .join(FETCH_BLAST_GENOMES.out.longreads_genome, by:0)
 

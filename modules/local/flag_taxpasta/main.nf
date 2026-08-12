@@ -8,7 +8,8 @@ process FLAG_TAXPASTA {
         : 'biocontainers/pandas:2.2.1'}"
 
     input:
-    tuple val(meta1), path(sample_taxpasta, stageAs: 'sample_taxpasta.tsv'), val(meta2), path(ntc_taxpasta, stageAs: 'ntc_taxpasta.tsv')
+    tuple val(meta1), path(sample_taxpasta, stageAs: 'sample_taxpasta.tsv')
+    tuple val(meta2), path(ntc_taxpasta, stageAs: 'ntc_taxpasta.tsv')
 
     output:
     tuple val(meta1), path("*.tsv"), emit: tsv

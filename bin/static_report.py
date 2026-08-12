@@ -18,6 +18,7 @@ ASSETS_DIR = SCRIPT_DIR.parent / "assets"
 STATIC_REPORT_DIR = ASSETS_DIR / "static_report"
 REPORT_CSS = STATIC_REPORT_DIR / "report.css"
 REPORT_JS = STATIC_REPORT_DIR / "report.js"
+FOOTER_LOGO = ASSETS_DIR / "metaval_logo_light.png"
 
 
 def parse_args() -> argparse.Namespace:
@@ -33,7 +34,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--blastx-dir", required=True, help="Path to BLASTX result files.")
     parser.add_argument("--coverage-dir", required=True, help="Path to samtools coverage files.")
     parser.add_argument("--coverage-plots-dir", required=True, help="Path to coverage plot image files.")
-    parser.add_argument("--logo", default=str(ASSETS_DIR / "metaval_logo_light.png"), help="Path to the footer logo image.")
 
     return parser.parse_args()
 
@@ -126,11 +126,13 @@ def infer_rows_from_flagged_dir(flagged_dir: Path) -> list[dict[str, str]]:
 
 
 def ntc_badge(value: str) -> str:
+    """Return the CSS class used to style the sample/NTC badge."""
     normalized = value.strip().lower()
     return "ntc-true" if normalized == "true" else "ntc-false"
 
 
 def ntc_label(value: str) -> str:
+    """Return the display label shown inside the sample/NTC badge."""
     normalized = value.strip().lower()
     return "NTC" if normalized == "true" else "Sample"
 
@@ -235,7 +237,9 @@ def resolve_flagged_path(row: dict[str, str], flagged_dir: Path, classifier: str
     return candidates[-1]
 
 
-def slugify(value: str) -> str:
+def simplify_id(value: str) -> str:
+    """Replaces characters that is not uppercase/lowercase letter, number,
+    dot, underscore and hyphen with a single hyphen (-) """
     return re.sub(r"[^A-Za-z0-9._-]+", "-", value).strip("-").lower()
 
 
@@ -249,7 +253,7 @@ def read_tsv_table(path: Path) -> dict[str, list[list[str]]]:
 
 
 def parse_read_entries(path: Path, max_lines: int = 80) -> list[dict[str, str]]:
-    """Parse FASTA, FASTQ, or plain text read snippets for report display."""
+    """Parse FASTA or plain text read snippets for report display."""
     lines = path.read_text(encoding="utf-8").splitlines()[:max_lines]
     if not lines:
         return []
@@ -266,13 +270,6 @@ def parse_read_entries(path: Path, max_lines: int = 80) -> list[dict[str, str]]:
                 current.append(line)
         if current:
             entries.append({"header": current[0][1:], "content": "\n".join(current)})
-        return entries
-
-    if lines[0].startswith("@"):
-        for index in range(0, len(lines) - 3, 4):
-            chunk = lines[index:index + 4]
-            if len(chunk) == 4 and chunk[0].startswith("@") and chunk[2].startswith("+"):
-                entries.append({"header": chunk[0][1:], "content": "\n".join(chunk)})
         return entries
 
     return [{"header": path.name, "content": "\n".join(lines)}]
@@ -383,7 +380,7 @@ def collect_detail_sections(
                     organism=organism,
                 )
                 flagged_path = resolve_flagged_path(row, flagged_dir, classifier)
-                panel_id = f"detail-{sample_id}-{classifier}-{taxid}-{slugify(organism)}"
+                panel_id = f"detail-{sample_id}-{classifier}-{taxid}-{simplify_id(organism)}"
                 context = build_detail_context(
                     sample=sample,
                     classifier=classifier,
@@ -627,7 +624,6 @@ def build_html(
     template_path: Path,
     flagged_dir: Path,
     reads_dir: Path,
-    logo_path: Path,
     blastn_dir: Path,
     blastx_dir: Path,
     coverage_dir: Path,
@@ -672,7 +668,7 @@ def build_html(
         header_help_map=HEADER_HELP,
         report_css=report_css,
         report_js=report_js,
-        footer_logo=file_to_data_uri(logo_path),
+        footer_logo=file_to_data_uri(FOOTER_LOGO),
         ticket=ticket,
         version=version,
         created_date=created_date,
@@ -692,7 +688,6 @@ def main() -> None:
     blastx_dir = Path(args.blastx_dir)
     coverage_dir = Path(args.coverage_dir)
     coverage_plots_dir = Path(args.coverage_plots_dir)
-    logo_path = Path(args.logo)
 
     rows = read_samplesheet(samplesheet_path)
     if not rows:
@@ -704,7 +699,6 @@ def main() -> None:
         template_path,
         flagged_dir,
         reads_dir,
-        logo_path,
         blastn_dir,
         blastx_dir,
         coverage_dir,
