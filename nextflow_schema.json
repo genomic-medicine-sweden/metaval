@@ -128,6 +128,11 @@
                     "type": ["string", "number"],
                     "description": "A ticket number to add to the metaval report.",
                     "fa_icon": "fas fa-ticket-alt"
+                },
+                "perform_fastqc": {
+                    "type": "boolean",
+                    "description": "Turn on FastQC to check the QC of reads with blast hits",
+                    "fa_icon": "fas fa-times"
                 }
             }
         },

@@ -321,6 +321,13 @@ workflow METAVAL {
 
             ch_fastqc_files = ch_fastqc_files.mix( ch_fastqc_blastn, ch_fastqc_blastx )
 
+            //
+            // MODULE: FASTQC
+            //
+            if (params.perform_fastqc) {
+                FASTQC(ch_fastqc_files )
+                ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.map{ _meta, file -> file })
+            }
         }
 
         //
@@ -510,12 +517,6 @@ workflow METAVAL {
         )
         BLAST_PATHOGEN ( ch_blast_query_pathogen, params.blastn_db, params.blastx_db )
     }
-
-    //
-    // MODULE: FASTQC
-    //
-    FASTQC(ch_fastqc_files )
-    ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.map{ _meta, file -> file })
 
     //
     // Collate and save software versions

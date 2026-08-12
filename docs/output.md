@@ -233,7 +233,7 @@ The report includes:
 
 ### FastQC
 
-FastQC is run on extracted verify-species reads that produced filtered BLAST hits.
+FastQC is run on the extracted verify-species reads that produced filtered BLAST hits when when `--perform_fastqc` is enabled. The default is `false`.
 
 <details markdown="1">
 <summary>Output files</summary>
@@ -273,14 +273,14 @@ Illumina reads are aligned with `Bowtie2` and Nanopore reads with `minimap2` aga
 - `pathogens/mapping/bowtie2/`
   - `build/`: Bowtie2 reference indices.
   - `align/`
-    - `<sample_id>_aligned_pathogens_genome_sorted.bam`
-    - `<sample_id>_aligned_pathogens_genome_sorted.bam.bai`
+    - `<sample_id>_aligned_pathogens_genome_sorted.bam` : BAM file containing short reads that aligned against the user-provided pathogens genomes
+    - `<sample_id>_aligned_pathogens_genome_sorted.bam.bai`: Index of the bam file.
 - `pathogens/mapping/minimap2/`
   - `index/`
     - `*.mmi`: minimap2 reference indices.
   - `align/`
-    - `<sample_id>_aligned_pathogens_genome_sorted.bam`
-    - `<sample_id>_aligned_pathogens_genome_sorted.bam.bai`
+    - `<sample_id>_aligned_pathogens_genome_sorted.bam`: BAM file containing long reads that aligned against the user-provided pathogens genomes
+    - `<sample_id>_aligned_pathogens_genome_sorted.bam.bai`: Bam file index
 
 </details>
 
