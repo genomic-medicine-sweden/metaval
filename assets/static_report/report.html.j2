@@ -34,34 +34,20 @@
         <table>
           <thead>
             <tr>
-              <th class="sample-sort" data-sort-key="sample">sample</th>
-              <th class="sample-sort" data-sort-key="instrument_platform">instrument_platform</th>
-              <th class="sample-sort" data-sort-key="library_type">library_type</th>
-              <th class="sample-sort" data-sort-key="is_ntc">Sample_type</th>
-              <th class="sample-sort" data-sort-key="batch">batch</th>
+              {% for column in sample_table_columns %}
+              <th class="sample-sort" data-sort-key="{{ column.key }}">{{ column.label }}</th>
+              {% endfor %}
             </tr>
             <tr class="filter-row">
-              <th></th>
+              {% for column in sample_table_columns %}
               <th>
-                <select data-filter-key="instrument_platform">
+                {% if column.filter %}
+                <select data-filter-key="{{ column.key }}">
                   <option value="">All</option>
                 </select>
+                {% endif %}
               </th>
-              <th>
-                <select data-filter-key="library_type">
-                  <option value="">All</option>
-                </select>
-              </th>
-              <th>
-                <select data-filter-key="is_ntc">
-                  <option value="">All</option>
-                </select>
-              </th>
-              <th>
-                <select data-filter-key="batch">
-                  <option value="">All</option>
-                </select>
-              </th>
+              {% endfor %}
             </tr>
           </thead>
           <tbody>
@@ -69,16 +55,19 @@
             <tr
               class="sample-row"
               data-sample-id="{{ row.sample_id }}"
-              data-instrument_platform="{{ row.instrument_platform }}"
-              data-library_type="{{ row.library_type }}"
-              data-is_ntc="{{ row.is_ntc }}"
-              data-batch="{{ row.batch }}"
+              {% for column in sample_table_columns %}
+              data-{{ column.key }}="{{ row[column.key] }}"
+              {% endfor %}
             >
-              <td>{{ row.sample }}</td>
-              <td>{{ row.instrument_platform }}</td>
-              <td>{{ row.library_type }}</td>
-              <td><span class="{{ row.ntc_class }}">{{ row.ntc_label }}</span></td>
-              <td>{{ row.batch }}</td>
+              {% for column in sample_table_columns %}
+              <td>
+                {% if column.key == "is_ntc" %}
+                <span class="{{ row.ntc_class }}">{{ row.ntc_label }}</span>
+                {% else %}
+                {{ row[column.key] }}
+                {% endif %}
+              </td>
+              {% endfor %}
             </tr>
             {% endfor %}
           </tbody>

@@ -44,6 +44,13 @@ CLASSIFIER_LABELS = {
     "centrifuge": "Centrifuge",
     "diamond": "Diamond",
 }
+SAMPLE_TABLE_COLUMNS = [
+    {"key": "sample", "label": "sample", "filter": True},
+    {"key": "instrument_platform", "label": "instrument_platform", "filter": True},
+    {"key": "library_type", "label": "library_type", "filter": True},
+    {"key": "is_ntc", "label": "Sample_type", "filter": True},
+    {"key": "batch", "label": "batch", "filter": True},
+]
 
 HEADER_HELP = {
     "qseqid": "Query sequence identifier.",
@@ -640,6 +647,7 @@ def build_html(
     detail_sections_zip_b64 = base64.b64encode(archive_buffer.getvalue()).decode("ascii")
     return template.render(
         report_title=REPORT_TITLE,
+        sample_table_columns=SAMPLE_TABLE_COLUMNS,
         header_help_map=HEADER_HELP,
         report_css=report_css,
         report_js=report_js,
