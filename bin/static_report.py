@@ -18,6 +18,7 @@ ASSETS_DIR = SCRIPT_DIR.parent / "assets"
 STATIC_REPORT_DIR = ASSETS_DIR / "static_report"
 REPORT_CSS = STATIC_REPORT_DIR / "report.css"
 REPORT_JS = STATIC_REPORT_DIR / "report.js"
+REPORT_TEMPLATE = STATIC_REPORT_DIR/ "report.html.j2"
 FOOTER_LOGO = ASSETS_DIR / "metaval_logo_light.png"
 
 
@@ -25,9 +26,8 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate a static HTML metaval report from a samplesheet.")
     parser.add_argument("--samplesheet", required=True, help="Path to the input samplesheet CSV.")
     parser.add_argument("--ticket", default="NA", help="Ticket number to show in the report header.")
-    parser.add_argument("--version", default="dev", help="Report or workflow version to show in the report header.")
-    parser.add_argument("--output", default="metaval_report.html", help="Path to the output HTML report.")
-    parser.add_argument("--template", default=str(STATIC_REPORT_DIR / "report.html.j2"), help="Path to the Jinja template file.")
+    parser.add_argument("--version", required=True, help="Report or workflow version to show in the report header.")
+    parser.add_argument("--output", required=True, help="Path to the output HTML report.")
     parser.add_argument("--flagged-dir", required=True, help="Path to flagged taxpasta TSV files.")
     parser.add_argument("--reads-dir", required=True, help="Path to extracted read files grouped by classifier.")
     parser.add_argument("--blastn-dir", required=True, help="Path to BLASTN result files.")
@@ -44,13 +44,6 @@ CLASSIFIER_LABELS = {
     "centrifuge": "Centrifuge",
     "diamond": "Diamond",
 }
-SAMPLE_COLUMNS = [
-    "sample",
-    "instrument_platform",
-    "library_type",
-    "is_ntc",
-    "batch",
-]
 
 HEADER_HELP = {
     "qseqid": "Query sequence identifier.",
@@ -78,32 +71,16 @@ HEADER_HELP = {
 
 
 def file_to_data_uri(path: Path) -> str:
-    """Encode an image file as a data URI for embedding in the report."""
-    suffix = path.suffix.lower()
-    mime_type = {
-        ".png": "image/png",
-        ".jpg": "image/jpeg",
-        ".jpeg": "image/jpeg",
-        ".svg": "image/svg+xml",
-        ".webp": "image/webp",
-    }.get(suffix, "application/octet-stream")
+    """Encode a .png file as a data URI for embedding in the report."""
     encoded = base64.b64encode(path.read_bytes()).decode("ascii")
-    return f"data:{mime_type};base64,{encoded}"
+    return f"data:image/png;base64,{encoded}"
 
 
 def read_samplesheet(samplesheet_path: Path) -> list[dict[str, str]]:
-    """Read the report samplesheet and keep the required sample columns."""
+    """Read the samplesheet"""
     with samplesheet_path.open(newline="", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
-        missing = [column for column in SAMPLE_COLUMNS if column not in reader.fieldnames]
-        if missing:
-            missing_text = ", ".join(missing)
-            raise ValueError(f"Samplesheet is missing required columns: {missing_text}")
-
-        rows = []
-        for row in reader:
-            rows.append({column: row.get(column, "") for column in SAMPLE_COLUMNS})
-        return rows
+        return [dict(row) for row in reader]
 
 
 def infer_rows_from_flagged_dir(flagged_dir: Path) -> list[dict[str, str]]:
@@ -621,7 +598,6 @@ def build_html(
     ticket: str,
     version: str,
     rows: list[dict[str, str]],
-    template_path: Path,
     flagged_dir: Path,
     reads_dir: Path,
     blastn_dir: Path,
@@ -631,7 +607,6 @@ def build_html(
 ) -> str:
     """Render the static report HTML and embed lazy-loaded detail data."""
     created_date = date.today().isoformat()
-    template_dir = template_path.parent
     report_css = REPORT_CSS.read_text(encoding="utf-8")
     report_js = REPORT_JS.read_text(encoding="utf-8")
     extracted_reads_index = load_extracted_read_index(reads_dir)
@@ -646,10 +621,10 @@ def build_html(
         coverage_plots_dir=coverage_plots_dir,
     )
     environment = Environment(
-        loader=FileSystemLoader(template_dir),
+        loader=FileSystemLoader(REPORT_TEMPLATE.parent),
         autoescape=select_autoescape(["html", "xml"]),
     )
-    template = environment.get_template(template_path.name)
+    template = environment.get_template(REPORT_TEMPLATE.name)
     archive_buffer = io.BytesIO()
     with zipfile.ZipFile(archive_buffer, "w", compression=zipfile.ZIP_STORED) as archive:
         for panel_id, detail in detail_sections.items():
@@ -681,7 +656,6 @@ def main() -> None:
     args = parse_args()
     samplesheet_path = Path(args.samplesheet)
     output_path = Path(args.output)
-    template_path = Path(args.template)
     flagged_dir = Path(args.flagged_dir)
     reads_dir = Path(args.reads_dir)
     blastn_dir = Path(args.blastn_dir)
@@ -696,7 +670,6 @@ def main() -> None:
         args.ticket,
         args.version,
         rows,
-        template_path,
         flagged_dir,
         reads_dir,
         blastn_dir,
