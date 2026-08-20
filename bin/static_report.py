@@ -166,23 +166,16 @@ def load_extracted_read_index(reads_dir: Path) -> dict[str, dict[str, list[dict[
         r"(?P<classifier>kraken2|centrifuge|diamond)\.(?:scaffolds|contigs)\.fa(?:sta)?$"
     )
 
-    if not reads_dir.exists():
-        return index
-
     for file_path in reads_dir.iterdir():
-        if not file_path.is_file():
-            continue
-
         match = extracted_pattern.match(file_path.name) or assembly_pattern.match(file_path.name)
-        if not match:
-            continue
-
         sample = match.group("sample")
         taxid = match.group("taxid")
         organism = match.group("organism")
         classifier = match.group("classifier")
         index.setdefault(sample, {}).setdefault(classifier, [])
         entry = {"taxid": taxid, "organism": organism}
+
+        # Avoid duplicate organism links when read pairs and assemblies share the same taxid.
         if entry not in index[sample][classifier]:
             index[sample][classifier].append(entry)
 
@@ -204,16 +197,12 @@ def read_tsv_table(path: Path) -> dict[str, list[list[str]]]:
     """Read a TSV file into report table headers and rows."""
     with path.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.reader(handle, delimiter="\t"))
-    if not rows:
-        return {"headers": [], "rows": []}
     return {"headers": rows[0], "rows": rows[1:]}
 
 
 def parse_read_entries(path: Path, max_lines: int = 80) -> list[dict[str, str]]:
     """Parse FASTA or plain text read snippets for report display."""
     lines = path.read_text(encoding="utf-8").splitlines()[:max_lines]
-    if not lines:
-        return []
 
     entries: list[dict[str, str]] = []
 
@@ -275,7 +264,7 @@ def build_detail_context(
 
     coverage_plot_files = sorted(
         path for path in coverage_plots_dir.glob(f"{sample}_{classifier}_taxid_{taxid}_{organism}_mappingorganism_*")
-        if path.suffix.lower() in {".png", ".jpg", ".jpeg", ".svg", ".webp"}
+        if path.suffix.lower() == ".png"
     )
     coverage_plot_sections = [
         {
@@ -374,18 +363,7 @@ def read_taxpasta_table(path: Path, sample_name: str) -> dict[str, list[list[str
     """Read a flagged taxpasta table and derive report display metadata."""
     with path.open(newline="", encoding="utf-8") as handle:
         rows = list(csv.reader(handle, delimiter="\t"))
-    if not rows:
-        return {
-            "headers": [],
-            "rows": [],
-            "lineages": [],
-            "superkingdoms": [],
-            "flags": [],
-            "metaval_checked": [],
-            "total_classified_reads": "",
-            "total_unclassified_reads": "",
-            "host_reads": "",
-        }
+
     headers = rows[0]
     data_rows = rows[1:]
     lineages = [""] * len(data_rows)
@@ -397,23 +375,26 @@ def read_taxpasta_table(path: Path, sample_name: str) -> dict[str, list[list[str
             index for index, header in enumerate(headers) if header != "lineage"
         ]
         headers = [headers[index] for index in reordered_indices]
-        lineages = [
-            row[lineage_index] if lineage_index < len(row) else ""
-            for row in data_rows
-        ]
+        lineages = [row[lineage_index] for row in data_rows]
         data_rows = [
-            [row[index] if index < len(row) else "" for index in reordered_indices]
+            [row[index] for index in reordered_indices]
             for row in data_rows
         ]
     else:
-        reordered_indices = list(range(len(headers)))
+        raise ValueError(f"Missing required 'lineage' column in taxpasta table: {path}")
 
-    name_index = headers.index("name") if "name" in headers else None
-    rank_index = headers.index("rank") if "rank" in headers else None
+    if "name" not in headers:
+        raise ValueError(f"Missing required 'name' column in taxpasta table: {path}")
+    if "rank" not in headers:
+        raise ValueError(f"Missing required 'rank' column in taxpasta table: {path}")
+
+    name_index = headers.index("name")
+    rank_index = headers.index("rank")
+
     superkingdoms = [
         detect_superkingdom(
-            row[name_index] if name_index is not None and name_index < len(row) else "",
-            row[rank_index] if rank_index is not None and rank_index < len(row) else "",
+            row[name_index],
+            row[rank_index],
             lineages[index],
         )
         for index, row in enumerate(data_rows)
@@ -423,34 +404,30 @@ def read_taxpasta_table(path: Path, sample_name: str) -> dict[str, list[list[str
     total_classified_reads = ""
     total_unclassified_reads = ""
     host_reads = ""
-    sample_index = headers.index(sample_name) if sample_name in headers else None
-    taxid_index = headers.index("taxonomy_id") if "taxonomy_id" in headers else None
-    name_index = headers.index("name") if "name" in headers else None
-    if sample_index is not None:
-        total_count = sum(
-            parse_read_count(row[sample_index])
-            for row in data_rows
-            if sample_index < len(row) and not (taxid_index is not None and taxid_index < len(row) and row[taxid_index] == '0')
-        )
-        host_count = sum(
-            parse_read_count(row[sample_index])
-            for row in data_rows
-            if sample_index < len(row) and (
-                (taxid_index is not None and taxid_index < len(row) and row[taxid_index] == '9606')
-                or (name_index is not None and name_index < len(row) and row[name_index] == 'Homo sapiens')
-            )
-        )
-        unclassified_count = sum(
-            parse_read_count(row[sample_index])
-            for row in data_rows
-            if sample_index < len(row)
-            and taxid_index is not None
-            and taxid_index < len(row)
-            and row[taxid_index] == '0'
-        )
-        total_classified_reads = f"{total_count:,}"
-        total_unclassified_reads = f"{unclassified_count:,}"
-        host_reads = f"{host_count:,}"
+    sample_index = headers.index(sample_name)
+    taxid_index = headers.index("taxonomy_id")
+    name_index = headers.index("name")
+
+    total_count = sum(
+        parse_read_count(row[sample_index])
+        for row in data_rows
+        if row[taxid_index] != '0'
+    )
+
+    host_count = sum(
+        parse_read_count(row[sample_index])
+        for row in data_rows
+        if row[taxid_index] == '9606' or row[name_index] == 'Homo sapiens'
+    )
+
+    unclassified_count = sum(
+        parse_read_count(row[sample_index])
+        for row in data_rows
+        if row[taxid_index] == '0'
+    )
+    total_classified_reads = f"{total_count:,}"
+    total_unclassified_reads = f"{unclassified_count:,}"
+    host_reads = f"{host_count:,}"
 
     return {
         "headers": headers,
@@ -478,7 +455,6 @@ def add_cross_classifier_counts(classifiers: dict[str, dict[str, object]], sampl
         count_maps[key] = {
             row[taxid_index]: row[sample_index]
             for row in table["rows"]
-            if taxid_index < len(row) and sample_index < len(row)
         }
 
     for key in CLASSIFIERS:
@@ -525,49 +501,35 @@ def prepare_rows(
             extracted_matches = extracted_reads_index.get(row["sample"], {}).get(classifier, [])
             if table and "taxonomy_id" in table["headers"]:
                 taxid_index = table["headers"].index("taxonomy_id")
-                table_taxids = {
-                    table_row[taxid_index]
-                    for table_row in table["rows"]
-                    if taxid_index < len(table_row)
-                }
                 name_index = table["headers"].index("name") if "name" in table["headers"] else None
                 taxid_names = {
                     table_row[taxid_index]: table_row[name_index]
                     for table_row in table["rows"]
-                    if (
-                        name_index is not None
-                        and taxid_index < len(table_row)
-                        and name_index < len(table_row)
-                        and table_row[name_index]
-                    )
+                    if table_row[name_index]
                 }
                 seen_organisms = set()
                 extracted_organisms = []
                 panel_ids_by_taxid: dict[str, str] = {}
                 for match in extracted_matches:
-                    if match["taxid"] not in table_taxids:
-                        continue
                     key = (match["taxid"], match["organism"])
                     if key in seen_organisms:
                         continue
                     seen_organisms.add(key)
-                    href = detail_links.get((row["sample"], classifier, match["taxid"], match["organism"]), "")
+                    organism_detail_href = detail_links.get((row["sample"], classifier, match["taxid"], match["organism"]), "")
                     extracted_organisms.append({
                         "name": taxid_names.get(match["taxid"], match["organism"]),
-                        "href": href,
-                        "panel_id": href[1:] if href.startswith("#") else "",
+                        "href": organism_detail_href,
+                        "panel_id": organism_detail_href[1:] if organism_detail_href.startswith("#") else "",
                     })
-                    if href.startswith("#") and match["taxid"] not in panel_ids_by_taxid:
-                        panel_ids_by_taxid[match["taxid"]] = href[1:]
-                checked_taxids = {match["taxid"] for match in extracted_matches if match["taxid"] in table_taxids}
+                    if organism_detail_href.startswith("#") and match["taxid"] not in panel_ids_by_taxid:
+                        panel_ids_by_taxid[match["taxid"]] = organism_detail_href[1:]
+                checked_taxids = {match["taxid"] for match in extracted_matches}
                 table["metaval_checked"] = [
-                    taxid_index < len(table_row) and table_row[taxid_index] in checked_taxids
+                    table_row[taxid_index] in checked_taxids
                     for table_row in table["rows"]
                 ]
                 table["metaval_panel_ids"] = [
                     panel_ids_by_taxid.get(table_row[taxid_index], "")
-                    if taxid_index < len(table_row)
-                    else ""
                     for table_row in table["rows"]
                 ]
             else:
