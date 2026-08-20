@@ -301,11 +301,9 @@ function renderDetailTable(headers, rows, options = {}) {
   const visibleIndices = headers
     .map((header, index) => ({ header, index, key: headerKeys[index] }))
     .filter((item) => !hiddenColumns.has(item.key));
+  const scientificNameIndex = visibleIndices.findIndex((item) => item.key === "sscinames");
   const alignmentInsertIndex = options.blastAlignment
-    ? Math.max(
-        visibleIndices.findIndex((item) => item.key === "sscinames"),
-        -1,
-      ) + 1
+    ? scientificNameIndex + 1
     : -1;
 
   return `
