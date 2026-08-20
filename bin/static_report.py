@@ -13,15 +13,6 @@ from datetime import date
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-ASSETS_DIR = SCRIPT_DIR.parent / "assets"
-STATIC_REPORT_DIR = ASSETS_DIR / "static_report"
-REPORT_CSS = STATIC_REPORT_DIR / "report.css"
-REPORT_JS = STATIC_REPORT_DIR / "report.js"
-REPORT_TEMPLATE = STATIC_REPORT_DIR/ "report.html.j2"
-FOOTER_LOGO = ASSETS_DIR / "metaval_logo_light.png"
-
-
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate a static HTML metaval report from a samplesheet.")
     parser.add_argument("--samplesheet", required=True, help="Path to the input samplesheet CSV.")
@@ -36,6 +27,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--coverage-plots-dir", required=True, help="Path to coverage plot image files.")
 
     return parser.parse_args()
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+ASSETS_DIR = SCRIPT_DIR.parent / "assets"
+STATIC_REPORT_DIR = ASSETS_DIR / "static_report"
+REPORT_CSS = STATIC_REPORT_DIR / "report.css"
+REPORT_JS = STATIC_REPORT_DIR / "report.js"
+REPORT_TEMPLATE = STATIC_REPORT_DIR/ "report.html.j2"
+FOOTER_LOGO = ASSETS_DIR / "metaval_logo_light.png"
 
 REPORT_TITLE = "Clinical Metagenomics Report"
 CLASSIFIERS = ("kraken2", "centrifuge", "diamond")
@@ -84,39 +83,20 @@ def file_to_data_uri(path: Path) -> str:
 
 
 def read_samplesheet(samplesheet_path: Path) -> list[dict[str, str]]:
-    """Read the samplesheet"""
+    """Read the samplesheet rows."""
     with samplesheet_path.open(newline="", encoding="utf-8") as handle:
         reader = csv.DictReader(handle)
         return [dict(row) for row in reader]
 
 
-def infer_rows_from_flagged_dir(flagged_dir: Path) -> list[dict[str, str]]:
-    """Infer sample rows from flagged taxpasta filenames when the samplesheet is empty."""
-    samples = sorted({
-        file_path.stem.rsplit("_", 1)[0]
-        for file_path in flagged_dir.glob("*.tsv")
-        if file_path.stem.rsplit("_", 1)[-1] in {"kraken2", "centrifuge", "diamond"}
-    })
-    return [
-        {
-            "sample": sample,
-            "instrument_platform": "",
-            "library_type": sample.rsplit("-", 1)[-1] if "-" in sample else "",
-            "is_ntc": "false",
-            "batch": "",
-        }
-        for sample in samples
-    ]
-
-
-def ntc_badge(value: str) -> str:
-    """Return the CSS class used to style the sample/NTC badge."""
+def sample_type_badge_class(value: str) -> str:
+    """Return the CSS class used to style the sample type badge"""
     normalized = value.strip().lower()
     return "ntc-true" if normalized == "true" else "ntc-false"
 
 
-def ntc_label(value: str) -> str:
-    """Return the display label shown inside the sample/NTC badge."""
+def sample_type_label(value: str) -> str:
+    """Return the labels in the column SAMPLE_TYPE in the Sample List."""
     normalized = value.strip().lower()
     return "NTC" if normalized == "true" else "Sample"
 
@@ -210,15 +190,8 @@ def load_extracted_read_index(reads_dir: Path) -> dict[str, dict[str, list[dict[
 
 
 def resolve_flagged_path(row: dict[str, str], flagged_dir: Path, classifier: str) -> Path:
-    """Resolve the expected flagged taxpasta path for a sample and classifier."""
-    candidates = [
-        flagged_dir / f"{row['sample']}_{row['library_type']}_{row['batch']}_{classifier}.tsv",
-        flagged_dir / f"{row['sample']}_{classifier}.tsv",
-    ]
-    for candidate in candidates:
-        if candidate.exists():
-            return candidate
-    return candidates[-1]
+    """Return the required flagged taxpasta path for a sample and classifier."""
+    return flagged_dir / f"{row['sample']}_{row['library_type']}_{row['batch']}_{classifier}.tsv"
 
 
 def simplify_id(value: str) -> str:
@@ -543,8 +516,8 @@ def prepare_rows(
     for index, row in enumerate(rows, start=1):
         prepared = dict(row)
         prepared["sample_id"] = f"sample-{index}"
-        prepared["ntc_class"] = ntc_badge(row["is_ntc"])
-        prepared["ntc_label"] = ntc_label(row["is_ntc"])
+        prepared["sample_type_class"] = sample_type_badge_class(row["is_ntc"])
+        prepared["sample_type_label"] = sample_type_label(row["is_ntc"])
         prepared["classifiers"] = {}
         for classifier in CLASSIFIERS:
             file_path = resolve_flagged_path(row, flagged_dir, classifier)
@@ -556,6 +529,17 @@ def prepare_rows(
                     table_row[taxid_index]
                     for table_row in table["rows"]
                     if taxid_index < len(table_row)
+                }
+                name_index = table["headers"].index("name") if "name" in table["headers"] else None
+                taxid_names = {
+                    table_row[taxid_index]: table_row[name_index]
+                    for table_row in table["rows"]
+                    if (
+                        name_index is not None
+                        and taxid_index < len(table_row)
+                        and name_index < len(table_row)
+                        and table_row[name_index]
+                    )
                 }
                 seen_organisms = set()
                 extracted_organisms = []
@@ -569,7 +553,7 @@ def prepare_rows(
                     seen_organisms.add(key)
                     href = detail_links.get((row["sample"], classifier, match["taxid"], match["organism"]), "")
                     extracted_organisms.append({
-                        "name": match["organism"],
+                        "name": taxid_names.get(match["taxid"], match["organism"]),
                         "href": href,
                         "panel_id": href[1:] if href.startswith("#") else "",
                     })
@@ -672,8 +656,6 @@ def main() -> None:
     coverage_plots_dir = Path(args.coverage_plots_dir)
 
     rows = read_samplesheet(samplesheet_path)
-    if not rows:
-        rows = infer_rows_from_flagged_dir(flagged_dir)
     report_html = build_html(
         args.ticket,
         args.version,

@@ -62,7 +62,7 @@
               {% for column in sample_table_columns %}
               <td>
                 {% if column.key == "is_ntc" %}
-                <span class="{{ row.ntc_class }}">{{ row.ntc_label }}</span>
+                <span class="{{ row.sample_type_class }}">{{ row.sample_type_label }}</span>
                 {% else %}
                 {{ row[column.key] }}
                 {% endif %}
