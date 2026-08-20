@@ -2,6 +2,7 @@
   --bg: #f4f6f8;
   --panel: #ffffff;
   --line: #d7dde5;
+  --line-soft: #e8edf2;
   --text: #1e2933;
   --muted: #5f6b76;
   --accent: #dcecff;
@@ -99,8 +100,8 @@ table {
 th,
 td {
   padding: 14px 16px;
-  border-bottom: 1px solid #e8edf2;
-  border-right: 1px solid #e8edf2;
+  border-bottom: 1px solid var(--line-soft);
+  border-right: 1px solid var(--line-soft);
   text-align: left;
   white-space: nowrap;
 }
@@ -129,14 +130,17 @@ th {
   font-size: 0.8em;
 }
 
+.sample-sort.is-asc::after,
+.sample-sort.is-desc::after {
+  color: var(--accent-strong)
+}
+
 .sample-sort.is-asc::after {
   content: " \2191";
-  color: #0f4c81;
 }
 
 .sample-sort.is-desc::after {
   content: " \2193";
-  color: #0f4c81;
 }
 
 .filter-row th {
@@ -276,7 +280,7 @@ tbody tr:hover {
 
 .taxpasta-stat {
   padding: 8px 12px;
-  border: 1px solid #e8edf2;
+  border: 1px solid var(--line-soft);
   border-radius: 12px;
   background: #f3f4f6;
 }
@@ -346,7 +350,7 @@ tbody tr:hover {
 .extracted-reads {
   margin-bottom: 14px;
   padding: 10px 12px;
-  border: 1px solid #e8edf2;
+  border: 1px solid var(--line-soft);
   border-radius: 12px;
   background: #fff;
 }
@@ -418,7 +422,7 @@ button.extracted-read-chip {
 .taxpasta-wrap {
   max-height: 420px;
   overflow: auto;
-  border: 1px solid #e8edf2;
+  border: 1px solid var(--line-soft);
   border-radius: 12px;
   background: #fff;
 }
@@ -527,7 +531,7 @@ button.extracted-read-chip {
 
 .taxpasta-empty {
   padding: 18px;
-  border: 1px solid #e8edf2;
+  border: 1px solid var(--line-soft);
   border-radius: 12px;
   background: #fff;
   color: var(--muted);
@@ -642,8 +646,8 @@ button.extracted-read-chip {
 .detail-table-wrap th,
 .detail-table-wrap td {
   padding: 10px 12px;
-  border-bottom: 1px solid #e8edf2;
-  border-right: 1px solid #e8edf2;
+  border-bottom: 1px solid var(--line-soft);
+  border-right: 1px solid var(--line-soft);
   text-align: left;
   white-space: nowrap;
 }
@@ -722,7 +726,7 @@ button.extracted-read-chip {
 
 .blast-align-panel {
   padding: 14px 16px;
-  border-top: 1px solid #e8edf2;
+  border-top: 1px solid var(--line-soft);
   background: #fbfcfd;
 }
 
