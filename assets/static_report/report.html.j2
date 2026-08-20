@@ -97,6 +97,7 @@
           {% if classifier.extracted_organisms %}
           <div class="extracted-reads">
             <div class="extracted-reads-label"><strong>METAVAL</strong> <span>checked organisms:</span></div>
+            {% set visible_organism_limit = 10 %}
             <div class="extracted-reads-list">
               {% for organism in classifier.extracted_organisms %}
               {% if organism.href %}
@@ -104,27 +105,27 @@
               <button
                 type="button"
                 class="extracted-read-chip"
-                {% if loop.index > 10 %}hidden data-extra-organism{% endif %}
+                {% if loop.index > visible_organism_limit %}hidden data-extra-organism{% endif %}
                 data-open-organism="{{ organism.panel_id }}"
                 data-sample-id="{{ row.sample_id }}"
                 data-classifier="{{ classifier_key }}"
               >{{ organism.name }}</button>
               {% else %}
-              <a class="extracted-read-chip" {% if loop.index > 10 %}hidden data-extra-organism{% endif %} href="{{ organism.href }}">{{ organism.name }}</a>
+              <a class="extracted-read-chip" {% if loop.index > visible_organism_limit %}hidden data-extra-organism{% endif %} href="{{ organism.href }}">{{ organism.name }}</a>
               {% endif %}
               {% else %}
-              <span class="extracted-read-chip" {% if loop.index > 10 %}hidden data-extra-organism{% endif %}>{{ organism.name }}</span>
+              <span class="extracted-read-chip" {% if loop.index > visible_organism_limit %}hidden data-extra-organism{% endif %}>{{ organism.name }}</span>
               {% endif %}
               {% endfor %}
             </div>
-            {% if classifier.extracted_organisms|length > 10 %}
+            {% if classifier.extracted_organisms|length > visible_organism_limit %}
             <button
               type="button"
               class="extracted-reads-toggle"
               data-toggle-organisms
-              data-collapsed-label="Show more species ({{ classifier.extracted_organisms|length - 10 }})"
+              data-collapsed-label="Show more species ({{ classifier.extracted_organisms|length - visible_organism_limit }})"
               data-expanded-label="Show fewer species"
-            >Show more species ({{ classifier.extracted_organisms|length - 10 }})</button>
+            >Show more species ({{ classifier.extracted_organisms|length - visible_organism_limit }})</button>
             {% endif %}
           </div>
           {% endif %}

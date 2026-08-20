@@ -156,7 +156,7 @@ th {
   padding: 8px 10px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fff;
+  background: var(--panel);
   color: var(--text);
   font: inherit;
 }
@@ -251,7 +251,7 @@ tbody tr:hover {
   padding: 9px 14px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: #fff;
+  background: var(--panel);
   color: var(--text);
   font: inherit;
   cursor: pointer;
@@ -260,7 +260,7 @@ tbody tr:hover {
 .classifier-tab.is-active {
   background: var(--accent-strong);
   border-color: var(--accent-strong);
-  color: #fff;
+  color: var(--panel);
 }
 
 .taxpasta-summary {
@@ -313,7 +313,7 @@ tbody tr:hover {
   padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: #fff;
+  background: var(--panel);
   color: var(--text);
   font: inherit;
   font-size: 0.98rem;
@@ -323,7 +323,7 @@ tbody tr:hover {
   padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: #fff;
+  background: var(--panel);
   color: var(--text);
   font: inherit;
   font-size: 0.98rem;
@@ -333,7 +333,7 @@ tbody tr:hover {
   padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: #fff;
+  background: var(--panel);
   color: var(--text);
   font: inherit;
   font-size: 0.98rem;
@@ -344,7 +344,7 @@ tbody tr:hover {
 .taxpasta-toggle-button.is-active {
   background: var(--accent-strong);
   border-color: var(--accent-strong);
-  color: #fff;
+  color: var(--panel);
 }
 
 .extracted-reads {
@@ -352,7 +352,7 @@ tbody tr:hover {
   padding: 10px 12px;
   border: 1px solid var(--line-soft);
   border-radius: 12px;
-  background: #fff;
+  background: var(--panel);
 }
 
 .extracted-reads-label {
@@ -424,7 +424,7 @@ button.extracted-read-chip {
   overflow: auto;
   border: 1px solid var(--line-soft);
   border-radius: 12px;
-  background: #fff;
+  background: var(--panel);
 }
 
 .taxpasta-table {
@@ -496,7 +496,7 @@ button.extracted-read-chip {
   padding: 3px 8px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: #fff;
+  background: var(--panel);
   color: #35506a;
   font: inherit;
   cursor: pointer;
@@ -505,7 +505,7 @@ button.extracted-read-chip {
 .lineage-toggle.is-open {
   background: var(--accent-strong);
   border-color: var(--accent-strong);
-  color: #fff;
+  color: var(--panel);
 }
 
 .lineage-text {
@@ -533,7 +533,7 @@ button.extracted-read-chip {
   padding: 18px;
   border: 1px solid var(--line-soft);
   border-radius: 12px;
-  background: #fff;
+  background: var(--panel);
   color: var(--muted);
 }
 
@@ -632,7 +632,7 @@ button.extracted-read-chip {
   max-height: 420px;
   border: 1px solid #e5eaf0;
   border-radius: 12px;
-  background: #fff;
+  background: var(--panel);
   -webkit-overflow-scrolling: touch;
 }
 
@@ -704,7 +704,7 @@ button.extracted-read-chip {
   padding: 6px 10px;
   border: 1px solid #d7e0ea;
   border-radius: 999px;
-  background: #fff;
+  background: var(--panel);
   color: var(--accent-strong);
   font: inherit;
   font-size: 0.85rem;
@@ -748,7 +748,7 @@ button.extracted-read-chip {
 .plot {
   border: 1px solid #e5eaf0;
   border-radius: 12px;
-  background: #fff;
+  background: var(--panel);
   padding: 8px;
 }
 
@@ -786,7 +786,7 @@ button.extracted-read-chip {
   padding: 8px 12px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: #fff;
+  background: var(--panel);
   color: var(--text);
   text-decoration: none;
   font: inherit;
