@@ -258,8 +258,8 @@ tbody tr:hover {
 }
 
 .classifier-tab.is-active {
-  background: #0f4c81;
-  border-color: #0f4c81;
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
   color: #fff;
 }
 
@@ -342,8 +342,8 @@ tbody tr:hover {
 }
 
 .taxpasta-toggle-button.is-active {
-  background: #0f4c81;
-  border-color: #0f4c81;
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
   color: #fff;
 }
 
@@ -503,8 +503,8 @@ button.extracted-read-chip {
 }
 
 .lineage-toggle.is-open {
-  background: #0f4c81;
-  border-color: #0f4c81;
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
   color: #fff;
 }
 
@@ -689,12 +689,12 @@ button.extracted-read-chip {
 
 .detail-sort.is-asc::after {
   content: " \2191";
-  color: #0f4c81;
+  color: var(--accent-strong);
 }
 
 .detail-sort.is-desc::after {
   content: " \2193";
-  color: #0f4c81;
+  color: var(--accent-strong);
 }
 
 .blast-align-button {
