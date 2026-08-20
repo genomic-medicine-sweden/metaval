@@ -42,10 +42,6 @@ def load_taxpasta_file(path: str) -> pd.DataFrame:
     if missing := REQ_COLS - set(df.columns):
         raise ValueError(f"'{path}' missing required columns: {', '.join(sorted(missing))}")
 
-    for col in ("rank", "lineage"):
-        if col not in df.columns:
-            df[col] = ""
-
     profile_cols = [c for c in df.columns if c not in META_COLS]
     if not profile_cols:
         raise ValueError(f"'{path}' has no profile columns.")
