@@ -132,7 +132,7 @@ th {
 
 .sample-sort.is-asc::after,
 .sample-sort.is-desc::after {
-  color: var(--accent-strong)
+  color: var(--accent-strong);
 }
 
 .sample-sort.is-asc::after {

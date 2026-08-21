@@ -62,7 +62,7 @@ output:
       - pandas:
           type: string
           description: The name of the tool
-      - "python -c \"import pandas; print(pandas.__version__)\"":
+      - 'python -c "import pandas; print(pandas.__version__)"':
           type: eval
           description: The expression to obtain the version of the tool
 topics:
@@ -82,7 +82,7 @@ topics:
       - pandas:
           type: string
           description: The name of the tool
-      - "python -c \"import pandas; print(pandas.__version__)\"":
+      - 'python -c "import pandas; print(pandas.__version__)"':
           type: eval
           description: The expression to obtain the version of the tool
 authors:

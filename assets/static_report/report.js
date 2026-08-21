@@ -302,9 +302,7 @@ function renderDetailTable(headers, rows, options = {}) {
     .map((header, index) => ({ header, index, key: headerKeys[index] }))
     .filter((item) => !hiddenColumns.has(item.key));
   const scientificNameIndex = visibleIndices.findIndex((item) => item.key === "sscinames");
-  const alignmentInsertIndex = options.blastAlignment
-    ? scientificNameIndex + 1
-    : -1;
+  const alignmentInsertIndex = options.blastAlignment ? scientificNameIndex + 1 : -1;
 
   return `
         <div class="detail-table-wrap">
