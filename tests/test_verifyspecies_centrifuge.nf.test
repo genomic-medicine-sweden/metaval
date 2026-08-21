@@ -106,6 +106,12 @@ nextflow_pipeline {
 
                 {assert snapshot (stable_content_viral_taxids).match("viral_taxids")},
 
+                 //metaval report
+                { assert snapshot (
+                    getAllFilesFromDir("$outputDir/report", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                ).match("report") },
+
+
             )
         }
     }
