@@ -55,6 +55,8 @@ nextflow_pipeline {
             //pathogens: partly unstable files, see custom assertions
             def bam_files_pathogens_reads_consensus  = getAllFilesFromDir(params.outdir, include: ['pathogens/pathogen_reads/consensus_input/*.bam'])
 
+            //report
+            //def stable_content_report = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['report/*.html'], ignoreFile: 'tests/.nftignore')
 
             assertAll(
                 { assert workflow.success},
@@ -165,6 +167,11 @@ nextflow_pipeline {
                 { assert snapshot(
                         getAllFilesFromDir("$outputDir/spades/diamond", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("spades_diamond") },
+
+                //metaval report
+                { assert snapshot (
+                    getAllFilesFromDir("$outputDir/report", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                ).match("report") },
 
             )
         }
