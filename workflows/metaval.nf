@@ -422,10 +422,10 @@ workflow METAVAL {
 
         ch_flagged_taxpasta_report = FLAG_TAXPASTA.out.tsv.map { _meta, tsv -> tsv }.collect()
         ch_reads_report_files      = ch_reads_report.map { _meta, files -> files }.flatten().collect()
-        ch_blastn_report_files     = ch_blastn_report.map { _meta, blastn -> blastn }.collect()
-        ch_blastx_report_files     = ch_blastx_report.map { _meta, blastx -> blastx }.collect()
-        ch_coverage_table_files    = ch_coverage_tables.map { _meta, table -> table }.collect()
-        ch_coverage_plot_files     = ch_coverage_plots.map { _meta, plot -> plot }.collect()
+        ch_blastn_report_files     = ch_blastn_report.map { _meta, blastn -> blastn }.collect().ifEmpty([])
+        ch_blastx_report_files     = ch_blastx_report.map { _meta, blastx -> blastx }.collect().ifEmpty([])
+        ch_coverage_table_files    = ch_coverage_tables.map { _meta, table -> table }.collect().ifEmpty([])
+        ch_coverage_plot_files     = ch_coverage_plots.map { _meta, plot -> plot }.collect().ifEmpty([])
 
         METAVAL_REPORT (
             params.ticket_id,
