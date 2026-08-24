@@ -703,7 +703,10 @@ function renderOrganismPanel(detail) {
   bindDetailPanelActions(organismPanel);
 }
 
-function populateFilterOptions(select) {
+/**
+ * Populate a sample-level filter select with unique values from the sample rows.
+ */
+function populateSampleFilterOptions(select) {
   const key = select.dataset.filterKey;
   const values = [...new Set(rows.map((row) => row.dataset[key]).filter(Boolean))].sort();
 
@@ -1120,7 +1123,7 @@ function restorePanelFromUrl() {
 }
 
 filters.forEach((select) => {
-  populateFilterOptions(select);
+  populateSampleFilterOptions(select);
   select.addEventListener("change", applyFilters);
 });
 
