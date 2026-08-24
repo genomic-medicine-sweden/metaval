@@ -428,18 +428,19 @@ function decodeBase64ToBytes(base64Text) {
   return bytes;
 }
 
-function parseZipStoredEntries(bytes) {
-  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
-  let eocdOffset = -1;
-  for (let offset = bytes.length - 22; offset >= 0; offset -= 1) {
+function ensureIsZipFile(view, bytesLength) {
+  for (let offset = bytesLength - 22; offset >= 0; offset -= 1) {
     if (view.getUint32(offset, true) === 0x06054b50) {
-      eocdOffset = offset;
-      break;
+      return offset;
     }
   }
-  if (eocdOffset < 0) {
-    throw new Error("ZIP end-of-central-directory not found.");
-  }
+
+  throw new Error("ZIP end-of-central-directory not found.");
+}
+
+function parseZipStoredEntries(bytes) {
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  const eocdOffset = ensureIsZipFile(view, bytes.length);
 
   const totalEntries = view.getUint16(eocdOffset + 10, true);
   const centralDirectoryOffset = view.getUint32(eocdOffset + 16, true);
