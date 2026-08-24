@@ -1070,6 +1070,50 @@
             "nextflow": "26.04.3"
         }
     },
+    "samtools_coverage": {
+        "content": [
+            [
+                "SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,4900f7271622a547741807cc37053764",
+                "SRR13439790_kraken2_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,eafa3746fd01e90a5cd1f5f7cf11b590",
+                "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.txt:md5,688f1924ca4a51c7a89dee4dd71a4dfd",
+                "SRR13439802_kraken2_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,74239e0cb94b6194c7545234e79d0dd0",
+                "SRR13439813_kraken2_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.txt:md5,3ff5d40f363045d18b9673b4e1f1fd27",
+                "SRR13439813_kraken2_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,41de8f021db17d6d71b8a4ddf69623be",
+                "SRR13439813_kraken2_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,4c0b98e5ace6461bf7f53b8bbd9cb63f",
+                "SRR13439813_kraken2_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,fac5fa68ee5073fdda29727be4db3918",
+                "SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.txt:md5,a6a8a10c6169c5cd8848bb90f4c2b9af",
+                "SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,2fa06b59e65d1092834ecb0b8c1001c1",
+                "SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,1bd9c3a5da51439505dd02c88c44fbe3",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1.txt:md5,d82dbddcf2bdb5c737ac1a4d064e2c9e",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.txt:md5,5f9e31eff41300444054f8746a87102a",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.txt:md5,3a4109dfa36c6aad172ecc639d1f6c83",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.txt:md5,12ca3764e2bfef22ef220a11e203edd4",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,b9ff316b9995565c6481931efba4c8b9",
+                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.txt:md5,8c3480f100beff142a256ad68dcc4d81",
+                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.txt:md5,711a1791be3ccfbd884456a726d4161a",
+                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.txt:md5,1cf78e3fc86acfe92f94cbef82a1e1a1",
+                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.txt:md5,8d124cadcc85cb31bdde4176d1ba6816",
+                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,b5b1eb941ae0b852c767f8d600626b9c",
+                "SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,0c3cebf21f9f196c9389f227f3f6eeb2",
+                "SRR13439813_kraken2_taxid_2099850_Klebsiella-phage-KP8_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,2f87fa3b10ea509dec7647b771c6aaf0",
+                "SRR13439813_kraken2_taxid_2234086_Escherichia-phage-phi-G17_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.txt:md5,64426953747c48e4e2df18ceb7d7af89",
+                "SRR13439813_kraken2_taxid_2234086_Escherichia-phage-phi-G17_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,4473a87bb98662949147ac2271d6edbb",
+                "SRR13439813_kraken2_taxid_2750853_Escherichia-phage-vB-EcoP-SP5M_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.txt:md5,64f1a7e24f30d684e3ab8d4f67cfe551",
+                "SRR13439813_kraken2_taxid_2750853_Escherichia-phage-vB-EcoP-SP5M_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,73f60fb3a5f3ead33516488d54d9d62c",
+                "SRR13439813_kraken2_taxid_2810370_Escherichia-phage-vB-EcoP-ZQ2_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,2b2e4083e1f573d3256c6fc641e58407",
+                "SRR13439813_kraken2_taxid_2853091_Escherichia-phage-U1G_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,60740570ab2dfbea9986cb811ab37192",
+                "SRR13439813_kraken2_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Escherichia-phage-PGN829-1_GCA_003575565.1.txt:md5,1d593a8e1cb19a5b8b43c9b1366972a4",
+                "SRR13439813_kraken2_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,2a366a9b6069259940271e73313a9e5f",
+                "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1.txt:md5,d5b86553c893ad48279d851ffdb25830",
+                "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,58d0df6890b38d70451fa19a1b762f59"
+            ]
+        ],
+        "timestamp": "2026-08-24T16:36:06.652227163",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.3"
+        }
+    },
     "report": {
         "content": [
             [

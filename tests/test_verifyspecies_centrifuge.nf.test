@@ -41,6 +41,9 @@ nextflow_pipeline {
             //viral taxid
             def stable_content_viral_taxids = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['viral_taxids/*'], ignoreFile: 'tests/.nftignore')
 
+            // samtools coverage
+            def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
+
 
             assertAll(
                 { assert workflow.success},
@@ -111,6 +114,8 @@ nextflow_pipeline {
                     getAllFilesFromDir("$outputDir/report", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("report") },
 
+                 // samtools coverage
+                { assert snapshot (stable_content_samtools_coverage).match("samtools_coverage") }
 
             )
         }
