@@ -989,6 +989,46 @@
             "nextflow": "26.04.3"
         }
     },
+    "samtools_coverage_plot": {
+        "content": [
+            [
+                "SRR13439790_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439790_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439790_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439790_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.png exists: true",
+                "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-St11Ph5_GCA_002956185.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.png exists: true",
+                "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true"
+            ]
+        ],
+        "timestamp": "2026-08-24T17:37:10.70865683",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.3"
+        }
+    },
     "samtools_coverage": {
         "content": [
             [

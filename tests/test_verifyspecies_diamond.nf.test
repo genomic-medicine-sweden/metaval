@@ -109,7 +109,12 @@ nextflow_pipeline {
                 ).match("report") },
 
                 // samtools coverage
-                { assert snapshot (stable_content_samtools_coverage).match("samtools_coverage") }
+                { assert snapshot (stable_content_samtools_coverage).match("samtools_coverage") },
+
+                 // samtools coverage
+                  { assert snapshot(
+                        getAllFilesFromDir("$outputDir/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                ).match("samtools_coverage_plot") },
 
             )
         }

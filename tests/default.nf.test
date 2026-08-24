@@ -60,6 +60,10 @@ nextflow_pipeline {
             // samtools coverage
             def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
 
+            // samtools coverage plot:partly unstable files, see custom assertions
+            //def stable_content_samtools_coverage_plot = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/coverage_plot/*.png'], ignoreFile: 'tests/.nftignore')
+
+
             assertAll(
                 { assert workflow.success},
                 { assert snapshot(
@@ -176,7 +180,12 @@ nextflow_pipeline {
                 ).match("report") },
 
                 // samtools coverage
-                { assert snapshot (stable_content_samtools_coverage).match("samtools_coverage") }
+                { assert snapshot (stable_content_samtools_coverage).match("samtools_coverage") },
+
+                 // samtools coverage
+                  { assert snapshot(
+                        getAllFilesFromDir("$outputDir/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                ).match("samtools_coverage_plot") },
 
             )
         }
