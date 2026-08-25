@@ -84,11 +84,11 @@ workflow METAVAL {
     }
 
         CAT_FASTQ(
-            ch_fastqs_merge.to_merge,
+            ch_input.to_merge,
         )
 
-        def ch_fastqs_merged = CAT_FASTQ.out.reads
-            .mix(ch_fastqs_merge.no_merge)
+        def ch_input_merged = CAT_FASTQ.out.reads
+            .mix(ch_input.no_merge)
 
 
 
