@@ -37,6 +37,15 @@ nextflow_pipeline {
             //pathogens
             def bam_files_pathogens_reads_consensus  = getAllFilesFromDir(params.outdir, include: ['pathogens/pathogen_reads/consensus_input/*.bam'])
 
+             //pathogens samtools coverage
+            def stable_content_pathogens_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
+
+            //pathogens samtools coverage plot:partly unstable files, see custom assertions
+
+            //pathogens samtools depth
+            def stable_content_pathogens_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
+
+
             assertAll(
                 { assert workflow.success},
                 { assert snapshot(
@@ -73,6 +82,19 @@ nextflow_pipeline {
                 { assert snapshot (
                     bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file -> [file.getName() + " pathogens reads consensus md5: " + bam(file.toString()).getHeader()] }
                 ).match("pathogens_reads_consensus") },
+
+                  // pathogens samtools coverage
+                { assert snapshot (stable_content_pathogens_samtools_coverage).match("pathogens_samtools_coverage") },
+
+                // pathogens samtools coverage
+                  { assert snapshot(
+                        getAllFilesFromDir("$outputDir/pathogens/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                ).match("pathogens_samtools_coverage_plot") },
+
+                 // pathogens samtools coverage
+                { assert snapshot (stable_content_pathogens_samtools_depth).match("pathogens_samtools_depth") },
+
+
             )
         }
     }
