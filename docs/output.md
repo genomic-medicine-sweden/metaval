@@ -231,6 +231,10 @@ The report includes:
 - BLASTN and BLASTX result tables.
 - Mapping statistics and coverage plots when mapping is enabled.
 
+:::warning
+The input file names are used in the `bin/static_report.py` script. If the input file prefixes have changed, please also update them in the `bin/static_reprt.py`
+:::
+
 ### FastQC
 
 FastQC is run on the extracted verify-species reads that produced filtered BLAST hits when when `--perform_fastqc` is enabled. The default is `false`.
