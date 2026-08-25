@@ -590,7 +590,7 @@
                 "viral_taxids/SRR13439813_kraken2_viral_taxids.tsv"
             ]
         ],
-        "timestamp": "2026-08-24T17:42:43.362776578",
+        "timestamp": "2026-08-25T09:27:47.772369726",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -605,7 +605,7 @@
                 "SRR13439813_kraken2_viral_taxids.tsv:md5,3292cc74a75127c202a90c773c8f881f"
             ]
         ],
-        "timestamp": "2026-08-24T17:42:53.281024315",
+        "timestamp": "2026-08-25T09:27:51.816753002",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -682,7 +682,51 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-08-24T17:42:49.438469925",
+        "timestamp": "2026-08-25T09:27:48.644373312",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.3"
+        }
+    },
+    "samtools_depth": {
+        "content": [
+            [
+                "SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,0dc5fbf95d78bb81ae47ad7d9f590f5e",
+                "SRR13439790_kraken2_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,937bade51254be32a85718a0f670b0d1",
+                "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.tsv:md5,0053047ffc729c309c6271f45c5d63fd",
+                "SRR13439802_kraken2_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,57ec023dc1081e36a7791cae5b33ebe5",
+                "SRR13439813_kraken2_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.tsv:md5,5e39f67aaee3ac6cdb34cd7ca53127d2",
+                "SRR13439813_kraken2_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,f0fb3bb161bce23310c8ec1cf1a27716",
+                "SRR13439813_kraken2_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,671dec64fb2c395fd26e414a211ab1a7",
+                "SRR13439813_kraken2_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,d9d55f7ff04d0666d042349b6fe7c7a4",
+                "SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.tsv:md5,272e2d59146a1bdf94aa3e75a9219787",
+                "SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,788e133030d55bb83db7450962f3b4e3",
+                "SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,1f96b4eda41386a5294ba2c58ec52510",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1.tsv:md5,26b3aa43e6ff19b8d3aa36c7c33d62ea",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.tsv:md5,3ab307443c717191e490cfdcb3b2b37c",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.tsv:md5,93d5d457527ed2fa2dc047061002b380",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.tsv:md5,a9b3b06c7ede68a43613dd166acdc5df",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,28258a0cd9d658f206fd874c2de11468",
+                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.tsv:md5,b8eb305cb15bc7378712ac4ec01167f0",
+                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.tsv:md5,1225b1c25f05271e308be747d61a4eaf",
+                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.tsv:md5,5385f4c3f31887f7dab5f729e91a0c4d",
+                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.tsv:md5,bb864d86b6b71d6cad4c63f7e2e10c0b",
+                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,e57158986f7cd32f78275674a5f8ba26",
+                "SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,386788fd273ee04677fc7651a4c39cf1",
+                "SRR13439813_kraken2_taxid_2099850_Klebsiella-phage-KP8_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,ee47e7d4015971b20078d028d5520a84",
+                "SRR13439813_kraken2_taxid_2234086_Escherichia-phage-phi-G17_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.tsv:md5,84ff20ded3b93e553b07827973c843a5",
+                "SRR13439813_kraken2_taxid_2234086_Escherichia-phage-phi-G17_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,1843493c981d38f3d03f9aea4bc0ff79",
+                "SRR13439813_kraken2_taxid_2750853_Escherichia-phage-vB-EcoP-SP5M_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.tsv:md5,42adf28002b17f60ca1de24ca0035358",
+                "SRR13439813_kraken2_taxid_2750853_Escherichia-phage-vB-EcoP-SP5M_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,29e7b0e3a0420716ca2cce9929fdab8a",
+                "SRR13439813_kraken2_taxid_2810370_Escherichia-phage-vB-EcoP-ZQ2_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,e50bb4ca34805b3332f309265c03e87f",
+                "SRR13439813_kraken2_taxid_2853091_Escherichia-phage-U1G_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,062019ded3226a8ad93550b499c78ddd",
+                "SRR13439813_kraken2_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Escherichia-phage-PGN829-1_GCA_003575565.1.tsv:md5,9871057c4f97522a012c2840aecf1d1e",
+                "SRR13439813_kraken2_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,9fbf7eeb5c246afe5c897b267cc98325",
+                "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1.tsv:md5,491ddfb0c4e2763f9ba45ae379f332af",
+                "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,d6451f57077e8cb07b49a6b43cb16478"
+            ]
+        ],
+        "timestamp": "2026-08-25T09:27:54.204735047",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -777,7 +821,7 @@
                 "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus_kraken2.warnings.log exists: true"
             ]
         ],
-        "timestamp": "2026-08-24T17:42:52.704765035",
+        "timestamp": "2026-08-25T09:27:51.223957355",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -826,7 +870,7 @@
                 "SRR13439813_taxid_2886925_Escherichia-phage-N4_kraken2_blast_filtered_summary.txt(kraken2) contains string:true"
             ]
         ],
-        "timestamp": "2026-08-24T17:42:43.64121637",
+        "timestamp": "2026-08-25T09:27:47.899223083",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -844,7 +888,7 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,481e4fddfe11018be67ff5dcce3eb748"
             ]
         ],
-        "timestamp": "2026-08-24T17:42:51.557006955",
+        "timestamp": "2026-08-25T09:27:50.044193834",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -942,7 +986,7 @@
                 }
             }
         ],
-        "timestamp": "2026-08-24T17:42:43.306194749",
+        "timestamp": "2026-08-25T09:27:47.738728792",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -1052,7 +1096,7 @@
                 "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true"
             ]
         ],
-        "timestamp": "2026-08-24T17:42:48.968287336",
+        "timestamp": "2026-08-25T09:27:48.440067474",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -1064,7 +1108,7 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-08-24T17:42:50.883384633",
+        "timestamp": "2026-08-25T09:27:49.380139766",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -1108,7 +1152,7 @@
                 "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true"
             ]
         ],
-        "timestamp": "2026-08-24T17:42:55.1734586",
+        "timestamp": "2026-08-25T09:27:53.607215316",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -1152,7 +1196,7 @@
                 "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,58d0df6890b38d70451fa19a1b762f59"
             ]
         ],
-        "timestamp": "2026-08-24T17:42:54.428458851",
+        "timestamp": "2026-08-25T09:27:52.984691516",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -1164,7 +1208,7 @@
                 "metaval_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-08-24T17:42:53.862331668",
+        "timestamp": "2026-08-25T09:27:52.403981782",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -1271,7 +1315,7 @@
                 ]
             ]
         ],
-        "timestamp": "2026-08-24T17:42:49.369696664",
+        "timestamp": "2026-08-25T09:27:48.577519777",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -1315,7 +1359,7 @@
                 "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-08-24T17:42:52.129907041",
+        "timestamp": "2026-08-25T09:27:50.631416273",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
@@ -1358,7 +1402,7 @@
                 "SRR13439813_taxid_2886925_Escherichia-phage-N4_kraken2_blastx_filtered_summary.txt(kraken2) contains string:true"
             ]
         ],
-        "timestamp": "2026-08-24T17:42:43.885312024",
+        "timestamp": "2026-08-25T09:27:47.970327041",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.3"
