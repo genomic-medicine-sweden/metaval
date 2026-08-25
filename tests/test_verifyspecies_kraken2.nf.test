@@ -48,6 +48,10 @@ nextflow_pipeline {
             def stable_content_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
 
 
+            //taxpasta flagged
+            def stable_content_taxpasta_flagged = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['taxpasta_flagged/*.tsv'], ignoreFile: 'tests/.nftignore')
+
+
             assertAll(
                 { assert workflow.success},
                 { assert snapshot(
@@ -128,6 +132,8 @@ nextflow_pipeline {
                  // samtools coverage
                 { assert snapshot (stable_content_samtools_depth).match("samtools_depth") },
 
+                //taxpasta flagged
+                { assert snapshot (stable_content_taxpasta_flagged).match("taxpasta_flagged") },
 
             )
         }
