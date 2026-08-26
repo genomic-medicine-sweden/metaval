@@ -1,6 +1,4 @@
 Changes in component 'nf-core/spades'
-'modules/nf-core/spades/environment.yml' is unchanged
-'modules/nf-core/spades/meta.yml' is unchanged
 Changes in 'spades/main.nf':
 --- modules/nf-core/spades/main.nf
 +++ modules/nf-core/spades/main.nf
@@ -28,7 +26,9 @@ Changes in 'spades/main.nf':
      if [ -f transcripts.fasta ]; then
          mv transcripts.fasta ${prefix}.transcripts.fa
 
-'modules/nf-core/spades/tests/main.nf.test.snap' is unchanged
+'modules/nf-core/spades/environment.yml' is unchanged
+'modules/nf-core/spades/meta.yml' is unchanged
 'modules/nf-core/spades/tests/nextflow.config' is unchanged
+'modules/nf-core/spades/tests/main.nf.test.snap' is unchanged
 'modules/nf-core/spades/tests/main.nf.test' is unchanged
 ************************************************************

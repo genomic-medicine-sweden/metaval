@@ -76,7 +76,6 @@ workflow TAXID_READS {
             )
             ch_taxid_reads_kraken2  = KRAKENTOOLS_EXTRACTKRAKENREADS.out.extracted_kraken2_reads
                 .map {meta,reads -> [ meta + [tool:"kraken2"], reads ]}
-            ch_versions             = ch_versions.mix( KRAKENTOOLS_EXTRACTKRAKENREADS.out.versions.first() )
         } else {
             kraken2_output = ch_kraken2_taxpasta.join(ch_kraken2_report)
             KRAKEN2_VIRAL_TAXID( [], ch_phages_taxid, kraken2_output)
