@@ -105,7 +105,6 @@ workflow TAXID_READS {
                 )
             ch_taxid_reads_kraken2  = KRAKENTOOLS_EXTRACTKRAKENREADS.out.extracted_kraken2_reads
                 .map {meta,reads -> [ meta+[tool: "kraken2"]+ [taxid: meta.taxid], reads ]}
-            ch_versions             = ch_versions.mix( KRAKENTOOLS_EXTRACTKRAKENREADS.out.versions.first() )
         }
         ch_taxid_reads              = ch_taxid_reads.mix(ch_taxid_reads_kraken2)
     }
