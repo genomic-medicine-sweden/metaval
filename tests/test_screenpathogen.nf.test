@@ -83,15 +83,15 @@ nextflow_pipeline {
                     bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file -> [file.getName() + " pathogens reads consensus md5: " + bam(file.toString()).getHeader()] }
                 ).match("pathogens_reads_consensus") },
 
-                  // pathogens samtools coverage
+                // pathogens samtools coverage
                 { assert snapshot (stable_content_pathogens_samtools_coverage).match("pathogens_samtools_coverage") },
 
-                // pathogens samtools coverage
-                  { assert snapshot(
+                // pathogens samtools coverage plot
+                { assert snapshot(
                         getAllFilesFromDir("$outputDir/pathogens/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("pathogens_samtools_coverage_plot") },
 
-                 // pathogens samtools coverage
+                // pathogens samtools depth
                 { assert snapshot (stable_content_pathogens_samtools_depth).match("pathogens_samtools_depth") },
 
 

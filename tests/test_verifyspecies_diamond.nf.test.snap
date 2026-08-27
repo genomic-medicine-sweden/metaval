@@ -125,7 +125,6 @@
                 "spades/diamond/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1_diamond.contigs.fa",
                 "spades/diamond/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1_diamond.scaffolds.fa",
                 "spades/diamond/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1_diamond.spades.log",
-                "spades/diamond/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1_diamond.warnings.log",
                 "spades/diamond/SRR13439813_taxid_10404_Hepadnaviridae_diamond.contigs.fa",
                 "spades/diamond/SRR13439813_taxid_10404_Hepadnaviridae_diamond.scaffolds.fa",
                 "spades/diamond/SRR13439813_taxid_10404_Hepadnaviridae_diamond.spades.log",
@@ -161,10 +160,10 @@
                 "viral_taxids/SRR13439813_diamond_viral_taxids.tsv"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:01.982162364",
+        "timestamp": "2026-08-26T15:52:25.633369",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "viral_taxids": {
@@ -176,10 +175,10 @@
                 "SRR13439813_diamond_viral_taxids.tsv:md5,99c315cbd450d9f5985ce95adf418aa8"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:02.765876643",
+        "timestamp": "2026-08-26T15:52:26.333684",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "spades_diamond": {
@@ -192,7 +191,6 @@
                 "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1_diamond.contigs.fa exists: true",
                 "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1_diamond.scaffolds.fa exists: true",
                 "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1_diamond.spades.log exists: true",
-                "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1_diamond.warnings.log exists: true",
                 "SRR13439813_taxid_10404_Hepadnaviridae_diamond.contigs.fa exists: true",
                 "SRR13439813_taxid_10404_Hepadnaviridae_diamond.scaffolds.fa exists: true",
                 "SRR13439813_taxid_10404_Hepadnaviridae_diamond.spades.log exists: true",
@@ -218,10 +216,10 @@
                 "SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond.spades.log exists: true"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:02.690558354",
+        "timestamp": "2026-08-26T15:52:26.274365",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "bowtie2_build": {
@@ -235,10 +233,10 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:02.343295506",
+        "timestamp": "2026-08-26T15:52:25.948294",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "samtools_depth": {
@@ -250,10 +248,10 @@
                 "SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,2e97515721c4072b7032ff14196e42a9"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:03.076819034",
+        "timestamp": "2026-08-26T15:52:26.640981",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "blastn": {
@@ -273,10 +271,10 @@
                 "SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered_summary.txt(diamond) contains string:true"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:02.043420041",
+        "timestamp": "2026-08-26T15:52:25.693226",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "minimap2_align": {
@@ -291,10 +289,10 @@
                 "SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,216aae0fb095cecd17a1b40a322e64c0"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:02.529249249",
+        "timestamp": "2026-08-26T15:52:26.139141",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "extracted_reads": {
@@ -339,10 +337,10 @@
                 "SRR13439813_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:02.249923504",
+        "timestamp": "2026-08-26T15:52:25.887886",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "minimap2_index": {
@@ -351,10 +349,10 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:02.442063392",
+        "timestamp": "2026-08-26T15:52:26.046352",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "samtools_coverage_plot": {
@@ -366,10 +364,10 @@
                 "SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:02.998961664",
+        "timestamp": "2026-08-26T15:52:26.577476",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "-profile test_verifyspecies_diamond": {
@@ -458,10 +456,10 @@
                 }
             }
         ],
-        "timestamp": "2026-08-25T10:16:01.945846026",
+        "timestamp": "2026-08-26T15:52:25.604921",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "samtools_coverage": {
@@ -473,10 +471,10 @@
                 "SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,fbfd16332f0c4360bf92adaea0f0b23f"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:02.917990256",
+        "timestamp": "2026-08-26T15:52:26.458756",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "report": {
@@ -485,10 +483,10 @@
                 "metaval_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:02.84654143",
+        "timestamp": "2026-08-26T15:52:26.399793",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "bowtie2_align": {
@@ -505,10 +503,10 @@
                 ]
             ]
         ],
-        "timestamp": "2026-08-25T10:16:02.316223153",
+        "timestamp": "2026-08-26T15:52:25.931303",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "igv": {
@@ -520,10 +518,10 @@
                 "SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:02.60799483",
+        "timestamp": "2026-08-26T15:52:26.211357",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     },
     "taxpasta_flagged": {
@@ -535,10 +533,10 @@
                 "SRR13439813_DNA_batch2_diamond.tsv:md5,71e3ef5c6ee3ecab9a6556fde93a3b19"
             ]
         ],
-        "timestamp": "2026-08-25T10:16:03.179971354",
+        "timestamp": "2026-08-26T15:52:26.751429",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.3"
+            "nextflow": "25.10.4"
         }
     }
 }

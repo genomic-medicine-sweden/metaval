@@ -237,7 +237,7 @@ The input file names are used in the `bin/static_report.py` script. If the input
 
 ### FastQC
 
-FastQC is run on the extracted verify-species reads that produced filtered BLAST hits when when `--perform_fastqc` is enabled. The default is `false`.
+FastQC is run on the extracted verify-species reads that produced filtered BLAST hits when `--perform_fastqc` is enabled. The default is `false`.
 
 <details markdown="1">
 <summary>Output files</summary>

@@ -71,10 +71,10 @@ nextflow_pipeline {
 
             // samtools coverage plot:partly unstable files, see custom assertions
 
-            //samtools depth
+            // samtools depth
             def stable_content_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
 
-            //taxpasta flagged
+            // taxpasta flagged
             def stable_content_taxpasta_flagged = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['taxpasta_flagged/*.tsv'], ignoreFile: 'tests/.nftignore')
 
             assertAll(
@@ -175,14 +175,13 @@ nextflow_pipeline {
                 // pathogens samtools coverage
                 { assert snapshot (stable_content_pathogens_samtools_coverage).match("pathogens_samtools_coverage") },
 
-                // pathogens samtools coverage
-                  { assert snapshot(
+                // pathogens samtools coverage plot
+                { assert snapshot(
                         getAllFilesFromDir("$outputDir/pathogens/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("pathogens_samtools_coverage_plot") },
 
-                 // pathogens samtools coverage
+                // pathogens samtools depth
                 { assert snapshot (stable_content_pathogens_samtools_depth).match("pathogens_samtools_depth") },
-
 
                 // spades kraken2
                 { assert snapshot(
@@ -194,7 +193,7 @@ nextflow_pipeline {
                         getAllFilesFromDir("$outputDir/spades/centrifuge", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("spades_centrifuge") },
 
-                 // spades diamond
+                // spades diamond
                 { assert snapshot(
                         getAllFilesFromDir("$outputDir/spades/diamond", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("spades_diamond") },
@@ -207,12 +206,12 @@ nextflow_pipeline {
                 // samtools coverage
                 { assert snapshot (stable_content_samtools_coverage).match("samtools_coverage") },
 
-                // samtools coverage
-                  { assert snapshot(
+                // samtools coverage plot
+                { assert snapshot(
                         getAllFilesFromDir("$outputDir/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("samtools_coverage_plot") },
 
-                // samtools coverage
+                // samtools depth
                 { assert snapshot (stable_content_samtools_depth).match("samtools_depth") },
 
                 //taxpasta flagged

@@ -44,9 +44,8 @@ nextflow_pipeline {
             // samtools coverage
             def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
 
-             //samtools depth
+            //samtools depth
             def stable_content_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
-
 
             //taxpasta flagged
             def stable_content_taxpasta_flagged = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['taxpasta_flagged/*.tsv'], ignoreFile: 'tests/.nftignore')
@@ -124,12 +123,12 @@ nextflow_pipeline {
                 // samtools coverage
                 { assert snapshot (stable_content_samtools_coverage).match("samtools_coverage") },
 
-                 // samtools coverage
-                  { assert snapshot(
+                // samtools coverage plot
+                { assert snapshot(
                         getAllFilesFromDir("$outputDir/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("samtools_coverage_plot") },
 
-                 // samtools coverage
+                // samtools depth
                 { assert snapshot (stable_content_samtools_depth).match("samtools_depth") },
 
                 //taxpasta flagged

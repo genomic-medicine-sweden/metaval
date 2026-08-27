@@ -20,9 +20,9 @@ nextflow_pipeline {
 
             def stable_name_all      = getAllFilesFromDir(params.outdir, relative: true, includeDir: true, ignore: ['pipeline_info/*.{html,json,txt}'])
 
-             //blastn: partly unstable files, see custom assertions
+            //blastn: partly unstable files, see custom assertions
 
-             //blastx:partly unstable files, see custom assertions
+            //blastx:partly unstable files, see custom assertions
 
             //extracted_reads: partly unstable files, see custom assertions
 
@@ -41,12 +41,11 @@ nextflow_pipeline {
             //viral taxid
             def stable_content_viral_taxids = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['viral_taxids/*'], ignoreFile: 'tests/.nftignore')
 
-             // samtools coverage
+            // samtools coverage
             def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
 
             //samtools depth
             def stable_content_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
-
 
             //taxpasta flagged
             def stable_content_taxpasta_flagged = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['taxpasta_flagged/*.tsv'], ignoreFile: 'tests/.nftignore')
@@ -110,7 +109,7 @@ nextflow_pipeline {
 
                 {assert snapshot (stable_content_viral_taxids).match("viral_taxids")},
 
-             //metaval report
+                //metaval report
                 { assert snapshot (
                     getAllFilesFromDir("$outputDir/report", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("report") },
@@ -118,12 +117,12 @@ nextflow_pipeline {
                 // samtools coverage
                 { assert snapshot (stable_content_samtools_coverage).match("samtools_coverage") },
 
-                 // samtools coverage
-                  { assert snapshot(
+                // samtools coverage plot
+                { assert snapshot(
                         getAllFilesFromDir("$outputDir/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("samtools_coverage_plot") },
 
-                    // samtools coverage
+                // samtools depth
                 { assert snapshot (stable_content_samtools_depth).match("samtools_depth") },
 
                 //taxpasta flagged

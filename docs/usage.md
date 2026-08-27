@@ -134,7 +134,7 @@ DIAMOND classifications are filtered using `--evalue_threshold`, which defaults 
 
 ### Using user-defined TaxIDs
 
-`--taxid` expects a tab-separated file, not a list of command-line numbers. Each row contains sample name, classifer, taxid and corresponding species name:
+`--taxid` expects a tab-separated file, not a list of command-line numbers. Each row contains sample name, classifer, taxid and corresponding species name, see example below:
 
 ```text
 SRR13439799	centrifuge	211044	Influenza A virus (A/Puerto Rico/8/1934(H1N1))
@@ -148,7 +148,6 @@ SRR13439802	centrifuge	878220	Chryseobacterium sp. StRB126
 SRR13439813	centrifuge	878220	Chryseobacterium sp. StRB126
 SRR13439813	kraken2	878220	Chryseobacterium sp. StRB126
 SRR13439813	diamond	878220	Chryseobacterium sp. StRB126
-
 ```
 
 Run with:

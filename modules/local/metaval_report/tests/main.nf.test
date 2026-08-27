@@ -12,7 +12,7 @@ nextflow_process {
             }
             process {
                 """
-                def report_test_data    = params.pipelines_testdata_base_path + 'modules_nftest_data/metaval_report/'
+                def report_test_data = params.pipelines_testdata_base_path + 'modules_nftest_data/metaval_report/'
                 def remoteFiles = { names -> names.collect { name -> file(report_test_data + name, checkIfExists: true) } }
                 input[0] = 1000
                 input[1] = file(report_test_data + 'samplesheet.csv', checkIfExists: true)
