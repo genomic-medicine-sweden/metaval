@@ -5,7 +5,6 @@ lint:
     - docs/images/nf-core-metaval_logo_dark.png
     - assets/samplesheet.csv
     - conf/test_full.config
-    - .github/ISSUE_TEMPLATE/config.yml
   files_unchanged:
     - assets/sendmail_template.txt
     - .github/CONTRIBUTING.md
@@ -21,6 +20,8 @@ lint:
     - docs/usage.md
     - viralPathogenList.csv
     - README.md
+  template_strings:
+    - assets/static_report/report.html.j2
   multiqc_config:
     - report_comment
   nextflow_config:
