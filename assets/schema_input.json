@@ -19,6 +19,23 @@
                 "errorMessage": "Sequencing platform must be provided, must be a string value and must be one of 'ILLUMINA' or 'OXFORD_NANOPORE`.",
                 "meta": ["instrument_platform"]
             },
+            "library_type": {
+                "type": "string",
+                "enum": ["DNA", "RNA", "OTHER"],
+                "errorMessage": "Library type must be provided, must be a string value and must be one of 'DNA', 'RNA' or 'OTHER'.",
+                "meta": ["library_type"]
+            },
+            "is_ntc": {
+                "type": "boolean",
+                "errorMessage": "A boolean value for is_ntc must be provided.",
+                "meta": ["is_ntc"]
+            },
+            "batch": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "Batch must be provided and cannot contain spaces.",
+                "meta": ["batch"]
+            },
             "fastq_1": {
                 "type": "string",
                 "exists": true,
@@ -90,7 +107,7 @@
                 "errorMessage": "Standardized diamond profiling with taxonomic information obtained from `taxpasta`."
             }
         },
-        "required": ["sample", "instrument_platform", "fastq_1"],
+        "required": ["sample", "instrument_platform", "library_type", "is_ntc", "batch", "fastq_1"],
         "dependentRequired": {
             "kraken2_result": ["kraken2_report"],
             "kraken2_taxpasta": ["kraken2_report", "kraken2_result"],

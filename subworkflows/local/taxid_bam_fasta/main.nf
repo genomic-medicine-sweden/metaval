@@ -12,13 +12,16 @@ include { SAMTOOLS_IDXSTATS                                 } from '../../../mod
 include { SAMTOOLS_FASTA                                    } from '../../../modules/nf-core/samtools/fasta'
 include { SAMTOOLS_FLAGSTAT                                 } from '../../../modules/nf-core/samtools/flagstat'
 include { getFlagstatMappedReads                            } from '../utils_nfcore_metaval_pipeline'
+include { SAMTOOLS_COVERAGE                                 } from '../../../modules/nf-core/samtools/coverage'
+include { SAMTOOLS_DEPTH                                    } from '../../../modules/nf-core/samtools/depth'
+include { COVERAGE_PLOT                                     } from '../../../modules/local/coverage_plot'
 
 workflow TAXID_BAM_FASTA {
     take:
     ch_bam               // Channel: [ val(meta), path(bam) ]
     ch_bai               // Channel: [ val(meta), path(bai) ]
-    accession2taxid   // Channel: path(accession2taxid)
-    min_read_counts   // Value: minimum number of reads to keep a BAM file
+    accession2taxid      // Channel: path(accession2taxid)
+    min_read_counts      // Value: minimum number of reads to keep a BAM file
 
     main:
     ch_taxid_bam       = channel.empty()
@@ -118,10 +121,33 @@ workflow TAXID_BAM_FASTA {
 
     SAMTOOLS_FASTA(SAMTOOLS_SORT_FAIL.out.bam, false)
 
+    // Combine pathogen-specific BAM/BAI files from both pass and fail branches
+    ch_pathogen_bam_bai = channel.empty()
+    ch_pathogen_bam_bai = ch_pathogen_bam_bai.mix(ch_taxid_bam)
+        .join(ch_taxid_bai, by:0)
+        .mix(SAMTOOLS_SORT_FAIL.out.bam
+                .join(SAMTOOLS_INDEX_FAIL.out.index, by:0)
+        )
+
+    // Generate pathogen-specific coverage and depth
+    SAMTOOLS_COVERAGE (ch_pathogen_bam_bai, [[],[],[]])
+    SAMTOOLS_DEPTH (ch_pathogen_bam_bai, [[],[]])
+
+    ch_coverage_plot_input = channel.empty()
+    ch_coverage_plot_input = ch_coverage_plot_input
+        .mix(SAMTOOLS_DEPTH.out.tsv.filter {_meta, depth_file -> depth_file.size() > 0 })
+        .join(SAMTOOLS_COVERAGE.out.coverage, by:0)
+
+    COVERAGE_PLOT(ch_coverage_plot_input)
+
+
     emit:
     taxid_bam       = ch_taxid_bam
     taxid_bai       = ch_taxid_bai
     taxid_fasta     = SAMTOOLS_FASTA.out.fasta
     taxid_bam_fail  = SAMTOOLS_SORT_FAIL.out.bam
     taxid_bai_fail  = SAMTOOLS_INDEX_FAIL.out.index
+    coverage        = SAMTOOLS_COVERAGE.out.coverage
+    depth           = SAMTOOLS_DEPTH.out.tsv
+    coverage_plot   = COVERAGE_PLOT.out.png
 }

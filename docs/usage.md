@@ -4,230 +4,355 @@
 
 ## Introduction
 
-**genomic-medicine-sweden/metaval** is a bioinformatics pipeline for post-processing of [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler) results. It verifies the classification results by the nf-core/taxprofiler pipeline. At the moment, `genomic-medicine-sweden/metaval` only verifies the classification results from three classifiers `Kraken2`, `Centrifuge` and `diamond`.
+**genomic-medicine-sweden/metaval** is a bioinformatics pipeline for post-processing of [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler) results and supports two workflows:
 
-The pipeline, constructed using the `nf-core` [template](https://nf-co.re/tools#creating-a-new-pipeline), utilizing Docker/Singularity containers for easy installation and reproducible results. The implementation follows [Nextflow DSL2](https://www.nextflow.io/docs/latest/dsl1.html), employing one container per process for simplified maintenance and dependency management. Processes are sourced from [nf-core/modules](https://github.com/nf-core/modules) for broader accessibility within the Nextflow community.
+- **Verify identified species** extracts reads assigned to viral TaxIDs or a user-defined list of TaxIDs, validates them with BLASTN and/or BLASTX, and can optionally map them to genomes associated with BLAST hits.
+- **Pathogen screening** maps reads to a predefined pathogen genome database, separates the mapped reads by pathogen, and validates pathogen-specific reads or consensus sequences with BLAST.
+
+The workflows can be enabled independently or together. Pipeline parameter documentation is generated from `nextflow_schema.json`. Run the following command to see the available parameters:
+
+```bash
+nextflow run genomic-medicine-sweden/metaval --help
+```
+
+The pipeline, constructed using the `nf-core` [template](https://nf-co.re/tools#creating-a-new-pipeline), utilizing Docker/Singularity containers for easy installation and reproducible results. The implementation follows [Nextflow DSL2](https://docs.seqera.io/nextflow/), employing one container per process for simplified maintenance and dependency management. Processes are sourced from [nf-core/modules](https://github.com/nf-core/modules) for broader accessibility within the Nextflow community.
 
 <!-- TODO nf-core: Add documentation about anything specific to running your pipeline. For general topics, please point to (and add to) the main nf-core website. -->
 
 ## Prerequisites
 
-1. Install Nextflow (>=23.04.0) using the instructions [here.](https://nextflow.io/docs/latest/getstarted.html#installation)
+1. Install Nextflow (>=25.10.4) using the instructions [here.](https://nextflow.io/docs/latest/getstarted.html#installation)
 2. Install one of the following technologies for full pipeline reproducibility: Docker, Singularity, Podman, Shifter or Charliecloud.
 
-## Input
+See the [nf-core installation documentation](https://nf-co.re/docs/usage/installation) for setup instructions.
 
-### Samplesheet
+## Input samplesheet
 
-You will need to create a samplesheet in csv format with information about the samples you would like to analyse before running the pipeline. It has to be a comma-separated file and a header row as shown in the examples below.
+Provide the input CSV with:
 
 ```bash
---input '[path to samplesheet file]'
+--input /path/to/samplesheet.csv
 ```
 
-genomic-medicine-sweden/metaval will require the information given bellow.
+Each row represents one sample. Illumina samples can be single-end or paired-end; Nanopore samples use `fastq_1`.
 
-| Column              | Description                                                                                                                                      |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| sample              | Unique sample name [required].                                                                                                                   |
-| instrument_platform | Sequencing platform reads generated on, either ILLUMINA or OXFORD_NANOPORE [required].                                                           |
-| fastq_1             | Unmapped human reads from bowtie2/minimap2, filtered reads from bbduk/nanoq/FiltLong or raw sequencing reads. Gzipped compressed files accepted. |
-| fastq_2             | Unmapped human reads from bowtie2, filtered reads from bbduk/nanoq/FiltLong or raw reads. Gzipped compressed files accepted.                     |
-| kraken2_report      | Kraken2 report containing stats about classified and not classified reads.                                                                       |
-| kraken2_result      | Kraken2 output file indicating the taxonomic assignment of each input read.                                                                      |
-| kraken2_taxpasta    | Standardized kraken2 taxonomic profiles for all samples.                                                                                         |
-| centrifuge_report   | File containing kraken-style report from centrifuge output files.                                                                                |
-| centrifuge_result   | File containing classification results.                                                                                                          |
-| centrifuge_taxpasta | Standardized centrifuge taxonomic profiles for all samples.                                                                                      |
-| diamond             | Tab-separated file containing taxonomic classification of hits.                                                                                  |
-| diamond_taxpasta    | Standardized diamond taxonomic profiles for all samples.                                                                                         |
+| Column                | Required                  | Description                                                           |
+| --------------------- | ------------------------- | --------------------------------------------------------------------- |
+| `sample`              | Yes                       | Unique sample name.                                                   |
+| `instrument_platform` | Yes                       | `ILLUMINA` or `OXFORD_NANOPORE`.                                      |
+| `library_type`        | Yes                       | `DNA`, `RNA`, or `OTHER`.                                             |
+| `is_ntc`              | Yes                       | `true` for a negative control; otherwise `false`.                     |
+| `batch`               | Yes                       | Batch identifier used to match samples and negative controls.         |
+| `fastq_1`             | Yes                       | Gzipped FASTQ containing read 1, single-end reads, or Nanopore reads. |
+| `fastq_2`             | No                        | Gzipped FASTQ containing read 2 for paired-end Illumina data.         |
+| `kraken2_report`      | For Kraken2 extraction    | Kraken2 classification report.                                        |
+| `kraken2_result`      | For Kraken2 extraction    | Per-read Kraken2 classification output.                               |
+| `kraken2_taxpasta`    | For Kraken2 extraction    | Standardized Taxpasta profile.                                        |
+| `centrifuge_report`   | For Centrifuge extraction | Centrifuge report in Kraken-style format.                             |
+| `centrifuge_result`   | For Centrifuge extraction | Per-read Centrifuge classification output.                            |
+| `centrifuge_taxpasta` | For Centrifuge extraction | Standardized Taxpasta profile.                                        |
+| `diamond`             | For DIAMOND extraction    | Tab-separated per-read DIAMOND classification output.                 |
+| `diamond_taxpasta`    | For DIAMOND extraction    | Standardized Taxpasta profile.                                        |
+
+Example:
 
 ```csv title="samplesheet.csv"
-sample,instrument_platform,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
-sample1,ILLUMINA,sample1.unmapped_1.fastq.gz,sample1.unmapped_2.fastq.gz,sample1.kraken2.kraken2.report.txt,sample1.kraken2.kraken2.classifiedreads.txt,kraken2_kraken2-db.tsv,sample1.centrifuge.txt,sample1.centrifuge.results.txt,centrifuge_centrifuge-db.tsv,sample1.diamond.tsv,diamond_diamond-db.tsv
-sample2,ILLUMINA,sample2.unmapped_1.fastq.gz,sample2.unmapped_2.fastq.gz,sample2.kraken2.kraken2.report.txt,sample2.kraken2.kraken2.classifiedreads.txt,kraken2_kraken2-db.tsv,sample2.centrifuge.txt,sample2.centrifuge.results.txt,centrifuge_centrifuge-db.tsv,sample2.diamond.tsv,diamond_diamond-db.tsv
+sample,instrument_platform,library_type,is_ntc,batch,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
+sample1,ILLUMINA,DNA,false,batch1,sample1_1.fastq.gz,sample1_2.fastq.gz,sample1.kraken2.kraken2.report.txt,sample1.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,sample1.centrifuge.txt,sample1.centrifuge.results.txt,centrifuge.tsv,sample1.diamond.tsv,diamond.tsv
+sample1_ntc,ILLUMINA,DNA,true,batch1,ntc_1.fastq.gz,ntc_2.fastq.gz,ntc.kraken2.kraken2.report.txt,ntc.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,ntc.centrifuge.txt,ntc.centrifuge.results.txt,centrifuge.tsv,ntc.diamond.tsv,diamond.tsv
+sample2,OXFORD_NANOPORE,RNA,false,batch2,sample2.fastq.gz,,sample2.kraken2.kraken2.report.txt,sample2.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,sample2.centrifuge.txt,sample2.centrifuge.results.txt,centrifuge.tsv,sample2.diamond.tsv,diamond.tsv
 ```
 
-#### BLASTn database
+### Taxpasta requirements
 
-Use a custom database or download available [NCBI databases](https://ftp.ncbi.nlm.nih.gov/blast/db/). See the [documentation](https://ftp.ncbi.nlm.nih.gov/blast/documents/blastdb.html). To speed up the BLAST process, be cautious with the choice of database. For example, for viruses, one could use `ref_viruses_rep_genomes` or `nt_viruses` instead of the `nt` database for BLASTn. The following example code downloads the BLASTn `nt_viruses` database:
+Taxpasta profiles must contain `taxonomy_id`, `name`, `rank`, and `lineage`, followed by sample abundance columns.
 
-```sh
-conda install bioconda::blast
-update_blastdb.pl --decompress nt_viruses [*]
+When generating profiles with [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler/blob/main/conf/metaval.config), enable:
+
+```text
+--run_profile_standardisation
+--taxpasta_add_lineage
+--taxpasta_add_rank
+--taxpasta_add_name
+--taxpasta_taxonomy_dir
 ```
 
-#### BLASTx (DIAMOND) database
+## Shared reference inputs
 
-Use a pre-built `DIAMOND` database as described in the [DIAMOND tutorial](https://github.com/bbuchfink/diamond_docs/blob/master/Documentation.MD). DIAMOND is quite demanding in terms of memory and computation time. To speed up the BLAST process, choose the database carefully. For example, when working with viruses, you can construct the database using only viral genomes downloaded from RefSeq. The following example code constructs the DIAMOND database:
+### BLASTN database
 
-```sh
-conda install bioconda::diamond
-# Step 1: Download sequences from NCBI and concatenate all sequences into a single file refseq_viruse_protein.faa.gz
-
-# Step 2: Download prot.accession2taxid.FULL.gz file
-wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.FULL.gz
-
-# Step 3: Download the taxonomy folder from NCBI
-wget ftp://ftp.ncbi.nih.gov/pub/taxonomy/taxdump.tar.gz
-mkdir -p taxdump
-tar -zxvf taxdump.tar.gz -C taxdump
-
-# Step 4: Construct the diamond database (diamond.dmnd)
-diamond makedb --in refseq_viruse_protein.faa.gz \
-    --threads 36 -v --log -d diamond \
-    --taxonmap prot.accession2taxid.FULL.gz \
-    --taxonnodes taxdump/nodes.dmp --taxonnames taxdump/names.dmp
-```
-
-### taxid2genome
-
-A map file containing taxonomic IDs along with their corresponding scientific names and genome paths, including all GenBank and/or RefSeq genome assemblies. This map files stores all genome paths that will be used to retrieve the genomes of species with BLAST hits for the downstream mapping step. For instance:
-
-| taxid   | organism                                     | genome                                                                 |
-| ------- | -------------------------------------------- | ---------------------------------------------------------------------- |
-| 1826872 | Candidatus_Nitrosocosmicus_hydrocola_archaea | genomes/GCA_001870125.1/GCA_001870125.1_ASM187012v1_genomic.fna.gz     |
-| 2810370 | Escherichia_phage_vB_EcoP-ZQ2                | genomes/GCA_019095225.1/GCA_019095225.1_ASM1909522v1_genomic.fna.gz    |
-| 1458848 | Escherichia_phage_Bp4                        | genomes/GCA_000922735.2/GCA_000922735.2_ViralProj248626_genomic.fna.gz |
-| 2234086 | Escherichia_phage_phi_G17                    | genomes/GCA_003307555.1/GCA_003307555.1_ASM330755v1_genomic.fna.gz     |
-
-The following example code can be used to prepare this `taxid2genome` map file.
-
-```sh
-conda install bioconda::ncbi-genome-download
-
-# Step1: download all GenBank or RefSeq genome assemblies from NCBI:
-
-groups=$1 # 'all', 'archaea', 'bacteria', 'fungi', 'invertebrate', 'metagenomes’,
-                       #'plant', 'protozoa', 'vertebrate_mammalian', 'vertebrate_other', 'viral’
-
-ncbi-genome-download $groups \
-    --section genbank \
-    --formats genbank,fasta \
-    --progress-bar \
-    --parallel 36 \
-    --retries 3 \
-    --verbose \
-    --debug \
-    --assembly-levels "complete,chromosome" \
-    --metadata-table metadata_${groups}.tsv
-
-# Step 2: Use the metadata_${group}.tsv to generate the taxid2genome file.
-```
-
-### Extra input for Pathogen screening
-
-#### Pathogen genome database
-
-A concatenated FASTA file containing all the pathogen genomes a user is interested in.
-
-#### accession2taxid
-
-Users need to prepare a file containing accession IDs of pathogens and their corresponding taxonomic IDs
-
-## Running the pipeline
-
-The example commands for running each workflow are as follows:
+When BLASTN is enabled, provide a BLAST database directory or `.tar.gz` archive:
 
 ```bash
-# Green Workflow - pathogen screening
-nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results -profile docker --perform_screen_pathogens --pathogens_genomes /path/to/reference.fna --accession2taxid /path/to/accession2taxid.map
-
-# Orange Workflow - Verify Identified Viruses
-nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results -profile docker --perform_verify_species --extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads --perform_mapping --taxid2genome /path/to/taxid2genome.map --perform_shortread_denovo --perform_longread_denovo
-
-# Blue Workflow - Verify User-Defined TaxIDs
-nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results -profile docker --taxid_list /path/to/taxids.tsv --perform_verify_species --extract_kraken2_reads --extract_centrifuge_reads --extract_diamond_reads --perform_mapping --taxid2genome /path/to/taxid2genome.map --perform_shortread_denovo --perform_longread_denovo --perform_shortread_consensus --perform_longread_consensus --longread_consensus_tool 'medaka'
-
+--blastn_db /path/to/blastn_database
 ```
 
-This will launch the pipeline with the `docker` configuration profile. See below for more information about profiles.
+Databases can be downloaded from the [NCBI BLAST database repository](https://ftp.ncbi.nlm.nih.gov/blast/db/). A virus-focused database can considerably reduce runtime compared with the complete `nt` database.
 
-Note that the pipeline will create the following files in your working directory:
+### BLASTX database
+
+When BLASTX is enabled, supply a DIAMOND database:
 
 ```bash
-work                # Directory containing the nextflow working files
-<OUTDIR>            # Finished results in specified location (defined with --outdir)
-.nextflow_log       # Log file from Nextflow
-# Other nextflow hidden files, eg. history of pipeline runs and old logs.
+--blastx_db /path/to/database.dmnd
 ```
 
-If you wish to repeatedly use the same parameters for multiple runs, rather than specifying each flag in the command, you can specify these in a params file.
+See the [DIAMOND documentation](https://github.com/bbuchfink/diamond) for database construction instructions.
 
-Pipeline settings can be provided in a `yaml` or `json` file via `-params-file <file>`.
+### Choosing BLAST modes
+
+BLASTN and BLASTX are enabled by default. Disable either mode with `--skip_blastn` or `--skip_blastx`.
+
+Rules enforced by the pipeline:
+
+- An enabled BLAST mode requires its corresponding database.
+- Verify-species mapping requires at least one BLAST mode.
+- Pathogen screening requires at least one BLAST mode.
+- Both modes may be disabled for verify-species runs when mapping is not enabled, such as when you only want to generate a flagged TAXPASTA table.
+
+## Verify identified species
+
+Enable this workflow with `--perform_verify_species`.
+
+### Selecting TaxIDs automatically
+
+Without `--taxid`, the pipeline extracts detected viral TaxIDs from enabled classifier results. Enable one or more classifiers:
+
+```text
+--extract_kraken2_reads
+--extract_centrifuge_reads
+--extract_diamond_reads
+```
+
+Optionally exclude phages, contaminants, or reagent-associated TaxIDs with a one-column file:
+
+```bash
+--phages_taxid /path/to/excluded_taxids.txt
+```
+
+DIAMOND classifications are filtered using `--evalue_threshold`, which defaults to `0.001`.
+
+### Using user-defined TaxIDs
+
+`--taxid` expects a tab-separated file, not a list of command-line numbers. Each row contains sample name, classifer, taxid and corresponding species name, see example below:
+
+```text
+SRR13439799	centrifuge	211044	Influenza A virus (A/Puerto Rico/8/1934(H1N1))
+SRR13439799	kraken2	211044	Influenza A virus (A/Puerto Rico/8/1934(H1N1))
+SRR13439790	diamond	1920753	Gamaleyavirus
+SRR13439813	diamond	1920753	Gamaleyavirus
+SRR13439790	kraken2	1920753	Gamaleyavirus
+SRR13439813	kraken2	1920753	Gamaleyavirus
+SRR13439790	centrifuge	878220	Chryseobacterium sp. StRB126
+SRR13439802	centrifuge	878220	Chryseobacterium sp. StRB126
+SRR13439813	centrifuge	878220	Chryseobacterium sp. StRB126
+SRR13439813	kraken2	878220	Chryseobacterium sp. StRB126
+SRR13439813	diamond	878220	Chryseobacterium sp. StRB126
+```
+
+Run with:
+
+```bash
+--taxid /path/to/taxid_list.tsv
+```
+
+When this option is supplied, the user-defined TaxIDs are used instead of automatic viral TaxID selection.
+
+### Negative controls
+
+Taxpasta profiles are compared with negative controls sharing the same `library_type` and `batch`. No separate flagging parameter is required.
+
+`--skip_ntc` defaults to `true`, so negative-control samples are excluded from downstream read extraction and validation. Set it to `false` if the controls should also proceed through downstream analysis:
+
+```bash
+--skip_ntc false
+```
+
+### De novo assembly
+
+Enable `SPAdes` for Illumina reads with `--perform_shortread_denovo` and enable `Flye` for Nanopore reads with `--perform_longread_denovo`.
+
+Assembly is selected when the extracted-read count reaches `--min_read_counts`, which defaults to `100`. Below the threshold, reads are sent directly to BLAST.
+
+### Mapping BLAST hits
+
+Enable mapping with:
+
+```bash
+--perform_mapping
+```
+
+Mapping requires a tab-separated `taxid2genome` file:
+
+```bash
+--taxid2genome /path/to/taxid2genome.tsv
+```
+
+Each row contains:
+
+```text
+taxid	organism	path_to_genome
+```
+
+For example:
+
+```text
+1826872	Candidatus_Nitrosocosmicus_hydrocola_archaea	/path/to/GCA_001870125.1_genomic.fna.gz
+2810370	Escherichia_phage_vB_EcoP-ZQ2	/path/to/GCA_019095225.1_genomic.fna.gz
+```
+
+The pipeline maps extracted reads to genomes associated with filtered BLAST hits. `Bowtie2` is used for Illumina reads and `minimap2` for Nanopore reads.
+
+### Verify-species example
+
+```bash
+nextflow run genomic-medicine-sweden/metaval \
+    -profile docker \
+    --input samplesheet.csv \
+    --outdir results \
+    --perform_verify_species \
+    --extract_kraken2_reads \
+    --extract_centrifuge_reads \
+    --extract_diamond_reads \
+    --blastn_db /path/to/blastn_db.tar.gz \
+    --blastx_db /path/to/diamond.dmnd \
+    --perform_shortread_denovo \
+    --perform_longread_denovo \
+    --perform_mapping \
+    --taxid2genome /path/to/taxid2genome.tsv
+```
+
+### User-defined TaxID example
+
+```bash
+nextflow run genomic-medicine-sweden/metaval \
+    -profile docker \
+    --input samplesheet.csv \
+    --outdir results \
+    --perform_verify_species \
+    --taxid taxid_list.tsv \
+    --extract_kraken2_reads \
+    --extract_centrifuge_reads \
+    --extract_diamond_reads \
+    --blastn_db /path/to/blastn_db.tar.gz \
+    --blastx_db /path/to/diamond.dmnd
+```
+
+## Pathogen screening
+
+Enable this workflow with:
+
+```bash
+--perform_screen_pathogens
+```
+
+### Pathogen genome database
+
+Provide a concatenated FASTA containing the pathogen reference genomes:
+
+```bash
+--pathogens_genomes /path/to/pathogens.fasta
+```
+
+### Accession-to-TaxID map
+
+Provide a tab-separated map associating each FASTA accession with a TaxID and organism name:
+
+```bash
+--accession2taxid /path/to/accession2taxid.map
+```
+
+Each row contains:
+
+```text
+accession	taxid	organism
+```
+
+The accession must match the corresponding FASTA sequence identifier.
+
+### Pathogen-specific coverage and depth
+
+Reads are first mapped to the concatenated reference. The resulting BAM is then split by pathogen TaxID. Coverage, depth, and coverage plots are generated separately for each sample and pathogen.
+
+### Consensus calling
+
+Pathogens reaching `--min_read_counts` can be used for consensus calling:
+
+- `--perform_shortread_consensus` enables `samtools consensus` for Illumina reads.
+- `--perform_longread_consensus` enables long-read consensus.
+- `--longread_consensus_tool medaka` selects Medaka, which is the default.
+- `--longread_consensus_tool samtools` selects `samtools consensus`.
+- `--consensus_min_bases` sets the minimum retained consensus length and defaults to `50`.
+
+Pathogens below `--min_read_counts` are converted to FASTA and used directly as BLAST input.
+
+### Pathogen-screening example
+
+```bash
+nextflow run genomic-medicine-sweden/metaval \
+    -profile docker \
+    --input samplesheet.csv \
+    --outdir results \
+    --perform_screen_pathogens \
+    --pathogens_genomes /path/to/pathogens.fasta \
+    --accession2taxid /path/to/accession2taxid.map \
+    --blastn_db /path/to/blastn_db.tar.gz \
+    --blastx_db /path/to/diamond.dmnd \
+    --perform_shortread_consensus \
+    --perform_longread_consensus \
+    --longread_consensus_tool medaka
+```
+
+## BLAST filtering
+
+Filtered BLAST outputs use the following defaults:
+
+| Parameter             | Default | Meaning                             |
+| --------------------- | ------- | ----------------------------------- |
+| `--blastn_min_qlen`   | `50`    | Minimum BLASTN query length.        |
+| `--blastn_min_pident` | `50`    | Minimum BLASTN percentage identity. |
+| `--blastn_min_length` | `50`    | Minimum BLASTN alignment length.    |
+| `--blastn_max_evalue` | `0.001` | Maximum BLASTN e-value.             |
+| `--blastx_min_qlen`   | `50`    | Minimum BLASTX query length.        |
+| `--blastx_min_pident` | `50`    | Minimum BLASTX percentage identity. |
+| `--blastx_min_length` | `50`    | Minimum BLASTX alignment length.    |
+| `--blastx_max_evalue` | `0.001` | Maximum BLASTX e-value.             |
+
+Metaval uses a fixed tabular BLAST output format for BLASTN and DIAMOND BLASTX so that downstream filtering and the HTML report can parse the same columns. The output columns are defined in `conf/modules.config` and described by the internal header file `assets/blast_outfmt10_header.txt`:
+
+```text
+qseqid	staxids	sscinames	pident	qlen	length	mismatch	gapopen	qstart	qend	sstart	send	evalue	bitscore	sseqid	qseq	sseq
+```
+
+Filtering removes hits without a usable `staxids` or `sscinames`, then applies the configured thresholds to `qlen`, `pident`, `length`, and `evalue`.
+
+BLASTX is not run on reads originally extracted from DIAMOND results.
+
+## Parameter files
+
+Pipeline parameters can be supplied using a YAML or JSON file:
+
+```bash
+nextflow run genomic-medicine-sweden/metaval \
+    -profile docker \
+    -params-file params.yaml
+```
+
+Example:
+
+```yaml title="params.yaml"
+input: samplesheet.csv
+outdir: results
+perform_verify_species: true
+extract_kraken2_reads: true
+blastn_db: /path/to/blastn_db.tar.gz
+skip_blastx: true
+```
 
 > [!WARNING]
 > Do not use `-c <file>` to specify parameters as this will result in errors. Custom config files specified with `-c` must only be used for [tuning process resource specifications](https://nf-co.re/docs/running/run-pipelines#configuring-pipelines), other infrastructural tweaks (such as output directories), or module arguments (args).
 
-The above pipeline run specified with a params file in yaml format:
-
-```bash
-nextflow run genomic-medicine-sweden/metaval -profile docker -params-file params.yaml
-```
-
-with:
-
-```yaml title="params.yaml"
-input: './samplesheet.csv'
-outdir: './results/'
-genome: 'GRCh37'
-<...>
-```
-
-You can also generate such `YAML`/`JSON` files via [nf-core/launch](https://nf-co.re/launch).
-
-### Decontamination
-
-Filtering the output files from metagenomics classifiers like `Kraken2`, `Centrifuge`, or `DIAMOND` to remove false positives and background contamination can be activated by enabling `--decontamination` option. This step compares results to the negative control to identify likely present species based on user-defined thresholds.
-
-### Extract Viral TaxIDs
-
-This step involves extracting all taxonomic IDs of viral species predicted by classifiers by enabling `--perform_verify_species` and leaving `--taxid_list` unset. When provided, `--taxid_list` is a path to a tab-separated file with one `taxid<TAB>species` per line.
-
-### Extract Reads
-
-This step either retrieves the reads of all viral TaxIDs predicted by classifiers or extracts reads for the TaxIDs listed in the `--taxid_list` TSV file (one `taxid<TAB>species` per line) when `--taxid_list` is supplied. Extracting reads predicted by `Kraken2` can be activated with `--extract_kraken2_reads`, extracting reads predicted by `Centrifuge` can be activated with `--extract_centrifuge_reads` and extracting reads predicted by `DIAMOND` can be activated with `--extract_diamond_reads`.
-
-When extracting `Kraken2` reads, the `--include-children` option is used to include reads classified at lower taxonomic ranks than the specified taxonomy ID level. If you only want to extract reads classified at the specified taxonomy id, you can disable this option by defining it in the custom config file.
-
-If `--taxid_list` is supplied, the pipeline only extracts reads for the TaxIDs listed in that file; in other words, `--taxid_list` takes priority over classifier-predicted TaxIDs.
-
-### de-novo assembly
-
-De-novo assembly can be performed for extracted reads of TaxIDs by enabling `--perform_shortread_denovo` for short reads or the `--perform_longread_denovo` option for long reads, provided the number of reads exceeds `params.min_read_counts`. The recommended minimum number of reads is 100. If there are too few reads, the process will fail.
-
-### BLAST(n/x)
-
-BLAST can be run for both workflows: classification verifying and pathogen screening. Provide a `BLASTn` database using `params.blastn_db` and a `BLASTx` database using `params.blastx_db`.
-
-- Run BLAST directly on extracted reads for a given taxID when the number of reads is below `params.min_read_counts`
-- Run BLAST on FASTA files generated from de novo assembly if the number of extracted reads for a given taxID exceeds `params.min_read_counts`
-- Run BLAST on Reads mapped to a predefined pathogen database during `pathogen screening` when the number of mapped reads is below `params.min_read_counts`
-- Run BLAST on Consensus sequences mapped to a predefined pathogen database during the `pathogen screening` when the number of those mapped reads exceeds `params.min_read_counts`
-
-The `-outfmt` option is defined in `modules.config` as: ` -outfmt '10 qseqid sseqid slen pident qlen length qcovs nident evalue bitscore staxid ssciname'`. If you want to add or remove fields from the output, you need to update both `BLAST` output header file (`assets/blast_outfmt10_header.txt`) and the filtering function of `BLAST` hits (`bin/filter_blast.py`).
-
-You could also skip the BLAST using `params.skip_blastn` or `params.skip_blastx`.
-
-BLASTx is only used for centrifuge and kraken classification results, not DIAMOND.
-
-### Filter BLAST(n/x)
-
-To reduce false positives hits in BLAST result, we apply filtering. Filtering thresholds can be adjusted using the parameters `params.blast(n/x)_min_qlen`, `params.blast(n/x)_min_pident`,`params.blast(n/x)_min_length`,`params.blast(n/x)_max_evalue`, which correspond to query length, percent of identical matches, alignment length, and e-value. The default values are 50, 50, 50 and 0.001.
-
-### Mapping
-
-To screen for the existence of pathogens in samples, map the raw reads to a pathogens genome database (`--pathogens_genomes`) by activating the `--perform_screen_pathogens` option. Alternatively, map the extract reads of taxIDs to the genomes that correspond to the positive hits from BLASTx/BLASTn.
-
-Use `Bowtie2` for short reads and `minimap2` for long reads.
-
-### Call consensus
-
-Consensus sequence calling from reads mapped to pathogen genomes can be performed by turning on the option `--perform_screen_pathogens` and either `--perform_shortread_consensus` or `--perform_longread_consensus`. For Illumina reads, `samtools consensus` is used. For Nanopore reads, either `samtools consensus` or `medaka_consensus` (defined by `params.longread_consensus_tool`) can be used. `medaka` is specifically designed for Nanopore reads and utilizes a neural network to improve consensus accuracy, whereas `samtools consensus` does not have a specialized algorithm for Nanopore data. Therefore, `medaka` is generally recommended for Nanopore reads.
-
-It’s recommended to enable consensus calling if the number of reads mapped to pathogen genomes exceeds `params.min_read_counts`, with a minimum of 100 reads. Too few reads will cause the process to fail.
-
-### Updating the pipeline
+## Updating the pipeline
 
 When you run the above command, Nextflow automatically pulls the pipeline code from GitHub and stores it as a cached version. When running the pipeline after this, it will always use the cached version if available - even if the pipeline has been updated since. To make sure that you're running the latest version of the pipeline, make sure that you regularly update the cached version of the pipeline:
 
@@ -235,7 +360,7 @@ When you run the above command, Nextflow automatically pulls the pipeline code f
 nextflow pull genomic-medicine-sweden/metaval
 ```
 
-### Reproducibility
+## Reproducibility
 
 It is a good idea to specify the pipeline version when running the pipeline on your data. This ensures that a specific version of the pipeline code and software are used when you run your pipeline. If you keep using the same tag, you'll be running the same version of the pipeline, even if there have been changes to the code since.
 
@@ -260,7 +385,7 @@ Use this parameter to choose a configuration profile. Profiles can give configur
 Several generic profiles are bundled with the pipeline which instruct the pipeline to use software packaged using different methods (Docker, Singularity, Podman, Shifter, Charliecloud, Apptainer, Conda) - see below.
 
 > [!IMPORTANT]
-> We highly recommend the use of Docker or Singularity containers for full pipeline reproducibility, however when this is not possible, Conda is also supported.
+> We highly recommend using Docker or Singularity containers for full pipeline reproducibility. When this is not possible, Conda is also supported.
 
 The pipeline also dynamically loads configurations from [https://github.com/nf-core/configs](https://github.com/nf-core/configs) when it runs, making multiple config profiles for various institutional clusters available at run time. For more information and to check if your system is supported, please see the [nf-core/configs documentation](https://github.com/nf-core/configs#documentation).
 
@@ -287,11 +412,11 @@ If `-profile` is not specified, the pipeline will run locally and expect all sof
 - `wave`
   - A generic configuration profile to enable [Wave](https://seqera.io/wave/) containers. Use together with one of the above (requires Nextflow ` 24.03.0-edge` or later).
 - `conda`
-  - A generic configuration profile to be used with [Conda](https://conda.io/docs/). Please only use Conda as a last resort i.e. when it's not possible to run the pipeline with Docker, Singularity, Podman, Shifter, Charliecloud, or Apptainer.
+  - A generic configuration profile to be used with [Conda](https://conda.io/docs/). Please use Conda only as a last resort, i.e., when it is not possible to run the pipeline with Docker, Singularity, Podman, Shifter, Charliecloud, or Apptainer.
 
 ### `-resume`
 
-Specify this when restarting a pipeline. Nextflow will use cached results from any pipeline steps where the inputs are the same, continuing from where it got to previously. For input to be considered the same, not only the names must be identical but the files' contents as well. For more info about this parameter, see [this blog post](https://www.nextflow.io/blog/2019/demystifying-nextflow-resume.html).
+Specify this when restarting a pipeline. Nextflow will use cached results from pipeline steps whose inputs are unchanged, continuing from where the previous run stopped. For inputs to be considered identical, both their names and file contents must match. For more information about this parameter, see [this blog post](https://www.nextflow.io/blog/2019/demystifying-nextflow-resume.html).
 
 You can also supply a run name to resume a specific run: `-resume [run-name]`. Use the `nextflow log` command to show previous run names.
 
@@ -303,13 +428,13 @@ Specify the path to a specific config file (this is a core Nextflow command). Se
 
 ### Resource requests
 
-Whilst the default requirements set within the pipeline will hopefully work for most people and with most input data, you may find that you want to customise the compute resources that the pipeline requests. Each step in the pipeline has a default set of requirements for number of CPUs, memory and time. For most of the pipeline steps, if the job exits with any of the error codes specified [here](https://github.com/nf-core/rnaseq/blob/4c27ef5610c87db00c3c5a3eed10b1d161abf575/conf/base.config#L18) it will automatically be resubmitted with higher resources request (2 x original, then 3 x original). If it still fails after the third attempt then the pipeline execution is stopped.
+Although the pipeline's default requirements should work for most users and input data, you may need to customize the requested compute resources. Each pipeline step has default requirements for CPUs, memory, and execution time. For most steps, if a job exits with one of the error codes specified [here](https://github.com/nf-core/rnaseq/blob/4c27ef5610c87db00c3c5a3eed10b1d161abf575/conf/base.config#L18), it is automatically resubmitted with increased resource requests (twice the original request, then three times the original request). If it still fails after the third attempt, pipeline execution stops.
 
 To change the resource requests, please see the [max resources](https://nf-co.re/docs/running/configuration/nextflow-for-your-system#set-max-resources) and [customise process resources](https://nf-co.re/docs/running/configuration/nextflow-for-your-system#customize-process-resources) section of the nf-core website.
 
 ### Custom Containers
 
-In some cases, you may wish to change the container or conda environment used by a pipeline steps for a particular tool. By default, nf-core pipelines use containers and software from the [biocontainers](https://biocontainers.pro/) or [bioconda](https://bioconda.github.io/) projects. However, in some cases the pipeline specified version maybe out of date.
+In some cases, you may wish to change the container or Conda environment used by a pipeline step for a particular tool. By default, nf-core pipelines use containers and software from the [BioContainers](https://biocontainers.pro/) or [Bioconda](https://bioconda.github.io/) projects. However, the version specified by the pipeline may be out of date.
 
 To use a different container from the default container or conda environment specified in a pipeline, please see the [updating tool versions](https://nf-co.re/docs/running/configuration/nextflow-for-your-system#update-tool-versions) section of the nf-core website.
 

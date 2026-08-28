@@ -54,7 +54,8 @@ workflow TAXID_READS {
     // Exyxtract kraken2 reads
     if ( params.extract_kraken2_reads ) {
         if ( params.taxid_list ) {
-            kraken2_combined = ch_kraken2_report.map { meta, kraken2_report -> [ meta.subMap(meta.keySet() - 'tool'), kraken2_report ] }
+            kraken2_combined = ch_kraken2_report
+                .map { meta, kraken2_report -> [ meta.subMap(meta.keySet() - 'tool'), kraken2_report ] }
                 .join (ch_kraken2_result, by: 0)
                 .join( ch_reads, by: 0)
                 .map { meta, kraken2_report, kraken2_result, reads ->
@@ -87,7 +88,9 @@ workflow TAXID_READS {
 
             kraken2_combined = ch_kraken2_result
                 .join( ch_reads, by:0)
-                .join( ch_kraken2_report.map { meta, kraken2_report -> [ meta.subMap(meta.keySet() - 'tool'), kraken2_report ]}, by:0 )
+                .join( ch_kraken2_report
+                    .map { meta, kraken2_report -> [ meta.subMap(meta.keySet() - 'tool'), kraken2_report ]}, by:0
+                )
                 .combine( kraken2_taxids, by:0 )
                 .multiMap { meta, kraken2_result, reads, kraken2_report, taxid, species ->
                     def new_meta = meta + [ taxid: taxid, species: species ]
@@ -159,7 +162,8 @@ workflow TAXID_READS {
     // Extract diamond reads
     if ( params.extract_diamond_reads ) {
         if ( params.taxid_list ) {
-            diamond_combined = ch_diamond_tsv.map { meta, diamond_tsv -> [meta.subMap( meta.keySet() - 'tool' ), diamond_tsv ] }
+            diamond_combined = ch_diamond_tsv
+                .map { meta, diamond_tsv -> [meta.subMap( meta.keySet() - 'tool' ), diamond_tsv ] }
                 .join( ch_reads, by:0)
                 .map { meta, diamond_tsv, reads ->
                     [ meta.id, meta, diamond_tsv, reads ]
@@ -185,7 +189,8 @@ workflow TAXID_READS {
                 .splitCsv(sep: '\t')
                 .map {meta, row -> [meta, row[0], row[1]]} //[meta, taxid, species]
 
-            diamond_combined = ch_diamond_tsv.map{ meta, diamond_tsv -> [meta.subMap( meta.keySet() - 'tool' ), diamond_tsv ] }
+            diamond_combined = ch_diamond_tsv
+                .map{ meta, diamond_tsv -> [meta.subMap( meta.keySet() - 'tool' ), diamond_tsv ] }
                 .join( ch_reads, by:0 )
                 .combine( diamond_taxids, by:0 )
                 .multiMap { meta, diamond, reads, taxid, species ->

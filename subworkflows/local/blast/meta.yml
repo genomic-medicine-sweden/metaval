@@ -22,9 +22,6 @@ input:
   - blastx_db:
       description: |
         DIAMOND BLASTX database path or tarball.
-  - blast_header:
-      description: |
-        Header file used by the local BLAST filtering module.
 output:
   - unique_taxid:
       description: |

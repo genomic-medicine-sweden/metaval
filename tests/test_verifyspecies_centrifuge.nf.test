@@ -41,6 +41,14 @@ nextflow_pipeline {
             //viral taxid
             def stable_content_viral_taxids = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['viral_taxids/*'], ignoreFile: 'tests/.nftignore')
 
+            // samtools coverage
+            def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
+
+            //samtools depth
+            def stable_content_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
+
+            //taxpasta flagged
+            def stable_content_taxpasta_flagged = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['taxpasta_flagged/*.tsv'], ignoreFile: 'tests/.nftignore')
 
             assertAll(
                 { assert workflow.success},
@@ -105,6 +113,26 @@ nextflow_pipeline {
                 ).match("spades_centrifuge") },
 
                 {assert snapshot (stable_content_viral_taxids).match("viral_taxids")},
+
+                //metaval report
+                { assert snapshot (
+                    getAllFilesFromDir("$outputDir/report", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                ).match("report") },
+
+                // samtools coverage
+                { assert snapshot (stable_content_samtools_coverage).match("samtools_coverage") },
+
+                // samtools coverage plot
+                { assert snapshot(
+                        getAllFilesFromDir("$outputDir/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                ).match("samtools_coverage_plot") },
+
+                // samtools depth
+                { assert snapshot (stable_content_samtools_depth).match("samtools_depth") },
+
+                //taxpasta flagged
+                { assert snapshot (stable_content_taxpasta_flagged).match("taxpasta_flagged") },
+
 
             )
         }

@@ -10,7 +10,7 @@ def parse_args(args=None):
     parser.add_argument("--taxid", required=True, help="Taxonomic ID to extract the reads.")
     parser.add_argument("--evalue", required=True, type=float, help="E-value threshold to filter the DIAMOND classification result.")
     parser.add_argument("--prefix", required=True, help="Prefix for output files.")
-    parser.add_argument("--single_end", action="store_true", help="Flag for single-end reads.")
+    parser.add_argument("--single-end", action="store_true", help="Flag for single-end reads.")
     parser.add_argument("--fastq", required=True, nargs='+', help="Paths to input FASTQ files.")
 
     return parser.parse_args(args)

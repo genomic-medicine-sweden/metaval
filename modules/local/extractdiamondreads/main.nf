@@ -23,7 +23,7 @@ process EXTRACTDIAMONDREADS {
 
     script:
     def prefix = task.ext.prefix ?: "${meta.id}"
-    def single_end_flag = meta.single_end ? '--single_end' : ''
+    def single_end_flag = meta.single_end ? '--single-end' : ''
 
     """
     extractdiamondreads.py \\
