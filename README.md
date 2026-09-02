@@ -26,7 +26,7 @@ The pipeline, constructed using the `nf-core` [template](https://nf-co.re/tools#
 ## Pipeline summary
 
 <p align="center">
-     <img title="metaval workflow" src="docs/images/metaval_pipeline_metromap.png" width="100%">
+     <img title="metaval workflow" src="docs/images/metaval_pipeline_metromap.svg" width="100%">
 </p>
 
 ### Green Workflow - Pathogen Screening
