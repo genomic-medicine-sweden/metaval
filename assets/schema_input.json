@@ -22,7 +22,7 @@
             "na_content": {
                 "type": "string",
                 "errorMessage": "Nucleic acid content must be provided, must be a string value, for example 'DNA', 'RNA' or 'MIX'.",
-                "meta": ["NA_content"]
+                "meta": ["na_content"]
             },
             "is_ntc": {
                 "type": "boolean",
