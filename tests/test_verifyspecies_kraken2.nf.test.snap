@@ -584,10 +584,10 @@
                 "spades/kraken2/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus_kraken2.spades.log",
                 "spades/kraken2/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus_kraken2.warnings.log",
                 "taxpasta_flagged",
-                "taxpasta_flagged/SRR13439790_DNA_batch1_kraken2.tsv",
-                "taxpasta_flagged/SRR13439799_OTHER_batch3_kraken2.tsv",
-                "taxpasta_flagged/SRR13439802_DNA_batch2_kraken2.tsv",
-                "taxpasta_flagged/SRR13439813_DNA_batch2_kraken2.tsv",
+                "taxpasta_flagged/SRR13439790_DNA_ELB_kraken2.tsv",
+                "taxpasta_flagged/SRR13439799_MIX_NORMAL_kraken2.tsv",
+                "taxpasta_flagged/SRR13439802_DNA_HLSAN_kraken2.tsv",
+                "taxpasta_flagged/SRR13439813_DNA_HLSAN_kraken2.tsv",
                 "viral_taxids",
                 "viral_taxids/SRR13439790_kraken2_viral_taxids.tsv",
                 "viral_taxids/SRR13439799_kraken2_viral_taxids.tsv",
@@ -1422,10 +1422,10 @@
     "taxpasta_flagged": {
         "content": [
             [
-                "SRR13439790_DNA_batch1_kraken2.tsv:md5,eb38617217aeb3f55982919af56532bb",
-                "SRR13439799_OTHER_batch3_kraken2.tsv:md5,e90c8869641cb34750e473c7777dd0e0",
-                "SRR13439802_DNA_batch2_kraken2.tsv:md5,1c4d37d0cd1fb05042437cfbb74bb63b",
-                "SRR13439813_DNA_batch2_kraken2.tsv:md5,e45c094d07862aecfad4e0f1ae01e99a"
+                "SRR13439790_DNA_ELB_kraken2.tsv:md5,eb38617217aeb3f55982919af56532bb",
+                "SRR13439799_MIX_NORMAL_kraken2.tsv:md5,e90c8869641cb34750e473c7777dd0e0",
+                "SRR13439802_DNA_HLSAN_kraken2.tsv:md5,1c4d37d0cd1fb05042437cfbb74bb63b",
+                "SRR13439813_DNA_HLSAN_kraken2.tsv:md5,e45c094d07862aecfad4e0f1ae01e99a"
             ]
         ],
         "timestamp": "2026-08-26T17:50:31.536987",

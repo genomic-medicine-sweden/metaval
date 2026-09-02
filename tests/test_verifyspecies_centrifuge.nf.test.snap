@@ -519,10 +519,10 @@
                 "spades/centrifuge/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus_centrifuge.spades.log",
                 "spades/centrifuge/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus_centrifuge.warnings.log",
                 "taxpasta_flagged",
-                "taxpasta_flagged/SRR13439790_DNA_batch1_centrifuge.tsv",
-                "taxpasta_flagged/SRR13439799_OTHER_batch3_centrifuge.tsv",
-                "taxpasta_flagged/SRR13439802_DNA_batch2_centrifuge.tsv",
-                "taxpasta_flagged/SRR13439813_DNA_batch2_centrifuge.tsv",
+                "taxpasta_flagged/SRR13439790_DNA_ELB_centrifuge.tsv",
+                "taxpasta_flagged/SRR13439799_MIX_NORMAL_centrifuge.tsv",
+                "taxpasta_flagged/SRR13439802_DNA_HLSAN_centrifuge.tsv",
+                "taxpasta_flagged/SRR13439813_DNA_HLSAN_centrifuge.tsv",
                 "viral_taxids",
                 "viral_taxids/SRR13439790_centrifuge_viral_taxids.tsv",
                 "viral_taxids/SRR13439799_centrifuge_viral_taxids.tsv",
@@ -1290,10 +1290,10 @@
     "taxpasta_flagged": {
         "content": [
             [
-                "SRR13439790_DNA_batch1_centrifuge.tsv:md5,84b392a060f57ff08a7f7e3e04591f27",
-                "SRR13439799_OTHER_batch3_centrifuge.tsv:md5,6eada55ac7e4f0d33eb2a2be80c3fd31",
-                "SRR13439802_DNA_batch2_centrifuge.tsv:md5,f3a3e26dc131fe9c309b35884bf90527",
-                "SRR13439813_DNA_batch2_centrifuge.tsv:md5,d4618a60f5ea9a739e436e2219b8447d"
+                "SRR13439790_DNA_ELB_centrifuge.tsv:md5,84b392a060f57ff08a7f7e3e04591f27",
+                "SRR13439799_MIX_NORMAL_centrifuge.tsv:md5,6eada55ac7e4f0d33eb2a2be80c3fd31",
+                "SRR13439802_DNA_HLSAN_centrifuge.tsv:md5,f3a3e26dc131fe9c309b35884bf90527",
+                "SRR13439813_DNA_HLSAN_centrifuge.tsv:md5,d4618a60f5ea9a739e436e2219b8447d"
             ]
         ],
         "timestamp": "2026-08-26T19:59:31.371976",

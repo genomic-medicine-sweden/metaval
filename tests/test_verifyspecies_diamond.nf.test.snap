@@ -149,10 +149,10 @@
                 "spades/diamond/SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond.scaffolds.fa",
                 "spades/diamond/SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond.spades.log",
                 "taxpasta_flagged",
-                "taxpasta_flagged/SRR13439790_DNA_batch1_diamond.tsv",
-                "taxpasta_flagged/SRR13439799_OTHER_batch3_diamond.tsv",
-                "taxpasta_flagged/SRR13439802_DNA_batch2_diamond.tsv",
-                "taxpasta_flagged/SRR13439813_DNA_batch2_diamond.tsv",
+                "taxpasta_flagged/SRR13439790_DNA_ELB_diamond.tsv",
+                "taxpasta_flagged/SRR13439799_MIX_NORMAL_diamond.tsv",
+                "taxpasta_flagged/SRR13439802_DNA_HLSAN_diamond.tsv",
+                "taxpasta_flagged/SRR13439813_DNA_HLSAN_diamond.tsv",
                 "viral_taxids",
                 "viral_taxids/SRR13439790_diamond_viral_taxids.tsv",
                 "viral_taxids/SRR13439799_diamond_viral_taxids.tsv",
@@ -527,10 +527,10 @@
     "taxpasta_flagged": {
         "content": [
             [
-                "SRR13439790_DNA_batch1_diamond.tsv:md5,b886aa18c1c230ecc528106f36b3d885",
-                "SRR13439799_OTHER_batch3_diamond.tsv:md5,8c466ba2eb831a9ce946625553f0d763",
-                "SRR13439802_DNA_batch2_diamond.tsv:md5,62c743a68a4128eba457792d744879bb",
-                "SRR13439813_DNA_batch2_diamond.tsv:md5,71e3ef5c6ee3ecab9a6556fde93a3b19"
+                "SRR13439790_DNA_ELB_diamond.tsv:md5,b886aa18c1c230ecc528106f36b3d885",
+                "SRR13439799_MIX_NORMAL_diamond.tsv:md5,8c466ba2eb831a9ce946625553f0d763",
+                "SRR13439802_DNA_HLSAN_diamond.tsv:md5,62c743a68a4128eba457792d744879bb",
+                "SRR13439813_DNA_HLSAN_diamond.tsv:md5,71e3ef5c6ee3ecab9a6556fde93a3b19"
             ]
         ],
         "timestamp": "2026-08-26T15:52:26.751429",

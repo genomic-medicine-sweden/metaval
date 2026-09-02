@@ -36,31 +36,31 @@ Provide the input CSV with:
 
 Each row represents one sample. Illumina samples can be single-end or paired-end; Nanopore samples use `fastq_1`.
 
-| Column                | Required                  | Description                                                           |
-| --------------------- | ------------------------- | --------------------------------------------------------------------- |
-| `sample`              | Yes                       | Unique sample name.                                                   |
-| `instrument_platform` | Yes                       | `ILLUMINA` or `OXFORD_NANOPORE`.                                      |
-| `library_type`        | Yes                       | `DNA`, `RNA`, or `OTHER`.                                             |
-| `is_ntc`              | Yes                       | `true` for a negative control; otherwise `false`.                     |
-| `batch`               | Yes                       | Batch identifier used to match samples and negative controls.         |
-| `fastq_1`             | Yes                       | Gzipped FASTQ containing read 1, single-end reads, or Nanopore reads. |
-| `fastq_2`             | No                        | Gzipped FASTQ containing read 2 for paired-end Illumina data.         |
-| `kraken2_report`      | For Kraken2 extraction    | Kraken2 classification report.                                        |
-| `kraken2_result`      | For Kraken2 extraction    | Per-read Kraken2 classification output.                               |
-| `kraken2_taxpasta`    | For Kraken2 extraction    | Standardized Taxpasta profile.                                        |
-| `centrifuge_report`   | For Centrifuge extraction | Centrifuge report in Kraken-style format.                             |
-| `centrifuge_result`   | For Centrifuge extraction | Per-read Centrifuge classification output.                            |
-| `centrifuge_taxpasta` | For Centrifuge extraction | Standardized Taxpasta profile.                                        |
-| `diamond`             | For DIAMOND extraction    | Tab-separated per-read DIAMOND classification output.                 |
-| `diamond_taxpasta`    | For DIAMOND extraction    | Standardized Taxpasta profile.                                        |
+| Column                | Required                  | Description                                                               |
+| --------------------- | ------------------------- | ------------------------------------------------------------------------- |
+| `sample`              | Yes                       | Unique sample name.                                                       |
+| `instrument_platform` | Yes                       | `ILLUMINA` or `OXFORD_NANOPORE`.                                          |
+| `na_content`          | Yes                       | `DNA`, `RNA`, or `MIX`.                                                   |
+| `is_ntc`              | Yes                       | `true` for a negative control; otherwise `false`.                         |
+| `sample_prep`         | Yes                       | Sample wetlab prep identifier used to match samples and negative controls.|
+| `fastq_1`             | Yes                       | Gzipped FASTQ containing read 1, single-end reads, or Nanopore reads.     |
+| `fastq_2`             | No                        | Gzipped FASTQ containing read 2 for paired-end Illumina data.             |
+| `kraken2_report`      | For Kraken2 extraction    | Kraken2 classification report.                                            |
+| `kraken2_result`      | For Kraken2 extraction    | Per-read Kraken2 classification output.                                   |
+| `kraken2_taxpasta`    | For Kraken2 extraction    | Standardized Taxpasta profile.                                            |
+| `centrifuge_report`   | For Centrifuge extraction | Centrifuge report in Kraken-style format.                                 |
+| `centrifuge_result`   | For Centrifuge extraction | Per-read Centrifuge classification output.                                |
+| `centrifuge_taxpasta` | For Centrifuge extraction | Standardized Taxpasta profile.                                            |
+| `diamond`             | For DIAMOND extraction    | Tab-separated per-read DIAMOND classification output.                     |
+| `diamond_taxpasta`    | For DIAMOND extraction    | Standardized Taxpasta profile.                                            |
 
 Example:
 
 ```csv title="samplesheet.csv"
-sample,instrument_platform,library_type,is_ntc,batch,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
-sample1,ILLUMINA,DNA,false,batch1,sample1_1.fastq.gz,sample1_2.fastq.gz,sample1.kraken2.kraken2.report.txt,sample1.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,sample1.centrifuge.txt,sample1.centrifuge.results.txt,centrifuge.tsv,sample1.diamond.tsv,diamond.tsv
-sample1_ntc,ILLUMINA,DNA,true,batch1,ntc_1.fastq.gz,ntc_2.fastq.gz,ntc.kraken2.kraken2.report.txt,ntc.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,ntc.centrifuge.txt,ntc.centrifuge.results.txt,centrifuge.tsv,ntc.diamond.tsv,diamond.tsv
-sample2,OXFORD_NANOPORE,RNA,false,batch2,sample2.fastq.gz,,sample2.kraken2.kraken2.report.txt,sample2.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,sample2.centrifuge.txt,sample2.centrifuge.results.txt,centrifuge.tsv,sample2.diamond.tsv,diamond.tsv
+sample,instrument_platform,na_content,is_ntc,sample_prep,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
+sample1,ILLUMINA,DNA,false,prep1,sample1_1.fastq.gz,sample1_2.fastq.gz,sample1.kraken2.kraken2.report.txt,sample1.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,sample1.centrifuge.txt,sample1.centrifuge.results.txt,centrifuge.tsv,sample1.diamond.tsv,diamond.tsv
+sample1_ntc,ILLUMINA,DNA,true,prep1,ntc_1.fastq.gz,ntc_2.fastq.gz,ntc.kraken2.kraken2.report.txt,ntc.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,ntc.centrifuge.txt,ntc.centrifuge.results.txt,centrifuge.tsv,ntc.diamond.tsv,diamond.tsv
+sample2,OXFORD_NANOPORE,RNA,false,prep2,sample2.fastq.gz,,sample2.kraken2.kraken2.report.txt,sample2.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,sample2.centrifuge.txt,sample2.centrifuge.results.txt,centrifuge.tsv,sample2.diamond.tsv,diamond.tsv
 ```
 
 ### Taxpasta requirements
@@ -160,7 +160,7 @@ When this option is supplied, the user-defined TaxIDs are used instead of automa
 
 ### Negative controls
 
-Taxpasta profiles are compared with negative controls sharing the same `library_type` and `batch`. No separate flagging parameter is required.
+Taxpasta profiles are compared with negative controls sharing the same `na_content` and `sample_prep`. No separate flagging parameter is required.
 
 `--skip_ntc` defaults to `true`, so negative-control samples are excluded from downstream read extraction and validation. Set it to `false` if the controls should also proceed through downstream analysis:
 

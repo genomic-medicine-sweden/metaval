@@ -105,9 +105,9 @@ The samplesheet contains 15 columns when using all three supported classifiers: 
 Create a file named `samplesheet.csv`, copy the following lines into it, and save the file:
 
 ```csv title="samplesheet.csv"
-sample,instrument_platform,library_type,is_ntc,batch,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
-SRR13439790,ILLUMINA,DNA,false,batch1,SRR13439790_SRR13439790.unmapped_1.fastq.gz,SRR13439790_SRR13439790.unmapped_2.fastq.gz,SRR13439790_k2_pluspf.kraken2.kraken2.report.txt,SRR13439790_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439790_p_compressed+h+v.centrifuge.txt,SRR13439790_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439790_diamond.diamond.tsv,diamond_diamond.tsv
-SRR13439799,OXFORD_NANOPORE,OTHER,false,batch3,SRR13439799_SRR13439799.unmapped_other.fastq.gz,,SRR13439799_k2_pluspf.kraken2.kraken2.report.txt,SRR13439799_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439799_p_compressed+h+v.centrifuge.txt,SRR13439799_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439799_diamond.diamond.tsv,diamond_diamond.tsv
+sample,instrument_platform,na_content,is_ntc,sample_prep,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
+SRR13439790,ILLUMINA,DNA,false,ELB,SRR13439790_SRR13439790.unmapped_1.fastq.gz,SRR13439790_SRR13439790.unmapped_2.fastq.gz,SRR13439790_k2_pluspf.kraken2.kraken2.report.txt,SRR13439790_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439790_p_compressed+h+v.centrifuge.txt,SRR13439790_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439790_diamond.diamond.tsv,diamond_diamond.tsv
+SRR13439799,OXFORD_NANOPORE,MIX,false,HLSAN,SRR13439799_SRR13439799.unmapped_other.fastq.gz,,SRR13439799_k2_pluspf.kraken2.kraken2.report.txt,SRR13439799_k2_pluspf.kraken2.kraken2.classifiedreads.txt,kraken2_k2_pluspf.tsv,SRR13439799_p_compressed+h+v.centrifuge.txt,SRR13439799_p_compressed+h+v.centrifuge.results.txt,centrifuge_p_compressed+h+v.tsv,SRR13439799_diamond.diamond.tsv,diamond_diamond.tsv
 ```
 
 If your nf-core/taxprofiler output files are stored elsewhere, provide their full paths in the corresponding samplesheet columns.
@@ -165,7 +165,7 @@ You can optionally exclude phages, contaminants, or reagent-associated TaxIDs by
 --phages_taxid /path/to/excluded_taxids.txt
 ```
 
-Taxpasta profiles are automatically compared with negative controls that share the same `library_type` and `batch`.
+Taxpasta profiles are automatically compared with negative controls that share the same `na_content` and `sample_prep`.
 
 By default, `--skip_ntc` is `true`, so negative controls are used for Taxpasta comparison but excluded from downstream extraction and validation. To process the controls downstream as well, use:
 
