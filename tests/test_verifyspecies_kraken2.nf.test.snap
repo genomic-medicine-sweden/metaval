@@ -25,8 +25,6 @@
                 "blast/blastn/kraken2/SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_kraken2_blast_filtered_summary.txt",
                 "blast/blastn/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus_kraken2_blast_filtered.txt",
                 "blast/blastn/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus_kraken2_blast_filtered_summary.txt",
-                "blast/blastn/kraken2/SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2_blast_filtered.txt",
-                "blast/blastn/kraken2/SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2_blast_filtered_summary.txt",
                 "blast/blastn/kraken2/SRR13439813_taxid_2047765_Escherichia-phage-St11Ph5_kraken2_blast_filtered.txt",
                 "blast/blastn/kraken2/SRR13439813_taxid_2047765_Escherichia-phage-St11Ph5_kraken2_blast_filtered_summary.txt",
                 "blast/blastn/kraken2/SRR13439813_taxid_2099850_Klebsiella-phage-KP8_kraken2_blast_filtered.txt",
@@ -61,8 +59,6 @@
                 "blast/blastx/kraken2/SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_kraken2_blastx_filtered_summary.txt",
                 "blast/blastx/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus_kraken2_blastx_filtered.txt",
                 "blast/blastx/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus_kraken2_blastx_filtered_summary.txt",
-                "blast/blastx/kraken2/SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2_blastx_filtered.txt",
-                "blast/blastx/kraken2/SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2_blastx_filtered_summary.txt",
                 "blast/blastx/kraken2/SRR13439813_taxid_2047765_Escherichia-phage-St11Ph5_kraken2_blastx_filtered.txt",
                 "blast/blastx/kraken2/SRR13439813_taxid_2047765_Escherichia-phage-St11Ph5_kraken2_blastx_filtered_summary.txt",
                 "blast/blastx/kraken2/SRR13439813_taxid_2234086_Escherichia-phage-phi-G17_kraken2_blastx_filtered.txt",
@@ -190,16 +186,8 @@
                 "igv/SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_report.html",
                 "igv/SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
                 "igv/SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
-                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1_report.html",
-                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_report.html",
-                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_report.html",
-                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_report.html",
+                "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_report.html",
                 "igv/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
-                "igv/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_report.html",
-                "igv/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_report.html",
-                "igv/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_report.html",
-                "igv/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_report.html",
-                "igv/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
                 "igv/SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
                 "igv/SRR13439813_kraken2_taxid_2099850_Klebsiella-phage-KP8_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
                 "igv/SRR13439813_kraken2_taxid_2234086_Escherichia-phage-phi-G17_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_report.html",
@@ -236,26 +224,10 @@
                 "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
                 "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
                 "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1_sorted.bam",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1_sorted.bam.bai",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam.bai",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam.bai",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam.bai",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam",
+                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam.bai",
                 "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
                 "mapping/bowtie2/align/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam.bai",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam.bai",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam.bai",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam.bai",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
-                "mapping/bowtie2/align/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
                 "mapping/bowtie2/align/SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
                 "mapping/bowtie2/align/SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
                 "mapping/bowtie2/align/SRR13439813_kraken2_taxid_2099850_Klebsiella-phage-KP8_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
@@ -291,14 +263,6 @@
                 "mapping/bowtie2/build/mappingorganism_Escherichia-phage-Bp4/bowtie2/GCA_000922735.2_ViralProj248626_genomic.fna.4.bt2",
                 "mapping/bowtie2/build/mappingorganism_Escherichia-phage-Bp4/bowtie2/GCA_000922735.2_ViralProj248626_genomic.fna.rev.1.bt2",
                 "mapping/bowtie2/build/mappingorganism_Escherichia-phage-Bp4/bowtie2/GCA_000922735.2_ViralProj248626_genomic.fna.rev.2.bt2",
-                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM",
-                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2",
-                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2/GCA_002617245.1_ASM261724v1_genomic.fna.1.bt2",
-                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2/GCA_002617245.1_ASM261724v1_genomic.fna.2.bt2",
-                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2/GCA_002617245.1_ASM261724v1_genomic.fna.3.bt2",
-                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2/GCA_002617245.1_ASM261724v1_genomic.fna.4.bt2",
-                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2/GCA_002617245.1_ASM261724v1_genomic.fna.rev.1.bt2",
-                "mapping/bowtie2/build/mappingorganism_Escherichia-phage-EC1-UPM/bowtie2/GCA_002617245.1_ASM261724v1_genomic.fna.rev.2.bt2",
                 "mapping/bowtie2/build/mappingorganism_Escherichia-phage-ECBP1",
                 "mapping/bowtie2/build/mappingorganism_Escherichia-phage-ECBP1/bowtie2",
                 "mapping/bowtie2/build/mappingorganism_Escherichia-phage-ECBP1/bowtie2/GCA_000900235.1_ViralProj177527_genomic.fna.1.bt2",
@@ -405,16 +369,8 @@
                 "samtools/coverage/SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.txt",
                 "samtools/coverage/SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
                 "samtools/coverage/SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
-                "samtools/coverage/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1.txt",
-                "samtools/coverage/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.txt",
-                "samtools/coverage/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.txt",
-                "samtools/coverage/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.txt",
+                "samtools/coverage/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.txt",
                 "samtools/coverage/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
-                "samtools/coverage/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.txt",
-                "samtools/coverage/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.txt",
-                "samtools/coverage/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.txt",
-                "samtools/coverage/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.txt",
-                "samtools/coverage/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
                 "samtools/coverage/SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
                 "samtools/coverage/SRR13439813_kraken2_taxid_2099850_Klebsiella-phage-KP8_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
                 "samtools/coverage/SRR13439813_kraken2_taxid_2234086_Escherichia-phage-phi-G17_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.txt",
@@ -440,16 +396,8 @@
                 "samtools/coverage_plot/SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.png",
                 "samtools/coverage_plot/SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
                 "samtools/coverage_plot/SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
-                "samtools/coverage_plot/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1.png",
-                "samtools/coverage_plot/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.png",
-                "samtools/coverage_plot/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.png",
-                "samtools/coverage_plot/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.png",
+                "samtools/coverage_plot/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.png",
                 "samtools/coverage_plot/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
-                "samtools/coverage_plot/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.png",
-                "samtools/coverage_plot/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.png",
-                "samtools/coverage_plot/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.png",
-                "samtools/coverage_plot/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.png",
-                "samtools/coverage_plot/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
                 "samtools/coverage_plot/SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
                 "samtools/coverage_plot/SRR13439813_kraken2_taxid_2099850_Klebsiella-phage-KP8_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
                 "samtools/coverage_plot/SRR13439813_kraken2_taxid_2234086_Escherichia-phage-phi-G17_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.png",
@@ -475,16 +423,8 @@
                 "samtools/depth/SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.tsv",
                 "samtools/depth/SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
                 "samtools/depth/SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
-                "samtools/depth/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1.tsv",
-                "samtools/depth/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.tsv",
-                "samtools/depth/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.tsv",
-                "samtools/depth/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.tsv",
+                "samtools/depth/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.tsv",
                 "samtools/depth/SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
-                "samtools/depth/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.tsv",
-                "samtools/depth/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.tsv",
-                "samtools/depth/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.tsv",
-                "samtools/depth/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.tsv",
-                "samtools/depth/SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
                 "samtools/depth/SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
                 "samtools/depth/SRR13439813_kraken2_taxid_2099850_Klebsiella-phage-KP8_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
                 "samtools/depth/SRR13439813_kraken2_taxid_2234086_Escherichia-phage-phi-G17_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.tsv",
@@ -533,10 +473,7 @@
                 "spades/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus_kraken2.contigs.fa",
                 "spades/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus_kraken2.scaffolds.fa",
                 "spades/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus_kraken2.spades.log",
-                "spades/kraken2/SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2.contigs.fa",
-                "spades/kraken2/SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2.scaffolds.fa",
-                "spades/kraken2/SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2.spades.log",
-                "spades/kraken2/SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2.warnings.log",
+                "spades/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus_kraken2.warnings.log",
                 "spades/kraken2/SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus_kraken2.contigs.fa",
                 "spades/kraken2/SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus_kraken2.scaffolds.fa",
                 "spades/kraken2/SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus_kraken2.spades.log",
@@ -595,7 +532,7 @@
                 "viral_taxids/SRR13439813_kraken2_viral_taxids.tsv"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:23.791086",
+        "timestamp": "2026-09-02T16:38:58.53138",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -610,7 +547,7 @@
                 "SRR13439813_kraken2_viral_taxids.tsv:md5,3292cc74a75127c202a90c773c8f881f"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:28.491655",
+        "timestamp": "2026-09-02T16:39:01.565827",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -625,12 +562,6 @@
                 "GCA_000922735.2_ViralProj248626_genomic.fna.4.bt2:md5,e19db3f046ea9fbafcbafba2eeb06616",
                 "GCA_000922735.2_ViralProj248626_genomic.fna.rev.1.bt2:md5,8414241f8bd4dba561fe435a6b65dfa1",
                 "GCA_000922735.2_ViralProj248626_genomic.fna.rev.2.bt2:md5,34670b3f7c8e8e046d1eb4109a1bc10f",
-                "GCA_002617245.1_ASM261724v1_genomic.fna.1.bt2:md5,82fa69226fec125d21843aa5d049e55e",
-                "GCA_002617245.1_ASM261724v1_genomic.fna.2.bt2:md5,24ec4941cc118700f9bd48b3aeb62da1",
-                "GCA_002617245.1_ASM261724v1_genomic.fna.3.bt2:md5,913103a1c95b743484ccfb3fea9736c5",
-                "GCA_002617245.1_ASM261724v1_genomic.fna.4.bt2:md5,54a7161bb94e98ae03a859e94ad1edbe",
-                "GCA_002617245.1_ASM261724v1_genomic.fna.rev.1.bt2:md5,f216914499269b26a6fa80ec71b57421",
-                "GCA_002617245.1_ASM261724v1_genomic.fna.rev.2.bt2:md5,f2af3f55a226cfa8f9f30c80729ab7ae",
                 "GCA_000900235.1_ViralProj177527_genomic.fna.1.bt2:md5,8c2fd10c6d57fd92403651857370a50a",
                 "GCA_000900235.1_ViralProj177527_genomic.fna.2.bt2:md5,442e07de3ff2e15ed400775d498acbdc",
                 "GCA_000900235.1_ViralProj177527_genomic.fna.3.bt2:md5,ffa05f271e319b8741d73ecf932dec7e",
@@ -687,7 +618,7 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:25.226245",
+        "timestamp": "2026-09-02T16:38:59.019043",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -707,16 +638,8 @@
                 "SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.tsv:md5,272e2d59146a1bdf94aa3e75a9219787",
                 "SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,788e133030d55bb83db7450962f3b4e3",
                 "SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,1f96b4eda41386a5294ba2c58ec52510",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1.tsv:md5,26b3aa43e6ff19b8d3aa36c7c33d62ea",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.tsv:md5,3ab307443c717191e490cfdcb3b2b37c",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.tsv:md5,93d5d457527ed2fa2dc047061002b380",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.tsv:md5,a9b3b06c7ede68a43613dd166acdc5df",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,28258a0cd9d658f206fd874c2de11468",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.tsv:md5,b8eb305cb15bc7378712ac4ec01167f0",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.tsv:md5,1225b1c25f05271e308be747d61a4eaf",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.tsv:md5,5385f4c3f31887f7dab5f729e91a0c4d",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.tsv:md5,bb864d86b6b71d6cad4c63f7e2e10c0b",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,e57158986f7cd32f78275674a5f8ba26",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.tsv:md5,2370f313d83e8847609d2e450dcbab70",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,faece92e18c529e79da300a18dcfe06a",
                 "SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,386788fd273ee04677fc7651a4c39cf1",
                 "SRR13439813_kraken2_taxid_2099850_Klebsiella-phage-KP8_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,ee47e7d4015971b20078d028d5520a84",
                 "SRR13439813_kraken2_taxid_2234086_Escherichia-phage-phi-G17_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.tsv:md5,84ff20ded3b93e553b07827973c843a5",
@@ -732,7 +655,7 @@
                 "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,d6451f57077e8cb07b49a6b43cb16478"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:30.708573",
+        "timestamp": "2026-09-02T16:39:03.560353",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -774,10 +697,7 @@
                 "SRR13439813_taxid_1920753_Gamaleyavirus_kraken2.contigs.fa exists: true",
                 "SRR13439813_taxid_1920753_Gamaleyavirus_kraken2.scaffolds.fa exists: true",
                 "SRR13439813_taxid_1920753_Gamaleyavirus_kraken2.spades.log exists: true",
-                "SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2.contigs.fa exists: true",
-                "SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2.scaffolds.fa exists: true",
-                "SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2.spades.log exists: true",
-                "SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2.warnings.log exists: true",
+                "SRR13439813_taxid_1920753_Gamaleyavirus_kraken2.warnings.log exists: true",
                 "SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus_kraken2.contigs.fa exists: true",
                 "SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus_kraken2.scaffolds.fa exists: true",
                 "SRR13439813_taxid_2049933_Pomona-bat-hepatitis-B-virus_kraken2.spades.log exists: true",
@@ -826,7 +746,7 @@
                 "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus_kraken2.warnings.log exists: true"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:27.928785",
+        "timestamp": "2026-09-02T16:39:01.076699",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -855,8 +775,6 @@
                 "SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_kraken2_blast_filtered_summary.txt(kraken2) contains string:true",
                 "SRR13439813_taxid_1920753_Gamaleyavirus_kraken2_blast_filtered.txt(kraken2) contains string:true",
                 "SRR13439813_taxid_1920753_Gamaleyavirus_kraken2_blast_filtered_summary.txt(kraken2) contains string:true",
-                "SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2_blast_filtered.txt(kraken2) contains string:true",
-                "SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2_blast_filtered_summary.txt(kraken2) contains string:true",
                 "SRR13439813_taxid_2047765_Escherichia-phage-St11Ph5_kraken2_blast_filtered.txt(kraken2) contains string:true",
                 "SRR13439813_taxid_2047765_Escherichia-phage-St11Ph5_kraken2_blast_filtered_summary.txt(kraken2) contains string:true",
                 "SRR13439813_taxid_2099850_Klebsiella-phage-KP8_kraken2_blast_filtered.txt(kraken2) contains string:true",
@@ -875,7 +793,7 @@
                 "SRR13439813_taxid_2886925_Escherichia-phage-N4_kraken2_blast_filtered_summary.txt(kraken2) contains string:true"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:24.015305",
+        "timestamp": "2026-09-02T16:38:58.619936",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -893,7 +811,7 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,481e4fddfe11018be67ff5dcce3eb748"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:26.786131",
+        "timestamp": "2026-09-02T16:39:00.072449",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -991,7 +909,7 @@
                 }
             }
         ],
-        "timestamp": "2026-08-26T17:50:23.769927",
+        "timestamp": "2026-09-02T16:38:58.508361",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1101,7 +1019,7 @@
                 "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:25.094677",
+        "timestamp": "2026-09-02T16:38:58.909668",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1113,7 +1031,7 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:26.177328",
+        "timestamp": "2026-09-02T16:38:59.56565",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1133,16 +1051,8 @@
                 "SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.png exists: true",
                 "SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
                 "SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1.png exists: true",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.png exists: true",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.png exists: true",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.png exists: true",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.png exists: true",
                 "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.png exists: true",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.png exists: true",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.png exists: true",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.png exists: true",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
                 "SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
                 "SRR13439813_kraken2_taxid_2099850_Klebsiella-phage-KP8_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
                 "SRR13439813_kraken2_taxid_2234086_Escherichia-phage-phi-G17_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.png exists: true",
@@ -1158,7 +1068,7 @@
                 "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:30.165712",
+        "timestamp": "2026-09-02T16:39:03.075178",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1178,16 +1088,8 @@
                 "SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.txt:md5,a6a8a10c6169c5cd8848bb90f4c2b9af",
                 "SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,2fa06b59e65d1092834ecb0b8c1001c1",
                 "SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,1bd9c3a5da51439505dd02c88c44fbe3",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1.txt:md5,d82dbddcf2bdb5c737ac1a4d064e2c9e",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.txt:md5,5f9e31eff41300444054f8746a87102a",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.txt:md5,3a4109dfa36c6aad172ecc639d1f6c83",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.txt:md5,12ca3764e2bfef22ef220a11e203edd4",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,b9ff316b9995565c6481931efba4c8b9",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.txt:md5,8c3480f100beff142a256ad68dcc4d81",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.txt:md5,711a1791be3ccfbd884456a726d4161a",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.txt:md5,1cf78e3fc86acfe92f94cbef82a1e1a1",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.txt:md5,8d124cadcc85cb31bdde4176d1ba6816",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,b5b1eb941ae0b852c767f8d600626b9c",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.txt:md5,e786fb285d68a5c3871a50447133e9f8",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,f5073162c8428bc35cb772b3b9a4e7d5",
                 "SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,0c3cebf21f9f196c9389f227f3f6eeb2",
                 "SRR13439813_kraken2_taxid_2099850_Klebsiella-phage-KP8_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,2f87fa3b10ea509dec7647b771c6aaf0",
                 "SRR13439813_kraken2_taxid_2234086_Escherichia-phage-phi-G17_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.txt:md5,64426953747c48e4e2df18ceb7d7af89",
@@ -1203,7 +1105,7 @@
                 "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,58d0df6890b38d70451fa19a1b762f59"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:29.615784",
+        "timestamp": "2026-09-02T16:39:02.553696",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1215,7 +1117,7 @@
                 "metaval_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:29.077072",
+        "timestamp": "2026-09-02T16:39:02.081557",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1255,34 +1157,10 @@
                     "SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1604356_Escherichia-phage-ECBP1.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_1604356_Escherichia-phage-ECBP1.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
                 ],
                 [
-                    "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:KC206276.2\tLN:70912, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_002617245.1_ASM261724v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1 --threads 4 --reference GCA_002617245.1_ASM261724v1_genomic.fna -o SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1_sorted.bam##idx##SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1_sorted.bam.bai --write-index -]"
-                ],
-                [
-                    "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ394712.1\tLN:73275, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020475385.1_ASM2047538v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1 --threads 4 --reference GCA_020475385.1_ASM2047538v1_genomic.fna -o SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam##idx##SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam.bai --write-index -]"
-                ],
-                [
-                    "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:HQ259105.1\tLN:72917, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000891295.1_ViralProj72371_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1 --threads 4 --reference GCA_000891295.1_ViralProj72371_genomic.fna -o SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam##idx##SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam.bai --write-index -]"
-                ],
-                [
-                    "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:KF192075.1\tLN:71248, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000922515.1_ViralProj260483_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1 --threads 4 --reference GCA_000922515.1_ViralProj260483_genomic.fna -o SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam##idx##SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MW630115.1\tLN:72231, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_019095225.1_ASM1909522v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1 --threads 4 --reference GCA_019095225.1_ASM1909522v1_genomic.fna -o SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam##idx##SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam.bai --write-index -]"
                 ],
                 [
                     "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
-                ],
-                [
-                    "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ394712.1\tLN:73275, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020475385.1_ASM2047538v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_2047764_unclassified-Gamaleyavirus.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_2047764_unclassified-Gamaleyavirus.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1 --threads 4 --reference GCA_020475385.1_ASM2047538v1_genomic.fna -o SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam##idx##SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam.bai --write-index -]"
-                ],
-                [
-                    "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:HQ259105.1\tLN:72917, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000891295.1_ViralProj72371_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_2047764_unclassified-Gamaleyavirus.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_2047764_unclassified-Gamaleyavirus.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1 --threads 4 --reference GCA_000891295.1_ViralProj72371_genomic.fna -o SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam##idx##SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam.bai --write-index -]"
-                ],
-                [
-                    "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:KF192075.1\tLN:71248, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000922515.1_ViralProj260483_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_2047764_unclassified-Gamaleyavirus.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_2047764_unclassified-Gamaleyavirus.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1 --threads 4 --reference GCA_000922515.1_ViralProj260483_genomic.fna -o SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam##idx##SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam.bai --write-index -]"
-                ],
-                [
-                    "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MW630115.1\tLN:72231, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_019095225.1_ASM1909522v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_2047764_unclassified-Gamaleyavirus.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_2047764_unclassified-Gamaleyavirus.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1 --threads 4 --reference GCA_019095225.1_ASM1909522v1_genomic.fna -o SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam##idx##SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam.bai --write-index -]"
-                ],
-                [
-                    "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_2047764_unclassified-Gamaleyavirus.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_2047764_unclassified-Gamaleyavirus.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
                 ],
                 [
                     "SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_2047765_Escherichia-phage-St11Ph5.extracted_kraken2_read_1.fastq.gz -2 SRR13439813_taxid_2047765_Escherichia-phage-St11Ph5.extracted_kraken2_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.23.1\tCL:samtools cat SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.23.1\tCL:samtools cat SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.23.1\tCL:samtools sort -T SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
@@ -1325,7 +1203,7 @@
                 ]
             ]
         ],
-        "timestamp": "2026-08-26T17:50:25.175043",
+        "timestamp": "2026-09-02T16:38:58.982755",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1345,16 +1223,8 @@
                 "SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_report.html exists: true",
                 "SRR13439813_kraken2_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true",
                 "SRR13439813_kraken2_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-EC1-UPM_GCA_002617245.1_report.html exists: true",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_report.html exists: true",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_report.html exists: true",
-                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_report.html exists: true",
+                "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_report.html exists: true",
                 "SRR13439813_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_report.html exists: true",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_report.html exists: true",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_report.html exists: true",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_report.html exists: true",
-                "SRR13439813_kraken2_taxid_2047764_unclassified-Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true",
                 "SRR13439813_kraken2_taxid_2047765_Escherichia-phage-St11Ph5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true",
                 "SRR13439813_kraken2_taxid_2099850_Klebsiella-phage-KP8_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true",
                 "SRR13439813_kraken2_taxid_2234086_Escherichia-phage-phi-G17_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_report.html exists: true",
@@ -1370,7 +1240,7 @@
                 "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:27.371752",
+        "timestamp": "2026-09-02T16:39:00.57063",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1395,8 +1265,6 @@
                 "SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_kraken2_blastx_filtered_summary.txt(kraken2) contains string:true",
                 "SRR13439813_taxid_1920753_Gamaleyavirus_kraken2_blastx_filtered.txt(kraken2) contains string:true",
                 "SRR13439813_taxid_1920753_Gamaleyavirus_kraken2_blastx_filtered_summary.txt(kraken2) contains string:true",
-                "SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2_blastx_filtered.txt(kraken2) contains string:true",
-                "SRR13439813_taxid_2047764_unclassified-Gamaleyavirus_kraken2_blastx_filtered_summary.txt(kraken2) contains string:true",
                 "SRR13439813_taxid_2047765_Escherichia-phage-St11Ph5_kraken2_blastx_filtered.txt(kraken2) contains string:true",
                 "SRR13439813_taxid_2047765_Escherichia-phage-St11Ph5_kraken2_blastx_filtered_summary.txt(kraken2) contains string:true",
                 "SRR13439813_taxid_2234086_Escherichia-phage-phi-G17_kraken2_blastx_filtered.txt(kraken2) contains string:true",
@@ -1413,7 +1281,7 @@
                 "SRR13439813_taxid_2886925_Escherichia-phage-N4_kraken2_blastx_filtered_summary.txt(kraken2) contains string:true"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:24.197553",
+        "timestamp": "2026-09-02T16:38:58.665128",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1428,7 +1296,7 @@
                 "SRR13439813_DNA_HLSAN_kraken2.tsv:md5,e45c094d07862aecfad4e0f1ae01e99a"
             ]
         ],
-        "timestamp": "2026-08-26T17:50:31.536987",
+        "timestamp": "2026-09-02T16:39:04.289675",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
