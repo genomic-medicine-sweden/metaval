@@ -105,6 +105,7 @@ workflow PIPELINE_INITIALISATION {
             [new_meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta]
         }
 
+
     emit:
     samplesheet = ch_samplesheet
     versions    = ch_versions
@@ -175,6 +176,9 @@ def validateInputSamplesheet(input) {
     return [ metas[0], fastqs ]
 }
 
+//
+// Validate channels from input samplesheet:
+//
 def validateDuplicateSampleEntries(samplesheet_rows) {
     def fields = [
         [name: '_kraken2_report', index: 3],
