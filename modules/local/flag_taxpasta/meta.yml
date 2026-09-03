@@ -1,0 +1,89 @@
+name: flag_taxpasta
+description: Compare one sample taxpasta profile against one optional matched NTC profile and flag taxonomy rows
+keywords:
+  - taxpasta
+  - taxonomy
+  - contamination
+  - ntc
+  - pandas
+tools:
+  - python:
+      description: Python interpreter used to run the local taxpasta flagging script
+      homepage: https://www.python.org/
+      documentation: https://docs.python.org/3/
+      licence: ["PSF-2.0"]
+input:
+  - - meta1:
+        type: map
+        description: |
+          Groovy map containing sample information.
+          The sample column name passed to the script is taken from `meta1.id`.
+          e.g. [ id:'test', tool:'centrifuge' ]
+    - sample_taxpasta:
+        type: file
+        description: Taxpasta TSV containing the target sample column
+        pattern: "*.tsv"
+  - - meta2:
+        type: map
+        description: |
+          Groovy map containing matched NTC information.
+          The NTC column name passed to the script is taken from `meta2.id` when an NTC exists.
+          e.g. [ id:'ntc1', tool:'centrifuge' ]
+    - ntc_taxpasta:
+        type: file
+        description: Optional taxpasta TSV containing the matched NTC column. Use an empty list when no matched NTC exists.
+        pattern: "*.tsv"
+        optional: true
+output:
+  tsv:
+    - - meta1:
+          type: map
+          description: |
+            Groovy map containing sample information
+            e.g. [ id:'test', tool:'centrifuge' ]
+      - "*.tsv":
+          type: file
+          description: Flagged taxpasta table for one sample with optional NTC comparison columns
+          pattern: "*.tsv"
+  versions_python:
+    - - ${task.process}:
+          type: string
+          description: The name of the process
+      - python:
+          type: string
+          description: The name of the tool
+      - "python --version | sed -e 's/Python //g'":
+          type: eval
+          description: The expression to obtain the version of the tool
+  versions_pandas:
+    - - ${task.process}:
+          type: string
+          description: The name of the process
+      - pandas:
+          type: string
+          description: The name of the tool
+      - 'python -c "import pandas; print(pandas.__version__)"':
+          type: eval
+          description: The expression to obtain the version of the tool
+topics:
+  versions:
+    - - ${task.process}:
+          type: string
+          description: The name of the process
+      - python:
+          type: string
+          description: The name of the tool
+      - "python --version | sed -e 's/Python //g'":
+          type: eval
+          description: The expression to obtain the version of the tool
+    - - ${task.process}:
+          type: string
+          description: The name of the process
+      - pandas:
+          type: string
+          description: The name of the tool
+      - 'python -c "import pandas; print(pandas.__version__)"':
+          type: eval
+          description: The expression to obtain the version of the tool
+authors:
+  - "@LilyAnderssonLee"

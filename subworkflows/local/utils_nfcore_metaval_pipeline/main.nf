@@ -28,7 +28,7 @@ workflow PIPELINE_INITIALISATION {
     take:
     version           // boolean: Display version and exit
     validate_params   // boolean: Boolean whether to validate parameters against the schema at runtime
-    _monochrome_logs   // boolean: Do not use coloured log outputs
+    monochrome_logs   // boolean: Do not use coloured log outputs
     nextflow_cli_args //   array: List of positional nextflow CLI args
     outdir            //  string: The output directory where the results will be saved
     input             //  string: Path to input samplesheet
@@ -99,11 +99,75 @@ workflow PIPELINE_INITIALISATION {
     def samplesheet_rows = samplesheetToList(input, "${projectDir}/assets/schema_input.json")
     validateDuplicateSampleEntries(samplesheet_rows)
 
+    // Fitler NTC or Negative controls from downstream analysis
+
     ch_samplesheet = channel.fromList(samplesheet_rows)
-        .map {meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
+        .map {
+            meta,
+            fastq_1,
+            fastq_2,
+            kraken2_report,
+            kraken2_result,
+            kraken2_taxpasta,
+            centrifuge_report,
+            centrifuge_result,
+            centrifuge_taxpasta,
+            diamond,
+            diamond_taxpasta ->
+
             def new_meta = meta + [single_end: fastq_1 && !fastq_2]
-            [new_meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta]
+            [
+            new_meta,
+            fastq_1,
+            fastq_2,
+            kraken2_report,
+            kraken2_result,
+            kraken2_taxpasta,
+            centrifuge_report,
+            centrifuge_result,
+            centrifuge_taxpasta,
+            diamond,
+            diamond_taxpasta
+            ]
         }
+
+    //
+    // Validate parameter inputs
+    //
+
+    if (params.perform_verify_species && params.perform_mapping) {
+        if (!params.taxid2genome) {
+            error ("ERROR: --taxid2genome is required when --perform_mapping is enabled")
+        }
+        if (params.skip_blastn && params.skip_blastx) {
+            error("ERROR: --perform_mapping requires BLASTN or BLASTX. Enable at least one BLAST mode.")
+        }
+    }
+
+    // At least one BLAST workflow is active.
+    def run_blast = params.perform_verify_species || params.perform_screen_pathogens
+
+    if (run_blast && !params.skip_blastn && !params.blastn_db) {
+        error ("ERROR: --blastn_db is required when BLASTN is enabled.")
+    }
+
+    if (run_blast && !params.skip_blastx && !params.blastx_db) {
+        error("ERROR: --blastx_db is required when BLASTX is enabled.")
+    }
+
+    if (params.perform_screen_pathogens && params.skip_blastn && params.skip_blastx) {
+        error ("ERROR: Pathogen screening requires BLASTN or BLASTX. Enable at least one BLAST mode.")
+    }
+
+    if (params.perform_screen_pathogens) {
+        if (!params.pathogens_genomes) {
+            error ("ERROR: --pathogens_genomes is required with --perform_screen_pathogens.")
+        }
+
+        if (!params.accession2taxid) {
+            error ("ERROR: --accession2taxid is required with --perform_screen_pathogens.")
+        }
+    }
 
 
     emit:
@@ -306,4 +370,41 @@ def getFlagstatMappedReads(flagstat_file) {
         pass = true
     }
     return [ mapped_reads, pass ]
+}
+
+//
+// Functions to create input channles for FLAG_TAXPASTA process
+//
+
+//Create sample and NTC taxpasta channels
+def sample_ntc_branch(taxpasta_channel) {
+    return taxpasta_channel.branch { meta, taxpasta ->
+        def key = [meta.library_type, meta.batch]
+        ntc: meta.is_ntc
+        return [key, meta, taxpasta]
+        sample: !meta.is_ntc
+        return [key, meta, taxpasta]
+    }
+}
+
+// Join sample and NTC taxpasta channels by meta.library_type and meta.batch
+// The input channels to FLAG_TAXPASTA process: [meta_sample, taxpasta_sample, meta_ntc, taxpasta_ntc]
+def taxpasta_sample_ntc_joined(ch_taxpasta_sample, ch_taxpasta_ntc) {
+    return ch_taxpasta_sample
+        .join(ch_taxpasta_ntc, by: 0, remainder: true)
+        .filter { entry ->
+            // Keep sample-driven rows and discard NTC-only remainder rows from the join
+            entry.size() >= 3 && entry[0] != null && entry[1] != null && entry[2] != null
+        }
+        .map { entry ->
+            if (entry.size() == 3) {
+                // No matched NTC for this sample; emit sample data with empty NTC placeholders
+                def (_key, meta_sample, taxpasta_sample) = entry
+                return [meta_sample, taxpasta_sample, [:], []]
+            } else {
+                // Matched key between sample and NTC rows
+                def (_key, meta_sample, taxpasta_sample, meta_ntc, taxpasta_ntc) = entry
+                return [meta_sample, taxpasta_sample, meta_ntc ?: [:], taxpasta_ntc ?: []]
+            }
+        }
 }

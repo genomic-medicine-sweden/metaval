@@ -1,0 +1,183 @@
+nextflow_process {
+    name "Test Process METAVAL_REPORT"
+    script "../main.nf"
+    process "METAVAL_REPORT"
+    tag "modules"
+    tag "modules_local"
+    tag "metaval_report"
+    test("diamond - empty blastx") {
+        when {
+            params {
+                outdir = "$outputDir"
+            }
+            process {
+                """
+                def report_test_data = params.pipelines_testdata_base_path + 'modules_nftest_data/metaval_report/'
+                def remoteFiles = { names -> names.collect { name -> file(report_test_data + name, checkIfExists: true) } }
+                input[0] = 1000
+                input[1] = file(report_test_data + 'samplesheet.csv', checkIfExists: true)
+                input[2] = remoteFiles([
+                    'taxpasta_flagged/SRR13439790_DNA_batch1_diamond.tsv',
+                    'taxpasta_flagged/SRR13439799_OTHER_batch3_diamond.tsv',
+                ])
+                input[3] = remoteFiles([
+                    'extracted_reads_contigs/SRR13439790_taxid_11320_Influenza-A-virus.extracted_diamond_read_1.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_11320_Influenza-A-virus.extracted_diamond_read_2.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_1.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_2.fa',
+                    'extracted_reads_contigs/SRR13439799_taxid_11320_Influenza-A-virus.extracted_diamond_reads.fa',
+                ])
+                input[4] = remoteFiles([
+                    'blastn/SRR13439790_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered.txt',
+                    'blastn/SRR13439799_taxid_11320_Influenza-A-virus_diamond_blast_filtered.txt',
+                ])
+                input[5] = []
+                input[6] = remoteFiles([
+                    'coverage/SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt',
+                    'coverage/SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.txt',
+                ])
+                input[7] = remoteFiles([
+                    'coverage_plot/SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png',
+                    'coverage_plot/SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.png',
+                ])
+                """
+            }
+        }
+        then {
+            assertAll(
+                { assert process.success },
+                { assert snapshot(process.out.versions).match("versions_diamond") },
+                { assert process.out.metaval_report.get(0).toString().endsWith('metaval_report.html') },
+                { assert path(process.out.metaval_report.get(0).toString()).text.contains('nfluenza A virus (A/New York/392/2004(H3N2))') },
+                { assert path(process.out.metaval_report.get(0).toString()).text.contains('Shigella virus Moo19') },
+
+            )
+        }
+    }
+    test("kraken2 - empty blastn - empty coverage") {
+        when {
+            params {
+                outdir = "$outputDir"
+            }
+            process {
+                """
+                def report_test_data    = params.pipelines_testdata_base_path + 'modules_nftest_data/metaval_report/'
+                def remoteFiles = { names -> names.collect { name -> file(report_test_data + name, checkIfExists: true) } }
+                input[0] = 1000
+                input[1] = file(report_test_data + 'samplesheet.csv', checkIfExists: true)
+                input[2] = remoteFiles([
+                    'taxpasta_flagged/SRR13439790_DNA_batch1_kraken2.tsv',
+                    'taxpasta_flagged/SRR13439799_OTHER_batch3_kraken2.tsv',
+                ])
+                input[3] = remoteFiles([
+                    'extracted_reads_contigs/SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_kraken2_read_1.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_kraken2_read_2.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_2886042_Shigella-virus-Moo19_kraken2.contigs.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_2886042_Shigella-virus-Moo19_kraken2.scaffolds.fa',
+                    'extracted_reads_contigs/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1.extracted_kraken2_read.fa',
+                ])
+                input[4] = []
+                input[5] = remoteFiles([
+                    'blastx/SRR13439790_taxid_2886042_Shigella-virus-Moo19_kraken2_blastx_filtered.txt',
+                    'blastx/SRR13439790_taxid_2886042_Shigella-virus-Moo19_kraken2_blastx_filtered_summary.txt',
+                    'blastx/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_blastx_filtered.txt',
+                    'blastx/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_blastx_filtered_summary.txt',
+                ])
+                input[6] = []
+                input[7] = []
+                """
+            }
+        }
+        then {
+            assertAll(
+                { assert process.success },
+                { assert snapshot(process.out.versions).match("versions_kraken2") },
+                { assert process.out.metaval_report.get(0).toString().endsWith('metaval_report.html') },
+                { assert path(process.out.metaval_report.get(0).toString()).text.contains('Influenza A virus (A/Puerto Rico/8/1934(H1N1))') },
+                { assert path(process.out.metaval_report.get(0).toString()).text.contains('Shigella virus Moo19') },
+            )
+        }
+    }
+    test("kraken2 - diamond - centrifuge") {
+        when {
+            params {
+                outdir = "$outputDir"
+            }
+            process {
+                """
+                def report_test_data    = params.pipelines_testdata_base_path + 'modules_nftest_data/metaval_report/'
+                def remoteFiles = { names -> names.collect { name -> file(report_test_data + name, checkIfExists: true) } }
+                input[0] = 1000
+                input[1] = file(report_test_data + 'samplesheet.csv', checkIfExists: true)
+                input[2] = remoteFiles([
+                    'taxpasta_flagged/SRR13439790_DNA_batch1_centrifuge.tsv',
+                    'taxpasta_flagged/SRR13439790_DNA_batch1_diamond.tsv',
+                    'taxpasta_flagged/SRR13439790_DNA_batch1_kraken2.tsv',
+                    'taxpasta_flagged/SRR13439799_OTHER_batch3_centrifuge.tsv',
+                    'taxpasta_flagged/SRR13439799_OTHER_batch3_diamond.tsv',
+                    'taxpasta_flagged/SRR13439799_OTHER_batch3_kraken2.tsv',
+                ])
+                input[3] = remoteFiles([
+                    'extracted_reads_contigs/SRR13439790_taxid_10752_Enquatrovirus-N4.extracted_centrifuge_read_1.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_10752_Enquatrovirus-N4.extracted_centrifuge_read_2.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_11320_Influenza-A-virus.extracted_diamond_read_1.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_11320_Influenza-A-virus.extracted_diamond_read_2.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_1.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_2.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_kraken2_read_1.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_kraken2_read_2.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_2886042_Shigella-virus-Moo19_kraken2.contigs.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_2886042_Shigella-virus-Moo19_kraken2.scaffolds.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_335341_Influenza-A-virus-A-New-York-392-2004-H3N2.extracted_centrifuge_read_1.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_335341_Influenza-A-virus-A-New-York-392-2004-H3N2.extracted_centrifuge_read_2.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_335341_Influenza-A-virus-A-New-York-392-2004-H3N2.extracted_kraken2_read_1.fa',
+                    'extracted_reads_contigs/SRR13439790_taxid_335341_Influenza-A-virus-A-New-York-392-2004-H3N2.extracted_kraken2_read_2.fa',
+                    'extracted_reads_contigs/SRR13439799_taxid_11320_Influenza-A-virus.extracted_diamond_reads.fa',
+                    'extracted_reads_contigs/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1.extracted_centrifuge_read.fa',
+                    'extracted_reads_contigs/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1.extracted_kraken2_read.fa',
+                ])
+                input[4] = remoteFiles([
+                    'blastn/SRR13439790_taxid_10752_Enquatrovirus-N4_centrifuge_blast_filtered.txt',
+                    'blastn/SRR13439790_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered.txt',
+                    'blastn/SRR13439790_taxid_2886042_Shigella-virus-Moo19_kraken2_blast_filtered.txt',
+                    'blastn/SRR13439799_taxid_11320_Influenza-A-virus_diamond_blast_filtered.txt',
+                    'blastn/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blast_filtered.txt',
+                    'blastn/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_blast_filtered.txt',
+                ])
+                input[5] = remoteFiles([
+                    'blastx/SRR13439790_taxid_2886042_Shigella-virus-Moo19_kraken2_blastx_filtered.txt',
+                    'blastx/SRR13439790_taxid_2886042_Shigella-virus-Moo19_kraken2_blastx_filtered_summary.txt',
+                    'blastx/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blastx_filtered.txt',
+                    'blastx/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blastx_filtered_summary.txt',
+                    'blastx/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_blastx_filtered.txt',
+                    'blastx/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_blastx_filtered_summary.txt',
+                ])
+                input[6] = remoteFiles([
+                    'coverage/SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt',
+                    'coverage/SRR13439790_kraken2_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt',
+                    'coverage/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.txt',
+                    'coverage/SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.txt',
+                    'coverage/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.txt',
+                ])
+                input[7] = remoteFiles([
+                    'coverage_plot/SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png',
+                    'coverage_plot/SRR13439790_kraken2_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png',
+                    'coverage_plot/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.png',
+                    'coverage_plot/SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.png',
+                    'coverage_plot/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.png',
+                ])
+                """
+            }
+        }
+        then {
+            assertAll(
+                { assert process.success },
+                { assert snapshot(process.out.versions).match("versions_all_classifiers") },
+                { assert process.out.metaval_report.get(0).toString().endsWith('metaval_report.html') },
+                { assert path(process.out.metaval_report.get(0).toString()).text.contains('Influenza A virus (A/Puerto Rico/8/1934(H1N1))') },
+                { assert path(process.out.metaval_report.get(0).toString()).text.contains('Enquatrovirus N4') },
+                { assert path(process.out.metaval_report.get(0).toString()).text.contains('alignment') },
+            )
+        }
+    }
+}
