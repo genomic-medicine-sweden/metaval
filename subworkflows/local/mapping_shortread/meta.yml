@@ -1,21 +1,33 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/nf-core/modules/master/subworkflows/yaml-schema.json
 name: mapping_shortread
-description: Build short-read mapping indexes, align reads with bowtie2, and generate BAM statistics
+description: Build Bowtie2 indexes, align short reads, and optionally generate coverage, depth, and coverage plots
 keywords:
   - bowtie2
   - mapping
   - short reads
   - bam
+  - coverage
+  - depth
+
 components:
   - bowtie2/build
   - fastq_align_bowtie2
   - pigz/uncompress
   - samtools/faidx
+  - samtools/sort
+  - samtools/coverage
+  - samtools/depth
+  - coverage_plot
+
 input:
   - ch_reads_reference:
       description: |
         Short reads paired with reference genomes.
         Structure: [ val(meta), path(reads), path(reference) ]
+  - generate_coverage:
+      description: |
+        Boolean controlling whether coverage, depth, and coverage plots are generated.
+        Structure: val(boolean)
 output:
   - index:
       description: |
@@ -29,14 +41,18 @@ output:
       description: |
         BAM index files.
         Structure: [ val(meta), path(bai) ]
-  - flagstat:
+  - coverage:
       description: |
-        Samtools flagstat reports.
-        Structure: [ val(meta), path(flagstat) ]
-  - versions:
+        Samtools coverage tables. Empty when generate_coverage is false.
+        Structure: [ val(meta), path(coverage) ]
+  - depth:
       description: |
-        Files containing software versions.
-        Structure: [ path(versions.yml) ]
+        Samtools per-position depth tables. Empty when generate_coverage is false.
+        Structure: [ val(meta), path(depth) ]
+  - coverage_plot:
+      description: |
+        Coverage plot PNG files. Empty when generate_coverage is false.
+        Structure: [ val(meta), path(png) ]
   - mqc:
       description: |
         MultiQC-ready summary files.

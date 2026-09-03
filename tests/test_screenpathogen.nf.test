@@ -1,0 +1,102 @@
+nextflow_pipeline {
+
+    name "Test pipeline"
+    script "../main.nf"
+    tag "pipeline"
+    tag "gms_metaval"
+    tag "test_screenpathogen"
+    profile "test_screenpathogen"
+
+
+    test("-profile test_screenpathogen") {
+
+        when {
+            params {
+                outdir = "$outputDir"
+            }
+        }
+
+        then {
+
+            def stable_name_all      = getAllFilesFromDir(params.outdir, relative: true, includeDir: true, ignore: ['pipeline_info/*.{html,json,txt}'])
+
+            //pathogens blast
+
+            //pathogens consensus
+            def stable_content_pathogens_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/consensus/*'], ignoreFile: 'tests/.nftignore')
+
+            //pathogens mapping bowtie2 build
+            def stable_content_pathogens_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/bowtie2/build/bowtie2/*'], ignoreFile: 'tests/.nftignore')
+
+            //pathogen bowtie2 align
+            def bam_files_pathogens_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['pathogens/mapping/bowtie2/align/*.bam'])
+
+            //pathogens reads blast input
+            def stable_content_pathogens_reads_blast = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/pathogen_reads/blast_input/*'], ignoreFile: 'tests/.nftignore')
+
+            //pathogens
+            def bam_files_pathogens_reads_consensus  = getAllFilesFromDir(params.outdir, include: ['pathogens/pathogen_reads/consensus_input/*.bam'])
+
+             //pathogens samtools coverage
+            def stable_content_pathogens_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
+
+            //pathogens samtools coverage plot:partly unstable files, see custom assertions
+
+            //pathogens samtools depth
+            def stable_content_pathogens_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
+
+
+            assertAll(
+                { assert workflow.success},
+                { assert snapshot(
+                    // pipeline versions.yml file for multiqc from which Nextflow version is removed because we test pipelines on multiple Nextflow versions
+                    removeNextflowVersion("$outputDir/pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml"),
+                ).match() },
+
+                { assert new File("$outputDir/pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml").exists() },
+                { assert new File("$outputDir/multiqc/multiqc_report.html").exists() },
+                { assert snapshot ( stable_name_all ).match("all_files") },
+
+                //pathogen mapping bowtie2
+                { assert snapshot (stable_content_pathogens_bowtie2_build).match("pathogen_bowtie2_build")},
+                { assert snapshot (
+                    bam_files_pathogens_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_pathogens_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] }
+                ).match("pathogen_bowtie2_align")},
+
+                //pathogen blast
+                { assert snapshot(
+                    getAllFilesFromDir("$outputDir/pathogens/blast/blastn", include: ['*.txt']).collect{file -> file.getName() + ' contains string:' + (file.exists() && file.text.contains("NC_060947.1") || file.text.contains("NC_002023.1_0") || file.text.contains("")) },
+                    getAllFilesFromDir("$outputDir/pathogens/blast/blastx", include: ['*.txt']).collect{file -> file.getName() + ' contains string:' + (file.exists() && file.text.contains("NC_002019.1_0")) }
+                ).match("pathogens_blast") },
+                { assert snapshot (stable_content_pathogens_consensus).match("pathogens_consensus")},
+
+                //pathogens igv
+                { assert snapshot(
+                    getAllFilesFromDir("$outputDir/pathogens/igv", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                ).match("pathogens_igv") },
+
+                //pathogens reads blast input
+                { assert snapshot (stable_content_pathogens_reads_blast).match("pathogens_reads_blast")},
+
+                //pathogens reads consensus
+                { assert snapshot (
+                    bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file -> [file.getName() + " pathogens reads consensus md5: " + bam(file.toString()).getHeader()] }
+                ).match("pathogens_reads_consensus") },
+
+                // pathogens samtools coverage
+                { assert snapshot (stable_content_pathogens_samtools_coverage).match("pathogens_samtools_coverage") },
+
+                // pathogens samtools coverage plot
+                { assert snapshot(
+                        getAllFilesFromDir("$outputDir/pathogens/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                ).match("pathogens_samtools_coverage_plot") },
+
+                // pathogens samtools depth
+                { assert snapshot (stable_content_pathogens_samtools_depth).match("pathogens_samtools_depth") },
+
+
+            )
+        }
+    }
+
+}

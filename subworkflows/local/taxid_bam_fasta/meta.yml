@@ -1,11 +1,15 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/nf-core/modules/master/subworkflows/yaml-schema.json
 name: taxid_bam_fasta
-description: Split mapped BAM files by taxid, keep BAMs passing the read-count threshold, and generate FASTA for downstream BLAST
+description: Split mapped BAM files by pathogen TaxID and generate pathogen-specific BAM, FASTA, coverage, depth, and plot outputs
 keywords:
   - bam
   - fasta
   - taxid
+  - pathogen
+  - coverage
+  - depth
   - samtools
+
 components:
   - subset_bam
   - samtools/sort
@@ -13,6 +17,10 @@ components:
   - samtools/idxstats
   - samtools/flagstat
   - samtools/fasta
+  - samtools/coverage
+  - samtools/depth
+  - coverage_plot
+
 input:
   - ch_bam:
       description: |
@@ -28,11 +36,8 @@ input:
   - min_read_counts:
       description: |
         Minimum number of mapped reads required to retain a taxid-specific BAM.
+
 output:
-  - versions:
-      description: |
-        Files containing software versions.
-        Structure: [ path(versions.yml) ]
   - taxid_bam:
       description: |
         Taxid-specific BAM files passing the mapped-read threshold.
@@ -53,6 +58,19 @@ output:
       description: |
         Index files for taxid-specific BAMs below the mapped-read threshold.
         Structure: [ val(meta), path(bai) ]
+  - coverage:
+      description: |
+        Pathogen-specific samtools coverage tables for both threshold branches.
+        Structure: [ val(meta), path(coverage) ]
+  - depth:
+      description: |
+        Pathogen-specific per-position depth tables for both threshold branches.
+        Structure: [ val(meta), path(depth) ]
+  - coverage_plot:
+      description: |
+        Pathogen-specific coverage plot PNG files.
+        Structure: [ val(meta), path(png) ]
+
 authors:
   - "@LilyAnderssonLee"
 maintainers:
