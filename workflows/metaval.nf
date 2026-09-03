@@ -442,9 +442,6 @@ workflow METAVAL {
     //
     // WORKFLOW: Screen pathogens
     //
-
-    def ch_versions = channel.empty()
-    def ch_multiqc_files = channel.empty()
     //
     // SUBWORKFLOW: MAPPING
     //
