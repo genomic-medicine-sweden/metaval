@@ -27,7 +27,9 @@ lint:
   nextflow_config:
     - manifest.name
     - manifest.homePage
-nf_core_version: 4.0.3
+  template_strings:
+    - assets/static_report/report.html.j2
+nf_core_version: 4.1.0
 repository_type: pipeline
 template:
   author: LilyAnderssonLee

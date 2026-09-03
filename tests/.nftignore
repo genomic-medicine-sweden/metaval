@@ -25,4 +25,8 @@ pathogens/samtools/coverage_plot/*.png
 report/*.html
 samtools/coverage_plot/*.png
 spades/*/*.fa
+multiqc/multiqc_data/llms-full.txt
+multiqc/multiqc_plots/{svg,pdf,png}/*.{svg,pdf,png}
+multiqc/multiqc_report.html
+fastqc/*_fastqc.{html,zip}
 pipeline_info/*.{html,json,txt,yml}
