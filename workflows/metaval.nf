@@ -111,7 +111,7 @@ workflow METAVAL {
     }
 
     // Prepare channel with only the tuple expected by CAT_FASTQ: [meta, reads]
-    def ch_fastqs_merge = ch_input_sorted.to_merge
+    def ch_fastqs_merge = ch_input.to_merge
         .map { meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
             // Ensure reads are Path objects for CAT_FASTQ input
             def read_list = [ fastq_1, fastq_2 ]
@@ -121,7 +121,7 @@ workflow METAVAL {
     CAT_FASTQ( ch_fastqs_merge )
 
     ch_input_merged = CAT_FASTQ.out.reads
-        .mix(ch_input_sorted.no_merge)
+        .mix(ch_input.no_merge)
 
     ch_input = ch_input_merged.branch { meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
 
