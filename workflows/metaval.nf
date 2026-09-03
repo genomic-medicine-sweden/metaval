@@ -66,10 +66,30 @@ workflow METAVAL {
     ch_fastqc_files = channel.empty()
 
     // Create input channels
-    ch_input = ch_samplesheet.branch { meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
+    ch_input_sorted = ch_samplesheet.branch { meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
 
         // Define single_end based on the conditions
         meta.single_end = ( fastq_1 && !fastq_2 )
+
+        to_merge: fastq_1.size() > 1
+
+        no_merge: true
+    }
+
+    // Prepare channel with only the tuple expected by CAT_FASTQ: [meta, reads]
+    def ch_fastqs_merge = ch_input_sorted.to_merge
+        .map { meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
+            // Ensure reads are Path objects for CAT_FASTQ input
+            def read_list = [ fastq_1, fastq_2 ]
+            [ meta, read_list ]
+        }
+
+    CAT_FASTQ( ch_fastqs_merge )
+
+    ch_input_merged = CAT_FASTQ.out.reads
+        .mix(ch_input_sorted.no_merge)
+
+    ch_input = ch_input_merged.branch { meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
 
         // reads channels
         short_reads: meta.instrument_platform != 'OXFORD_NANOPORE'
@@ -77,27 +97,14 @@ workflow METAVAL {
 
         long_reads: meta.instrument_platform == 'OXFORD_NANOPORE'
             return [ meta, [ fastq_1 ] ]
-
-        to_merge: meta.fastq_1.size() > 1
-
-        no_merge: true
     }
-
-        CAT_FASTQ(
-            ch_input.to_merge,
-        )
-
-        def ch_input_merged = CAT_FASTQ.out.reads
-            .mix(ch_input.no_merge)
-
-
 
     //
     // Workflow: Extract reads and verification
     //
 
     // Channels for extracting kraken2/centrifuge/diamond reads
-    ch_extract_reads = ch_samplesheet.multiMap { meta, fastq_1, fastq_2, kraken2_report, kraken2_result, kraken2_taxpasta, centrifuge_report, centrifuge_result, centrifuge_taxpasta, diamond, diamond_taxpasta ->
+    ch_extract_reads = ch_input_merged.multiMap { meta, fastq_1, fastq_2, kraken2_report, kraken2_result, kraken2_taxpasta, centrifuge_report, centrifuge_result, centrifuge_taxpasta, diamond, diamond_taxpasta ->
         kraken2_taxpasta: [ meta + [ tool: "kraken2" ], kraken2_taxpasta ]
         kraken2_report: [ meta + [ tool: "kraken2" ], kraken2_report ]
         kraken2_result: [ meta, kraken2_result ]
