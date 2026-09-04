@@ -17,8 +17,8 @@ nextflow_process {
                 input[0] = 1000
                 input[1] = file(report_test_data + 'samplesheet.csv', checkIfExists: true)
                 input[2] = remoteFiles([
-                    'taxpasta_flagged/SRR13439790_DNA_batch1_diamond.tsv',
-                    'taxpasta_flagged/SRR13439799_OTHER_batch3_diamond.tsv',
+                    'taxpasta_flagged/SRR13439790_DNA_ELB_diamond.tsv',
+                    'taxpasta_flagged/SRR13439799_MIX_NORMAL_diamond.tsv',
                 ])
                 input[3] = remoteFiles([
                     'extracted_reads_contigs/SRR13439790_taxid_11320_Influenza-A-virus.extracted_diamond_read_1.fa',
@@ -66,8 +66,8 @@ nextflow_process {
                 input[0] = 1000
                 input[1] = file(report_test_data + 'samplesheet.csv', checkIfExists: true)
                 input[2] = remoteFiles([
-                    'taxpasta_flagged/SRR13439790_DNA_batch1_kraken2.tsv',
-                    'taxpasta_flagged/SRR13439799_OTHER_batch3_kraken2.tsv',
+                    'taxpasta_flagged/SRR13439790_DNA_ELB_kraken2.tsv',
+                    'taxpasta_flagged/SRR13439799_MIX_NORMAL_kraken2.tsv',
                 ])
                 input[3] = remoteFiles([
                     'extracted_reads_contigs/SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_kraken2_read_1.fa',
@@ -110,12 +110,12 @@ nextflow_process {
                 input[0] = 1000
                 input[1] = file(report_test_data + 'samplesheet.csv', checkIfExists: true)
                 input[2] = remoteFiles([
-                    'taxpasta_flagged/SRR13439790_DNA_batch1_centrifuge.tsv',
-                    'taxpasta_flagged/SRR13439790_DNA_batch1_diamond.tsv',
-                    'taxpasta_flagged/SRR13439790_DNA_batch1_kraken2.tsv',
-                    'taxpasta_flagged/SRR13439799_OTHER_batch3_centrifuge.tsv',
-                    'taxpasta_flagged/SRR13439799_OTHER_batch3_diamond.tsv',
-                    'taxpasta_flagged/SRR13439799_OTHER_batch3_kraken2.tsv',
+                    'taxpasta_flagged/SRR13439790_DNA_ELB_centrifuge.tsv',
+                    'taxpasta_flagged/SRR13439790_DNA_ELB_diamond.tsv',
+                    'taxpasta_flagged/SRR13439790_DNA_ELB_kraken2.tsv',
+                    'taxpasta_flagged/SRR13439799_MIX_NORMAL_centrifuge.tsv',
+                    'taxpasta_flagged/SRR13439799_MIX_NORMAL_diamond.tsv',
+                    'taxpasta_flagged/SRR13439799_MIX_NORMAL_kraken2.tsv',
                 ])
                 input[3] = remoteFiles([
                     'extracted_reads_contigs/SRR13439790_taxid_10752_Enquatrovirus-N4.extracted_centrifuge_read_1.fa',

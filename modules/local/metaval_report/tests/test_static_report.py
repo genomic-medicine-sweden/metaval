@@ -39,9 +39,9 @@ def test_build_html_accepts_empty_blastx_directory(tmp_path):
         {
             "sample": "sample1",
             "instrument_platform": "ILLUMINA",
-            "library_type": "DNA",
+            "na_content": "DNA",
             "is_ntc": "false",
-            "batch": "batch1",
+            "sample_prep": "prep1",
         }
     ]
 
@@ -64,7 +64,7 @@ def test_build_html_accepts_empty_blastx_directory(tmp_path):
 
 def test_read_taxpasta_table_summarizes_read_counts(tmp_path):
     static_report = load_static_report_module()
-    taxpasta_path = tmp_path / "sample1_DNA_batch1_kraken2.tsv"
+    taxpasta_path = tmp_path / "sample1_DNA_prep1_kraken2.tsv"
 
     taxpasta_path.write_text(
         "\t".join(["taxonomy_id", "name", "rank", "lineage", "sample1"]) + "\n"

@@ -119,7 +119,7 @@ workflow METAVAL {
         //
         // LOCAL MODULE: FLAG_TAXPASTA:
         //
-        // Flag taxonomy tables by comparing samples with the negative controls (NTC) that have the same meta.library_type and meta.batch.
+        // Flag taxonomy tables by comparing samples with the negative controls (NTC) that have the same meta.na_content and meta.sample_prep.
 
         // Create the input channel for FLAG_TAXPASTA
         ch_taxpasta_input = channel.empty()
@@ -349,7 +349,7 @@ workflow METAVAL {
             // Fetch genomes of blast hits
             FETCH_BLAST_GENOMES (
                 params.taxid2genome,
-                BLAST.out.unique_taxid,
+                ch_blast_unique_taxid,
                 TAXID_READS.out.reads )
             // Mapping - short reads
             ch_mapping_input_shortread = FETCH_BLAST_GENOMES.out.shortreads
