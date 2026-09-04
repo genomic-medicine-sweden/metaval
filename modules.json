@@ -121,6 +121,11 @@
                         "git_sha": "156feda0cb6589cd29c04902004fa3b53bc00205",
                         "installed_by": ["bam_stats_samtools"]
                     },
+                    "samtools/view": {
+                        "branch": "master",
+                        "git_sha": "4dd270e412e2a7e78761be38aafa5cfa1dcdf891",
+                        "installed_by": ["modules"]
+                    },
                     "seqkit/fq2fa": {
                         "branch": "master",
                         "git_sha": "bf70cbf44b42ff4a81afcb673fcef604f5ef3a85",
