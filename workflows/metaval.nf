@@ -349,7 +349,7 @@ workflow METAVAL {
             // Fetch genomes of blast hits
             FETCH_BLAST_GENOMES (
                 params.taxid2genome,
-                BLAST.out.unique_taxid,
+                ch_blast_unique_taxid,
                 TAXID_READS.out.reads )
             // Mapping - short reads
             ch_mapping_input_shortread = FETCH_BLAST_GENOMES.out.shortreads
