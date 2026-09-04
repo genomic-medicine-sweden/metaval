@@ -144,8 +144,7 @@
                     "bam_sort_stats_samtools": {
                         "branch": "master",
                         "git_sha": "9339809fcb90af8a8b7051e6cd914894d5c52002",
-                        "installed_by": ["fastq_align_bowtie2"],
-                        "patch": "subworkflows/nf-core/bam_sort_stats_samtools/bam_sort_stats_samtools.diff"
+                        "installed_by": ["fastq_align_bowtie2"]
                     },
                     "bam_stats_samtools": {
                         "branch": "master",
@@ -155,8 +154,7 @@
                     "fastq_align_bowtie2": {
                         "branch": "master",
                         "git_sha": "0cd85f32cf1a1828205b16e4267277ba9457570b",
-                        "installed_by": ["subworkflows"],
-                        "patch": "subworkflows/nf-core/fastq_align_bowtie2/fastq_align_bowtie2.diff"
+                        "installed_by": ["subworkflows"]
                     },
                     "utils_nextflow_pipeline": {
                         "branch": "master",
