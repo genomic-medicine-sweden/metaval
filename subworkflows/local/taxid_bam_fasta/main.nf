@@ -2,8 +2,8 @@
 // Prepare an individual BAM/FASTA file for each pathogen with mapped reads
 //
 
-include { SUBSET_BAM as SUBSET_BAM_PASS                     } from '../../../modules/local/subset_bam'
-include { SUBSET_BAM as SUBSET_BAM_FAIL                     } from '../../../modules/local/subset_bam'
+include { SAMTOOLS_VIEW as SAMTOOLS_VIEW_PASS               } from '../../../modules/nf-core/samtools/view'
+include { SAMTOOLS_VIEW as SAMTOOLS_VIEW_FAIL               } from '../../../modules/nf-core/samtools/view'
 include { SAMTOOLS_SORT as SAMTOOLS_SORT_PASS               } from '../../../modules/nf-core/samtools/sort'
 include { SAMTOOLS_SORT as SAMTOOLS_SORT_FAIL               } from '../../../modules/nf-core/samtools/sort'
 include { SAMTOOLS_INDEX as  SAMTOOLS_INDEX_PASS            } from '../../../modules/nf-core/samtools/index'
@@ -71,18 +71,18 @@ workflow TAXID_BAM_FASTA {
         .join( input_bam, by: 0 ) // Join by meta (index 0)
         .map { meta, accession_list, taxid, organism, bam, bam_index ->
             // Create new meta with taxid and organism information
-            def new_meta = meta + [taxid: taxid, organism: organism]
-            return [ new_meta, bam, bam_index, accession_list ]
-        }
-        .multiMap {
-            meta, bam, bam_index, accession_list ->
-                bam: [ meta, bam, bam_index ]
-                accession: accession_list.flatten()
+            def new_meta = meta + [taxid: taxid, organism: organism, accessions: accession_list.flatten()]
+            return [ new_meta, bam, bam_index ]
         }
 
     // BAM files will be used to call consensus sequences
-    SUBSET_BAM_PASS( ch_consensus_input.bam, ch_consensus_input.accession )
-    SAMTOOLS_SORT_PASS( SUBSET_BAM_PASS.out.bam, [[],[],[]], 'bai' )
+    SAMTOOLS_VIEW_PASS(ch_consensus_input, [[],[],[]], [[],[]], [[],[]], [] )
+    
+    // Drop the transient 'accessions' key so downstream meta matches output
+    ch_pass_subset = SAMTOOLS_VIEW_PASS.out.bam
+        .map { meta, bam -> [meta.subMap(meta.keySet() - 'accessions'), bam ] }
+    
+    SAMTOOLS_SORT_PASS( ch_pass_subset, [[],[],[]], 'bai' )
     SAMTOOLS_INDEX_PASS( SAMTOOLS_SORT_PASS.out.bam )
 
     // samtools flagstat check if there are any reads mapped to the genome
@@ -105,18 +105,17 @@ workflow TAXID_BAM_FASTA {
         .join( input_bam, by: 0 ) // Join by meta (index 0)
         .map { meta, accession_list, taxid, organism, bam, bam_index ->
             // Create new meta with taxid and organism information
-            def new_meta = meta + [taxid: taxid, organism: organism]
-            return [ new_meta, bam, bam_index, accession_list ]
-        }
-        .multiMap {
-            meta, bam, bam_index, accession_list ->
-                bam: [ meta, bam, bam_index ]
-                accession: accession_list.flatten()
+            def new_meta = meta + [taxid: taxid, organism: organism, accessions: accession_list.flatten()]
+            return [ new_meta, bam, bam_index]
         }
 
     // FASTA files will be used as BLAST input, bam file will be used in IGV
-    SUBSET_BAM_FAIL(ch_blast_input.bam, ch_blast_input.accession)
-    SAMTOOLS_SORT_FAIL(SUBSET_BAM_FAIL.out.bam, [[],[],[]], 'bai')
+    SAMTOOLS_VIEW_FAIL(ch_blast_input, [[],[],[]], [[],[]], [[],[]], [] )
+
+    ch_fail_subset = SAMTOOLS_VIEW_FAIL.out.bam
+        .map { meta, bam -> [meta.subMap(meta.keySet() - 'accessions'), bam ] }
+
+    SAMTOOLS_SORT_FAIL(ch_fail_subset, [[],[],[]], 'bai')
     SAMTOOLS_INDEX_FAIL(SAMTOOLS_SORT_FAIL.out.bam)
 
     SAMTOOLS_FASTA(SAMTOOLS_SORT_FAIL.out.bam, false)
