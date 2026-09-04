@@ -3,6 +3,10 @@
     IMPORT MODULES / SUBWORKFLOWS / FUNCTIONS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+
+// Merge fastq files
+include { CAT_FASTQ                                             } from '../modules/nf-core/cat/fastq/main'
+
 // Flag taxonomy table
 include { FLAG_TAXPASTA                                         } from '../modules/local/flag_taxpasta'
 
@@ -100,6 +104,26 @@ workflow METAVAL {
         _centrifuge_taxpasta,
         _diamond,
         _diamond_taxpasta ->
+
+        to_merge: fastq_1.size() > 1
+
+        no_merge: true
+    }
+
+    // Prepare channel with only the tuple expected by CAT_FASTQ: [meta, reads]
+    def ch_fastqs_merge = ch_input.to_merge
+        .map { meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
+            // Ensure reads are Path objects for CAT_FASTQ input
+            def read_list = [ fastq_1, fastq_2 ]
+            [ meta, read_list ]
+        }
+
+    CAT_FASTQ( ch_fastqs_merge )
+
+    ch_input_merged = CAT_FASTQ.out.reads
+        .mix(ch_input.no_merge)
+
+    ch_input = ch_input_merged.branch { meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
 
         // reads channels
         short_reads: meta.instrument_platform != 'OXFORD_NANOPORE'
