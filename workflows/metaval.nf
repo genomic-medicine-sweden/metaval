@@ -10,12 +10,19 @@ include { FLAG_TAXPASTA                                         } from '../modul
 include { TAXID_READS                                           } from '../subworkflows/local/taxid_reads'
 include { SEQKIT_FQ2FA as SEQKIT_FQ2FA_READS                    } from '../modules/nf-core/seqkit/fq2fa'
 include { PIGZ_UNCOMPRESS                                       } from '../modules/nf-core/pigz/uncompress'
+
+// SUBSET reads for BLAST
+include { SEQKIT_HEAD                                           } from '../modules/nf-core/seqkit/head'
+include { PIGZ_UNCOMPRESS as PIGZ_UNCOMPRESS_SUBSET             } from '../modules/nf-core/pigz/uncompress'
+
 // De novo for extracted taxIDs reads
 include { SPADES                                                } from '../modules/nf-core/spades'
 include { FLYE                                                  } from '../modules/nf-core/flye'
 
 // BLAST
-include { SEQKIT_FQ2FA                                          } from '../modules/nf-core/seqkit/fq2fa'
+include { SEQKIT_FQ2FA  as SEQKIT_FQ2FA_ASSEMBLY                } from '../modules/nf-core/seqkit/fq2fa'
+include { SEQKIT_FQ2FA  as SEQKIT_FQ2FA_SUBSET                  } from '../modules/nf-core/seqkit/fq2fa'
+
 include { BLAST                                                 } from '../subworkflows/local/blast'
 include { BLAST as BLAST_PATHOGEN                               } from '../subworkflows/local/blast'
 
@@ -249,6 +256,7 @@ workflow METAVAL {
         // Convert fastq.gz into fasta files
         SEQKIT_FQ2FA_READS( ch_taxid_reads_transpose )
         PIGZ_UNCOMPRESS ( SEQKIT_FQ2FA_READS.out.fasta )
+
         //
         // MODULE: DE NOVO - SPADES/FLYE
         //
@@ -299,18 +307,36 @@ workflow METAVAL {
 
         // Prepare the query fasta file
         if ( (!params.skip_blastn) || (!params.skip_blastx)) {
+            ch_blast_query_input = channel.empty()
+            // Build ch_blast_query_input fasta file
+            // Option1: De novo assembly contigs/scaffolds for BLAST if the number of reads exceeds the params.min_read_counts
+            if ( params.perform_shortread_denovo || params.perform_longread_denovo ) {
+                SEQKIT_FQ2FA_ASSEMBLY ( ch_blast_reads )
+                ch_blast_query_input = ch_blast_query_input
+                    .mix( SEQKIT_FQ2FA_ASSEMBLY.out.fasta, ch_contigs_denovo )
 
-            SEQKIT_FQ2FA ( ch_blast_reads )
-            // Build ch_blast_query fasta file
-            ch_blast_query = SEQKIT_FQ2FA.out.fasta
-            if ( params.perform_shortread_denovo ) {
-                ch_blast_query = ch_blast_query.mix( SPADES.out.contigs )
-            }
-            if ( params.perform_longread_denovo ) {
-                ch_blast_query = ch_blast_query.mix( FLYE.out.fasta )
+            } else {
+                // Option2: Subset reads for BLAST if the number of reads exceeds the params.subset_read_threshold
+                ch_blast_reads_for_subset = TAXID_READS.out.reads
+                    .map { meta, reads ->
+                        def read = meta.single_end ? reads : reads[0]
+                        [ meta, read ]
+                    }
+                SEQKIT_FQ2FA_SUBSET ( ch_blast_reads_for_subset )
+                PIGZ_UNCOMPRESS_SUBSET ( SEQKIT_FQ2FA_SUBSET.out.fasta )
+                ch_blast_query_branch = PIGZ_UNCOMPRESS_SUBSET.out.file
+                    .branch { _meta, fasta ->
+                        direct: fasta.countFasta() <= params.subset_read_threshold
+                        subset: true
+                    }
+                SEQKIT_HEAD ( ch_blast_query_branch.subset.map {meta, fasta ->
+                    [ meta, fasta, params.subset_read_threshold]}
+                )
+
+                ch_blast_query_input = ch_blast_query_branch.direct.mix(SEQKIT_HEAD.out.subset)
             }
 
-            BLAST(ch_blast_query, params.blastn_db, params.blastx_db )
+            BLAST(ch_blast_query_input, params.blastn_db, params.blastx_db )
 
             ch_blast_unique_taxid = ch_blast_unique_taxid.mix(BLAST.out.unique_taxid)
             ch_blastn_report = ch_blastn_report.mix(BLAST.out.blastn_filtered)
