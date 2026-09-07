@@ -279,15 +279,26 @@ workflow METAVAL {
                     return [ meta, reads ]
             }
         // Short reads de novo assembly
-        ch_contigs_denovo = channel.empty()
+        ch_denovo_fasta = channel.empty()
+
         if ( params.perform_shortread_denovo ) {
             SPADES( ch_denovo.shortreads, [], [] )
-            ch_contigs_denovo = ch_contigs_denovo.mix( SPADES.out.contigs )
+
+            ch_spades_fasta = SPADES.out.scaffolds
+                .mix(SPADES.out.contigs)
+                .groupTuple(by:0)
+                .map { meta, files ->
+                    def scaffolds = files.find { file -> file instanceof Path && file.name.endsWith('.scaffolds.fa') }
+                    def contigs = files.find { file -> file instanceof Path && file.name.endsWith('.contigs.fa') }
+                    [ meta, scaffolds ?: contigs ]
+                }
+
+            ch_denovo_fasta = ch_denovo_fasta.mix(ch_spades_fasta)
         }
         // Long reads de novo assembly
         if ( params.perform_longread_denovo ) {
             FLYE( ch_denovo.longreads, params.flye_mode )
-            ch_contigs_denovo = ch_contigs_denovo.mix( FLYE.out.fasta )
+            ch_denovo_fasta = ch_denovo_fasta.mix( FLYE.out.fasta )
         }
 
         //
@@ -297,14 +308,14 @@ workflow METAVAL {
         ch_blast_unique_taxid = channel.empty()
         ch_blastn_report      = channel.empty()
         ch_blastx_report      = channel.empty()
+        ch_blast_query_input  = channel.empty()
 
         ch_blast_reads_fasta = PIGZ_UNCOMPRESS.out.file
-            .filter { meta, _fasta -> meta.single_end || meta.read_pair == 1} // keeps the only read1 for paired-end reads
+            .filter { meta, _fasta -> meta.single_end || meta.read_pair == 1 } // keeps the only read1 for paired-end reads
             .map { meta, fasta -> [ meta.subMap(meta.keySet() - 'read_pair'), fasta ]}
 
         // Prepare the query fasta file
         if ( (!params.skip_blastn) || (!params.skip_blastx)) {
-            ch_blast_query_input = channel.empty()
             // Build ch_blast_query_input fasta file
             // Option1: De novo assembly contigs/scaffolds for BLAST if the number of reads exceeds the params.min_read_counts
             if ( params.perform_shortread_denovo || params.perform_longread_denovo ) {
@@ -314,7 +325,7 @@ workflow METAVAL {
                 ch_direct_blast_fasta = ch_blast_reads_fasta
                     .join(ch_direct_blast_meta, by: 0)
 
-                ch_blast_query_input = ch_direct_blast_fasta.mix(ch_contigs_denovo)
+                ch_blast_query_input = ch_direct_blast_fasta.mix(ch_denovo_fasta)
 
             } else {
                 // Option 2: when assembly is disabled, subset large read sets before BLAST.
@@ -417,34 +428,8 @@ workflow METAVAL {
         //
 
         ch_samplesheet_report = channel.fromPath ( params.input, checkIfExists: true )
-
-        // Prepare reads folder for the report, if the reads went through de novo assembly, only include the assembly fasta file in the report.
-        ch_reads_fa = channel.empty()
-        ch_reads_fa = ch_reads_fa.mix(PIGZ_UNCOMPRESS.out.file)
-            .groupTuple(by:0)
-            .map { meta, reads -> [ meta, reads ] }
-
-        ch_assembly = channel.empty()
-        if ( params.perform_shortread_denovo ) {
-            ch_assembly = ch_assembly.mix( SPADES.out.scaffolds, SPADES.out.contigs )
-        }
-        if ( params.perform_longread_denovo ) {
-            ch_assembly = ch_assembly.mix( FLYE.out.fasta )
-        }
-
-        ch_reads_report = channel.empty()
-        ch_reads_report = ch_reads_fa.mix(ch_assembly)
-            .groupTuple(by:0)
-            .map { meta, files ->
-                def assembly = files.find { file -> file instanceof Path && file.name.endsWith('.scaffolds.fa') } ?:
-                    files.find { file -> file instanceof Path && file.name.endsWith('.contigs.fa') } ?:
-                    files.find { file -> file instanceof Path }
-                def reads = files.find { file -> file instanceof List }
-                [ meta, assembly ?: reads ]
-            }
-
         ch_flagged_taxpasta_report = FLAG_TAXPASTA.out.tsv.map { _meta, tsv -> tsv }.collect()
-        ch_reads_report_files      = ch_reads_report.map { _meta, files -> files }.flatten().collect()
+        ch_reads_report_files      = ch_blast_query_input.map { _meta, fasta -> fasta }.collect()
         ch_blastn_report_files     = ch_blastn_report.map { _meta, blastn -> blastn }.collect().ifEmpty([])
         ch_blastx_report_files     = ch_blastx_report.map { _meta, blastx -> blastx }.collect().ifEmpty([])
         ch_coverage_table_files    = ch_coverage_tables.map { _meta, table -> table }.collect().ifEmpty([])
