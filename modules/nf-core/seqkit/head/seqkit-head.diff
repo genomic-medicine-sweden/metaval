@@ -17,7 +17,7 @@ Changes in 'seqkit/head/main.nf':
      """
      for f in ${fastqs.join(' ')}
      do
-+        extension="\$(basename \$f | sed 's/^[^.]*\\.//')"
++        extension="\${f##*.}"
          seqkit head \\
              ${args} \\
              --threads ${task.cpus} \\
@@ -32,7 +32,7 @@ Changes in 'seqkit/head/main.nf':
      for f in ${fastqs.join(' ')}
      do
 -        echo '' | gzip > "${prefix}_subset_\$(basename \$f)"
-+        extension="\$(basename \$f | sed 's/^[^.]*\\.//')"
++        extension="\${f##*.}"
 +        echo '' | gzip > "${prefix}_subset.\$extension"
      done
      """

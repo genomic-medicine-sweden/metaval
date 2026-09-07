@@ -23,7 +23,7 @@ process SEQKIT_HEAD {
     """
     for f in ${fastqs.join(' ')}
     do
-        extension="\$(basename \$f | sed 's/^[^.]*\\.//')"
+        extension="\${f##*.}"
         seqkit head \\
             ${args} \\
             --threads ${task.cpus} \\
@@ -41,7 +41,7 @@ process SEQKIT_HEAD {
 
     for f in ${fastqs.join(' ')}
     do
-        extension="\$(basename \$f | sed 's/^[^.]*\\.//')"
+        extension="\${f##*.}"
         echo '' | gzip > "${prefix}_subset.\$extension"
     done
     """

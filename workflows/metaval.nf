@@ -8,21 +8,17 @@ include { FLAG_TAXPASTA                                         } from '../modul
 
 // Extract reads of taxIDs
 include { TAXID_READS                                           } from '../subworkflows/local/taxid_reads'
-include { SEQKIT_FQ2FA as SEQKIT_FQ2FA_READS                    } from '../modules/nf-core/seqkit/fq2fa'
+include { SEQKIT_FQ2FA                                          } from '../modules/nf-core/seqkit/fq2fa'
 include { PIGZ_UNCOMPRESS                                       } from '../modules/nf-core/pigz/uncompress'
 
 // SUBSET reads for BLAST
 include { SEQKIT_HEAD                                           } from '../modules/nf-core/seqkit/head'
-include { PIGZ_UNCOMPRESS as PIGZ_UNCOMPRESS_SUBSET             } from '../modules/nf-core/pigz/uncompress'
 
 // De novo for extracted taxIDs reads
 include { SPADES                                                } from '../modules/nf-core/spades'
 include { FLYE                                                  } from '../modules/nf-core/flye'
 
 // BLAST
-include { SEQKIT_FQ2FA  as SEQKIT_FQ2FA_ASSEMBLY                } from '../modules/nf-core/seqkit/fq2fa'
-include { SEQKIT_FQ2FA  as SEQKIT_FQ2FA_SUBSET                  } from '../modules/nf-core/seqkit/fq2fa'
-
 include { BLAST                                                 } from '../subworkflows/local/blast'
 include { BLAST as BLAST_PATHOGEN                               } from '../subworkflows/local/blast'
 
@@ -245,17 +241,19 @@ workflow METAVAL {
         )
         ch_versions            = ch_versions.mix( TAXID_READS.out.versions )
 
-        // Transpose to handle both single and paired-end reads
-        ch_taxid_reads_transpose = TAXID_READS.out.reads
-            .map { meta, reads ->
-                def read_list = reads instanceof List ? reads: [reads]
-                [meta, read_list]
+        // Split single-end and paired-end read lists into one FASTQ per task,
+        // keeping read-pair identity in metadata.
+        ch_taxid_reads_indexed = TAXID_READS.out.reads
+            .flatMap { meta, reads ->
+                def read_list = reads instanceof List ? reads : [reads]
+                read_list.withIndex().collect { read, index ->
+                    [ meta + [ read_pair: index + 1 ], read ]
+                }
             }
-            .transpose ()
 
         // Convert fastq.gz into fasta files
-        SEQKIT_FQ2FA_READS( ch_taxid_reads_transpose )
-        PIGZ_UNCOMPRESS ( SEQKIT_FQ2FA_READS.out.fasta )
+        SEQKIT_FQ2FA( ch_taxid_reads_indexed )
+        PIGZ_UNCOMPRESS ( SEQKIT_FQ2FA.out.fasta )
 
         //
         // MODULE: DE NOVO - SPADES/FLYE
@@ -264,19 +262,14 @@ workflow METAVAL {
         // Run de novo assembly if the number of reads exceeds the params.min_read_counts
         ch_taxid_reads_filter = TAXID_READS.out.reads
             .branch { meta, reads ->
-                blast: meta.single_end
+                direct_blast: meta.single_end
                     ? reads.countFastq() < params.min_read_counts
                     : reads[0].countFastq() < params.min_read_counts ||
                     reads[1].countFastq() < params.min_read_counts
 
                 denovo: true
             }
-        // Then select first read for BLAST
-        ch_blast_reads = ch_taxid_reads_filter.blast
-            .map { meta, reads ->
-                def read = meta.single_end ? reads : reads[0]
-                [ meta, read ]
-            }
+
         // Prepare de novo assembly reads channel for shortreads and longreads
         ch_denovo = ch_taxid_reads_filter.denovo
             .branch { meta, reads ->
@@ -305,38 +298,42 @@ workflow METAVAL {
         ch_blastn_report      = channel.empty()
         ch_blastx_report      = channel.empty()
 
+        ch_blast_reads_fasta = PIGZ_UNCOMPRESS.out.file
+            .filter { meta, _fasta -> meta.single_end || meta.read_pair == 1} // keeps the only read1 for paired-end reads
+            .map { meta, fasta -> [ meta.subMap(meta.keySet() - 'read_pair'), fasta ]}
+
         // Prepare the query fasta file
         if ( (!params.skip_blastn) || (!params.skip_blastx)) {
             ch_blast_query_input = channel.empty()
             // Build ch_blast_query_input fasta file
             // Option1: De novo assembly contigs/scaffolds for BLAST if the number of reads exceeds the params.min_read_counts
             if ( params.perform_shortread_denovo || params.perform_longread_denovo ) {
-                SEQKIT_FQ2FA_ASSEMBLY ( ch_blast_reads )
-                ch_blast_query_input = ch_blast_query_input
-                    .mix( SEQKIT_FQ2FA_ASSEMBLY.out.fasta, ch_contigs_denovo )
+                ch_direct_blast_meta = ch_taxid_reads_filter.direct_blast
+                    .map { meta, _reads -> [ meta ] }
+
+                ch_direct_blast_fasta = ch_blast_reads_fasta
+                    .join(ch_direct_blast_meta, by: 0)
+
+                ch_blast_query_input = ch_direct_blast_fasta.mix(ch_contigs_denovo)
 
             } else {
-                // Option2: Subset reads for BLAST if the number of reads exceeds the params.subset_read_threshold
-                ch_blast_reads_for_subset = TAXID_READS.out.reads
-                    .map { meta, reads ->
-                        def read = meta.single_end ? reads : reads[0]
-                        [ meta, read ]
-                    }
-                SEQKIT_FQ2FA_SUBSET ( ch_blast_reads_for_subset )
-                PIGZ_UNCOMPRESS_SUBSET ( SEQKIT_FQ2FA_SUBSET.out.fasta )
-                ch_blast_query_branch = PIGZ_UNCOMPRESS_SUBSET.out.file
+                // Option 2: when assembly is disabled, subset large read sets before BLAST.
+                ch_blast_query_branch = ch_blast_reads_fasta
                     .branch { _meta, fasta ->
                         direct: fasta.countFasta() <= params.subset_read_threshold
                         subset: true
                     }
-                SEQKIT_HEAD ( ch_blast_query_branch.subset.map {meta, fasta ->
-                    [ meta, fasta, params.subset_read_threshold]}
+                SEQKIT_HEAD (
+                    ch_blast_query_branch.subset.map { meta, fasta ->
+                        [ meta, fasta, params.subset_read_threshold ]
+                    }
                 )
 
                 ch_blast_query_input = ch_blast_query_branch.direct.mix(SEQKIT_HEAD.out.subset)
             }
 
-            BLAST(ch_blast_query_input, params.blastn_db, params.blastx_db )
+            BLAST(ch_blast_query_input, params.blastn_db, params.blastx_db)
+
 
             ch_blast_unique_taxid = ch_blast_unique_taxid.mix(BLAST.out.unique_taxid)
             ch_blastn_report = ch_blastn_report.mix(BLAST.out.blastn_filtered)
