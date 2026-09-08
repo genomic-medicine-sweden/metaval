@@ -46,9 +46,9 @@ CLASSIFIER_LABELS = {
 SAMPLE_TABLE_COLUMNS = [
     {"key": "sample", "label": "sample", "filter": True},
     {"key": "instrument_platform", "label": "instrument_platform", "filter": True},
-    {"key": "library_type", "label": "library_type", "filter": True},
+    {"key": "na_content", "label": "na_content", "filter": True},
     {"key": "is_ntc", "label": "Sample_type", "filter": True},
-    {"key": "batch", "label": "batch", "filter": True},
+    {"key": "sample_prep", "label": "sample_prep", "filter": True},
 ]
 
 HEADER_HELP = {
@@ -184,7 +184,7 @@ def load_extracted_read_index(reads_dir: Path) -> dict[str, dict[str, list[dict[
 
 def resolve_flagged_path(row: dict[str, str], flagged_dir: Path, classifier: str) -> Path:
     """Return the required flagged taxpasta path for a sample and classifier."""
-    return flagged_dir / f"{row['sample']}_{row['library_type']}_{row['batch']}_{classifier}.tsv"
+    return flagged_dir / f"{row['sample']}_{row['na_content']}_{row['sample_prep']}_{classifier}.tsv"
 
 
 def simplify_id(value: str) -> str:

@@ -33,13 +33,13 @@ The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes d
 
 ### Decontamination
 
-Compare classifier-specific [Taxpasta](https://github.com/taxprofiler/taxpasta) profiles with negative controls that have the same `library_type` and `batch`. This helps distinguish sample-specific classifications from background signal or contamination.
+Compare classifier-specific [Taxpasta](https://github.com/taxprofiler/taxpasta) profiles with negative controls that have the same `na_content` and `sample_prep`. This helps distinguish sample-specific classifications from background signal or contamination.
 
 <details markdown="1">
 <summary>Output files</summary>
 
 - `taxpasta_flagged/`
-  - `<sample_id>_<library_type>_<batch>_<classifier>.tsv`: Flagged taxonomy table for one sample and classifier.
+  - `<sample_id>_<na_content>_<sample_prep>_<classifier>.tsv`: Flagged taxonomy table for one sample and classifier.
 
 </details>
 

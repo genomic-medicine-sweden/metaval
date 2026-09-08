@@ -1,7 +1,7 @@
 {
     "versions_diamond": {
         "content": null,
-        "timestamp": "2026-08-24T21:21:17.062438",
+        "timestamp": "2026-09-02T13:24:09.065424",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -9,7 +9,7 @@
     },
     "versions_all_classifiers": {
         "content": null,
-        "timestamp": "2026-08-24T21:21:52.680068",
+        "timestamp": "2026-09-02T13:24:51.25206",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -17,7 +17,7 @@
     },
     "versions_kraken2": {
         "content": null,
-        "timestamp": "2026-08-24T21:21:28.725133",
+        "timestamp": "2026-09-02T13:24:24.146982",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
