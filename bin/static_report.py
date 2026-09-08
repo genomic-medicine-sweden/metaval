@@ -165,9 +165,19 @@ def load_extracted_read_index(reads_dir: Path) -> dict[str, dict[str, list[dict[
         r"^(?P<sample>.+?)_taxid_(?P<taxid>\d+)_(?P<organism>.+?)_"
         r"(?P<classifier>kraken2|centrifuge|diamond)\.(?:scaffolds|contigs)\.fa(?:sta)?$"
     )
-
+    subset_pattern = re.compile(
+    r"^(?P<sample>.+?)_taxid_(?P<taxid>\d+)_(?P<organism>.+?)_"
+    r"(?P<classifier>kraken2|centrifuge|diamond)_subset\.fa(?:sta)?$"
+)
     for file_path in reads_dir.iterdir():
-        match = extracted_pattern.match(file_path.name) or assembly_pattern.match(file_path.name)
+        match = (
+            extracted_pattern.match(file_path.name)
+            or assembly_pattern.match(file_path.name)
+            or subset_pattern.match(file_path.name)
+        )
+        if match is None:
+            raise ValueError(f"Could not parse read FASTA filename for report: {file_path.name}")
+
         sample = match.group("sample")
         taxid = match.group("taxid")
         organism = match.group("organism")
@@ -234,6 +244,7 @@ def select_reads_source(
     candidates.extend(reads_dir.glob(f"{base_name}.extracted_{classifier}_*"))
     candidates.extend(reads_dir.glob(f"{base_name}_{classifier}.scaffolds.fa*"))
     candidates.extend(reads_dir.glob(f"{base_name}_{classifier}.contigs.fa*"))
+    candidates.extend(reads_dir.glob(f"{base_name}_{classifier}_subset.fa*"))
     return sorted({path for path in candidates if path.is_file()})
 
 
