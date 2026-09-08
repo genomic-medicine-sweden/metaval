@@ -442,7 +442,6 @@ workflow METAVAL {
     //
     // WORKFLOW: Screen pathogens
     //
-
     //
     // SUBWORKFLOW: MAPPING
     //
