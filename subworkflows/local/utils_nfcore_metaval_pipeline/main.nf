@@ -96,9 +96,12 @@ workflow PIPELINE_INITIALISATION {
     // Create channel from input file provided through params.input
     //
 
+    def samplesheet_rows = samplesheetToList(input, "${projectDir}/assets/schema_input.json")
+    validateDuplicateSampleEntries(samplesheet_rows)
+
     // Fitler NTC or Negative controls from downstream analysis
 
-    ch_samplesheet = channel.fromList(samplesheetToList(input, "${projectDir}/assets/schema_input.json"))
+    ch_samplesheet = channel.fromList(samplesheet_rows)
         .map {
             meta,
             fastq_1,
@@ -165,6 +168,7 @@ workflow PIPELINE_INITIALISATION {
             error ("ERROR: --accession2taxid is required with --perform_screen_pathogens.")
         }
     }
+
 
     emit:
     samplesheet = ch_samplesheet
@@ -234,6 +238,35 @@ def validateInputSamplesheet(input) {
     }
 
     return [ metas[0], fastqs ]
+}
+
+//
+// Validate channels from input samplesheet:
+//
+def validateDuplicateSampleEntries(samplesheet_rows) {
+    def fields = [
+        [name: '_kraken2_report', index: 3],
+        [name: '_kraken2_result', index: 4],
+        [name: '_kraken2_taxpasta', index: 5],
+        [name: '_centrifuge_report', index: 6],
+        [name: '_centrifuge_result', index: 7],
+        [name: '_centrifuge_taxpasta', index: 8],
+        [name: '_diamond', index: 9],
+        [name: '_diamond_taxpasta', index: 10],
+    ]
+
+    def samples_by_id = samplesheet_rows.groupBy { row -> row[0].id }
+    samples_by_id.each { sample_id, rows ->
+        if (rows.size() > 1) {
+            fields.each { field ->
+                def values = rows.collect { it[field.index] }.unique()
+                def non_null_values = values.findAll { it != null }
+                if (non_null_values.size() > 1 || (non_null_values.size() == 1 && values.size() > 1)) {
+                    error("Please check input samplesheet -> sample '${sample_id}' has inconsistent ${field.name} entries across merged runs; all sample duplicate lines must have identical ${field.name} values.")
+                }
+            }
+        }
+    }
 }
 
 //
