@@ -156,7 +156,7 @@ workflow METAVAL {
         ch_taxpasta_input = channel.empty()
         // Kraken2
         if ( params.extract_kraken2_reads ) {
-            ch_taxpasta_kraken2 = ch_samplesheet_filtered.map {
+            ch_taxpasta_kraken2 = ch_samplesheet.map {
                 meta,
                 _fastq_1,
                 _fastq_2,
@@ -177,7 +177,7 @@ workflow METAVAL {
         }
         // Centrifuge
         if ( params.extract_centrifuge_reads ) {
-            ch_taxpasta_centrifuge = ch_samplesheet_filtered.map {
+            ch_taxpasta_centrifuge = ch_samplesheet.map {
                 meta,
                 _fastq_1,
                 _fastq_2,
@@ -198,7 +198,7 @@ workflow METAVAL {
         }
         // DIAMOND
         if ( params.extract_diamond_reads ) {
-            ch_taxpasta_diamond = ch_samplesheet_filtered.map {
+            ch_taxpasta_diamond = ch_samplesheet.map {
                 meta,
                 _fastq_1,
                 _fastq_2,
