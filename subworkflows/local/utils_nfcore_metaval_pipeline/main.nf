@@ -346,7 +346,7 @@ def getFlagstatMappedReads(flagstat_file) {
 //Create sample and NTC taxpasta channels
 def sample_ntc_branch(taxpasta_channel) {
     return taxpasta_channel.branch { meta, taxpasta ->
-        def key = [meta.library_type, meta.batch]
+        def key = [meta.na_content, meta.sample_prep]
         ntc: meta.is_ntc
         return [key, meta, taxpasta]
         sample: !meta.is_ntc
@@ -354,7 +354,7 @@ def sample_ntc_branch(taxpasta_channel) {
     }
 }
 
-// Join sample and NTC taxpasta channels by meta.library_type and meta.batch
+// Join sample and NTC taxpasta channels by meta.na_content and meta.sample_prep
 // The input channels to FLAG_TAXPASTA process: [meta_sample, taxpasta_sample, meta_ntc, taxpasta_ntc]
 def taxpasta_sample_ntc_joined(ch_taxpasta_sample, ch_taxpasta_ntc) {
     return ch_taxpasta_sample
