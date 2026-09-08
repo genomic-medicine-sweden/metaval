@@ -110,11 +110,7 @@
             },
             "mentions": [
                 {
-<<<<<<< HEAD
                     "@id": "#9acc3c65-d76a-4ac1-9424-a0341772c6e8"
-=======
-                    "@id": "#39409711-6c05-406f-9be4-0d69398afae3"
->>>>>>> dev
                 }
             ],
             "name": "genomic-medicine-sweden/metaval"
