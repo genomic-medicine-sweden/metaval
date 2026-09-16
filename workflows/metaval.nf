@@ -35,6 +35,8 @@ include { METAVAL_REPORT                                        } from '../modul
 include { TAXID_BAM_FASTA as TAXID_BAM_FASTA_SHORTREAD          } from '../subworkflows/local/taxid_bam_fasta'
 include { TAXID_BAM_FASTA as TAXID_BAM_FASTA_LONGREAD           } from '../subworkflows/local/taxid_bam_fasta'
 include { CONSENSUS                                             } from '../subworkflows/local/consensus'
+include { CONSENSUS as CONSENSUS_VERIFY_SPECIES                 } from '../subworkflows/local/consensus'
+
 
 // Summary subworkflow
 include { FASTQC                                                } from '../modules/nf-core/fastqc'
@@ -370,7 +372,7 @@ workflow METAVAL {
                 .join(MAPPING_LONGREAD.out.bai, by:0)
             ch_bam_mapping = ch_bam_mapping.mix(ch_bam_mapping_shortread, ch_bam_mapping_longread)
 
-            CONSENSUS ( ch_bam_mapping, [ [], [] ], params.consensus_min_bases )
+            CONSENSUS_VERIFY_SPECIES ( ch_bam_mapping, [ [], [] ], params.consensus_min_bases )
 
 
 
