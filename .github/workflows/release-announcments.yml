@@ -9,7 +9,7 @@ jobs:
   toot:
     runs-on: ubuntu-latest
     steps:
-      - uses: rzr/fediverse-action@master
+      - uses: rzr/fediverse-action@main
         with:
           access-token: ${{ secrets.MASTODON_ACCESS_TOKEN }}
           host: "mstdn.science" # custom host if not "mastodon.social" (default)
