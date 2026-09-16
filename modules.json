@@ -51,11 +51,6 @@
                         "git_sha": "03bd94fc81b464595bcef5d9dc3f06ea1f34bfa0",
                         "installed_by": ["modules"]
                     },
-                    "medaka": {
-                        "branch": "master",
-                        "git_sha": "c565f1b27c06a1e8b726e2a646d4c822ae3b514a",
-                        "installed_by": ["modules"]
-                    },
                     "minimap2/align": {
                         "branch": "master",
                         "git_sha": "135d883a43b1a2324b4112cd270cf22e20835533",
