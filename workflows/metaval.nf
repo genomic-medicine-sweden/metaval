@@ -370,7 +370,7 @@ workflow METAVAL {
                 .join(MAPPING_SHORTREAD.out.bai, by:0)
             ch_bam_mapping_longread = MAPPING_LONGREAD.out.bam
                 .join(MAPPING_LONGREAD.out.bai, by:0)
-            ch_bam_mapping = ch_bam_mapping.mix(ch_bam_mapping_shortread, ch_bam_mapping_longread)
+            ch_bam_mapping = ch_bam_mapping.mix(ch_bam_mapping_shortread, ch_bam_mapping_longread).view()
 
             CONSENSUS_VERIFY_SPECIES ( ch_bam_mapping, [ [], [] ], params.consensus_min_bases )
 
