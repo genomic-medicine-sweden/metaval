@@ -11,7 +11,7 @@ include { FILTER_CONSENSUS as FILTER_CONSENSUS_LONGREAD         } from '../../..
 workflow CONSENSUS {
     take:
     ch_bam_bai                 // channel: [ val(meta), path(bam), path(bai) ]
-    ch_reference           // channel: [ path(fasta) ]
+    ch_reference           // channel: [ val [meta), path(fasta) ]
     consensus_min_bases // channel: [ val(consensus_min_bases) ]  default: 50bp
 
     main:
