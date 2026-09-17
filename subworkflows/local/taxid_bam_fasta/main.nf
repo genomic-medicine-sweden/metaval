@@ -77,11 +77,11 @@ workflow TAXID_BAM_FASTA {
 
     // BAM files will be used to call consensus sequences
     SAMTOOLS_VIEW_PASS(ch_consensus_input, [[],[],[]], [[],[]], [[],[]], [] )
-    
+
     // Drop the transient 'accessions' key so downstream meta matches output
     ch_pass_subset = SAMTOOLS_VIEW_PASS.out.bam
         .map { meta, bam -> [meta.subMap(meta.keySet() - 'accessions'), bam ] }
-    
+
     SAMTOOLS_SORT_PASS( ch_pass_subset, [[],[],[]], 'bai' )
     SAMTOOLS_INDEX_PASS( SAMTOOLS_SORT_PASS.out.bam )
 
