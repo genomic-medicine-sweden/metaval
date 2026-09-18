@@ -11,7 +11,7 @@ keywords:
   - samtools
 
 components:
-  - subset_bam
+  - samtools/view
   - samtools/sort
   - samtools/index
   - samtools/idxstats

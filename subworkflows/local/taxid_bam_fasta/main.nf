@@ -130,7 +130,7 @@ workflow TAXID_BAM_FASTA {
 
     // Generate pathogen-specific coverage and depth
     SAMTOOLS_COVERAGE (ch_pathogen_bam_bai, [[],[],[]])
-    SAMTOOLS_DEPTH (ch_pathogen_bam_bai, [[],[]])
+    SAMTOOLS_DEPTH (ch_pathogen_bam_bai.map{meta, bam, bai -> [ meta,bam, bai, [] ]})
 
     ch_coverage_plot_input = channel.empty()
     ch_coverage_plot_input = ch_coverage_plot_input
