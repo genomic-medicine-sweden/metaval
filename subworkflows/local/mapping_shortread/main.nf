@@ -82,7 +82,7 @@ workflow MAPPING_SHORTREAD {
             .join(SAMTOOLS_SORT.out.index, by:0)
 
         SAMTOOLS_COVERAGE (ch_bam_bai, [[],[],[]])
-        SAMTOOLS_DEPTH (ch_bam_bai, [[],[]])
+        SAMTOOLS_DEPTH (ch_bam_bai.map {meta, bam, bai -> [meta, bam, bai, []]})
 
         ch_coverage_plot_input = channel.empty()
         ch_coverage_plot_input = ch_coverage_plot_input
