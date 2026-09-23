@@ -1,0 +1,6 @@
+
+=== Error correction and assembling warnings:
+ * 0:00:00.546     1M / 346M  WARN    General                 (pair_info_count.cpp       : 177)   Unable to estimate insert size for paired library #0
+ * 0:00:00.546     1M / 346M  WARN    General                 (pair_info_count.cpp       : 183)   None of paired reads aligned properly. Please, check orientation of your read pairs.
+ * 0:00:00.546     1M / 346M  WARN    General                 (repeat_resolving.cpp      :  82)   Insert size was not estimated for any of the paired libraries, repeat resolution module will not run.
+======= Warnings saved to /home/proj/development/microbial/metagenomics/sofia_workspace/metaval/tests/.nf-test/tests/6264b954ee4716793e433ebb695a8c90/work/d9/6823348fecd50d4674564a42ed9bd9/warnings.log

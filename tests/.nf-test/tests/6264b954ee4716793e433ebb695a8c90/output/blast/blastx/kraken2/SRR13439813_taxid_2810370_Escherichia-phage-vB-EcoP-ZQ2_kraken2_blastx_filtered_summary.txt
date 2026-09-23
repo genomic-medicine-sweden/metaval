@@ -1,0 +1,2 @@
+qseqid	staxids	sscinames	count	min_pident	max_pident	median_pident	min_length	max_length	median_length	min_bitscore	max_bitscore	median_bitscore
+SRR13439813.4612857	2886042	Shigella virus Moo19	1	90.0	90.0	90.0	50	50	50.0	94.0	94.0	94.0

@@ -1,0 +1,35 @@
+Sample	bedtools	blastn	bowtie2	pigz	samtools	python	diamond	pandas	igvreports	krakentools	medaka	seqkit	jinja2	minimap2	spades	untar	genomic-medicine-sweden/metaval	Nextflow
+BEDTOOLS_GENOMECOV	2.31.1																	
+BLAST_BLASTN		2.17.0+																
+BOWTIE2_ALIGN			2.5.4	2.8	1.21													
+BOWTIE2_BUILD			2.5.4															
+COVERAGE_PLOT						3.10.5												
+DIAMOND_BLASTX							2.2.1											
+FILTER_BLASTN						3.12.3		2.2.1										
+FILTER_BLASTX						3.12.3		2.2.1										
+FILTER_CONSENSUS_LONGREAD						3.13.2												
+FILTER_CONSENSUS_SHORTREAD						3.13.2												
+FLAG_TAXPASTA						3.12.3		2.2.1										
+IGVREPORTS									0.1.0									
+KRAKENTOOLS_EXTRACTKRAKENREADS										1.2.1								
+MEDAKA											2.0.1	2.9.0						
+METAVAL_REPORT						3.13.2							3.1.6					
+MINIMAP2_ALIGN														2.30-r1287				
+MINIMAP2_INDEX														2.30-r1287				
+PIGZ_UNCOMPRESS				2.8														
+PIGZ_UNCOMPRESS_SPADES_CONTIG				2.8														
+PIGZ_UNCOMPRESS_SPADES_SCAFFOLD				2.8														
+SAMTOOLS_CONSENSUS_SHORTREAD					1.24													
+SAMTOOLS_COVERAGE					1.23.1													
+SAMTOOLS_DEPTH					1.24													
+SAMTOOLS_FAIDX					1.24													
+SAMTOOLS_FLAGSTAT					1.24													
+SAMTOOLS_IDXSTATS					1.24													
+SAMTOOLS_INDEX					1.24													
+SAMTOOLS_SORT					1.24													
+SAMTOOLS_STATS					1.24													
+SEQKIT_FQ2FA												2.13.0						
+SEQKIT_FQ2FA_READS												2.13.0						
+SPADES															4.1.0			
+UNTAR_BLASTN																1.34		
+Workflow																	v1.0dev	26.04.6

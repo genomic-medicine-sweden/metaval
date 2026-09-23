@@ -1,0 +1,4 @@
+Sep-23 15:05:33.374 [main] INFO  com.askimed.nf.test.App - nf-test 0.9.5
+Sep-23 15:05:33.388 [main] INFO  com.askimed.nf.test.App - Arguments: [test, test_verifyspecies_kraken2.nf.test, --profile=+singularity, --debug, --verbose]
+Sep-23 15:05:34.322 [main] INFO  com.askimed.nf.test.App - Nextflow Version: 26.04.6
+Sep-23 15:05:34.330 [main] WARN  com.askimed.nf.test.commands.RunTestsCommand - No nf-test config file found.

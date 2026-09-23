@@ -1,0 +1,42 @@
+taxonomy_id	name	rank	lineage	SRR13439799
+0				685
+131567	cellular organisms	no rank		13
+33154	Opisthokonta	clade	Eukaryota;Opisthokonta	1
+9606	Homo sapiens	species	Eukaryota;Metazoa;Chordata;Craniata;Sarcopterygii;Mammalia;Opisthokonta;Euarchontoglires;Primates;Haplorrhini;Simiiformes;Catarrhini;Hominoidea;Hominidae;Homininae;Homo;Homo sapiens	493
+573729	Thermothelomyces thermophilus ATCC 42464	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Sordariales;Chaetomiaceae;Thermothelomyces;Thermothelomyces thermophilus;Thermothelomyces thermophilus ATCC 42464	1
+1578925	Pyricularia pennisetigena	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Magnaporthales;Pyriculariaceae;Pyricularia;Pyricularia pennisetigena	1
+5823	Plasmodium berghei ANKA	strain	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Vinckeia);Plasmodium berghei;Plasmodium berghei ANKA	1
+54757	Plasmodium vinckei vinckei	subspecies	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Vinckeia);Plasmodium vinckei;Plasmodium vinckei vinckei	1
+5855	Plasmodium vivax	species	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Plasmodium);Plasmodium vivax	1
+85471	Plasmodium relictum	species	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Haemamoeba);Plasmodium relictum	1
+352472	Dictyostelium discoideum AX4	strain	Eukaryota;Evosea;Eumycetozoa;Amoebozoa;Dictyosteliales;Dictyosteliaceae;Dictyostelium;Dictyostelium discoideum;Dictyostelium discoideum AX4	1
+2	Bacteria	superkingdom	Bacteria	3
+2986823	Flavobacterium sp. N1736	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Flavobacterium;Flavobacterium sp. N1736	1
+584609	Tenacibaculum jejuense	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Tenacibaculum;Tenacibaculum jejuense	1
+270918	Salegentibacter mishustinae	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Salegentibacter;Salegentibacter mishustinae	1
+2010992	Marivirga harenae	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Marivirgaceae;Marivirga;Marivirga harenae	1
+2906456	Dyadobacter chenwenxiniae	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Spirosomataceae;Dyadobacter;Dyadobacter chenwenxiniae	1
+816	Bacteroides	genus	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Bacteroidaceae;Bacteroides	1
+2315862	Paraflavitalea soli	species	Bacteria;FCB group;Bacteroidota;Chitinophagia;Chitinophagales;Chitinophagaceae;Paraflavitalea;Paraflavitalea soli	1
+1008	Saprospira grandis	species	Bacteria;FCB group;Bacteroidota;Saprospiria;Saprospirales;Saprospiraceae;Saprospira;Saprospira grandis	1
+543	Enterobacteriaceae	family	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae	1
+1177216	Candidatus Profftia tarda	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Candidatus Profftia;Candidatus Profftia tarda	1
+272774	Vreelandella alkaliphila	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Oceanospirillales;Halomonadaceae;Vreelandella;Vreelandella alkaliphila	1
+2895352	Aliamphritea hakodatensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Oceanospirillales;Oceanospirillaceae;Aliamphritea;Aliamphritea hakodatensis	1
+316	Stutzerimonas stutzeri	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Stutzerimonas;Stutzerimonas stutzeri group;Stutzerimonas stutzeri subgroup;Stutzerimonas stutzeri	1
+450	Legionella longbeachae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Legionellales;Legionellaceae;Legionella;Legionella longbeachae	1
+712	Pasteurellaceae	family	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae	1
+2631580	unclassified Bradyrhizobium	no rank	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Bradyrhizobium	1
+2963105	Neobacillus sp. Marseille-Q6967	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Neobacillus;Neobacillus sp. Marseille-Q6967	1
+3047874	Neobacillus sp. YX16	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Neobacillus;Neobacillus sp. YX16	1
+279826	Mesobacillus foraminis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Mesobacillus;Mesobacillus foraminis	1
+1467	Lederbergia lenta	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Lederbergia;Lederbergia lenta	1
+459472	Planococcus glaciei	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Planococcaceae;Planococcus;Planococcus glaciei	1
+1754	Thermoanaerobacter	genus	Bacteria;Terrabacteria group;Bacillota;Clostridia;Thermoanaerobacterales;Thermoanaerobacteraceae;Thermoanaerobacter	1
+2038116	Nostoc flagelliforme CCNUN1	strain	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Nostocales;Nostocaceae;Nostoc;Nostoc flagelliforme;Nostoc flagelliforme CCNUN1	1
+1967783	Chlamydia poikilotherma	species	Bacteria;PVC group;Chlamydiota;Chlamydiia;Chlamydiales;Chlamydiaceae;Chlamydia;Chlamydia poikilotherma	1
+765952	Parachlamydia acanthamoebae UV-7	strain	Bacteria;PVC group;Chlamydiota;Chlamydiia;Parachlamydiales;Parachlamydiaceae;Parachlamydia;Parachlamydia acanthamoebae;Parachlamydia acanthamoebae UV-7	1
+197	Campylobacter jejuni	species	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales;Campylobacteraceae;Campylobacter;Campylobacter jejuni	1
+47466	Borrelia miyamotoi	species	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Borreliaceae;Borrelia;Borrelia miyamotoi	1
+1826872	Candidatus Nitrosocosmicus hydrocola	species	Archaea;Thermoproteati;Nitrososphaerota;Nitrososphaeria;Nitrososphaerales;Nitrososphaeraceae;Candidatus Nitrosocosmicus;Candidatus Nitrosocosmicus hydrocola	1
+211044	Influenza A virus (A/Puerto Rico/8/1934(H1N1))	no rank	Viruses;Riboviria;Orthornavirae;Negarnaviricota;Polyploviricotina;Insthoviricetes;Articulavirales;Orthomyxoviridae;Alphainfluenzavirus;Alphainfluenzavirus influenzae;H1N1 subtype	13

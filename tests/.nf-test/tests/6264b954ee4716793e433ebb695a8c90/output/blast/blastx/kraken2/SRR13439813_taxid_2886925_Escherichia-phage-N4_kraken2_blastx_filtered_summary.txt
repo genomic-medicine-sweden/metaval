@@ -1,0 +1,3 @@
+qseqid	staxids	sscinames	count	min_pident	max_pident	median_pident	min_length	max_length	median_length	min_bitscore	max_bitscore	median_bitscore
+SRR13439813.1675907	1604356	Escherichia phage ECBP1	1	82.0	82.0	82.0	50	50	50.0	88.2	88.2	88.2
+SRR13439813.3670243	2886042	Shigella virus Moo19	1	96.0	96.0	96.0	50	50	50.0	97.8	97.8	97.8

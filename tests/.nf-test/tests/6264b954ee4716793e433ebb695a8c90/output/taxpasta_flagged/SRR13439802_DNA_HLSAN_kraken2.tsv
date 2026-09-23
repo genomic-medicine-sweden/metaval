@@ -1,0 +1,804 @@
+taxonomy_id	name	rank	lineage	SRR13439802	SRR13439802_vs_NTC	SRR13439802_ntc2DNA
+0				165966	equal	165966
+1	root	no rank		133	equal	133
+2	Bacteria	superkingdom	Bacteria	161	equal	161
+9	Buchnera aphidicola	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Erwiniaceae;Buchnera;Buchnera aphidicola	1	equal	1
+22	Shewanella	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Shewanellaceae;Shewanella	8	equal	8
+24	Shewanella putrefaciens	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Shewanellaceae;Shewanella;Shewanella putrefaciens	8	equal	8
+31	Myxococcaceae	family	Bacteria;Myxococcota;Myxococcia;Myxococcales;Cystobacterineae;Myxococcaceae	1	equal	1
+43	Cystobacter fuscus	species	Bacteria;Myxococcota;Myxococcia;Myxococcales;Cystobacterineae;Archangiaceae;Cystobacter;Cystobacter fuscus	1	equal	1
+48	Archangium gephyra	species	Bacteria;Myxococcota;Myxococcia;Myxococcales;Cystobacterineae;Archangiaceae;Archangium;Archangium gephyra	1	equal	1
+81	Hyphomicrobium	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Hyphomicrobiaceae;Hyphomicrobium	1	equal	1
+191	Azospirillum	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Azospirillaceae;Azospirillum	1	equal	1
+210	Helicobacter pylori	species	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales;Helicobacteraceae;Helicobacter;Helicobacter pylori	1	equal	1
+222	Achromobacter	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Alcaligenaceae;Achromobacter	1	equal	1
+238	Elizabethkingia meningoseptica	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Elizabethkingia;Elizabethkingia meningoseptica	1	equal	1
+246	Chryseobacterium balustinum	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium balustinum	4	equal	4
+247	Empedobacter brevis	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Empedobacter;Empedobacter brevis	1	equal	1
+253	Chryseobacterium indologenes	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium indologenes	1	equal	1
+258	Sphingobacterium spiritivorum	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Sphingobacterium;Sphingobacterium spiritivorum	1	equal	1
+265	Paracoccus	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodobacterales;Paracoccaceae;Paracoccus	1	equal	1
+286	Pseudomonas	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas	25	equal	25
+287	Pseudomonas aeruginosa	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas aeruginosa group;Pseudomonas aeruginosa	3	equal	3
+303	Pseudomonas putida	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas putida group;Pseudomonas putida	2	equal	2
+347	Xanthomonas oryzae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Xanthomonas;Xanthomonas oryzae	1	equal	1
+356	Hyphomicrobiales	order	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales	14	equal	14
+373	Agrobacterium vitis	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Agrobacterium;Agrobacterium vitis	2	equal	2
+374	Bradyrhizobium	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Bradyrhizobium	2	equal	2
+407	Methylobacterium	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium	11	equal	11
+408	Methylorubrum extorquens	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum extorquens	41	equal	41
+410	Methylobacterium organophilum	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium organophilum	23	equal	23
+433	Acetobacteraceae	family	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Acetobacteraceae	1	equal	1
+468	Moraxellaceae	family	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae	21	equal	21
+469	Acinetobacter	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter	171	equal	171
+470	Acinetobacter baumannii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter calcoaceticus/baumannii complex;Acinetobacter baumannii	42	equal	42
+475	Moraxella	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Moraxella	38	equal	38
+480	Moraxella catarrhalis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Moraxella;Moraxella catarrhalis	1	equal	1
+481	Neisseriaceae	family	Bacteria;Pseudomonadota;Betaproteobacteria;Neisseriales;Neisseriaceae	13	equal	13
+482	Neisseria	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Neisseriales;Neisseriaceae;Neisseria	5	equal	5
+497	Psychrobacter	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Psychrobacter	23	equal	23
+517	Bordetella	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Alcaligenaceae;Bordetella	1	equal	1
+543	Enterobacteriaceae	family	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae	73	equal	73
+545	Citrobacter koseri	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Citrobacter;Citrobacter koseri	1	equal	1
+547	Enterobacter	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter	1	equal	1
+548	Klebsiella aerogenes	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella aerogenes	1	equal	1
+561	Escherichia	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia	2	equal	2
+562	Escherichia coli	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia;Escherichia coli	36	equal	36
+563	Shimwellia blattae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Shimwellia;Shimwellia blattae	1	equal	1
+564	Escherichia fergusonii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia;Escherichia fergusonii	1	equal	1
+571	Klebsiella oxytoca	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella oxytoca	2	equal	2
+573	Klebsiella pneumoniae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella pneumoniae	6	equal	6
+599	Salmonella sp.	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella sp.	1	equal	1
+613	Serratia	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Yersiniaceae;Serratia	1	equal	1
+623	Shigella flexneri	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Shigella;Shigella flexneri	1	equal	1
+638	Arsenophonus nasoniae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Morganellaceae;Arsenophonus;Arsenophonus nasoniae	1	equal	1
+642	Aeromonas	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas	18	equal	18
+645	Aeromonas salmonicida	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas salmonicida	4	equal	4
+670	Vibrio parahaemolyticus	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Vibrionales;Vibrionaceae;Vibrio;Vibrio harveyi group;Vibrio parahaemolyticus	2	equal	2
+712	Pasteurellaceae	family	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae	12	equal	12
+724	Haemophilus	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Haemophilus	1	equal	1
+729	Haemophilus parainfluenzae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Haemophilus;Haemophilus parainfluenzae	4	equal	4
+730	[Haemophilus] ducreyi	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Haemophilus;[Haemophilus] ducreyi	1	equal	1
+738	Glaesserella parasuis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Glaesserella;Glaesserella parasuis	1	equal	1
+768	Anaplasma	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Rickettsiales;Anaplasmataceae;Anaplasma	1	equal	1
+817	Bacteroides fragilis	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Bacteroidaceae;Bacteroides;Bacteroides fragilis	2	equal	2
+818	Bacteroides thetaiotaomicron	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Bacteroidaceae;Bacteroides;Bacteroides thetaiotaomicron	2	equal	2
+848	Fusobacterium	genus	Bacteria;Fusobacteriota;Fusobacteriia;Fusobacteriales;Fusobacteriaceae;Fusobacterium	1	equal	1
+897	Desulfococcus multivorans	species	Bacteria;Thermodesulfobacteriota;Desulfobacteria;Desulfobacterales;Desulfococcaceae;Desulfococcus;Desulfococcus multivorans	1	equal	1
+963	Herbaspirillum	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Herbaspirillum	13	equal	13
+964	Herbaspirillum seropedicae	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Herbaspirillum;Herbaspirillum seropedicae	1	equal	1
+976	Bacteroidota	phylum	Bacteria;FCB group;Bacteroidota	1	equal	1
+1117	Cyanobacteriota	phylum	Bacteria;Terrabacteria group;Cyanobacteriota	1	equal	1
+1150	Oscillatoriales	order	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Oscillatoriales	2	equal	2
+1161	Nostocales	order	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Nostocales	2	equal	2
+1224	Pseudomonadota	phylum	Bacteria;Pseudomonadota	55	equal	55
+1236	Gammaproteobacteria	class	Bacteria;Pseudomonadota;Gammaproteobacteria	89	equal	89
+1239	Bacillota	phylum	Bacteria;Terrabacteria group;Bacillota	7	equal	7
+1268	Micrococcaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae	12	equal	12
+1269	Micrococcus	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Micrococcus	36	equal	36
+1270	Micrococcus luteus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Micrococcus;Micrococcus luteus	1	equal	1
+1279	Staphylococcus	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus	27	equal	27
+1280	Staphylococcus aureus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus aureus	15	equal	15
+1282	Staphylococcus epidermidis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus epidermidis	1	equal	1
+1283	Staphylococcus haemolyticus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus haemolyticus	1	equal	1
+1286	Staphylococcus simulans	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus simulans	1	equal	1
+1290	Staphylococcus hominis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus hominis	7	equal	7
+1292	Staphylococcus warneri	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus warneri	1	equal	1
+1298	Deinococcus	genus	Bacteria;Terrabacteria group;Deinococcota;Deinococci;Deinococcales;Deinococcaceae;Deinococcus	1	equal	1
+1299	Deinococcus radiodurans	species	Bacteria;Terrabacteria group;Deinococcota;Deinococci;Deinococcales;Deinococcaceae;Deinococcus;Deinococcus radiodurans	2	equal	2
+1300	Streptococcaceae	family	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae	1	equal	1
+1301	Streptococcus	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus	52	equal	52
+1308	Streptococcus thermophilus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus thermophilus	1	equal	1
+1311	Streptococcus agalactiae	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus agalactiae	1	equal	1
+1314	Streptococcus pyogenes	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus pyogenes	1	equal	1
+1350	Enterococcus	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Enterococcaceae;Enterococcus	44	equal	44
+1351	Enterococcus faecalis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Enterococcaceae;Enterococcus;Enterococcus faecalis	1	equal	1
+1353	Enterococcus gallinarum	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Enterococcaceae;Enterococcus;Enterococcus gallinarum	1	equal	1
+1379	Gemella haemolysans	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Gemellaceae;Gemella;Gemella haemolysans	1	equal	1
+1385	Bacillales	order	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales	7	equal	7
+1386	Bacillus	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus	1	equal	1
+1396	Bacillus cereus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus cereus group;Bacillus cereus	4	equal	4
+1404	Priestia megaterium	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Priestia;Priestia megaterium	1	equal	1
+1491	Clostridium botulinum	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Clostridiaceae;Clostridium;Clostridium botulinum	35	equal	35
+1578	Lactobacillus	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Lactobacillus	1	equal	1
+1590	Lactiplantibacillus plantarum	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Lactiplantibacillus;Lactiplantibacillus plantarum	2	equal	2
+1598	Limosilactobacillus reuteri	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Limosilactobacillus;Limosilactobacillus reuteri	1	equal	1
+1633	Limosilactobacillus vaginalis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Limosilactobacillus;Limosilactobacillus vaginalis	1	equal	1
+1650	Kurthia zopfii	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Planococcaceae;Kurthia;Kurthia zopfii	1	equal	1
+1654	Actinomyces	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Actinomyces	5	equal	5
+1663	Arthrobacter	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Arthrobacter	1	equal	1
+1683	Bifidobacterium angulatum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Bifidobacteriales;Bifidobacteriaceae;Bifidobacterium;Bifidobacterium angulatum	1	equal	1
+1696	Brevibacterium	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Brevibacteriaceae;Brevibacterium	2	equal	2
+1707	Cellulomonas	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Cellulomonadaceae;Cellulomonas	1	equal	1
+1716	Corynebacterium	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium	42	equal	42
+1717	Corynebacterium diphtheriae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium diphtheriae	1	equal	1
+1725	Corynebacterium xerosis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium xerosis	3	equal	3
+1747	Cutibacterium acnes	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae;Cutibacterium;Cutibacterium acnes	17	equal	17
+1760	Actinomycetes	class	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes	24	equal	24
+1768	Mycobacterium kansasii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycobacterium;Mycobacterium kansasii	3	equal	3
+1795	Mycolicibacterium neoaurum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycolicibacterium;Mycolicibacterium neoaurum	1	equal	1
+1839	Nocardioides	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Nocardioides	2	equal	2
+1847	Pseudonocardia	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Pseudonocardiales;Pseudonocardiaceae;Pseudonocardia	1	equal	1
+1883	Streptomyces	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces	26	equal	26
+2053	Gordonia	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Gordoniaceae;Gordonia	1	equal	1
+2061	Tsukamurella paurometabola	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Tsukamurellaceae;Tsukamurella;Tsukamurella paurometabola	6	equal	6
+2062	Streptomycetaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae	1	equal	1
+2070	Pseudonocardiaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Pseudonocardiales;Pseudonocardiaceae	3	equal	3
+2285	Sulfolobus acidocaldarius	species	Archaea;Thermoproteati;Thermoproteota;Thermoprotei;Sulfolobales;Sulfolobaceae;Sulfolobus;Sulfolobus acidocaldarius	1	equal	1
+2371	Xylella fastidiosa	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Xylella;Xylella fastidiosa	1	equal	1
+2701	Gardnerella	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Bifidobacteriales;Bifidobacteriaceae;Gardnerella	1	equal	1
+2747	Carnobacterium	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Carnobacteriaceae;Carnobacterium	1	equal	1
+2759	Eukaryota	superkingdom	Eukaryota	503	equal	503
+2898	Cryptomonas paramecium	species	Eukaryota;Cryptophyceae;Cryptomonadales;Cryptomonadaceae;Cryptomonas;Cryptomonas paramecium	6	equal	6
+3027	Cryptophyceae	class	Eukaryota;Cryptophyceae	1	equal	1
+4890	Ascomycota	phylum	Eukaryota;Opisthokonta;Fungi;Dikarya;Ascomycota	37	equal	37
+4892	Saccharomycetales	order	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Saccharomycetes;Saccharomycetales	17	equal	17
+4893	Saccharomycetaceae	family	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Saccharomycetes;Saccharomycetales;Saccharomycetaceae	1	equal	1
+4895	Schizosaccharomyces	genus	Eukaryota;Opisthokonta;Fungi;Dikarya;Ascomycota;Taphrinomycotina;Schizosaccharomycetes;Schizosaccharomycetales;Schizosaccharomycetaceae;Schizosaccharomyces	1	equal	1
+4910	Kluyveromyces	genus	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Saccharomycetes;Saccharomycetales;Saccharomycetaceae;Kluyveromyces	11	equal	11
+5007	Brettanomyces bruxellensis	species	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Pichiomycetes;Pichiales;Pichiaceae;Brettanomyces;Brettanomyces bruxellensis	1	equal	1
+5042	Eurotiales	order	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales	166	equal	166
+5052	Aspergillus	genus	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus	286	equal	286
+5094	Talaromyces	genus	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Trichocomaceae;Talaromyces	3	equal	3
+5125	Hypocreales	order	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales	3	equal	3
+5139	Sordariales	order	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Sordariales	2	equal	2
+5204	Basidiomycota	phylum	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota	2	equal	2
+5296	Puccinia	genus	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Pucciniomycotina;Pucciniomycetes;Pucciniales;Pucciniaceae;Puccinia	56	equal	56
+5302	Agaricomycotina	subphylum	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina	1	equal	1
+5454	Ascochyta rabiei	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Dothideomycetes;Pleosporomycetidae;Pleosporales;Pleosporineae;Didymellaceae;Ascochyta;Ascochyta rabiei	16	equal	16
+5499	Fulvia fulva	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Dothideomycetes;Dothideomycetidae;Mycosphaerellales;Mycosphaerellaceae;Fulvia;Fulvia fulva	7	equal	7
+5506	Fusarium	genus	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium	1	equal	1
+5654	Trypanosomatidae	family	Eukaryota;Discoba;Euglenozoa;Kinetoplastea;Metakinetoplastina;Trypanosomatida;Trypanosomatidae	8	equal	8
+5661	Leishmania donovani	species	Eukaryota;Discoba;Euglenozoa;Kinetoplastea;Metakinetoplastina;Trypanosomatida;Trypanosomatidae;Leishmaniinae;Leishmania;Leishmania;Leishmania donovani species complex;Leishmania donovani	1	equal	1
+5741	Giardia intestinalis	species	Eukaryota;Metamonada;Fornicata;Diplomonadida;Hexamitidae;Giardiinae;Giardia;Giardia intestinalis	3	equal	3
+5761	Naegleria	genus	Eukaryota;Heterolobosea;Discoba;Vahlkampfiidae;Naegleria	1	equal	1
+5794	Apicomplexa	phylum	Eukaryota;Sar;Apicomplexa	2	equal	2
+5820	Plasmodium	genus	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium	2	equal	2
+5851	Plasmodium knowlesi strain H	strain	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Plasmodium);Plasmodium knowlesi;Plasmodium knowlesi strain H	4	equal	4
+5855	Plasmodium vivax	species	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Plasmodium);Plasmodium vivax	8	equal	8
+5858	Plasmodium malariae	species	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Plasmodium);Plasmodium malariae	1	equal	1
+5863	Piroplasmida	order	Eukaryota;Sar;Apicomplexa;Aconoidasida;Piroplasmida	5	equal	5
+5866	Babesia bigemina	species	Eukaryota;Sar;Apicomplexa;Aconoidasida;Piroplasmida;Babesiidae;Babesia;Babesia bigemina	22	equal	22
+5873	Theileria	genus	Eukaryota;Sar;Apicomplexa;Aconoidasida;Piroplasmida;Theileriidae;Theileria	1	equal	1
+9606	Homo sapiens	species	Eukaryota;Metazoa;Chordata;Craniata;Sarcopterygii;Mammalia;Opisthokonta;Euarchontoglires;Primates;Haplorrhini;Simiiformes;Catarrhini;Hominoidea;Hominidae;Homininae;Homo;Homo sapiens	187259	equal	187259
+11676	Human immunodeficiency virus 1	species	Viruses;Riboviria;Pararnavirae;Artverviricota;Revtraviricetes;Ortervirales;Retroviridae;Orthoretrovirinae;Lentivirus;Human immunodeficiency virus 1	1963	equal	1963
+12916	Acidovorax	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Acidovorax	5	equal	5
+13366	Brettanomyces	genus	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Pichiomycetes;Pichiales;Pichiaceae;Brettanomyces	1	equal	1
+13687	Sphingomonas	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas	30	equal	30
+13689	Sphingomonas paucimobilis	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas paucimobilis	5	equal	5
+28056	Micromonosporaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micromonosporales;Micromonosporaceae	1	equal	1
+28090	Acinetobacter lwoffii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter lwoffii	1	equal	1
+28132	Prevotella melaninogenica	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella melaninogenica	3	equal	3
+28144	Salmonella enterica subsp. enterica serovar Derby	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	1	equal	1
+28147	Salmonella enterica subsp. enterica serovar Oranienburg	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	1	equal	1
+28183	Leptospira santarosai	species	Bacteria;Spirochaetota;Spirochaetia;Leptospirales;Leptospiraceae;Leptospira;Leptospira santarosai	1	equal	1
+28211	Alphaproteobacteria	class	Bacteria;Pseudomonadota;Alphaproteobacteria	8	equal	8
+28216	Betaproteobacteria	class	Bacteria;Pseudomonadota;Betaproteobacteria	8	equal	8
+28384	other sequences	no rank		87	equal	87
+28453	Sphingobacterium	genus	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Sphingobacterium	1	equal	1
+28901	Salmonella enterica	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica	3	equal	3
+29394	Dolosigranulum pigrum	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Carnobacteriaceae;Dolosigranulum;Dolosigranulum pigrum	1	equal	1
+29430	Acinetobacter haemolyticus	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter haemolyticus	5	equal	5
+29442	Pseudomonas tolaasii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas fluorescens group;Pseudomonas tolaasii	424	equal	424
+29465	Veillonella	genus	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Veillonellales;Veillonellaceae;Veillonella	11	equal	11
+29466	Veillonella parvula	species	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Veillonellales;Veillonellaceae;Veillonella;Veillonella parvula	2	equal	2
+29580	Janthinobacterium	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Janthinobacterium	2	equal	2
+31957	Propionibacteriaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae	2	equal	2
+31989	Paracoccaceae	family	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodobacterales;Paracoccaceae	2	equal	2
+31998	Methylobacterium radiotolerans	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium radiotolerans	1	equal	1
+32207	Rothia	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Rothia	7	equal	7
+33010	Cutibacterium avidum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae;Cutibacterium;Cutibacterium avidum	5	equal	5
+33011	Cutibacterium granulosum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae;Cutibacterium;Cutibacterium granulosum	1	equal	1
+33055	Candidatus Kinetoplastibacterium	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Candidatus Kinetoplastibacterium	3	equal	3
+33056	Candidatus Kinetoplastibacterium crithidii	species	Bacteria;Pseudomonadota;Betaproteobacteria;Candidatus Kinetoplastibacterium;Candidatus Kinetoplastibacterium crithidii	2	equal	2
+33071	Gloeobacter	genus	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Gloeobacterales;Gloeobacteraceae;Gloeobacter	1	equal	1
+33154	Opisthokonta	clade	Eukaryota;Opisthokonta	10	equal	10
+33882	Microbacterium	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Microbacterium	4	equal	4
+33923	Mycoplasmopsis felis	species	Bacteria;Terrabacteria group;Mycoplasmatota;Mycoplasmoidales;Metamycoplasmataceae;Mycoplasmopsis;Mycoplasmopsis felis	2	equal	2
+33958	Lactobacillaceae	family	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae	1	equal	1
+34020	Candidatus Liberibacter africanus	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Liberibacter;Candidatus Liberibacter africanus	1	equal	1
+34062	Moraxella osloensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Moraxella;Moraxella osloensis	98	equal	98
+34071	Telluria mixta	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Telluria;Telluria mixta	2	equal	2
+34072	Variovorax	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Variovorax	1	equal	1
+34073	Variovorax paradoxus	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Variovorax;Variovorax paradoxus	7	equal	7
+34085	Riemerella anatipestifer	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Riemerella;Riemerella anatipestifer	1	equal	1
+35718	Chaetomiaceae	family	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Sordariales;Chaetomiaceae	8	equal	8
+36035	Saccharomycodes ludwigii	species	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Saccharomycetes;Saccharomycodales;Saccharomycodaceae;Saccharomycodes;Saccharomycodes ludwigii	30	equal	30
+36050	Fusarium poae	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium sambucinum species complex;Fusarium poae	3	equal	3
+36809	Mycobacteroides abscessus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycobacteroides;Mycobacteroides abscessus	1	equal	1
+37331	Pseudonocardia petroleophila	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Pseudonocardiales;Pseudonocardiaceae;Pseudonocardia;Pseudonocardia petroleophila	1	equal	1
+37637	Corynebacterium pseudodiphtheriticum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium pseudodiphtheriticum	1	equal	1
+37727	Talaromyces marneffei	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Trichocomaceae;Talaromyces;Talaromyces sect. Talaromyces;Talaromyces marneffei	1	equal	1
+37929	Glutamicibacter nicotianae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Glutamicibacter;Glutamicibacter nicotianae	4	equal	4
+38284	Corynebacterium accolens	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium accolens	1	equal	1
+38304	Corynebacterium tuberculostearicum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium tuberculostearicum	9	equal	9
+38501	Blastococcus	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Geodermatophilales;Geodermatophilaceae;Blastococcus	1	equal	1
+39491	Agathobacter rectalis	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Agathobacter;Agathobacter rectalis	4	equal	4
+40214	Acinetobacter johnsonii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter johnsonii	20	equal	20
+40215	Acinetobacter junii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter junii	38	equal	38
+40323	Stenotrophomonas	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Stenotrophomonas	3	equal	3
+40324	Stenotrophomonas maltophilia	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Stenotrophomonas;Stenotrophomonas maltophilia group;Stenotrophomonas maltophilia	47	equal	47
+41275	Brevundimonas	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Caulobacteraceae;Brevundimonas	17	equal	17
+41294	Nitrobacteraceae	family	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae	3	equal	3
+41297	Sphingomonadaceae	family	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae	17	equal	17
+43768	Corynebacterium matruchotii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium matruchotii	8	equal	8
+44249	Paenibacillus	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Paenibacillaceae;Paenibacillus	5	equal	5
+44283	Pasteurella multocida subsp. multocida	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Pasteurella;Pasteurella multocida;Pasteurella multocida subsp. multocida	9	equal	9
+46124	Granulicatella adiacens	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Carnobacteriaceae;Granulicatella;Granulicatella adiacens	1	equal	1
+46867	Clostridium chauvoei	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Clostridiaceae;Clostridium;Clostridium chauvoei	1	equal	1
+47671	Lautropia mirabilis	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Lautropia;Lautropia mirabilis	19	equal	19
+47770	Lactobacillus crispatus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Lactobacillus;Lactobacillus crispatus	1	equal	1
+47853	Micromonospora carbonacea	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micromonosporales;Micromonosporaceae;Micromonospora;Micromonospora carbonacea	1	equal	1
+47885	Pseudomonas oryzihabitans	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas putida group;Pseudomonas oryzihabitans	1	equal	1
+48296	Acinetobacter pittii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter calcoaceticus/baumannii complex;Acinetobacter pittii	1	equal	1
+48736	Ralstonia	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Ralstonia	1	equal	1
+49546	Flavobacteriaceae	family	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae	1	equal	1
+53246	Pseudoalteromonas	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Pseudoalteromonadaceae;Pseudoalteromonas	1	equal	1
+53335	Pantoea	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Erwiniaceae;Pantoea	1	equal	1
+53451	Streptomyces rutgersensis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces diastaticus group;Streptomyces rutgersensis	2	equal	2
+53457	Janibacter	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Intrasporangiaceae;Janibacter	7	equal	7
+54757	Plasmodium vinckei vinckei	subspecies	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Vinckeia);Plasmodium vinckei;Plasmodium vinckei vinckei	8	equal	8
+55193	Malassezia	genus	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Ustilaginomycotina;Malasseziomycetes;Malasseziales;Malasseziaceae;Malassezia	3	equal	3
+55529	Guillardia theta	species	Eukaryota;Cryptophyceae;Pyrenomonadales;Geminigeraceae;Guillardia;Guillardia theta	3	equal	3
+55601	Vibrio anguillarum	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Vibrionales;Vibrionaceae;Vibrio;Vibrio anguillarum	4	equal	4
+55968	Leucobacter	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Leucobacter	3	equal	3
+56646	Fusarium venenatum	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium sambucinum species complex;Fusarium venenatum	5	equal	5
+56947	Choristoneura fumiferana granulovirus	no rank	Viruses;Naldaviricetes;Lefavirales;Baculoviridae;Betabaculovirus;Betabaculovirus chofumiferanae	1	equal	1
+57493	Kocuria	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Kocuria	1	equal	1
+57704	Tsukamurella tyrosinosolvens	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Tsukamurellaceae;Tsukamurella;Tsukamurella tyrosinosolvens	1	equal	1
+58712	Salmonella enterica subsp. enterica serovar Anatum	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	3	equal	3
+59201	Salmonella enterica subsp. enterica	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	1	equal	1
+59732	Chryseobacterium	genus	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium	2	equal	2
+59734	Empedobacter	genus	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Empedobacter	10	equal	10
+60550	Burkholderia pyrrocinia	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia pyrrocinia	2	equal	2
+60552	Burkholderia vietnamiensis	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia vietnamiensis	2	equal	2
+61592	Corynebacterium durum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium durum	7	equal	7
+62322	Shewanella baltica	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Shewanellaceae;Shewanella;Shewanella baltica	1	equal	1
+66269	Pantoea stewartii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Erwiniaceae;Pantoea;Pantoea stewartii	2	equal	2
+67294	Streptomyces filamentosus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces filamentosus	1	equal	1
+67304	Streptomyces griseorubiginosus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces griseorubiginosus	1	equal	1
+68175	Streptomyces antimycoticus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces antimycoticus	2	equal	2
+68212	Streptomyces graminofaciens	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces griseus group;Streptomyces halstedii subgroup;Streptomyces graminofaciens	1	equal	1
+68892	Streptococcus infantis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus infantis	2	equal	2
+69277	Phyllobacteriaceae	family	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Phyllobacteriaceae	1	equal	1
+69781	Penicillium oxalicum	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Penicillium;Penicillium oxalicum	8	equal	8
+70348	Acinetobacter dispersus	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter dispersus	1	equal	1
+71999	Kocuria palustris	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Kocuria;Kocuria palustris	11	equal	11
+72407	Klebsiella pneumoniae subsp. pneumoniae	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella pneumoniae;Klebsiella pneumoniae subsp. pneumoniae	7	equal	7
+72763	Tessaracoccus	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae;Tessaracoccus	1	equal	1
+75682	Oxalobacteraceae	family	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae	8	equal	8
+76760	Pseudomonas rhodesiae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas fluorescens group;Pseudomonas rhodesiae	1	equal	1
+76761	Pseudomonas veronii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas fluorescens group;Pseudomonas veronii	1	equal	1
+76775	Malassezia restricta	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Ustilaginomycotina;Malasseziomycetes;Malasseziales;Malasseziaceae;Malassezia;Malassezia restricta	12	equal	12
+76885	Pseudomonas sp. K-62	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas sp. K-62	2	equal	2
+78331	Mycobacterium canetti	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycobacterium;Mycobacterium tuberculosis complex;Mycobacterium canetti	435	equal	435
+80840	Burkholderiales	order	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales	11	equal	11
+80864	Comamonadaceae	family	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae	1	equal	1
+80865	Delftia	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Delftia	20	equal	20
+80866	Delftia acidovorans	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Delftia;Delftia acidovorans	1	equal	1
+80868	Paracidovorax cattleyae	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Paracidovorax;Paracidovorax cattleyae	1	equal	1
+81852	Enterococcaceae	family	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Enterococcaceae	7	equal	7
+82348	Streptococcus pluranimalium	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus pluranimalium	2	equal	2
+82633	Cupriavidus pauculus	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Cupriavidus;Cupriavidus pauculus	1	equal	1
+83333	Escherichia coli K-12	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia;Escherichia coli;Escherichia coli K-12	1	equal	1
+83655	Leclercia adecarboxylata	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Leclercia;Leclercia adecarboxylata	4	equal	4
+84567	Pedobacter	genus	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Pedobacter	1	equal	1
+85006	Micrococcales	order	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales	8	equal	8
+85007	Mycobacteriales	order	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales	10	equal	10
+85015	Nocardioidaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae	4	equal	4
+85023	Microbacteriaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae	9	equal	9
+85030	Geodermatophilaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Geodermatophilales;Geodermatophilaceae	14	equal	14
+85471	Plasmodium relictum	species	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Haemamoeba);Plasmodium relictum	3	equal	3
+85581	Photobacterium damselae subsp. damselae	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Vibrionales;Vibrionaceae;Photobacterium;Photobacterium damselae;Photobacterium damselae subsp. damselae	3	equal	3
+86795	Marmoricola	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Marmoricola	2	equal	2
+87882	Burkholderia cepacia complex	species group	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex	1	equal	1
+87883	Burkholderia multivorans	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia multivorans	2	equal	2
+88138	Modestobacter	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Geodermatophilales;Geodermatophilaceae;Modestobacter	3	equal	3
+89966	Hymenobacter	genus	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Hymenobacteraceae;Hymenobacter	1	equal	1
+90371	Salmonella enterica subsp. enterica serovar Typhimurium	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	1	equal	1
+90964	Staphylococcaceae	family	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae	2	equal	2
+91061	Bacilli	class	Bacteria;Terrabacteria group;Bacillota;Bacilli	15	equal	15
+91347	Enterobacterales	order	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales	35	equal	35
+91844	Candidatus Portiera aleyrodidarum	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Oceanospirillales;Halomonadaceae;Candidatus Portiera;Candidatus Portiera aleyrodidarum	1	equal	1
+92645	Herbaspirillum frisingense	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Herbaspirillum;Herbaspirillum frisingense	1	equal	1
+92647	Paraburkholderia tropica	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Paraburkholderia;Paraburkholderia tropica	2	equal	2
+93133	Mycosphaerellaceae	family	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Dothideomycetes;Dothideomycetidae;Mycosphaerellales;Mycosphaerellaceae	5	equal	5
+94643	Besnoitia besnoiti	species	Eukaryota;Sar;Apicomplexa;Conoidasida;Coccidia;Eucoccidiorida;Eimeriorina;Sarcocystidae;Besnoitia;Besnoitia besnoiti	2	equal	2
+95486	Burkholderia cenocepacia	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia cenocepacia	1	equal	1
+98403	Drechmeria coniospora	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Ophiocordycipitaceae;Drechmeria;Drechmeria coniospora	3	equal	3
+106648	Acinetobacter bereziniae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter bereziniae	4	equal	4
+106654	Acinetobacter nosocomialis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter calcoaceticus/baumannii complex;Acinetobacter nosocomialis	4	equal	4
+108980	Acinetobacter ursingii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter ursingii	7	equal	7
+108981	Acinetobacter schindleri	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter schindleri	3	equal	3
+110505	Mycobacterium heckeshornense	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycobacterium;Mycobacterium heckeshornense	2	equal	2
+111527	pseudomallei group	species group	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;pseudomallei group	2	equal	2
+118562	Arthrospira platensis	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Oscillatoriales;Microcoleaceae;Arthrospira;Arthrospira platensis	2	equal	2
+119045	Methylobacteriaceae	family	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae	126	equal	126
+119060	Burkholderiaceae	family	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae	6	equal	6
+121627	Talaromyces rugulosus	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Trichocomaceae;Talaromyces;Talaromyces sect. Islandici;Talaromyces rugulosus	5	equal	5
+122368	Cercospora beticola	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Dothideomycetes;Dothideomycetidae;Mycosphaerellales;Mycosphaerellaceae;Cercospora;Cercospora beticola	2	equal	2
+128785	Pseudoxanthomonas mexicana	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Pseudoxanthomonas;Pseudoxanthomonas mexicana	1	equal	1
+131567	cellular organisms	no rank		1644	equal	1644
+134537	Paraburkholderia fungorum	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Paraburkholderia;Paraburkholderia fungorum	9	equal	9
+134623	Opitutaceae	family	Bacteria;PVC group;Verrucomicrobiota;Opitutia;Opitutales;Opitutaceae	2	equal	2
+135621	Pseudomonadaceae	family	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae	6	equal	6
+138532	Curtobacterium flaccumfaciens pv. flaccumfaciens	no rank	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Curtobacterium;Curtobacterium flaccumfaciens	11	equal	11
+144184	Corynebacterium afermentans subsp. lipophilum	subspecies	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium afermentans;Corynebacterium afermentans subsp. lipophilum	1	equal	1
+147541	Dothideomycetes	class	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Dothideomycetes	6	equal	6
+147550	Sordariomycetes	class	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes	7	equal	7
+147802	Lactobacillus iners	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Lactobacillus;Lactobacillus iners	5	equal	5
+150053	Yersinia enterocolitica subsp. palearctica	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Yersiniaceae;Yersinia;Yersinia enterocolitica;Yersinia enterocolitica subsp. palearctica	1	equal	1
+152480	Burkholderia ambifaria	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia ambifaria	1	equal	1
+152682	Sphingomonas melonis	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas melonis	3	equal	3
+153491	Alysiella crassa	species	Bacteria;Pseudomonadota;Betaproteobacteria;Neisseriales;Neisseriaceae;Alysiella;Alysiella crassa	1	equal	1
+154116	Georgenia	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Bogoriellaceae;Georgenia	1	equal	1
+155077	Cellvibrio japonicus	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Cellvibrionales;Cellvibrionaceae;Cellvibrio;Cellvibrio japonicus	1	equal	1
+155619	Agaricomycetes	class	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina;Agaricomycetes	11	equal	11
+155892	Caulobacter vibrioides	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Caulobacteraceae;Caulobacter;Caulobacter vibrioides	1	equal	1
+156976	Corynebacterium riegelii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium riegelii	2	equal	2
+156977	Microbacterium resistens	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Microbacterium;Microbacterium resistens	1	equal	1
+158836	Enterobacter hormaechei	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter;Enterobacter cloacae complex;Enterobacter hormaechei	2	equal	2
+161879	Corynebacterium kroppenstedtii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium kroppenstedtii	1	equal	1
+162209	Paenibacillus naphthalenovorans	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Paenibacillaceae;Paenibacillus;Paenibacillus naphthalenovorans	2	equal	2
+165695	Sphingobium	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingobium	2	equal	2
+168172	Puccinia striiformis f. sp. tritici	forma specialis	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Pucciniomycotina;Pucciniomycetes;Pucciniales;Pucciniaceae;Puccinia;Puccinia striiformis;Puccinia striiformis f. sp. tritici	30	equal	30
+169480	Rothia amarae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Rothia;Rothia amarae	13	equal	13
+170679	Vibrio chagasii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Vibrionales;Vibrionaceae;Vibrio;Vibrio chagasii	1	equal	1
+172042	Rothia aeria	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Rothia;Rothia aeria	15	equal	15
+179408	Oscillatoria nigro-viridis PCC 7112	strain	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Oscillatoriales;Oscillatoriaceae;Oscillatoria;Oscillatoria nigro-viridis;Oscillatoria nigro-viridis PCC 7112	19	equal	19
+180282	Delftia tsuruhatensis	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Delftia;Delftia tsuruhatensis	11	equal	11
+181124	Marasmius oreades	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina;Agaricomycetes;Agaricomycetidae;Agaricales;Marasmiineae;Marasmiaceae;Marasmius;Marasmius oreades	16	equal	16
+181762	Psilocybe cubensis	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina;Agaricomycetes;Agaricomycetidae;Agaricales;Agaricineae;Strophariaceae;Psilocybe;Psilocybe cubensis	4	equal	4
+182096	Aspergillus chevalieri	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Aspergillus;Aspergillus chevalieri	1340	equal	1340
+183795	Pseudomonas mediterranea	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas fluorescens group;Pseudomonas mediterranea	1	equal	1
+185008	Butyrivibrio hungatei	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Butyrivibrio;Butyrivibrio hungatei	1	equal	1
+186817	Bacillaceae	family	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae	1	equal	1
+186826	Lactobacillales	order	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales	10	equal	10
+195108	Fusarium falciforme	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium solani species complex;Fusarium falciforme	2	equal	2
+196023	Aeromonas hydrophila subsp. hydrophila	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas hydrophila;Aeromonas hydrophila subsp. hydrophila	1	equal	1
+196024	Aeromonas dhakensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas dhakensis	12	equal	12
+196816	unclassified Acinetobacter	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter	1	equal	1
+196821	unclassified Pseudomonas	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas	2	equal	2
+196869	unclassified Flavobacterium	no rank	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Flavobacterium	1	equal	1
+199591	Brevibacterium luteolum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Brevibacteriaceae;Brevibacterium;Brevibacterium luteolum	19	equal	19
+200643	Bacteroidia	class	Bacteria;FCB group;Bacteroidota;Bacteroidia	1	equal	1
+200644	Flavobacteriales	order	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales	18	equal	18
+202907	Collimonas	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Collimonas	1	equal	1
+202956	Acinetobacter towneri	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter towneri	2	equal	2
+204037	Dickeya	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Pectobacteriaceae;Dickeya	1	equal	1
+204455	Rhodobacterales	order	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodobacterales	1	equal	1
+204457	Sphingomonadales	order	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales	22	equal	22
+208223	Kosakonia cowanii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Kosakonia;Kosakonia cowanii	1	equal	1
+208452	Plasmodium coatneyi	species	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium coatneyi	1	equal	1
+208479	Enterocloster bolteae	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Enterocloster;Enterocloster bolteae	1	equal	1
+216572	Oscillospiraceae	family	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Oscillospiraceae	3	equal	3
+216851	Faecalibacterium	genus	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Oscillospiraceae;Faecalibacterium	19	equal	19
+216929	Mycolicibacterium psychrotolerans	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycolicibacterium;Mycolicibacterium psychrotolerans	1	equal	1
+222543	Hypocreomycetidae	subclass	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae	2	equal	2
+223967	Methylorubrum populi	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum populi	697	equal	697
+224308	Bacillus subtilis subsp. subtilis str. 168	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus subtilis group;Bacillus subtilis;Bacillus subtilis subsp. subtilis;Bacillus subtilis subsp. subtilis str. 168	1	equal	1
+227086	Bigelowiella natans	species	Eukaryota;Sar;Cercozoa;Chlorarachniophyceae;Bigelowiella;Bigelowiella natans	5	equal	5
+227290	Rhizobium/Agrobacterium group	no rank	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae	10	equal	10
+227321	Aspergillus nidulans FGSC A4	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Nidulantes;Aspergillus nidulans;Aspergillus nidulans FGSC A4	1	equal	1
+229533	Fusarium graminearum PH-1	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium sambucinum species complex;Fusarium graminearum;Fusarium graminearum PH-1	2	equal	2
+231439	Pseudodesulfovibrio portus	species	Bacteria;Thermodesulfobacteriota;Desulfovibrionia;Desulfovibrionales;Desulfovibrionaceae;Pseudodesulfovibrio;Pseudodesulfovibrio portus	1	equal	1
+235443	Cryptococcus neoformans var. grubii H99	strain	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina;Tremellomycetes;Tremellales;Cryptococcaceae;Cryptococcus;Cryptococcus neoformans species complex;Cryptococcus neoformans;Cryptococcus neoformans serotype A;Cryptococcus neoformans var. grubii H99	1	equal	1
+235627	unclassified Arthrobacter	no rank	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Arthrobacter	4	equal	4
+237258	Cloacibacterium normanense	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Cloacibacterium;Cloacibacterium normanense	4	equal	4
+238749	Diaphorobacter	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Diaphorobacter	1	equal	1
+240521	Rhizobium daejeonense	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Rhizobium;Rhizobium daejeonense	1	equal	1
+244366	Klebsiella variicola	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella variicola	2	equal	2
+244582	Candidatus Paracaedibacter symbiosus	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Holosporales;Candidatus Paracaedibacteraceae;Candidatus Paracaedibacter;Candidatus Paracaedibacter symbiosus	2	equal	2
+259536	Psychrobacter arcticus 273-4	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Psychrobacter;Psychrobacter arcticus;Psychrobacter arcticus 273-4	1	equal	1
+262209	Janibacter melonis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Intrasporangiaceae;Janibacter;Janibacter melonis	2	equal	2
+266749	Kaistella jeonii	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Kaistella;Kaistella jeonii	1	equal	1
+269660	Methylobacterium brachiatum	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium brachiatum	3	equal	3
+269798	Cytophaga hutchinsonii ATCC 33406	strain	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Cytophagaceae;Cytophaga;Cytophaga hutchinsonii;Cytophaga hutchinsonii ATCC 33406	16	equal	16
+270351	Methylobacterium aquaticum	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium aquaticum	2	equal	2
+272630	Methylorubrum extorquens AM1	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum extorquens;Methylorubrum extorquens AM1	61	equal	61
+273384	Brevibacterium aurantiacum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Brevibacteriaceae;Brevibacterium;Brevibacterium aurantiacum	1	equal	1
+280036	Sporisorium graminicola	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Ustilaginomycotina;Ustilaginomycetes;Ustilaginales;Ustilaginaceae;Sporisorium;Sporisorium graminicola	12	equal	12
+280145	Acinetobacter colistiniresistens	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter colistiniresistens	1	equal	1
+283734	Staphylococcus pseudintermedius	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus intermedius group;Staphylococcus pseudintermedius	4	equal	4
+284591	Yarrowia lipolytica CLIB122	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Dipodascomycetes;Dipodascales;Yarrowia;Yarrowia lipolytica;Yarrowia lipolytica CLIB122	7	equal	7
+285578	Streptomyces angustmyceticus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces angustmyceticus	1	equal	1
+288000	Bradyrhizobium sp. BTAi1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Bradyrhizobium;Bradyrhizobium sp. BTAi1	1	equal	1
+290340	Paenarthrobacter aurescens TC1	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Paenarthrobacter;Paenarthrobacter aurescens;Paenarthrobacter aurescens TC1	1	equal	1
+299767	Enterobacter ludwigii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter;Enterobacter cloacae complex;Enterobacter ludwigii	5	equal	5
+300181	Serratia ureilytica	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Yersiniaceae;Serratia;Serratia ureilytica	1	equal	1
+302484	Haloferax larsenii	species	Archaea;Methanobacteriati;Methanobacteriota;Stenosarchaea group;Halobacteria;Halobacteriales;Haloferacaceae;Haloferax;Haloferax larsenii	1	equal	1
+313596	Robiginitalea biformata HTCC2501	strain	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Robiginitalea;Robiginitalea biformata;Robiginitalea biformata HTCC2501	1	equal	1
+319939	Pseudomonas otitidis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas otitidis	2	equal	2
+320497	Neoasaia chiangmaiensis	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Acetobacteraceae;Neoasaia;Neoasaia chiangmaiensis	2	equal	2
+330879	Aspergillus fumigatus Af293	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Fumigati;Aspergillus fumigatus;Aspergillus fumigatus Af293	113	equal	113
+332648	Botrytis cinerea B05.10	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Leotiomycetes;Helotiales;Sclerotiniaceae;Botrytis;Botrytis cinerea;Botrytis cinerea B05.10	18	equal	18
+332952	Aspergillus flavus NRRL3357	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Circumdati;Aspergillus flavus;Aspergillus flavus NRRL3357	1	equal	1
+336722	Zymoseptoria tritici IPO323	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Dothideomycetes;Dothideomycetidae;Mycosphaerellales;Mycosphaerellaceae;Zymoseptoria;Zymoseptoria tritici;Zymoseptoria tritici IPO323	2	equal	2
+342950	Parashewanella spongiae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Shewanellaceae;Parashewanella;Parashewanella spongiae	1	equal	1
+347515	Leishmania major strain Friedlin	strain	Eukaryota;Discoba;Euglenozoa;Kinetoplastea;Metakinetoplastina;Trypanosomatida;Trypanosomatidae;Leishmaniinae;Leishmania;Leishmania;Leishmania major species complex;Leishmania major;Leishmania major strain Friedlin	1	equal	1
+347534	Zobellella denitrificans	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Zobellella;Zobellella denitrificans	1	equal	1
+353152	Cryptosporidium parvum Iowa II	strain	Eukaryota;Sar;Apicomplexa;Conoidasida;Coccidia;Eucoccidiorida;Eimeriorina;Cryptosporidiidae;Cryptosporidium;Cryptosporidium parvum;Cryptosporidium parvum Iowa II	1	equal	1
+354276	Enterobacter cloacae complex	species group	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter;Enterobacter cloacae complex	1	equal	1
+357441	Enterococcus lactis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Enterococcaceae;Enterococcus;Enterococcus lactis	1	equal	1
+366649	Xanthomonas citri pv. fuscans	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Xanthomonas;Xanthomonas citri group;Xanthomonas citri	3	equal	3
+367110	Neurospora crassa OR74A	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Sordariales;Sordariaceae;Neurospora;Neurospora crassa;Neurospora crassa OR74A	4	equal	4
+367775	Cryptococcus gattii WM276	strain	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina;Tremellomycetes;Tremellales;Cryptococcaceae;Cryptococcus;Cryptococcus gattii species complex;Cryptococcus gattii;Cryptococcus gattii WM276	1	equal	1
+370324	Natrinema longum	species	Archaea;Methanobacteriati;Methanobacteriota;Stenosarchaea group;Halobacteria;Halobacteriales;Natrialbaceae;Natrinema;Natrinema longum	2	equal	2
+371142	Sphingobacterium daejeonense	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Sphingobacterium;Sphingobacterium daejeonense	1	equal	1
+373672	Chryseobacterium gambrini	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium gambrini	2	equal	2
+374432	Methylobacterium tardum	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium tardum	3	equal	3
+376175	Schlegelella aquatica	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Sphaerotilaceae;Caldimonas;Schlegelella aquatica	10	equal	10
+379066	Gemmatimonas aurantiaca T-27	strain	Bacteria;FCB group;Gemmatimonadota;Gemmatimonadia;Gemmatimonadales;Gemmatimonadaceae;Gemmatimonas;Gemmatimonas aurantiaca;Gemmatimonas aurantiaca T-27	6	equal	6
+386891	Moraxella bovoculi	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Moraxella;Moraxella bovoculi	1	equal	1
+411154	Christiangramia forsetii KT0803	strain	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Christiangramia;Christiangramia forsetii;Christiangramia forsetii KT0803	1	equal	1
+412034	Celerinatantimonas diazotrophica	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Celerinatantimonadaceae;Celerinatantimonas;Celerinatantimonas diazotrophica	1	equal	1
+414778	Planococcus donghaensis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Planococcaceae;Planococcus;Planococcus donghaensis	1	equal	1
+416916	Aggregatibacter	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Aggregatibacter	2	equal	2
+418101	Plasmodium (Vinckeia)	subgenus	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Vinckeia)	1	equal	1
+418223	Methylobacterium phyllosphaerae	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium phyllosphaerae	1	equal	1
+423477	Veillonella rogosae	species	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Veillonellales;Veillonellaceae;Veillonella;Veillonella rogosae	2	equal	2
+424720	Shigella flexneri Y	serotype	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Shigella;Shigella flexneri;Shigella flexneri Y	1	equal	1
+426428	Fusarium oxysporum f. sp. lycopersici 4287	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium oxysporum species complex;Fusarium oxysporum;Fusarium oxysporum f. sp. lycopersici;Fusarium oxysporum f. sp. lycopersici 4287	2	equal	2
+440085	Methylorubrum extorquens CM4	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum extorquens;Methylorubrum extorquens CM4	9	equal	9
+440524	Salmonella enterica subsp. enterica serovar 4,[5],12:i:-	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	1	equal	1
+441500	Corynebacterium timonense	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium timonense	2	equal	2
+441620	Methylorubrum populi BJ001	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum populi;Methylorubrum populi BJ001	745	equal	745
+450367	Peribacillus frigoritolerans	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Peribacillus;Peribacillus frigoritolerans	1	equal	1
+451864	Dikarya	subkingdom	Eukaryota;Opisthokonta;Fungi;Dikarya	32	equal	32
+452652	Kitasatospora setae KM-6054	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Kitasatospora;Kitasatospora setae;Kitasatospora setae KM-6054	1	equal	1
+453842	Paracoccus aestuarii	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodobacterales;Paracoccaceae;Paracoccus;Paracoccus aestuarii	1	equal	1
+456999	Rhizoctonia solani	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina;Agaricomycetes;Cantharellales;Ceratobasidiaceae;Rhizoctonia;Rhizoctonia solani	10	equal	10
+460265	Methylobacterium nodulans ORS 2060	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium nodulans;Methylobacterium nodulans ORS 2060	2	equal	2
+469383	Conexibacter woesei DSM 14684	strain	Bacteria;Terrabacteria group;Actinomycetota;Thermoleophilia;Solirubrobacterales;Conexibacteraceae;Conexibacter;Conexibacter woesei;Conexibacter woesei DSM 14684	1	equal	1
+472759	Nitrosococcus halophilus Nc 4	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Chromatiales;Chromatiaceae;Nitrosococcus;Nitrosococcus halophilus;Nitrosococcus halophilus Nc 4	1	equal	1
+477641	Modestobacter marinus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Geodermatophilales;Geodermatophilaceae;Modestobacter;Modestobacter marinus	8	equal	8
+477697	Streptomyces sp. T12	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. T12	18	equal	18
+479433	Catenulispora acidiphila DSM 44928	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Catenulisporales;Catenulisporaceae;Catenulispora;Catenulispora acidiphila;Catenulispora acidiphila DSM 44928	2	equal	2
+479434	Sphaerobacter thermophilus DSM 20745	strain	Bacteria;Terrabacteria group;Thermomicrobiota;Thermomicrobia;Sphaerobacterales;Sphaerobacterineae;Sphaerobacteraceae;Sphaerobacter;Sphaerobacter thermophilus;Sphaerobacter thermophilus DSM 20745	4	equal	4
+484906	Babesia bovis T2Bo	no rank	Eukaryota;Sar;Apicomplexa;Aconoidasida;Piroplasmida;Babesiidae;Babesia;Babesia bovis	4	equal	4
+485898	Pseudomonas promysalinigenes	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas promysalinigenes	1	equal	1
+492670	Bacillus velezensis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus subtilis group;Bacillus amyloliquefaciens group;Bacillus velezensis	2	equal	2
+498019	Candidozyma auris	species	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Pichiomycetes;Serinales;Metschnikowiaceae;Candidozyma;Candidozyma auris	8	equal	8
+501783	Cloacibacterium	genus	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Cloacibacterium	6	equal	6
+508771	Toxoplasma gondii ME49	strain	Eukaryota;Sar;Apicomplexa;Conoidasida;Coccidia;Eucoccidiorida;Eimeriorina;Sarcocystidae;Toxoplasma;Toxoplasma gondii;Toxoplasma gondii ME49	15	equal	15
+510516	Aspergillus oryzae RIB40	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Circumdati;Aspergillus oryzae;Aspergillus oryzae RIB40	24	equal	24
+511745	Methylacidiphilum (ex Ratnadevi et al. 2023)	genus	Bacteria;PVC group;Verrucomicrobiota;Methylacidiphilae;Methylacidiphilales;Methylacidiphilaceae;Methylacidiphilum (ex Ratnadevi et al. 2023)	1	equal	1
+522448	Euhalothece natronophila Z-M001	strain	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Chroococcales;Halothecacae;Euhalothece;Euhalothece natronophila;Euhalothece natronophila Z-M001	2	equal	2
+525903	Thermanaerovibrio acidaminovorans DSM 6589	strain	Bacteria;Synergistota;Synergistia;Synergistales;Synergistaceae;Thermanaerovibrio;Thermanaerovibrio acidaminovorans;Thermanaerovibrio acidaminovorans DSM 6589	1	equal	1
+526225	Geodermatophilus obscurus DSM 43160	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Geodermatophilales;Geodermatophilaceae;Geodermatophilus;Geodermatophilus obscurus;Geodermatophilus obscurus DSM 43160	12	equal	12
+526944	Tetragenococcus osmophilus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Enterococcaceae;Tetragenococcus;Tetragenococcus osmophilus	1	equal	1
+527030	Bacillus thuringiensis serovar huazhongensis BGSC 4BD1	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus cereus group;Bacillus thuringiensis;Bacillus thuringiensis serovar huazhongensis BGSC 4BD1	1	equal	1
+536441	Chryseobacterium taklimakanense	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium taklimakanense	1	equal	1
+537007	Blautia hansenii DSM 20583	strain	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Blautia;Blautia hansenii;Blautia hansenii DSM 20583	1	equal	1
+556484	Phaeodactylum tricornutum CCAP 1055/1	strain	Eukaryota;Bacillariophyta;Bacillariophyceae;Sar;Naviculales;Phaeodactylaceae;Phaeodactylum;Phaeodactylum tricornutum;Phaeodactylum tricornutum CCAP 1055/1	4	equal	4
+557724	Burkholderia pseudomallei 576	strain	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;pseudomallei group;Burkholderia pseudomallei;Burkholderia pseudomallei 576	7	equal	7
+558152	Chryseobacterium piperi	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium piperi	1	equal	1
+558537	Delftia lacustris	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Delftia;Delftia lacustris	1	equal	1
+559295	Lachancea thermotolerans CBS 6340	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Saccharomycetes;Saccharomycetales;Saccharomycetaceae;Lachancea;Lachancea thermotolerans;Lachancea thermotolerans CBS 6340	74	equal	74
+564064	Spirosoma rigui	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Cytophagaceae;Spirosoma;Spirosoma rigui	1	equal	1
+573729	Thermothelomyces thermophilus ATCC 42464	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Sordariales;Chaetomiaceae;Thermothelomyces;Thermothelomyces thermophilus;Thermothelomyces thermophilus ATCC 42464	3	equal	3
+578455	Thermothielavioides terrestris NRRL 8126	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Sordariales;Chaetomiaceae;Thermothielavioides;Thermothielavioides terrestris;Thermothielavioides terrestris NRRL 8126	1	equal	1
+595537	Variovorax paradoxus EPS	strain	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Variovorax;Variovorax paradoxus;Variovorax paradoxus EPS	1	equal	1
+627344	Zymomonas mobilis subsp. mobilis ATCC 29191	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Zymomonadaceae;Zymomonas;Zymomonas mobilis;Zymomonas mobilis subsp. mobilis;Zymomonas mobilis subsp. mobilis ATCC 29191	1	equal	1
+627624	Nocardioides panacisoli	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Nocardioides;Nocardioides panacisoli	3	equal	3
+642780	Nocardioides scoriae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Nocardioides;Nocardioides scoriae	4	equal	4
+644966	Thermaerobacter marianensis DSM 12885	strain	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Clostridiales Family XVII. Incertae Sedis;Thermaerobacter;Thermaerobacter marianensis;Thermaerobacter marianensis DSM 12885	2	equal	2
+648995	Agrobacterium pusense	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Agrobacterium;Agrobacterium pusense	3	equal	3
+649756	Anaerostipes hadrus	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Anaerostipes;Anaerostipes hadrus	1	equal	1
+653045	Streptomyces violaceusniger Tu 4113	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces violaceusniger group;Streptomyces violaceusniger;Streptomyces violaceusniger Tu 4113	1	equal	1
+656178	Pandoraea vervacti	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Pandoraea;Pandoraea vervacti	1	equal	1
+659350	Paracoccus stylophorae	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodobacterales;Paracoccaceae;Paracoccus;Paracoccus stylophorae	1	equal	1
+661410	Methylorubrum extorquens DM4	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum extorquens;Methylorubrum extorquens DM4	41	equal	41
+669357	Geminocystis	genus	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Chroococcales;Geminocystaceae;Geminocystis	5	equal	5
+682798	Chitinolyticbacter meiyuanensis	species	Bacteria;Pseudomonadota;Betaproteobacteria;Neisseriales;Chitinibacteraceae;Chitinolyticbacter;Chitinolyticbacter meiyuanensis	1	equal	1
+682998	Azospirillum ramasamyi	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Azospirillaceae;Azospirillum;Azospirillum ramasamyi	1	equal	1
+686597	Martelella sp. AD-3	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Aurantimonadaceae;Martelella;Martelella sp. AD-3	1	equal	1
+687369	Torque teno mini virus 1	no rank	Viruses;Anelloviridae;Betatorquevirus;Betatorquevirus homini1	5	equal	5
+693977	Deinococcus proteolyticus MRP	strain	Bacteria;Terrabacteria group;Deinococcota;Deinococci;Deinococcales;Deinococcaceae;Deinococcus;Deinococcus proteolyticus;Deinococcus proteolyticus MRP	1	equal	1
+693986	Methylobacterium oryzae CBMB20	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium oryzae;Methylobacterium oryzae CBMB20	1	equal	1
+702745	Myroides phaeus	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Myroides;Myroides phaeus	1	equal	1
+710648	Acinetobacter sp. Tol 5	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter sp. Tol 5	2	equal	2
+712116	Actinomyces sp. oral taxon 169	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Actinomyces;Actinomyces sp. oral taxon 169	1	equal	1
+714943	Mucilaginibacter paludis DSM 18603	strain	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Mucilaginibacter;Mucilaginibacter paludis;Mucilaginibacter paludis DSM 18603	3	equal	3
+714995	Novacetimonas hansenii ATCC 23769	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Acetobacteraceae;Novacetimonas;Novacetimonas hansenii;Novacetimonas hansenii ATCC 23769	1	equal	1
+716545	saccharomyceta	clade	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta	15	equal	15
+716546	leotiomyceta	clade	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta	40	equal	40
+739141	Methylobacterium sp. XJLW	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium sp. XJLW	5	equal	5
+754429	Gilvibacter sp. SZ-19	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Gilvibacter;Gilvibacter sp. SZ-19	1	equal	1
+755732	Fluviicola taffensis DSM 16823	strain	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Crocinitomicaceae;Fluviicola;Fluviicola taffensis;Fluviicola taffensis DSM 16823	1	equal	1
+756892	Acinetobacter indicus	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter indicus	13	equal	13
+759273	Colletotrichum higginsianum IMI 349063	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Glomerellales;Glomerellaceae;Colletotrichum;Colletotrichum higginsianum;Colletotrichum higginsianum IMI 349063	6	equal	6
+796027	Sugiyamaella lignohabitans	species	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Dipodascomycetes;Dipodascales;Trichomonascaceae;Sugiyamaella;Sugiyamaella lignohabitans	6	equal	6
+797291	Sphingobacterium lactis	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Sphingobacterium;Sphingobacterium lactis	2	equal	2
+859144	Cytobacillus gottheilii	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Cytobacillus;Cytobacillus gottheilii	2	equal	2
+861299	Gemmatirosa kalamazoonensis	species	Bacteria;FCB group;Gemmatimonadota;Gemmatimonadia;Gemmatimonadales;Gemmatimonadaceae;Gemmatirosa;Gemmatirosa kalamazoonensis	6	equal	6
+869250	Theileria orientalis strain Shintoku	strain	Eukaryota;Sar;Apicomplexa;Aconoidasida;Piroplasmida;Theileriidae;Theileria;Theileria orientalis;Theileria orientalis strain Shintoku	2	equal	2
+871575	Ogataea parapolymorpha DL-1	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Pichiomycetes;Pichiales;Pichiaceae;Ogataea;Ogataea parapolymorpha;Ogataea parapolymorpha DL-1	2	equal	2
+876142	Encephalitozoon intestinalis ATCC 50506	strain	Eukaryota;Opisthokonta;Fungi;Microsporidia;Apansporoblastina;Unikaryonidae;Encephalitozoon;Encephalitozoon intestinalis;Encephalitozoon intestinalis ATCC 50506	1	equal	1
+881260	Enterobacter bugandensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter;Enterobacter bugandensis	1	equal	1
+888437	Psychrobacter sp. 4Dc	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Psychrobacter;Psychrobacter sp. 4Dc	1	equal	1
+909768	Acinetobacter calcoaceticus/baumannii complex	species group	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter calcoaceticus/baumannii complex	24	equal	24
+925818	Methylobacterium sp. AMS5	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium sp. AMS5	8	equal	8
+929439	Leishmania mexicana MHOM/GT/2001/U1103	strain	Eukaryota;Discoba;Euglenozoa;Kinetoplastea;Metakinetoplastina;Trypanosomatida;Trypanosomatidae;Leishmaniinae;Leishmania;Leishmania;Leishmania mexicana species complex;Leishmania mexicana;Leishmania mexicana MHOM/GT/2001/U1103	2	equal	2
+938288	Fenollaria massiliensis	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Fenollaria;Fenollaria massiliensis	1	equal	1
+983548	Dokdonia sp. 4H-3-7-5	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Dokdonia;Dokdonia sp. 4H-3-7-5	1	equal	1
+1028729	Fusarium pseudograminearum CS3096	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium sambucinum species complex;Fusarium pseudograminearum;Fusarium pseudograminearum CS3096	1	equal	1
+1033997	Nitrososphaeraceae	family	Archaea;Thermoproteati;Nitrososphaerota;Nitrososphaeria;Nitrososphaerales;Nitrososphaeraceae	1	equal	1
+1038929	Streptomyces xinghaiensis S187	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces xinghaiensis;Streptomyces xinghaiensis S187	1	equal	1
+1042133	Fusarium musae	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium musae	1	equal	1
+1049583	Kocuria indica	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Kocuria;Kocuria indica	2	equal	2
+1055538	Escherichia coli O145	serogroup	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia;Escherichia coli;Escherichia coli O145	1	equal	1
+1069201	Aspergillus luchuensis	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Circumdati;Aspergillus luchuensis	229	equal	229
+1071383	Huiozyma naganishii CBS 8797	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Saccharomycetes;Saccharomycetales;Saccharomycetaceae;Huiozyma;Huiozyma naganishii;Huiozyma naganishii CBS 8797	98	equal	98
+1085624	Persicobacter sp. JZB09	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Persicobacteraceae;Persicobacter;Persicobacter sp. JZB09	1	equal	1
+1121354	Corynebacterium capitovis DSM 44611	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium capitovis;Corynebacterium capitovis DSM 44611	1	equal	1
+1121362	Corynebacterium halotolerans YIM 70093 = DSM 44683	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium halotolerans;Corynebacterium halotolerans YIM 70093 = DSM 44683	3	equal	3
+1131492	Aspergillaceae	family	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae	379	equal	379
+1134687	Klebsiella michiganensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella michiganensis	1	equal	1
+1134782	Escherichia coli O104:H4 str. 2009EL-2050	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia;Escherichia coli;Escherichia coli O104:H4;Escherichia coli O104:H4 str. 2009EL-2050	1	equal	1
+1138190	Rhizobium binae	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Rhizobium;Rhizobium binae	2	equal	2
+1146883	Blastococcus saxobsidens DD2	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Geodermatophilales;Geodermatophilaceae;Blastococcus;Blastococcus saxobsidens;Blastococcus saxobsidens DD2	8	equal	8
+1148509	Pseudomonas prosekii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas prosekii	2	equal	2
+1150469	Pararhodospirillum photometricum DSM 122	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Rhodospirillaceae;Pararhodospirillum;Pararhodospirillum photometricum;Pararhodospirillum photometricum DSM 122	1	equal	1
+1159556	Ustilaginoidea virens	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Clavicipitaceae;Ustilaginoidea;Ustilaginoidea virens	12	equal	12
+1160720	Alteromonas stellipolaris LMG 21856	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Alteromonadaceae;Alteromonas;Alteromonas stellipolaris;Alteromonas stellipolaris LMG 21856	1	equal	1
+1167006	Desulfocapsa sulfexigens DSM 10523	strain	Bacteria;Thermodesulfobacteriota;Desulfobulbia;Desulfobulbales;Desulfocapsaceae;Desulfocapsa;Desulfocapsa sulfexigens;Desulfocapsa sulfexigens DSM 10523	1	equal	1
+1173263	Synechococcus sp. PCC 7502	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Synechococcales;Synechococcaceae;Synechococcus;Synechococcus sp. PCC 7502	7	equal	7
+1176533	Luteimonas granuli	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Luteimonas;Luteimonas granuli	1	equal	1
+1185652	Sinorhizobium fredii USDA 257	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Sinorhizobium;Sinorhizobium fredii group;Sinorhizobium fredii;Sinorhizobium fredii USDA 257	1	equal	1
+1194400	Pseudomonas syringae pv. actinidifoliorum ICMP 18803	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas syringae group;Pseudomonas syringae group genomosp. 1;Pseudomonas syringae;Pseudomonas syringae pv. actinidifoliorum ICMP 18803	1	equal	1
+1196083	Snodgrassella alvi	species	Bacteria;Pseudomonadota;Betaproteobacteria;Neisseriales;Neisseriaceae;Snodgrassella;Snodgrassella alvi	1	equal	1
+1197884	Acinetobacter venetianus VE-C3	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter venetianus;Acinetobacter venetianus VE-C3	9	equal	9
+1202962	Moritella marina ATCC 15381	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Moritellaceae;Moritella;Moritella marina;Moritella marina ATCC 15381	1	equal	1
+1220207	Aspergillus puulaauensis	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus puulaauensis	18	equal	18
+1234380	Cutibacterium acnes C1	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae;Cutibacterium;Cutibacterium acnes;Cutibacterium acnes C1	1	equal	1
+1240483	Orbaceae	family	Bacteria;Pseudomonadota;Gammaproteobacteria;Orbales;Orbaceae	1	equal	1
+1262470	Herbaspirillum hiltneri N3	strain	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Herbaspirillum;Herbaspirillum hiltneri;Herbaspirillum hiltneri N3	11	equal	11
+1263550	Edwardsiella piscicida	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Hafniaceae;Edwardsiella;Edwardsiella piscicida	1	equal	1
+1279013	Acinetobacter baumannii PR07	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter calcoaceticus/baumannii complex;Acinetobacter baumannii;Acinetobacter baumannii PR07	1	equal	1
+1286180	Mycolicibacterium sediminis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycolicibacterium;Mycolicibacterium sediminis	1	equal	1
+1286181	Mycolicibacterium arabiense	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycolicibacterium;Mycolicibacterium arabiense	1	equal	1
+1293412	Swingsia samuiensis	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Acetobacteraceae;Swingsia;Swingsia samuiensis	1	equal	1
+1296536	Enterobacter hormaechei subsp. xiangfangensis	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter;Enterobacter cloacae complex;Enterobacter hormaechei;Enterobacter hormaechei subsp. xiangfangensis	1	equal	1
+1303518	Chthonomonas calidirosea T49	strain	Bacteria;Terrabacteria group;Armatimonadota;Chthonomonadia;Chthonomonadales;Chthonomonadaceae;Chthonomonas;Chthonomonas calidirosea;Chthonomonas calidirosea T49	2	equal	2
+1324352	Chryseobacterium gallinarum	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium gallinarum	3	equal	3
+1325095	Bradyrhizobium guangzhouense	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Bradyrhizobium;Bradyrhizobium guangzhouense	1	equal	1
+1328300	Fusarium keratoplasticum	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium solani species complex;Fusarium keratoplasticum	4	equal	4
+1355015	Streptomyces pluripotens	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces pluripotens	2	equal	2
+1355477	Bradyrhizobium diazoefficiens	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Bradyrhizobium;Bradyrhizobium diazoefficiens	3	equal	3
+1367847	Paracoccus aminophilus JCM 7686	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodobacterales;Paracoccaceae;Paracoccus;Paracoccus aminophilus;Paracoccus aminophilus JCM 7686	1	equal	1
+1380566	Pochonia chlamydosporia 170	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Clavicipitaceae;Pochonia;Pochonia chlamydosporia;Pochonia chlamydosporia 170	10	equal	10
+1383885	Flagellimonas maritima	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Flagellimonas;Flagellimonas maritima	1	equal	1
+1385930	Burkholderia dolosa PC543	strain	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia dolosa;Burkholderia dolosa PC543	8	equal	8
+1391654	Labilithrix luteola	species	Bacteria;Myxococcota;Polyangia;Polyangiales;Labilitrichaceae;Labilithrix;Labilithrix luteola	5	equal	5
+1394889	Thermosynechococcus sp. NK55a	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Acaryochloridales;Thermosynechococcaceae;Thermosynechococcus;Thermosynechococcus sp. NK55a	1	equal	1
+1414719	Corynebacterium jeddahense	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium jeddahense	33	equal	33
+1415568	Marinobacter sp. LV10R510-11A	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Marinobacteraceae;Marinobacter;Marinobacter sp. LV10R510-11A	1	equal	1
+1434109	Methanosarcina barkeri str. Wiesmoor	strain	Archaea;Methanobacteriati;Methanobacteriota;Stenosarchaea group;Methanomicrobia;Methanosarcinales;Methanosarcinaceae;Methanosarcina;Methanosarcina barkeri;Methanosarcina barkeri str. Wiesmoor	1	equal	1
+1458841	Mycobacterium phage CRB1	species	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Fromanvirus;Mycobacterium phage CRB1	1	equal	1
+1462527	Oceanobacillus jeddahense	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Oceanobacillus;Oceanobacillus jeddahense	1	equal	1
+1479019	Methylobacterium sp. C1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium sp. C1	1	equal	1
+1484693	Rhodoferax saidenbachensis	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Rhodoferax;Rhodoferax saidenbachensis	1	equal	1
+1496080	Brevibacterium pigmentatum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Brevibacteriaceae;Brevibacterium;Brevibacterium pigmentatum	1	equal	1
+1503055	Burkholderia territorii	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia territorii	1	equal	1
+1528099	Lawsonella clevelandensis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Lawsonellaceae;Lawsonella;Lawsonella clevelandensis	3	equal	3
+1560345	Sphingomonas panacis	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas panacis	1	equal	1
+1564114	Rhodococcus sp. B7740	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Nocardiaceae;Rhodococcus;Rhodococcus sp. B7740	1	equal	1
+1593482	Massilia sp. YMA4	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Massilia;Massilia sp. YMA4	1	equal	1
+1604004	Halanaeroarchaeum sulfurireducens	species	Archaea;Methanobacteriati;Methanobacteriota;Stenosarchaea group;Halobacteria;Halobacteriales;Halobacteriaceae;Halanaeroarchaeum;Halanaeroarchaeum sulfurireducens	1	equal	1
+1605721	Pandoravirus inopinatum	species	Viruses;Pandoravirus;Pandoravirus inopinatum	1	equal	1
+1678129	Limnohabitans sp. 103DPR2	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Limnohabitans;Limnohabitans sp. 103DPR2	2	equal	2
+1679497	Caulobacter flavus	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Caulobacteraceae;Caulobacter;Caulobacter flavus	2	equal	2
+1686313	Fenollaria	genus	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Fenollaria	2	equal	2
+1720083	Acetilactobacillus jinshanensis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Acetilactobacillus;Acetilactobacillus jinshanensis	1	equal	1
+1736675	Devosia sp. A16	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Devosiaceae;Devosia;Devosia sp. A16	1	equal	1
+1743159	Polynucleobacter yangtzensis	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Polynucleobacter;Polynucleobacter yangtzensis	1	equal	1
+1743168	Polynucleobacter wuianus	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Polynucleobacter;Polynucleobacter wuianus	1	equal	1
+1743174	Polynucleobacter tropicus	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Polynucleobacter;Polynucleobacter tropicus	1	equal	1
+1746199	Bordetella sp. N	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Alcaligenaceae;Bordetella;Bordetella sp. N	2	equal	2
+1758466	Corynebacterium faecale	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium faecale	1	equal	1
+1763828	Hankyongella ginsenosidimutans	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Hankyongella;Hankyongella ginsenosidimutans	6	equal	6
+1775910	Methylobacterium indicum	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium indicum	1	equal	1
+1776741	Acinetobacter proteolyticus	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter proteolyticus	1	equal	1
+1783272	Terrabacteria group	clade	Bacteria;Terrabacteria group	4	equal	4
+1807358	Stanieria sp. NIES-3757	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Pleurocapsales;Dermocarpellaceae;Stanieria;Stanieria sp. NIES-3757	1	equal	1
+1812935	Enterobacter roggenkampii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter;Enterobacter cloacae complex;Enterobacter roggenkampii	4	equal	4
+1813611	Chryseobacterium cucumeris	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium cucumeris	4	equal	4
+1813879	Sphingomonas panacisoli	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas panacisoli	2	equal	2
+1842727	Rhodoferax koreense	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Rhodoferax;Rhodoferax koreense	1	equal	1
+1843368	Sphingobium sp. RAC03	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingobium;Sphingobium sp. RAC03	2	equal	2
+1855617	Polynucleobacter sp. MWH-UH2A	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Polynucleobacter;Polynucleobacter sp. MWH-UH2A	1	equal	1
+1869241	Nostoc sp. CENA543	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Nostocales;Nostocaceae;Nostoc;Nostoc sp. CENA543	1	equal	1
+1871047	Chryseobacterium sp.	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium sp.	1	equal	1
+1871086	Brevundimonas sp.	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Caulobacteraceae;Brevundimonas;Brevundimonas sp.	2	equal	2
+1878942	Candidatus Fukatsuia symbiotica	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Yersiniaceae;Candidatus Fukatsuia;Candidatus Fukatsuia symbiotica	1	equal	1
+1882747	Afipia sp. GAS231	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Afipia;Afipia sp. GAS231	1	equal	1
+1882918	Pajaroellobacter abortibovis	species	Bacteria;Myxococcota;Polyangia;Polyangiales;Polyangiaceae;Pajaroellobacter;Pajaroellobacter abortibovis	4	equal	4
+1884634	Candidatus Nanopelagicus limnes	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Candidatus Nanopelagicales;Candidatus Nanopelagicaceae;Candidatus Nanopelagicus;Candidatus Nanopelagicus limnes	1	equal	1
+1884907	Candidatus Planktophila vernalis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Candidatus Nanopelagicales;Candidatus Nanopelagicaceae;Candidatus Planktophila;Candidatus Planktophila vernalis	3	equal	3
+1884915	Candidatus Nanopelagicus hibericus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Candidatus Nanopelagicales;Candidatus Nanopelagicaceae;Candidatus Nanopelagicus;Candidatus Nanopelagicus hibericus	1	equal	1
+1903186	Brachybacterium sp. P6-10-X1	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Dermabacteraceae;Brachybacterium;Brachybacterium sp. P6-10-X1	1	equal	1
+1912216	Cutibacterium	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae;Cutibacterium	4	equal	4
+1935379	Leucobacter muris	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Leucobacter;Leucobacter muris	4	equal	4
+1936080	Winogradskyella sp. J14-2	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Winogradskyella;Winogradskyella sp. J14-2	1	equal	1
+1945512	Cellvibrio sp. PSBB023	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Cellvibrionales;Cellvibrionaceae;Cellvibrio;Cellvibrio sp. PSBB023	2	equal	2
+1979527	Corynebacterium kefirresidentii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium kefirresidentii	4	equal	4
+1981510	Monoglobus pectinilyticus	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Monoglobales;Monoglobaceae;Monoglobus;Monoglobus pectinilyticus	1	equal	1
+2004710	Cloacibacterium caeni	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Cloacibacterium;Cloacibacterium caeni	11	equal	11
+2005460	Chondrocystis sp. NIES-4102	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Chroococcales;Chroococcaceae;Chondrocystis;Chondrocystis sp. NIES-4102	1	equal	1
+2014534	Microbacterium sp. PM5	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Microbacterium;Microbacterium sp. PM5	1	equal	1
+2020962	Malassezia vespertilionis	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Ustilaginomycotina;Malasseziomycetes;Malasseziales;Malasseziaceae;Malassezia;Malassezia vespertilionis	14	equal	14
+2026186	Bacillus paranthracis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus cereus group;Bacillus paranthracis	1	equal	1
+2026624	Parasphingopyxis algicola	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Parasphingopyxis;Parasphingopyxis algicola	7	equal	7
+2034170	Trichoderma breve	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Hypocreaceae;Trichoderma;Trichoderma breve	1	equal	1
+2039166	Chryseobacterium sp. 6424	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium sp. 6424	3	equal	3
+2051553	Methylobacterium currus	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium currus	2	equal	2
+2055947	Corynebacterium heidelbergense	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium heidelbergense	1	equal	1
+2057798	Actinomyces sp. 432	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Actinomyces;Actinomyces sp. 432	3	equal	3
+2060973	Purpureocillium takamizusanense	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Ophiocordycipitaceae;Purpureocillium;Purpureocillium takamizusanense	1	equal	1
+2066133	Marinomonas sp. CT5	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Oceanospirillales;Oceanospirillaceae;Marinomonas;Marinomonas sp. CT5	1	equal	1
+2070337	Curtobacterium sp. SGAir0471	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Curtobacterium;Curtobacterium sp. SGAir0471	3	equal	3
+2072414	Stenotrophomonas sp. ESTM1D_MKCIP4_1	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Stenotrophomonas;Stenotrophomonas maltophilia group;Stenotrophomonas sp. ESTM1D_MKCIP4_1	1	equal	1
+2082188	Sphingobium sp. YG1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingobium;Sphingobium sp. YG1	2	equal	2
+2086584	Massilistercora timonensis	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Massilistercora;Massilistercora timonensis	1	equal	1
+2099583	Streptomyces sp. ICC1	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. ICC1	1	equal	1
+2126982	Escherichia coli O18:H1	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia;Escherichia coli;Escherichia coli O18:H1	1	equal	1
+2184053	Streptomyces cadmiisoli	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces aurantiacus group;Streptomyces cadmiisoli	1	equal	1
+2184519	Hydrogenophaga sp. NH-16	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Hydrogenophaga;Hydrogenophaga sp. NH-16	2	equal	2
+2202825	Methylobacterium durans	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium durans	6	equal	6
+2219696	Sphingomonas sp. FARSPH	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas sp. FARSPH	1	equal	1
+2220073	Bdellovibrio sp. NC01	species	Bacteria;Bdellovibrionota;Bdellovibrionia;Bdellovibrionales;Pseudobdellovibrionaceae;Bdellovibrio;Bdellovibrio sp. NC01	1	equal	1
+2231603	Akanthomyces muscarius	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Cordycipitaceae;Akanthomyces;Akanthomyces muscarius	2	equal	2
+2267275	Bartonella krasnovii	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Bartonellaceae;Bartonella;Bartonella krasnovii	1	equal	1
+2282523	Methylorubrum	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum	53	equal	53
+2293571	Streptomyces inhibens	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces inhibens	1	equal	1
+2306583	Halomonas sp. JS92-SW72	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Oceanospirillales;Halomonadaceae;Halomonas;Halomonas sp. JS92-SW72	9	equal	9
+2420310	Streptococcus sp. FDAARGOS_522	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus sp. FDAARGOS_522	1	equal	1
+2447890	Serratia sp. 1D1416	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Yersiniaceae;Serratia;Serratia sp. 1D1416	3	equal	3
+2487072	Epilithonimonas vandammei	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Epilithonimonas;Epilithonimonas vandammei	4	equal	4
+2487892	Corynebacterium urogenitale	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium urogenitale	4	equal	4
+2493633	Pseudomonas hydrolytica	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas hydrolytica	1	equal	1
+2497861	Billgrantia tianxiuensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Oceanospirillales;Halomonadaceae;Billgrantia;Billgrantia tianxiuensis	5	equal	5
+2502779	Pseudocnuella soli	species	Bacteria;FCB group;Bacteroidota;Chitinophagia;Chitinophagales;Chitinophagaceae;Pseudocnuella;Pseudocnuella soli	1	equal	1
+2502784	Flavobacterium cerinum	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Flavobacterium;Flavobacterium cerinum	2	equal	2
+2518370	Nocardioides euryhalodurans	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Nocardioides;Nocardioides euryhalodurans	1	equal	1
+2518599	Pandoraea sp. XY-2	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Pandoraea;Pandoraea sp. XY-2	1	equal	1
+2545709	Schizosaccharomyces osmophilus	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Ascomycota;Taphrinomycotina;Schizosaccharomycetes;Schizosaccharomycetales;Schizosaccharomycetaceae;Schizosaccharomyces;Schizosaccharomyces osmophilus	68	equal	68
+2565559	Stenotrophomonas sp. PAMC25021	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Stenotrophomonas;Stenotrophomonas sp. PAMC25021	1	equal	1
+2567896	Polyangium aurulentum	species	Bacteria;Myxococcota;Polyangia;Polyangiales;Polyangiaceae;Polyangium;Polyangium aurulentum	1	equal	1
+2572090	Nostoc sp. TCL240-02	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Nostocales;Nostocaceae;Nostoc;Nostoc sp. TCL240-02	1	equal	1
+2576891	Nibricoccus aquaticus	species	Bacteria;PVC group;Verrucomicrobiota;Opitutia;Opitutales;Opitutaceae;Nibricoccus;Nibricoccus aquaticus	1	equal	1
+2583588	Salmonella enterica subsp. enterica serovar 1,4,[5],12:i:-	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	1	equal	1
+2583851	Elizabethkingia sp. JS20170427COW	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Elizabethkingia;Elizabethkingia sp. JS20170427COW	1	equal	1
+2585716	Streptomyces sp. C8S0	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. C8S0	1	equal	1
+2587851	Erythrobacter sp. THAF29	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Erythrobacteraceae;Erythrobacter;Erythrobacter sp. THAF29	1	equal	1
+2590157	Klebsiella variicola subsp. variicola	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella variicola;Klebsiella variicola subsp. variicola	1	equal	1
+2590900	Tenuifilum thalassicum	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Tenuifilaceae;Tenuifilum;Tenuifilum thalassicum	1	equal	1
+2592654	Protaetiibacter larvae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Protaetiibacter;Protaetiibacter larvae	1	equal	1
+2593676	unclassified Streptomyces	no rank	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces	1	equal	1
+2594913	Corynebacterium sanguinis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium sanguinis	4	equal	4
+2596912	Glaciihabitans sp. INWT7	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Glaciihabitans;Glaciihabitans sp. INWT7	3	equal	3
+2601898	Noviherbaspirillum sp. UKPF54	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Noviherbaspirillum;Noviherbaspirillum sp. UKPF54	1	equal	1
+2603276	Methylobacterium sp. WL1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium sp. WL1	2	equal	2
+2609279	unclassified Massilia	no rank	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Massilia	3	equal	3
+2611147	unclassified Sphingobium	no rank	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingobium	2	equal	2
+2611352	Discoba	clade	Eukaryota;Discoba	1	equal	1
+2615069	unclassified Nocardioides	no rank	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Nocardioides	1	equal	1
+2624793	unclassified Cellvibrio	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Cellvibrionales;Cellvibrionaceae;Cellvibrio	3	equal	3
+2631580	unclassified Bradyrhizobium	no rank	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Bradyrhizobium	1	equal	1
+2650471	Lacipirellula parvula	species	Bacteria;PVC group;Planctomycetota;Planctomycetia;Pirellulales;Lacipirellulaceae;Lacipirellula;Lacipirellula parvula	2	equal	2
+2653203	Sphingomonas sp. CL5.1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas sp. CL5.1	16	equal	16
+2662362	Acinetobacter wanghuae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter wanghuae	1	equal	1
+2663857	Nocardioides marmotae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Nocardioides;Nocardioides marmotae	1	equal	1
+2681552	Variovorax sp. RKNM96	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Variovorax;Variovorax sp. RKNM96	4	equal	4
+2685287	unclassified Avibacterium	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Avibacterium	2	equal	2
+2695847	Escherichia phage ESSI2_ev239	no rank	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Peduoviridae;Evevirus;Evevirus ev239	12	equal	12
+2708082	Mumia sp. ZJ1417	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Mumia;Mumia sp. ZJ1417	2	equal	2
+2709303	Massilia sp. Se16.2.3	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Massilia;Massilia sp. Se16.2.3	1	equal	1
+2710596	Spirosoma foliorum	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Cytophagaceae;Spirosoma;Spirosoma foliorum	5	equal	5
+2713414	Chryseobacterium sp. POL2	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium sp. POL2	5	equal	5
+2714952	Roseateles sp. DAIF2	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Sphaerotilaceae;Roseateles;Roseateles sp. DAIF2	1	equal	1
+2719588	Kocuria sp. KD4	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Kocuria;Kocuria sp. KD4	3	equal	3
+2720871	Aspergillus subgen. Circumdati	subgenus	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Circumdati	29	equal	29
+2721243	Streptomyces sp. RLB1-33	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. RLB1-33	1	equal	1
+2725666	Mesorhizobium terrae	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Phyllobacteriaceae;Mesorhizobium;Mesorhizobium terrae	4	equal	4
+2725684	Acinetobacter sp. NEB149	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter sp. NEB149	6	equal	6
+2726954	Sarcina sp. JB2	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Clostridiaceae;Sarcina;Sarcina sp. JB2	1	equal	1
+2731680	Cellulosimicrobium sp. 72-3	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Promicromonosporaceae;Cellulosimicrobium;Cellulosimicrobium sp. 72-3	1	equal	1
+2744522	Mesorhizobium sp. L-8-3	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Phyllobacteriaceae;Mesorhizobium;Mesorhizobium sp. L-8-3	1	equal	1
+2745895	Salmonella sp. SJTUF14178	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella sp. SJTUF14178	2	equal	2
+2751176	Vibrio sp. B1ASS3	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Vibrionales;Vibrionaceae;Vibrio;Vibrio sp. B1ASS3	1	equal	1
+2752316	Rhodoferax sp. AJA081-3	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Rhodoferax;Rhodoferax sp. AJA081-3	1	equal	1
+2753607	Rhizobacter sp. AJA081-3	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Rhizobacter;Rhizobacter sp. AJA081-3	2	equal	2
+2754694	Chryseobacterium manosquense	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium manosquense	9	equal	9
+2758440	Changpingibacter yushuensis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Changpingibacter;Changpingibacter yushuensis	1	equal	1
+2759528	Chryseobacterium capnotolerans	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium capnotolerans	2	equal	2
+2760438	Limnospira indica BM01	strain	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Oscillatoriales;Sirenicapillariaceae;Limnospira;Limnospira indica;Limnospira indica BM01	1	equal	1
+2762318	Weeksellaceae	family	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae	7	equal	7
+2762322	Variovorax sp. PAMC26660	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Variovorax;Variovorax sp. PAMC26660	1	equal	1
+2766784	Microbacterium sp. Nx66	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Microbacterium;Microbacterium sp. Nx66	1	equal	1
+2766984	Pedobacter riviphilus	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Pedobacter;Pedobacter riviphilus	1	equal	1
+2772483	Algoriphagus sp. Y33	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Cyclobacteriaceae;Algoriphagus;Algoriphagus sp. Y33	1	equal	1
+2782232	Chryseobacterium group	no rank	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae	9	equal	9
+2787014	Serratia phage Tsm2	species	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Guernseyvirinae;Serratia phage Tsm2	1	equal	1
+2804617	Sphingomonas sp. LHG3406-1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas sp. LHG3406-1	1	equal	1
+2806347	Hydrogenophaga sp. SL48	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Hydrogenophaga;Hydrogenophaga sp. SL48	1	equal	1
+2810516	Rothia sp. ZJ932	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Rothia;Rothia sp. ZJ932	1	equal	1
+2816859	Arthrobacter sunyaminii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Arthrobacter;Arthrobacter sunyaminii	1	equal	1
+2819978	Cellulomonas fengjieae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Cellulomonadaceae;Cellulomonas;Cellulomonas fengjieae	1	equal	1
+2820270	Candidatus Kaistella beijingensis	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Kaistella;Candidatus Kaistella beijingensis	1	equal	1
+2840371	Gemella sp. zg-570	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Gemellaceae;Gemella;Gemella sp. zg-570	1	equal	1
+2847989	Geomonas subterranea	species	Bacteria;Thermodesulfobacteriota;Desulfuromonadia;Geobacterales;Geobacteraceae;Geomonas;Geomonas subterranea	1	equal	1
+2861282	Massilia sp. NP310	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Massilia;Massilia sp. NP310	8	equal	8
+2864202	Shewanella sp. FJAT-52076	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Shewanellaceae;Shewanella;Shewanella sp. FJAT-52076	1	equal	1
+2866311	Ruficoccus sp. ZRK36	species	Bacteria;PVC group;Verrucomicrobiota;Opitutia;Puniceicoccales;Cerasicoccaceae;Ruficoccus;Ruficoccus sp. ZRK36	1	equal	1
+2871095	Pseudomonas sp. DR48	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas sp. DR48	1	equal	1
+2871170	Cellulomonas sp. C5510	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Cellulomonadaceae;Cellulomonas;Cellulomonas sp. C5510	1	equal	1
+2874884	Klebsiella phage VLCpiS11a	species	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Guernseyvirinae;Klebsiella phage VLCpiS11a	1	equal	1
+2876939	Curtobacterium sp. TXMA1	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Curtobacterium;Curtobacterium sp. TXMA1	1	equal	1
+2879617	Arthrobacter sp. FW305-BF8	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Arthrobacter;Arthrobacter sp. FW305-BF8	1	equal	1
+2879938	Chryseobacterium sp. MEBOG06	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium sp. MEBOG06	1	equal	1
+2886042	Shigella virus Moo19	no rank	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Schitoviridae;Enquatrovirinae;Moovirus;Moovirus moo	3	equal	3
+2886821	Pantoea sp. Z09	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Erwiniaceae;Pantoea;Pantoea sp. Z09	2	equal	2
+2892442	Pseudomonas sp. CIP-10	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas sp. CIP-10	3	equal	3
+2893202	Aegicerativicinus sediminis	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Aegicerativicinus;Aegicerativicinus sediminis	1	equal	1
+2895353	Telluria group	no rank	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae	1	equal	1
+2896845	Lysinibacillus sp. GJ-1	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Lysinibacillus;Lysinibacillus sp. GJ-1	1	equal	1
+2897334	Methylorubrum sp. B1-46	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum sp. B1-46	8	equal	8
+2898076	Chryseobacterium turcicum	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium turcicum	6	equal	6
+2899133	Candidatus Nanosynbacter sp. HMT-352	species	Bacteria;Bacteria candidate phyla;Candidatus Saccharibacteria;Candidatus Saccharimonadia;Candidatus Nanosynbacterales;Candidatus Nanosynbacteraceae;Candidatus Nanosynbacter;Candidatus Nanosynbacter sp. HMT-352	1	equal	1
+2899220	Massilia endophytica	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Massilia;Massilia endophytica	2	equal	2
+2907205	Tellurirhabdus bombi	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Spirosomataceae;Tellurirhabdus;Tellurirhabdus bombi	1	equal	1
+2918170	Anaeromyxobacter oryzae	species	Bacteria;Myxococcota;Myxococcia;Myxococcales;Cystobacterineae;Anaeromyxobacteraceae;Anaeromyxobacter;Anaeromyxobacter oryzae	1	equal	1
+2919376	Acinetobacter sp. AOR07_HL	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter sp. AOR07_HL	1	equal	1
+2926709	Aliirhizobium (sic) terrae	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Alirhizobium;Aliirhizobium (sic) terrae	1	equal	1
+2929799	Chryseobacterium oryzae	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium oryzae	4	equal	4
+2938232	Methylorubrum sp. GM97	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum sp. GM97	3	equal	3
+2939414	Streptomyces sp. HU2014	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. HU2014	4	equal	4
+2942274	Pseudanabaena mucicola str. Chao 1806	strain	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Pseudanabaenales;Pseudanabaenaceae;Pseudanabaena;Pseudanabaena mucicola;Pseudanabaena mucicola str. Chao 1806	1	equal	1
+2943497	Acinetobacter tibetensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter tibetensis	1	equal	1
+2949090	Comamonas endophytica	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Comamonas;Comamonas endophytica	10	equal	10
+2950074	Acinetobacter sp. C32I	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter sp. C32I	2	equal	2
+2954079	Pseudomonas sp. FP1742	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas sp. FP1742	1	equal	1
+2954087	Pseudomonas sp. FP2254	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas sp. FP2254	1	equal	1
+2954102	Pseudomonas sp. FP833	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas sp. FP833	1	equal	1
+2962065	Pollutimonas sp. M17	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Alcaligenaceae;Pollutimonas;Pollutimonas sp. M17	1	equal	1
+2968083	Cellulomonas xiejunii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Cellulomonadaceae;Cellulomonas;Cellulomonas xiejunii	1	equal	1
+2971264	Citrobacter enshiensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Citrobacter;Citrobacter enshiensis	1	equal	1
+2976533	Sphingopyxis sp. PET50	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingopyxis;Sphingopyxis sp. PET50	2	equal	2
+2976818	Cloacibacterium sp. TD35	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Cloacibacterium;Cloacibacterium sp. TD35	4	equal	4
+2978392	Phyllobacterium sp. A18/5-2	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Phyllobacteriaceae;Phyllobacterium;Phyllobacterium sp. A18/5-2	1	equal	1
+2981136	Streptomyces sp. HUAS 15-9	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. HUAS 15-9	2	equal	2
+2984843	Methylobacterium flocculans	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium flocculans	1	equal	1
+2986281	Limnohabitans sp. TEGF004	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Limnohabitans;Limnohabitans sp. TEGF004	3	equal	3
+2986923	Pararhizobium sp. BT-229	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Pararhizobium;Pararhizobium sp. BT-229	22	equal	22
+2986929	Rhizobium sp. BT-175	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Rhizobium;Rhizobium sp. BT-175	4	equal	4
+2986949	Jiella pelagia	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Aurantimonadaceae;Jiella;Jiella pelagia	2	equal	2
+2993898	Mycobacterium ulcerans group	species group	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycobacterium;Mycobacterium ulcerans group	1	equal	1
+2994319	Flavobacterium sp. GSB-24	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Flavobacterium;Flavobacterium sp. GSB-24	1	equal	1
+2999116	Oceanirhabdus sp. W0125-5	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Clostridiaceae;Oceanirhabdus;Oceanirhabdus sp. W0125-5	1	equal	1
+3003247	Xanthomonas hawaiiensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Xanthomonas;Xanthomonas hawaiiensis	1	equal	1
+3003257	Flavobacterium aestivum	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Flavobacterium;Flavobacterium aestivum	1	equal	1
+3014784	Sphingomonas sp. NIBR02145	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas sp. NIBR02145	1	equal	1
+3016086	Solwaraspora sp. WMMD791	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micromonosporales;Micromonosporaceae;Solwaraspora;Solwaraspora sp. WMMD791	1	equal	1
+3020716	Acinetobacter sp. GSS19	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter sp. GSS19	1	equal	1
+3020908	Staphylococcus sp. NRL 22/194	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus sp. NRL 22/194	1	equal	1
+3025663	Microbacterium sp. Clip185	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Microbacterium;Microbacterium sp. Clip185	1	equal	1
+3026418	Devosia algicola	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Devosiaceae;Devosia;Devosia algicola	1	equal	1
+3027470	Acinetobacter sp. TAC-1	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter sp. TAC-1	1	equal	1
+3028117	Cyanophyceae	class	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae	2	equal	2
+3028735	Chelativorans sp. AA-79	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Phyllobacteriaceae;Chelativorans;Chelativorans sp. AA-79	1	equal	1
+3030210	Streptomyces sp. WZ-12	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. WZ-12	4	equal	4
+3038772	Tenacibaculum tangerinum	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Tenacibaculum;Tenacibaculum tangerinum	1	equal	1
+3039386	Rugamonas sp. DEMB1	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Rugamonas;Rugamonas sp. DEMB1	1	equal	1
+3041765	Streptomyces sp. SH5	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. SH5	1	equal	1
+3043330	Psychrobacter sp. WB2	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Psychrobacter;Psychrobacter sp. WB2	1	equal	1
+3047867	Polynucleobacter sp. HIN8	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Polynucleobacter;Polynucleobacter sp. HIN8	1	equal	1
+3049772	Bradyrhizobium sp. NP1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Bradyrhizobium;Bradyrhizobium sp. NP1	1	equal	1
+3060154	Diaphorobacter sp. C33	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Diaphorobacter;Diaphorobacter sp. C33	1	equal	1
+3067903	Pararhizobium sp. IMCC21322	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Pararhizobium;Pararhizobium sp. IMCC21322	1	equal	1
+3068324	Stenotrophomonas sp. 24(2023)	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Stenotrophomonas;Stenotrophomonas sp. 24(2023)	2	equal	2
+3069118	Sanyastnella coralliicola	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Sanyastnellaceae;Sanyastnella;Sanyastnella coralliicola	2	equal	2
+3070659	Aestuariibaculum sp. YM273	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Aestuariibaculum;Aestuariibaculum sp. YM273	1	equal	1
+3070681	Clostridium sp. OS1-26	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Clostridiaceae;Clostridium;Clostridium sp. OS1-26	1	equal	1
+3074378	Corynebacterium sp. Z-1	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium sp. Z-1	2	equal	2

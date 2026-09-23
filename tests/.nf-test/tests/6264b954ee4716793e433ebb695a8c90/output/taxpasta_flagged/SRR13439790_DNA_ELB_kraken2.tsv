@@ -1,0 +1,1133 @@
+taxonomy_id	name	rank	lineage	SRR13439790	SRR13439790_vs_NTC	SRR13439802_ntc1DNA
+0				33304	< NTC	165966
+1	root	no rank		73	< NTC	133
+2	Bacteria	superkingdom	Bacteria	117	< NTC	161
+9	Buchnera aphidicola	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Erwiniaceae;Buchnera;Buchnera aphidicola	0	in_NTC	1
+22	Shewanella	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Shewanellaceae;Shewanella	0	in_NTC	8
+24	Shewanella putrefaciens	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Shewanellaceae;Shewanella;Shewanella putrefaciens	0	in_NTC	8
+31	Myxococcaceae	family	Bacteria;Myxococcota;Myxococcia;Myxococcales;Cystobacterineae;Myxococcaceae	0	in_NTC	1
+43	Cystobacter fuscus	species	Bacteria;Myxococcota;Myxococcia;Myxococcales;Cystobacterineae;Archangiaceae;Cystobacter;Cystobacter fuscus	0	in_NTC	1
+48	Archangium gephyra	species	Bacteria;Myxococcota;Myxococcia;Myxococcales;Cystobacterineae;Archangiaceae;Archangium;Archangium gephyra	0	in_NTC	1
+59	Vitreoscilla	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Neisseriales;Neisseriaceae;Vitreoscilla	1	in_sample	0
+81	Hyphomicrobium	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Hyphomicrobiaceae;Hyphomicrobium	0	in_NTC	1
+136	Spirochaetales	order	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales	1	in_sample	0
+157	Treponema	genus	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema	8	in_sample	0
+158	Treponema denticola	species	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema;Treponema denticola	3	in_sample	0
+160	Treponema pallidum	species	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema;Treponema pallidum	1	in_sample	0
+171	Leptospira	genus	Bacteria;Spirochaetota;Spirochaetia;Leptospirales;Leptospiraceae;Leptospira	1	in_sample	0
+191	Azospirillum	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Azospirillaceae;Azospirillum	0	in_NTC	1
+194	Campylobacter	genus	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales;Campylobacteraceae;Campylobacter	77	in_sample	0
+199	Campylobacter concisus	species	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales;Campylobacteraceae;Campylobacter;Campylobacter concisus	341	in_sample	0
+203	Campylobacter rectus	species	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales;Campylobacteraceae;Campylobacter;Campylobacter rectus	3	in_sample	0
+204	Campylobacter showae	species	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales;Campylobacteraceae;Campylobacter;Campylobacter showae	3	in_sample	0
+210	Helicobacter pylori	species	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales;Helicobacteraceae;Helicobacter;Helicobacter pylori	0	in_NTC	1
+222	Achromobacter	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Alcaligenaceae;Achromobacter	0	in_NTC	1
+238	Elizabethkingia meningoseptica	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Elizabethkingia;Elizabethkingia meningoseptica	0	in_NTC	1
+246	Chryseobacterium balustinum	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium balustinum	0	in_NTC	4
+247	Empedobacter brevis	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Empedobacter;Empedobacter brevis	0	in_NTC	1
+253	Chryseobacterium indologenes	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium indologenes	0	in_NTC	1
+258	Sphingobacterium spiritivorum	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Sphingobacterium;Sphingobacterium spiritivorum	0	in_NTC	1
+265	Paracoccus	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodobacterales;Paracoccaceae;Paracoccus	0	in_NTC	1
+286	Pseudomonas	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas	5	< NTC	25
+287	Pseudomonas aeruginosa	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas aeruginosa group;Pseudomonas aeruginosa	0	in_NTC	3
+303	Pseudomonas putida	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas putida group;Pseudomonas putida	0	in_NTC	2
+347	Xanthomonas oryzae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Xanthomonas;Xanthomonas oryzae	0	in_NTC	1
+356	Hyphomicrobiales	order	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales	0	in_NTC	14
+373	Agrobacterium vitis	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Agrobacterium;Agrobacterium vitis	0	in_NTC	2
+374	Bradyrhizobium	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Bradyrhizobium	0	in_NTC	2
+407	Methylobacterium	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium	0	in_NTC	11
+408	Methylorubrum extorquens	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum extorquens	0	in_NTC	41
+410	Methylobacterium organophilum	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium organophilum	0	in_NTC	23
+433	Acetobacteraceae	family	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Acetobacteraceae	0	in_NTC	1
+450	Legionella longbeachae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Legionellales;Legionellaceae;Legionella;Legionella longbeachae	1	in_sample	0
+454	Legionella israelensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Legionellales;Legionellaceae;Legionella;Legionella israelensis	1	in_sample	0
+468	Moraxellaceae	family	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae	0	in_NTC	21
+469	Acinetobacter	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter	0	in_NTC	171
+470	Acinetobacter baumannii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter calcoaceticus/baumannii complex;Acinetobacter baumannii	0	in_NTC	42
+475	Moraxella	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Moraxella	0	in_NTC	38
+480	Moraxella catarrhalis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Moraxella;Moraxella catarrhalis	0	in_NTC	1
+481	Neisseriaceae	family	Bacteria;Pseudomonadota;Betaproteobacteria;Neisseriales;Neisseriaceae	1	< NTC	13
+482	Neisseria	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Neisseriales;Neisseriaceae;Neisseria	0	in_NTC	5
+497	Psychrobacter	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Psychrobacter	1	< NTC	23
+517	Bordetella	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Alcaligenaceae;Bordetella	0	in_NTC	1
+543	Enterobacteriaceae	family	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae	1	< NTC	73
+545	Citrobacter koseri	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Citrobacter;Citrobacter koseri	0	in_NTC	1
+547	Enterobacter	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter	0	in_NTC	1
+548	Klebsiella aerogenes	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella aerogenes	0	in_NTC	1
+561	Escherichia	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia	0	in_NTC	2
+562	Escherichia coli	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia;Escherichia coli	1	< NTC	36
+563	Shimwellia blattae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Shimwellia;Shimwellia blattae	0	in_NTC	1
+564	Escherichia fergusonii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia;Escherichia fergusonii	0	in_NTC	1
+571	Klebsiella oxytoca	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella oxytoca	0	in_NTC	2
+573	Klebsiella pneumoniae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella pneumoniae	0	in_NTC	6
+587	Providencia rettgeri	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Morganellaceae;Providencia;Providencia rettgeri	2	in_sample	0
+599	Salmonella sp.	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella sp.	0	in_NTC	1
+613	Serratia	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Yersiniaceae;Serratia	0	in_NTC	1
+623	Shigella flexneri	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Shigella;Shigella flexneri	0	in_NTC	1
+630	Yersinia enterocolitica	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Yersiniaceae;Yersinia;Yersinia enterocolitica	1	in_sample	0
+638	Arsenophonus nasoniae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Morganellaceae;Arsenophonus;Arsenophonus nasoniae	0	in_NTC	1
+642	Aeromonas	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas	0	in_NTC	18
+645	Aeromonas salmonicida	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas salmonicida	0	in_NTC	4
+670	Vibrio parahaemolyticus	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Vibrionales;Vibrionaceae;Vibrio;Vibrio harveyi group;Vibrio parahaemolyticus	0	in_NTC	2
+712	Pasteurellaceae	family	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae	0	in_NTC	12
+724	Haemophilus	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Haemophilus	0	in_NTC	1
+729	Haemophilus parainfluenzae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Haemophilus;Haemophilus parainfluenzae	0	in_NTC	4
+730	[Haemophilus] ducreyi	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Haemophilus;[Haemophilus] ducreyi	0	in_NTC	1
+738	Glaesserella parasuis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Glaesserella;Glaesserella parasuis	0	in_NTC	1
+768	Anaplasma	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Rickettsiales;Anaplasmataceae;Anaplasma	0	in_NTC	1
+817	Bacteroides fragilis	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Bacteroidaceae;Bacteroides;Bacteroides fragilis	0	in_NTC	2
+818	Bacteroides thetaiotaomicron	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Bacteroidaceae;Bacteroides;Bacteroides thetaiotaomicron	0	in_NTC	2
+824	Campylobacter gracilis	species	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales;Campylobacteraceae;Campylobacter;Campylobacter gracilis	4	in_sample	0
+830	Butyrivibrio	genus	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Butyrivibrio	1	in_sample	0
+837	Porphyromonas gingivalis	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Porphyromonadaceae;Porphyromonas;Porphyromonas gingivalis	23	in_sample	0
+838	Prevotella	genus	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella	6176	in_sample	0
+839	Xylanibacter ruminicola	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Xylanibacter;Xylanibacter ruminicola	8	in_sample	0
+848	Fusobacterium	genus	Bacteria;Fusobacteriota;Fusobacteriia;Fusobacteriales;Fusobacteriaceae;Fusobacterium	1	equal	1
+851	Fusobacterium nucleatum	species	Bacteria;Fusobacteriota;Fusobacteriia;Fusobacteriales;Fusobacteriaceae;Fusobacterium;Fusobacterium nucleatum	2	in_sample	0
+897	Desulfococcus multivorans	species	Bacteria;Thermodesulfobacteriota;Desulfobacteria;Desulfobacterales;Desulfococcaceae;Desulfococcus;Desulfococcus multivorans	0	in_NTC	1
+963	Herbaspirillum	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Herbaspirillum	0	in_NTC	13
+964	Herbaspirillum seropedicae	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Herbaspirillum;Herbaspirillum seropedicae	0	in_NTC	1
+976	Bacteroidota	phylum	Bacteria;FCB group;Bacteroidota	13	> NTC	1
+1014	Weeksella virosa	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Weeksella;Weeksella virosa	1	in_sample	0
+1017	Capnocytophaga gingivalis	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Capnocytophaga;Capnocytophaga gingivalis	9	in_sample	0
+1052	Halorhodospira halochloris	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Chromatiales;Ectothiorhodospiraceae;Halorhodospira;Halorhodospira halochloris	1	in_sample	0
+1117	Cyanobacteriota	phylum	Bacteria;Terrabacteria group;Cyanobacteriota	0	in_NTC	1
+1118	Chroococcales	order	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Chroococcales	1	in_sample	0
+1125	Microcystis	genus	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Chroococcales;Microcystaceae;Microcystis	1	in_sample	0
+1150	Oscillatoriales	order	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Oscillatoriales	0	in_NTC	2
+1161	Nostocales	order	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Nostocales	0	in_NTC	2
+1224	Pseudomonadota	phylum	Bacteria;Pseudomonadota	1	< NTC	55
+1236	Gammaproteobacteria	class	Bacteria;Pseudomonadota;Gammaproteobacteria	6	< NTC	89
+1239	Bacillota	phylum	Bacteria;Terrabacteria group;Bacillota	10	> NTC	7
+1243	Leuconostoc	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Leuconostoc	1	in_sample	0
+1268	Micrococcaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae	24	> NTC	12
+1269	Micrococcus	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Micrococcus	0	in_NTC	36
+1270	Micrococcus luteus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Micrococcus;Micrococcus luteus	0	in_NTC	1
+1279	Staphylococcus	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus	7	< NTC	27
+1280	Staphylococcus aureus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus aureus	3	< NTC	15
+1282	Staphylococcus epidermidis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus epidermidis	5	> NTC	1
+1283	Staphylococcus haemolyticus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus haemolyticus	0	in_NTC	1
+1286	Staphylococcus simulans	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus simulans	0	in_NTC	1
+1290	Staphylococcus hominis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus hominis	0	in_NTC	7
+1292	Staphylococcus warneri	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus warneri	0	in_NTC	1
+1298	Deinococcus	genus	Bacteria;Terrabacteria group;Deinococcota;Deinococci;Deinococcales;Deinococcaceae;Deinococcus	0	in_NTC	1
+1299	Deinococcus radiodurans	species	Bacteria;Terrabacteria group;Deinococcota;Deinococci;Deinococcales;Deinococcaceae;Deinococcus;Deinococcus radiodurans	0	in_NTC	2
+1300	Streptococcaceae	family	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae	57	> NTC	1
+1301	Streptococcus	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus	1374	> NTC	52
+1303	Streptococcus oralis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus oralis	4	in_sample	0
+1304	Streptococcus salivarius	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus salivarius	95	in_sample	0
+1305	Streptococcus sanguinis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus sanguinis	1	in_sample	0
+1307	Streptococcus suis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus suis	3	in_sample	0
+1308	Streptococcus thermophilus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus thermophilus	21	> NTC	1
+1309	Streptococcus mutans	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus mutans	4	in_sample	0
+1310	Streptococcus sobrinus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus sobrinus	2	in_sample	0
+1311	Streptococcus agalactiae	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus agalactiae	7	> NTC	1
+1313	Streptococcus pneumoniae	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus pneumoniae	6	in_sample	0
+1314	Streptococcus pyogenes	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus pyogenes	27	> NTC	1
+1318	Streptococcus parasanguinis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus parasanguinis	4	in_sample	0
+1326	Streptococcus acidominimus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus acidominimus	1	in_sample	0
+1328	Streptococcus anginosus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus anginosus group;Streptococcus anginosus	5	in_sample	0
+1334	Streptococcus dysgalactiae	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus dysgalactiae group;Streptococcus dysgalactiae	3	in_sample	0
+1335	Streptococcus equinus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus equinus	1	in_sample	0
+1336	Streptococcus equi	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus dysgalactiae group;Streptococcus equi	1	in_sample	0
+1341	Streptococcus ratti	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus ratti	3	in_sample	0
+1343	Streptococcus vestibularis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus vestibularis	6	in_sample	0
+1345	Streptococcus ferus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus ferus	1	in_sample	0
+1350	Enterococcus	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Enterococcaceae;Enterococcus	1	< NTC	44
+1351	Enterococcus faecalis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Enterococcaceae;Enterococcus;Enterococcus faecalis	1	equal	1
+1352	Enterococcus faecium	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Enterococcaceae;Enterococcus;Enterococcus faecium	3	in_sample	0
+1353	Enterococcus gallinarum	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Enterococcaceae;Enterococcus;Enterococcus gallinarum	0	in_NTC	1
+1379	Gemella haemolysans	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Gemellaceae;Gemella;Gemella haemolysans	0	in_NTC	1
+1385	Bacillales	order	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales	5	< NTC	7
+1386	Bacillus	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus	0	in_NTC	1
+1396	Bacillus cereus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus cereus group;Bacillus cereus	2	< NTC	4
+1404	Priestia megaterium	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Priestia;Priestia megaterium	0	in_NTC	1
+1491	Clostridium botulinum	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Clostridiaceae;Clostridium;Clostridium botulinum	2	< NTC	35
+1520	Clostridium beijerinckii	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Clostridiaceae;Clostridium;Clostridium beijerinckii	1	in_sample	0
+1578	Lactobacillus	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Lactobacillus	10	> NTC	1
+1587	Lactobacillus helveticus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Lactobacillus;Lactobacillus helveticus	1	in_sample	0
+1590	Lactiplantibacillus plantarum	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Lactiplantibacillus;Lactiplantibacillus plantarum	1	< NTC	2
+1598	Limosilactobacillus reuteri	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Limosilactobacillus;Limosilactobacillus reuteri	0	in_NTC	1
+1605	Ligilactobacillus animalis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Ligilactobacillus;Ligilactobacillus animalis	1	in_sample	0
+1633	Limosilactobacillus vaginalis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Limosilactobacillus;Limosilactobacillus vaginalis	0	in_NTC	1
+1650	Kurthia zopfii	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Planococcaceae;Kurthia;Kurthia zopfii	0	in_NTC	1
+1654	Actinomyces	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Actinomyces	4	< NTC	5
+1660	Schaalia odontolytica	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Schaalia;Schaalia odontolytica	10	in_sample	0
+1663	Arthrobacter	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Arthrobacter	1	equal	1
+1678	Bifidobacterium	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Bifidobacteriales;Bifidobacteriaceae;Bifidobacterium	2	in_sample	0
+1679	Bifidobacterium longum subsp. longum	subspecies	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Bifidobacteriales;Bifidobacteriaceae;Bifidobacterium;Bifidobacterium longum;Bifidobacterium longum subsp. longum	1	in_sample	0
+1683	Bifidobacterium angulatum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Bifidobacteriales;Bifidobacteriaceae;Bifidobacterium;Bifidobacterium angulatum	0	in_NTC	1
+1694	Bifidobacterium pseudolongum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Bifidobacteriales;Bifidobacteriaceae;Bifidobacterium;Bifidobacterium pseudolongum	3	in_sample	0
+1696	Brevibacterium	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Brevibacteriaceae;Brevibacterium	0	in_NTC	2
+1707	Cellulomonas	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Cellulomonadaceae;Cellulomonas	0	in_NTC	1
+1716	Corynebacterium	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium	1	< NTC	42
+1717	Corynebacterium diphtheriae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium diphtheriae	0	in_NTC	1
+1725	Corynebacterium xerosis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium xerosis	0	in_NTC	3
+1747	Cutibacterium acnes	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae;Cutibacterium;Cutibacterium acnes	2	< NTC	17
+1760	Actinomycetes	class	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes	30	> NTC	24
+1768	Mycobacterium kansasii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycobacterium;Mycobacterium kansasii	3	equal	3
+1795	Mycolicibacterium neoaurum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycolicibacterium;Mycolicibacterium neoaurum	0	in_NTC	1
+1824	Nocardia asteroides	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Nocardiaceae;Nocardia;Nocardia asteroides	1	in_sample	0
+1839	Nocardioides	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Nocardioides	0	in_NTC	2
+1847	Pseudonocardia	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Pseudonocardiales;Pseudonocardiaceae;Pseudonocardia	0	in_NTC	1
+1883	Streptomyces	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces	2	< NTC	26
+2047	Rothia dentocariosa	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Rothia;Rothia dentocariosa	4	in_sample	0
+2049	Actinomycetaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae	2	in_sample	0
+2053	Gordonia	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Gordoniaceae;Gordonia	0	in_NTC	1
+2061	Tsukamurella paurometabola	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Tsukamurellaceae;Tsukamurella;Tsukamurella paurometabola	0	in_NTC	6
+2062	Streptomycetaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae	0	in_NTC	1
+2070	Pseudonocardiaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Pseudonocardiales;Pseudonocardiaceae	0	in_NTC	3
+2098	Metamycoplasma hominis	species	Bacteria;Terrabacteria group;Mycoplasmatota;Mycoplasmoidales;Metamycoplasmataceae;Metamycoplasma;Metamycoplasma hominis	1	in_sample	0
+2285	Sulfolobus acidocaldarius	species	Archaea;Thermoproteati;Thermoproteota;Thermoprotei;Sulfolobales;Sulfolobaceae;Sulfolobus;Sulfolobus acidocaldarius	0	in_NTC	1
+2371	Xylella fastidiosa	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Xylella;Xylella fastidiosa	0	in_NTC	1
+2701	Gardnerella	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Bifidobacteriales;Bifidobacteriaceae;Gardnerella	1	equal	1
+2747	Carnobacterium	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Carnobacteriaceae;Carnobacterium	0	in_NTC	1
+2759	Eukaryota	superkingdom	Eukaryota	120	< NTC	503
+2898	Cryptomonas paramecium	species	Eukaryota;Cryptophyceae;Cryptomonadales;Cryptomonadaceae;Cryptomonas;Cryptomonas paramecium	0	in_NTC	6
+3027	Cryptophyceae	class	Eukaryota;Cryptophyceae	0	in_NTC	1
+4890	Ascomycota	phylum	Eukaryota;Opisthokonta;Fungi;Dikarya;Ascomycota	0	in_NTC	37
+4892	Saccharomycetales	order	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Saccharomycetes;Saccharomycetales	0	in_NTC	17
+4893	Saccharomycetaceae	family	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Saccharomycetes;Saccharomycetales;Saccharomycetaceae	0	in_NTC	1
+4895	Schizosaccharomyces	genus	Eukaryota;Opisthokonta;Fungi;Dikarya;Ascomycota;Taphrinomycotina;Schizosaccharomycetes;Schizosaccharomycetales;Schizosaccharomycetaceae;Schizosaccharomyces	0	in_NTC	1
+4910	Kluyveromyces	genus	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Saccharomycetes;Saccharomycetales;Saccharomycetaceae;Kluyveromyces	0	in_NTC	11
+5007	Brettanomyces bruxellensis	species	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Pichiomycetes;Pichiales;Pichiaceae;Brettanomyces;Brettanomyces bruxellensis	0	in_NTC	1
+5042	Eurotiales	order	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales	0	in_NTC	166
+5052	Aspergillus	genus	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus	4	< NTC	286
+5094	Talaromyces	genus	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Trichocomaceae;Talaromyces	0	in_NTC	3
+5125	Hypocreales	order	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales	0	in_NTC	3
+5139	Sordariales	order	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Sordariales	0	in_NTC	2
+5204	Basidiomycota	phylum	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota	0	in_NTC	2
+5296	Puccinia	genus	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Pucciniomycotina;Pucciniomycetes;Pucciniales;Pucciniaceae;Puccinia	7	< NTC	56
+5302	Agaricomycotina	subphylum	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina	0	in_NTC	1
+5338	Agaricales	order	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina;Agaricomycetes;Agaricomycetidae;Agaricales	1	in_sample	0
+5454	Ascochyta rabiei	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Dothideomycetes;Pleosporomycetidae;Pleosporales;Pleosporineae;Didymellaceae;Ascochyta;Ascochyta rabiei	1	< NTC	16
+5499	Fulvia fulva	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Dothideomycetes;Dothideomycetidae;Mycosphaerellales;Mycosphaerellaceae;Fulvia;Fulvia fulva	1	< NTC	7
+5506	Fusarium	genus	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium	0	in_NTC	1
+5654	Trypanosomatidae	family	Eukaryota;Discoba;Euglenozoa;Kinetoplastea;Metakinetoplastina;Trypanosomatida;Trypanosomatidae	0	in_NTC	8
+5661	Leishmania donovani	species	Eukaryota;Discoba;Euglenozoa;Kinetoplastea;Metakinetoplastina;Trypanosomatida;Trypanosomatidae;Leishmaniinae;Leishmania;Leishmania;Leishmania donovani species complex;Leishmania donovani	0	in_NTC	1
+5691	Trypanosoma brucei	species	Eukaryota;Discoba;Euglenozoa;Kinetoplastea;Metakinetoplastina;Trypanosomatida;Trypanosomatidae;Trypanosoma;Trypanozoon;Trypanosoma brucei	1	in_sample	0
+5741	Giardia intestinalis	species	Eukaryota;Metamonada;Fornicata;Diplomonadida;Hexamitidae;Giardiinae;Giardia;Giardia intestinalis	0	in_NTC	3
+5761	Naegleria	genus	Eukaryota;Heterolobosea;Discoba;Vahlkampfiidae;Naegleria	0	in_NTC	1
+5794	Apicomplexa	phylum	Eukaryota;Sar;Apicomplexa	1	< NTC	2
+5820	Plasmodium	genus	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium	0	in_NTC	2
+5851	Plasmodium knowlesi strain H	strain	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Plasmodium);Plasmodium knowlesi;Plasmodium knowlesi strain H	0	in_NTC	4
+5855	Plasmodium vivax	species	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Plasmodium);Plasmodium vivax	0	in_NTC	8
+5858	Plasmodium malariae	species	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Plasmodium);Plasmodium malariae	1	equal	1
+5863	Piroplasmida	order	Eukaryota;Sar;Apicomplexa;Aconoidasida;Piroplasmida	0	in_NTC	5
+5866	Babesia bigemina	species	Eukaryota;Sar;Apicomplexa;Aconoidasida;Piroplasmida;Babesiidae;Babesia;Babesia bigemina	1	< NTC	22
+5873	Theileria	genus	Eukaryota;Sar;Apicomplexa;Aconoidasida;Piroplasmida;Theileriidae;Theileria	0	in_NTC	1
+9606	Homo sapiens	species	Eukaryota;Metazoa;Chordata;Craniata;Sarcopterygii;Mammalia;Opisthokonta;Euarchontoglires;Primates;Haplorrhini;Simiiformes;Catarrhini;Hominoidea;Hominidae;Homininae;Homo;Homo sapiens	674036	> NTC	187259
+10804	adeno-associated virus 2	no rank	Viruses;Monodnaviria;Shotokuvirae;Cossaviricota;Quintoviricetes;Piccovirales;Parvoviridae;Parvovirinae;Dependoparvovirus;Dependoparvovirus primate1	1	in_sample	0
+11676	Human immunodeficiency virus 1	species	Viruses;Riboviria;Pararnavirae;Artverviricota;Revtraviricetes;Ortervirales;Retroviridae;Orthoretrovirinae;Lentivirus;Human immunodeficiency virus 1	0	in_NTC	1963
+12916	Acidovorax	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Acidovorax	0	in_NTC	5
+13366	Brettanomyces	genus	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Pichiomycetes;Pichiales;Pichiaceae;Brettanomyces	0	in_NTC	1
+13502	Brettanomyces nanus	species	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Pichiomycetes;Pichiales;Pichiaceae;Brettanomyces;Brettanomyces nanus	1	in_sample	0
+13687	Sphingomonas	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas	0	in_NTC	30
+13689	Sphingomonas paucimobilis	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas paucimobilis	0	in_NTC	5
+28037	Streptococcus mitis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus mitis	1	in_sample	0
+28056	Micromonosporaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micromonosporales;Micromonosporaceae	0	in_NTC	1
+28090	Acinetobacter lwoffii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter lwoffii	0	in_NTC	1
+28124	Porphyromonas endodontalis	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Porphyromonadaceae;Porphyromonas;Porphyromonas endodontalis	1	in_sample	0
+28125	Prevotella bivia	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella bivia	12	in_sample	0
+28128	Prevotella corporis	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella corporis	30	in_sample	0
+28129	Prevotella denticola	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella denticola	24	in_sample	0
+28131	Prevotella intermedia	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella intermedia	21	in_sample	0
+28132	Prevotella melaninogenica	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella melaninogenica	3367	> NTC	3
+28133	Prevotella nigrescens	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella nigrescens	15	in_sample	0
+28135	Segatella oris	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Segatella;Segatella oris	6	in_sample	0
+28137	Prevotella veroralis	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella veroralis	71	in_sample	0
+28144	Salmonella enterica subsp. enterica serovar Derby	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	0	in_NTC	1
+28147	Salmonella enterica subsp. enterica serovar Oranienburg	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	0	in_NTC	1
+28183	Leptospira santarosai	species	Bacteria;Spirochaetota;Spirochaetia;Leptospirales;Leptospiraceae;Leptospira;Leptospira santarosai	0	in_NTC	1
+28188	Capnocytophaga canimorsus	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Capnocytophaga;Capnocytophaga canimorsus	1	in_sample	0
+28211	Alphaproteobacteria	class	Bacteria;Pseudomonadota;Alphaproteobacteria	0	in_NTC	8
+28216	Betaproteobacteria	class	Bacteria;Pseudomonadota;Betaproteobacteria	0	in_NTC	8
+28384	other sequences	no rank		48	< NTC	87
+28449	Neisseria subflava	species	Bacteria;Pseudomonadota;Betaproteobacteria;Neisseriales;Neisseriaceae;Neisseria;Neisseria subflava	1	in_sample	0
+28453	Sphingobacterium	genus	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Sphingobacterium	0	in_NTC	1
+28901	Salmonella enterica	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica	0	in_NTC	3
+29385	Staphylococcus saprophyticus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus saprophyticus	2	in_sample	0
+29394	Dolosigranulum pigrum	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Carnobacteriaceae;Dolosigranulum;Dolosigranulum pigrum	0	in_NTC	1
+29430	Acinetobacter haemolyticus	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter haemolyticus	0	in_NTC	5
+29442	Pseudomonas tolaasii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas fluorescens group;Pseudomonas tolaasii	63	< NTC	424
+29465	Veillonella	genus	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Veillonellales;Veillonellaceae;Veillonella	191	> NTC	11
+29466	Veillonella parvula	species	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Veillonellales;Veillonellaceae;Veillonella;Veillonella parvula	18	> NTC	2
+29580	Janthinobacterium	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Janthinobacterium	0	in_NTC	2
+31953	Bifidobacteriaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Bifidobacteriales;Bifidobacteriaceae	1	in_sample	0
+31957	Propionibacteriaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae	0	in_NTC	2
+31977	Veillonellaceae	family	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Veillonellales;Veillonellaceae	1	in_sample	0
+31989	Paracoccaceae	family	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodobacterales;Paracoccaceae	0	in_NTC	2
+31998	Methylobacterium radiotolerans	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium radiotolerans	0	in_NTC	1
+32207	Rothia	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Rothia	66	> NTC	7
+33010	Cutibacterium avidum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae;Cutibacterium;Cutibacterium avidum	0	in_NTC	5
+33011	Cutibacterium granulosum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae;Cutibacterium;Cutibacterium granulosum	0	in_NTC	1
+33033	Parvimonas micra	species	Bacteria;Terrabacteria group;Bacillota;Tissierellia;Tissierellales;Peptoniphilaceae;Parvimonas;Parvimonas micra	37	in_sample	0
+33040	Streptococcus milleri	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus milleri	1	in_sample	0
+33055	Candidatus Kinetoplastibacterium	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Candidatus Kinetoplastibacterium	0	in_NTC	3
+33056	Candidatus Kinetoplastibacterium crithidii	species	Bacteria;Pseudomonadota;Betaproteobacteria;Candidatus Kinetoplastibacterium;Candidatus Kinetoplastibacterium crithidii	0	in_NTC	2
+33071	Gloeobacter	genus	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Gloeobacterales;Gloeobacteraceae;Gloeobacter	0	in_NTC	1
+33154	Opisthokonta	clade	Eukaryota;Opisthokonta	3	< NTC	10
+33882	Microbacterium	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Microbacterium	0	in_NTC	4
+33923	Mycoplasmopsis felis	species	Bacteria;Terrabacteria group;Mycoplasmatota;Mycoplasmoidales;Metamycoplasmataceae;Mycoplasmopsis;Mycoplasmopsis felis	0	in_NTC	2
+33958	Lactobacillaceae	family	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae	4	> NTC	1
+33959	Lactobacillus johnsonii	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Lactobacillus;Lactobacillus johnsonii	1	in_sample	0
+34020	Candidatus Liberibacter africanus	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Liberibacter;Candidatus Liberibacter africanus	0	in_NTC	1
+34062	Moraxella osloensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Moraxella;Moraxella osloensis	0	in_NTC	98
+34071	Telluria mixta	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Telluria;Telluria mixta	0	in_NTC	2
+34072	Variovorax	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Variovorax	0	in_NTC	1
+34073	Variovorax paradoxus	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Variovorax;Variovorax paradoxus	0	in_NTC	7
+34085	Riemerella anatipestifer	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Riemerella;Riemerella anatipestifer	0	in_NTC	1
+35718	Chaetomiaceae	family	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Sordariales;Chaetomiaceae	0	in_NTC	8
+36035	Saccharomycodes ludwigii	species	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Saccharomycetes;Saccharomycodales;Saccharomycodaceae;Saccharomycodes;Saccharomycodes ludwigii	1	< NTC	30
+36050	Fusarium poae	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium sambucinum species complex;Fusarium poae	0	in_NTC	3
+36809	Mycobacteroides abscessus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycobacteroides;Mycobacteroides abscessus	0	in_NTC	1
+37331	Pseudonocardia petroleophila	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Pseudonocardiales;Pseudonocardiaceae;Pseudonocardia;Pseudonocardia petroleophila	0	in_NTC	1
+37616	Viannia	subgenus	Eukaryota;Discoba;Euglenozoa;Kinetoplastea;Metakinetoplastina;Trypanosomatida;Trypanosomatidae;Leishmaniinae;Leishmania;Viannia	1	in_sample	0
+37637	Corynebacterium pseudodiphtheriticum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium pseudodiphtheriticum	0	in_NTC	1
+37727	Talaromyces marneffei	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Trichocomaceae;Talaromyces;Talaromyces sect. Talaromyces;Talaromyces marneffei	0	in_NTC	1
+37927	Sinomonas atrocyanea	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Sinomonas;Sinomonas atrocyanea	1	in_sample	0
+37928	Arthrobacter crystallopoietes	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Arthrobacter;Arthrobacter crystallopoietes	1	in_sample	0
+37929	Glutamicibacter nicotianae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Glutamicibacter;Glutamicibacter nicotianae	1	< NTC	4
+38284	Corynebacterium accolens	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium accolens	3	> NTC	1
+38304	Corynebacterium tuberculostearicum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium tuberculostearicum	0	in_NTC	9
+38501	Blastococcus	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Geodermatophilales;Geodermatophilaceae;Blastococcus	0	in_NTC	1
+39491	Agathobacter rectalis	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Agathobacter;Agathobacter rectalis	0	in_NTC	4
+39777	Veillonella atypica	species	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Veillonellales;Veillonellaceae;Veillonella;Veillonella atypica	112	in_sample	0
+39778	Veillonella dispar	species	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Veillonellales;Veillonellaceae;Veillonella;Veillonella dispar	58	in_sample	0
+40041	Streptococcus equi subsp. zooepidemicus	subspecies	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus dysgalactiae group;Streptococcus equi;Streptococcus equi subsp. zooepidemicus	2	in_sample	0
+40214	Acinetobacter johnsonii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter johnsonii	0	in_NTC	20
+40215	Acinetobacter junii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter junii	0	in_NTC	38
+40323	Stenotrophomonas	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Stenotrophomonas	0	in_NTC	3
+40324	Stenotrophomonas maltophilia	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Stenotrophomonas;Stenotrophomonas maltophilia group;Stenotrophomonas maltophilia	0	in_NTC	47
+41275	Brevundimonas	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Caulobacteraceae;Brevundimonas	0	in_NTC	17
+41294	Nitrobacteraceae	family	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae	0	in_NTC	3
+41297	Sphingomonadaceae	family	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae	2	< NTC	17
+43675	Rothia mucilaginosa	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Rothia;Rothia mucilaginosa	642	in_sample	0
+43768	Corynebacterium matruchotii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium matruchotii	2	< NTC	8
+44249	Paenibacillus	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Paenibacillaceae;Paenibacillus	0	in_NTC	5
+44283	Pasteurella multocida subsp. multocida	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Pasteurella;Pasteurella multocida;Pasteurella multocida subsp. multocida	0	in_NTC	9
+46124	Granulicatella adiacens	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Carnobacteriaceae;Granulicatella;Granulicatella adiacens	20	> NTC	1
+46867	Clostridium chauvoei	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Clostridiaceae;Clostridium;Clostridium chauvoei	0	in_NTC	1
+47671	Lautropia mirabilis	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Lautropia;Lautropia mirabilis	0	in_NTC	19
+47770	Lactobacillus crispatus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Lactobacillus;Lactobacillus crispatus	0	in_NTC	1
+47853	Micromonospora carbonacea	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micromonosporales;Micromonosporaceae;Micromonospora;Micromonospora carbonacea	0	in_NTC	1
+47885	Pseudomonas oryzihabitans	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas putida group;Pseudomonas oryzihabitans	0	in_NTC	1
+48296	Acinetobacter pittii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter calcoaceticus/baumannii complex;Acinetobacter pittii	0	in_NTC	1
+48736	Ralstonia	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Ralstonia	0	in_NTC	1
+49546	Flavobacteriaceae	family	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae	0	in_NTC	1
+52584	Brachyspira pilosicoli	species	Bacteria;Spirochaetota;Spirochaetia;Brachyspirales;Brachyspiraceae;Brachyspira;Brachyspira pilosicoli	1	in_sample	0
+52771	Actinomyces howellii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Actinomyces;Actinomyces howellii	1	in_sample	0
+52773	Schaalia meyeri	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Schaalia;Schaalia meyeri	5	in_sample	0
+53246	Pseudoalteromonas	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Pseudoalteromonadaceae;Pseudoalteromonas	0	in_NTC	1
+53335	Pantoea	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Erwiniaceae;Pantoea	0	in_NTC	1
+53451	Streptomyces rutgersensis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces diastaticus group;Streptomyces rutgersensis	0	in_NTC	2
+53457	Janibacter	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Intrasporangiaceae;Janibacter	0	in_NTC	7
+54757	Plasmodium vinckei vinckei	subspecies	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Vinckeia);Plasmodium vinckei;Plasmodium vinckei vinckei	0	in_NTC	8
+55193	Malassezia	genus	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Ustilaginomycotina;Malasseziomycetes;Malasseziales;Malasseziaceae;Malassezia	0	in_NTC	3
+55529	Guillardia theta	species	Eukaryota;Cryptophyceae;Pyrenomonadales;Geminigeraceae;Guillardia;Guillardia theta	0	in_NTC	3
+55601	Vibrio anguillarum	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Vibrionales;Vibrionaceae;Vibrio;Vibrio anguillarum	0	in_NTC	4
+55968	Leucobacter	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Leucobacter	0	in_NTC	3
+56646	Fusarium venenatum	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium sambucinum species complex;Fusarium venenatum	0	in_NTC	5
+56947	Choristoneura fumiferana granulovirus	no rank	Viruses;Naldaviricetes;Lefavirales;Baculoviridae;Betabaculovirus;Betabaculovirus chofumiferanae	0	in_NTC	1
+57493	Kocuria	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Kocuria	1	equal	1
+57704	Tsukamurella tyrosinosolvens	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Tsukamurellaceae;Tsukamurella;Tsukamurella tyrosinosolvens	0	in_NTC	1
+58712	Salmonella enterica subsp. enterica serovar Anatum	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	0	in_NTC	3
+59201	Salmonella enterica subsp. enterica	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	0	in_NTC	1
+59732	Chryseobacterium	genus	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium	3	> NTC	2
+59734	Empedobacter	genus	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Empedobacter	0	in_NTC	10
+60550	Burkholderia pyrrocinia	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia pyrrocinia	0	in_NTC	2
+60552	Burkholderia vietnamiensis	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia vietnamiensis	0	in_NTC	2
+61592	Corynebacterium durum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium durum	0	in_NTC	7
+62322	Shewanella baltica	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Shewanellaceae;Shewanella;Shewanella baltica	0	in_NTC	1
+64104	Bacillus pseudomycoides	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus cereus group;Bacillus pseudomycoides	1	in_sample	0
+66269	Pantoea stewartii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Erwiniaceae;Pantoea;Pantoea stewartii	0	in_NTC	2
+67294	Streptomyces filamentosus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces filamentosus	1	equal	1
+67304	Streptomyces griseorubiginosus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces griseorubiginosus	1	equal	1
+67827	Citrobacter werkmanii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Citrobacter;Citrobacter freundii complex;Citrobacter werkmanii	1	in_sample	0
+68175	Streptomyces antimycoticus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces antimycoticus	0	in_NTC	2
+68212	Streptomyces graminofaciens	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces griseus group;Streptomyces halstedii subgroup;Streptomyces graminofaciens	0	in_NTC	1
+68287	Mesorhizobium	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Phyllobacteriaceae;Mesorhizobium	1	in_sample	0
+68336	Bacteroidota/Chlorobiota group	clade	Bacteria;FCB group	1	in_sample	0
+68892	Streptococcus infantis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus infantis	12	> NTC	2
+69277	Phyllobacteriaceae	family	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Phyllobacteriaceae	0	in_NTC	1
+69710	Treponema vincentii	species	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema;Treponema vincentii	4	in_sample	0
+69713	Treponema socranskii subsp. buccale	subspecies	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema;Treponema socranskii;Treponema socranskii subsp. buccale	5	in_sample	0
+69781	Penicillium oxalicum	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Penicillium;Penicillium oxalicum	1	< NTC	8
+70348	Acinetobacter dispersus	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter dispersus	0	in_NTC	1
+71999	Kocuria palustris	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Kocuria;Kocuria palustris	0	in_NTC	11
+72407	Klebsiella pneumoniae subsp. pneumoniae	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella pneumoniae;Klebsiella pneumoniae subsp. pneumoniae	0	in_NTC	7
+72763	Tessaracoccus	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae;Tessaracoccus	0	in_NTC	1
+75682	Oxalobacteraceae	family	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae	0	in_NTC	8
+76123	Hoylesella enoeca	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Hoylesella;Hoylesella enoeca	1	in_sample	0
+76760	Pseudomonas rhodesiae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas fluorescens group;Pseudomonas rhodesiae	0	in_NTC	1
+76761	Pseudomonas veronii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas fluorescens group;Pseudomonas veronii	0	in_NTC	1
+76775	Malassezia restricta	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Ustilaginomycotina;Malasseziomycetes;Malasseziales;Malasseziaceae;Malassezia;Malassezia restricta	0	in_NTC	12
+76831	Myroides	genus	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Myroides	1	in_sample	0
+76860	Streptococcus constellatus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus anginosus group;Streptococcus constellatus	1	in_sample	0
+76885	Pseudomonas sp. K-62	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas sp. K-62	0	in_NTC	2
+76890	Asticcacaulis	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Caulobacteraceae;Asticcacaulis	1	in_sample	0
+77095	Segatella bryantii	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Segatella;Segatella bryantii	8	in_sample	0
+78331	Mycobacterium canetti	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycobacterium;Mycobacterium tuberculosis complex;Mycobacterium canetti	32	< NTC	435
+80840	Burkholderiales	order	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales	1	< NTC	11
+80864	Comamonadaceae	family	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae	1	equal	1
+80865	Delftia	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Delftia	1	< NTC	20
+80866	Delftia acidovorans	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Delftia;Delftia acidovorans	0	in_NTC	1
+80868	Paracidovorax cattleyae	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Paracidovorax;Paracidovorax cattleyae	0	in_NTC	1
+81466	Aminobacterium	genus	Bacteria;Synergistota;Synergistia;Synergistales;Aminobacteriaceae;Aminobacterium	7	in_sample	0
+81852	Enterococcaceae	family	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Enterococcaceae	0	in_NTC	7
+82348	Streptococcus pluranimalium	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus pluranimalium	1	< NTC	2
+82541	Cupriavidus gilardii	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Cupriavidus;Cupriavidus gilardii	1	in_sample	0
+82633	Cupriavidus pauculus	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Cupriavidus;Cupriavidus pauculus	0	in_NTC	1
+83333	Escherichia coli K-12	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia;Escherichia coli;Escherichia coli K-12	0	in_NTC	1
+83655	Leclercia adecarboxylata	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Leclercia;Leclercia adecarboxylata	0	in_NTC	4
+84566	Sphingobacteriaceae	family	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae	12	in_sample	0
+84567	Pedobacter	genus	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Pedobacter	13	> NTC	1
+85006	Micrococcales	order	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales	17	> NTC	8
+85007	Mycobacteriales	order	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales	0	in_NTC	10
+85015	Nocardioidaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae	0	in_NTC	4
+85023	Microbacteriaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae	0	in_NTC	9
+85030	Geodermatophilaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Geodermatophilales;Geodermatophilaceae	0	in_NTC	14
+85034	Glycomycetaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Glycomycetales;Glycomycetaceae	1	in_sample	0
+85471	Plasmodium relictum	species	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Haemamoeba);Plasmodium relictum	0	in_NTC	3
+85581	Photobacterium damselae subsp. damselae	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Vibrionales;Vibrionaceae;Photobacterium;Photobacterium damselae;Photobacterium damselae subsp. damselae	0	in_NTC	3
+86795	Marmoricola	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Marmoricola	0	in_NTC	2
+87882	Burkholderia cepacia complex	species group	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex	0	in_NTC	1
+87883	Burkholderia multivorans	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia multivorans	0	in_NTC	2
+88138	Modestobacter	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Geodermatophilales;Geodermatophilaceae;Modestobacter	0	in_NTC	3
+89966	Hymenobacter	genus	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Hymenobacteraceae;Hymenobacter	0	in_NTC	1
+90371	Salmonella enterica subsp. enterica serovar Typhimurium	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	0	in_NTC	1
+90964	Staphylococcaceae	family	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae	0	in_NTC	2
+91061	Bacilli	class	Bacteria;Terrabacteria group;Bacillota;Bacilli	11	< NTC	15
+91347	Enterobacterales	order	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales	2	< NTC	35
+91844	Candidatus Portiera aleyrodidarum	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Oceanospirillales;Halomonadaceae;Candidatus Portiera;Candidatus Portiera aleyrodidarum	0	in_NTC	1
+92645	Herbaspirillum frisingense	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Herbaspirillum;Herbaspirillum frisingense	1	equal	1
+92647	Paraburkholderia tropica	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Paraburkholderia;Paraburkholderia tropica	0	in_NTC	2
+93133	Mycosphaerellaceae	family	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Dothideomycetes;Dothideomycetidae;Mycosphaerellales;Mycosphaerellaceae	0	in_NTC	5
+94643	Besnoitia besnoiti	species	Eukaryota;Sar;Apicomplexa;Conoidasida;Coccidia;Eucoccidiorida;Eimeriorina;Sarcocystidae;Besnoitia;Besnoitia besnoiti	0	in_NTC	2
+95486	Burkholderia cenocepacia	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia cenocepacia	0	in_NTC	1
+97478	Limosilactobacillus mucosae	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Limosilactobacillus;Limosilactobacillus mucosae	8	in_sample	0
+98403	Drechmeria coniospora	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Ophiocordycipitaceae;Drechmeria;Drechmeria coniospora	0	in_NTC	3
+102886	Streptococcus didelphis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus didelphis	1	in_sample	0
+103816	Rhodococcus pyridinivorans	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Nocardiaceae;Rhodococcus;Rhodococcus pyridinivorans	1	in_sample	0
+106648	Acinetobacter bereziniae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter bereziniae	0	in_NTC	4
+106654	Acinetobacter nosocomialis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter calcoaceticus/baumannii complex;Acinetobacter nosocomialis	0	in_NTC	4
+108980	Acinetobacter ursingii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter ursingii	0	in_NTC	7
+108981	Acinetobacter schindleri	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter schindleri	0	in_NTC	3
+109790	Lactobacillus jensenii	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Lactobacillus;Lactobacillus jensenii	1	in_sample	0
+110505	Mycobacterium heckeshornense	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycobacterium;Mycobacterium heckeshornense	0	in_NTC	2
+111527	pseudomallei group	species group	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;pseudomallei group	0	in_NTC	2
+117563	Granulicatella	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Carnobacteriaceae;Granulicatella	3	in_sample	0
+118562	Arthrospira platensis	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Oscillatoriales;Microcoleaceae;Arthrospira;Arthrospira platensis	0	in_NTC	2
+119045	Methylobacteriaceae	family	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae	1	< NTC	126
+119060	Burkholderiaceae	family	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae	0	in_NTC	6
+119602	Streptococcus dysgalactiae subsp. equisimilis	subspecies	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus dysgalactiae group;Streptococcus dysgalactiae;Streptococcus dysgalactiae subsp. equisimilis	1	in_sample	0
+120682	Treponema sp. OMZ 803	species	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema;Treponema sp. OMZ 803	1	in_sample	0
+121428	Sphingobium xenophagum	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingobium;Sphingobium xenophagum	5	in_sample	0
+121627	Talaromyces rugulosus	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Trichocomaceae;Talaromyces;Talaromyces sect. Islandici;Talaromyces rugulosus	0	in_NTC	5
+122368	Cercospora beticola	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Dothideomycetes;Dothideomycetidae;Mycosphaerellales;Mycosphaerellaceae;Cercospora;Cercospora beticola	0	in_NTC	2
+128785	Pseudoxanthomonas mexicana	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Pseudoxanthomonas;Pseudoxanthomonas mexicana	0	in_NTC	1
+131567	cellular organisms	no rank		73	< NTC	1644
+134537	Paraburkholderia fungorum	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Paraburkholderia;Paraburkholderia fungorum	2	< NTC	9
+134623	Opitutaceae	family	Bacteria;PVC group;Verrucomicrobiota;Opitutia;Opitutales;Opitutaceae	0	in_NTC	2
+135461	Bacillus subtilis subsp. subtilis	subspecies	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus subtilis group;Bacillus subtilis;Bacillus subtilis subsp. subtilis	1	in_sample	0
+135487	Nocardia cyriacigeorgica	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Nocardiaceae;Nocardia;Nocardia cyriacigeorgica	1	in_sample	0
+135621	Pseudomonadaceae	family	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae	0	in_NTC	6
+136841	Pseudomonas aeruginosa group	species group	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas aeruginosa group	1	in_sample	0
+136843	Pseudomonas fluorescens group	species group	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas fluorescens group	1	in_sample	0
+137732	Granulicatella elegans	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Carnobacteriaceae;Granulicatella;Granulicatella elegans	1	in_sample	0
+138532	Curtobacterium flaccumfaciens pv. flaccumfaciens	no rank	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Curtobacterium;Curtobacterium flaccumfaciens	0	in_NTC	11
+138851	Treponema parvum	species	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema;Treponema parvum	1	in_sample	0
+144184	Corynebacterium afermentans subsp. lipophilum	subspecies	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium afermentans;Corynebacterium afermentans subsp. lipophilum	0	in_NTC	1
+147541	Dothideomycetes	class	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Dothideomycetes	0	in_NTC	6
+147550	Sordariomycetes	class	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes	1	< NTC	7
+147802	Lactobacillus iners	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Lactobacillus;Lactobacillus iners	0	in_NTC	5
+150053	Yersinia enterocolitica subsp. palearctica	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Yersiniaceae;Yersinia;Yersinia enterocolitica;Yersinia enterocolitica subsp. palearctica	0	in_NTC	1
+152480	Burkholderia ambifaria	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia ambifaria	0	in_NTC	1
+152682	Sphingomonas melonis	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas melonis	1	< NTC	3
+153491	Alysiella crassa	species	Bacteria;Pseudomonadota;Betaproteobacteria;Neisseriales;Neisseriaceae;Alysiella;Alysiella crassa	0	in_NTC	1
+154116	Georgenia	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Bogoriellaceae;Georgenia	0	in_NTC	1
+155077	Cellvibrio japonicus	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Cellvibrionales;Cellvibrionaceae;Cellvibrio;Cellvibrio japonicus	0	in_NTC	1
+155619	Agaricomycetes	class	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina;Agaricomycetes	0	in_NTC	11
+155892	Caulobacter vibrioides	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Caulobacteraceae;Caulobacter;Caulobacter vibrioides	0	in_NTC	1
+156976	Corynebacterium riegelii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium riegelii	0	in_NTC	2
+156977	Microbacterium resistens	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Microbacterium;Microbacterium resistens	0	in_NTC	1
+157687	Leptotrichia wadei	species	Bacteria;Fusobacteriota;Fusobacteriia;Fusobacteriales;Leptotrichiaceae;Leptotrichia;Leptotrichia wadei	3	in_sample	0
+158500	Novosphingobium resinovorum	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Novosphingobium;Novosphingobium resinovorum	1	in_sample	0
+158836	Enterobacter hormaechei	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter;Enterobacter cloacae complex;Enterobacter hormaechei	0	in_NTC	2
+161879	Corynebacterium kroppenstedtii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium kroppenstedtii	0	in_NTC	1
+162209	Paenibacillus naphthalenovorans	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Paenibacillaceae;Paenibacillus;Paenibacillus naphthalenovorans	0	in_NTC	2
+165695	Sphingobium	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingobium	1	< NTC	2
+168172	Puccinia striiformis f. sp. tritici	forma specialis	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Pucciniomycotina;Pucciniomycetes;Pucciniales;Pucciniaceae;Puccinia;Puccinia striiformis;Puccinia striiformis f. sp. tritici	0	in_NTC	30
+169480	Rothia amarae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Rothia;Rothia amarae	0	in_NTC	13
+170679	Vibrio chagasii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Vibrionales;Vibrionaceae;Vibrio;Vibrio chagasii	0	in_NTC	1
+171549	Bacteroidales	order	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales	126	in_sample	0
+171552	Prevotellaceae	family	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae	245	in_sample	0
+172042	Rothia aeria	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Rothia;Rothia aeria	0	in_NTC	15
+178339	Pauljensenia hongkongensis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Pauljensenia;Pauljensenia hongkongensis	1	in_sample	0
+179408	Oscillatoria nigro-viridis PCC 7112	strain	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Oscillatoriales;Oscillatoriaceae;Oscillatoria;Oscillatoria nigro-viridis;Oscillatoria nigro-viridis PCC 7112	0	in_NTC	19
+180282	Delftia tsuruhatensis	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Delftia;Delftia tsuruhatensis	1	< NTC	11
+181124	Marasmius oreades	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina;Agaricomycetes;Agaricomycetidae;Agaricales;Marasmiineae;Marasmiaceae;Marasmius;Marasmius oreades	1	< NTC	16
+181762	Psilocybe cubensis	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina;Agaricomycetes;Agaricomycetidae;Agaricales;Agaricineae;Strophariaceae;Psilocybe;Psilocybe cubensis	1	< NTC	4
+182096	Aspergillus chevalieri	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Aspergillus;Aspergillus chevalieri	7	< NTC	1340
+183795	Pseudomonas mediterranea	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas fluorescens group;Pseudomonas mediterranea	0	in_NTC	1
+184755	Vibrio ruber	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Vibrionales;Vibrionaceae;Vibrio;Vibrio ruber	1	in_sample	0
+185008	Butyrivibrio hungatei	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Butyrivibrio;Butyrivibrio hungatei	0	in_NTC	1
+186802	Eubacteriales	order	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales	3	in_sample	0
+186803	Lachnospiraceae	family	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae	2	in_sample	0
+186817	Bacillaceae	family	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae	1	equal	1
+186826	Lactobacillales	order	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales	67	> NTC	10
+188787	Deinococci	class	Bacteria;Terrabacteria group;Deinococcota;Deinococci	1	in_sample	0
+188932	Pedobacter cryoconitis	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Pedobacter;Pedobacter cryoconitis	6	in_sample	0
+195108	Fusarium falciforme	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium solani species complex;Fusarium falciforme	1	< NTC	2
+196023	Aeromonas hydrophila subsp. hydrophila	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas hydrophila;Aeromonas hydrophila subsp. hydrophila	0	in_NTC	1
+196024	Aeromonas dhakensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas dhakensis	1	< NTC	12
+196816	unclassified Acinetobacter	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter	0	in_NTC	1
+196821	unclassified Pseudomonas	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas	0	in_NTC	2
+196869	unclassified Flavobacterium	no rank	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Flavobacterium	0	in_NTC	1
+197614	Streptococcus pasteurianus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus pasteurianus	1	in_sample	0
+199591	Brevibacterium luteolum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Brevibacteriaceae;Brevibacterium;Brevibacterium luteolum	1	< NTC	19
+200643	Bacteroidia	class	Bacteria;FCB group;Bacteroidota;Bacteroidia	0	in_NTC	1
+200644	Flavobacteriales	order	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales	7	< NTC	18
+202907	Collimonas	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Collimonas	0	in_NTC	1
+202956	Acinetobacter towneri	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter towneri	0	in_NTC	2
+203692	Spirochaetia	class	Bacteria;Spirochaetota;Spirochaetia	1	in_sample	0
+204037	Dickeya	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Pectobacteriaceae;Dickeya	0	in_NTC	1
+204455	Rhodobacterales	order	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodobacterales	0	in_NTC	1
+204457	Sphingomonadales	order	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales	0	in_NTC	22
+208223	Kosakonia cowanii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Kosakonia;Kosakonia cowanii	0	in_NTC	1
+208348	Puccinia triticina	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Pucciniomycotina;Pucciniomycetes;Pucciniales;Pucciniaceae;Puccinia;Puccinia triticina	1	in_sample	0
+208452	Plasmodium coatneyi	species	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium coatneyi	0	in_NTC	1
+208479	Enterocloster bolteae	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Enterocloster;Enterocloster bolteae	0	in_NTC	1
+213849	Campylobacterales	order	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales	6	in_sample	0
+216572	Oscillospiraceae	family	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Oscillospiraceae	3	equal	3
+216851	Faecalibacterium	genus	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Oscillospiraceae;Faecalibacterium	0	in_NTC	19
+216929	Mycolicibacterium psychrotolerans	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycolicibacterium;Mycolicibacterium psychrotolerans	1	equal	1
+221027	Treponema putidum	species	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema;Treponema putidum	1	in_sample	0
+222543	Hypocreomycetidae	subclass	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae	0	in_NTC	2
+223967	Methylorubrum populi	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum populi	0	in_NTC	697
+224308	Bacillus subtilis subsp. subtilis str. 168	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus subtilis group;Bacillus subtilis;Bacillus subtilis subsp. subtilis;Bacillus subtilis subsp. subtilis str. 168	2	> NTC	1
+227086	Bigelowiella natans	species	Eukaryota;Sar;Cercozoa;Chlorarachniophyceae;Bigelowiella;Bigelowiella natans	0	in_NTC	5
+227290	Rhizobium/Agrobacterium group	no rank	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae	1	< NTC	10
+227321	Aspergillus nidulans FGSC A4	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Nidulantes;Aspergillus nidulans;Aspergillus nidulans FGSC A4	0	in_NTC	1
+229533	Fusarium graminearum PH-1	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium sambucinum species complex;Fusarium graminearum;Fusarium graminearum PH-1	1	< NTC	2
+231439	Pseudodesulfovibrio portus	species	Bacteria;Thermodesulfobacteriota;Desulfovibrionia;Desulfovibrionales;Desulfovibrionaceae;Pseudodesulfovibrio;Pseudodesulfovibrio portus	0	in_NTC	1
+235443	Cryptococcus neoformans var. grubii H99	strain	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina;Tremellomycetes;Tremellales;Cryptococcaceae;Cryptococcus;Cryptococcus neoformans species complex;Cryptococcus neoformans;Cryptococcus neoformans serotype A;Cryptococcus neoformans var. grubii H99	0	in_NTC	1
+235627	unclassified Arthrobacter	no rank	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Arthrobacter	0	in_NTC	4
+237258	Cloacibacterium normanense	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Cloacibacterium;Cloacibacterium normanense	0	in_NTC	4
+237561	Candida albicans SC5314	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Saccharomycotina;Pichiomycetes;Serinales;Debaryomycetaceae;Opisthokonta;Candida;Candida albicans;Candida albicans SC5314	1	in_sample	0
+238749	Diaphorobacter	genus	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Diaphorobacter	0	in_NTC	1
+240521	Rhizobium daejeonense	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Rhizobium;Rhizobium daejeonense	0	in_NTC	1
+242507	Pyricularia oryzae 70-15	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Magnaporthales;Pyriculariaceae;Pyricularia;Pyricularia oryzae;Pyricularia oryzae 70-15	1	in_sample	0
+244366	Klebsiella variicola	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella variicola	0	in_NTC	2
+244582	Candidatus Paracaedibacter symbiosus	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Holosporales;Candidatus Paracaedibacteraceae;Candidatus Paracaedibacter;Candidatus Paracaedibacter symbiosus	0	in_NTC	2
+248315	Veillonella rodentium	species	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Veillonellales;Veillonellaceae;Veillonella;Veillonella rodentium	3	in_sample	0
+257496	unclassified Curtobacterium	no rank	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Curtobacterium	1	in_sample	0
+259536	Psychrobacter arcticus 273-4	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Psychrobacter;Psychrobacter arcticus;Psychrobacter arcticus 273-4	0	in_NTC	1
+260552	Microbulbifer agarilyticus	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Cellvibrionales;Microbulbiferaceae;Microbulbifer;Microbulbifer agarilyticus	1	in_sample	0
+262209	Janibacter melonis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Intrasporangiaceae;Janibacter;Janibacter melonis	0	in_NTC	2
+264636	Acholeplasma hippikon	species	Bacteria;Terrabacteria group;Mycoplasmatota;Mollicutes;Acholeplasmatales;Acholeplasmataceae;Acholeplasma;Acholeplasma hippikon	1	in_sample	0
+266749	Kaistella jeonii	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Kaistella;Kaistella jeonii	0	in_NTC	1
+269660	Methylobacterium brachiatum	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium brachiatum	0	in_NTC	3
+269798	Cytophaga hutchinsonii ATCC 33406	strain	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Cytophagaceae;Cytophaga;Cytophaga hutchinsonii;Cytophaga hutchinsonii ATCC 33406	1	< NTC	16
+270351	Methylobacterium aquaticum	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium aquaticum	0	in_NTC	2
+272621	Lactobacillus acidophilus NCFM	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Lactobacillus;Lactobacillus acidophilus;Lactobacillus acidophilus NCFM	1	in_sample	0
+272630	Methylorubrum extorquens AM1	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum extorquens;Methylorubrum extorquens AM1	0	in_NTC	61
+273384	Brevibacterium aurantiacum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Brevibacteriaceae;Brevibacterium;Brevibacterium aurantiacum	0	in_NTC	1
+279238	Novosphingobium aromaticivorans DSM 12444	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Novosphingobium;Novosphingobium aromaticivorans;Novosphingobium aromaticivorans DSM 12444	1	in_sample	0
+280036	Sporisorium graminicola	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Ustilaginomycotina;Ustilaginomycetes;Ustilaginales;Ustilaginaceae;Sporisorium;Sporisorium graminicola	1	< NTC	12
+280145	Acinetobacter colistiniresistens	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter colistiniresistens	0	in_NTC	1
+282402	Prevotella multiformis	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella multiformis	8	in_sample	0
+283734	Staphylococcus pseudintermedius	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus intermedius group;Staphylococcus pseudintermedius	1	< NTC	4
+284591	Yarrowia lipolytica CLIB122	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Dipodascomycetes;Dipodascales;Yarrowia;Yarrowia lipolytica;Yarrowia lipolytica CLIB122	0	in_NTC	7
+285578	Streptomyces angustmyceticus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces angustmyceticus	0	in_NTC	1
+285983	Mesobacillus subterraneus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Mesobacillus;Mesobacillus subterraneus	1	in_sample	0
+288000	Bradyrhizobium sp. BTAi1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Bradyrhizobium;Bradyrhizobium sp. BTAi1	0	in_NTC	1
+290340	Paenarthrobacter aurescens TC1	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Paenarthrobacter;Paenarthrobacter aurescens;Paenarthrobacter aurescens TC1	0	in_NTC	1
+299767	Enterobacter ludwigii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter;Enterobacter cloacae complex;Enterobacter ludwigii	1	< NTC	5
+300181	Serratia ureilytica	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Yersiniaceae;Serratia;Serratia ureilytica	0	in_NTC	1
+302484	Haloferax larsenii	species	Archaea;Methanobacteriati;Methanobacteriota;Stenosarchaea group;Halobacteria;Halobacteriales;Haloferacaceae;Haloferax;Haloferax larsenii	0	in_NTC	1
+313596	Robiginitalea biformata HTCC2501	strain	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Robiginitalea;Robiginitalea biformata;Robiginitalea biformata HTCC2501	0	in_NTC	1
+319706	Mycolicibacterium phocaicum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycolicibacterium;Mycolicibacterium phocaicum	3	in_sample	0
+319939	Pseudomonas otitidis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas otitidis	0	in_NTC	2
+320497	Neoasaia chiangmaiensis	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Acetobacteraceae;Neoasaia;Neoasaia chiangmaiensis	0	in_NTC	2
+325217	unclassified Mesorhizobium	no rank	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Phyllobacteriaceae;Mesorhizobium	1	in_sample	0
+330879	Aspergillus fumigatus Af293	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Fumigati;Aspergillus fumigatus;Aspergillus fumigatus Af293	1	< NTC	113
+332648	Botrytis cinerea B05.10	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Leotiomycetes;Helotiales;Sclerotiniaceae;Botrytis;Botrytis cinerea;Botrytis cinerea B05.10	1	< NTC	18
+332952	Aspergillus flavus NRRL3357	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Circumdati;Aspergillus flavus;Aspergillus flavus NRRL3357	0	in_NTC	1
+333966	Saccharopolyspora pogona	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Pseudonocardiales;Pseudonocardiaceae;Saccharopolyspora;Saccharopolyspora pogona	1	in_sample	0
+335341	Influenza A virus (A/New York/392/2004(H3N2))	no rank	Viruses;Riboviria;Orthornavirae;Negarnaviricota;Polyploviricotina;Insthoviricetes;Articulavirales;Orthomyxoviridae;Alphainfluenzavirus;Alphainfluenzavirus influenzae;H3N2 subtype	2	in_sample	0
+335929	Erythrobacteraceae	family	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Erythrobacteraceae	1	in_sample	0
+336722	Zymoseptoria tritici IPO323	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Dothideomycetes;Dothideomycetidae;Mycosphaerellales;Mycosphaerellaceae;Zymoseptoria;Zymoseptoria tritici;Zymoseptoria tritici IPO323	0	in_NTC	2
+342950	Parashewanella spongiae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Shewanellaceae;Parashewanella;Parashewanella spongiae	0	in_NTC	1
+347253	Streptococcus salivarius JIM8777	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus salivarius;Streptococcus salivarius JIM8777	14	in_sample	0
+347515	Leishmania major strain Friedlin	strain	Eukaryota;Discoba;Euglenozoa;Kinetoplastea;Metakinetoplastina;Trypanosomatida;Trypanosomatidae;Leishmaniinae;Leishmania;Leishmania;Leishmania major species complex;Leishmania major;Leishmania major strain Friedlin	1	equal	1
+347534	Zobellella denitrificans	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Zobellella;Zobellella denitrificans	0	in_NTC	1
+351672	Xenorhabdus griffiniae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Morganellaceae;Xenorhabdus;Xenorhabdus griffiniae	1	in_sample	0
+352472	Dictyostelium discoideum AX4	strain	Eukaryota;Evosea;Eumycetozoa;Amoebozoa;Dictyosteliales;Dictyosteliaceae;Dictyostelium;Dictyostelium discoideum;Dictyostelium discoideum AX4	1	in_sample	0
+353152	Cryptosporidium parvum Iowa II	strain	Eukaryota;Sar;Apicomplexa;Conoidasida;Coccidia;Eucoccidiorida;Eimeriorina;Cryptosporidiidae;Cryptosporidium;Cryptosporidium parvum;Cryptosporidium parvum Iowa II	0	in_NTC	1
+354276	Enterobacter cloacae complex	species group	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter;Enterobacter cloacae complex	0	in_NTC	1
+357441	Enterococcus lactis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Enterococcaceae;Enterococcus;Enterococcus lactis	0	in_NTC	1
+357804	Psychromonas ingrahamii 37	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Psychromonadaceae;Psychromonas;Psychromonas ingrahamii;Psychromonas ingrahamii 37	1	in_sample	0
+358220	Acidovorax sp. KKS102	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Acidovorax;Acidovorax sp. KKS102	1	in_sample	0
+360102	Yersinia pestis Antiqua	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Yersiniaceae;Yersinia;Yersinia pseudotuberculosis complex;Yersinia pestis;Yersinia pestis Antiqua	1	in_sample	0
+363852	Pedobacter ginsengisoli	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Pedobacter;Pedobacter ginsengisoli	6	in_sample	0
+366649	Xanthomonas citri pv. fuscans	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Xanthomonas;Xanthomonas citri group;Xanthomonas citri	0	in_NTC	3
+367110	Neurospora crassa OR74A	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Sordariales;Sordariaceae;Neurospora;Neurospora crassa;Neurospora crassa OR74A	1	< NTC	4
+367775	Cryptococcus gattii WM276	strain	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina;Tremellomycetes;Tremellales;Cryptococcaceae;Cryptococcus;Cryptococcus gattii species complex;Cryptococcus gattii;Cryptococcus gattii WM276	0	in_NTC	1
+370324	Natrinema longum	species	Archaea;Methanobacteriati;Methanobacteriota;Stenosarchaea group;Halobacteria;Halobacteriales;Natrialbaceae;Natrinema;Natrinema longum	0	in_NTC	2
+371142	Sphingobacterium daejeonense	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Sphingobacterium;Sphingobacterium daejeonense	0	in_NTC	1
+373672	Chryseobacterium gambrini	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium gambrini	1	< NTC	2
+374106	Campylobacter cuniculorum	species	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales;Campylobacteraceae;Campylobacter;Campylobacter cuniculorum	1	in_sample	0
+374432	Methylobacterium tardum	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium tardum	0	in_NTC	3
+376175	Schlegelella aquatica	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Sphaerotilaceae;Caldimonas;Schlegelella aquatica	0	in_NTC	10
+379066	Gemmatimonas aurantiaca T-27	strain	Bacteria;FCB group;Gemmatimonadota;Gemmatimonadia;Gemmatimonadales;Gemmatimonadaceae;Gemmatimonas;Gemmatimonas aurantiaca;Gemmatimonas aurantiaca T-27	0	in_NTC	6
+386891	Moraxella bovoculi	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Moraxella;Moraxella bovoculi	0	in_NTC	1
+411154	Christiangramia forsetii KT0803	strain	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Christiangramia;Christiangramia forsetii;Christiangramia forsetii KT0803	0	in_NTC	1
+412034	Celerinatantimonas diazotrophica	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Celerinatantimonadaceae;Celerinatantimonas;Celerinatantimonas diazotrophica	0	in_NTC	1
+414778	Planococcus donghaensis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Planococcaceae;Planococcus;Planococcus donghaensis	0	in_NTC	1
+416916	Aggregatibacter	genus	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Aggregatibacter	0	in_NTC	2
+418101	Plasmodium (Vinckeia)	subgenus	Eukaryota;Sar;Apicomplexa;Aconoidasida;Haemosporida;Plasmodiidae;Plasmodium;Plasmodium (Vinckeia)	0	in_NTC	1
+418223	Methylobacterium phyllosphaerae	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium phyllosphaerae	0	in_NTC	1
+420336	Candidatus Epulonipiscium viviparus	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Candidatus Epulonipiscium;Candidatus Epulonipiscium viviparus	1	in_sample	0
+420952	Paraburkholderia bryophila	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Paraburkholderia;Paraburkholderia bryophila	1	in_sample	0
+423349	Mucilaginibacter	genus	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Mucilaginibacter	11	in_sample	0
+423477	Veillonella rogosae	species	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Veillonellales;Veillonellaceae;Veillonella;Veillonella rogosae	22	> NTC	2
+424720	Shigella flexneri Y	serotype	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Shigella;Shigella flexneri;Shigella flexneri Y	0	in_NTC	1
+426428	Fusarium oxysporum f. sp. lycopersici 4287	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium oxysporum species complex;Fusarium oxysporum;Fusarium oxysporum f. sp. lycopersici;Fusarium oxysporum f. sp. lycopersici 4287	0	in_NTC	2
+430522	Pedobacter steynii	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Pedobacter;Pedobacter steynii	15	in_sample	0
+440085	Methylorubrum extorquens CM4	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum extorquens;Methylorubrum extorquens CM4	0	in_NTC	9
+440524	Salmonella enterica subsp. enterica serovar 4,[5],12:i:-	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	0	in_NTC	1
+441500	Corynebacterium timonense	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium timonense	0	in_NTC	2
+441620	Methylorubrum populi BJ001	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum populi;Methylorubrum populi BJ001	0	in_NTC	745
+448385	Sorangium cellulosum So ce56	strain	Bacteria;Myxococcota;Polyangia;Polyangiales;Polyangiaceae;Sorangium;Sorangium cellulosum;Sorangium cellulosum So ce56	1	in_sample	0
+450367	Peribacillus frigoritolerans	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Peribacillus;Peribacillus frigoritolerans	0	in_NTC	1
+451864	Dikarya	subkingdom	Eukaryota;Opisthokonta;Fungi;Dikarya	1	< NTC	32
+452652	Kitasatospora setae KM-6054	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Kitasatospora;Kitasatospora setae;Kitasatospora setae KM-6054	0	in_NTC	1
+453842	Paracoccus aestuarii	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodobacterales;Paracoccaceae;Paracoccus;Paracoccus aestuarii	0	in_NTC	1
+456999	Rhizoctonia solani	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Agaricomycotina;Agaricomycetes;Cantharellales;Ceratobasidiaceae;Rhizoctonia;Rhizoctonia solani	0	in_NTC	10
+460265	Methylobacterium nodulans ORS 2060	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium nodulans;Methylobacterium nodulans ORS 2060	0	in_NTC	2
+469383	Conexibacter woesei DSM 14684	strain	Bacteria;Terrabacteria group;Actinomycetota;Thermoleophilia;Solirubrobacterales;Conexibacteraceae;Conexibacter;Conexibacter woesei;Conexibacter woesei DSM 14684	0	in_NTC	1
+470565	Prevotella histicola	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella histicola	26	in_sample	0
+472759	Nitrosococcus halophilus Nc 4	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Chromatiales;Chromatiaceae;Nitrosococcus;Nitrosococcus halophilus;Nitrosococcus halophilus Nc 4	0	in_NTC	1
+477641	Modestobacter marinus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Geodermatophilales;Geodermatophilaceae;Modestobacter;Modestobacter marinus	0	in_NTC	8
+477697	Streptomyces sp. T12	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. T12	1	< NTC	18
+479433	Catenulispora acidiphila DSM 44928	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Catenulisporales;Catenulisporaceae;Catenulispora;Catenulispora acidiphila;Catenulispora acidiphila DSM 44928	0	in_NTC	2
+479434	Sphaerobacter thermophilus DSM 20745	strain	Bacteria;Terrabacteria group;Thermomicrobiota;Thermomicrobia;Sphaerobacterales;Sphaerobacterineae;Sphaerobacteraceae;Sphaerobacter;Sphaerobacter thermophilus;Sphaerobacter thermophilus DSM 20745	0	in_NTC	4
+484906	Babesia bovis T2Bo	no rank	Eukaryota;Sar;Apicomplexa;Aconoidasida;Piroplasmida;Babesiidae;Babesia;Babesia bovis	0	in_NTC	4
+485898	Pseudomonas promysalinigenes	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas promysalinigenes	0	in_NTC	1
+492670	Bacillus velezensis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus subtilis group;Bacillus amyloliquefaciens group;Bacillus velezensis	2	equal	2
+497965	Gloeothece verrucosa PCC 7822	strain	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Chroococcales;Aphanothecaceae;Gloeothece;Gloeothece verrucosa;Gloeothece verrucosa PCC 7822	1	in_sample	0
+498019	Candidozyma auris	species	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Pichiomycetes;Serinales;Metschnikowiaceae;Candidozyma;Candidozyma auris	1	< NTC	8
+501783	Cloacibacterium	genus	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Cloacibacterium	0	in_NTC	6
+508771	Toxoplasma gondii ME49	strain	Eukaryota;Sar;Apicomplexa;Conoidasida;Coccidia;Eucoccidiorida;Eimeriorina;Sarcocystidae;Toxoplasma;Toxoplasma gondii;Toxoplasma gondii ME49	4	< NTC	15
+510516	Aspergillus oryzae RIB40	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Circumdati;Aspergillus oryzae;Aspergillus oryzae RIB40	1	< NTC	24
+511745	Methylacidiphilum (ex Ratnadevi et al. 2023)	genus	Bacteria;PVC group;Verrucomicrobiota;Methylacidiphilae;Methylacidiphilales;Methylacidiphilaceae;Methylacidiphilum (ex Ratnadevi et al. 2023)	0	in_NTC	1
+521095	Lancefieldella parvula DSM 20469	strain	Bacteria;Terrabacteria group;Actinomycetota;Coriobacteriia;Coriobacteriales;Atopobiaceae;Lancefieldella;Lancefieldella parvula;Lancefieldella parvula DSM 20469	4	in_sample	0
+522448	Euhalothece natronophila Z-M001	strain	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Chroococcales;Halothecacae;Euhalothece;Euhalothece natronophila;Euhalothece natronophila Z-M001	0	in_NTC	2
+525903	Thermanaerovibrio acidaminovorans DSM 6589	strain	Bacteria;Synergistota;Synergistia;Synergistales;Synergistaceae;Thermanaerovibrio;Thermanaerovibrio acidaminovorans;Thermanaerovibrio acidaminovorans DSM 6589	1	equal	1
+526225	Geodermatophilus obscurus DSM 43160	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Geodermatophilales;Geodermatophilaceae;Geodermatophilus;Geodermatophilus obscurus;Geodermatophilus obscurus DSM 43160	0	in_NTC	12
+526944	Tetragenococcus osmophilus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Enterococcaceae;Tetragenococcus;Tetragenococcus osmophilus	0	in_NTC	1
+527030	Bacillus thuringiensis serovar huazhongensis BGSC 4BD1	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus cereus group;Bacillus thuringiensis;Bacillus thuringiensis serovar huazhongensis BGSC 4BD1	0	in_NTC	1
+536441	Chryseobacterium taklimakanense	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium taklimakanense	0	in_NTC	1
+537007	Blautia hansenii DSM 20583	strain	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Blautia;Blautia hansenii;Blautia hansenii DSM 20583	0	in_NTC	1
+537011	Segatella copri DSM 18205	strain	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Segatella;Segatella copri;Segatella copri DSM 18205	1	in_sample	0
+545694	Treponema primitia ZAS-2	strain	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema;Treponema primitia;Treponema primitia ZAS-2	1	in_sample	0
+546269	Filifactor alocis ATCC 35896	strain	Bacteria;Terrabacteria group;Bacillota;Clostridia;Peptostreptococcales;Filifactoraceae;Filifactor;Filifactor alocis;Filifactor alocis ATCC 35896	1	in_sample	0
+546367	Hafnia paralvei	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Hafniaceae;Hafnia;Hafnia paralvei	1	in_sample	0
+552526	Streptococcus equi subsp. zooepidemicus MGCS10565	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus dysgalactiae group;Streptococcus equi;Streptococcus equi subsp. zooepidemicus;Streptococcus equi subsp. zooepidemicus MGCS10565	1	in_sample	0
+556484	Phaeodactylum tricornutum CCAP 1055/1	strain	Eukaryota;Bacillariophyta;Bacillariophyceae;Sar;Naviculales;Phaeodactylaceae;Phaeodactylum;Phaeodactylum tricornutum;Phaeodactylum tricornutum CCAP 1055/1	0	in_NTC	4
+557724	Burkholderia pseudomallei 576	strain	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;pseudomallei group;Burkholderia pseudomallei;Burkholderia pseudomallei 576	0	in_NTC	7
+558152	Chryseobacterium piperi	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium piperi	0	in_NTC	1
+558537	Delftia lacustris	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Delftia;Delftia lacustris	0	in_NTC	1
+559295	Lachancea thermotolerans CBS 6340	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Saccharomycetes;Saccharomycetales;Saccharomycetaceae;Lachancea;Lachancea thermotolerans;Lachancea thermotolerans CBS 6340	0	in_NTC	74
+564064	Spirosoma rigui	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Cytophagaceae;Spirosoma;Spirosoma rigui	1	equal	1
+570277	Endozoicomonas montiporae CL-33	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Oceanospirillales;Endozoicomonadaceae;Endozoicomonas;Endozoicomonas montiporae;Endozoicomonas montiporae CL-33	1	in_sample	0
+572307	Neospora caninum Liverpool	strain	Eukaryota;Sar;Apicomplexa;Conoidasida;Coccidia;Eucoccidiorida;Eimeriorina;Sarcocystidae;Neospora;Neospora caninum;Neospora caninum Liverpool	1	in_sample	0
+573729	Thermothelomyces thermophilus ATCC 42464	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Sordariales;Chaetomiaceae;Thermothelomyces;Thermothelomyces thermophilus;Thermothelomyces thermophilus ATCC 42464	0	in_NTC	3
+575614	Prevotella sp. oral taxon 299 str. F0039	strain	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella sp. oral taxon 299;Prevotella sp. oral taxon 299 str. F0039	1	in_sample	0
+578455	Thermothielavioides terrestris NRRL 8126	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Sordariales;Chaetomiaceae;Thermothielavioides;Thermothielavioides terrestris;Thermothielavioides terrestris NRRL 8126	0	in_NTC	1
+580340	Thermovirga lienii DSM 17291	strain	Bacteria;Synergistota;Synergistia;Synergistales;Thermovirgaceae;Thermovirga;Thermovirga lienii;Thermovirga lienii DSM 17291	6	in_sample	0
+595468	Gleimia hominis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Gleimia;Gleimia hominis	1	in_sample	0
+595537	Variovorax paradoxus EPS	strain	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Variovorax;Variovorax paradoxus;Variovorax paradoxus EPS	0	in_NTC	1
+627344	Zymomonas mobilis subsp. mobilis ATCC 29191	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Zymomonadaceae;Zymomonas;Zymomonas mobilis;Zymomonas mobilis subsp. mobilis;Zymomonas mobilis subsp. mobilis ATCC 29191	0	in_NTC	1
+627624	Nocardioides panacisoli	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Nocardioides;Nocardioides panacisoli	0	in_NTC	3
+638849	Pyramidobacter piscolens	species	Bacteria;Synergistota;Synergistia;Synergistales;Dethiosulfovibrionaceae;Pyramidobacter;Pyramidobacter piscolens	1	in_sample	0
+642780	Nocardioides scoriae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Nocardioides;Nocardioides scoriae	0	in_NTC	4
+644966	Thermaerobacter marianensis DSM 12885	strain	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Clostridiales Family XVII. Incertae Sedis;Thermaerobacter;Thermaerobacter marianensis;Thermaerobacter marianensis DSM 12885	0	in_NTC	2
+648995	Agrobacterium pusense	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Agrobacterium;Agrobacterium pusense	0	in_NTC	3
+649756	Anaerostipes hadrus	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Anaerostipes;Anaerostipes hadrus	0	in_NTC	1
+649776	Synergistales	order	Bacteria;Synergistota;Synergistia;Synergistales	3	in_sample	0
+653045	Streptomyces violaceusniger Tu 4113	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces violaceusniger group;Streptomyces violaceusniger;Streptomyces violaceusniger Tu 4113	0	in_NTC	1
+656178	Pandoraea vervacti	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Pandoraea;Pandoraea vervacti	0	in_NTC	1
+659350	Paracoccus stylophorae	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodobacterales;Paracoccaceae;Paracoccus;Paracoccus stylophorae	0	in_NTC	1
+660027	Fusarium oxysporum Fo47	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium oxysporum species complex;Fusarium oxysporum;Fusarium oxysporum Fo47	1	in_sample	0
+661410	Methylorubrum extorquens DM4	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum extorquens;Methylorubrum extorquens DM4	0	in_NTC	41
+669357	Geminocystis	genus	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Chroococcales;Geminocystaceae;Geminocystis	0	in_NTC	5
+679716	Trypanosoma brucei gambiense DAL972	strain	Eukaryota;Discoba;Euglenozoa;Kinetoplastea;Metakinetoplastina;Trypanosomatida;Trypanosomatidae;Trypanosoma;Trypanozoon;Trypanosoma brucei;Trypanosoma brucei gambiense;Trypanosoma brucei gambiense DAL972	1	in_sample	0
+680646	Rothia mucilaginosa DY-18	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Rothia;Rothia mucilaginosa;Rothia mucilaginosa DY-18	3	in_sample	0
+682798	Chitinolyticbacter meiyuanensis	species	Bacteria;Pseudomonadota;Betaproteobacteria;Neisseriales;Chitinibacteraceae;Chitinolyticbacter;Chitinolyticbacter meiyuanensis	0	in_NTC	1
+682998	Azospirillum ramasamyi	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Azospirillaceae;Azospirillum;Azospirillum ramasamyi	0	in_NTC	1
+686597	Martelella sp. AD-3	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Aurantimonadaceae;Martelella;Martelella sp. AD-3	0	in_NTC	1
+687358	Torque teno virus 19	no rank	Viruses;Anelloviridae;Alphatorquevirus;Alphatorquevirus homin19	1	in_sample	0
+687369	Torque teno mini virus 1	no rank	Viruses;Anelloviridae;Betatorquevirus;Betatorquevirus homini1	0	in_NTC	5
+693977	Deinococcus proteolyticus MRP	strain	Bacteria;Terrabacteria group;Deinococcota;Deinococci;Deinococcales;Deinococcaceae;Deinococcus;Deinococcus proteolyticus;Deinococcus proteolyticus MRP	0	in_NTC	1
+693986	Methylobacterium oryzae CBMB20	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium oryzae;Methylobacterium oryzae CBMB20	0	in_NTC	1
+696216	Streptococcus constellatus subsp. pharyngis C232	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus anginosus group;Streptococcus constellatus;Streptococcus constellatus subsp. pharyngis;Streptococcus constellatus subsp. pharyngis C232	1	in_sample	0
+702745	Myroides phaeus	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Myroides;Myroides phaeus	0	in_NTC	1
+708248	Mycoplasma suis KI3806	strain	Bacteria;Terrabacteria group;Mycoplasmatota;Mollicutes;Mycoplasmatales;Mycoplasmataceae;Mycoplasma;Mycoplasma suis;Mycoplasma suis KI3806	1	in_sample	0
+710648	Acinetobacter sp. Tol 5	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter sp. Tol 5	0	in_NTC	2
+712116	Actinomyces sp. oral taxon 169	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Actinomyces;Actinomyces sp. oral taxon 169	0	in_NTC	1
+712122	Actinomyces sp. oral taxon 414	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Actinomyces;Actinomyces sp. oral taxon 414	1	in_sample	0
+712368	Leptotrichia sp. oral taxon 498	species	Bacteria;Fusobacteriota;Fusobacteriia;Fusobacteriales;Leptotrichiaceae;Leptotrichia;Leptotrichia sp. oral taxon 498	1	in_sample	0
+712435	Porphyromonas sp. oral taxon 275	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Porphyromonadaceae;Porphyromonas;Porphyromonas sp. oral taxon 275	1	in_sample	0
+712471	Prevotella sp. oral taxon 475	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella sp. oral taxon 475	1	in_sample	0
+712528	Selenomonas sp. oral taxon 126	species	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Selenomonadales;Selenomonadaceae;Selenomonas;Selenomonas sp. oral taxon 126	2	in_sample	0
+712538	Selenomonas sp. oral taxon 478	species	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Selenomonadales;Selenomonadaceae;Selenomonas;Selenomonas sp. oral taxon 478	1	in_sample	0
+712710	Tannerella serpentiformis	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Tannerellaceae;Tannerella;Tannerella serpentiformis	2	in_sample	0
+713030	Selenomonas sp. oral taxon 136	species	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Selenomonadales;Selenomonadaceae;Selenomonas;Selenomonas sp. oral taxon 136	2	in_sample	0
+714943	Mucilaginibacter paludis DSM 18603	strain	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Mucilaginibacter;Mucilaginibacter paludis;Mucilaginibacter paludis DSM 18603	4	> NTC	3
+714995	Novacetimonas hansenii ATCC 23769	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Acetobacteraceae;Novacetimonas;Novacetimonas hansenii;Novacetimonas hansenii ATCC 23769	0	in_NTC	1
+716545	saccharomyceta	clade	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta	0	in_NTC	15
+716546	leotiomyceta	clade	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta	0	in_NTC	40
+739141	Methylobacterium sp. XJLW	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium sp. XJLW	0	in_NTC	5
+752555	Segatella baroniae B14	strain	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Segatella;Segatella baroniae;Segatella baroniae B14	1	in_sample	0
+754429	Gilvibacter sp. SZ-19	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Gilvibacter;Gilvibacter sp. SZ-19	0	in_NTC	1
+755732	Fluviicola taffensis DSM 16823	strain	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Crocinitomicaceae;Fluviicola;Fluviicola taffensis;Fluviicola taffensis DSM 16823	0	in_NTC	1
+756892	Acinetobacter indicus	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter indicus	0	in_NTC	13
+759273	Colletotrichum higginsianum IMI 349063	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Glomerellales;Glomerellaceae;Colletotrichum;Colletotrichum higginsianum;Colletotrichum higginsianum IMI 349063	2	< NTC	6
+760570	Streptococcus parasanguinis ATCC 15912	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus parasanguinis;Streptococcus parasanguinis ATCC 15912	1	in_sample	0
+796027	Sugiyamaella lignohabitans	species	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Dipodascomycetes;Dipodascales;Trichomonascaceae;Sugiyamaella;Sugiyamaella lignohabitans	0	in_NTC	6
+797291	Sphingobacterium lactis	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Sphingobacterium;Sphingobacterium lactis	0	in_NTC	2
+859144	Cytobacillus gottheilii	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Cytobacillus;Cytobacillus gottheilii	0	in_NTC	2
+861299	Gemmatirosa kalamazoonensis	species	Bacteria;FCB group;Gemmatimonadota;Gemmatimonadia;Gemmatimonadales;Gemmatimonadaceae;Gemmatirosa;Gemmatirosa kalamazoonensis	0	in_NTC	6
+869209	Treponema succinifaciens DSM 2489	strain	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema;Treponema succinifaciens;Treponema succinifaciens DSM 2489	3	in_sample	0
+869250	Theileria orientalis strain Shintoku	strain	Eukaryota;Sar;Apicomplexa;Aconoidasida;Piroplasmida;Theileriidae;Theileria;Theileria orientalis;Theileria orientalis strain Shintoku	1	< NTC	2
+869311	Streptococcus pneumoniae SPN032672	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus pneumoniae;Streptococcus pneumoniae SPN032672	1	in_sample	0
+871575	Ogataea parapolymorpha DL-1	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Pichiomycetes;Pichiales;Pichiaceae;Ogataea;Ogataea parapolymorpha;Ogataea parapolymorpha DL-1	0	in_NTC	2
+876142	Encephalitozoon intestinalis ATCC 50506	strain	Eukaryota;Opisthokonta;Fungi;Microsporidia;Apansporoblastina;Unikaryonidae;Encephalitozoon;Encephalitozoon intestinalis;Encephalitozoon intestinalis ATCC 50506	0	in_NTC	1
+881260	Enterobacter bugandensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter;Enterobacter bugandensis	0	in_NTC	1
+885272	Jonquetella anthropi DSM 22815	strain	Bacteria;Synergistota;Synergistia;Synergistales;Dethiosulfovibrionaceae;Jonquetella;Jonquetella anthropi;Jonquetella anthropi DSM 22815	11	in_sample	0
+888050	Schaalia cardiffensis F0333	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Schaalia;Schaalia cardiffensis;Schaalia cardiffensis F0333	1	in_sample	0
+888061	Desulfomicrobium orale DSM 12838	strain	Bacteria;Thermodesulfobacteriota;Desulfovibrionia;Desulfovibrionales;Desulfomicrobiaceae;Desulfomicrobium;Desulfomicrobium orale;Desulfomicrobium orale DSM 12838	11	in_sample	0
+888437	Psychrobacter sp. 4Dc	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Psychrobacter;Psychrobacter sp. 4Dc	0	in_NTC	1
+906968	Treponema brennaborense DSM 12168	strain	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema;Treponema brennaborense;Treponema brennaborense DSM 12168	1	in_sample	0
+908937	Prevotella dentalis DSM 3688	strain	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella dentalis;Prevotella dentalis DSM 3688	4	in_sample	0
+909768	Acinetobacter calcoaceticus/baumannii complex	species group	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter calcoaceticus/baumannii complex	0	in_NTC	24
+925818	Methylobacterium sp. AMS5	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium sp. AMS5	0	in_NTC	8
+926567	Thermanaerovibrio velox DSM 12556	strain	Bacteria;Synergistota;Synergistia;Synergistales;Synergistaceae;Thermanaerovibrio;Thermanaerovibrio velox;Thermanaerovibrio velox DSM 12556	1	in_sample	0
+929439	Leishmania mexicana MHOM/GT/2001/U1103	strain	Eukaryota;Discoba;Euglenozoa;Kinetoplastea;Metakinetoplastina;Trypanosomatida;Trypanosomatidae;Leishmaniinae;Leishmania;Leishmania;Leishmania mexicana species complex;Leishmania mexicana;Leishmania mexicana MHOM/GT/2001/U1103	10	> NTC	2
+931089	Corynebacterium deserti GIMN1.010	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium deserti;Corynebacterium deserti GIMN1.010	1	in_sample	0
+937775	Methanoplanus limicola DSM 2279	strain	Archaea;Methanobacteriati;Methanobacteriota;Stenosarchaea group;Methanomicrobia;Methanomicrobiales;Methanomicrobiaceae;Methanoplanus;Methanoplanus limicola;Methanoplanus limicola DSM 2279	1	in_sample	0
+938288	Fenollaria massiliensis	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Fenollaria;Fenollaria massiliensis	0	in_NTC	1
+980427	Deinococcus wulumuqiensis	species	Bacteria;Terrabacteria group;Deinococcota;Deinococci;Deinococcales;Deinococcaceae;Deinococcus;Deinococcus wulumuqiensis	1	in_sample	0
+983548	Dokdonia sp. 4H-3-7-5	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Dokdonia;Dokdonia sp. 4H-3-7-5	0	in_NTC	1
+993512	Streptococcus suis A7	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus suis;Streptococcus suis A7	1	in_sample	0
+1004952	Streptococcus suis D12	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus suis;Streptococcus suis D12	1	in_sample	0
+1028729	Fusarium pseudograminearum CS3096	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium sambucinum species complex;Fusarium pseudograminearum;Fusarium pseudograminearum CS3096	0	in_NTC	1
+1031752	Campylobacter hyointestinalis subsp. lawsonii CCUG 27631	strain	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales;Campylobacteraceae;Campylobacter;Campylobacter hyointestinalis;Campylobacter hyointestinalis subsp. lawsonii;Campylobacter hyointestinalis subsp. lawsonii CCUG 27631	1	in_sample	0
+1033997	Nitrososphaeraceae	family	Archaea;Thermoproteati;Nitrososphaerota;Nitrososphaeria;Nitrososphaerales;Nitrososphaeraceae	0	in_NTC	1
+1038929	Streptomyces xinghaiensis S187	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces xinghaiensis;Streptomyces xinghaiensis S187	0	in_NTC	1
+1042133	Fusarium musae	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium musae	0	in_NTC	1
+1046629	Streptococcus salivarius 57.I	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus salivarius;Streptococcus salivarius 57.I	3	in_sample	0
+1048332	Streptococcus salivarius CCHSS3	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus salivarius;Streptococcus salivarius CCHSS3	5	in_sample	0
+1049583	Kocuria indica	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Kocuria;Kocuria indica	0	in_NTC	2
+1055538	Escherichia coli O145	serogroup	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia;Escherichia coli;Escherichia coli O145	0	in_NTC	1
+1069201	Aspergillus luchuensis	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Circumdati;Aspergillus luchuensis	6	< NTC	229
+1071383	Huiozyma naganishii CBS 8797	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Opisthokonta;Saccharomycotina;Saccharomycetes;Saccharomycetales;Saccharomycetaceae;Huiozyma;Huiozyma naganishii;Huiozyma naganishii CBS 8797	1	< NTC	98
+1074494	Streptococcus salivarius M18	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus salivarius;Streptococcus salivarius M18	3	in_sample	0
+1085624	Persicobacter sp. JZB09	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Persicobacteraceae;Persicobacter;Persicobacter sp. JZB09	0	in_NTC	1
+1114965	Streptococcus parasanguinis FW213	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus parasanguinis;Streptococcus parasanguinis FW213	3	in_sample	0
+1121354	Corynebacterium capitovis DSM 44611	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium capitovis;Corynebacterium capitovis DSM 44611	0	in_NTC	1
+1121362	Corynebacterium halotolerans YIM 70093 = DSM 44683	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium halotolerans;Corynebacterium halotolerans YIM 70093 = DSM 44683	0	in_NTC	3
+1129771	Leptotrichiaceae	family	Bacteria;Fusobacteriota;Fusobacteriia;Fusobacteriales;Leptotrichiaceae	1	in_sample	0
+1131492	Aspergillaceae	family	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae	2	< NTC	379
+1134687	Klebsiella michiganensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella michiganensis	0	in_NTC	1
+1134782	Escherichia coli O104:H4 str. 2009EL-2050	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia;Escherichia coli;Escherichia coli O104:H4;Escherichia coli O104:H4 str. 2009EL-2050	0	in_NTC	1
+1138190	Rhizobium binae	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Rhizobium;Rhizobium binae	0	in_NTC	2
+1146883	Blastococcus saxobsidens DD2	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Geodermatophilales;Geodermatophilaceae;Blastococcus;Blastococcus saxobsidens;Blastococcus saxobsidens DD2	0	in_NTC	8
+1148509	Pseudomonas prosekii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas prosekii	0	in_NTC	2
+1150469	Pararhodospirillum photometricum DSM 122	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Rhodospirillaceae;Pararhodospirillum;Pararhodospirillum photometricum;Pararhodospirillum photometricum DSM 122	0	in_NTC	1
+1159556	Ustilaginoidea virens	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Clavicipitaceae;Ustilaginoidea;Ustilaginoidea virens	0	in_NTC	12
+1160720	Alteromonas stellipolaris LMG 21856	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Alteromonadaceae;Alteromonas;Alteromonas stellipolaris;Alteromonas stellipolaris LMG 21856	0	in_NTC	1
+1164882	Lachnoanaerobaculum	genus	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Lachnoanaerobaculum	1	in_sample	0
+1167006	Desulfocapsa sulfexigens DSM 10523	strain	Bacteria;Thermodesulfobacteriota;Desulfobulbia;Desulfobulbales;Desulfocapsaceae;Desulfocapsa;Desulfocapsa sulfexigens;Desulfocapsa sulfexigens DSM 10523	0	in_NTC	1
+1173263	Synechococcus sp. PCC 7502	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Synechococcales;Synechococcaceae;Synechococcus;Synechococcus sp. PCC 7502	0	in_NTC	7
+1173749	Salmonella phage FSL SP-031	no rank	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Guernseyvirinae;Cornellvirus;Cornellvirus SP31	1	in_sample	0
+1176533	Luteimonas granuli	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Luteimonas;Luteimonas granuli	0	in_NTC	1
+1177574	Prevotella jejuni	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella jejuni	122	in_sample	0
+1185652	Sinorhizobium fredii USDA 257	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Sinorhizobium;Sinorhizobium fredii group;Sinorhizobium fredii;Sinorhizobium fredii USDA 257	0	in_NTC	1
+1194400	Pseudomonas syringae pv. actinidifoliorum ICMP 18803	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas syringae group;Pseudomonas syringae group genomosp. 1;Pseudomonas syringae;Pseudomonas syringae pv. actinidifoliorum ICMP 18803	0	in_NTC	1
+1196083	Snodgrassella alvi	species	Bacteria;Pseudomonadota;Betaproteobacteria;Neisseriales;Neisseriaceae;Snodgrassella;Snodgrassella alvi	0	in_NTC	1
+1197325	Mycoplasma wenyonii str. Massachusetts	strain	Bacteria;Terrabacteria group;Mycoplasmatota;Mollicutes;Mycoplasmatales;Mycoplasmataceae;Mycoplasma;Mycoplasma wenyonii;Mycoplasma wenyonii str. Massachusetts	3	in_sample	0
+1197884	Acinetobacter venetianus VE-C3	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter venetianus;Acinetobacter venetianus VE-C3	0	in_NTC	9
+1202962	Moritella marina ATCC 15381	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Moritellaceae;Moritella;Moritella marina;Moritella marina ATCC 15381	0	in_NTC	1
+1220207	Aspergillus puulaauensis	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus puulaauensis	0	in_NTC	18
+1234380	Cutibacterium acnes C1	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae;Cutibacterium;Cutibacterium acnes;Cutibacterium acnes C1	0	in_NTC	1
+1234841	Mucilaginibacter xinganensis	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Mucilaginibacter;Mucilaginibacter xinganensis	1	in_sample	0
+1236517	Prevotella fusca JCM 17724	strain	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella fusca;Prevotella fusca JCM 17724	23	in_sample	0
+1236518	Prevotella scopos JCM 17725	strain	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella scopos;Prevotella scopos JCM 17725	12	in_sample	0
+1240483	Orbaceae	family	Bacteria;Pseudomonadota;Gammaproteobacteria;Orbales;Orbaceae	0	in_NTC	1
+1246301	Variovorax paradoxus B4	strain	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Variovorax;Variovorax paradoxus;Variovorax paradoxus B4	1	in_sample	0
+1262470	Herbaspirillum hiltneri N3	strain	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Herbaspirillum;Herbaspirillum hiltneri;Herbaspirillum hiltneri N3	0	in_NTC	11
+1263550	Edwardsiella piscicida	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Hafniaceae;Edwardsiella;Edwardsiella piscicida	0	in_NTC	1
+1276647	Streptococcus suis TL13	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus suis;Streptococcus suis TL13	1	in_sample	0
+1279013	Acinetobacter baumannii PR07	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter calcoaceticus/baumannii complex;Acinetobacter baumannii;Acinetobacter baumannii PR07	1	equal	1
+1279085	Fusarium fujikuroi IMI 58289	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium fujikuroi species complex;Fusarium fujikuroi;Fusarium fujikuroi IMI 58289	1	in_sample	0
+1285901	Tessaracoccus defluvii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae;Tessaracoccus;Tessaracoccus defluvii	1	in_sample	0
+1286180	Mycolicibacterium sediminis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycolicibacterium;Mycolicibacterium sediminis	0	in_NTC	1
+1286181	Mycolicibacterium arabiense	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycolicibacterium;Mycolicibacterium arabiense	0	in_NTC	1
+1293412	Swingsia samuiensis	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Acetobacteraceae;Swingsia;Swingsia samuiensis	0	in_NTC	1
+1296536	Enterobacter hormaechei subsp. xiangfangensis	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter;Enterobacter cloacae complex;Enterobacter hormaechei;Enterobacter hormaechei subsp. xiangfangensis	0	in_NTC	1
+1302650	Bacillus subtilis subsp. subtilis str. BAB-1	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus subtilis group;Bacillus subtilis;Bacillus subtilis subsp. subtilis;Bacillus subtilis subsp. subtilis str. BAB-1	1	in_sample	0
+1303518	Chthonomonas calidirosea T49	strain	Bacteria;Terrabacteria group;Armatimonadota;Chthonomonadia;Chthonomonadales;Chthonomonadaceae;Chthonomonas;Chthonomonas calidirosea;Chthonomonas calidirosea T49	0	in_NTC	2
+1309807	Streptococcus agalactiae ILRI005	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus agalactiae;Streptococcus agalactiae ILRI005	1	in_sample	0
+1315974	Sphingobium sp. TKS	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingobium;Sphingobium sp. TKS	1	in_sample	0
+1316254	Veillonella parvula HSIVP1	strain	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Veillonellales;Veillonellaceae;Veillonella;Veillonella parvula;Veillonella parvula HSIVP1	2	in_sample	0
+1316911	Bifidobacterium animalis subsp. lactis KLDS2.0603	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Bifidobacteriales;Bifidobacteriaceae;Bifidobacterium;Bifidobacterium animalis;Bifidobacterium animalis subsp. lactis;Bifidobacterium animalis subsp. lactis KLDS2.0603	1	in_sample	0
+1324352	Chryseobacterium gallinarum	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium gallinarum	0	in_NTC	3
+1325095	Bradyrhizobium guangzhouense	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Bradyrhizobium;Bradyrhizobium guangzhouense	0	in_NTC	1
+1328300	Fusarium keratoplasticum	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Nectriaceae;Fusarium;Fusarium solani species complex;Fusarium keratoplasticum	0	in_NTC	4
+1340847	Streptococcus suis T15	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus suis;Streptococcus suis T15	12	in_sample	0
+1355015	Streptomyces pluripotens	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces pluripotens	0	in_NTC	2
+1355477	Bradyrhizobium diazoefficiens	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Bradyrhizobium;Bradyrhizobium diazoefficiens	0	in_NTC	3
+1367847	Paracoccus aminophilus JCM 7686	strain	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodobacterales;Paracoccaceae;Paracoccus;Paracoccus aminophilus;Paracoccus aminophilus JCM 7686	0	in_NTC	1
+1379690	Bacteroides ovatus V975	strain	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Bacteroidaceae;Bacteroides;Bacteroides ovatus;Bacteroides ovatus V975	3	in_sample	0
+1380566	Pochonia chlamydosporia 170	strain	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Clavicipitaceae;Pochonia;Pochonia chlamydosporia;Pochonia chlamydosporia 170	1	< NTC	10
+1383885	Flagellimonas maritima	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Flagellimonas;Flagellimonas maritima	0	in_NTC	1
+1385930	Burkholderia dolosa PC543	strain	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia dolosa;Burkholderia dolosa PC543	0	in_NTC	8
+1391654	Labilithrix luteola	species	Bacteria;Myxococcota;Polyangia;Polyangiales;Labilitrichaceae;Labilithrix;Labilithrix luteola	0	in_NTC	5
+1394889	Thermosynechococcus sp. NK55a	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Acaryochloridales;Thermosynechococcaceae;Thermosynechococcus;Thermosynechococcus sp. NK55a	0	in_NTC	1
+1414719	Corynebacterium jeddahense	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium jeddahense	0	in_NTC	33
+1415568	Marinobacter sp. LV10R510-11A	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Marinobacteraceae;Marinobacter;Marinobacter sp. LV10R510-11A	0	in_NTC	1
+1431546	Corynebacterium aquilae DSM 44791	strain	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium aquilae;Corynebacterium aquilae DSM 44791	1	in_sample	0
+1434109	Methanosarcina barkeri str. Wiesmoor	strain	Archaea;Methanobacteriati;Methanobacteriota;Stenosarchaea group;Methanomicrobia;Methanosarcinales;Methanosarcinaceae;Methanosarcina;Methanosarcina barkeri;Methanosarcina barkeri str. Wiesmoor	0	in_NTC	1
+1435981	Streptococcus thermophilus 1F8CT	strain	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus thermophilus;Streptococcus thermophilus 1F8CT	1	in_sample	0
+1458841	Mycobacterium phage CRB1	species	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Fromanvirus;Mycobacterium phage CRB1	0	in_NTC	1
+1462527	Oceanobacillus jeddahense	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Oceanobacillus;Oceanobacillus jeddahense	0	in_NTC	1
+1463158	Thermomonas carbonis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Thermomonas;Thermomonas carbonis	1	in_sample	0
+1471761	Novibacillus thermophilus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Thermoactinomycetaceae;Novibacillus;Novibacillus thermophilus	1	in_sample	0
+1479019	Methylobacterium sp. C1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium sp. C1	0	in_NTC	1
+1484693	Rhodoferax saidenbachensis	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Rhodoferax;Rhodoferax saidenbachensis	0	in_NTC	1
+1496080	Brevibacterium pigmentatum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Brevibacteriaceae;Brevibacterium;Brevibacterium pigmentatum	0	in_NTC	1
+1498172	Escherichia phage ECBP5	no rank	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Autographiviridae;Gajwadongvirus;Gajwadongvirus ECBP5	1	in_sample	0
+1503055	Burkholderia territorii	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Burkholderia;Burkholderia cepacia complex;Burkholderia territorii	0	in_NTC	1
+1528099	Lawsonella clevelandensis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Lawsonellaceae;Lawsonella;Lawsonella clevelandensis	0	in_NTC	3
+1547487	Mycobacterium sp. ELW1	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycobacterium;Mycobacterium sp. ELW1	1	in_sample	0
+1560345	Sphingomonas panacis	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas panacis	0	in_NTC	1
+1564114	Rhodococcus sp. B7740	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Nocardiaceae;Rhodococcus;Rhodococcus sp. B7740	0	in_NTC	1
+1578925	Pyricularia pennisetigena	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Sordariomycetidae;Magnaporthales;Pyriculariaceae;Pyricularia;Pyricularia pennisetigena	2	in_sample	0
+1593482	Massilia sp. YMA4	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Massilia;Massilia sp. YMA4	0	in_NTC	1
+1604004	Halanaeroarchaeum sulfurireducens	species	Archaea;Methanobacteriati;Methanobacteriota;Stenosarchaea group;Halobacteria;Halobacteriales;Halobacteriaceae;Halanaeroarchaeum;Halanaeroarchaeum sulfurireducens	0	in_NTC	1
+1605721	Pandoravirus inopinatum	species	Viruses;Pandoravirus;Pandoravirus inopinatum	0	in_NTC	1
+1609758	Novosphingobium sp. P6W	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Novosphingobium;Novosphingobium sp. P6W	1	in_sample	0
+1643824	Atopobiaceae	family	Bacteria;Terrabacteria group;Actinomycetota;Coriobacteriia;Coriobacteriales;Atopobiaceae	1	in_sample	0
+1654780	Propionibacterium phage Enoki	species	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Pahexavirus;Propionibacterium phage Enoki	1	in_sample	0
+1659192	Treponema sp. OMZ 305	species	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema;Treponema sp. OMZ 305	1	in_sample	0
+1678129	Limnohabitans sp. 103DPR2	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Limnohabitans;Limnohabitans sp. 103DPR2	0	in_NTC	2
+1679497	Caulobacter flavus	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Caulobacteraceae;Caulobacter;Caulobacter flavus	0	in_NTC	2
+1686313	Fenollaria	genus	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Fenollaria	0	in_NTC	2
+1703338	Croceicoccus sp. Ery15	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Erythrobacteraceae;Croceicoccus;Croceicoccus sp. Ery15	1	in_sample	0
+1705399	Hymenobacter monticola	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Hymenobacteraceae;Hymenobacter;Hymenobacter monticola	2	in_sample	0
+1720083	Acetilactobacillus jinshanensis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Acetilactobacillus;Acetilactobacillus jinshanensis	0	in_NTC	1
+1736675	Devosia sp. A16	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Devosiaceae;Devosia;Devosia sp. A16	0	in_NTC	1
+1737405	Tissierellales	order	Bacteria;Terrabacteria group;Bacillota;Tissierellia;Tissierellales	1	in_sample	0
+1743159	Polynucleobacter yangtzensis	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Polynucleobacter;Polynucleobacter yangtzensis	0	in_NTC	1
+1743168	Polynucleobacter wuianus	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Polynucleobacter;Polynucleobacter wuianus	0	in_NTC	1
+1743174	Polynucleobacter tropicus	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Polynucleobacter;Polynucleobacter tropicus	0	in_NTC	1
+1746199	Bordetella sp. N	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Alcaligenaceae;Bordetella;Bordetella sp. N	0	in_NTC	2
+1758466	Corynebacterium faecale	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium faecale	0	in_NTC	1
+1763828	Hankyongella ginsenosidimutans	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Hankyongella;Hankyongella ginsenosidimutans	0	in_NTC	6
+1775910	Methylobacterium indicum	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium indicum	0	in_NTC	1
+1776741	Acinetobacter proteolyticus	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter proteolyticus	0	in_NTC	1
+1783272	Terrabacteria group	clade	Bacteria;Terrabacteria group	12	> NTC	4
+1784714	Arcticibacterium luteifluviistationis	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Leadbetterellaceae;Arcticibacterium;Arcticibacterium luteifluviistationis	1	in_sample	0
+1796635	Longicatena caecimuris	species	Bacteria;Terrabacteria group;Bacillota;Erysipelotrichia;Erysipelotrichales;Erysipelotrichaceae;Longicatena;Longicatena caecimuris	1	in_sample	0
+1807358	Stanieria sp. NIES-3757	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Pleurocapsales;Dermocarpellaceae;Stanieria;Stanieria sp. NIES-3757	0	in_NTC	1
+1812935	Enterobacter roggenkampii	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Enterobacter;Enterobacter cloacae complex;Enterobacter roggenkampii	0	in_NTC	4
+1813611	Chryseobacterium cucumeris	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium cucumeris	0	in_NTC	4
+1813879	Sphingomonas panacisoli	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas panacisoli	0	in_NTC	2
+1814290	Nitrosococcus wardiae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Chromatiales;Chromatiaceae;Nitrosococcus;Nitrosococcus wardiae	1	in_sample	0
+1839799	Streptococcus sp. FDAARGOS_192	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus sp. FDAARGOS_192	10	in_sample	0
+1842535	Blastomonas sp. RAC04	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Blastomonas;Blastomonas sp. RAC04	1	in_sample	0
+1842727	Rhodoferax koreense	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Rhodoferax;Rhodoferax koreense	0	in_NTC	1
+1843368	Sphingobium sp. RAC03	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingobium;Sphingobium sp. RAC03	0	in_NTC	2
+1849032	Arthrobacter sp. U41	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Arthrobacter;Arthrobacter sp. U41	1	in_sample	0
+1851395	Actinomyces sp. Chiba101	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Actinomyces;Actinomyces sp. Chiba101	1	in_sample	0
+1852377	Actinomyces pacaensis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Actinomyces;Actinomyces pacaensis	3	in_sample	0
+1855617	Polynucleobacter sp. MWH-UH2A	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Polynucleobacter;Polynucleobacter sp. MWH-UH2A	0	in_NTC	1
+1855895	Polynucleobacter paludilacus	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Polynucleobacter;Polynucleobacter paludilacus	1	in_sample	0
+1866885	Mycolicibacterium	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycolicibacterium	1	in_sample	0
+1869241	Nostoc sp. CENA543	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Nostocales;Nostocaceae;Nostoc;Nostoc sp. CENA543	0	in_NTC	1
+1871047	Chryseobacterium sp.	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium sp.	0	in_NTC	1
+1871086	Brevundimonas sp.	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Caulobacteraceae;Brevundimonas;Brevundimonas sp.	0	in_NTC	2
+1874362	Campylobacter pinnipediorum subsp. caledonicus	subspecies	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales;Campylobacteraceae;Campylobacter;Campylobacter pinnipediorum;Campylobacter pinnipediorum subsp. caledonicus	1	in_sample	0
+1878942	Candidatus Fukatsuia symbiotica	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Yersiniaceae;Candidatus Fukatsuia;Candidatus Fukatsuia symbiotica	0	in_NTC	1
+1881016	Achromobacter sp. MFA1 R4	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Alcaligenaceae;Achromobacter;Achromobacter sp. MFA1 R4	1	in_sample	0
+1882747	Afipia sp. GAS231	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Afipia;Afipia sp. GAS231	0	in_NTC	1
+1882918	Pajaroellobacter abortibovis	species	Bacteria;Myxococcota;Polyangia;Polyangiales;Polyangiaceae;Pajaroellobacter;Pajaroellobacter abortibovis	0	in_NTC	4
+1884263	Selenomonas sp. oral taxon 920	species	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Selenomonadales;Selenomonadaceae;Selenomonas;Selenomonas sp. oral taxon 920	2	in_sample	0
+1884634	Candidatus Nanopelagicus limnes	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Candidatus Nanopelagicales;Candidatus Nanopelagicaceae;Candidatus Nanopelagicus;Candidatus Nanopelagicus limnes	0	in_NTC	1
+1884907	Candidatus Planktophila vernalis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Candidatus Nanopelagicales;Candidatus Nanopelagicaceae;Candidatus Planktophila;Candidatus Planktophila vernalis	1	< NTC	3
+1884915	Candidatus Nanopelagicus hibericus	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Candidatus Nanopelagicales;Candidatus Nanopelagicaceae;Candidatus Nanopelagicus;Candidatus Nanopelagicus hibericus	0	in_NTC	1
+1903186	Brachybacterium sp. P6-10-X1	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Dermabacteraceae;Brachybacterium;Brachybacterium sp. P6-10-X1	0	in_NTC	1
+1903412	Hafniaceae	family	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Hafniaceae	1	in_sample	0
+1909299	Blastomonas sp.	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Blastomonas;Blastomonas sp.	1	in_sample	0
+1912216	Cutibacterium	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Propionibacteriaceae;Cutibacterium	0	in_NTC	4
+1914850	Certrevirus	genus	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Vequintavirinae;Certrevirus	1	in_sample	0
+1920753	Gamaleyavirus	genus	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Schitoviridae;Enquatrovirinae;Gamaleyavirus	2	in_sample	0
+1935379	Leucobacter muris	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Leucobacter;Leucobacter muris	0	in_NTC	4
+1936080	Winogradskyella sp. J14-2	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Winogradskyella;Winogradskyella sp. J14-2	0	in_NTC	1
+1945512	Cellvibrio sp. PSBB023	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Cellvibrionales;Cellvibrionaceae;Cellvibrio;Cellvibrio sp. PSBB023	0	in_NTC	2
+1972134	endosymbiont of Sipalinus gigas	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Candidatus Nardonella;endosymbiont of Sipalinus gigas	1	in_sample	0
+1979527	Corynebacterium kefirresidentii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium kefirresidentii	0	in_NTC	4
+1981510	Monoglobus pectinilyticus	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Monoglobales;Monoglobaceae;Monoglobus;Monoglobus pectinilyticus	0	in_NTC	1
+2004710	Cloacibacterium caeni	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Cloacibacterium;Cloacibacterium caeni	0	in_NTC	11
+2005460	Chondrocystis sp. NIES-4102	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Chroococcales;Chroococcaceae;Chondrocystis;Chondrocystis sp. NIES-4102	0	in_NTC	1
+2014534	Microbacterium sp. PM5	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Microbacterium;Microbacterium sp. PM5	0	in_NTC	1
+2020962	Malassezia vespertilionis	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Basidiomycota;Ustilaginomycotina;Malasseziomycetes;Malasseziales;Malasseziaceae;Malassezia;Malassezia vespertilionis	1	< NTC	14
+2026186	Bacillus paranthracis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Bacillus;Bacillus cereus group;Bacillus paranthracis	0	in_NTC	1
+2026624	Parasphingopyxis algicola	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Parasphingopyxis;Parasphingopyxis algicola	0	in_NTC	7
+2027857	Mariniflexile sp. TRM1-10	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Mariniflexile;Mariniflexile sp. TRM1-10	1	in_sample	0
+2034170	Trichoderma breve	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Hypocreaceae;Trichoderma;Trichoderma breve	0	in_NTC	1
+2039166	Chryseobacterium sp. 6424	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium sp. 6424	0	in_NTC	3
+2051553	Methylobacterium currus	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium currus	0	in_NTC	2
+2055947	Corynebacterium heidelbergense	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium heidelbergense	0	in_NTC	1
+2056231	Pseudomonas qingdaonensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas qingdaonensis	1	in_sample	0
+2057743	Actinomyces wuliandei	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Actinomyces;Actinomyces wuliandei	1	in_sample	0
+2057798	Actinomyces sp. 432	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Actinomyces;Actinomyces sp. 432	0	in_NTC	3
+2060094	Aminipila	genus	Bacteria;Terrabacteria group;Bacillota;Clostridia;Peptostreptococcales;Anaerovoracaceae;Aminipila	1	in_sample	0
+2060973	Purpureocillium takamizusanense	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Ophiocordycipitaceae;Purpureocillium;Purpureocillium takamizusanense	0	in_NTC	1
+2066133	Marinomonas sp. CT5	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Oceanospirillales;Oceanospirillaceae;Marinomonas;Marinomonas sp. CT5	0	in_NTC	1
+2070337	Curtobacterium sp. SGAir0471	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Curtobacterium;Curtobacterium sp. SGAir0471	0	in_NTC	3
+2072414	Stenotrophomonas sp. ESTM1D_MKCIP4_1	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Stenotrophomonas;Stenotrophomonas maltophilia group;Stenotrophomonas sp. ESTM1D_MKCIP4_1	0	in_NTC	1
+2082188	Sphingobium sp. YG1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingobium;Sphingobium sp. YG1	0	in_NTC	2
+2086584	Massilistercora timonensis	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Massilistercora;Massilistercora timonensis	0	in_NTC	1
+2093823	Candidatus Nanosynbacter	genus	Bacteria;Bacteria candidate phyla;Candidatus Saccharibacteria;Candidatus Saccharimonadia;Candidatus Nanosynbacterales;Candidatus Nanosynbacteraceae;Candidatus Nanosynbacter	2	in_sample	0
+2093824	Candidatus Nanosynbacter lyticus	species	Bacteria;Bacteria candidate phyla;Candidatus Saccharibacteria;Candidatus Saccharimonadia;Candidatus Nanosynbacterales;Candidatus Nanosynbacteraceae;Candidatus Nanosynbacter;Candidatus Nanosynbacter lyticus	1	in_sample	0
+2099583	Streptomyces sp. ICC1	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. ICC1	5	> NTC	1
+2126982	Escherichia coli O18:H1	strain	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Escherichia;Escherichia coli;Escherichia coli O18:H1	0	in_NTC	1
+2133944	Pseudoprevotella muciniphila	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Pseudoprevotella;Pseudoprevotella muciniphila	1	in_sample	0
+2162637	Bacteroides sp. PHL 2737	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Bacteroidaceae;Bacteroides;Bacteroides sp. PHL 2737	7	in_sample	0
+2173853	Streptococcus chenjunshii	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus chenjunshii	8	in_sample	0
+2184053	Streptomyces cadmiisoli	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces aurantiacus group;Streptomyces cadmiisoli	0	in_NTC	1
+2184519	Hydrogenophaga sp. NH-16	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Hydrogenophaga;Hydrogenophaga sp. NH-16	0	in_NTC	2
+2202825	Methylobacterium durans	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium durans	0	in_NTC	6
+2219696	Sphingomonas sp. FARSPH	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas sp. FARSPH	0	in_NTC	1
+2220073	Bdellovibrio sp. NC01	species	Bacteria;Bdellovibrionota;Bdellovibrionia;Bdellovibrionales;Pseudobdellovibrionaceae;Bdellovibrio;Bdellovibrio sp. NC01	0	in_NTC	1
+2231603	Akanthomyces muscarius	species	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Sordariomycetes;Hypocreomycetidae;Hypocreales;Cordycipitaceae;Akanthomyces;Akanthomyces muscarius	0	in_NTC	2
+2267275	Bartonella krasnovii	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Bartonellaceae;Bartonella;Bartonella krasnovii	0	in_NTC	1
+2282523	Methylorubrum	genus	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum	0	in_NTC	53
+2290922	Lysobacter sp. TY2-98	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Lysobacter;Lysobacter sp. TY2-98	1	in_sample	0
+2293571	Streptomyces inhibens	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces inhibens	0	in_NTC	1
+2306583	Halomonas sp. JS92-SW72	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Oceanospirillales;Halomonadaceae;Halomonas;Halomonas sp. JS92-SW72	0	in_NTC	9
+2382163	Streptococcus koreensis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus koreensis	2	in_sample	0
+2420310	Streptococcus sp. FDAARGOS_522	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus sp. FDAARGOS_522	0	in_NTC	1
+2447890	Serratia sp. 1D1416	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Yersiniaceae;Serratia;Serratia sp. 1D1416	0	in_NTC	3
+2487072	Epilithonimonas vandammei	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Epilithonimonas;Epilithonimonas vandammei	3	< NTC	4
+2487892	Corynebacterium urogenitale	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium urogenitale	0	in_NTC	4
+2491323	Salmonella phage TS6	species	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Guernseyvirinae;Salmonella phage TS6	1	in_sample	0
+2493633	Pseudomonas hydrolytica	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas hydrolytica	0	in_NTC	1
+2497861	Billgrantia tianxiuensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Oceanospirillales;Halomonadaceae;Billgrantia;Billgrantia tianxiuensis	0	in_NTC	5
+2498451	Rheinheimera mangrovi	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Chromatiales;Chromatiaceae;Rheinheimera;Rheinheimera mangrovi	1	in_sample	0
+2502779	Pseudocnuella soli	species	Bacteria;FCB group;Bacteroidota;Chitinophagia;Chitinophagales;Chitinophagaceae;Pseudocnuella;Pseudocnuella soli	0	in_NTC	1
+2502784	Flavobacterium cerinum	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Flavobacterium;Flavobacterium cerinum	0	in_NTC	2
+2507935	Cohnella abietis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Paenibacillaceae;Cohnella;Cohnella abietis	1	in_sample	0
+2518370	Nocardioides euryhalodurans	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Nocardioides;Nocardioides euryhalodurans	0	in_NTC	1
+2518599	Pandoraea sp. XY-2	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Pandoraea;Pandoraea sp. XY-2	0	in_NTC	1
+2529408	Schaalia	genus	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Schaalia	9	in_sample	0
+2545709	Schizosaccharomyces osmophilus	species	Eukaryota;Opisthokonta;Fungi;Dikarya;Ascomycota;Taphrinomycotina;Schizosaccharomycetes;Schizosaccharomycetales;Schizosaccharomycetaceae;Schizosaccharomyces;Schizosaccharomyces osmophilus	2	< NTC	68
+2561898	Candidatus Campylobacter infans	species	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales;Campylobacteraceae;Campylobacter;Candidatus Campylobacter infans	1	in_sample	0
+2563662	Treponema sp. OMZ 906	species	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema;Treponema sp. OMZ 906	1	in_sample	0
+2565559	Stenotrophomonas sp. PAMC25021	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Stenotrophomonas;Stenotrophomonas sp. PAMC25021	0	in_NTC	1
+2567896	Polyangium aurulentum	species	Bacteria;Myxococcota;Polyangia;Polyangiales;Polyangiaceae;Polyangium;Polyangium aurulentum	0	in_NTC	1
+2571115	Pseudoxanthomonas sp. X-1	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Pseudoxanthomonas;Pseudoxanthomonas sp. X-1	1	in_sample	0
+2572090	Nostoc sp. TCL240-02	species	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Nostocales;Nostocaceae;Nostoc;Nostoc sp. TCL240-02	0	in_NTC	1
+2575374	Arthrobacter sp. 24S4-2	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Arthrobacter;Arthrobacter sp. 24S4-2	1	in_sample	0
+2576891	Nibricoccus aquaticus	species	Bacteria;PVC group;Verrucomicrobiota;Opitutia;Opitutales;Opitutaceae;Nibricoccus;Nibricoccus aquaticus	0	in_NTC	1
+2583588	Salmonella enterica subsp. enterica serovar 1,4,[5],12:i:-	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella enterica;Salmonella enterica subsp. enterica	0	in_NTC	1
+2583851	Elizabethkingia sp. JS20170427COW	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Elizabethkingia;Elizabethkingia sp. JS20170427COW	0	in_NTC	1
+2585716	Streptomyces sp. C8S0	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. C8S0	0	in_NTC	1
+2587851	Erythrobacter sp. THAF29	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Erythrobacteraceae;Erythrobacter;Erythrobacter sp. THAF29	0	in_NTC	1
+2589974	Mesorhizobium sp. B2-1-1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Phyllobacteriaceae;Mesorhizobium;Mesorhizobium sp. B2-1-1	1	in_sample	0
+2590157	Klebsiella variicola subsp. variicola	subspecies	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Klebsiella;Klebsiella variicola;Klebsiella variicola subsp. variicola	0	in_NTC	1
+2590900	Tenuifilum thalassicum	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Tenuifilaceae;Tenuifilum;Tenuifilum thalassicum	0	in_NTC	1
+2592654	Protaetiibacter larvae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Protaetiibacter;Protaetiibacter larvae	0	in_NTC	1
+2593542	unclassified Campylobacter	no rank	Bacteria;Campylobacterota;Epsilonproteobacteria;Campylobacterales;Campylobacteraceae;Campylobacter	2	in_sample	0
+2593676	unclassified Streptomyces	no rank	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces	0	in_NTC	1
+2594495	Lactobacillus sp. PV034	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Lactobacillus;Lactobacillus sp. PV034	1	in_sample	0
+2594913	Corynebacterium sanguinis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium sanguinis	0	in_NTC	4
+2596912	Glaciihabitans sp. INWT7	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Glaciihabitans;Glaciihabitans sp. INWT7	0	in_NTC	3
+2601898	Noviherbaspirillum sp. UKPF54	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Noviherbaspirillum;Noviherbaspirillum sp. UKPF54	0	in_NTC	1
+2603276	Methylobacterium sp. WL1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium sp. WL1	0	in_NTC	2
+2605747	Pedobacter aquae	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Pedobacter;Pedobacter aquae	2	in_sample	0
+2609248	unclassified Actinomyces	no rank	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Actinomyces	1	in_sample	0
+2609279	unclassified Massilia	no rank	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Massilia	0	in_NTC	3
+2610896	Streptococcus sp. LPB0220	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus sp. LPB0220	5	in_sample	0
+2611147	unclassified Sphingobium	no rank	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingobium	0	in_NTC	2
+2611352	Discoba	clade	Eukaryota;Discoba	0	in_NTC	1
+2615069	unclassified Nocardioides	no rank	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Nocardioides	0	in_NTC	1
+2622653	unclassified Brevundimonas	no rank	Bacteria;Pseudomonadota;Alphaproteobacteria;Caulobacterales;Caulobacteraceae;Brevundimonas	1	in_sample	0
+2624378	unclassified Corynebacterium	no rank	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium	1	in_sample	0
+2624793	unclassified Cellvibrio	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Cellvibrionales;Cellvibrionaceae;Cellvibrio	0	in_NTC	3
+2628915	unclassified Pedobacter	no rank	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Pedobacter	3	in_sample	0
+2631580	unclassified Bradyrhizobium	no rank	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Bradyrhizobium	0	in_NTC	1
+2637378	unclassified Selenomonas	no rank	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Selenomonadales;Selenomonadaceae;Selenomonas	1	in_sample	0
+2638335	unclassified Prevotella	no rank	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella	1	in_sample	0
+2642259	unclassified Tepidibacter	no rank	Bacteria;Terrabacteria group;Bacillota;Clostridia;Peptostreptococcales;Peptostreptococcaceae;Tepidibacter	1	in_sample	0
+2650471	Lacipirellula parvula	species	Bacteria;PVC group;Planctomycetota;Planctomycetia;Pirellulales;Lacipirellulaceae;Lacipirellula;Lacipirellula parvula	0	in_NTC	2
+2653203	Sphingomonas sp. CL5.1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas sp. CL5.1	0	in_NTC	16
+2662362	Acinetobacter wanghuae	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter wanghuae	0	in_NTC	1
+2663857	Nocardioides marmotae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Nocardioides;Nocardioides marmotae	0	in_NTC	1
+2664091	Streptococcus sp. zg-86	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus sp. zg-86	1	in_sample	0
+2681552	Variovorax sp. RKNM96	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Variovorax;Variovorax sp. RKNM96	0	in_NTC	4
+2682455	Veillonella sp. S12025-13	species	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Veillonellales;Veillonellaceae;Veillonella;Veillonella sp. S12025-13	22	in_sample	0
+2682456	Veillonella nakazawae	species	Bacteria;Terrabacteria group;Bacillota;Negativicutes;Veillonellales;Veillonellaceae;Veillonella;Veillonella nakazawae	19	in_sample	0
+2685287	unclassified Avibacterium	no rank	Bacteria;Pseudomonadota;Gammaproteobacteria;Pasteurellales;Pasteurellaceae;Avibacterium	0	in_NTC	2
+2686210	Streptococcus ruminicola	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus ruminicola	1	in_sample	0
+2691580	Prevotella sp. Rep29	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella sp. Rep29	1	in_sample	0
+2695847	Escherichia phage ESSI2_ev239	no rank	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Peduoviridae;Evevirus;Evevirus ev239	0	in_NTC	12
+2697565	Brevibacterium limosum	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Brevibacteriaceae;Brevibacterium;Brevibacterium limosum	1	in_sample	0
+2708082	Mumia sp. ZJ1417	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Propionibacteriales;Nocardioidaceae;Mumia;Mumia sp. ZJ1417	0	in_NTC	2
+2708084	Salinibacterium sp. ZJ70	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Salinibacterium;Salinibacterium sp. ZJ70	1	in_sample	0
+2709303	Massilia sp. Se16.2.3	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Massilia;Massilia sp. Se16.2.3	0	in_NTC	1
+2710596	Spirosoma foliorum	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Cytophagaceae;Spirosoma;Spirosoma foliorum	0	in_NTC	5
+2713414	Chryseobacterium sp. POL2	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium sp. POL2	0	in_NTC	5
+2714952	Roseateles sp. DAIF2	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Sphaerotilaceae;Roseateles;Roseateles sp. DAIF2	0	in_NTC	1
+2719588	Kocuria sp. KD4	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Kocuria;Kocuria sp. KD4	0	in_NTC	3
+2720871	Aspergillus subgen. Circumdati	subgenus	Eukaryota;Fungi;Dikarya;Ascomycota;Pezizomycotina;Opisthokonta;Eurotiomycetes;Eurotiomycetidae;Eurotiales;Aspergillaceae;Aspergillus;Aspergillus subgen. Circumdati	1	< NTC	29
+2721243	Streptomyces sp. RLB1-33	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. RLB1-33	0	in_NTC	1
+2725666	Mesorhizobium terrae	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Phyllobacteriaceae;Mesorhizobium;Mesorhizobium terrae	0	in_NTC	4
+2725684	Acinetobacter sp. NEB149	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter sp. NEB149	0	in_NTC	6
+2726954	Sarcina sp. JB2	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Clostridiaceae;Sarcina;Sarcina sp. JB2	0	in_NTC	1
+2731680	Cellulosimicrobium sp. 72-3	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Promicromonosporaceae;Cellulosimicrobium;Cellulosimicrobium sp. 72-3	0	in_NTC	1
+2742598	Limosilactobacillus	genus	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Limosilactobacillus	2	in_sample	0
+2744522	Mesorhizobium sp. L-8-3	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Phyllobacteriaceae;Mesorhizobium;Mesorhizobium sp. L-8-3	0	in_NTC	1
+2745895	Salmonella sp. SJTUF14178	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Salmonella;Salmonella sp. SJTUF14178	0	in_NTC	2
+2751176	Vibrio sp. B1ASS3	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Vibrionales;Vibrionaceae;Vibrio;Vibrio sp. B1ASS3	0	in_NTC	1
+2752316	Rhodoferax sp. AJA081-3	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Rhodoferax;Rhodoferax sp. AJA081-3	0	in_NTC	1
+2753607	Rhizobacter sp. AJA081-3	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Rhizobacter;Rhizobacter sp. AJA081-3	0	in_NTC	2
+2754694	Chryseobacterium manosquense	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium manosquense	0	in_NTC	9
+2758440	Changpingibacter yushuensis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Changpingibacter;Changpingibacter yushuensis	0	in_NTC	1
+2758710	Gordonia jinghuaiqii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Gordoniaceae;Gordonia;Gordonia jinghuaiqii	1	in_sample	0
+2759528	Chryseobacterium capnotolerans	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium capnotolerans	0	in_NTC	2
+2759692	Streptococcus sp. Marseille-Q3533	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Streptococcaceae;Streptococcus;Streptococcus sp. Marseille-Q3533	1	in_sample	0
+2760438	Limnospira indica BM01	strain	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Oscillatoriophycideae;Oscillatoriales;Sirenicapillariaceae;Limnospira;Limnospira indica;Limnospira indica BM01	0	in_NTC	1
+2762318	Weeksellaceae	family	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae	3	< NTC	7
+2762322	Variovorax sp. PAMC26660	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Variovorax;Variovorax sp. PAMC26660	0	in_NTC	1
+2766784	Microbacterium sp. Nx66	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Microbacterium;Microbacterium sp. Nx66	0	in_NTC	1
+2766984	Pedobacter riviphilus	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Pedobacter;Pedobacter riviphilus	0	in_NTC	1
+2771361	Roseococcus microcysteis	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Rhodospirillales;Acetobacteraceae;Roseococcus;Roseococcus microcysteis	1	in_sample	0
+2772483	Algoriphagus sp. Y33	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Cyclobacteriaceae;Algoriphagus;Algoriphagus sp. Y33	0	in_NTC	1
+2778055	Aeromonas sp. FDAARGOS 1406	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Aeromonadales;Aeromonadaceae;Aeromonas;Aeromonas sp. FDAARGOS 1406	1	in_sample	0
+2778476	Anthocerotibacter panamensis C109	strain	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Gloeobacterales;Anthocerotibacteraceae;Anthocerotibacter;Anthocerotibacter panamensis;Anthocerotibacter panamensis C109	1	in_sample	0
+2782232	Chryseobacterium group	no rank	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae	5	< NTC	9
+2787014	Serratia phage Tsm2	species	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Guernseyvirinae;Serratia phage Tsm2	0	in_NTC	1
+2787628	Treponema peruense	species	Bacteria;Spirochaetota;Spirochaetia;Spirochaetales;Treponemataceae;Treponema;Treponema peruense	1	in_sample	0
+2789740	Pedobacter endophyticus	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Pedobacter;Pedobacter endophyticus	1	in_sample	0
+2794089	Schaalia sp. 19OD2882	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Schaalia;Schaalia sp. 19OD2882	1	in_sample	0
+2801997	Prevotella herbatica	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella herbatica	2	in_sample	0
+2804617	Sphingomonas sp. LHG3406-1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas sp. LHG3406-1	0	in_NTC	1
+2806347	Hydrogenophaga sp. SL48	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Hydrogenophaga;Hydrogenophaga sp. SL48	0	in_NTC	1
+2806552	Bulleidia sp. zg-1006	species	Bacteria;Terrabacteria group;Bacillota;Erysipelotrichia;Erysipelotrichales;Erysipelotrichaceae;Bulleidia;Bulleidia sp. zg-1006	1	in_sample	0
+2810516	Rothia sp. ZJ932	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Rothia;Rothia sp. ZJ932	0	in_NTC	1
+2816454	Aureimonas sp. OT7	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Aurantimonadaceae;Aureimonas;Aureimonas sp. OT7	1	in_sample	0
+2816859	Arthrobacter sunyaminii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Arthrobacter;Arthrobacter sunyaminii	0	in_NTC	1
+2819978	Cellulomonas fengjieae	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Cellulomonadaceae;Cellulomonas;Cellulomonas fengjieae	0	in_NTC	1
+2820270	Candidatus Kaistella beijingensis	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Kaistella;Candidatus Kaistella beijingensis	0	in_NTC	1
+2828862	Arthrobacter sp. Helios	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Arthrobacter;Arthrobacter sp. Helios	1	in_sample	0
+2840371	Gemella sp. zg-570	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Gemellaceae;Gemella;Gemella sp. zg-570	0	in_NTC	1
+2847989	Geomonas subterranea	species	Bacteria;Thermodesulfobacteriota;Desulfuromonadia;Geobacterales;Geobacteraceae;Geomonas;Geomonas subterranea	0	in_NTC	1
+2861282	Massilia sp. NP310	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Massilia;Massilia sp. NP310	0	in_NTC	8
+2864101	Pseudomonas sp. So3.2b	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas sp. So3.2b	1	in_sample	0
+2864202	Shewanella sp. FJAT-52076	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Alteromonadales;Shewanellaceae;Shewanella;Shewanella sp. FJAT-52076	0	in_NTC	1
+2866311	Ruficoccus sp. ZRK36	species	Bacteria;PVC group;Verrucomicrobiota;Opitutia;Puniceicoccales;Cerasicoccaceae;Ruficoccus;Ruficoccus sp. ZRK36	1	equal	1
+2866573	Cardiobacterium sp. Marseille-Q4385	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Cardiobacteriales;Cardiobacteriaceae;Cardiobacterium;Cardiobacterium sp. Marseille-Q4385	1	in_sample	0
+2871095	Pseudomonas sp. DR48	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas sp. DR48	0	in_NTC	1
+2871170	Cellulomonas sp. C5510	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Cellulomonadaceae;Cellulomonas;Cellulomonas sp. C5510	0	in_NTC	1
+2874884	Klebsiella phage VLCpiS11a	species	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Guernseyvirinae;Klebsiella phage VLCpiS11a	0	in_NTC	1
+2876939	Curtobacterium sp. TXMA1	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Curtobacterium;Curtobacterium sp. TXMA1	0	in_NTC	1
+2879617	Arthrobacter sp. FW305-BF8	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Micrococcaceae;Arthrobacter;Arthrobacter sp. FW305-BF8	0	in_NTC	1
+2879938	Chryseobacterium sp. MEBOG06	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium sp. MEBOG06	0	in_NTC	1
+2886042	Shigella virus Moo19	no rank	Viruses;Duplodnaviria;Heunggongvirae;Uroviricota;Caudoviricetes;Schitoviridae;Enquatrovirinae;Moovirus;Moovirus moo	20	> NTC	3
+2886821	Pantoea sp. Z09	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Erwiniaceae;Pantoea;Pantoea sp. Z09	0	in_NTC	2
+2892442	Pseudomonas sp. CIP-10	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas sp. CIP-10	1	< NTC	3
+2893202	Aegicerativicinus sediminis	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Aegicerativicinus;Aegicerativicinus sediminis	0	in_NTC	1
+2895286	Pedobacter mucosus	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Pedobacter;Pedobacter mucosus	6	in_sample	0
+2895353	Telluria group	no rank	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae	0	in_NTC	1
+2896845	Lysinibacillus sp. GJ-1	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Bacillaceae;Lysinibacillus;Lysinibacillus sp. GJ-1	0	in_NTC	1
+2897334	Methylorubrum sp. B1-46	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum sp. B1-46	0	in_NTC	8
+2898076	Chryseobacterium turcicum	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium turcicum	0	in_NTC	6
+2899133	Candidatus Nanosynbacter sp. HMT-352	species	Bacteria;Bacteria candidate phyla;Candidatus Saccharibacteria;Candidatus Saccharimonadia;Candidatus Nanosynbacterales;Candidatus Nanosynbacteraceae;Candidatus Nanosynbacter;Candidatus Nanosynbacter sp. HMT-352	5	> NTC	1
+2899220	Massilia endophytica	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Massilia;Massilia endophytica	0	in_NTC	2
+2907205	Tellurirhabdus bombi	species	Bacteria;FCB group;Bacteroidota;Cytophagia;Cytophagales;Spirosomataceae;Tellurirhabdus;Tellurirhabdus bombi	0	in_NTC	1
+2908839	Paenibacillus hexagrammi	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Paenibacillaceae;Paenibacillus;Paenibacillus hexagrammi	1	in_sample	0
+2913614	Prevotella communis	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella communis	2	in_sample	0
+2913616	Prevotella sp. E13-17	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella sp. E13-17	1	in_sample	0
+2913621	Prevotella sp. E9-3	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella sp. E9-3	1	in_sample	0
+2918170	Anaeromyxobacter oryzae	species	Bacteria;Myxococcota;Myxococcia;Myxococcales;Cystobacterineae;Anaeromyxobacteraceae;Anaeromyxobacter;Anaeromyxobacter oryzae	0	in_NTC	1
+2919376	Acinetobacter sp. AOR07_HL	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter sp. AOR07_HL	0	in_NTC	1
+2926709	Aliirhizobium (sic) terrae	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Alirhizobium;Aliirhizobium (sic) terrae	0	in_NTC	1
+2929799	Chryseobacterium oryzae	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Chryseobacterium;Chryseobacterium oryzae	0	in_NTC	4
+2937774	Prevotella sp. E15-22	species	Bacteria;FCB group;Bacteroidota;Bacteroidia;Bacteroidales;Prevotellaceae;Prevotella;Prevotella sp. E15-22	2	in_sample	0
+2938232	Methylorubrum sp. GM97	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylorubrum;Methylorubrum sp. GM97	0	in_NTC	3
+2939414	Streptomyces sp. HU2014	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. HU2014	0	in_NTC	4
+2942274	Pseudanabaena mucicola str. Chao 1806	strain	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae;Pseudanabaenales;Pseudanabaenaceae;Pseudanabaena;Pseudanabaena mucicola;Pseudanabaena mucicola str. Chao 1806	0	in_NTC	1
+2943497	Acinetobacter tibetensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter tibetensis	0	in_NTC	1
+2949090	Comamonas endophytica	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Comamonas;Comamonas endophytica	0	in_NTC	10
+2950074	Acinetobacter sp. C32I	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter sp. C32I	0	in_NTC	2
+2954079	Pseudomonas sp. FP1742	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas sp. FP1742	0	in_NTC	1
+2954087	Pseudomonas sp. FP2254	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas sp. FP2254	0	in_NTC	1
+2954102	Pseudomonas sp. FP833	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Pseudomonadales;Pseudomonadaceae;Pseudomonas;Pseudomonas sp. FP833	0	in_NTC	1
+2962065	Pollutimonas sp. M17	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Alcaligenaceae;Pollutimonas;Pollutimonas sp. M17	0	in_NTC	1
+2968083	Cellulomonas xiejunii	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Cellulomonadaceae;Cellulomonas;Cellulomonas xiejunii	0	in_NTC	1
+2971264	Citrobacter enshiensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Enterobacterales;Enterobacteriaceae;Citrobacter;Citrobacter enshiensis	2	> NTC	1
+2975482	Paenibacillus andongensis	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Paenibacillaceae;Paenibacillus;Paenibacillus andongensis	1	in_sample	0
+2976533	Sphingopyxis sp. PET50	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingopyxis;Sphingopyxis sp. PET50	0	in_NTC	2
+2976818	Cloacibacterium sp. TD35	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Weeksellaceae;Cloacibacterium;Cloacibacterium sp. TD35	0	in_NTC	4
+2978392	Phyllobacterium sp. A18/5-2	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Phyllobacteriaceae;Phyllobacterium;Phyllobacterium sp. A18/5-2	0	in_NTC	1
+2981136	Streptomyces sp. HUAS 15-9	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. HUAS 15-9	1	< NTC	2
+2984843	Methylobacterium flocculans	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Methylobacteriaceae;Methylobacterium;Methylobacterium flocculans	0	in_NTC	1
+2986281	Limnohabitans sp. TEGF004	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Limnohabitans;Limnohabitans sp. TEGF004	0	in_NTC	3
+2986923	Pararhizobium sp. BT-229	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Pararhizobium;Pararhizobium sp. BT-229	1	< NTC	22
+2986929	Rhizobium sp. BT-175	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Rhizobium;Rhizobium sp. BT-175	0	in_NTC	4
+2986949	Jiella pelagia	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Aurantimonadaceae;Jiella;Jiella pelagia	0	in_NTC	2
+2993898	Mycobacterium ulcerans group	species group	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Mycobacteriaceae;Mycobacterium;Mycobacterium ulcerans group	0	in_NTC	1
+2994319	Flavobacterium sp. GSB-24	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Flavobacterium;Flavobacterium sp. GSB-24	0	in_NTC	1
+2995161	Pedobacter sp. SL55	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Pedobacter;Pedobacter sp. SL55	131	in_sample	0
+2999116	Oceanirhabdus sp. W0125-5	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Clostridiaceae;Oceanirhabdus;Oceanirhabdus sp. W0125-5	0	in_NTC	1
+3003247	Xanthomonas hawaiiensis	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Xanthomonas;Xanthomonas hawaiiensis	0	in_NTC	1
+3003257	Flavobacterium aestivum	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Flavobacterium;Flavobacterium aestivum	0	in_NTC	1
+3003601	Peptostreptococcus equinus	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Peptostreptococcales;Peptostreptococcaceae;Peptostreptococcus;Peptostreptococcus equinus	1	in_sample	0
+3014784	Sphingomonas sp. NIBR02145	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas sp. NIBR02145	0	in_NTC	1
+3016086	Solwaraspora sp. WMMD791	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micromonosporales;Micromonosporaceae;Solwaraspora;Solwaraspora sp. WMMD791	0	in_NTC	1
+3018036	Sphingomonas sp. CV7422	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Sphingomonadales;Sphingomonadaceae;Sphingomonas;Sphingomonas sp. CV7422	1	in_sample	0
+3020716	Acinetobacter sp. GSS19	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter sp. GSS19	0	in_NTC	1
+3020908	Staphylococcus sp. NRL 22/194	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Bacillales;Staphylococcaceae;Staphylococcus;Staphylococcus sp. NRL 22/194	0	in_NTC	1
+3025663	Microbacterium sp. Clip185	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Micrococcales;Microbacteriaceae;Microbacterium;Microbacterium sp. Clip185	0	in_NTC	1
+3025669	Sphingobacterium oryzagri	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Sphingobacterium;Sphingobacterium oryzagri	8	in_sample	0
+3025671	Mucilaginibacter sp. KACC 22773	species	Bacteria;FCB group;Bacteroidota;Sphingobacteriia;Sphingobacteriales;Sphingobacteriaceae;Mucilaginibacter;Mucilaginibacter sp. KACC 22773	1	in_sample	0
+3026418	Devosia algicola	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Devosiaceae;Devosia;Devosia algicola	0	in_NTC	1
+3027470	Acinetobacter sp. TAC-1	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Acinetobacter;Acinetobacter sp. TAC-1	0	in_NTC	1
+3028070	Claveliimonas bilis	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Claveliimonas;Claveliimonas bilis	1	in_sample	0
+3028117	Cyanophyceae	class	Bacteria;Terrabacteria group;Cyanobacteriota;Cyanophyceae	0	in_NTC	2
+3028735	Chelativorans sp. AA-79	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Phyllobacteriaceae;Chelativorans;Chelativorans sp. AA-79	0	in_NTC	1
+3029084	Aminithiophilus ramosus	species	Bacteria;Synergistota;Synergistia;Synergistales;Aminithiophilaceae;Aminithiophilus;Aminithiophilus ramosus	1	in_sample	0
+3029088	Dethiosulfovibrionaceae	family	Bacteria;Synergistota;Synergistia;Synergistales;Dethiosulfovibrionaceae	2	in_sample	0
+3030210	Streptomyces sp. WZ-12	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. WZ-12	0	in_NTC	4
+3036302	Mobiluncus massiliensis	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Mobiluncus;Mobiluncus massiliensis	2	in_sample	0
+3038772	Tenacibaculum tangerinum	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Tenacibaculum;Tenacibaculum tangerinum	0	in_NTC	1
+3039386	Rugamonas sp. DEMB1	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Oxalobacteraceae;Rugamonas;Rugamonas sp. DEMB1	0	in_NTC	1
+3041765	Streptomyces sp. SH5	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Kitasatosporales;Streptomycetaceae;Streptomyces;Streptomyces sp. SH5	0	in_NTC	1
+3043330	Psychrobacter sp. WB2	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Moraxellales;Moraxellaceae;Psychrobacter;Psychrobacter sp. WB2	0	in_NTC	1
+3047867	Polynucleobacter sp. HIN8	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Burkholderiaceae;Polynucleobacter;Polynucleobacter sp. HIN8	1	equal	1
+3049772	Bradyrhizobium sp. NP1	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Nitrobacteraceae;Bradyrhizobium;Bradyrhizobium sp. NP1	0	in_NTC	1
+3050131	Ligilactobacillus cholophilus	species	Bacteria;Terrabacteria group;Bacillota;Bacilli;Lactobacillales;Lactobacillaceae;Ligilactobacillus;Ligilactobacillus cholophilus	1	in_sample	0
+3059028	Schaalia sp. HMT-172	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Actinomycetales;Actinomycetaceae;Schaalia;Schaalia sp. HMT-172	5	in_sample	0
+3059030	Stomatobaculum sp. F0698	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Lachnospirales;Lachnospiraceae;Stomatobaculum;Stomatobaculum sp. F0698	10	in_sample	0
+3060154	Diaphorobacter sp. C33	species	Bacteria;Pseudomonadota;Betaproteobacteria;Burkholderiales;Comamonadaceae;Diaphorobacter;Diaphorobacter sp. C33	0	in_NTC	1
+3067903	Pararhizobium sp. IMCC21322	species	Bacteria;Pseudomonadota;Alphaproteobacteria;Hyphomicrobiales;Rhizobiaceae;Pararhizobium;Pararhizobium sp. IMCC21322	0	in_NTC	1
+3068324	Stenotrophomonas sp. 24(2023)	species	Bacteria;Pseudomonadota;Gammaproteobacteria;Lysobacterales;Lysobacteraceae;Stenotrophomonas;Stenotrophomonas sp. 24(2023)	0	in_NTC	2
+3069118	Sanyastnella coralliicola	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Sanyastnellaceae;Sanyastnella;Sanyastnella coralliicola	0	in_NTC	2
+3070659	Aestuariibaculum sp. YM273	species	Bacteria;FCB group;Bacteroidota;Flavobacteriia;Flavobacteriales;Flavobacteriaceae;Aestuariibaculum;Aestuariibaculum sp. YM273	0	in_NTC	1
+3070681	Clostridium sp. OS1-26	species	Bacteria;Terrabacteria group;Bacillota;Clostridia;Eubacteriales;Clostridiaceae;Clostridium;Clostridium sp. OS1-26	0	in_NTC	1
+3074378	Corynebacterium sp. Z-1	species	Bacteria;Terrabacteria group;Actinomycetota;Actinomycetes;Mycobacteriales;Corynebacteriaceae;Corynebacterium;Corynebacterium sp. Z-1	0	in_NTC	2
