@@ -378,7 +378,7 @@ workflow METAVAL {
             CONSENSUS_VERIFY_SPECIES ( ch_bam_mapping_shortread,[[], []], params.consensus_min_bases )
             ch_bam_mapping_longread = MAPPING_LONGREAD.out.bam
                 .join(MAPPING_LONGREAD.out.bai, by:0)
-            
+
             ch_consensus_longread = MAPPING_LONGREAD.out.bam.join(FETCH_BLAST_GENOMES.out.longreads_genome)
 	    ch_fasta_consensus = ch_consensus_longread.map { meta, bam, fasta -> [meta, fasta] }
        
