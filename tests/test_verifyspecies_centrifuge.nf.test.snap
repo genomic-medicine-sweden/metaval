@@ -53,6 +53,36 @@
                 "blast/blastx/centrifuge/SRR13439813_taxid_1458848_Escherichia-phage-Bp4_centrifuge_blastx_filtered_summary.txt",
                 "blast/blastx/centrifuge/SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_centrifuge_blastx_filtered.txt",
                 "blast/blastx/centrifuge/SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_centrifuge_blastx_filtered_summary.txt",
+                "consensus",
+                "consensus/SRR13439790_taxid_10752_Shigella-virus-Moo19_samtools.fasta",
+                "consensus/SRR13439790_taxid_1391223_Shigella-virus-Moo19_samtools.fasta",
+                "consensus/SRR13439790_taxid_1414738_Shigella-virus-Moo19_samtools.fasta",
+                "consensus/SRR13439790_taxid_1604356_Shigella-virus-Moo19_samtools.fasta",
+                "consensus/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_medaka_sorted.fasta",
+                "consensus/SRR13439813_taxid_1054461_Escherichia-phage-ECBP1_samtools.fasta",
+                "consensus/SRR13439813_taxid_1054461_Escherichia-phage-U1G_samtools.fasta",
+                "consensus/SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_samtools.fasta",
+                "consensus/SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-SP5M_samtools.fasta",
+                "consensus/SRR13439813_taxid_1054461_Shigella-virus-Moo19_samtools.fasta",
+                "consensus/SRR13439813_taxid_10752_Escherichia-phage-vB-EcoP-G7C_samtools.fasta",
+                "consensus/SRR13439813_taxid_10752_Shigella-virus-Moo19_samtools.fasta",
+                "consensus/SRR13439813_taxid_1239384_Escherichia-phage-IME11_samtools.fasta",
+                "consensus/SRR13439813_taxid_1239384_Escherichia-phage-U1G_samtools.fasta",
+                "consensus/SRR13439813_taxid_1239384_Escherichia-phage-vB-EcoP-PhAPEC5_samtools.fasta",
+                "consensus/SRR13439813_taxid_1239384_Shigella-virus-Moo19_samtools.fasta",
+                "consensus/SRR13439813_taxid_1391223_Shigella-virus-Moo19_samtools.fasta",
+                "consensus/SRR13439813_taxid_1395983_Shigella-virus-Moo19_samtools.fasta",
+                "consensus/SRR13439813_taxid_1414738_Escherichia-phage-vB-EcoP-PhAPEC5_samtools.fasta",
+                "consensus/SRR13439813_taxid_1414738_Escherichia-phage-vB-EcoP-SP5M_samtools.fasta",
+                "consensus/SRR13439813_taxid_1414738_Shigella-virus-Moo19_samtools.fasta",
+                "consensus/SRR13439813_taxid_1458848_Escherichia-phage-Bp4_samtools.fasta",
+                "consensus/SRR13439813_taxid_1458848_Escherichia-phage-St11Ph5_samtools.fasta",
+                "consensus/SRR13439813_taxid_1458848_Escherichia-phage-vB-EcoP-G7C_samtools.fasta",
+                "consensus/SRR13439813_taxid_1458848_Escherichia-phage-vB-EcoP-ZQ2_samtools.fasta",
+                "consensus/SRR13439813_taxid_1458848_Shigella-virus-Moo19_samtools.fasta",
+                "consensus/SRR13439813_taxid_1604356_Escherichia-phage-Bp4_samtools.fasta",
+                "consensus/SRR13439813_taxid_1604356_Escherichia-phage-IME11_samtools.fasta",
+                "consensus/SRR13439813_taxid_1604356_Shigella-virus-Moo19_samtools.fasta",
                 "extracted_reads",
                 "extracted_reads/centrifuge",
                 "extracted_reads/centrifuge/SRR13439790_taxid_10752_Enquatrovirus-N4.extracted_centrifuge_read_1.fa",
@@ -168,6 +198,10 @@
                 "extracted_reads/centrifuge/SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.extracted_centrifuge_read_2.fa",
                 "extracted_reads/centrifuge/SRR13439813_taxid_697227_Escherichia-phage-IME08.extracted_centrifuge_read_1.fa",
                 "extracted_reads/centrifuge/SRR13439813_taxid_697227_Escherichia-phage-IME08.extracted_centrifuge_read_2.fa",
+                "filter",
+                "filter/SRR13439790_filtered.fasta",
+                "filter/SRR13439799_filtered.fasta",
+                "filter/SRR13439813_filtered.fasta",
                 "igv",
                 "igv/SRR13439790_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
                 "igv/SRR13439790_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
@@ -530,10 +564,10 @@
                 "viral_taxids/SRR13439813_centrifuge_viral_taxids.tsv"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:46.021185",
+        "timestamp": "2026-09-23T15:25:46.96249035",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "spades_centrifuge": {
@@ -607,10 +641,10 @@
                 "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus_centrifuge.warnings.log exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:50.792182",
+        "timestamp": "2026-09-23T15:25:54.499437709",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "viral_taxids": {
@@ -622,10 +656,10 @@
                 "SRR13439813_centrifuge_viral_taxids.tsv:md5,2b897bc64173ff63d8831f4d8f5b4158"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:51.28899",
+        "timestamp": "2026-09-23T15:25:55.037984371",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "bowtie2_build": {
@@ -693,10 +727,10 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:47.998794",
+        "timestamp": "2026-09-23T15:25:49.211699971",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "samtools_depth": {
@@ -733,10 +767,10 @@
                 "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,53a221adc95f3d7ce4555bd691f241ce"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:53.315663",
+        "timestamp": "2026-09-23T15:25:57.237337115",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "blastn": {
@@ -772,10 +806,10 @@
                 "SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_centrifuge_blast_filtered_summary.txt(centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:46.516296",
+        "timestamp": "2026-09-23T15:25:47.207741776",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "minimap2_align": {
@@ -790,10 +824,50 @@
                 "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,cfa2b31fd6a5542b18b4cce5f48e0ed6"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:49.64549",
+        "timestamp": "2026-09-23T15:25:52.704892763",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
+        }
+    },
+    "consensus": {
+        "content": [
+            [
+                "SRR13439790_taxid_10752_Shigella-virus-Moo19_samtools.fasta:md5,64cb2d6c7d0b6a81bd3f4167269d9525",
+                "SRR13439790_taxid_1391223_Shigella-virus-Moo19_samtools.fasta:md5,ac3a6d7ee8ad14647cc5afd2ee4475f3",
+                "SRR13439790_taxid_1414738_Shigella-virus-Moo19_samtools.fasta:md5,4ffb9baa3ccf468e3f9785527760c576",
+                "SRR13439790_taxid_1604356_Shigella-virus-Moo19_samtools.fasta:md5,012b749fc43ff6bdbd44e22d9be6495d",
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_medaka_sorted.fasta:md5,5e30f99ef55f088f2478a54492191955",
+                "SRR13439813_taxid_1054461_Escherichia-phage-ECBP1_samtools.fasta:md5,ac1c2708824d3612febf88de4c0f1a8d",
+                "SRR13439813_taxid_1054461_Escherichia-phage-U1G_samtools.fasta:md5,1c5d850faf0047505405e9d5e94e032b",
+                "SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_samtools.fasta:md5,358cd81b6ceb29ea5f6b7a9291f0da33",
+                "SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-SP5M_samtools.fasta:md5,49d1b553750a8f5970bc6308ac5d6ec7",
+                "SRR13439813_taxid_1054461_Shigella-virus-Moo19_samtools.fasta:md5,33592f20e84b47dde4ad0c49bb349b8f",
+                "SRR13439813_taxid_10752_Escherichia-phage-vB-EcoP-G7C_samtools.fasta:md5,3e9b525733c74cfd8c11b92fb21c16bf",
+                "SRR13439813_taxid_10752_Shigella-virus-Moo19_samtools.fasta:md5,ddb06cc689e5c00c63608952638c81d2",
+                "SRR13439813_taxid_1239384_Escherichia-phage-IME11_samtools.fasta:md5,e51209503e02d884f57dd8789308f2f9",
+                "SRR13439813_taxid_1239384_Escherichia-phage-U1G_samtools.fasta:md5,a1b685a3843d893be79405f6ceb39fe8",
+                "SRR13439813_taxid_1239384_Escherichia-phage-vB-EcoP-PhAPEC5_samtools.fasta:md5,59461fb47d3a9e1dd374ba8429e78532",
+                "SRR13439813_taxid_1239384_Shigella-virus-Moo19_samtools.fasta:md5,d2609292b5ab46e1c7e64b999f171d90",
+                "SRR13439813_taxid_1391223_Shigella-virus-Moo19_samtools.fasta:md5,e0dc6f849f89811474e535fad60b2799",
+                "SRR13439813_taxid_1395983_Shigella-virus-Moo19_samtools.fasta:md5,ab47a05113aacd319f74428e0e9ae718",
+                "SRR13439813_taxid_1414738_Escherichia-phage-vB-EcoP-PhAPEC5_samtools.fasta:md5,742646ad4ac33217b84106edb90a5f1d",
+                "SRR13439813_taxid_1414738_Escherichia-phage-vB-EcoP-SP5M_samtools.fasta:md5,51297d1498224c1b556623511c2af425",
+                "SRR13439813_taxid_1414738_Shigella-virus-Moo19_samtools.fasta:md5,d688fe0b04092cb343770f468ed4db1b",
+                "SRR13439813_taxid_1458848_Escherichia-phage-Bp4_samtools.fasta:md5,6d84aa79e3f1d4de833002f205e9918b",
+                "SRR13439813_taxid_1458848_Escherichia-phage-St11Ph5_samtools.fasta:md5,1b56580f9c26f0725bbb79db1ee3c4cd",
+                "SRR13439813_taxid_1458848_Escherichia-phage-vB-EcoP-G7C_samtools.fasta:md5,68b3cb8eba8cdf1ae2966939ed50b762",
+                "SRR13439813_taxid_1458848_Escherichia-phage-vB-EcoP-ZQ2_samtools.fasta:md5,9421c9b74a71a30dc62430b29be43bb7",
+                "SRR13439813_taxid_1458848_Shigella-virus-Moo19_samtools.fasta:md5,1bc42bb9dee066d06f3921512243de76",
+                "SRR13439813_taxid_1604356_Escherichia-phage-Bp4_samtools.fasta:md5,2cb1945b49546abdc2dfd1b8ce098192",
+                "SRR13439813_taxid_1604356_Escherichia-phage-IME11_samtools.fasta:md5,1aae158ab9c25010a9e574c15e5f356e",
+                "SRR13439813_taxid_1604356_Shigella-virus-Moo19_samtools.fasta:md5,0ce766de09bc2b88e66e2be2230d8647"
+            ]
+        ],
+        "timestamp": "2026-09-23T15:25:53.232087375",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "26.04.6"
         }
     },
     "-profile test_verifyspecies_centrifuge": {
@@ -831,12 +905,22 @@
                     "pandas": "2.2.1",
                     "python": "3.12.3"
                 },
+                "FILTER_CONSENSUS_LONGREAD": {
+                    "python": "3.13.2"
+                },
+                "FILTER_CONSENSUS_SHORTREAD": {
+                    "python": "3.13.2"
+                },
                 "FLAG_TAXPASTA": {
                     "pandas": "2.2.1",
                     "python": "3.12.3"
                 },
                 "IGVREPORTS": {
                     "igvreports": "0.1.0"
+                },
+                "MEDAKA": {
+                    "medaka": "2.0.1",
+                    "seqkit": "2.9.0"
                 },
                 "METAVAL_REPORT": {
                     "jinja2": "3.1.6",
@@ -856,6 +940,9 @@
                 },
                 "PIGZ_UNCOMPRESS_SPADES_SCAFFOLD": {
                     "pigz": 2.8
+                },
+                "SAMTOOLS_CONSENSUS_SHORTREAD": {
+                    "samtools": 1.24
                 },
                 "SAMTOOLS_COVERAGE": {
                     "samtools": "1.23.1"
@@ -898,10 +985,10 @@
                 }
             }
         ],
-        "timestamp": "2026-09-22T21:48:45.99611",
+        "timestamp": "2026-09-23T15:25:46.933741945",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "extracted_reads": {
@@ -1022,10 +1109,10 @@
                 "SRR13439813_taxid_697227_Escherichia-phage-IME08.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:47.556207",
+        "timestamp": "2026-09-23T15:25:48.813979494",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "minimap2_index": {
@@ -1034,10 +1121,10 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:49.122229",
+        "timestamp": "2026-09-23T15:25:52.151941118",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "samtools_coverage_plot": {
@@ -1074,10 +1161,10 @@
                 "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:52.829358",
+        "timestamp": "2026-09-23T15:25:56.693781844",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "samtools_coverage": {
@@ -1114,10 +1201,10 @@
                 "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,33d44f15d9436784519b02c8c4d28d00"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:52.309951",
+        "timestamp": "2026-09-23T15:25:56.132487338",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "report": {
@@ -1126,10 +1213,10 @@
                 "metaval_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:51.822819",
+        "timestamp": "2026-09-23T15:25:55.58198059",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "bowtie2_align": {
@@ -1221,10 +1308,10 @@
                 ]
             ]
         ],
-        "timestamp": "2026-09-22T21:48:47.936884",
+        "timestamp": "2026-09-23T15:25:49.130303517",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "igv": {
@@ -1261,10 +1348,10 @@
                 "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:50.291816",
+        "timestamp": "2026-09-23T15:25:53.854237645",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "blastx": {
@@ -1290,10 +1377,10 @@
                 "SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_centrifuge_blastx_filtered_summary.txt(centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:46.744531",
+        "timestamp": "2026-09-23T15:25:47.388553743",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "taxpasta_flagged": {
@@ -1305,10 +1392,10 @@
                 "SRR13439813_DNA_HLSAN_centrifuge.tsv:md5,d4618a60f5ea9a739e436e2219b8447d"
             ]
         ],
-        "timestamp": "2026-09-22T21:48:54.205469",
+        "timestamp": "2026-09-23T15:25:58.13521694",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     }
 }
