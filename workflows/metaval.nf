@@ -17,6 +17,9 @@ include { SEQKIT_HEAD                                           } from '../modul
 // De novo for extracted taxIDs reads
 include { SPADES                                                } from '../modules/nf-core/spades'
 include { FLYE                                                  } from '../modules/nf-core/flye'
+include { PIGZ_UNCOMPRESS as PIGZ_UNCOMPRESS_SPADES_CONTIG      } from '../modules/nf-core/pigz/uncompress'
+include { PIGZ_UNCOMPRESS as PIGZ_UNCOMPRESS_SPADES_SCAFFOLD    } from '../modules/nf-core/pigz/uncompress'
+include { PIGZ_UNCOMPRESS as PIGZ_UNCOMPRESS_FLYE               } from '../modules/nf-core/pigz/uncompress'
 
 // BLAST
 include { BLAST                                                 } from '../subworkflows/local/blast'
@@ -284,8 +287,11 @@ workflow METAVAL {
         if ( params.perform_shortread_denovo ) {
             SPADES( ch_denovo.shortreads, [], [] )
 
-            ch_spades_fasta = SPADES.out.scaffolds
-                .mix(SPADES.out.contigs)
+            PIGZ_UNCOMPRESS_SPADES_CONTIG( SPADES.out.contigs )
+            PIGZ_UNCOMPRESS_SPADES_SCAFFOLD( SPADES.out.scaffolds )
+
+            ch_spades_fasta = PIGZ_UNCOMPRESS_SPADES_SCAFFOLD.out.file
+                .mix(PIGZ_UNCOMPRESS_SPADES_CONTIG.out.file)
                 .groupTuple(by:0)
                 .map { meta, files ->
                     def scaffolds = files.find { file -> file instanceof Path && file.name.endsWith('.scaffolds.fa') }
@@ -298,7 +304,8 @@ workflow METAVAL {
         // Long reads de novo assembly
         if ( params.perform_longread_denovo ) {
             FLYE( ch_denovo.longreads, params.flye_mode )
-            ch_denovo_fasta = ch_denovo_fasta.mix( FLYE.out.fasta )
+            PIGZ_UNCOMPRESS_FLYE( FLYE.out.fasta )
+            ch_denovo_fasta = ch_denovo_fasta.mix( PIGZ_UNCOMPRESS_FLYE.out.file )
         }
 
         //

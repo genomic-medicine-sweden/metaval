@@ -163,7 +163,8 @@ def load_extracted_read_index(reads_dir: Path) -> dict[str, dict[str, list[dict[
     )
     assembly_pattern = re.compile(
         r"^(?P<sample>.+?)_taxid_(?P<taxid>\d+)_(?P<organism>.+?)_"
-        r"(?P<classifier>kraken2|centrifuge|diamond)\.(?:scaffolds|contigs)\.fa(?:sta)?$"
+        r"(?P<classifier>kraken2|centrifuge|diamond)\."
+        r"(?:(?:scaffolds|contigs)\.fa(?:sta)?|assembly\.fasta)$"
     )
     subset_pattern = re.compile(
     r"^(?P<sample>.+?)_taxid_(?P<taxid>\d+)_(?P<organism>.+?)_"
@@ -245,6 +246,7 @@ def select_reads_source(
     candidates.extend(reads_dir.glob(f"{base_name}_{classifier}.scaffolds.fa*"))
     candidates.extend(reads_dir.glob(f"{base_name}_{classifier}.contigs.fa*"))
     candidates.extend(reads_dir.glob(f"{base_name}_{classifier}_subset.fa*"))
+    candidates.extend(reads_dir.glob(f"{base_name}_{classifier}.assembly.fasta*"))
     return sorted({path for path in candidates if path.is_file()})
 
 

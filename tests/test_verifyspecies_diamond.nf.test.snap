@@ -418,11 +418,17 @@
                 "PIGZ_UNCOMPRESS": {
                     "pigz": 2.8
                 },
+                "PIGZ_UNCOMPRESS_SPADES_CONTIG": {
+                    "pigz": 2.8
+                },
+                "PIGZ_UNCOMPRESS_SPADES_SCAFFOLD": {
+                    "pigz": 2.8
+                },
                 "SAMTOOLS_COVERAGE": {
                     "samtools": "1.23.1"
                 },
                 "SAMTOOLS_DEPTH": {
-                    "samtools": "1.23.1"
+                    "samtools": 1.24
                 },
                 "SAMTOOLS_FAIDX": {
                     "samtools": 1.24
