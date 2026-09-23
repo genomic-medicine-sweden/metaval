@@ -1,5 +1,0 @@
-qseqid	staxids	sscinames	count	min_pident	max_pident	median_pident	min_length	max_length	median_length	min_bitscore	max_bitscore	median_bitscore
-NODE_1_length_365_cov_4.264516	2886042	Shigella virus Moo19	1	95.9	95.9	95.9	121	121	121.0	235.0	235.0	235.0
-NODE_2_length_277_cov_5.617117	1395983	Escherichia phage vB_EcoP_PhAPEC5	1	97.8	97.8	97.8	92	92	92.0	192.0	192.0	192.0
-NODE_3_length_270_cov_5.293023	2886042	Shigella virus Moo19	1	98.9	98.9	98.9	89	89	89.0	175.0	175.0	175.0
-NODE_4_length_236_cov_5.353591	2810370	Escherichia phage vB_EcoP-ZQ2	1	79.6	79.6	79.6	54	54	54.0	99.0	99.0	99.0
