@@ -10,9 +10,13 @@ include { FLAG_TAXPASTA                                         } from '../modul
 include { TAXID_READS                                           } from '../subworkflows/local/taxid_reads'
 include { SEQKIT_FQ2FA as SEQKIT_FQ2FA_READS                    } from '../modules/nf-core/seqkit/fq2fa'
 include { PIGZ_UNCOMPRESS                                       } from '../modules/nf-core/pigz/uncompress'
+
 // De novo for extracted taxIDs reads
 include { SPADES                                                } from '../modules/nf-core/spades'
 include { FLYE                                                  } from '../modules/nf-core/flye'
+include { PIGZ_UNCOMPRESS as PIGZ_UNCOMPRESS_SPADES_CONTIG      } from '../modules/nf-core/pigz/uncompress'
+include { PIGZ_UNCOMPRESS as PIGZ_UNCOMPRESS_SPADES_SCAFFOLD    } from '../modules/nf-core/pigz/uncompress'
+include { PIGZ_UNCOMPRESS as PIGZ_UNCOMPRESS_FLYE               } from '../modules/nf-core/pigz/uncompress'
 
 // BLAST
 include { SEQKIT_FQ2FA                                          } from '../modules/nf-core/seqkit/fq2fa'
@@ -281,12 +285,15 @@ workflow METAVAL {
         ch_contigs_denovo = channel.empty()
         if ( params.perform_shortread_denovo ) {
             SPADES( ch_denovo.shortreads, [], [] )
-            ch_contigs_denovo = ch_contigs_denovo.mix( SPADES.out.contigs )
+            PIGZ_UNCOMPRESS_SPADES_CONTIG( SPADES.out.contigs )
+            PIGZ_UNCOMPRESS_SPADES_SCAFFOLD( SPADES.out.scaffolds )
+            ch_contigs_denovo = ch_contigs_denovo.mix(PIGZ_UNCOMPRESS_SPADES_CONTIG.out.file)
         }
         // Long reads de novo assembly
         if ( params.perform_longread_denovo ) {
             FLYE( ch_denovo.longreads, params.flye_mode )
-            ch_contigs_denovo = ch_contigs_denovo.mix( FLYE.out.fasta )
+            PIGZ_UNCOMPRESS_FLYE( FLYE.out.fasta )
+            ch_contigs_denovo = ch_contigs_denovo.mix(PIGZ_UNCOMPRESS_FLYE.out.file)
         }
 
         //
@@ -304,10 +311,10 @@ workflow METAVAL {
             // Build ch_blast_query fasta file
             ch_blast_query = SEQKIT_FQ2FA.out.fasta
             if ( params.perform_shortread_denovo ) {
-                ch_blast_query = ch_blast_query.mix( SPADES.out.contigs )
+                ch_blast_query = ch_blast_query.mix( PIGZ_UNCOMPRESS_SPADES_CONTIG.out.file )
             }
             if ( params.perform_longread_denovo ) {
-                ch_blast_query = ch_blast_query.mix( FLYE.out.fasta )
+                ch_blast_query = ch_blast_query.mix( PIGZ_UNCOMPRESS_FLYE.out.file )
             }
 
             BLAST(ch_blast_query, params.blastn_db, params.blastx_db )
@@ -403,10 +410,10 @@ workflow METAVAL {
 
         ch_assembly = channel.empty()
         if ( params.perform_shortread_denovo ) {
-            ch_assembly = ch_assembly.mix( SPADES.out.scaffolds, SPADES.out.contigs )
+            ch_assembly = ch_assembly.mix( PIGZ_UNCOMPRESS_SPADES_CONTIG.out.file, PIGZ_UNCOMPRESS_SPADES_SCAFFOLD.out.file )
         }
         if ( params.perform_longread_denovo ) {
-            ch_assembly = ch_assembly.mix( FLYE.out.fasta )
+            ch_assembly = ch_assembly.mix( PIGZ_UNCOMPRESS_FLYE.out.file )
         }
 
         ch_reads_report = channel.empty()
