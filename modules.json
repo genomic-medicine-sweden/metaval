@@ -144,8 +144,6 @@
             },
             "subworkflows": {
                 "nf-core": {
-<<<<<<< HEAD
-=======
                     "bam_sort_stats_samtools": {
                         "branch": "master",
                         "git_sha": "9339809fcb90af8a8b7051e6cd914894d5c52002",
@@ -162,7 +160,6 @@
                         "git_sha": "0cd85f32cf1a1828205b16e4267277ba9457570b",
                         "installed_by": ["subworkflows"]
                     },
->>>>>>> dev
                     "utils_nextflow_pipeline": {
                         "branch": "master",
                         "git_sha": "c2b22d85f30a706a3073387f30380704fcae013b",
