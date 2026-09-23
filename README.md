@@ -205,6 +205,7 @@ We thank the following people for their assistance in the development of this pi
 [mashehu](https://github.com/mashehu)
 [ryanjameskennedy](https://github.com/ryanjameskennedy)
 [rannick](https://github.com/rannick)
+[AnnaNoren](https://github.com/AnnaNoren)
 [samuell](https://github.com/samuell)
 
 ## Contributions and Support

@@ -92,7 +92,7 @@
                 "pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.227927",
+        "timestamp": "2026-09-07T13:33:39.550349",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -115,7 +115,7 @@
                 ]
             ]
         ],
-        "timestamp": "2026-09-18T14:19:31.074247",
+        "timestamp": "2026-09-07T13:33:40.581167",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -135,7 +135,7 @@
                 ]
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.446398",
+        "timestamp": "2026-09-07T13:33:39.784927",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -150,7 +150,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens_samtools.fasta:md5,a06778a8d2ca667eb4f12d1fd7a43f87"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.690947",
+        "timestamp": "2026-09-07T13:33:40.065138",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -167,7 +167,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.tsv:md5,e9524b7ba5c8d3c03ddc397af5da18d5"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:31.442899",
+        "timestamp": "2026-09-07T13:33:40.980356",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -282,7 +282,7 @@
                 }
             }
         ],
-        "timestamp": "2026-09-18T14:19:30.200855",
+        "timestamp": "2026-09-07T13:33:39.523016",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -299,7 +299,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.txt:md5,8e82979cb0000fca839aa8bc4b83a9d8"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:31.19043",
+        "timestamp": "2026-09-07T13:33:40.707516",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -315,7 +315,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.png exists: true"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:31.322914",
+        "timestamp": "2026-09-07T13:33:40.852186",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -330,7 +330,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.823213",
+        "timestamp": "2026-09-07T13:33:40.246446",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -344,7 +344,7 @@
                 "SRR13439799_taxid_488241_Influenza_A_virus_H2N2_1.fasta.gz:md5,d41d8cd98f00b204e9800998ecf8427e"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.93245",
+        "timestamp": "2026-09-07T13:33:40.433057",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -361,7 +361,7 @@
                 "reference.fasta.rev.2.bt2l:md5,061d25379a3f57db6e974ba06aeed404"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.243601",
+        "timestamp": "2026-09-07T13:33:39.565092",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -378,7 +378,7 @@
                 "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered_summary.txt contains string:true"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.578382",
+        "timestamp": "2026-09-07T13:33:39.934034",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
