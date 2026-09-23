@@ -41,6 +41,10 @@ nextflow_pipeline {
             //viral taxid
             def stable_content_viral_taxids = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['viral_taxids/*'], ignoreFile: 'tests/.nftignore')
 
+            //consensus
+            def stable_content_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['consensus/*'], ignoreFile: 'tests/.nftignore')
+
+
             // samtools coverage
             def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
 
@@ -101,6 +105,9 @@ nextflow_pipeline {
                     bam_files_minimap2_align.isEmpty() ? 'No BAM files' : bam_files_minimap2_align.collect { file -> [file.getName() + " minimap2 align md5: " + bam(file.toString()).getReadsMD5()] },
                     stable_content_minimap2_align
                 ).match("minimap2_align") },
+
+                //consensus
+                { assert snapshot (stable_content_consensus).match("consensus")},
 
                 //igv
                 { assert snapshot(
