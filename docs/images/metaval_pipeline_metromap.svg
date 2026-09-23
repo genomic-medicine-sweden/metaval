@@ -51,6 +51,8 @@
   <path class="route blue" d="M630 363H700C730 363 735 322 780 322S825 363 860 363H900C925 363 940 322 980 322S1025 363 1060 363H1885"/>
   <path class="route orange" d="M700 356H860"/>
   <path class="route blue" d="M700 363H860"/>
+  <path class="route orange" d="M700 356C730 356 735 397 780 397S825 356 860 356"/>
+  <path class="route blue" d="M700 363C730 363 735 404 780 404S825 363 860 363"/>
   <path class="route orange" d="M900 356H1060"/>
   <path class="route blue" d="M900 363H1060"/>
   <path class="route blue" d="M630 363V495"/>
@@ -65,11 +67,13 @@
   <circle class="station" cx="500" cy="356" r="10"/>
   <rect class="interchange" x="623" y="342" width="14" height="34" rx="5"/>
   <rect class="interchange" x="773" y="303" width="14" height="35" rx="5"/>
+  <rect class="interchange" x="773" y="385" width="14" height="35" rx="5"/>
   <rect class="interchange" x="973" y="301" width="14" height="35" rx="5"/>
   <rect class="interchange" x="973" y="340" width="14" height="35" rx="5"/>
   <circle class="station" cx="1090" cy="200" r="10"/>
   <circle class="station" cx="1168" cy="312" r="10"/>
   <rect class="interchange" x="1273" y="338" width="14" height="35" rx="5"/>
+  <rect class="interchange" x="1343" y="352" width="14" height="18" rx="5"/>
   <rect class="interchange" x="1418" y="338" width="14" height="35" rx="5"/>
   <rect class="interchange" x="1563" y="338" width="14" height="35" rx="5"/>
   <rect class="interchange" x="1698" y="338" width="14" height="35" rx="5"/>
@@ -86,11 +90,13 @@
   <text class="label bold" x="500" y="297" text-anchor="middle"><tspan x="500">Extract</tspan><tspan x="500" dy="21">Viral TaxIDs</tspan></text>
   <text class="label bold" x="630" y="297" text-anchor="middle"><tspan x="630">Extract</tspan><tspan x="630" dy="21">Reads</tspan></text>
   <text class="label" x="765" y="267" text-anchor="middle"><tspan class="bold" x="765">de-novo assembly</tspan><tspan x="765" dy="20">(SPAdes, Flye)</tspan></text>
+  <text class="label bold" x="765" y="449" text-anchor="middle">Subset reads</text>
   <text class="label" x="980" y="267" text-anchor="middle"><tspan class="bold" x="980">BLASTx</tspan><tspan x="980" dy="20">(DIAMOND)</tspan></text>
   <text class="label bold" x="980" y="408" text-anchor="middle">BLASTn</text>
   <text class="label bold" x="1090" y="181" text-anchor="middle">Extract Target Reads</text>
   <text class="label" x="1168" y="267" text-anchor="middle"><tspan class="bold" x="1168">Consensus</tspan><tspan x="1168" dy="20">(SAMtools, medaka)</tspan></text>
   <text class="label" x="1280" y="408" text-anchor="middle"><tspan class="bold" x="1280">Mapping</tspan><tspan x="1280" dy="20">(Bowtie2, minimap2)</tspan></text>
+  <text class="label" x="1350" y="297" text-anchor="middle"><tspan class="bold" x="1350">Consensus</tspan><tspan x="1350" dy="20">(SAMtools, medaka)</tspan></text>
   <text class="label bold" x="1425" y="408" text-anchor="middle"><tspan x="1425">Coverage</tspan><tspan x="1425" dy="20">&amp; depth</tspan></text>
   <text class="label bold" x="1570" y="408" text-anchor="middle">IGV</text>
   <text class="label bold" x="1705" y="408" text-anchor="middle">Report</text>
@@ -170,6 +176,11 @@
         keyPoints="0;1;1" keyTimes="0;.518;1" calcMode="linear"
         path="M294 356H1060H1885"/>
     </circle>
+    <circle class="flow-marker" r="6" fill="#ff9d38">
+      <animateMotion dur="26s" begin="0s" repeatCount="indefinite"
+        keyPoints="0;1;1" keyTimes="0;.536;1" calcMode="linear"
+        path="M294 356H700C730 356 735 397 780 397S825 356 860 356H900C925 356 940 315 980 315S1025 356 1060 356H1885"/>
+    </circle>
 
     <circle class="flow-marker" r="6" fill="#79add8">
       <animateMotion dur="26s" begin="0s" repeatCount="indefinite"
@@ -180,6 +191,11 @@
       <animateMotion dur="26s" begin="0s" repeatCount="indefinite"
         keyPoints="0;1;1" keyTimes="0;.447;1" calcMode="linear"
         path="M630 495V363H1060H1885"/>
+    </circle>
+    <circle class="flow-marker" r="6" fill="#79add8">
+      <animateMotion dur="26s" begin="0s" repeatCount="indefinite"
+        keyPoints="0;1;1" keyTimes="0;.465;1" calcMode="linear"
+        path="M630 495V363H700C730 363 735 404 780 404S825 363 860 363H900C925 363 940 322 980 322S1025 363 1060 363H1885"/>
     </circle>
   </g>
 </svg>
