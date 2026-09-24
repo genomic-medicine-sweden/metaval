@@ -561,8 +561,10 @@ workflow METAVAL {
     		.mix(ch_longread_pathogen_blast)
     		.mix(ch_consensus_pathogen)
 
-    }
+        }
 
+        BLAST_PATHOGEN( ch_blast_query_pathogen, params.blastn_db, params.blastx_db )
+  
     //
     // Collate and save software versions
     //

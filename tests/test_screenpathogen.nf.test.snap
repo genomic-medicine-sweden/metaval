@@ -101,7 +101,7 @@
                 "samtools/SRR13439813.fasta"
             ]
         ],
-        "timestamp": "2026-09-24T21:25:11.129674839",
+        "timestamp": "2026-09-24T22:36:37.263175922",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -124,7 +124,7 @@
                 ]
             ]
         ],
-        "timestamp": "2026-09-24T21:25:12.047182949",
+        "timestamp": "2026-09-24T22:36:38.119585537",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -144,7 +144,7 @@
                 ]
             ]
         ],
-        "timestamp": "2026-09-24T21:25:11.368997998",
+        "timestamp": "2026-09-24T22:36:37.473562537",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -158,7 +158,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens_samtools.fasta:md5,a06778a8d2ca667eb4f12d1fd7a43f87"
             ]
         ],
-        "timestamp": "2026-09-24T21:25:11.663020191",
+        "timestamp": "2026-09-24T22:36:37.750261522",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -175,7 +175,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.tsv:md5,e9524b7ba5c8d3c03ddc397af5da18d5"
             ]
         ],
-        "timestamp": "2026-09-24T21:25:12.420009222",
+        "timestamp": "2026-09-24T22:36:38.484278416",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -290,7 +290,7 @@
                 }
             }
         ],
-        "timestamp": "2026-09-24T21:25:11.099972799",
+        "timestamp": "2026-09-24T22:36:37.234959656",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -307,7 +307,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.txt:md5,8e82979cb0000fca839aa8bc4b83a9d8"
             ]
         ],
-        "timestamp": "2026-09-24T21:25:12.174793605",
+        "timestamp": "2026-09-24T22:36:38.237567192",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -323,7 +323,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.png exists: true"
             ]
         ],
-        "timestamp": "2026-09-24T21:25:12.299636099",
+        "timestamp": "2026-09-24T22:36:38.365131547",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -338,7 +338,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-24T21:25:11.790800583",
+        "timestamp": "2026-09-24T22:36:37.865879202",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -352,7 +352,7 @@
                 "SRR13439799_taxid_488241_Influenza_A_virus_H2N2_1.fasta.gz:md5,d41d8cd98f00b204e9800998ecf8427e"
             ]
         ],
-        "timestamp": "2026-09-24T21:25:11.912846275",
+        "timestamp": "2026-09-24T22:36:37.98390497",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -369,7 +369,7 @@
                 "reference.fasta.rev.2.bt2l:md5,061d25379a3f57db6e974ba06aeed404"
             ]
         ],
-        "timestamp": "2026-09-24T21:25:11.145624788",
+        "timestamp": "2026-09-24T22:36:37.279045709",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -386,7 +386,7 @@
                 "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered_summary.txt contains string:false"
             ]
         ],
-        "timestamp": "2026-09-24T21:25:11.539615778",
+        "timestamp": "2026-09-24T22:36:37.63237268",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
