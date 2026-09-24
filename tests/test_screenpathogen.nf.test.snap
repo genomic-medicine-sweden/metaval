@@ -2,6 +2,12 @@
     "all_files": {
         "content": [
             [
+                "filter",
+                "filter/SRR13439790_filtered.fasta",
+                "filter/SRR13439799_filtered.fasta",
+                "filter/SRR13439802_filtered.fasta",
+                "medaka",
+                "medaka/SRR13439799_sorted.fasta",
                 "multiqc",
                 "multiqc/multiqc_data",
                 "multiqc/multiqc_data/llms-full.txt",
@@ -22,7 +28,6 @@
                 "pathogens/blast/blastx/SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered_summary.txt",
                 "pathogens/consensus",
                 "pathogens/consensus/SRR13439790_taxid_9606_Homo_sapiens_samtools.fasta",
-                "pathogens/consensus/SRR13439799_taxid_211044_Influenza_A_virus_H1N1_medaka_sorted.fasta",
                 "pathogens/consensus/SRR13439802_taxid_9606_Homo_sapiens_samtools.fasta",
                 "pathogens/consensus/SRR13439813_taxid_9606_Homo_sapiens_samtools.fasta",
                 "pathogens/igv",
@@ -89,13 +94,17 @@
                 "pathogens/samtools/depth/SRR13439802_taxid_9606_Homo_sapiens.tsv",
                 "pathogens/samtools/depth/SRR13439813_taxid_9606_Homo_sapiens.tsv",
                 "pipeline_info",
-                "pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml"
+                "pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml",
+                "samtools",
+                "samtools/SRR13439790.fasta",
+                "samtools/SRR13439802.fasta",
+                "samtools/SRR13439813.fasta"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.227927",
+        "timestamp": "2026-09-24T22:36:37.263175922",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_reads_consensus": {
@@ -115,10 +124,10 @@
                 ]
             ]
         ],
-        "timestamp": "2026-09-18T14:19:31.074247",
+        "timestamp": "2026-09-24T22:36:38.119585537",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogen_bowtie2_align": {
@@ -135,25 +144,24 @@
                 ]
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.446398",
+        "timestamp": "2026-09-24T22:36:37.473562537",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_consensus": {
         "content": [
             [
                 "SRR13439790_taxid_9606_Homo_sapiens_samtools.fasta:md5,a20659608df7957f7c754fe1bcdf649f",
-                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_medaka_sorted.fasta:md5,e1c0dd7352c0f3dd86236abc88c3c69e",
                 "SRR13439802_taxid_9606_Homo_sapiens_samtools.fasta:md5,8cff0619ee78e3b04161366450f2de27",
                 "SRR13439813_taxid_9606_Homo_sapiens_samtools.fasta:md5,a06778a8d2ca667eb4f12d1fd7a43f87"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.690947",
+        "timestamp": "2026-09-24T22:36:37.750261522",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_samtools_depth": {
@@ -167,10 +175,10 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.tsv:md5,e9524b7ba5c8d3c03ddc397af5da18d5"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:31.442899",
+        "timestamp": "2026-09-24T22:36:38.484278416",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "-profile test_screenpathogen": {
@@ -282,10 +290,10 @@
                 }
             }
         ],
-        "timestamp": "2026-09-18T14:19:30.200855",
+        "timestamp": "2026-09-24T22:36:37.234959656",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_samtools_coverage": {
@@ -299,10 +307,10 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.txt:md5,8e82979cb0000fca839aa8bc4b83a9d8"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:31.19043",
+        "timestamp": "2026-09-24T22:36:38.237567192",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_samtools_coverage_plot": {
@@ -315,10 +323,10 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.png exists: true"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:31.322914",
+        "timestamp": "2026-09-24T22:36:38.365131547",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_igv": {
@@ -330,10 +338,10 @@
                 "SRR13439813_taxid_9606_Homo_sapiens_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.823213",
+        "timestamp": "2026-09-24T22:36:37.865879202",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_reads_blast": {
@@ -344,10 +352,10 @@
                 "SRR13439799_taxid_488241_Influenza_A_virus_H2N2_1.fasta.gz:md5,d41d8cd98f00b204e9800998ecf8427e"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.93245",
+        "timestamp": "2026-09-24T22:36:37.98390497",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogen_bowtie2_build": {
@@ -361,10 +369,10 @@
                 "reference.fasta.rev.2.bt2l:md5,061d25379a3f57db6e974ba06aeed404"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.243601",
+        "timestamp": "2026-09-24T22:36:37.279045709",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_blast": {
@@ -374,14 +382,14 @@
                 "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blast_filtered_summary.txt contains string:true"
             ],
             [
-                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered.txt contains string:true",
-                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered_summary.txt contains string:true"
+                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered.txt contains string:false",
+                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered_summary.txt contains string:false"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.578382",
+        "timestamp": "2026-09-24T22:36:37.63237268",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     }
 }

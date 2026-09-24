@@ -11,7 +11,7 @@ include { FILTER_CONSENSUS as FILTER_CONSENSUS_LONGREAD         } from '../../..
 workflow CONSENSUS {
     take:
     ch_bam_bai                 // channel: [ val(meta), path(bam), path(bai) ]
-    ch_reference           // channel: [ path(fasta) ]
+    ch_reference           // channel: [ val [meta), path(fasta) ]
     consensus_min_bases // channel: [ val(consensus_min_bases) ]  default: 50bp
 
     main:
@@ -33,13 +33,15 @@ workflow CONSENSUS {
         FILTER_CONSENSUS_SHORTREAD ( SAMTOOLS_CONSENSUS_SHORTREAD.out.fasta, params.consensus_min_bases )
         ch_consensus = ch_consensus.mix( FILTER_CONSENSUS_SHORTREAD.out.filtered_consensus )
     }
+
     // Long read consensus
     if ( params.perform_longread_consensus ) {
         if ( params.longread_consensus_tool == 'medaka' ) {
             input_medaka  = ch_bam_bai_consensus.longreads
-                .combine( channel.value(ch_reference) )
+                .combine( ch_reference)
                 .map{ meta_bam, bam, _bai, _meta_ref, ref ->
                     [ meta_bam, bam, ref ]
+
                 }
             MEDAKA ( input_medaka )
             ch_consensus_longread = MEDAKA.out.assembly
