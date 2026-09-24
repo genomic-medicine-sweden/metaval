@@ -33,7 +33,7 @@ workflow CONSENSUS {
         FILTER_CONSENSUS_SHORTREAD ( SAMTOOLS_CONSENSUS_SHORTREAD.out.fasta, params.consensus_min_bases )
         ch_consensus = ch_consensus.mix( FILTER_CONSENSUS_SHORTREAD.out.filtered_consensus )
     }
-    
+
     // Long read consensus
     if ( params.perform_longread_consensus ) {
         if ( params.longread_consensus_tool == 'medaka' ) {
@@ -41,7 +41,7 @@ workflow CONSENSUS {
                 .combine( ch_reference)
                 .map{ meta_bam, bam, _bai, _meta_ref, ref ->
                     [ meta_bam, bam, ref ]
-                  
+
                 }
             MEDAKA ( input_medaka )
             ch_consensus_longread = MEDAKA.out.assembly
