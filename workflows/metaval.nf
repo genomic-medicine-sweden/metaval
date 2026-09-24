@@ -379,12 +379,12 @@ workflow METAVAL {
             ch_consensus_shortread = MAPPING_SHORTREAD.out.bam.join(FETCH_BLAST_GENOMES.out.shortreads_genome, by:0)
             ch_fasta_consensus_sr = ch_consensus_shortread.map { meta, bam, fasta -> [meta, fasta] }
             CONSENSUS_VERIFY_SPECIES ( ch_bam_mapping_shortread, ch_fasta_consensus_sr , params.consensus_min_bases )
-            
+
             ch_bam_mapping_longread = MAPPING_LONGREAD.out.bam
                 .join(MAPPING_LONGREAD.out.bai, by:0)
             ch_consensus_longread = MAPPING_LONGREAD.out.bam.join(FETCH_BLAST_GENOMES.out.longreads_genome, by:0)
 	    ch_fasta_consensus_lr = ch_consensus_longread.map { meta, bam, fasta -> [meta, fasta] }
-       
+
 	    CONSENSUS_VERIFY_SPECIES_LONGREAD (   ch_bam_mapping_longread, ch_fasta_consensus_lr, params.consensus_min_bases )
 
 
@@ -529,8 +529,8 @@ workflow METAVAL {
     	}
         CONSENSUS ( ch_bam_filtered_shortread, ch_fasta_consensus_screenpathogens_sr , params.consensus_min_bases )
 
-     
- 
+
+
         ch_bam_filtered_longread = TAXID_BAM_FASTA_LONGREAD.out.taxid_bam
             .join(TAXID_BAM_FASTA_LONGREAD.out.taxid_bai, by:0)
         ch_bam_filtered = ch_bam_filtered.mix(ch_bam_filtered_shortread, ch_bam_filtered_longread)
@@ -538,7 +538,7 @@ workflow METAVAL {
              .map { meta, bam, bai, fasta ->
                 [meta, fasta]
         }
-         
+
         //CONSENSUS ( ch_bam_filtered, [ [], ch_reference ], params.consensus_min_bases )
 	CONSENSUS_SCREENPATHOGENS_LR ( ch_bam_filtered,  ch_fasta_consensus_screenpathogens_lr , params.consensus_min_bases )
 
