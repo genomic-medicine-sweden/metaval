@@ -7,10 +7,10 @@
                 "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_centrifuge.spades.log exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:03.20373",
+        "timestamp": "2026-09-24T23:28:47.866703601",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "spades_diamond": {
@@ -22,10 +22,10 @@
                 "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_diamond.warnings.log exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:03.550717",
+        "timestamp": "2026-09-24T23:28:49.045037696",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "bowtie2_build": {
@@ -51,10 +51,10 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-09-22T20:27:57.430027",
+        "timestamp": "2026-09-24T23:28:33.521371802",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_samtools_coverage": {
@@ -68,10 +68,10 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.txt:md5,8e82979cb0000fca839aa8bc4b83a9d8"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:01.737748",
+        "timestamp": "2026-09-24T23:28:46.307089968",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "spades_kraken2": {
@@ -87,10 +87,10 @@
                 "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_kraken2.warnings.log exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:02.846809",
+        "timestamp": "2026-09-24T23:28:47.524727396",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_igv": {
@@ -102,10 +102,10 @@
                 "SRR13439813_taxid_9606_Homo_sapiens_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:00.61503",
+        "timestamp": "2026-09-24T23:28:45.210782212",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "minimap2_align": {
@@ -125,10 +125,10 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,b5a387febb590dc82fea618364ae2996"
             ]
         ],
-        "timestamp": "2026-09-22T20:27:58.586369",
+        "timestamp": "2026-09-24T23:28:38.629518596",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogen_bowtie2_align": {
@@ -145,10 +145,10 @@
                 ]
             ]
         ],
-        "timestamp": "2026-09-22T20:27:59.502909",
+        "timestamp": "2026-09-24T23:28:40.288905499",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "extracted_reads": {
@@ -180,10 +180,10 @@
                 "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true"
             ]
         ],
-        "timestamp": "2026-09-22T20:27:56.962931",
+        "timestamp": "2026-09-24T23:28:33.325113757",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "minimap2_index": {
@@ -192,10 +192,10 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T20:27:58.32544",
+        "timestamp": "2026-09-24T23:28:38.37147154",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "samtools_coverage": {
@@ -213,10 +213,10 @@
                 "SRR13439813_kraken2_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1.txt:md5,4bae01da316ee153b39e67c9072fb3e9"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:04.239028",
+        "timestamp": "2026-09-24T23:28:49.826739064",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "igv": {
@@ -234,10 +234,10 @@
                 "SRR13439813_kraken2_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T20:27:58.80922",
+        "timestamp": "2026-09-24T23:28:38.852746134",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "blastx": {
@@ -257,10 +257,10 @@
                 "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_centrifuge_blastx_filtered_summary.txt(centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-09-22T20:27:56.458666",
+        "timestamp": "2026-09-24T23:28:29.739036148",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogen_bowtie2_build": {
@@ -274,10 +274,10 @@
                 "reference.fasta.rev.2.bt2l:md5,061d25379a3f57db6e974ba06aeed404"
             ]
         ],
-        "timestamp": "2026-09-22T20:27:59.031838",
+        "timestamp": "2026-09-24T23:28:39.076056313",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "all_files": {
@@ -321,6 +321,14 @@
                 "blast/blastx/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus_kraken2_blastx_filtered_summary.txt",
                 "blast/blastx/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_kraken2_blastx_filtered.txt",
                 "blast/blastx/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_kraken2_blastx_filtered_summary.txt",
+                "consensus",
+                "consensus/SRR13439790_taxid_1920753_Shigella-virus-Moo19_samtools.fasta",
+                "consensus/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_samtools.fasta",
+                "consensus/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_medaka_sorted.fasta",
+                "consensus/SRR13439802_taxid_878220_Chryseobacterium-sp-StRB126_samtools.fasta",
+                "consensus/SRR13439813_taxid_1920753_Escherichia-phage-vB-EcoP-ZQ2_samtools.fasta",
+                "consensus/SRR13439813_taxid_1920753_Shigella-virus-Moo19_samtools.fasta",
+                "consensus/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_samtools.fasta",
                 "extracted_reads",
                 "extracted_reads/centrifuge",
                 "extracted_reads/centrifuge/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126.extracted_centrifuge_read_1.fa",
@@ -345,6 +353,11 @@
                 "extracted_reads/kraken2/SRR13439813_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_2.fa",
                 "extracted_reads/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.extracted_kraken2_read_1.fa",
                 "extracted_reads/kraken2/SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126.extracted_kraken2_read_2.fa",
+                "filter",
+                "filter/SRR13439790_filtered.fasta",
+                "filter/SRR13439799_filtered.fasta",
+                "filter/SRR13439802_filtered.fasta",
+                "filter/SRR13439813_filtered.fasta",
                 "igv",
                 "igv/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html",
                 "igv/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
@@ -409,6 +422,8 @@
                 "mapping/minimap2/index",
                 "mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1",
                 "mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1/GCA_037915385.1_ASM3791538v1_genomic.fna.mmi",
+                "medaka",
+                "medaka/SRR13439799_sorted.fasta",
                 "multiqc",
                 "multiqc/multiqc_data",
                 "multiqc/multiqc_data/llms-full.txt",
@@ -429,7 +444,6 @@
                 "pathogens/blast/blastx/SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered_summary.txt",
                 "pathogens/consensus",
                 "pathogens/consensus/SRR13439790_taxid_9606_Homo_sapiens_samtools.fasta",
-                "pathogens/consensus/SRR13439799_taxid_211044_Influenza_A_virus_H1N1_medaka_sorted.fasta",
                 "pathogens/consensus/SRR13439802_taxid_9606_Homo_sapiens_samtools.fasta",
                 "pathogens/consensus/SRR13439813_taxid_9606_Homo_sapiens_samtools.fasta",
                 "pathogens/igv",
@@ -500,6 +514,9 @@
                 "report",
                 "report/metaval_report.html",
                 "samtools",
+                "samtools/SRR13439790.fasta",
+                "samtools/SRR13439802.fasta",
+                "samtools/SRR13439813.fasta",
                 "samtools/coverage",
                 "samtools/coverage/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1.txt",
                 "samtools/coverage/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
@@ -567,10 +584,10 @@
                 "taxpasta_flagged/SRR13439813_DNA_HLSAN_kraken2.tsv"
             ]
         ],
-        "timestamp": "2026-09-22T20:27:55.536418",
+        "timestamp": "2026-09-24T23:28:29.248170089",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_samtools_depth": {
@@ -584,10 +601,10 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.tsv:md5,e9524b7ba5c8d3c03ddc397af5da18d5"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:02.427956",
+        "timestamp": "2026-09-24T23:28:46.944466424",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "samtools_depth": {
@@ -605,10 +622,10 @@
                 "SRR13439813_kraken2_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1.tsv:md5,ef7d2114b3ee4afe5888182a63c4624e"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:05.119151",
+        "timestamp": "2026-09-24T23:28:51.069863605",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "blastn": {
@@ -640,10 +657,10 @@
                 "SRR13439813_taxid_878220_Chryseobacterium-sp-StRB126_diamond_blast_filtered_summary.txt(diamond) true"
             ]
         ],
-        "timestamp": "2026-09-22T20:27:56.120846",
+        "timestamp": "2026-09-24T23:28:29.555669167",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_reads_blast": {
@@ -654,10 +671,10 @@
                 "SRR13439799_taxid_488241_Influenza_A_virus_H2N2_1.fasta.gz:md5,d41d8cd98f00b204e9800998ecf8427e"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:00.983031",
+        "timestamp": "2026-09-24T23:28:45.605086159",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_blast": {
@@ -667,14 +684,14 @@
                 "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blast_filtered_summary.txt contains string:true"
             ],
             [
-                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered.txt contains string:true",
-                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered_summary.txt contains string:true"
+                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered.txt contains string:false",
+                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered_summary.txt contains string:false"
             ]
         ],
-        "timestamp": "2026-09-22T20:27:59.919685",
+        "timestamp": "2026-09-24T23:28:40.59952624",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "-profile test_taxid": {
@@ -820,10 +837,10 @@
                 }
             }
         ],
-        "timestamp": "2026-09-22T20:27:55.505249",
+        "timestamp": "2026-09-24T23:28:29.21846193",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_reads_consensus": {
@@ -843,25 +860,24 @@
                 ]
             ]
         ],
-        "timestamp": "2026-09-22T20:28:01.393112",
+        "timestamp": "2026-09-24T23:28:45.976402013",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_consensus": {
         "content": [
             [
                 "SRR13439790_taxid_9606_Homo_sapiens_samtools.fasta:md5,a20659608df7957f7c754fe1bcdf649f",
-                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_medaka_sorted.fasta:md5,e1c0dd7352c0f3dd86236abc88c3c69e",
                 "SRR13439802_taxid_9606_Homo_sapiens_samtools.fasta:md5,8cff0619ee78e3b04161366450f2de27",
                 "SRR13439813_taxid_9606_Homo_sapiens_samtools.fasta:md5,a06778a8d2ca667eb4f12d1fd7a43f87"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:00.229175",
+        "timestamp": "2026-09-24T23:28:40.897725509",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "samtools_coverage_plot": {
@@ -879,10 +895,10 @@
                 "SRR13439813_kraken2_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1.png exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:04.721906",
+        "timestamp": "2026-09-24T23:28:50.623765696",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "report": {
@@ -891,10 +907,10 @@
                 "metaval_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:03.899912",
+        "timestamp": "2026-09-24T23:28:49.468128651",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "bowtie2_align": {
@@ -926,10 +942,10 @@
                 ]
             ]
         ],
-        "timestamp": "2026-09-22T20:27:57.391857",
+        "timestamp": "2026-09-24T23:28:33.470206887",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "pathogens_samtools_coverage_plot": {
@@ -942,10 +958,10 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.png exists: true"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:02.103834",
+        "timestamp": "2026-09-24T23:28:46.624971164",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "taxpasta_flagged": {
@@ -965,10 +981,10 @@
                 "SRR13439813_DNA_HLSAN_kraken2.tsv:md5,e45c094d07862aecfad4e0f1ae01e99a"
             ]
         ],
-        "timestamp": "2026-09-22T20:28:09.155669",
+        "timestamp": "2026-09-24T23:28:56.918044037",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     }
 }
