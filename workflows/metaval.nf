@@ -560,7 +560,7 @@ workflow METAVAL {
 	ch_blast_query_pathogen = ch_shortread_pathogen_blast_read1
     		.mix(ch_longread_pathogen_blast)
     		.mix(ch_consensus_pathogen)
-      
+
         BLAST_PATHOGEN( ch_blast_query_pathogen, params.blastn_db, params.blastx_db )
 
         }
