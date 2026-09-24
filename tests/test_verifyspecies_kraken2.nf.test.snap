@@ -564,7 +564,7 @@
                 "viral_taxids/SRR13439813_kraken2_viral_taxids.tsv"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:03.284147729",
+        "timestamp": "2026-09-24T21:31:12.575612643",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -579,7 +579,7 @@
                 "SRR13439813_kraken2_viral_taxids.tsv:md5,3292cc74a75127c202a90c773c8f881f"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:10.378344538",
+        "timestamp": "2026-09-24T21:31:22.742082097",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -650,7 +650,7 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:05.110796066",
+        "timestamp": "2026-09-24T21:31:15.202532337",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -687,7 +687,7 @@
                 "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,d6451f57077e8cb07b49a6b43cb16478"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:12.693077644",
+        "timestamp": "2026-09-24T21:31:24.823707056",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -778,7 +778,7 @@
                 "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus_kraken2.warnings.log exists: true"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:09.744811199",
+        "timestamp": "2026-09-24T21:31:22.222313168",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -825,7 +825,7 @@
                 "SRR13439813_taxid_2886925_Escherichia-phage-N4_kraken2_blast_filtered_summary.txt(kraken2) contains string:true"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:03.476600409",
+        "timestamp": "2026-09-24T21:31:12.883868674",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -843,7 +843,7 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,b5a387febb590dc82fea618364ae2996"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:07.760333246",
+        "timestamp": "2026-09-24T21:31:20.616916196",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -880,7 +880,7 @@
                 "SRR13439813_taxid_2886925_Shigella-virus-Moo19_samtools.fasta:md5,cd266488da71f1e0a8bd64364652dd99"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:08.40084181",
+        "timestamp": "2026-09-24T21:31:21.130202435",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -1000,7 +1000,7 @@
                 }
             }
         ],
-        "timestamp": "2026-09-23T15:10:03.259577783",
+        "timestamp": "2026-09-24T21:31:12.55018392",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -1110,7 +1110,7 @@
                 "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus.extracted_kraken2_read_2.fa(extracted reads kraken2) contains string:true"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:04.884430123",
+        "timestamp": "2026-09-24T21:31:14.838599075",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -1122,7 +1122,7 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:07.095367757",
+        "timestamp": "2026-09-24T21:31:20.029801445",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -1159,7 +1159,7 @@
                 "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:12.175902624",
+        "timestamp": "2026-09-24T21:31:24.300584374",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -1196,7 +1196,7 @@
                 "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,58d0df6890b38d70451fa19a1b762f59"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:11.530719996",
+        "timestamp": "2026-09-24T21:31:23.762159079",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -1208,7 +1208,7 @@
                 "metaval_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:11.008645559",
+        "timestamp": "2026-09-24T21:31:23.24835801",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -1294,7 +1294,7 @@
                 ]
             ]
         ],
-        "timestamp": "2026-09-23T15:10:05.036450403",
+        "timestamp": "2026-09-24T21:31:15.095082171",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -1331,7 +1331,7 @@
                 "SRR13439813_kraken2_taxid_2886925_Escherichia-phage-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:09.196928358",
+        "timestamp": "2026-09-24T21:31:21.702961618",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -1372,7 +1372,7 @@
                 "SRR13439813_taxid_2886925_Escherichia-phage-N4_kraken2_blastx_filtered_summary.txt(kraken2) contains string:true"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:03.587044436",
+        "timestamp": "2026-09-24T21:31:13.088245628",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -1387,7 +1387,7 @@
                 "SRR13439813_DNA_HLSAN_kraken2.tsv:md5,e45c094d07862aecfad4e0f1ae01e99a"
             ]
         ],
-        "timestamp": "2026-09-23T15:10:13.862363941",
+        "timestamp": "2026-09-24T21:31:25.802915563",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
