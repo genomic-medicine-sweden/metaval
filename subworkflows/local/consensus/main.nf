@@ -38,8 +38,6 @@ workflow CONSENSUS {
     if ( params.perform_longread_consensus ) {
         if ( params.longread_consensus_tool == 'medaka' ) {
             input_medaka  = ch_bam_bai_consensus.longreads
-                //.join(ch_reference, by: 0)
-                //.combine( channel.value(ch_reference) )
                 .combine( ch_reference)
                 .map{ meta_bam, bam, _bai, _meta_ref, ref ->
                     [ meta_bam, bam, ref ]
