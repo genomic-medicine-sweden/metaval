@@ -101,7 +101,6 @@ nextflow_pipeline {
                     stable_content_minimap2_align
                 ).match("minimap2_align") },
 
-	      
                 //consensus
                 { assert snapshot (stable_content_consensus).match("consensus")},
 

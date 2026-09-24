@@ -1,2 +1,0 @@
-qseqid	staxids	sscinames	count	min_pident	max_pident	median_pident	min_length	max_length	median_length	min_bitscore	max_bitscore	median_bitscore
-SRR13439813.318372	1414738	Shigella phage pSb-1	1	86.0	86.0	86.0	50	50	50.0	90.1	90.1	90.1

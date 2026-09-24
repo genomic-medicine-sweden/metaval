@@ -1,3 +1,0 @@
-qseqid	staxids	sscinames	count	min_pident	max_pident	median_pident	min_length	max_length	median_length	min_bitscore	max_bitscore	median_bitscore
-SRR13439813.2417391	1458848	Escherichia phage Bp4	1	88.0	88.0	88.0	50	50	50.0	97.8	97.8	97.8
-SRR13439813.949104	1458848	Escherichia phage Bp4	1	92.0	92.0	92.0	50	50	50.0	104.0	104.0	104.0
