@@ -522,8 +522,7 @@ workflow METAVAL {
 
         ch_bam_filtered = channel.empty()
         ch_bam_filtered_shortread = TAXID_BAM_FASTA_SHORTREAD.out.taxid_bam
-            .join(TAXID_BAM_FASTA_SHORTREAD.out.taxid_bai, by:0) 
-       
+             .join(TAXID_BAM_FASTA_SHORTREAD.out.taxid_bai, by:0)
         ch_fasta_consensus_screenpathogens_sr = ch_igv_input_pathogen_shortread
     	     .map { meta, bam, bai, fasta ->
         	[meta, fasta]
@@ -562,9 +561,7 @@ workflow METAVAL {
     		.mix(ch_longread_pathogen_blast)
     		.mix(ch_consensus_pathogen)
 
-	BLAST_PATHOGEN( ch_blast_query_pathogen, params.blastn_db, params.blastx_db ) 
-        
-
+	BLAST_PATHOGEN( ch_blast_query_pathogen, params.blastn_db, params.blastx_db )
         //ch_blast_query_pathogen = ch_shortread_pathogen_blast_read1.mix(
         //    ch_longread_pathogen_blast,
         //    CONSENSUS.out.consensus
