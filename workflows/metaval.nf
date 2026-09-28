@@ -117,14 +117,10 @@ workflow METAVAL {
         .mix(ch_input.no_merge)
 
     // Create input channels for short reads and long reads.
-    ch_input_filtered_merged = ch_input_merged.branch { meta, fastq_1, fastq_2 ->
-            def read_list = ( fastq_2 ? [ fastq_1, fastq_2 ] : [ fastq_1 ] )
+    ch_input_filtered_merged = ch_input_merged.branch { meta, _reads ->
         // reads channels
         short_reads: meta.instrument_platform != 'OXFORD_NANOPORE'
-            return [ meta, read_list ]
-
         long_reads: meta.instrument_platform == 'OXFORD_NANOPORE'
-            return [ meta, read_list ]
     }
     ch_short_reads = ch_input_filtered_merged.short_reads
     ch_long_reads = ch_input_filtered_merged.long_reads
