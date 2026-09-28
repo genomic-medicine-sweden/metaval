@@ -265,7 +265,7 @@ workflow METAVAL {
         // Run de novo assembly if the number of reads exceeds the params.min_read_counts
         ch_taxid_reads_filter = TAXID_READS.out.reads
             .branch { meta, reads ->
-                direct_blast: meta.single_end
+                blast_reads: meta.single_end
                     ? reads.countFastq() < params.min_read_counts
                     : reads[0].countFastq() < params.min_read_counts ||
                     reads[1].countFastq() < params.min_read_counts
@@ -326,13 +326,10 @@ workflow METAVAL {
             // Build ch_blast_query_input fasta file
             // Option1: De novo assembly contigs/scaffolds for BLAST if the number of reads exceeds the params.min_read_counts
             if ( params.perform_shortread_denovo || params.perform_longread_denovo ) {
-                ch_direct_blast_meta = ch_taxid_reads_filter.direct_blast
-                    .map { meta, _reads -> [ meta ] }
-
-                ch_direct_blast_fasta = ch_blast_reads_fasta
-                    .join(ch_direct_blast_meta, by: 0)
-
-                ch_blast_query_input = ch_direct_blast_fasta.mix(ch_denovo_fasta)
+                ch_blast_reads_fasta = ch_taxid_reads_filter.blast_reads
+                    .join(ch_blast_reads_fasta)
+                    .map { meta, _reads, fasta -> [meta, fasta]}
+                ch_blast_query_input = ch_blast_reads_fasta.mix(ch_denovo_fasta)
 
             } else {
                 // Option 2: when assembly is disabled, subset large read sets before BLAST.

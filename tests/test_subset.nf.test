@@ -97,11 +97,11 @@ nextflow_pipeline {
 
                 // Reads subset
                 { assert snapshot(
-                    getAllFilesFromDir("$outputDir/reads_subset/kraken2", include: ['*.fa']).collect{file ->
+                    getAllFilesFromDir("$outputDir/blast/reads_subset/kraken2", include: ['*.fa']).collect{file ->
                         file.getName() + '(kraken2 reads subset) contains string:' + (file.text.contains("SRR13439799") ||  file.text.contains("SRR13439813")) },
-                    getAllFilesFromDir("$outputDir/reads_subset/centrifuge", include: ['*.fa']).collect{file ->
+                    getAllFilesFromDir("$outputDir/blast/reads_subset/centrifuge", include: ['*.fa']).collect{file ->
                         file.getName() + '(centrifuge reads subset) contains string:' + (file.text.contains("SRR13439799") ||  file.text.contains("SRR13439813")) },
-                    getAllFilesFromDir("$outputDir/reads_subset/diamond", include: ['*.fa']).collect{file ->
+                    getAllFilesFromDir("$outputDir/blast/reads_subset/diamond", include: ['*.fa']).collect{file ->
                         file.getName() + '(diamond reads subset) contains string:' + (file.text.contains("SRR13439813")) },
                 ).match("reads_subset") },
 
