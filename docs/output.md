@@ -23,7 +23,7 @@ The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes d
 - [Decontamination](#decontamination) - Flag taxonomy tables against matched negative controls
 - [Extract Viral TaxIDs](#Extract-Viral-TaxIDs) - Extract all viral TaxIDs identified by classifiers.
 - [Extract Reads](#Extract-Reads) - Extract reads assigned by Kraken2, Centrifuge, or DIAMOND.
-- [Read subsetting](#Read-subsetting) - Optionally limit extracted reads before BLAST..
+- [Read subsetting](#Read-subsetting) - Optionally limit the extracted reads before BLAST.
 - [De novo assembly](#De-novo-assembly) - Optionally perform de novo assembly.
 - [BLAST](#Verify-species-BLAST) - Run BLASTN and/or BLASTX on extracted reads or assemblies.
 - [Mapping](#Verify-species-mapping) - Perform mapping against genomes selected from BLAST hits.

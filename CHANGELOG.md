@@ -14,7 +14,7 @@ Initial release of genomic-medicine-sweden/metaval, created with the [nf-core](h
 - Extract Centrifuge reads
 - Extract DIAMOND reads
 - De novo assembly
-- Subset reads for large reads file before BLAST
+- Subset reads for large files before BLAST
 - BLASTn and BLASTx
 - Mapping
 - IGV
