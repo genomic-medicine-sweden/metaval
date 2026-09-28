@@ -106,21 +106,10 @@ workflow METAVAL {
         _diamond_taxpasta ->
 
         to_merge: [fastq_1].flatten().size() > 1
-            def new_meta = meta + [ single_end: !fastq_2 ]
-            if (new_meta.single_end) {
-            return [ meta, [ fastq_1 ] ]
-            }
-            else {
-                return [ meta, [ fastq_1, fastq_2 ] ]
-            }
-            return [ meta, [fastq_1, fastq_2 ] ]
-
+            return [ meta, meta.single_end ? [fastq_1] : [fastq_1, fastq_2] ]
         no_merge: true
-
+            return [ meta, meta.single_end ? [fastq_1] : [fastq_1, fastq_2] ]
     }
-
-
-
 
     CAT_FASTQ( ch_input.to_merge )
 
@@ -128,7 +117,7 @@ workflow METAVAL {
         .mix(ch_input.no_merge)
 
     // Create input channels for short reads and long reads.
-    ch_input_filtered_merged = ch_input_merged.branch { meta, fastq_1, fastq_2, _kraken2_report, _kraken2_result, _kraken2_taxpasta, _centrifuge_report, _centrifuge_result, _centrifuge_taxpasta, _diamond, _diamond_taxpasta ->
+    ch_input_filtered_merged = ch_input_merged.branch { meta, fastq_1, fastq_2 ->
             def read_list = ( fastq_2 ? [ fastq_1, fastq_2 ] : [ fastq_1 ] )
         // reads channels
         short_reads: meta.instrument_platform != 'OXFORD_NANOPORE'

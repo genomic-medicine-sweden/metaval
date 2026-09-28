@@ -260,8 +260,8 @@ def validateDuplicateSampleEntries(samplesheet_rows) {
     samples_by_id.each { sample_id, rows ->
         if (rows.size() > 1) {
             fields.each { field ->
-                def values = rows.collect { it[field.index] }.unique()
-                def non_null_values = values.findAll { it != null }
+                def values = rows.collect { row -> row[field.index] }.unique()
+                def non_null_values = values.findAll { value -> value != null }
                 if (non_null_values.size() > 1 || (non_null_values.size() == 1 && values.size() > 1)) {
                     error("Please check input samplesheet -> sample '${sample_id}' has inconsistent ${field.name} entries across merged runs; all sample duplicate lines must have identical ${field.name} values.")
                 }
