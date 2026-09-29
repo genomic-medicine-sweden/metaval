@@ -230,15 +230,13 @@ workflow PIPELINE_COMPLETION {
 // Validate channels from input samplesheet
 //
 def validateInputSamplesheet(input) {
-    def (metas, fastqs) = input[1..2]
+    def (sample, metas, fastqs) = input
 
-    // Check that multiple runs of the same sample are of the same datatype i.e. single-end / paired-end
-    def endedness_ok = metas.collect{ meta -> meta.single_end }.unique().size == 1
-    if (!endedness_ok) {
-        error("Please check input samplesheet -> Multiple runs of a sample must be of the same datatype i.e. single-end or paired-end: ${metas[0].id}")
+    if (metas.unique().size() !=1) {
+        error("Please check input samplesheet -> Multiple runs of a sample " + "${sample} must have same metadata"
+        )
     }
-
-    return [ metas[0], fastqs ]
+    return [metas[0], fastqs.flatten()]
 }
 
 //
@@ -270,6 +268,38 @@ def validateDuplicateSampleEntries(samplesheet_rows) {
     }
 }
 
+//
+// Extract unique taxonomic files for each sample:
+//
+def uniqueTaxonomicFiles(samplesheet) {
+    return samplesheet
+        .map {
+            meta,
+            _fastq_1,
+            _fastq_2,
+            kraken2_report,
+            kraken2_result,
+            kraken2_taxpasta,
+            centrifuge_report,
+            centrifuge_result,
+            centrifuge_taxpasta,
+            diamond,
+            diamond_taxpasta ->
+
+            [
+                meta,
+                kraken2_report,
+                kraken2_result,
+                kraken2_taxpasta,
+                centrifuge_report,
+                centrifuge_result,
+                centrifuge_taxpasta,
+                diamond,
+                diamond_taxpasta,
+            ]
+        }
+        .distinct()
+}
 //
 // Generate methods description for MultiQC
 //
