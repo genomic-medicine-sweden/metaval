@@ -474,6 +474,7 @@ workflow METAVAL {
     //
 
     if ( params.perform_screen_pathogens ) {
+        //ch_reference = channel.fromPath ( params.pathogens_genomes, checkIfExists: true )
         ch_reference = file( params.pathogens_genomes, checkIfExists: true)
         // Map short reads to the pathogens genome
         ch_mapping_pathogen_shortread = ch_input.short_reads
@@ -519,6 +520,7 @@ workflow METAVAL {
         //
         // SUBWORKFLOW: CONSENSUS - BAM file with the number of mapped reads > params.min_read_counts
         //
+  
 
         ch_bam_filtered = channel.empty()
         ch_bam_filtered_shortread = TAXID_BAM_FASTA_SHORTREAD.out.taxid_bam
