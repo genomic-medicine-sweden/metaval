@@ -520,7 +520,7 @@ workflow METAVAL {
         //
         // SUBWORKFLOW: CONSENSUS - BAM file with the number of mapped reads > params.min_read_counts
         //
-  
+
 
         ch_bam_filtered = channel.empty()
         ch_bam_filtered_shortread = TAXID_BAM_FASTA_SHORTREAD.out.taxid_bam
