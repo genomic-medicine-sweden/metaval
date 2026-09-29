@@ -3,7 +3,7 @@ process FLYE {
     label 'process_high'
 
     conda "${moduleDir}/environment.yml"
-    container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
+    container "${ workflow.containerEngine in ['singularity', 'apptainer'] && !task.ext.singularity_pull_docker_container ?
         'https://community-cr-prod.seqera.io/docker/registry/v2/blobs/sha256/fa/fa1c1e961de38d24cf36c424a8f4a9920ddd07b63fdb4cfa51c9e3a593c3c979/data' :
         'community.wave.seqera.io/library/flye:2.9.5--d577924c8416ccd8' }"
 
@@ -12,7 +12,7 @@ process FLYE {
     val mode
 
     output:
-    tuple val(meta), path("*.fasta")   , emit: fasta
+    tuple val(meta), path("*.fasta.gz"), emit: fasta
     tuple val(meta), path("*.gfa.gz")  , emit: gfa
     tuple val(meta), path("*.gv.gz")   , emit: gv
     tuple val(meta), path("*.txt")     , emit: txt
@@ -37,7 +37,7 @@ process FLYE {
         $task.cpus \\
         $args
 
-    mv assembly.fasta ${prefix}.assembly.fasta
+    gzip -c assembly.fasta > ${prefix}.assembly.fasta.gz
     gzip -c assembly_graph.gfa > ${prefix}.assembly_graph.gfa.gz
     gzip -c assembly_graph.gv > ${prefix}.assembly_graph.gv.gz
     mv assembly_info.txt ${prefix}.assembly_info.txt
@@ -48,7 +48,7 @@ process FLYE {
     stub:
     def prefix = task.ext.prefix ?: "${meta.id}"
     """
-    echo stub > ${prefix}.assembly.fasta
+    echo stub | gzip -c > ${prefix}.assembly.fasta.gz
     echo stub | gzip -c > ${prefix}.assembly_graph.gfa.gz
     echo stub | gzip -c > ${prefix}.assembly_graph.gv.gz
     echo contig_1 > ${prefix}.assembly_info.txt
