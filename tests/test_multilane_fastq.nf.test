@@ -65,7 +65,6 @@ nextflow_pipeline {
             //pathogens samtools depth
             def stable_content_pathogens_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
 
-
             // samtools coverage
             def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
 
@@ -202,7 +201,6 @@ nextflow_pipeline {
 
                 //taxpasta flagged
                 { assert snapshot (stable_content_taxpasta_flagged).match("taxpasta_flagged") },
-
 
             )
         }
