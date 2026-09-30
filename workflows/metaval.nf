@@ -542,7 +542,7 @@ workflow METAVAL {
         }
 
         //CONSENSUS ( ch_bam_filtered, [ [], ch_reference ], params.consensus_min_bases )
-	CONSENSUS_SCREENPATHOGENS_LR ( ch_bam_filtered,  ch_fasta_consensus_screenpathogens_lr , params.consensus_min_bases )
+	CONSENSUS_SCREENPATHOGENS_LR ( ch_bam_filtered_longread,  ch_fasta_consensus_screenpathogens_lr , params.consensus_min_bases )
 
         // BLAST
         // For pair-end reads, only use read1 for BLAST
