@@ -373,19 +373,18 @@ workflow METAVAL {
 
             // Consensus
 
-            ch_bam_mapping = channel.empty()
             ch_bam_mapping_shortread = MAPPING_SHORTREAD.out.bam
                 .join(MAPPING_SHORTREAD.out.bai, by:0)
             ch_consensus_shortread = MAPPING_SHORTREAD.out.bam.join(FETCH_BLAST_GENOMES.out.shortreads_genome, by:0)
-            ch_fasta_consensus_sr = ch_consensus_shortread.map { meta, bam, fasta -> [meta, fasta] }
+            ch_fasta_consensus_sr = ch_consensus_shortread.map { meta, _bam, fasta -> [meta, fasta] }
             CONSENSUS_VERIFY_SPECIES ( ch_bam_mapping_shortread, ch_fasta_consensus_sr , params.consensus_min_bases )
 
             ch_bam_mapping_longread = MAPPING_LONGREAD.out.bam
                 .join(MAPPING_LONGREAD.out.bai, by:0)
             ch_consensus_longread = MAPPING_LONGREAD.out.bam.join(FETCH_BLAST_GENOMES.out.longreads_genome, by:0)
-	    ch_fasta_consensus_lr = ch_consensus_longread.map { meta, bam, fasta -> [meta, fasta] }
+            ch_fasta_consensus_lr = ch_consensus_longread.map { meta, _bam, fasta -> [meta, fasta] }
 
-	    CONSENSUS_VERIFY_SPECIES_LONGREAD (   ch_bam_mapping_longread, ch_fasta_consensus_lr, params.consensus_min_bases )
+            CONSENSUS_VERIFY_SPECIES_LONGREAD ( ch_bam_mapping_longread, ch_fasta_consensus_lr, params.consensus_min_bases )
 
 
             // Coverage tables
@@ -521,28 +520,24 @@ workflow METAVAL {
         // SUBWORKFLOW: CONSENSUS - BAM file with the number of mapped reads > params.min_read_counts
         //
 
-
         ch_bam_filtered = channel.empty()
         ch_bam_filtered_shortread = TAXID_BAM_FASTA_SHORTREAD.out.taxid_bam
-             .join(TAXID_BAM_FASTA_SHORTREAD.out.taxid_bai, by:0)
+            .join(TAXID_BAM_FASTA_SHORTREAD.out.taxid_bai, by:0)
         ch_fasta_consensus_screenpathogens_sr = ch_igv_input_pathogen_shortread
-    	     .map { meta, bam, bai, fasta ->
-        	[meta, fasta]
-    	}
+            .map { meta, _bam, _bai, fasta ->
+                [meta, fasta]
+            }
         CONSENSUS ( ch_bam_filtered_shortread, ch_fasta_consensus_screenpathogens_sr , params.consensus_min_bases )
-
-
 
         ch_bam_filtered_longread = TAXID_BAM_FASTA_LONGREAD.out.taxid_bam
             .join(TAXID_BAM_FASTA_LONGREAD.out.taxid_bai, by:0)
         ch_bam_filtered = ch_bam_filtered.mix(ch_bam_filtered_shortread, ch_bam_filtered_longread)
         ch_fasta_consensus_screenpathogens_lr = ch_igv_input_pathogen_longread
-             .map { meta, bam, bai, fasta ->
+            .map { meta, _bam, _bai, fasta ->
                 [meta, fasta]
         }
 
-        //CONSENSUS ( ch_bam_filtered, [ [], ch_reference ], params.consensus_min_bases )
-	CONSENSUS_SCREENPATHOGENS_LR ( ch_bam_filtered_longread,  ch_fasta_consensus_screenpathogens_lr , params.consensus_min_bases )
+        CONSENSUS_SCREENPATHOGENS_LR ( ch_bam_filtered_longread,  ch_fasta_consensus_screenpathogens_lr , params.consensus_min_bases )
 
         // BLAST
         // For pair-end reads, only use read1 for BLAST
@@ -560,8 +555,8 @@ workflow METAVAL {
 
 	// Combine all BLAST queries
 	ch_blast_query_pathogen = ch_shortread_pathogen_blast_read1
-    		.mix(ch_longread_pathogen_blast)
-    		.mix(ch_consensus_pathogen)
+        .mix(ch_longread_pathogen_blast)
+        .mix(ch_consensus_pathogen)
 
         BLAST_PATHOGEN( ch_blast_query_pathogen, params.blastn_db, params.blastx_db )
 
