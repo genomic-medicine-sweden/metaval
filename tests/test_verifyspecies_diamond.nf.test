@@ -27,28 +27,28 @@ nextflow_pipeline {
             //extracted_reads: partly unstable files, see custom assertions
 
             //bowtie2 align
-            def bam_files_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['mapping/bowtie2/align/*.bam'])
+            def bam_files_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['verifyspecies/mapping/bowtie2/align/*.bam'])
 
             //bowtie2 build
-            def stable_content_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['mapping/bowtie2/build/**/**/*'], ignoreFile: 'tests/.nftignore')
+            def stable_content_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/mapping/bowtie2/build/**/**/*'], ignoreFile: 'tests/.nftignore')
 
             //minimap2 index:partly unstable files, see custom assertions
 
             //minimap2 align
-            def stable_content_minimap2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['mapping/minimap2/align/*'], ignoreFile: 'tests/.nftignore')
-            def bam_files_minimap2_align  = getAllFilesFromDir(params.outdir, include: ['mapping/minimap2/align/*bam'])
+            def stable_content_minimap2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/mapping/minimap2/align/*'], ignoreFile: 'tests/.nftignore')
+            def bam_files_minimap2_align  = getAllFilesFromDir(params.outdir, include: ['verifyspecies/mapping/minimap2/align/*bam'])
 
             //viral taxid
-            def stable_content_viral_taxids = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['viral_taxids/*'], ignoreFile: 'tests/.nftignore')
+            def stable_content_viral_taxids = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/viral_taxids/*'], ignoreFile: 'tests/.nftignore')
 
             // samtools coverage
-            def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
+            def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
 
             //samtools depth
-            def stable_content_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
+            def stable_content_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
 
             //taxpasta flagged
-            def stable_content_taxpasta_flagged = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['taxpasta_flagged/*.tsv'], ignoreFile: 'tests/.nftignore')
+            def stable_content_taxpasta_flagged = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/taxpasta_flagged/*.tsv'], ignoreFile: 'tests/.nftignore')
 
 
             assertAll(
@@ -64,7 +64,7 @@ nextflow_pipeline {
 
                 //blastn
                 { assert snapshot(
-                    getAllFilesFromDir("$outputDir/blast/blastn/diamond", include: ['*.txt']).collect{file ->
+                    getAllFilesFromDir("$outputDir/verifyspecies/blast/blastn/diamond", include: ['*.txt']).collect{file ->
                         file.getName() + "(diamond) " + (
                             file.exists() && (
                                 file.text.contains("Chryseobacterium") ||
@@ -74,7 +74,7 @@ nextflow_pipeline {
 
                 //extracted reads files
                 { assert snapshot(
-                    getAllFilesFromDir("$outputDir/extracted_reads/diamond", include: ['*.fa']).collect{file ->
+                    getAllFilesFromDir("$outputDir/verifyspecies/extracted_reads/diamond", include: ['*.fa']).collect{file ->
                         file.getName() + '(extracted reads diamond) contains string:' + (
                             file.text.contains("SRR13439790") ||
                             file.text.contains("SRR13439813") ||
@@ -90,7 +90,7 @@ nextflow_pipeline {
 
                 //minimap2 index
                 { assert snapshot(
-                    getAllFilesFromDir("$outputDir/mapping/minimap2/index", include: ['**/*.mmi']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    getAllFilesFromDir("$outputDir/verifyspecies/mapping/minimap2/index", include: ['**/*.mmi']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("minimap2_index") },
                 { assert snapshot (
                     bam_files_minimap2_align.isEmpty() ? 'No BAM files' : bam_files_minimap2_align.collect { file -> [file.getName() + " minimap2 align md5: " + bam(file.toString()).getReadsMD5()] },
@@ -99,27 +99,32 @@ nextflow_pipeline {
 
                 //igv
                 { assert snapshot(
-                    getAllFilesFromDir("$outputDir/igv", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    getAllFilesFromDir("$outputDir/verifyspecies/igv", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("igv") },
 
                 //spades
                 { assert snapshot(
-                    getAllFilesFromDir("$outputDir/spades/diamond", include: ['*.fa','*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    getAllFilesFromDir("$outputDir/verifyspecies/spades/diamond", include: ['*.fa','*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("spades_diamond") },
 
                 {assert snapshot (stable_content_viral_taxids).match("viral_taxids")},
 
                 //metaval report
                 { assert snapshot (
-                    getAllFilesFromDir("$outputDir/report", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    getAllFilesFromDir("$outputDir/verifyspecies/report", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("report") },
+
+                //fastqc
+                { assert snapshot (
+                    getAllFilesFromDir("$outputDir/verifyspecies/fastqc", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                ).match("fastqc") },
 
                 // samtools coverage
                 { assert snapshot (stable_content_samtools_coverage).match("samtools_coverage") },
 
                 // samtools coverage plot
                 { assert snapshot(
-                        getAllFilesFromDir("$outputDir/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                        getAllFilesFromDir("$outputDir/verifyspecies/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("samtools_coverage_plot") },
 
                 // samtools depth
