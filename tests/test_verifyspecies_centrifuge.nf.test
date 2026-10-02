@@ -105,7 +105,7 @@ nextflow_pipeline {
                     stable_content_minimap2_align
                 ).match("minimap2_align") },
 
-	        //consensus
+	            //consensus
                 { assert snapshot (stable_content_consensus).match("consensus")},
 
                 //igv
@@ -138,7 +138,6 @@ nextflow_pipeline {
 
                 //taxpasta flagged
                 { assert snapshot (stable_content_taxpasta_flagged).match("taxpasta_flagged") },
-
 
             )
         }

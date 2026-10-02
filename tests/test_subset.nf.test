@@ -39,6 +39,9 @@ nextflow_pipeline {
 
             //report: partly unstable files, see custom assertions
 
+	        //consensus
+            def stable_content_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['consensus/**/*'], ignoreFile: 'tests/.nftignore')
+
             // samtools coverage
             def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
 
@@ -129,6 +132,9 @@ nextflow_pipeline {
                 { assert snapshot (
                     getAllFilesFromDir("$outputDir/report", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("report") },
+
+	            //consensus
+                { assert snapshot (stable_content_consensus).match("consensus")},
 
                 // samtools coverage
                 { assert snapshot (stable_content_samtools_coverage).match("samtools_coverage") },
