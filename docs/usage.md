@@ -34,7 +34,7 @@ Provide the input CSV with:
 --input /path/to/samplesheet.csv
 ```
 
-Each row represents one sample. Illumina samples can be single-end or paired-end; Nanopore samples use `fastq_1`.
+Each row represents one sample lane or run. Illumina samples can be single-end or paired-end; Nanopore samples use `fastq_1`.
 
 | Column                | Required                  | Description                                                                |
 | --------------------- | ------------------------- | -------------------------------------------------------------------------- |
@@ -62,6 +62,14 @@ sample1,ILLUMINA,DNA,false,prep1,sample1_1.fastq.gz,sample1_2.fastq.gz,sample1.k
 sample1_ntc,ILLUMINA,DNA,true,prep1,ntc_1.fastq.gz,ntc_2.fastq.gz,ntc.kraken2.kraken2.report.txt,ntc.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,ntc.centrifuge.txt,ntc.centrifuge.results.txt,centrifuge.tsv,ntc.diamond.tsv,diamond.tsv
 sample2,OXFORD_NANOPORE,RNA,false,prep2,sample2.fastq.gz,,sample2.kraken2.kraken2.report.txt,sample2.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,sample2.centrifuge.txt,sample2.centrifuge.results.txt,centrifuge.tsv,sample2.diamond.tsv,diamond.tsv
 ```
+
+### Multilane FASTQs
+
+For samples sequenced across multiple lanes or runs, provide one row per lane or run using the same `sample` name and the corresponding `fastq_1` and, for paired-end reads, `fastq_2` paths.
+
+Rows for the same sample must have identical metadata, including `instrument_platform`, `na_content`, `is_ntc`, `sample_prep`, and whether the reads are single-end or paired-end. Supplied classifier result, report, and Taxpasta file paths must also be identical across these rows.
+
+Before either workflow processes the reads, the pipeline automatically concatenates the FASTQs for each sample. Single-end inputs produce one merged FASTQ; paired-end inputs produce separate merged FASTQs for read 1 and read 2. Merged files are published to `analysis_ready_fastqs/`. Samples with one input file per read direction proceed directly to the enabled workflows without producing merged files.
 
 ### Taxpasta requirements
 

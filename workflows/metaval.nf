@@ -3,6 +3,10 @@
     IMPORT MODULES / SUBWORKFLOWS / FUNCTIONS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+
+// Merge fastq files
+include { CAT_FASTQ                                             } from '../modules/nf-core/cat/fastq/main'
+
 // Flag taxonomy table
 include { FLAG_TAXPASTA                                         } from '../modules/local/flag_taxpasta'
 
@@ -54,6 +58,8 @@ include { softwareVersionsToYAML                                } from '../subwo
 include { methodsDescriptionText                                } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
 include { sample_ntc_branch                                     } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
 include { taxpasta_sample_ntc_joined                            } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
+include { uniqueTaxonomicFiles                                  } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
+include { validateInputSamplesheet                              } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     RUN MAIN WORKFLOW
@@ -96,8 +102,8 @@ workflow METAVAL {
         ch_samplesheet_filtered = ch_samplesheet
     }
 
-    // Create input channels for short reads and long reads.
-    ch_input = ch_samplesheet_filtered.branch {
+    // Create input channels for CAT_FASTQ process to merge fastq files for samples with multiple fastq files.
+    ch_input = ch_samplesheet_filtered.map {
         meta,
         fastq_1,
         fastq_2,
@@ -110,13 +116,38 @@ workflow METAVAL {
         _diamond,
         _diamond_taxpasta ->
 
+        def reads = meta.single_end ? [fastq_1] : [fastq_1, fastq_2]
+        [ meta.id, meta, reads ]
+    }
+    .groupTuple(by: 0)
+    .map {grouped_sample ->
+        validateInputSamplesheet(grouped_sample)
+    }
+    .branch { meta, reads ->
+        to_merge: meta.single_end ? reads.size() > 1 : reads.size() > 2
+        no_merge: true
+    }
+
+    CAT_FASTQ( ch_input.to_merge )
+    ch_input_merged = CAT_FASTQ.out.reads
+        .mix(ch_input.no_merge)
+        .map{ meta, reads -> [meta, [reads].flatten()]}
+
+    // Create input channels for short reads and long reads for pathogen screening workflow
+    ch_input_filtered_merged = ch_input_merged.branch { meta, _reads ->
         // reads channels
         short_reads: meta.instrument_platform != 'OXFORD_NANOPORE'
-            return [ meta, fastq_2 ? [ fastq_1, fastq_2 ] : [ fastq_1 ] ]
-
         long_reads: meta.instrument_platform == 'OXFORD_NANOPORE'
-            return [ meta, [ fastq_1 ] ]
     }
+    ch_short_reads = ch_input_filtered_merged.short_reads
+    ch_long_reads = ch_input_filtered_merged.long_reads
+
+    // Create input channels for flagging taxpasta
+    ch_taxonomy = uniqueTaxonomicFiles(ch_samplesheet)
+
+    // Create input for verifying species workflow
+    ch_verifyspecies = uniqueTaxonomicFiles(ch_samplesheet_filtered)
+        .join(ch_input_merged, by:0)
 
     //
     // Workflow: Extract reads and verification
@@ -134,10 +165,8 @@ workflow METAVAL {
         ch_taxpasta_input = channel.empty()
         // Kraken2
         if ( params.extract_kraken2_reads ) {
-            ch_taxpasta_kraken2 = ch_samplesheet.map {
+            ch_taxpasta_kraken2 = ch_taxonomy.map {
                 meta,
-                _fastq_1,
-                _fastq_2,
                 _kraken2_report,
                 _kraken2_result,
                 kraken2_taxpasta,
@@ -155,10 +184,8 @@ workflow METAVAL {
         }
         // Centrifuge
         if ( params.extract_centrifuge_reads ) {
-            ch_taxpasta_centrifuge = ch_samplesheet.map {
+            ch_taxpasta_centrifuge = ch_taxonomy.map {
                 meta,
-                _fastq_1,
-                _fastq_2,
                 _kraken2_report,
                 _kraken2_result,
                 _kraken2_taxpasta,
@@ -176,10 +203,8 @@ workflow METAVAL {
         }
         // DIAMOND
         if ( params.extract_diamond_reads ) {
-            ch_taxpasta_diamond = ch_samplesheet.map {
+            ch_taxpasta_diamond = ch_taxonomy.map {
                 meta,
-                _fastq_1,
-                _fastq_2,
                 _kraken2_report,
                 _kraken2_result,
                 _kraken2_taxpasta,
@@ -210,10 +235,8 @@ workflow METAVAL {
         //
 
         // Channels for extracting kraken2/centrifuge/diamond reads
-        ch_extract_reads = ch_samplesheet_filtered.multiMap {
+        ch_extract_reads = ch_verifyspecies.multiMap {
             meta,
-            fastq_1,
-            fastq_2,
             kraken2_report,
             kraken2_result,
             kraken2_taxpasta,
@@ -221,12 +244,13 @@ workflow METAVAL {
             centrifuge_result,
             centrifuge_taxpasta,
             diamond,
-            diamond_taxpasta ->
+            diamond_taxpasta,
+            reads ->
 
             kraken2_taxpasta: [ meta + [ tool: "kraken2" ], kraken2_taxpasta ]
             kraken2_report: [ meta + [ tool: "kraken2" ], kraken2_report ]
             kraken2_result: [ meta, kraken2_result ]
-            reads:[ meta, fastq_2 ? [ fastq_1, fastq_2 ] : [ fastq_1 ] ]
+            reads: [ meta, reads ]
             centrifuge_taxpasta: [ meta + [ tool: "centrifuge" ], centrifuge_taxpasta ]
             centrifuge_report: [ meta + [ tool: "centrifuge" ], centrifuge_report ]
             centrifuge_result: [ meta, centrifuge_result ]
@@ -481,13 +505,13 @@ workflow METAVAL {
         //ch_reference = channel.fromPath ( params.pathogens_genomes, checkIfExists: true )
         ch_reference = file( params.pathogens_genomes, checkIfExists: true)
         // Map short reads to the pathogens genome
-        ch_mapping_pathogen_shortread = ch_input.short_reads
+        ch_mapping_pathogen_shortread = ch_short_reads
             .map { meta, reads -> [ meta, reads, ch_reference]}
         MAPPING_SHORTREAD_PATHOGEN ( ch_mapping_pathogen_shortread, false )
         ch_multiqc_files = ch_multiqc_files.mix(MAPPING_SHORTREAD_PATHOGEN.out.mqc)
 
         // Map long reads to the pathogens genome
-        ch_mapping_pathogen_longread = ch_input.long_reads
+        ch_mapping_pathogen_longread = ch_long_reads
             .map { meta, reads -> [ meta, reads, ch_reference]}
         MAPPING_LONGREAD_PATHOGEN ( ch_mapping_pathogen_longread, false )
         ch_multiqc_files = ch_multiqc_files.mix(MAPPING_LONGREAD_PATHOGEN.out.mqc)
@@ -622,7 +646,8 @@ workflow METAVAL {
             ]
         }
     )
-    emit:multiqc_report = MULTIQC.out.report.map { _meta, report -> [report] }.toList() // channel: /path/to/multiqc_report.html
+    emit:
+    multiqc_report = MULTIQC.out.report.map { _meta, report -> [report] }.toList() // channel: /path/to/multiqc_report.html
     versions       = ch_versions                 // channel: [ path(versions.yml) ]
 }
 

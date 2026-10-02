@@ -97,9 +97,12 @@ workflow PIPELINE_INITIALISATION {
     // Create channel from input file provided through params.input
     //
 
+    def samplesheet_rows = samplesheetToList(input, "${projectDir}/assets/schema_input.json")
+    validateDuplicateSampleEntries(samplesheet_rows)
+
     // Fitler NTC or Negative controls from downstream analysis
 
-    ch_samplesheet = channel.fromList(samplesheetToList(input, "${projectDir}/assets/schema_input.json"))
+    ch_samplesheet = channel.fromList(samplesheet_rows)
         .map {
             meta,
             fastq_1,
@@ -167,6 +170,7 @@ workflow PIPELINE_INITIALISATION {
         }
     }
 
+
     emit:
     samplesheet = ch_samplesheet
     versions    = ch_versions
@@ -226,17 +230,76 @@ workflow PIPELINE_COMPLETION {
 // Validate channels from input samplesheet
 //
 def validateInputSamplesheet(input) {
-    def (metas, fastqs) = input[1..2]
+    def (sample, metas, fastqs) = input
 
-    // Check that multiple runs of the same sample are of the same datatype i.e. single-end / paired-end
-    def endedness_ok = metas.collect{ meta -> meta.single_end }.unique().size == 1
-    if (!endedness_ok) {
-        error("Please check input samplesheet -> Multiple runs of a sample must be of the same datatype i.e. single-end or paired-end: ${metas[0].id}")
+    if (metas.unique().size() !=1) {
+        error("Please check input samplesheet -> Multiple runs of a sample " + "${sample} must have same metadata"
+        )
     }
-
-    return [ metas[0], fastqs ]
+    return [metas[0], fastqs.flatten()]
 }
 
+//
+// Validate channels from input samplesheet:
+//
+def validateDuplicateSampleEntries(samplesheet_rows) {
+    def fields = [
+        [name: '_kraken2_report', index: 3],
+        [name: '_kraken2_result', index: 4],
+        [name: '_kraken2_taxpasta', index: 5],
+        [name: '_centrifuge_report', index: 6],
+        [name: '_centrifuge_result', index: 7],
+        [name: '_centrifuge_taxpasta', index: 8],
+        [name: '_diamond', index: 9],
+        [name: '_diamond_taxpasta', index: 10],
+    ]
+
+    def samples_by_id = samplesheet_rows.groupBy { row -> row[0].id }
+    samples_by_id.each { sample_id, rows ->
+        if (rows.size() > 1) {
+            fields.each { field ->
+                def values = rows.collect { row -> row[field.index] }.unique()
+                def non_null_values = values.findAll { value -> value != null }
+                if (non_null_values.size() > 1 || (non_null_values.size() == 1 && values.size() > 1)) {
+                    error("Please check input samplesheet -> sample '${sample_id}' has inconsistent ${field.name} entries across merged runs; all sample duplicate lines must have identical ${field.name} values.")
+                }
+            }
+        }
+    }
+}
+
+//
+// Extract unique taxonomic files for each sample:
+//
+def uniqueTaxonomicFiles(samplesheet) {
+    return samplesheet
+        .map {
+            meta,
+            _fastq_1,
+            _fastq_2,
+            kraken2_report,
+            kraken2_result,
+            kraken2_taxpasta,
+            centrifuge_report,
+            centrifuge_result,
+            centrifuge_taxpasta,
+            diamond,
+            diamond_taxpasta ->
+
+            [
+                meta,
+                kraken2_report,
+                kraken2_result,
+                kraken2_taxpasta,
+                centrifuge_report,
+                centrifuge_result,
+                centrifuge_taxpasta,
+                diamond,
+                diamond_taxpasta,
+            ]
+        }
+        .distinct()
+}
 //
 // Generate methods description for MultiQC
 //

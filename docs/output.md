@@ -9,6 +9,22 @@ This document describes the output produced by the pipeline. The pipeline contai
 
 The two workflows can be enabled independently or together. Output directories are only created when the corresponding workflow, classifier, or optional analysis step is enabled. All paths below are relative to the top-level results directory.
 
+## Concatenate multilane FASTQs
+
+Before either workflow processes the reads, the pipeline concatenates FASTQ files from multiple lanes or runs of the same sample. Single-end inputs produce one merged FASTQ; paired-end inputs produce separate merged FASTQs for read 1 and read 2. Rows for the same `sample` must have identical metadata, including `instrument_platform`, `na_content`, `is_ntc`, `sample_prep`, and whether the reads are single-end or paired-end. Supplied classifier result, report, and Taxpasta file paths must also be identical across these rows.
+
+<details markdown="1">
+<summary>Output files</summary>
+
+- `analysis_ready_fastqs/`
+  - `<sample_id>_1.merged.fastq.gz`
+  - `<sample_id>_2.merged.fastq.gz`
+  - `<sample_id>.merged.fastq.gz`
+
+</details>
+
+Only samples with multiple FASTQ files per read direction produce files in `analysis_ready_fastqs/`. Samples with one input file per read direction proceed directly to the enabled workflows.
+
 ## Verify identified species
 
 This workflow is enabled with `--perform_verify_species`. It supports two ways of choosing TaxIDs:
