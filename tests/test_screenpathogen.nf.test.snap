@@ -21,10 +21,15 @@
                 "pathogens/blast/blastx/SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered.txt",
                 "pathogens/blast/blastx/SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered_summary.txt",
                 "pathogens/consensus",
-                "pathogens/consensus/SRR13439790_taxid_9606_Homo_sapiens_samtools.fasta",
-                "pathogens/consensus/SRR13439799_taxid_211044_Influenza_A_virus_H1N1_medaka_sorted.fasta",
-                "pathogens/consensus/SRR13439802_taxid_9606_Homo_sapiens_samtools.fasta",
-                "pathogens/consensus/SRR13439813_taxid_9606_Homo_sapiens_samtools.fasta",
+                "pathogens/consensus/filtered",
+                "pathogens/consensus/filtered/SRR13439790_taxid_9606_Homo_sapiens_samtools_filtered.fasta",
+                "pathogens/consensus/filtered/SRR13439799_taxid_211044_Influenza_A_virus_H1N1_medaka_sorted_filtered.fasta",
+                "pathogens/consensus/filtered/SRR13439802_taxid_9606_Homo_sapiens_samtools_filtered.fasta",
+                "pathogens/consensus/raw",
+                "pathogens/consensus/raw/SRR13439790_taxid_9606_Homo_sapiens_samtools.fasta",
+                "pathogens/consensus/raw/SRR13439799_taxid_211044_Influenza_A_virus_H1N1_medaka_sorted.fasta",
+                "pathogens/consensus/raw/SRR13439802_taxid_9606_Homo_sapiens_samtools.fasta",
+                "pathogens/consensus/raw/SRR13439813_taxid_9606_Homo_sapiens_samtools.fasta",
                 "pathogens/igv",
                 "pathogens/igv/SRR13439790_taxid_9606_Homo_sapiens_report.html",
                 "pathogens/igv/SRR13439799_taxid_211044_Influenza_A_virus_H1N1_report.html",
@@ -92,7 +97,7 @@
                 "pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.227927",
+        "timestamp": "2026-10-02T07:56:46.224657",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -115,7 +120,7 @@
                 ]
             ]
         ],
-        "timestamp": "2026-09-18T14:19:31.074247",
+        "timestamp": "2026-10-02T07:56:47.076864",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -135,7 +140,7 @@
                 ]
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.446398",
+        "timestamp": "2026-10-02T07:56:46.442093",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -144,13 +149,16 @@
     "pathogens_consensus": {
         "content": [
             [
+                "SRR13439790_taxid_9606_Homo_sapiens_samtools_filtered.fasta:md5,cf3d0053aeb58ff702db95e4ade876a2",
+                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_medaka_sorted_filtered.fasta:md5,10864e06487153a83202326f3e7cdf38",
+                "SRR13439802_taxid_9606_Homo_sapiens_samtools_filtered.fasta:md5,0d741d4bef32c3f7058b687b22ffeeae",
                 "SRR13439790_taxid_9606_Homo_sapiens_samtools.fasta:md5,a20659608df7957f7c754fe1bcdf649f",
                 "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_medaka_sorted.fasta:md5,e1c0dd7352c0f3dd86236abc88c3c69e",
                 "SRR13439802_taxid_9606_Homo_sapiens_samtools.fasta:md5,8cff0619ee78e3b04161366450f2de27",
                 "SRR13439813_taxid_9606_Homo_sapiens_samtools.fasta:md5,a06778a8d2ca667eb4f12d1fd7a43f87"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.690947",
+        "timestamp": "2026-10-02T07:56:46.673254",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -167,7 +175,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.tsv:md5,e9524b7ba5c8d3c03ddc397af5da18d5"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:31.442899",
+        "timestamp": "2026-10-02T07:56:47.49708",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -282,7 +290,7 @@
                 }
             }
         ],
-        "timestamp": "2026-09-18T14:19:30.200855",
+        "timestamp": "2026-10-02T07:56:46.202571",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -299,7 +307,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.txt:md5,8e82979cb0000fca839aa8bc4b83a9d8"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:31.19043",
+        "timestamp": "2026-10-02T07:56:47.185642",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -315,7 +323,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens.png exists: true"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:31.322914",
+        "timestamp": "2026-10-02T07:56:47.375456",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -330,7 +338,7 @@
                 "SRR13439813_taxid_9606_Homo_sapiens_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.823213",
+        "timestamp": "2026-10-02T07:56:46.814555",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -344,7 +352,7 @@
                 "SRR13439799_taxid_488241_Influenza_A_virus_H2N2_1.fasta.gz:md5,d41d8cd98f00b204e9800998ecf8427e"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.93245",
+        "timestamp": "2026-10-02T07:56:46.91999",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -361,7 +369,7 @@
                 "reference.fasta.rev.2.bt2l:md5,061d25379a3f57db6e974ba06aeed404"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.243601",
+        "timestamp": "2026-10-02T07:56:46.246753",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -378,7 +386,7 @@
                 "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered_summary.txt contains string:true"
             ]
         ],
-        "timestamp": "2026-09-18T14:19:30.578382",
+        "timestamp": "2026-10-02T07:56:46.564062",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"

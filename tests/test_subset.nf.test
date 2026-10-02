@@ -4,11 +4,11 @@ nextflow_pipeline {
     script "../main.nf"
     tag "pipeline"
     tag "gms_metaval"
-    tag "test_taxid"
-    profile "test_taxid"
+    tag "test_subset"
+    profile "test_subset"
 
 
-    test("-profile test_taxid") {
+    test("-profile test_subset") {
 
         when {
             params {
@@ -37,33 +37,7 @@ nextflow_pipeline {
             def stable_content_minimap2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['mapping/minimap2/align/*'], ignoreFile: 'tests/.nftignore')
             def bam_files_minimap2_align  = getAllFilesFromDir(params.outdir, include: ['mapping/minimap2/align/*bam'])
 
-            //pathogens blast: partly unstable files, see custom assertions
-
-            //pathogens consensus
-            def stable_content_pathogens_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/consensus/**/*'], ignoreFile: 'tests/.nftignore')
-
-            //pathogens mapping bowtie2 build
-            def stable_content_pathogens_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/bowtie2/build/bowtie2/*'], ignoreFile: 'tests/.nftignore')
-
-            //pathogen bowtie2 align
-            def stable_content_pathogens_bowtie2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/bowtie2/align/*'], ignoreFile: 'tests/.nftignore')
-            def bam_files_pathogens_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['pathogens/mapping/bowtie2/align/*.bam'])
-
-            //pathogens reads blast input
-            def stable_content_pathogens_reads_blast = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/pathogen_reads/blast_input/*'], ignoreFile: 'tests/.nftignore')
-
-            //pathogens: partly unstable files, see custom assertions
-            def bam_files_pathogens_reads_consensus  = getAllFilesFromDir(params.outdir, include: ['pathogens/pathogen_reads/consensus_input/*.bam'])
-
             //report: partly unstable files, see custom assertions
-
-            //pathogens samtools coverage
-            def stable_content_pathogens_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
-
-            //pathogens samtools coverage plot:partly unstable files, see custom assertions
-
-            //pathogens samtools depth
-            def stable_content_pathogens_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
 
 	        //consensus
             def stable_content_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['consensus/**/*'], ignoreFile: 'tests/.nftignore')
@@ -95,20 +69,19 @@ nextflow_pipeline {
                     getAllFilesFromDir("$outputDir/blast/blastn/kraken2", include: ['*.txt']).collect{file ->
                         file.getName() + '(kraken2) contains string:' + (file.text.contains("Chryseobacterium") || file.text.contains("Influenza") || file.text.contains("Shigella")) },
                     getAllFilesFromDir("$outputDir/blast/blastn/centrifuge", include: ['*.txt']).collect{file ->
-                        file.getName() + '(centrifuge) contains string:' + (file.text.contains("Chryseobacterium") || file.text.contains("Influenza") || file.text.contains("Shigella")) },
+                        file.getName() + '(centrifuge) contains string:' + (file.text.contains("Chryseobacterium") || file.text.contains("Influenza")) },
                     getAllFilesFromDir("$outputDir/blast/blastn/diamond", include: ['*.txt']).collect{file ->
-                        file.getName() + '(diamond) ' + (file.text.contains("Chryseobacterium") || file.text.contains("Influenza") || file.text.contains("Shigella")) }
+                        file.getName() + '(diamond) ' + (file.text.contains("Chryseobacterium") || file.text.contains("Shigella")) }
                 ).match("blastn") },
 
                 // blastx
                 { assert snapshot(
                     getAllFilesFromDir("$outputDir/blast/blastx/kraken2", include: ['*.txt']).collect{file ->
-                        file.getName() + '(kraken2) contains string:' + (file.text.contains("Chryseobacterium") || file.text.contains("Influenza") || file.text.contains("Shigella")) },
+                        file.getName() + '(kraken2) contains string:' + (file.text.contains("Escherichia") || file.text.contains("Influenza") ) },
                     getAllFilesFromDir("$outputDir/blast/blastx/centrifuge", include: ['*.txt']).collect{file ->
                         file.getName() + "(centrifuge) " + (
                             file.exists() && (file.text.contains("Chryseobacterium") ||
-                            file.text.contains("Influenza") ||
-                            file.text.contains("Shigella")) ? "contains string:true" : file.exists() ? "exists:true" : "exists:false")}
+                            file.text.contains("Influenza") ) ? "contains string:true" : file.exists() ? "exists:true" : "exists:false")}
                 ).match("blastx") },
 
                 // extracted reads
@@ -125,6 +98,16 @@ nextflow_pipeline {
                         file.getName() + '(extracted reads diamond) contains string:' + (file.text.contains("SRR13439790") ||  file.text.contains("SRR13439813")) }
                 ).match("extracted_reads") },
 
+                // Reads subset
+                { assert snapshot(
+                    getAllFilesFromDir("$outputDir/blast/reads_subset/kraken2", include: ['*.fa']).collect{file ->
+                        file.getName() + '(kraken2 reads subset) contains string:' + (file.text.contains("SRR13439799") ||  file.text.contains("SRR13439813")) },
+                    getAllFilesFromDir("$outputDir/blast/reads_subset/centrifuge", include: ['*.fa']).collect{file ->
+                        file.getName() + '(centrifuge reads subset) contains string:' + (file.text.contains("SRR13439799") ||  file.text.contains("SRR13439813")) },
+                    getAllFilesFromDir("$outputDir/blast/reads_subset/diamond", include: ['*.fa']).collect{file ->
+                        file.getName() + '(diamond reads subset) contains string:' + (file.text.contains("SRR13439813")) },
+                ).match("reads_subset") },
+
                 // bowtie2
                 { assert snapshot (
                     bam_files_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] }
@@ -140,73 +123,18 @@ nextflow_pipeline {
                     stable_content_minimap2_align
                 ).match("minimap2_align") },
 
-                //consensus
-                { assert snapshot (stable_content_consensus).match("consensus")},
-
                 // igv
                 { assert snapshot(
                         getAllFilesFromDir("$outputDir/igv", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("igv") },
 
-                //pathogen mapping bowtie2
-                { assert snapshot (stable_content_pathogens_bowtie2_build).match("pathogen_bowtie2_build")},
-                { assert snapshot (
-                    bam_files_pathogens_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_pathogens_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] }
-                ).match("pathogen_bowtie2_align")},
-
-                // pathogen blast
-                { assert snapshot(
-                    getAllFilesFromDir("$outputDir/pathogens/blast/blastn", include: ['*.txt']).collect{file ->
-                        file.getName() + ' contains string:' + (file.exists() && file.text.contains("NC_060947.1") || file.text.contains("NC_002023.1_0") || file.text.contains("")) },
-                    getAllFilesFromDir("$outputDir/pathogens/blast/blastx", include: ['*.txt']).collect{file ->
-                        file.getName() + ' contains string:' + (file.exists() && file.text.contains("NC_002019.1_0")) }
-                ).match("pathogens_blast") },
-                { assert snapshot (stable_content_pathogens_consensus).match("pathogens_consensus") },
-
-                // pathogens igv
-                { assert snapshot(
-                        getAllFilesFromDir("$outputDir/pathogens/igv", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
-                ).match("pathogens_igv") },
-
-                //pathogens reads blast input
-                { assert snapshot (stable_content_pathogens_reads_blast).match("pathogens_reads_blast") },
-
-                //pathogens reads consensus
-                { assert snapshot (
-                    bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file ->
-                        [file.getName() + " pathogens reads consensus md5: " + bam(file.toString()).getHeader()] }
-                ).match("pathogens_reads_consensus") },
-
-                // pathogens samtools coverage
-                { assert snapshot (stable_content_pathogens_samtools_coverage).match("pathogens_samtools_coverage") },
-
-                // pathogens samtools coverage plot
-                { assert snapshot(
-                        getAllFilesFromDir("$outputDir/pathogens/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
-                ).match("pathogens_samtools_coverage_plot") },
-
-                // pathogens samtools depth
-                { assert snapshot (stable_content_pathogens_samtools_depth).match("pathogens_samtools_depth") },
-
-                // spades kraken2
-                { assert snapshot(
-                        getAllFilesFromDir("$outputDir/spades/kraken2", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
-                ).match("spades_kraken2") },
-
-                // spades centrifuge
-                { assert snapshot(
-                        getAllFilesFromDir("$outputDir/spades/centrifuge", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
-                ).match("spades_centrifuge") },
-
-                // spades diamond
-                { assert snapshot(
-                        getAllFilesFromDir("$outputDir/spades/diamond", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
-                ).match("spades_diamond") },
-
                 //metaval report
                 { assert snapshot (
                     getAllFilesFromDir("$outputDir/report", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("report") },
+
+	            //consensus
+                { assert snapshot (stable_content_consensus).match("consensus")},
 
                 // samtools coverage
                 { assert snapshot (stable_content_samtools_coverage).match("samtools_coverage") },

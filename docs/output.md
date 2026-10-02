@@ -39,9 +39,11 @@ The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes d
 - [Decontamination](#decontamination) - Flag taxonomy tables against matched negative controls
 - [Extract Viral TaxIDs](#Extract-Viral-TaxIDs) - Extract all viral TaxIDs identified by classifiers.
 - [Extract Reads](#Extract-Reads) - Extract reads assigned by Kraken2, Centrifuge, or DIAMOND.
+- [Read subsetting](#Read-subsetting) - Optionally limit the extracted reads before BLAST.
 - [De novo assembly](#De-novo-assembly) - Optionally perform de novo assembly.
 - [BLAST](#Verify-species-BLAST) - Run BLASTN and/or BLASTX on extracted reads or assemblies.
 - [Mapping](#Verify-species-mapping) - Perform mapping against genomes selected from BLAST hits.
+- [Call consensus](#Verify-species-consensus-calling) - Optionally call consensus from reads mapped to genomes selected from BLAST hits.
 - [Coverage and depth](#Verify-species-coverage-and-depth) - Calculate coverage and depth of mapped reads across genomes.
 - [IGV reports](#Verify-species-IGV-Reports) - IGV Report for visualizing mapping results.
 - [Report](#Static-metaval-Report) - Generate a report summarising the results of the pipeline.
@@ -122,6 +124,23 @@ Retrieve the reads of viral TaxIDs predicted by classifiers or a user-defined li
 
 Only directories for enabled classifiers are created.
 
+### Read subsetting
+
+Read subsetting is used as an alternative to de novo assembly when assembly is disabled. If the number of extracted reads for a TaxID exceeds `--subset_read_threshold`, only the first `--subset_read_threshold` reads are kept for BLAST. The default threshold is 10. Reads at or below the threshold are sent directly to BLAST and are not written to `blast/reads_subset/`.
+
+<details markdown="1">
+<summary>Output files</summary>
+
+- `blast/reads_subset/`
+  - `kraken2/`
+    - `<sample_id>_taxid_<taxid>_<species>_<classifier>_subset.fa`
+  - `centrifuge/`
+    - `<sample_id>_taxid_<taxid>_<species>_<classifier>_subset.fa`
+  - `diamond/`
+    - `<sample_id>_taxid_<taxid>_<species>_<classifier>_subset.fa`
+
+</details>
+
 ### De novo assembly
 
 Extracted reads can be assembled before BLAST:
@@ -193,6 +212,27 @@ Mapping is enabled with `--perform_mapping`. Illumina reads are aligned with `Bo
   - `align/`
     - `<sample_id>_<classifier>_taxid_<taxid>_<species>_mappingorganism_<organism>_<genome_id>_sorted.bam`
     - `<sample_id>_<classifier>_taxid_<taxid>_<species>_mappingorganism_<organism>_<genome_id>_sorted.bam.bai`
+
+</details>
+
+### Verify-species consensus calling
+
+Consensus calling is optional and requires `--perform_verify_species` and `--perform_mapping`. Mapping requires `--taxid2genome` and at least one BLAST mode (BLASTN or BLASTX).
+
+- `--perform_shortread_consensus` enables `samtools consensus` for Illumina reads and defaults to `false`.
+- `--perform_longread_consensus` enables consensus calling for Nanopore reads and defaults to `false`. Select Medaka (the default) or `samtools consensus` with `--longread_consensus_tool medaka` or `--longread_consensus_tool samtools`.
+
+Consensus filtering retains sequences with at least `--consensus_min_bases` standard DNA bases (A, C, G, T) or IUPAC ambiguity codes (R, Y, S, W, K, M, B, D, H, V), counted together (default: `50`). Counting is case-insensitive and excludes N and gaps. Sequences with exactly the minimum count are retained. No filtered FASTA file is produced if no sequences pass this threshold.
+
+<details markdown="1">
+<summary>Output files</summary>
+
+- `consensus/raw`
+  - `<sample_id>_taxid_<taxid>_<species>_samtools.fasta`: Consensus from mapped Illumina or Nanopore reads using `samtools consensus`.
+  - `<sample_id>_taxid_<taxid>_<species>_medaka_sorted.fasta`: Consensus from mapped Nanopore reads using `medaka`.
+- `consensus/filtered`
+  - `<sample_id>_taxid_<taxid>_<species>_samtools_filtered.fasta`: Samtools consensus sequences meeting the minimum nucleotide count described above, for Illumina or Nanopore reads.
+  - `<sample_id>_taxid_<taxid>_<species>_medaka_sorted_filtered.fasta`: Medaka consensus sequences meeting the minimum nucleotide count described above.
 
 </details>
 
@@ -344,7 +384,7 @@ Consensus calling is optional:
 - `--perform_shortread_consensus` uses `samtools consensus` for Illumina reads.
 - `--perform_longread_consensus` uses Medaka or `samtools consensus`, selected with `--longread_consensus_tool`.
 
-Consensus sequences shorter than `--consensus_min_bases` are excluded.
+Consensus filtering retains sequences with at least `--consensus_min_bases` standard DNA bases (A, C, G, T) or IUPAC ambiguity codes (R, Y, S, W, K, M, B, D, H, V), counted together (default: `50`). Counting is case-insensitive and excludes N and gaps. Sequences with exactly the minimum count are retained. No filtered FASTA file is produced if no sequences pass this threshold.
 
 <details markdown="1">
 <summary>Output files</summary>

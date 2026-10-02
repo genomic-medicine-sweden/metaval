@@ -176,6 +176,10 @@ Taxpasta profiles are compared with negative controls sharing the same `na_conte
 --skip_ntc false
 ```
 
+### Read subsetting
+
+Read subsetting is used as an alternative to de novo assembly when assembly is disabled. If the number of extracted reads for a TaxID exceeds `--subset_read_threshold`, only the first `--subset_read_threshold` reads are kept for BLAST. The default threshold is 10. Reads at or below the threshold are sent directly to BLAST and are not written to `blast/reads_subset/`.
+
 ### De novo assembly
 
 Enable `SPAdes` for Illumina reads with `--perform_shortread_denovo` and enable `Flye` for Nanopore reads with `--perform_longread_denovo`.
@@ -211,6 +215,17 @@ For example:
 
 The pipeline maps extracted reads to genomes associated with filtered BLAST hits. `Bowtie2` is used for Illumina reads and `minimap2` for Nanopore reads.
 
+### Verify-species consensus calling
+
+Consensus calling requires `--perform_mapping`, a `--taxid2genome` file, and at least one enabled BLAST mode (BLASTN or BLASTX).
+
+- `--perform_shortread_consensus` enables `samtools consensus` for Illumina reads.
+- `--perform_longread_consensus` enables consensus calling for Nanopore reads. Select Medaka (the default) or samtools with `--longread_consensus_tool medaka` or `--longread_consensus_tool samtools`.
+- Both consensus flags default to `false`.
+- `--consensus_min_bases` sets the minimum number of standard DNA bases (A, C, G, T) and IUPAC ambiguity codes (R, Y, S, W, K, M, B, D, H, V) required to retain a consensus sequence and defaults to `50`. Counting is case-insensitive and excludes N and gaps. Sequences with exactly the minimum count are retained.
+
+See the [consensus outputs](output.md#verify-species-consensus-calling) for filenames and output directories.
+
 ### Verify-species example
 
 ```bash
@@ -227,7 +242,10 @@ nextflow run genomic-medicine-sweden/metaval \
     --perform_shortread_denovo \
     --perform_longread_denovo \
     --perform_mapping \
-    --taxid2genome /path/to/taxid2genome.tsv
+    --taxid2genome /path/to/taxid2genome.tsv \
+    --perform_longread_consensus \
+    --perform_shortread_consensus \
+    --consensus_min_bases 50
 ```
 
 ### User-defined TaxID example
@@ -243,7 +261,12 @@ nextflow run genomic-medicine-sweden/metaval \
     --extract_centrifuge_reads \
     --extract_diamond_reads \
     --blastn_db /path/to/blastn_db.tar.gz \
-    --blastx_db /path/to/diamond.dmnd
+    --blastx_db /path/to/diamond.dmnd \
+    --perform_mapping \
+    --taxid2genome /path/to/taxid2genome.tsv \
+    --perform_longread_consensus \
+    --perform_shortread_consensus \
+    --consensus_min_bases 50
 ```
 
 ## Pathogen screening
@@ -290,7 +313,7 @@ Pathogens reaching `--min_read_counts` can be used for consensus calling:
 - `--perform_longread_consensus` enables long-read consensus.
 - `--longread_consensus_tool medaka` selects Medaka, which is the default.
 - `--longread_consensus_tool samtools` selects `samtools consensus`.
-- `--consensus_min_bases` sets the minimum retained consensus length and defaults to `50`.
+- `--consensus_min_bases` sets the minimum number of standard DNA bases (A, C, G, T) and IUPAC ambiguity codes (R, Y, S, W, K, M, B, D, H, V) required to retain a consensus sequence and defaults to `50`. Counting is case-insensitive and excludes N and gaps. Sequences with exactly the minimum count are retained.
 
 Pathogens below `--min_read_counts` are converted to FASTA and used directly as BLAST input.
 

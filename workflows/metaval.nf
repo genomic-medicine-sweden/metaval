@@ -12,8 +12,11 @@ include { FLAG_TAXPASTA                                         } from '../modul
 
 // Extract reads of taxIDs
 include { TAXID_READS                                           } from '../subworkflows/local/taxid_reads'
-include { SEQKIT_FQ2FA as SEQKIT_FQ2FA_READS                    } from '../modules/nf-core/seqkit/fq2fa'
+include { SEQKIT_FQ2FA                                          } from '../modules/nf-core/seqkit/fq2fa'
 include { PIGZ_UNCOMPRESS                                       } from '../modules/nf-core/pigz/uncompress'
+
+// SUBSET reads for BLAST
+include { SEQKIT_HEAD                                           } from '../modules/nf-core/seqkit/head'
 
 // De novo for extracted taxIDs reads
 include { SPADES                                                } from '../modules/nf-core/spades'
@@ -23,7 +26,6 @@ include { PIGZ_UNCOMPRESS as PIGZ_UNCOMPRESS_SPADES_SCAFFOLD    } from '../modul
 include { PIGZ_UNCOMPRESS as PIGZ_UNCOMPRESS_FLYE               } from '../modules/nf-core/pigz/uncompress'
 
 // BLAST
-include { SEQKIT_FQ2FA                                          } from '../modules/nf-core/seqkit/fq2fa'
 include { BLAST                                                 } from '../subworkflows/local/blast'
 include { BLAST as BLAST_PATHOGEN                               } from '../subworkflows/local/blast'
 
@@ -43,6 +45,9 @@ include { METAVAL_REPORT                                        } from '../modul
 include { TAXID_BAM_FASTA as TAXID_BAM_FASTA_SHORTREAD          } from '../subworkflows/local/taxid_bam_fasta'
 include { TAXID_BAM_FASTA as TAXID_BAM_FASTA_LONGREAD           } from '../subworkflows/local/taxid_bam_fasta'
 include { CONSENSUS                                             } from '../subworkflows/local/consensus'
+include { CONSENSUS as CONSENSUS_SCREENPATHOGENS_LR             } from '../subworkflows/local/consensus'
+include { CONSENSUS as CONSENSUS_VERIFY_SPECIES                 } from '../subworkflows/local/consensus'
+include { CONSENSUS as CONSENSUS_VERIFY_SPECIES_LONGREAD        } from '../subworkflows/local/consensus'
 
 // Summary subworkflow
 include { FASTQC                                                } from '../modules/nf-core/fastqc'
@@ -266,17 +271,20 @@ workflow METAVAL {
         )
         ch_versions            = ch_versions.mix( TAXID_READS.out.versions )
 
-        // Transpose to handle both single and paired-end reads
-        ch_taxid_reads_transpose = TAXID_READS.out.reads
-            .map { meta, reads ->
-                def read_list = reads instanceof List ? reads: [reads]
-                [meta, read_list]
+        // Split single-end and paired-end read lists into one FASTQ per task,
+        // keeping read-pair identity in metadata.
+        ch_taxid_reads_indexed = TAXID_READS.out.reads
+            .flatMap { meta, reads ->
+                def read_list = reads instanceof List ? reads : [reads]
+                read_list.withIndex().collect { read, index ->
+                    [ meta + [ read_pair: index + 1 ], read ]
+                }
             }
-            .transpose ()
 
         // Convert fastq.gz into fasta files
-        SEQKIT_FQ2FA_READS( ch_taxid_reads_transpose )
-        PIGZ_UNCOMPRESS ( SEQKIT_FQ2FA_READS.out.fasta )
+        SEQKIT_FQ2FA( ch_taxid_reads_indexed )
+        PIGZ_UNCOMPRESS ( SEQKIT_FQ2FA.out.fasta )
+
         //
         // MODULE: DE NOVO - SPADES/FLYE
         //
@@ -284,19 +292,14 @@ workflow METAVAL {
         // Run de novo assembly if the number of reads exceeds the params.min_read_counts
         ch_taxid_reads_filter = TAXID_READS.out.reads
             .branch { meta, reads ->
-                blast: meta.single_end
+                blast_reads: meta.single_end
                     ? reads.countFastq() < params.min_read_counts
                     : reads[0].countFastq() < params.min_read_counts ||
                     reads[1].countFastq() < params.min_read_counts
 
                 denovo: true
             }
-        // Then select first read for BLAST
-        ch_blast_reads = ch_taxid_reads_filter.blast
-            .map { meta, reads ->
-                def read = meta.single_end ? reads : reads[0]
-                [ meta, read ]
-            }
+
         // Prepare de novo assembly reads channel for shortreads and longreads
         ch_denovo = ch_taxid_reads_filter.denovo
             .branch { meta, reads ->
@@ -306,18 +309,30 @@ workflow METAVAL {
                     return [ meta, reads ]
             }
         // Short reads de novo assembly
-        ch_contigs_denovo = channel.empty()
+        ch_denovo_fasta = channel.empty()
+
         if ( params.perform_shortread_denovo ) {
             SPADES( ch_denovo.shortreads, [], [] )
+
             PIGZ_UNCOMPRESS_SPADES_CONTIG( SPADES.out.contigs )
             PIGZ_UNCOMPRESS_SPADES_SCAFFOLD( SPADES.out.scaffolds )
-            ch_contigs_denovo = ch_contigs_denovo.mix(PIGZ_UNCOMPRESS_SPADES_CONTIG.out.file)
+
+            ch_spades_fasta = PIGZ_UNCOMPRESS_SPADES_SCAFFOLD.out.file
+                .mix(PIGZ_UNCOMPRESS_SPADES_CONTIG.out.file)
+                .groupTuple(by:0)
+                .map { meta, files ->
+                    def scaffolds = files.find { file -> file instanceof Path && file.name.endsWith('.scaffolds.fa') }
+                    def contigs = files.find { file -> file instanceof Path && file.name.endsWith('.contigs.fa') }
+                    [ meta, scaffolds ?: contigs ]
+                }
+
+            ch_denovo_fasta = ch_denovo_fasta.mix(ch_spades_fasta)
         }
         // Long reads de novo assembly
         if ( params.perform_longread_denovo ) {
             FLYE( ch_denovo.longreads, params.flye_mode )
             PIGZ_UNCOMPRESS_FLYE( FLYE.out.fasta )
-            ch_contigs_denovo = ch_contigs_denovo.mix(PIGZ_UNCOMPRESS_FLYE.out.file)
+            ch_denovo_fasta = ch_denovo_fasta.mix( PIGZ_UNCOMPRESS_FLYE.out.file )
         }
 
         //
@@ -327,21 +342,40 @@ workflow METAVAL {
         ch_blast_unique_taxid = channel.empty()
         ch_blastn_report      = channel.empty()
         ch_blastx_report      = channel.empty()
+        ch_blast_query_input  = channel.empty()
+
+        ch_blast_reads_fasta = PIGZ_UNCOMPRESS.out.file
+            .filter { meta, _fasta -> meta.single_end || meta.read_pair == 1 } // keeps the only read1 for paired-end reads
+            .map { meta, fasta -> [ meta.subMap(meta.keySet() - 'read_pair'), fasta ]}
 
         // Prepare the query fasta file
         if ( (!params.skip_blastn) || (!params.skip_blastx)) {
+            // Build ch_blast_query_input fasta file
+            // Option1: De novo assembly contigs/scaffolds for BLAST if the number of reads exceeds the params.min_read_counts
+            if ( params.perform_shortread_denovo || params.perform_longread_denovo ) {
+                ch_blast_reads_fasta = ch_taxid_reads_filter.blast_reads
+                    .join(ch_blast_reads_fasta)
+                    .map { meta, _reads, fasta -> [meta, fasta]}
+                ch_blast_query_input = ch_blast_reads_fasta.mix(ch_denovo_fasta)
 
-            SEQKIT_FQ2FA ( ch_blast_reads )
-            // Build ch_blast_query fasta file
-            ch_blast_query = SEQKIT_FQ2FA.out.fasta
-            if ( params.perform_shortread_denovo ) {
-                ch_blast_query = ch_blast_query.mix( PIGZ_UNCOMPRESS_SPADES_CONTIG.out.file )
-            }
-            if ( params.perform_longread_denovo ) {
-                ch_blast_query = ch_blast_query.mix( PIGZ_UNCOMPRESS_FLYE.out.file )
+            } else {
+                // Option 2: when assembly is disabled, subset large read sets before BLAST.
+                ch_blast_query_branch = ch_blast_reads_fasta
+                    .branch { _meta, fasta ->
+                        direct: fasta.countFasta() <= params.subset_read_threshold
+                        subset: true
+                    }
+                SEQKIT_HEAD (
+                    ch_blast_query_branch.subset.map { meta, fasta ->
+                        [ meta, fasta, params.subset_read_threshold ]
+                    }
+                )
+
+                ch_blast_query_input = ch_blast_query_branch.direct.mix(SEQKIT_HEAD.out.subset)
             }
 
-            BLAST(ch_blast_query, params.blastn_db, params.blastx_db )
+            BLAST(ch_blast_query_input, params.blastn_db, params.blastx_db)
+
 
             ch_blast_unique_taxid = ch_blast_unique_taxid.mix(BLAST.out.unique_taxid)
             ch_blastn_report = ch_blastn_report.mix(BLAST.out.blastn_filtered)
@@ -392,6 +426,22 @@ workflow METAVAL {
                 .join(FETCH_BLAST_GENOMES.out.longreads_genome, by:0)
             MAPPING_LONGREAD ( ch_mapping_input_longread, true )
 
+            // Consensus
+
+            ch_bam_mapping_shortread = MAPPING_SHORTREAD.out.bam
+                .join(MAPPING_SHORTREAD.out.bai, by:0)
+            ch_consensus_shortread = MAPPING_SHORTREAD.out.bam.join(FETCH_BLAST_GENOMES.out.shortreads_genome, by:0)
+            ch_fasta_consensus_sr = ch_consensus_shortread.map { meta, _bam, fasta -> [meta, fasta] }
+            CONSENSUS_VERIFY_SPECIES ( ch_bam_mapping_shortread, ch_fasta_consensus_sr , params.consensus_min_bases )
+
+            ch_bam_mapping_longread = MAPPING_LONGREAD.out.bam
+                .join(MAPPING_LONGREAD.out.bai, by:0)
+            ch_consensus_longread = MAPPING_LONGREAD.out.bam.join(FETCH_BLAST_GENOMES.out.longreads_genome, by:0)
+            ch_fasta_consensus_lr = ch_consensus_longread.map { meta, _bam, fasta -> [meta, fasta] }
+
+            CONSENSUS_VERIFY_SPECIES_LONGREAD ( ch_bam_mapping_longread, ch_fasta_consensus_lr, params.consensus_min_bases )
+
+
             // Coverage tables
             ch_coverage_tables = ch_coverage_tables
                 .mix( MAPPING_SHORTREAD.out.coverage, MAPPING_LONGREAD.out.coverage )
@@ -425,34 +475,8 @@ workflow METAVAL {
         //
 
         ch_samplesheet_report = channel.fromPath ( params.input, checkIfExists: true )
-
-        // Prepare reads folder for the report, if the reads went through de novo assembly, only include the assembly fasta file in the report.
-        ch_reads_fa = channel.empty()
-        ch_reads_fa = ch_reads_fa.mix(PIGZ_UNCOMPRESS.out.file)
-            .groupTuple(by:0)
-            .map { meta, reads -> [ meta, reads ] }
-
-        ch_assembly = channel.empty()
-        if ( params.perform_shortread_denovo ) {
-            ch_assembly = ch_assembly.mix( PIGZ_UNCOMPRESS_SPADES_CONTIG.out.file, PIGZ_UNCOMPRESS_SPADES_SCAFFOLD.out.file )
-        }
-        if ( params.perform_longread_denovo ) {
-            ch_assembly = ch_assembly.mix( PIGZ_UNCOMPRESS_FLYE.out.file )
-        }
-
-        ch_reads_report = channel.empty()
-        ch_reads_report = ch_reads_fa.mix(ch_assembly)
-            .groupTuple(by:0)
-            .map { meta, files ->
-                def assembly = files.find { file -> file instanceof Path && file.name.endsWith('.scaffolds.fa') } ?:
-                    files.find { file -> file instanceof Path && file.name.endsWith('.contigs.fa') } ?:
-                    files.find { file -> file instanceof Path }
-                def reads = files.find { file -> file instanceof List }
-                [ meta, assembly ?: reads ]
-            }
-
         ch_flagged_taxpasta_report = FLAG_TAXPASTA.out.tsv.map { _meta, tsv -> tsv }.collect()
-        ch_reads_report_files      = ch_reads_report.map { _meta, files -> files }.flatten().collect()
+        ch_reads_report_files      = ch_blast_query_input.map { _meta, fasta -> fasta }.collect()
         ch_blastn_report_files     = ch_blastn_report.map { _meta, blastn -> blastn }.collect().ifEmpty([])
         ch_blastx_report_files     = ch_blastx_report.map { _meta, blastx -> blastx }.collect().ifEmpty([])
         ch_coverage_table_files    = ch_coverage_tables.map { _meta, table -> table }.collect().ifEmpty([])
@@ -478,6 +502,7 @@ workflow METAVAL {
     //
 
     if ( params.perform_screen_pathogens ) {
+        //ch_reference = channel.fromPath ( params.pathogens_genomes, checkIfExists: true )
         ch_reference = file( params.pathogens_genomes, checkIfExists: true)
         // Map short reads to the pathogens genome
         ch_mapping_pathogen_shortread = ch_short_reads
@@ -527,11 +552,21 @@ workflow METAVAL {
         ch_bam_filtered = channel.empty()
         ch_bam_filtered_shortread = TAXID_BAM_FASTA_SHORTREAD.out.taxid_bam
             .join(TAXID_BAM_FASTA_SHORTREAD.out.taxid_bai, by:0)
+        ch_fasta_consensus_screenpathogens_sr = ch_igv_input_pathogen_shortread
+            .map { meta, _bam, _bai, fasta ->
+                [meta, fasta]
+            }
+        CONSENSUS ( ch_bam_filtered_shortread, ch_fasta_consensus_screenpathogens_sr , params.consensus_min_bases )
+
         ch_bam_filtered_longread = TAXID_BAM_FASTA_LONGREAD.out.taxid_bam
             .join(TAXID_BAM_FASTA_LONGREAD.out.taxid_bai, by:0)
         ch_bam_filtered = ch_bam_filtered.mix(ch_bam_filtered_shortread, ch_bam_filtered_longread)
+        ch_fasta_consensus_screenpathogens_lr = ch_igv_input_pathogen_longread
+            .map { meta, _bam, _bai, fasta ->
+                [meta, fasta]
+        }
 
-        CONSENSUS ( ch_bam_filtered, [ [], ch_reference ], params.consensus_min_bases )
+        CONSENSUS_SCREENPATHOGENS_LR ( ch_bam_filtered_longread,  ch_fasta_consensus_screenpathogens_lr , params.consensus_min_bases )
 
         // BLAST
         // For pair-end reads, only use read1 for BLAST
@@ -544,12 +579,17 @@ workflow METAVAL {
             .filter { _meta, reads ->
                 reads.countFasta() >= 1
             }
-        ch_blast_query_pathogen = ch_shortread_pathogen_blast_read1.mix(
-            ch_longread_pathogen_blast,
-            CONSENSUS.out.consensus
-        )
-        BLAST_PATHOGEN ( ch_blast_query_pathogen, params.blastn_db, params.blastx_db )
-    }
+
+        ch_consensus_pathogen = CONSENSUS.out.consensus.mix(CONSENSUS_SCREENPATHOGENS_LR.out.consensus)
+
+	// Combine all BLAST queries
+	ch_blast_query_pathogen = ch_shortread_pathogen_blast_read1
+        .mix(ch_longread_pathogen_blast)
+        .mix(ch_consensus_pathogen)
+
+        BLAST_PATHOGEN( ch_blast_query_pathogen, params.blastn_db, params.blastx_db )
+
+        }
 
     //
     // Collate and save software versions

@@ -70,6 +70,9 @@ nextflow_pipeline {
 
             // samtools coverage plot:partly unstable files, see custom assertions
 
+	        //consensus
+            def stable_content_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['consensus/**/*'], ignoreFile: 'tests/.nftignore')
+
             // samtools depth
             def stable_content_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
 
@@ -137,6 +140,9 @@ nextflow_pipeline {
                     bam_files_minimap2_align.isEmpty() ? 'No BAM files' : bam_files_minimap2_align.collect { file -> [file.getName() + " minimap2 align md5: " + bam(file.toString()).getReadsMD5()] },
                     stable_content_minimap2_align
                 ).match("minimap2_align") },
+
+                //consensus
+                { assert snapshot (stable_content_consensus).match("consensus")},
 
                 // igv
                 { assert snapshot(
