@@ -170,7 +170,7 @@ Taxpasta profiles are compared with negative controls sharing the same `na_conte
 
 ### Read subsetting
 
-Read subsetting is used as an alternative to de novo assembly when assembly is disabled. If the number of extracted reads for a TaxID exceeds `--subset_read_threshold`, only the first `--subset_read_threshold` reads are kept for BLAST. The default threshold is 10. Reads at or below the threshold are sent directly to BLAST and are not written to `reads_subset/`.
+Read subsetting is used as an alternative to de novo assembly when assembly is disabled. If the number of extracted reads for a TaxID exceeds `--subset_read_threshold`, only the first `--subset_read_threshold` reads are kept for BLAST. The default threshold is 10. Reads at or below the threshold are sent directly to BLAST and are not written to `blast/reads_subset/`.
 
 ### De novo assembly
 
