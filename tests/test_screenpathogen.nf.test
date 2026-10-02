@@ -23,7 +23,7 @@ nextflow_pipeline {
             //pathogens blast
 
             //pathogens consensus
-            def stable_content_pathogens_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/consensus/*'], ignoreFile: 'tests/.nftignore')
+            def stable_content_pathogens_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/consensus/**/*'], ignoreFile: 'tests/.nftignore')
 
             //pathogens mapping bowtie2 build
             def stable_content_pathogens_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/bowtie2/build/bowtie2/*'], ignoreFile: 'tests/.nftignore')
@@ -68,6 +68,7 @@ nextflow_pipeline {
                     getAllFilesFromDir("$outputDir/pathogens/blast/blastn", include: ['*.txt']).collect{file -> file.getName() + ' contains string:' + (file.exists() && file.text.contains("NC_060947.1") || file.text.contains("NC_002023.1_0") || file.text.contains("")) },
                     getAllFilesFromDir("$outputDir/pathogens/blast/blastx", include: ['*.txt']).collect{file -> file.getName() + ' contains string:' + (file.exists() && file.text.contains("NC_002019.1_0")) }
                 ).match("pathogens_blast") },
+
                 { assert snapshot (stable_content_pathogens_consensus).match("pathogens_consensus")},
 
                 //pathogens igv
