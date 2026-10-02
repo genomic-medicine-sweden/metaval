@@ -133,6 +133,12 @@
                     "type": "boolean",
                     "description": "Turn on FastQC to check the QC of reads with blast hits",
                     "fa_icon": "fas fa-times"
+                },
+                "subset_read_threshold": {
+                    "type": "integer",
+                    "default": 10,
+                    "description": "Read count threshold for subsetting reads before BLAST. If the number of reads assigned to a taxid is higher than this threshold, only the first reads are used. The default is 10.",
+                    "fa_icon": "filter"
                 }
             }
         },
