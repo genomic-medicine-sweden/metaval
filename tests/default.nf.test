@@ -40,7 +40,7 @@ nextflow_pipeline {
             //pathogens blast: partly unstable files, see custom assertions
 
             //pathogens consensus
-            def stable_content_pathogens_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/consensus/*'], ignoreFile: 'tests/.nftignore')
+            def stable_content_pathogens_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/consensus/**/*'], ignoreFile: 'tests/.nftignore')
 
             //pathogens mapping bowtie2 build
             def stable_content_pathogens_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/mapping/bowtie2/build/bowtie2/*'], ignoreFile: 'tests/.nftignore')
@@ -65,6 +65,8 @@ nextflow_pipeline {
             //pathogens samtools depth
             def stable_content_pathogens_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
 
+	        //consensus
+            def stable_content_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['consensus/**/*'], ignoreFile: 'tests/.nftignore')
 
             // samtools coverage
             def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
@@ -137,6 +139,9 @@ nextflow_pipeline {
                     bam_files_minimap2_align.isEmpty() ? 'No BAM files' : bam_files_minimap2_align.collect { file -> [file.getName() + " minimap2 align md5: " + bam(file.toString()).getReadsMD5()] },
                     stable_content_minimap2_align
                 ).match("minimap2_align") },
+
+                //consensus
+                { assert snapshot (stable_content_consensus).match("consensus")},
 
                 // igv
                 { assert snapshot(
