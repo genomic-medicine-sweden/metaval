@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-Filter FASTA sequences by removing those with fewer than min_bases A, T, C, or G bases.
-Ignores N and other ambiguous bases in the count.
+Filter FASTA sequences by minimum nucleotide count.
+Counts A, C, G, T and IUPAC ambiguous bases
 """
 
 import argparse
 import gzip
 from pathlib import Path
 
-def count_atcg_bases(sequence):
-    """Count only A, T, C, G bases in a sequence (case-insensitive)."""
-    return sum(1 for base in sequence.upper() if base in 'ATCG')
+def count_nucleotide_bases(sequence):
+    """Count only A, T, C, G and ambiguous bases."""
+    return sum(1 for base in sequence.upper() if base in 'ACGTRYSWKMBDHV')
 
 def open_file(filename):
     """Open a file, handling both regular and gzipped files."""
@@ -21,12 +21,12 @@ def open_file(filename):
 
 def filter_fasta(input_file, output_file, min_bases=50):
     """
-    Filter FASTA sequences based on ATCG base count.
+    Filter FASTA sequences based on nucleotide count.
 
     Args:
         input_file: Path to input FASTA file
         output_file: Path to output FASTA file
-        min_bases: Minimum number of ATCG bases required (default: 50)
+        min_bases: Minimum number of standard or ambiguous DNA bases required (default: 50)
     """
     sequences_kept = 0
     sequences_removed = 0
@@ -42,9 +42,9 @@ def filter_fasta(input_file, output_file, min_bases=50):
                 # Process previous sequence if it exists
                 if current_header is not None:
                     sequence = ''.join(current_sequence)
-                    atcg_count = count_atcg_bases(sequence)
+                    base_count = count_nucleotide_bases(sequence)
 
-                    if atcg_count >= min_bases:
+                    if base_count >= min_bases:
                         outfile.write(current_header + '\n')
                         outfile.write(sequence + '\n')
                         sequences_kept += 1
@@ -61,9 +61,9 @@ def filter_fasta(input_file, output_file, min_bases=50):
         # Process the last sequence
         if current_header is not None:
             sequence = ''.join(current_sequence)
-            atcg_count = count_atcg_bases(sequence)
+            base_count = count_nucleotide_bases(sequence)
 
-            if atcg_count >= min_bases:
+            if base_count >= min_bases:
                 outfile.write(current_header + '\n')
                 outfile.write(sequence + '\n')
                 sequences_kept += 1
@@ -75,7 +75,7 @@ def filter_fasta(input_file, output_file, min_bases=50):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Filter FASTA sequences by ATCG base count",
+        description="Filter FASTA sequences based on nucleotide count",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -88,7 +88,7 @@ Examples:
     parser.add_argument('input_file', help='Input FASTA file')
     parser.add_argument('output_file', help='Output FASTA file')
     parser.add_argument('-m', '--min-bases', type=int, default=50,
-                        help='Minimum number of ATCG bases required (default: 50)')
+                        help='Minimum number of standard or ambiguous DNA bases required (default: 50)')
 
     args = parser.parse_args()
 

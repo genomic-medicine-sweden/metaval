@@ -9,6 +9,22 @@ This document describes the output produced by the pipeline. The pipeline contai
 
 The two workflows can be enabled independently or together. Output directories are only created when the corresponding workflow, classifier, or optional analysis step is enabled. All paths below are relative to the top-level results directory.
 
+## Concatenate multilane FASTQs
+
+Before either workflow processes the reads, the pipeline concatenates FASTQ files from multiple lanes or runs of the same sample. Single-end inputs produce one merged FASTQ; paired-end inputs produce separate merged FASTQs for read 1 and read 2. Rows for the same `sample` must have identical metadata, including `instrument_platform`, `na_content`, `is_ntc`, `sample_prep`, and whether the reads are single-end or paired-end. Supplied classifier result, report, and Taxpasta file paths must also be identical across these rows.
+
+<details markdown="1">
+<summary>Output files</summary>
+
+- `analysis_ready_fastqs/`
+  - `<sample_id>_1.merged.fastq.gz`
+  - `<sample_id>_2.merged.fastq.gz`
+  - `<sample_id>.merged.fastq.gz`
+
+</details>
+
+Only samples with multiple FASTQ files per read direction produce files in `analysis_ready_fastqs/`. Samples with one input file per read direction proceed directly to the enabled workflows.
+
 ## Verify identified species
 
 This workflow is enabled with `--perform_verify_species`. It supports two ways of choosing TaxIDs:
@@ -23,9 +39,11 @@ The pipeline is built using [Nextflow](https://www.nextflow.io/) and processes d
 - [Decontamination](#decontamination) - Flag taxonomy tables against matched negative controls
 - [Extract Viral TaxIDs](#Extract-Viral-TaxIDs) - Extract all viral TaxIDs identified by classifiers.
 - [Extract Reads](#Extract-Reads) - Extract reads assigned by Kraken2, Centrifuge, or DIAMOND.
+- [Read subsetting](#Read-subsetting) - Optionally limit the extracted reads before BLAST.
 - [De novo assembly](#De-novo-assembly) - Optionally perform de novo assembly.
 - [BLAST](#Verify-species-BLAST) - Run BLASTN and/or BLASTX on extracted reads or assemblies.
 - [Mapping](#Verify-species-mapping) - Perform mapping against genomes selected from BLAST hits.
+- [Call consensus](#Verify-species-consensus-calling) - Optionally call consensus from reads mapped to genomes selected from BLAST hits.
 - [Coverage and depth](#Verify-species-coverage-and-depth) - Calculate coverage and depth of mapped reads across genomes.
 - [IGV reports](#Verify-species-IGV-Reports) - IGV Report for visualizing mapping results.
 - [Report](#Static-metaval-Report) - Generate a report summarising the results of the pipeline.
@@ -38,7 +56,7 @@ Compare classifier-specific [Taxpasta](https://github.com/taxprofiler/taxpasta) 
 <details markdown="1">
 <summary>Output files</summary>
 
-- `taxpasta_flagged/`
+- `verifyspecies/taxpasta_flagged/`
   - `<sample_id>_<na_content>_<sample_prep>_<classifier>.tsv`: Flagged taxonomy table for one sample and classifier.
 
 </details>
@@ -105,6 +123,23 @@ Retrieve the reads of viral TaxIDs predicted by classifiers or a user-defined li
 </details>
 
 Only directories for enabled classifiers are created.
+
+### Read subsetting
+
+Read subsetting is used as an alternative to de novo assembly when assembly is disabled. If the number of extracted reads for a TaxID exceeds `--subset_read_threshold`, only the first `--subset_read_threshold` reads are kept for BLAST. The default threshold is 10. Reads at or below the threshold are sent directly to BLAST and are not written to `blast/reads_subset/`.
+
+<details markdown="1">
+<summary>Output files</summary>
+
+- `verifyspecies/blast/reads_subset/`
+  - `kraken2/`
+    - `<sample_id>_taxid_<taxid>_<species>_<classifier>_subset.fa`
+  - `centrifuge/`
+    - `<sample_id>_taxid_<taxid>_<species>_<classifier>_subset.fa`
+  - `diamond/`
+    - `<sample_id>_taxid_<taxid>_<species>_<classifier>_subset.fa`
+
+</details>
 
 ### De novo assembly
 
@@ -180,6 +215,27 @@ Mapping is enabled with `--perform_mapping`. Illumina reads are aligned with `Bo
 
 </details>
 
+### Verify-species consensus calling
+
+Consensus calling is optional and requires `--perform_verify_species` and `--perform_mapping`. Mapping requires `--taxid2genome` and at least one BLAST mode (BLASTN or BLASTX).
+
+- `--perform_shortread_consensus` enables `samtools consensus` for Illumina reads and defaults to `false`.
+- `--perform_longread_consensus` enables consensus calling for Nanopore reads and defaults to `false`. Select Medaka (the default) or `samtools consensus` with `--longread_consensus_tool medaka` or `--longread_consensus_tool samtools`.
+
+Consensus filtering retains sequences with at least `--consensus_min_bases` standard DNA bases (A, C, G, T) or IUPAC ambiguity codes (R, Y, S, W, K, M, B, D, H, V), counted together (default: `50`). Counting is case-insensitive and excludes N and gaps. Sequences with exactly the minimum count are retained. No filtered FASTA file is produced if no sequences pass this threshold.
+
+<details markdown="1">
+<summary>Output files</summary>
+
+- `verifyspecies/consensus/raw`
+  - `<sample_id>_taxid_<taxid>_<species>_samtools.fasta`: Consensus from mapped Illumina or Nanopore reads using `samtools consensus`.
+  - `<sample_id>_taxid_<taxid>_<species>_medaka_sorted.fasta`: Consensus from mapped Nanopore reads using `medaka`.
+- `verifyspecies/consensus/filtered`
+  - `<sample_id>_taxid_<taxid>_<species>_samtools_filtered.fasta`: Samtools consensus sequences meeting the minimum nucleotide count described above, for Illumina or Nanopore reads.
+  - `<sample_id>_taxid_<taxid>_<species>_medaka_sorted_filtered.fasta`: Medaka consensus sequences meeting the minimum nucleotide count described above.
+
+</details>
+
 ### Verify-species coverage and depth
 
 Coverage and depth outputs are generated when `--perform_mapping` is enabled.
@@ -205,7 +261,7 @@ Interactive reports are generated with [igv-reports](https://github.com/igvteam/
 <details markdown="1">
 <summary>Output files</summary>
 
-- `igv/`
+- `verifyspecies/igv/`
   - `<sample_id>_<classifier>_taxid_<taxid>_<species>_mappingorganism_<organism>_<genome_id>_report.html`: IGV report shows the variants and coverage of reads mapped to the genomes.
 
 </details>
@@ -217,7 +273,7 @@ The verify-species workflow generates a standalone HTML report. Pathogen-screeni
 <details markdown="1">
 <summary>Output files</summary>
 
-- `verifyspecies/metaval_reports/`
+- `verifyspecies/report/`
   - `metaval_report.html`: Standalone HTML report for all samples included in the run.
 
 </details>
@@ -327,7 +383,7 @@ Consensus calling is optional:
 - `--perform_shortread_consensus` uses `samtools consensus` for Illumina reads.
 - `--perform_longread_consensus` uses Medaka or `samtools consensus`, selected with `--longread_consensus_tool`.
 
-Consensus sequences shorter than `--consensus_min_bases` are excluded.
+Consensus filtering retains sequences with at least `--consensus_min_bases` standard DNA bases (A, C, G, T) or IUPAC ambiguity codes (R, Y, S, W, K, M, B, D, H, V), counted together (default: `50`). Counting is case-insensitive and excludes N and gaps. Sequences with exactly the minimum count are retained. No filtered FASTA file is produced if no sequences pass this threshold.
 
 <details markdown="1">
 <summary>Output files</summary>

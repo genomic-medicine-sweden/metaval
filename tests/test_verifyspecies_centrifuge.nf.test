@@ -41,6 +41,9 @@ nextflow_pipeline {
             //viral taxid
             def stable_content_viral_taxids = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/viral_taxids/*'], ignoreFile: 'tests/.nftignore')
 
+	        //consensus
+            def stable_content_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/consensus/**/*'], ignoreFile: 'tests/.nftignore')
+
             // samtools coverage
             def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
 
@@ -102,6 +105,9 @@ nextflow_pipeline {
                     stable_content_minimap2_align
                 ).match("minimap2_align") },
 
+	            //consensus
+                { assert snapshot (stable_content_consensus).match("consensus")},
+
                 //igv
                 { assert snapshot(
                     getAllFilesFromDir("$outputDir/verifyspecies/igv", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
@@ -137,7 +143,6 @@ nextflow_pipeline {
 
                 //taxpasta flagged
                 { assert snapshot (stable_content_taxpasta_flagged).match("taxpasta_flagged") },
-
 
             )
         }

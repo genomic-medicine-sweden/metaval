@@ -19,7 +19,7 @@ process FILTER_CONSENSUS {
     task.ext.when == null || task.ext.when
 
     script:
-    def prefix = task.ext.prefix ?: "${meta.id}"
+    def prefix = task.ext.prefix ?: consensus.baseName
 
     """
     filter_consensus.py \\

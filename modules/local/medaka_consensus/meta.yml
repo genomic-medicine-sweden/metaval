@@ -21,12 +21,12 @@ input:
           e.g. [ id:'test', single_end:false ]
     - reads:
         type: file
-        description: Input nanopore FASTA or FASTQ files
-        pattern: "*.{fasta,fa,fastq,fastq.gz,fq,fq.gz}"
+        description: Input nanopore BAM file
+        pattern: "*.bam"
     - assembly:
         type: file
-        description: Input genome assembly
-        pattern: "*.{fasta,fa}"
+        description: Reference fasta file used as the draft assembly for Meedaka consensus
+        pattern: "*.{fasta,fa,fasta.gz,fa.gz}"
 output:
   assembly:
     - - meta:

@@ -214,7 +214,9 @@ nextflow run genomic-medicine-sweden/metaval \
     --perform_shortread_denovo \
     --perform_longread_denovo \
     --perform_mapping \
-    --taxid2genome /path/to/taxid2genome.tsv
+    --taxid2genome /path/to/taxid2genome.tsv \
+    --ticket_id 1000 \
+    --phages_taxid /path/to/phages_taxid.txt
 ```
 
 ## Run with a parameter file

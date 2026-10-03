@@ -18,162 +18,95 @@
                 "verifyspecies/blast",
                 "verifyspecies/blast/blastn",
                 "verifyspecies/blast/blastn/diamond",
-                "verifyspecies/blast/blastn/diamond/SRR13439790_taxid_2842412_Enquatrovirinae_diamond_blast_filtered.txt",
-                "verifyspecies/blast/blastn/diamond/SRR13439790_taxid_2842412_Enquatrovirinae_diamond_blast_filtered_summary.txt",
+                "verifyspecies/blast/blastn/diamond/SRR13439790_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered.txt",
+                "verifyspecies/blast/blastn/diamond/SRR13439790_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered_summary.txt",
                 "verifyspecies/blast/blastn/diamond/SRR13439799_taxid_11320_Influenza-A-virus_diamond_blast_filtered.txt",
                 "verifyspecies/blast/blastn/diamond/SRR13439799_taxid_11320_Influenza-A-virus_diamond_blast_filtered_summary.txt",
-                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_1910976_Guernseyvirinae_diamond_blast_filtered.txt",
-                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_1910976_Guernseyvirinae_diamond_blast_filtered_summary.txt",
-                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_1910993_Cornellvirus_diamond_blast_filtered.txt",
-                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_1910993_Cornellvirus_diamond_blast_filtered_summary.txt",
+                "verifyspecies/blast/blastn/diamond/SRR13439802_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered.txt",
+                "verifyspecies/blast/blastn/diamond/SRR13439802_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered_summary.txt",
+                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_1239384_Escherichia-phage-IME11_diamond_blast_filtered.txt",
+                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_1239384_Escherichia-phage-IME11_diamond_blast_filtered_summary.txt",
                 "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_1920753_Gamaleyavirus_diamond_blast_filtered.txt",
                 "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_1920753_Gamaleyavirus_diamond_blast_filtered_summary.txt",
-                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_2731619_Caudoviricetes_diamond_blast_filtered.txt",
-                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_2731619_Caudoviricetes_diamond_blast_filtered_summary.txt",
-                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_2842329_Schitoviridae_diamond_blast_filtered.txt",
-                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_2842329_Schitoviridae_diamond_blast_filtered_summary.txt",
-                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_2842412_Enquatrovirinae_diamond_blast_filtered.txt",
-                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_2842412_Enquatrovirinae_diamond_blast_filtered_summary.txt",
+                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered.txt",
+                "verifyspecies/blast/blastn/diamond/SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered_summary.txt",
+                "verifyspecies/consensus",
+                "verifyspecies/consensus/filtered",
+                "verifyspecies/consensus/filtered/SRR13439790_taxid_2886042_Shigella-virus-Moo19_samtools_filtered.fasta",
+                "verifyspecies/consensus/filtered/SRR13439799_taxid_11320_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_medaka_sorted_filtered.fasta",
+                "verifyspecies/consensus/filtered/SRR13439802_taxid_2886042_Shigella-virus-Moo19_samtools_filtered.fasta",
+                "verifyspecies/consensus/filtered/SRR13439813_taxid_2886042_Shigella-virus-Moo19_samtools_filtered.fasta",
+                "verifyspecies/consensus/raw",
+                "verifyspecies/consensus/raw/SRR13439790_taxid_2886042_Shigella-virus-Moo19_samtools.fasta",
+                "verifyspecies/consensus/raw/SRR13439799_taxid_11320_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_medaka_sorted.fasta",
+                "verifyspecies/consensus/raw/SRR13439802_taxid_2886042_Shigella-virus-Moo19_samtools.fasta",
+                "verifyspecies/consensus/raw/SRR13439813_taxid_2886042_Shigella-virus-Moo19_samtools.fasta",
                 "verifyspecies/extracted_reads",
                 "verifyspecies/extracted_reads/diamond",
                 "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_10804_adeno-associated-virus-2.extracted_diamond_read_1.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_10804_adeno-associated-virus-2.extracted_diamond_read_2.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_11320_Influenza-A-virus.extracted_diamond_read_1.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_11320_Influenza-A-virus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_1910976_Guernseyvirinae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_1910976_Guernseyvirinae.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_1910993_Cornellvirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_1910993_Cornellvirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_1911928_Vequintavirinae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_1911928_Vequintavirinae.extracted_diamond_read_2.fa",
+                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_1239384_Escherichia-phage-IME11.extracted_diamond_read_1.fa",
+                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_1239384_Escherichia-phage-IME11.extracted_diamond_read_2.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_diamond_read_1.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_2842329_Schitoviridae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_2842329_Schitoviridae.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_2842412_Enquatrovirinae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_2842412_Enquatrovirinae.extracted_diamond_read_2.fa",
+                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_1.fa",
+                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_2.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439799_taxid_11320_Influenza-A-virus.extracted_diamond_reads.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439802_taxid_11646_Lentivirus.extracted_diamond_read_1.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439802_taxid_11646_Lentivirus.extracted_diamond_read_2.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.extracted_diamond_read_1.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439802_taxid_1910993_Cornellvirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439802_taxid_1910993_Cornellvirus.extracted_diamond_read_2.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439802_taxid_2731643_Autographiviridae.extracted_diamond_read_1.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439802_taxid_2731643_Autographiviridae.extracted_diamond_read_2.fa",
+                "verifyspecies/extracted_reads/diamond/SRR13439802_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_1.fa",
+                "verifyspecies/extracted_reads/diamond/SRR13439802_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_2.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_10404_Hepadnaviridae.extracted_diamond_read_1.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_10404_Hepadnaviridae.extracted_diamond_read_2.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_10405_Orthohepadnavirus.extracted_diamond_read_1.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_10405_Orthohepadnavirus.extracted_diamond_read_2.fa",
+                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_diamond_read_1.fa",
+                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_diamond_read_2.fa",
+                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_diamond_read_1.fa",
+                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_diamond_read_2.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_153135_Gammaretrovirus.extracted_diamond_read_1.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_153135_Gammaretrovirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1623283_Chivirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1623283_Chivirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1910976_Guernseyvirinae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1910976_Guernseyvirinae.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1910992_Kagunavirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1910992_Kagunavirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1910993_Cornellvirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1910993_Cornellvirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1911928_Vequintavirinae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1911928_Vequintavirinae.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1914850_Certrevirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1914850_Certrevirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1918725_Jilinvirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1918725_Jilinvirus.extracted_diamond_read_2.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1920753_Gamaleyavirus.extracted_diamond_read_1.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1920753_Gamaleyavirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1980922_Chiangmaivirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1980922_Chiangmaivirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1982099_Amigovirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_1982099_Amigovirus.extracted_diamond_read_2.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.extracted_diamond_read_1.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2175004_unclassified-Guernseyvirinae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2175004_unclassified-Guernseyvirinae.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2304001_unclassified-Cornellvirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2304001_unclassified-Cornellvirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2731619_Caudoviricetes.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2731619_Caudoviricetes.extracted_diamond_read_2.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2731643_Autographiviridae.extracted_diamond_read_1.fa",
                 "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2731643_Autographiviridae.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2731646_Colwellvirinae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2731646_Colwellvirinae.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2731653_Studiervirinae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2731653_Studiervirinae.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2731932_Bonnellvirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2731932_Bonnellvirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2731941_Gajwadongvirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2731941_Gajwadongvirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2732686_Kayfunavirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2732686_Kayfunavirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2733122_Petsuvirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2733122_Petsuvirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2842329_Schitoviridae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2842329_Schitoviridae.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2842412_Enquatrovirinae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2842412_Enquatrovirinae.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2842727_Henunavirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2842727_Henunavirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2842972_Pokkenvirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2842972_Pokkenvirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2842979_Pseudotevenvirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2842979_Pseudotevenvirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2842993_Pylasvirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2842993_Pylasvirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2852703_unclassified-Pokkenvirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2852703_unclassified-Pokkenvirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2853013_unclassified-Schitoviridae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2853013_unclassified-Schitoviridae.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2943001_Casjensviridae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2943001_Casjensviridae.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2943016_Salvovirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2943016_Salvovirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2946170_Straboviridae.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2946170_Straboviridae.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2946820_Beograduvirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2946820_Beograduvirus.extracted_diamond_read_2.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2948694_Elemovirus.extracted_diamond_read_1.fa",
-                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2948694_Elemovirus.extracted_diamond_read_2.fa",
+                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_1.fa",
+                "verifyspecies/extracted_reads/diamond/SRR13439813_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_2.fa",
                 "verifyspecies/fastqc",
-                "verifyspecies/fastqc/SRR13439790_taxid_2842412_Enquatrovirinae_diamond_1_fastqc.html",
-                "verifyspecies/fastqc/SRR13439790_taxid_2842412_Enquatrovirinae_diamond_2_fastqc.html",
+                "verifyspecies/fastqc/SRR13439790_taxid_2886042_Shigella-virus-Moo19_diamond_1_fastqc.html",
+                "verifyspecies/fastqc/SRR13439790_taxid_2886042_Shigella-virus-Moo19_diamond_2_fastqc.html",
                 "verifyspecies/fastqc/SRR13439799_taxid_11320_Influenza-A-virus_diamond_fastqc.html",
-                "verifyspecies/fastqc/SRR13439813_taxid_1910976_Guernseyvirinae_diamond_1_fastqc.html",
-                "verifyspecies/fastqc/SRR13439813_taxid_1910976_Guernseyvirinae_diamond_2_fastqc.html",
-                "verifyspecies/fastqc/SRR13439813_taxid_1910993_Cornellvirus_diamond_1_fastqc.html",
-                "verifyspecies/fastqc/SRR13439813_taxid_1910993_Cornellvirus_diamond_2_fastqc.html",
+                "verifyspecies/fastqc/SRR13439802_taxid_2886042_Shigella-virus-Moo19_diamond_1_fastqc.html",
+                "verifyspecies/fastqc/SRR13439802_taxid_2886042_Shigella-virus-Moo19_diamond_2_fastqc.html",
+                "verifyspecies/fastqc/SRR13439813_taxid_1239384_Escherichia-phage-IME11_diamond_1_fastqc.html",
+                "verifyspecies/fastqc/SRR13439813_taxid_1239384_Escherichia-phage-IME11_diamond_2_fastqc.html",
                 "verifyspecies/fastqc/SRR13439813_taxid_1920753_Gamaleyavirus_diamond_1_fastqc.html",
                 "verifyspecies/fastqc/SRR13439813_taxid_1920753_Gamaleyavirus_diamond_2_fastqc.html",
-                "verifyspecies/fastqc/SRR13439813_taxid_2731619_Caudoviricetes_diamond_1_fastqc.html",
-                "verifyspecies/fastqc/SRR13439813_taxid_2731619_Caudoviricetes_diamond_2_fastqc.html",
-                "verifyspecies/fastqc/SRR13439813_taxid_2842329_Schitoviridae_diamond_1_fastqc.html",
-                "verifyspecies/fastqc/SRR13439813_taxid_2842329_Schitoviridae_diamond_2_fastqc.html",
-                "verifyspecies/fastqc/SRR13439813_taxid_2842412_Enquatrovirinae_diamond_1_fastqc.html",
-                "verifyspecies/fastqc/SRR13439813_taxid_2842412_Enquatrovirinae_diamond_2_fastqc.html",
+                "verifyspecies/fastqc/SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond_1_fastqc.html",
+                "verifyspecies/fastqc/SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond_2_fastqc.html",
                 "verifyspecies/igv",
-                "verifyspecies/igv/SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
+                "verifyspecies/igv/SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
                 "verifyspecies/igv/SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html",
-                "verifyspecies/igv/SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
-                "verifyspecies/igv/SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
+                "verifyspecies/igv/SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
+                "verifyspecies/igv/SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
                 "verifyspecies/mapping",
                 "verifyspecies/mapping/bowtie2",
                 "verifyspecies/mapping/bowtie2/align",
-                "verifyspecies/mapping/bowtie2/align/SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
-                "verifyspecies/mapping/bowtie2/align/SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
-                "verifyspecies/mapping/bowtie2/align/SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
-                "verifyspecies/mapping/bowtie2/align/SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
-                "verifyspecies/mapping/bowtie2/align/SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
-                "verifyspecies/mapping/bowtie2/align/SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
+                "verifyspecies/mapping/bowtie2/align/SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
+                "verifyspecies/mapping/bowtie2/align/SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
+                "verifyspecies/mapping/bowtie2/align/SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
+                "verifyspecies/mapping/bowtie2/align/SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
+                "verifyspecies/mapping/bowtie2/align/SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
+                "verifyspecies/mapping/bowtie2/align/SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
                 "verifyspecies/mapping/bowtie2/build",
-                "verifyspecies/mapping/bowtie2/build/mappingorganism_Salmonella-phage-TS6",
-                "verifyspecies/mapping/bowtie2/build/mappingorganism_Salmonella-phage-TS6/bowtie2",
-                "verifyspecies/mapping/bowtie2/build/mappingorganism_Salmonella-phage-TS6/bowtie2/GCA_014190335.1_ASM1419033v1_genomic.fna.1.bt2",
-                "verifyspecies/mapping/bowtie2/build/mappingorganism_Salmonella-phage-TS6/bowtie2/GCA_014190335.1_ASM1419033v1_genomic.fna.2.bt2",
-                "verifyspecies/mapping/bowtie2/build/mappingorganism_Salmonella-phage-TS6/bowtie2/GCA_014190335.1_ASM1419033v1_genomic.fna.3.bt2",
-                "verifyspecies/mapping/bowtie2/build/mappingorganism_Salmonella-phage-TS6/bowtie2/GCA_014190335.1_ASM1419033v1_genomic.fna.4.bt2",
-                "verifyspecies/mapping/bowtie2/build/mappingorganism_Salmonella-phage-TS6/bowtie2/GCA_014190335.1_ASM1419033v1_genomic.fna.rev.1.bt2",
-                "verifyspecies/mapping/bowtie2/build/mappingorganism_Salmonella-phage-TS6/bowtie2/GCA_014190335.1_ASM1419033v1_genomic.fna.rev.2.bt2",
                 "verifyspecies/mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19",
                 "verifyspecies/mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2",
                 "verifyspecies/mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.1.bt2",
@@ -193,20 +126,20 @@
                 "verifyspecies/report/metaval_report.html",
                 "verifyspecies/samtools",
                 "verifyspecies/samtools/coverage",
-                "verifyspecies/samtools/coverage/SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
+                "verifyspecies/samtools/coverage/SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
                 "verifyspecies/samtools/coverage/SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.txt",
-                "verifyspecies/samtools/coverage/SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
-                "verifyspecies/samtools/coverage/SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
+                "verifyspecies/samtools/coverage/SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
+                "verifyspecies/samtools/coverage/SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
                 "verifyspecies/samtools/coverage_plot",
-                "verifyspecies/samtools/coverage_plot/SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
+                "verifyspecies/samtools/coverage_plot/SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
                 "verifyspecies/samtools/coverage_plot/SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.png",
-                "verifyspecies/samtools/coverage_plot/SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
-                "verifyspecies/samtools/coverage_plot/SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
+                "verifyspecies/samtools/coverage_plot/SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
+                "verifyspecies/samtools/coverage_plot/SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
                 "verifyspecies/samtools/depth",
-                "verifyspecies/samtools/depth/SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
+                "verifyspecies/samtools/depth/SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
                 "verifyspecies/samtools/depth/SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.tsv",
-                "verifyspecies/samtools/depth/SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
-                "verifyspecies/samtools/depth/SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
+                "verifyspecies/samtools/depth/SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
+                "verifyspecies/samtools/depth/SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
                 "verifyspecies/spades",
                 "verifyspecies/spades/diamond",
                 "verifyspecies/spades/diamond/SRR13439802_taxid_11646_Lentivirus_diamond.contigs.fa",
@@ -224,65 +157,21 @@
                 "verifyspecies/spades/diamond/SRR13439813_taxid_10405_Orthohepadnavirus_diamond.scaffolds.fa",
                 "verifyspecies/spades/diamond/SRR13439813_taxid_10405_Orthohepadnavirus_diamond.spades.log",
                 "verifyspecies/spades/diamond/SRR13439813_taxid_10405_Orthohepadnavirus_diamond.warnings.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1623283_Chivirus_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1623283_Chivirus_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1623283_Chivirus_diamond.spades.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1623283_Chivirus_diamond.warnings.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1910976_Guernseyvirinae_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1910976_Guernseyvirinae_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1910976_Guernseyvirinae_diamond.spades.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1910992_Kagunavirus_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1910992_Kagunavirus_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1910992_Kagunavirus_diamond.spades.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1910992_Kagunavirus_diamond.warnings.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1910993_Cornellvirus_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1910993_Cornellvirus_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1910993_Cornellvirus_diamond.spades.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1910993_Cornellvirus_diamond.warnings.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1911928_Vequintavirinae_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1911928_Vequintavirinae_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1911928_Vequintavirinae_diamond.spades.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1914850_Certrevirus_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1914850_Certrevirus_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1914850_Certrevirus_diamond.spades.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1914850_Certrevirus_diamond.warnings.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1982099_Amigovirus_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1982099_Amigovirus_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_1982099_Amigovirus_diamond.spades.log",
+                "verifyspecies/spades/diamond/SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_diamond.contigs.fa",
+                "verifyspecies/spades/diamond/SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_diamond.scaffolds.fa",
+                "verifyspecies/spades/diamond/SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_diamond.spades.log",
+                "verifyspecies/spades/diamond/SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_diamond.warnings.log",
                 "verifyspecies/spades/diamond/SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus_diamond.contigs.fa",
                 "verifyspecies/spades/diamond/SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus_diamond.scaffolds.fa",
                 "verifyspecies/spades/diamond/SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus_diamond.spades.log",
                 "verifyspecies/spades/diamond/SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus_diamond.warnings.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2175004_unclassified-Guernseyvirinae_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2175004_unclassified-Guernseyvirinae_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2175004_unclassified-Guernseyvirinae_diamond.spades.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2731619_Caudoviricetes_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2731619_Caudoviricetes_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2731619_Caudoviricetes_diamond.spades.log",
                 "verifyspecies/spades/diamond/SRR13439813_taxid_2731643_Autographiviridae_diamond.contigs.fa",
                 "verifyspecies/spades/diamond/SRR13439813_taxid_2731643_Autographiviridae_diamond.scaffolds.fa",
                 "verifyspecies/spades/diamond/SRR13439813_taxid_2731643_Autographiviridae_diamond.spades.log",
                 "verifyspecies/spades/diamond/SRR13439813_taxid_2731643_Autographiviridae_diamond.warnings.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2731941_Gajwadongvirus_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2731941_Gajwadongvirus_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2731941_Gajwadongvirus_diamond.spades.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2731941_Gajwadongvirus_diamond.warnings.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2842329_Schitoviridae_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2842329_Schitoviridae_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2842329_Schitoviridae_diamond.spades.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2842329_Schitoviridae_diamond.warnings.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2842412_Enquatrovirinae_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2842412_Enquatrovirinae_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2842412_Enquatrovirinae_diamond.spades.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2842412_Enquatrovirinae_diamond.warnings.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2842972_Pokkenvirus_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2842972_Pokkenvirus_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2842972_Pokkenvirus_diamond.spades.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2842972_Pokkenvirus_diamond.warnings.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2943001_Casjensviridae_diamond.contigs.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2943001_Casjensviridae_diamond.scaffolds.fa",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2943001_Casjensviridae_diamond.spades.log",
-                "verifyspecies/spades/diamond/SRR13439813_taxid_2943001_Casjensviridae_diamond.warnings.log",
+                "verifyspecies/spades/diamond/SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond.contigs.fa",
+                "verifyspecies/spades/diamond/SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond.scaffolds.fa",
+                "verifyspecies/spades/diamond/SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond.spades.log",
                 "verifyspecies/taxpasta_flagged",
                 "verifyspecies/taxpasta_flagged/SRR13439790_DNA_ELB_diamond.tsv",
                 "verifyspecies/taxpasta_flagged/SRR13439799_MIX_NORMAL_diamond.tsv",
@@ -295,7 +184,7 @@
                 "verifyspecies/viral_taxids/SRR13439813_diamond_viral_taxids.tsv"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:52.48535",
+        "timestamp": "2026-10-03T10:06:11.298978",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -304,13 +193,13 @@
     "viral_taxids": {
         "content": [
             [
-                "SRR13439790_diamond_viral_taxids.tsv:md5,3b664307fbb0f692a57aedb95fa549f0",
+                "SRR13439790_diamond_viral_taxids.tsv:md5,0ef0fccffa306f5ba737023e76203064",
                 "SRR13439799_diamond_viral_taxids.tsv:md5,f0050886ae85585d42bdba12a480f335",
-                "SRR13439802_diamond_viral_taxids.tsv:md5,67df768754c01b011faa38a1a662578e",
-                "SRR13439813_diamond_viral_taxids.tsv:md5,377980666fb78d698ef07c51ac149b41"
+                "SRR13439802_diamond_viral_taxids.tsv:md5,4ff87012bae8f142f2acc99ecfd01efb",
+                "SRR13439813_diamond_viral_taxids.tsv:md5,99c315cbd450d9f5985ce95adf418aa8"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:53.432869",
+        "timestamp": "2026-10-03T10:06:12.123985",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -334,68 +223,24 @@
                 "SRR13439813_taxid_10405_Orthohepadnavirus_diamond.scaffolds.fa exists: true",
                 "SRR13439813_taxid_10405_Orthohepadnavirus_diamond.spades.log exists: true",
                 "SRR13439813_taxid_10405_Orthohepadnavirus_diamond.warnings.log exists: true",
-                "SRR13439813_taxid_1623283_Chivirus_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_1623283_Chivirus_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_1623283_Chivirus_diamond.spades.log exists: true",
-                "SRR13439813_taxid_1623283_Chivirus_diamond.warnings.log exists: true",
-                "SRR13439813_taxid_1910976_Guernseyvirinae_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_1910976_Guernseyvirinae_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_1910976_Guernseyvirinae_diamond.spades.log exists: true",
-                "SRR13439813_taxid_1910992_Kagunavirus_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_1910992_Kagunavirus_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_1910992_Kagunavirus_diamond.spades.log exists: true",
-                "SRR13439813_taxid_1910992_Kagunavirus_diamond.warnings.log exists: true",
-                "SRR13439813_taxid_1910993_Cornellvirus_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_1910993_Cornellvirus_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_1910993_Cornellvirus_diamond.spades.log exists: true",
-                "SRR13439813_taxid_1910993_Cornellvirus_diamond.warnings.log exists: true",
-                "SRR13439813_taxid_1911928_Vequintavirinae_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_1911928_Vequintavirinae_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_1911928_Vequintavirinae_diamond.spades.log exists: true",
-                "SRR13439813_taxid_1914850_Certrevirus_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_1914850_Certrevirus_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_1914850_Certrevirus_diamond.spades.log exists: true",
-                "SRR13439813_taxid_1914850_Certrevirus_diamond.warnings.log exists: true",
-                "SRR13439813_taxid_1982099_Amigovirus_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_1982099_Amigovirus_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_1982099_Amigovirus_diamond.spades.log exists: true",
+                "SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_diamond.contigs.fa exists: true",
+                "SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_diamond.scaffolds.fa exists: true",
+                "SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_diamond.spades.log exists: true",
+                "SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_diamond.warnings.log exists: true",
                 "SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus_diamond.contigs.fa exists: true",
                 "SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus_diamond.scaffolds.fa exists: true",
                 "SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus_diamond.spades.log exists: true",
                 "SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus_diamond.warnings.log exists: true",
-                "SRR13439813_taxid_2175004_unclassified-Guernseyvirinae_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_2175004_unclassified-Guernseyvirinae_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_2175004_unclassified-Guernseyvirinae_diamond.spades.log exists: true",
-                "SRR13439813_taxid_2731619_Caudoviricetes_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_2731619_Caudoviricetes_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_2731619_Caudoviricetes_diamond.spades.log exists: true",
                 "SRR13439813_taxid_2731643_Autographiviridae_diamond.contigs.fa exists: true",
                 "SRR13439813_taxid_2731643_Autographiviridae_diamond.scaffolds.fa exists: true",
                 "SRR13439813_taxid_2731643_Autographiviridae_diamond.spades.log exists: true",
                 "SRR13439813_taxid_2731643_Autographiviridae_diamond.warnings.log exists: true",
-                "SRR13439813_taxid_2731941_Gajwadongvirus_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_2731941_Gajwadongvirus_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_2731941_Gajwadongvirus_diamond.spades.log exists: true",
-                "SRR13439813_taxid_2731941_Gajwadongvirus_diamond.warnings.log exists: true",
-                "SRR13439813_taxid_2842329_Schitoviridae_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_2842329_Schitoviridae_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_2842329_Schitoviridae_diamond.spades.log exists: true",
-                "SRR13439813_taxid_2842329_Schitoviridae_diamond.warnings.log exists: true",
-                "SRR13439813_taxid_2842412_Enquatrovirinae_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_2842412_Enquatrovirinae_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_2842412_Enquatrovirinae_diamond.spades.log exists: true",
-                "SRR13439813_taxid_2842412_Enquatrovirinae_diamond.warnings.log exists: true",
-                "SRR13439813_taxid_2842972_Pokkenvirus_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_2842972_Pokkenvirus_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_2842972_Pokkenvirus_diamond.spades.log exists: true",
-                "SRR13439813_taxid_2842972_Pokkenvirus_diamond.warnings.log exists: true",
-                "SRR13439813_taxid_2943001_Casjensviridae_diamond.contigs.fa exists: true",
-                "SRR13439813_taxid_2943001_Casjensviridae_diamond.scaffolds.fa exists: true",
-                "SRR13439813_taxid_2943001_Casjensviridae_diamond.spades.log exists: true",
-                "SRR13439813_taxid_2943001_Casjensviridae_diamond.warnings.log exists: true"
+                "SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond.contigs.fa exists: true",
+                "SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond.scaffolds.fa exists: true",
+                "SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond.spades.log exists: true"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:53.325983",
+        "timestamp": "2026-10-03T10:06:12.061606",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -404,12 +249,6 @@
     "bowtie2_build": {
         "content": [
             [
-                "GCA_014190335.1_ASM1419033v1_genomic.fna.1.bt2:md5,b89a984df1126118efa2e6ba7477a1ea",
-                "GCA_014190335.1_ASM1419033v1_genomic.fna.2.bt2:md5,42dbc0d86939b8160448a947410892de",
-                "GCA_014190335.1_ASM1419033v1_genomic.fna.3.bt2:md5,0ea41ed1a41ed9d33ed56cb11566bb6b",
-                "GCA_014190335.1_ASM1419033v1_genomic.fna.4.bt2:md5,4662b9a01cfd18f989e20a9f44fc7880",
-                "GCA_014190335.1_ASM1419033v1_genomic.fna.rev.1.bt2:md5,4ca6adfbb1e7c689a7ac2bdf37bec91d",
-                "GCA_014190335.1_ASM1419033v1_genomic.fna.rev.2.bt2:md5,fc3d31267d17297daffc768970cb2e09",
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.1.bt2:md5,0e76f788025861f84ef1807821b033c6",
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.2.bt2:md5,79b601ffeca6be83298d1d0839ed9aa2",
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.3.bt2:md5,2c099fb5dfd1e583635912ab8ab30bd0",
@@ -418,7 +257,7 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:52.840439",
+        "timestamp": "2026-10-03T10:06:11.721623",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -427,13 +266,13 @@
     "samtools_depth": {
         "content": [
             [
-                "SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,01ae489678c9dcffb34686dc643fb87f",
+                "SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,b5c4e6b73ae9982415a7931617054aaa",
                 "SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.tsv:md5,8c065b6dfeb19020477cbda089ac3eb8",
-                "SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,cb74a2d462f6c342706da681b7ab7fad",
-                "SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,b3b10dd2b9ddaa995c78cb33de64f3af"
+                "SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,6f81af6ba322d4dfd08f979a3a9eb157",
+                "SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,2e97515721c4072b7032ff14196e42a9"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:54.102545",
+        "timestamp": "2026-10-03T10:06:12.50769",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -442,25 +281,21 @@
     "blastn": {
         "content": [
             [
-                "SRR13439790_taxid_2842412_Enquatrovirinae_diamond_blast_filtered.txt(diamond) contains string:true",
-                "SRR13439790_taxid_2842412_Enquatrovirinae_diamond_blast_filtered_summary.txt(diamond) contains string:true",
+                "SRR13439790_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered.txt(diamond) contains string:true",
+                "SRR13439790_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered_summary.txt(diamond) contains string:true",
                 "SRR13439799_taxid_11320_Influenza-A-virus_diamond_blast_filtered.txt(diamond) contains string:true",
                 "SRR13439799_taxid_11320_Influenza-A-virus_diamond_blast_filtered_summary.txt(diamond) contains string:true",
-                "SRR13439813_taxid_1910976_Guernseyvirinae_diamond_blast_filtered.txt(diamond) exists:true",
-                "SRR13439813_taxid_1910976_Guernseyvirinae_diamond_blast_filtered_summary.txt(diamond) exists:true",
-                "SRR13439813_taxid_1910993_Cornellvirus_diamond_blast_filtered.txt(diamond) exists:true",
-                "SRR13439813_taxid_1910993_Cornellvirus_diamond_blast_filtered_summary.txt(diamond) exists:true",
+                "SRR13439802_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered.txt(diamond) contains string:true",
+                "SRR13439802_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered_summary.txt(diamond) contains string:true",
+                "SRR13439813_taxid_1239384_Escherichia-phage-IME11_diamond_blast_filtered.txt(diamond) contains string:true",
+                "SRR13439813_taxid_1239384_Escherichia-phage-IME11_diamond_blast_filtered_summary.txt(diamond) contains string:true",
                 "SRR13439813_taxid_1920753_Gamaleyavirus_diamond_blast_filtered.txt(diamond) contains string:true",
                 "SRR13439813_taxid_1920753_Gamaleyavirus_diamond_blast_filtered_summary.txt(diamond) contains string:true",
-                "SRR13439813_taxid_2731619_Caudoviricetes_diamond_blast_filtered.txt(diamond) exists:true",
-                "SRR13439813_taxid_2731619_Caudoviricetes_diamond_blast_filtered_summary.txt(diamond) exists:true",
-                "SRR13439813_taxid_2842329_Schitoviridae_diamond_blast_filtered.txt(diamond) contains string:true",
-                "SRR13439813_taxid_2842329_Schitoviridae_diamond_blast_filtered_summary.txt(diamond) contains string:true",
-                "SRR13439813_taxid_2842412_Enquatrovirinae_diamond_blast_filtered.txt(diamond) contains string:true",
-                "SRR13439813_taxid_2842412_Enquatrovirinae_diamond_blast_filtered_summary.txt(diamond) contains string:true"
+                "SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered.txt(diamond) contains string:true",
+                "SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered_summary.txt(diamond) contains string:true"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:52.542615",
+        "timestamp": "2026-10-03T10:06:11.374744",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -478,7 +313,26 @@
                 "SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,e36afccb6d31ab7260ab9ab9c65a919a"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:53.101347",
+        "timestamp": "2026-10-03T10:06:11.868437",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "consensus": {
+        "content": [
+            [
+                "SRR13439790_taxid_2886042_Shigella-virus-Moo19_samtools_filtered.fasta:md5,9629fe71d9998035289f282b00c55967",
+                "SRR13439799_taxid_11320_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_medaka_sorted_filtered.fasta:md5,ab806e9989e5035612b03c4de0e01366",
+                "SRR13439802_taxid_2886042_Shigella-virus-Moo19_samtools_filtered.fasta:md5,3d124ec6dd9baa5a0af30d7628e0a5cf",
+                "SRR13439813_taxid_2886042_Shigella-virus-Moo19_samtools_filtered.fasta:md5,ec3a59bb479bd170b6138ae41a457080",
+                "SRR13439790_taxid_2886042_Shigella-virus-Moo19_samtools.fasta:md5,f4293eb4a0b5f80a4893ba43ebfbedc2",
+                "SRR13439799_taxid_11320_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_medaka_sorted.fasta:md5,e3d0fcd79553e14ec99b7781fb02fbbb",
+                "SRR13439802_taxid_2886042_Shigella-virus-Moo19_samtools.fasta:md5,4cd2e53eb663e2967160ee75bed06433",
+                "SRR13439813_taxid_2886042_Shigella-virus-Moo19_samtools.fasta:md5,adf764d8504ddd27de0f9635d140d57e"
+            ]
+        ],
+        "timestamp": "2026-10-03T10:06:11.928265",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -491,104 +345,42 @@
                 "SRR13439790_taxid_10804_adeno-associated-virus-2.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
                 "SRR13439790_taxid_11320_Influenza-A-virus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
                 "SRR13439790_taxid_11320_Influenza-A-virus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439790_taxid_1910976_Guernseyvirinae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439790_taxid_1910976_Guernseyvirinae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439790_taxid_1910993_Cornellvirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439790_taxid_1910993_Cornellvirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439790_taxid_1911928_Vequintavirinae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439790_taxid_1911928_Vequintavirinae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
+                "SRR13439790_taxid_1239384_Escherichia-phage-IME11.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
+                "SRR13439790_taxid_1239384_Escherichia-phage-IME11.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
                 "SRR13439790_taxid_1920753_Gamaleyavirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
                 "SRR13439790_taxid_1920753_Gamaleyavirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439790_taxid_2842329_Schitoviridae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439790_taxid_2842329_Schitoviridae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439790_taxid_2842412_Enquatrovirinae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439790_taxid_2842412_Enquatrovirinae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
+                "SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
+                "SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
                 "SRR13439799_taxid_11320_Influenza-A-virus.extracted_diamond_reads.fa(extracted reads diamond) contains string:true",
                 "SRR13439802_taxid_11646_Lentivirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
                 "SRR13439802_taxid_11646_Lentivirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
                 "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
                 "SRR13439802_taxid_11676_Human-immunodeficiency-virus-1.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439802_taxid_1910993_Cornellvirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439802_taxid_1910993_Cornellvirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
                 "SRR13439802_taxid_2731643_Autographiviridae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
                 "SRR13439802_taxid_2731643_Autographiviridae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
+                "SRR13439802_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
+                "SRR13439802_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
                 "SRR13439813_taxid_10404_Hepadnaviridae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
                 "SRR13439813_taxid_10404_Hepadnaviridae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
                 "SRR13439813_taxid_10405_Orthohepadnavirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
                 "SRR13439813_taxid_10405_Orthohepadnavirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
+                "SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
+                "SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
+                "SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
+                "SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
                 "SRR13439813_taxid_153135_Gammaretrovirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
                 "SRR13439813_taxid_153135_Gammaretrovirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1623283_Chivirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1623283_Chivirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1910976_Guernseyvirinae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1910976_Guernseyvirinae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1910992_Kagunavirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1910992_Kagunavirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1910993_Cornellvirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1910993_Cornellvirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1911928_Vequintavirinae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1911928_Vequintavirinae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1914850_Certrevirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1914850_Certrevirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1918725_Jilinvirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1918725_Jilinvirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
                 "SRR13439813_taxid_1920753_Gamaleyavirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
                 "SRR13439813_taxid_1920753_Gamaleyavirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1980922_Chiangmaivirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1980922_Chiangmaivirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1982099_Amigovirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_1982099_Amigovirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
                 "SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
                 "SRR13439813_taxid_2163996_Capuchin-monkey-hepatitis-B-virus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2175004_unclassified-Guernseyvirinae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2175004_unclassified-Guernseyvirinae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2304001_unclassified-Cornellvirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2304001_unclassified-Cornellvirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2731619_Caudoviricetes.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2731619_Caudoviricetes.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
                 "SRR13439813_taxid_2731643_Autographiviridae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
                 "SRR13439813_taxid_2731643_Autographiviridae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2731646_Colwellvirinae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2731646_Colwellvirinae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2731653_Studiervirinae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2731653_Studiervirinae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2731932_Bonnellvirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2731932_Bonnellvirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2731941_Gajwadongvirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2731941_Gajwadongvirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2732686_Kayfunavirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2732686_Kayfunavirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2733122_Petsuvirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2733122_Petsuvirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2842329_Schitoviridae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2842329_Schitoviridae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2842412_Enquatrovirinae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2842412_Enquatrovirinae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2842727_Henunavirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2842727_Henunavirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2842972_Pokkenvirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2842972_Pokkenvirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2842979_Pseudotevenvirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2842979_Pseudotevenvirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2842993_Pylasvirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2842993_Pylasvirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2852703_unclassified-Pokkenvirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2852703_unclassified-Pokkenvirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2853013_unclassified-Schitoviridae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2853013_unclassified-Schitoviridae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2943001_Casjensviridae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2943001_Casjensviridae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2943016_Salvovirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2943016_Salvovirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2946170_Straboviridae.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2946170_Straboviridae.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2946820_Beograduvirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2946820_Beograduvirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2948694_Elemovirus.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
-                "SRR13439813_taxid_2948694_Elemovirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true"
+                "SRR13439813_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_1.fa(extracted reads diamond) contains string:true",
+                "SRR13439813_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:52.776993",
+        "timestamp": "2026-10-03T10:06:11.659996",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -600,7 +392,7 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:52.977777",
+        "timestamp": "2026-10-03T10:06:11.793222",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -609,13 +401,13 @@
     "samtools_coverage_plot": {
         "content": [
             [
-                "SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
                 "SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.png exists: true",
-                "SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
-                "SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true"
+                "SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:53.98815",
+        "timestamp": "2026-10-03T10:06:12.441995",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -652,12 +444,22 @@
                     "pandas": "2.2.1",
                     "python": "3.12.3"
                 },
+                "FILTER_CONSENSUS_LONGREAD": {
+                    "python": "3.13.2"
+                },
+                "FILTER_CONSENSUS_SHORTREAD": {
+                    "python": "3.13.2"
+                },
                 "FLAG_TAXPASTA": {
                     "pandas": "2.2.1",
                     "python": "3.12.3"
                 },
                 "IGVREPORTS": {
                     "igvreports": "0.1.0"
+                },
+                "MEDAKA": {
+                    "medaka": "2.0.1",
+                    "seqkit": "2.9.0"
                 },
                 "METAVAL_REPORT": {
                     "jinja2": "3.1.6",
@@ -677,6 +479,9 @@
                 },
                 "PIGZ_UNCOMPRESS_SPADES_SCAFFOLD": {
                     "pigz": 2.8
+                },
+                "SAMTOOLS_CONSENSUS_SHORTREAD": {
+                    "samtools": 1.24
                 },
                 "SAMTOOLS_COVERAGE": {
                     "samtools": "1.23.1"
@@ -705,9 +510,6 @@
                 "SEQKIT_FQ2FA": {
                     "seqkit": "2.13.0"
                 },
-                "SEQKIT_FQ2FA_READS": {
-                    "seqkit": "2.13.0"
-                },
                 "SPADES": {
                     "spades": "4.1.0"
                 },
@@ -719,7 +521,7 @@
                 }
             }
         ],
-        "timestamp": "2026-09-30T19:14:52.461774",
+        "timestamp": "2026-10-03T10:06:11.278273",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -728,24 +530,20 @@
     "fastqc": {
         "content": [
             [
-                "SRR13439790_taxid_2842412_Enquatrovirinae_diamond_1_fastqc.html exists: true",
-                "SRR13439790_taxid_2842412_Enquatrovirinae_diamond_2_fastqc.html exists: true",
+                "SRR13439790_taxid_2886042_Shigella-virus-Moo19_diamond_1_fastqc.html exists: true",
+                "SRR13439790_taxid_2886042_Shigella-virus-Moo19_diamond_2_fastqc.html exists: true",
                 "SRR13439799_taxid_11320_Influenza-A-virus_diamond_fastqc.html exists: true",
-                "SRR13439813_taxid_1910976_Guernseyvirinae_diamond_1_fastqc.html exists: true",
-                "SRR13439813_taxid_1910976_Guernseyvirinae_diamond_2_fastqc.html exists: true",
-                "SRR13439813_taxid_1910993_Cornellvirus_diamond_1_fastqc.html exists: true",
-                "SRR13439813_taxid_1910993_Cornellvirus_diamond_2_fastqc.html exists: true",
+                "SRR13439802_taxid_2886042_Shigella-virus-Moo19_diamond_1_fastqc.html exists: true",
+                "SRR13439802_taxid_2886042_Shigella-virus-Moo19_diamond_2_fastqc.html exists: true",
+                "SRR13439813_taxid_1239384_Escherichia-phage-IME11_diamond_1_fastqc.html exists: true",
+                "SRR13439813_taxid_1239384_Escherichia-phage-IME11_diamond_2_fastqc.html exists: true",
                 "SRR13439813_taxid_1920753_Gamaleyavirus_diamond_1_fastqc.html exists: true",
                 "SRR13439813_taxid_1920753_Gamaleyavirus_diamond_2_fastqc.html exists: true",
-                "SRR13439813_taxid_2731619_Caudoviricetes_diamond_1_fastqc.html exists: true",
-                "SRR13439813_taxid_2731619_Caudoviricetes_diamond_2_fastqc.html exists: true",
-                "SRR13439813_taxid_2842329_Schitoviridae_diamond_1_fastqc.html exists: true",
-                "SRR13439813_taxid_2842329_Schitoviridae_diamond_2_fastqc.html exists: true",
-                "SRR13439813_taxid_2842412_Enquatrovirinae_diamond_1_fastqc.html exists: true",
-                "SRR13439813_taxid_2842412_Enquatrovirinae_diamond_2_fastqc.html exists: true"
+                "SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond_1_fastqc.html exists: true",
+                "SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond_2_fastqc.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:53.728771",
+        "timestamp": "2026-10-03T10:06:12.311588",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -754,13 +552,13 @@
     "samtools_coverage": {
         "content": [
             [
-                "SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,93e96feed44f3299cd55de90e2e1712c",
+                "SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,52c800f60eafd9d9fdab1ff956bb0984",
                 "SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.txt:md5,318cee840c1c9514a52089081e648563",
-                "SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,5514dfa3e79625a8828105cb46f3d4f5",
-                "SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,bb1d5041d23cae1d02815129e7bfb1a1"
+                "SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,7302208d097f4d5b850a7bc4fe770f61",
+                "SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,fbfd16332f0c4360bf92adaea0f0b23f"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:53.841769",
+        "timestamp": "2026-10-03T10:06:12.372347",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -772,7 +570,7 @@
                 "metaval_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:53.546535",
+        "timestamp": "2026-10-03T10:06:12.220558",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -782,17 +580,17 @@
         "content": [
             [
                 [
-                    "SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439790\tSM:SRR13439790, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439790 --rg SM:SRR13439790 --passthrough -1 SRR13439790_taxid_2842412_Enquatrovirinae.extracted_diamond_read_1.fastq.gz -2 SRR13439790_taxid_2842412_Enquatrovirinae.extracted_diamond_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439790.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439790.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439790\tSM:SRR13439790, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439790 --rg SM:SRR13439790 --passthrough -1 SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_1.fastq.gz -2 SRR13439790_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439790.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439790.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
                 ],
                 [
-                    "SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_2842329_Schitoviridae.extracted_diamond_read_1.fastq.gz -2 SRR13439813_taxid_2842329_Schitoviridae.extracted_diamond_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439802\tSM:SRR13439802, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439802 --rg SM:SRR13439802 --passthrough -1 SRR13439802_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_1.fastq.gz -2 SRR13439802_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439802.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439802.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
                 ],
                 [
-                    "SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_2842412_Enquatrovirinae.extracted_diamond_read_1.fastq.gz -2 SRR13439813_taxid_2842412_Enquatrovirinae.extracted_diamond_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_1.fastq.gz -2 SRR13439813_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
                 ]
             ]
         ],
-        "timestamp": "2026-09-30T19:14:52.821284",
+        "timestamp": "2026-10-03T10:06:11.706133",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -801,13 +599,13 @@
     "igv": {
         "content": [
             [
-                "SRR13439790_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true",
+                "SRR13439790_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true",
                 "SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html exists: true",
-                "SRR13439813_diamond_taxid_2842329_Schitoviridae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true",
-                "SRR13439813_diamond_taxid_2842412_Enquatrovirinae_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true"
+                "SRR13439802_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true",
+                "SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:53.215227",
+        "timestamp": "2026-10-03T10:06:12.000334",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -822,7 +620,7 @@
                 "SRR13439813_DNA_HLSAN_diamond.tsv:md5,71e3ef5c6ee3ecab9a6556fde93a3b19"
             ]
         ],
-        "timestamp": "2026-09-30T19:14:54.239124",
+        "timestamp": "2026-10-03T10:06:12.598885",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
