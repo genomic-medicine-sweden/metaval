@@ -178,7 +178,7 @@ Taxpasta profiles are compared with negative controls sharing the same `na_conte
 
 ### Read subsetting
 
-Read subsetting is used as an alternative to de novo assembly when assembly is disabled. If the number of extracted reads for a TaxID exceeds `--subset_read_threshold`, only the first `--subset_read_threshold` reads are kept for BLAST. The default threshold is 10. Reads at or below the threshold are sent directly to BLAST and are not written to `blast/reads_subset/`.
+Read subsetting is used as an alternative to de novo assembly when assembly is disabled. If the number of extracted reads for a TaxID exceeds `--subset_read_threshold`, only the first `--subset_read_threshold` reads are kept for BLAST. The default threshold is 10. Reads at or below the threshold are sent directly to BLAST and are not written to `verifyspecies/blast/reads_subset/`.
 
 ### De novo assembly
 
@@ -228,6 +228,8 @@ See the [consensus outputs](output.md#verify-species-consensus-calling) for file
 
 ### Verify-species example
 
+This example enables de novo assembly for both Illumina and Nanopore reads. To use read subsetting as an alternative, omit `--perform_shortread_denovo` and `--perform_longread_denovo` and optionally set `--subset_read_threshold` (default: 10).
+
 ```bash
 nextflow run genomic-medicine-sweden/metaval \
     -profile docker \
@@ -245,10 +247,13 @@ nextflow run genomic-medicine-sweden/metaval \
     --taxid2genome /path/to/taxid2genome.tsv \
     --perform_longread_consensus \
     --perform_shortread_consensus \
-    --consensus_min_bases 50
+    --consensus_min_bases 50 \
+    --ticket_id 1000
 ```
 
 ### User-defined TaxID example
+
+This example uses read subsetting instead of de novo assembly. For each TaxID, up to the first 10 extracted reads are used for BLAST, as specified by `--subset_read_threshold 10`.
 
 ```bash
 nextflow run genomic-medicine-sweden/metaval \
@@ -260,13 +265,15 @@ nextflow run genomic-medicine-sweden/metaval \
     --extract_kraken2_reads \
     --extract_centrifuge_reads \
     --extract_diamond_reads \
+    --subset_read_threshold 10 \
     --blastn_db /path/to/blastn_db.tar.gz \
     --blastx_db /path/to/diamond.dmnd \
     --perform_mapping \
     --taxid2genome /path/to/taxid2genome.tsv \
     --perform_longread_consensus \
     --perform_shortread_consensus \
-    --consensus_min_bases 50
+    --consensus_min_bases 50 \
+    --ticket_id 1000
 ```
 
 ## Pathogen screening

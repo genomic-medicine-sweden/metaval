@@ -81,7 +81,7 @@ nextflow_pipeline {
 
                 //pathogens reads consensus
                 { assert snapshot (
-                    bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file -> [file.getName() + " pathogens reads consensus md5: " + bam(file.toString()).getHeader()] }
+                    bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file -> [file.getName() + " pathogens reads consensus header: " + bam(file.toString()).getHeader()] }
                 ).match("pathogens_reads_consensus") },
 
                 // pathogens samtools coverage
