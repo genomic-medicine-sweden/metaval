@@ -35,7 +35,7 @@ nextflow_pipeline {
 
             //minimap2 align
             def stable_content_minimap2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/mapping/minimap2/align/*'], ignoreFile: 'tests/.nftignore')
-            def bam_files_minimap2_align  = getAllFilesFromDir(params.outdir, include: ['verifyspecies/mapping/minimap2/align/*bam'])
+            def bam_files_minimap2_align  = getAllFilesFromDir(params.outdir, include: ['verifyspecies/mapping/minimap2/align/*.bam'])
 
             //pathogens blast: partly unstable files, see custom assertions
 
