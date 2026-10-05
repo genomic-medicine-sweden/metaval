@@ -65,8 +65,11 @@ nextflow_pipeline {
             //pathogens samtools depth
             def stable_content_pathogens_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
 
-	        //consensus
-            def stable_content_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/consensus/**/*'], ignoreFile: 'tests/.nftignore')
+	        //consensus raw
+            def stable_content_consensus_raw = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/consensus/raw/*.fasta'], ignoreFile: 'tests/.nftignore')
+
+            //consensus filtered
+            def stable_content_consensus_filtered = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/consensus/filtered/*.fasta'], ignoreFile: 'tests/.nftignore')
 
             // samtools coverage
             def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
@@ -140,8 +143,13 @@ nextflow_pipeline {
                     stable_content_minimap2_align
                 ).match("minimap2_align") },
 
-                //consensus
-                { assert snapshot (stable_content_consensus).match("consensus")},
+                //consensus raw
+                { assert snapshot (getAllFilesFromDir("$outputDir/verifyspecies/consensus/filtered", include: ['*.fasta']).collect{file ->
+                        file.getName() + '(Raw consensus for verify species workflow) contains string:'+ (
+                            file.text.contains(">MZ358387.1") ||
+                            file.text.contains(">AP014624.1") ||
+                            file.text.contains(">EF467817.1"))|| }
+                ).match("consensus_raw") },
 
                 // igv
                 { assert snapshot(
