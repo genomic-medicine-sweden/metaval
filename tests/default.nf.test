@@ -148,7 +148,7 @@ nextflow_pipeline {
                         file.getName() + '(Raw consensus for verify species workflow) contains string:'+ (
                             file.text.contains(">MZ358387.1") ||
                             file.text.contains(">AP014624.1") ||
-                            file.text.contains(">EF467817.1"))|| }
+                            file.text.contains(">EF467817.1")) }
                 ).match("consensus_raw") },
 
                 // igv
