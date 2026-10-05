@@ -148,7 +148,8 @@ nextflow_pipeline {
                         file.getName() + '(Raw consensus for verify species workflow) contains string:'+ (
                             file.text.contains(">MZ358387.1") ||
                             file.text.contains(">AP014624.1") ||
-                            file.text.contains(">EF467817.1")) },
+                            file.text.contains(">EF467817.1") ||
+                            file.text.contains(">MW630115.1")) },
                             stable_content_consensus_raw
                 ).match("consensus_raw") },
 
