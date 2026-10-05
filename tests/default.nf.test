@@ -144,7 +144,7 @@ nextflow_pipeline {
                 ).match("minimap2_align") },
 
                 //consensus raw
-                { assert snapshot (getAllFilesFromDir("$outputDir/verifyspecies/consensus/filtered", include: ['*.fasta']).collect{file ->
+                { assert snapshot (getAllFilesFromDir("$outputDir/verifyspecies/consensus/raw", include: ['*.fasta']).collect{file ->
                         file.getName() + '(Raw consensus for verify species workflow) contains string:'+ (
                             file.text.contains(">MZ358387.1") ||
                             file.text.contains(">AP014624.1") ||
