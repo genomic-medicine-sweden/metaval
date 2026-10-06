@@ -16,6 +16,8 @@ verifyspecies/blast/blastx/*/*.txt
 verifyspecies/igv/*.html
 verifyspecies/extracted_reads/*/*.fa
 verifyspecies/mapping/bowtie2/*/*.{bam,bai}
+verifyspecies/consensus/raw/*.fasta
+verifyspecies/consensus/filtered/*.fasta
 verifyspecies/report/*.html
 verifyspecies/samtools/coverage_plot/*.png
 verifyspecies/spades/*/*.fa
