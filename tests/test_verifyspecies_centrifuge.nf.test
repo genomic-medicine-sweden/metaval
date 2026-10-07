@@ -41,7 +41,7 @@ nextflow_pipeline {
             //viral taxid
             def stable_content_viral_taxids = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/viral_taxids/*'], ignoreFile: 'tests/.nftignore')
 
-	    //consensus raw
+	        //consensus raw
             def stable_content_consensus_raw = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/consensus/raw/*.fasta'], ignoreFile: 'tests/.nftignore')
 
             //consensus filtered
@@ -119,8 +119,8 @@ nextflow_pipeline {
                             stable_content_consensus_raw
                 ).match("consensus_raw") },
 
+                //consensus filtered
                 { assert snapshot (stable_content_consensus_filtered).match("consensus_filtered")},
-
 
                 //igv
                 { assert snapshot(

@@ -39,8 +39,11 @@ nextflow_pipeline {
 
             //report: partly unstable files, see custom assertions
 
-	        //consensus
-            def stable_content_consensus = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/consensus/**/*'], ignoreFile: 'tests/.nftignore')
+	          //consensus raw
+            def stable_content_consensus_raw = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/consensus/raw/*.fasta'], ignoreFile: 'tests/.nftignore')
+
+            //consensus filtered
+            def stable_content_consensus_filtered = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/consensus/filtered/*.fasta'], ignoreFile: 'tests/.nftignore')
 
             // samtools coverage
             def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
@@ -133,8 +136,19 @@ nextflow_pipeline {
                     getAllFilesFromDir("$outputDir/verifyspecies/report", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("report") },
 
-	            //consensus
-                { assert snapshot (stable_content_consensus).match("consensus")},
+	            //consensus raw
+                { assert snapshot (getAllFilesFromDir("$outputDir/verifyspecies/consensus/raw", include: ['*.fasta']).collect{file ->
+                        file.getName() + '(Raw consensus for verify species workflow) contains string:'+ (
+                            file.text.contains(">MZ358387.1") ||
+                            file.text.contains(">AP014624.1") ||
+                            file.text.contains(">EF467817.1") ||
+                            file.text.contains(">MW630115.1")) },
+                            stable_content_consensus_raw
+                ).match("consensus_raw") },
+
+                //consensus filtered
+                { assert snapshot (stable_content_consensus_filtered).match("consensus_filtered")},
+
 
                 // samtools coverage
                 { assert snapshot (stable_content_samtools_coverage).match("samtools_coverage") },
