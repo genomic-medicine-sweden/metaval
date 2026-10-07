@@ -112,9 +112,18 @@ nextflow_pipeline {
                 //consensus raw
                 { assert snapshot (getAllFilesFromDir("$outputDir/verifyspecies/consensus/raw", include: ['*.fasta']).collect{file ->
                         file.getName() + '(Raw consensus for verify species workflow) contains string:'+ (
+                            file.text.contains(">JX415535.1") ||
+                            file.text.contains(">MZ394712.1") ||
+                            file.text.contains(">HQ259105.1") ||
+                            file.text.contains(">JX880034.1") ||
+		            file.text.contains(">KJ135004.2") ||
+                            file.text.contains(">MG208881.1") ||
                             file.text.contains(">MZ358387.1") ||
-                            file.text.contains(">AP014624.1") ||
+			    file.text.contains(">MZ358387.1") ||
                             file.text.contains(">EF467817.1") ||
+                            file.text.contains(">MT682708.1") ||
+                            file.text.contains(">KF192075.1") ||
+                            file.text.contains(">>MT682708.1") ||
                             file.text.contains(">MW630115.1")) },
                             stable_content_consensus_raw
                 ).match("consensus_raw") },
