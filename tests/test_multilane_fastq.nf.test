@@ -124,14 +124,15 @@ nextflow_pipeline {
 
                 // Concatenated reads
                 { assert snapshot(
-                    getAllFilesFromDir("$outputDir/analysis_ready_fastqs/", include: ['*.fastq.gz']).collect{ file ->
-                        file.getName() + .linesGzip.findAll { l -> l.contains('@SRR13439790.1608887') || l.contains('@SRR13439799.1895') },
-                ).match("Concatenated reads")},
+                    getAllFilesFromDir("$outputDir/analysis_ready_fastqs/",include: ['*.fastq.gz']).collect { file ->
+                        file.getName() + file.linesGzip.findAll { l -> l.contains('@SRR13439790.1608887') || l.contains('@SRR13439799.1895')} }
+                ).match("Concatenated reads") },
 
                 // bowtie2
                 { assert snapshot (
                     bam_files_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] }
                 ).match("bowtie2_align") },
+
                 { assert snapshot (stable_content_bowtie2_build).match("bowtie2_build") },
 
                 //minimap2 index
