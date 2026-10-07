@@ -123,10 +123,12 @@ nextflow_pipeline {
                 ).match("extracted_reads") },
 
                 // Concatenated reads
-                { assert snapshot(
+                {assert snapshot(
                     getAllFilesFromDir("$outputDir/analysis_ready_fastqs/",include: ['*.fastq.gz']).collect { file ->
-                        file.getName() + file.linesGzip.findAll { l -> l.contains('@SRR13439790.1608887') || l.contains('@SRR13439799.1895')} }
-                ).match("Concatenated reads") },
+                        file.getName() + " contains concatenated reads: " + (
+                        path("$outputDir/analysis_ready_fastqs/${file.getName()}").linesGzip.toString().contains("@SRR13439790.1608887") ||
+                        path("$outputDir/analysis_ready_fastqs/${file.getName()}").linesGzip.toString().contains("@SRR13439799.1895"))}
+                    ).match("Concatenated reads")},
 
                 // bowtie2
                 { assert snapshot (
