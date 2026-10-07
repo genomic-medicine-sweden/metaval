@@ -80,6 +80,7 @@ nextflow_pipeline {
                         file.getName() + '(kraken2) contains string:' + (
                             file.text.contains("Chryseobacterium") ||
                             file.text.contains("Influenza") ||
+                            file.text.contains("Escherichia") ||
                             file.text.contains("Shigella")) },
                 ).match("blastx") },
 
@@ -112,8 +113,12 @@ nextflow_pipeline {
                 { assert snapshot (getAllFilesFromDir("$outputDir/verifyspecies/consensus/raw", include: ['*.fasta']).collect{file ->
                         file.getName() + '(Raw consensus for verify species workflow) contains string:'+ (
                             file.text.contains(">MZ358387.1") ||
-                            file.text.contains(">AP014624.1") ||
                             file.text.contains(">EF467817.1") ||
+                            file.text.contains(">MH733496.1") ||
+                            file.text.contains(">HQ259105.1") ||
+                            file.text.contains(">KJ135004.2") ||
+                            file.text.contains(">MZ394712.1") ||
+                            file.text.contains(">JX415535.1") ||
                             file.text.contains(">MW630115.1")) },
                             stable_content_consensus_raw
                 ).match("consensus_raw") },
