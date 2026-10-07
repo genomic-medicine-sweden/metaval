@@ -65,7 +65,7 @@ nextflow_pipeline {
             //pathogens samtools depth
             def stable_content_pathogens_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
 
-	    //consensus raw
+	        //consensus raw
             def stable_content_consensus_raw = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/consensus/raw/*.fasta'], ignoreFile: 'tests/.nftignore')
 
             //consensus filtered
@@ -156,7 +156,7 @@ nextflow_pipeline {
 
 
                 //consensus filtered
-	        { assert snapshot (stable_content_consensus_filtered).match("consensus_filtered")},
+            { assert snapshot (stable_content_consensus_filtered).match("consensus_filtered")},
 
                 // igv
                 { assert snapshot(

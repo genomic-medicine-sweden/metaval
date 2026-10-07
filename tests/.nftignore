@@ -20,7 +20,7 @@ verifyspecies/consensus/raw/*.fasta
 verifyspecies/consensus/filtered/*.fasta
 verifyspecies/report/*.html
 verifyspecies/samtools/coverage_plot/*.png
-verifyspecies/spades/*/*.fa
+verifyspecies/spades/{kraken2,diamond,centrifuge}/*.fa
 pathogens/mapping/bowtie2/*/*.{bam,bai}
 pathogens/blast/*/*.txt
 pathogens/igv/*.html
