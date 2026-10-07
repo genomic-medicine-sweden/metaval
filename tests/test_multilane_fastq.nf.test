@@ -125,7 +125,7 @@ nextflow_pipeline {
                 // Concatenated reads
                 { assert snapshot(
                     getAllFilesFromDir("$outputDir/analysis_ready_fastqs/", include: ['*.fastq.gz']).collect{ file ->
-                        file.getName() + " exists: " + file.exists()}
+                        file.getName() + .linesGzip.findAll { l -> l.contains('@SRR13439790.1608887') || l.contains('@SRR13439799.1895') },
                 ).match("Concatenated reads")},
 
                 // bowtie2
