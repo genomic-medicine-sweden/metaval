@@ -114,7 +114,7 @@ nextflow_pipeline {
                             stable_content_consensus_raw
                 ).match("consensus_raw") },
 
-    
+
                 //consensus filtered
                 { assert snapshot (stable_content_consensus_filtered).match("consensus_filtered")},
 

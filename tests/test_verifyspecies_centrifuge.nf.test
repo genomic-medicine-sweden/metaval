@@ -108,7 +108,7 @@ nextflow_pipeline {
                     stable_content_minimap2_align
                 ).match("minimap2_align") },
 
-                
+
                 //consensus raw
                 { assert snapshot (getAllFilesFromDir("$outputDir/verifyspecies/consensus/raw", include: ['*.fasta']).collect{file ->
                         file.getName() + '(Raw consensus for verify species workflow) contains string:'+ (
