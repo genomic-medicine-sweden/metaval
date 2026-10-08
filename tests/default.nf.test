@@ -65,12 +65,6 @@ nextflow_pipeline {
             //pathogens samtools depth
             def stable_content_pathogens_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
 
-	        //consensus raw
-            def stable_content_consensus_raw = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/consensus/raw/*.fasta'], ignoreFile: 'tests/.nftignore')
-
-            //consensus filtered
-            def stable_content_consensus_filtered = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/consensus/filtered/*.fasta'], ignoreFile: 'tests/.nftignore')
-
             // samtools coverage
             def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
 
@@ -136,7 +130,7 @@ nextflow_pipeline {
 
                 //minimap2 index
                 { assert snapshot(
-                        getAllFilesFromDir("$outputDir/verifyspecies/mapping/minimap2/index", include: ['**/*.mmi']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    getAllFilesFromDir("$outputDir/verifyspecies/mapping/minimap2/index", include: ['**/*.mmi']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("minimap2_index") },
                 { assert snapshot (
                     bam_files_minimap2_align.isEmpty() ? 'No BAM files' : bam_files_minimap2_align.collect { file -> [file.getName() + " minimap2 align md5: " + bam(file.toString()).getReadsMD5()] },
@@ -144,23 +138,26 @@ nextflow_pipeline {
                 ).match("minimap2_align") },
 
                 //consensus raw
-                //{ assert snapshot (stable_content_consensus).match("consensus")},
                 { assert snapshot (getAllFilesFromDir("$outputDir/verifyspecies/consensus/raw", include: ['*.fasta']).collect{file ->
                         file.getName() + '(Raw consensus for verify species workflow) contains string:'+ (
                             file.text.contains(">MZ358387.1") ||
                             file.text.contains(">AP014624.1") ||
                             file.text.contains(">EF467817.1") ||
-                            file.text.contains(">MW630115.1")) },
-                            stable_content_consensus_raw
+                            file.text.contains(">MW630115.1")) }
                 ).match("consensus_raw") },
 
-
                 //consensus filtered
-            { assert snapshot (stable_content_consensus_filtered).match("consensus_filtered")},
+                { assert snapshot (getAllFilesFromDir("$outputDir/verifyspecies/consensus/filtered", include: ['*.fasta']).collect{file ->
+                        file.getName() + '(Filtered consensus for verify species workflow) contains string:'+ (
+                            file.text.contains(">MZ358387.1") ||
+                            file.text.contains(">AP014624.1") ||
+                            file.text.contains(">EF467817.1") ||
+                            file.text.contains(">MW630115.1")) }
+                ).match("consensus_filtered") },
 
                 // igv
                 { assert snapshot(
-                        getAllFilesFromDir("$outputDir/verifyspecies/igv", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    getAllFilesFromDir("$outputDir/verifyspecies/igv", include: ['*.html']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("igv") },
 
                 //pathogen mapping bowtie2
@@ -197,7 +194,7 @@ nextflow_pipeline {
 
                 // pathogens samtools coverage plot
                 { assert snapshot(
-                        getAllFilesFromDir("$outputDir/pathogens/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    getAllFilesFromDir("$outputDir/pathogens/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("pathogens_samtools_coverage_plot") },
 
                 // pathogens samtools depth
@@ -205,17 +202,17 @@ nextflow_pipeline {
 
                 // spades kraken2
                 { assert snapshot(
-                        getAllFilesFromDir("$outputDir/verifyspecies/spades/kraken2", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    getAllFilesFromDir("$outputDir/verifyspecies/spades/kraken2", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("spades_kraken2") },
 
                 // spades centrifuge
                 { assert snapshot(
-                        getAllFilesFromDir("$outputDir/verifyspecies/spades/centrifuge", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    getAllFilesFromDir("$outputDir/verifyspecies/spades/centrifuge", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("spades_centrifuge") },
 
                 // spades diamond
                 { assert snapshot(
-                        getAllFilesFromDir("$outputDir/verifyspecies/spades/diamond", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    getAllFilesFromDir("$outputDir/verifyspecies/spades/diamond", include: ['*.fa', '*log']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("spades_diamond") },
 
                 //metaval report
@@ -233,7 +230,7 @@ nextflow_pipeline {
 
                 // samtools coverage plot
                 { assert snapshot(
-                        getAllFilesFromDir("$outputDir/verifyspecies/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    getAllFilesFromDir("$outputDir/verifyspecies/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("samtools_coverage_plot") },
 
                 // samtools depth
@@ -241,7 +238,6 @@ nextflow_pipeline {
 
                 //taxpasta flagged
                 { assert snapshot (stable_content_taxpasta_flagged).match("taxpasta_flagged") },
-
 
             )
         }
