@@ -32,7 +32,7 @@ nextflow_pipeline {
             def bam_files_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['verifyspecies/mapping/bowtie2/align/*.bam'])
 
             //bowtie2 build
-            def stable_content_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/mapping/bowtie2/build/**/**/*'], ignoreFile: 'tests/.nftignore')
+            def stable_content_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/mapping/bowtie2/build/mappingorganism_*/bowtie2/*'], ignoreFile: 'tests/.nftignore')
 
             //minimap2 align
             def stable_content_minimap2_align = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/mapping/minimap2/align/*'], ignoreFile: 'tests/.nftignore')
@@ -116,10 +116,10 @@ nextflow_pipeline {
                             file.text.contains(">MZ394712.1") ||
                             file.text.contains(">HQ259105.1") ||
                             file.text.contains(">JX880034.1") ||
-		            file.text.contains(">KJ135004.2") ||
+                            file.text.contains(">KJ135004.2") ||
                             file.text.contains(">MG208881.1") ||
                             file.text.contains(">MZ358387.1") ||
-			    file.text.contains(">MZ358387.1") ||
+                            file.text.contains(">MZ358387.1") ||
                             file.text.contains(">EF467817.1") ||
                             file.text.contains(">MT682708.1") ||
                             file.text.contains(">KF192075.1") ||

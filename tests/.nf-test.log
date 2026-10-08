@@ -1,8 +1,0 @@
-Oct-05 16:40:57.855 [main] INFO  com.askimed.nf.test.App - nf-test 0.9.5
-Oct-05 16:40:57.870 [main] INFO  com.askimed.nf.test.App - Arguments: [test, tests/default.nf.test, --profile=+singularity, --debug, --verbose]
-Oct-05 16:40:59.085 [main] INFO  com.askimed.nf.test.App - Nextflow Version: 26.04.6
-Oct-05 16:40:59.089 [main] WARN  com.askimed.nf.test.commands.RunTestsCommand - No nf-test config file found.
-Oct-05 16:40:59.204 [main] INFO  com.askimed.nf.test.lang.dependencies.DependencyResolver - Loaded 13 files from directory /home/proj/development/microbial/metagenomics/sofia_workspace/metaval/tests in 0.113 sec
-Oct-05 16:40:59.206 [main] INFO  com.askimed.nf.test.lang.dependencies.DependencyResolver - Found 0 files containing tests.
-Oct-05 16:40:59.206 [main] DEBUG com.askimed.nf.test.lang.dependencies.DependencyResolver - Found files: []
-Oct-05 16:40:59.208 [main] INFO  com.askimed.nf.test.commands.RunTestsCommand - Found 0 tests to execute.

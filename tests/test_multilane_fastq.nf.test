@@ -29,7 +29,7 @@ nextflow_pipeline {
             def bam_files_bowtie2_align  = getAllFilesFromDir(params.outdir, include: ['verifyspecies/mapping/bowtie2/align/*.bam'])
 
             //bowtie2 build
-            def stable_content_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/mapping/bowtie2/build/**/**/*'], ignoreFile: 'tests/.nftignore')
+            def stable_content_bowtie2_build = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/mapping/bowtie2/build/mappingorganism_*/bowtie2/*'], ignoreFile: 'tests/.nftignore')
 
             //minimap2 index: partly unstable files, see custom assertions
 
