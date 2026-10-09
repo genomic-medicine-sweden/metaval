@@ -156,19 +156,20 @@
     <circle class="flow-marker" r="6" fill="#79add8" opacity="0"><animateMotion dur="26s" begin="0s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.206;.456;1" calcMode="linear" path="M1060 363H2100"/><animate attributeName="opacity" dur="26s" begin="0s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0;.202;.206;1"/></circle>
   </g>
 
-  <!-- Two persistent markers per color. Each pair starts fully overlapped,
-       travels at the same speed, splits at alternatives, and remains separate
-       afterward. Green BLASTn and BLASTx both continue through Extract Target
+  <!-- Green markers travel at 140 px/s. The green pair shares an exact
+       timing anchor at the Mapping exit, appearing as one dot throughout the
+       initial route and splitting only before optional Consensus. Markers
+       remain separate afterward. Green BLASTn and BLASTx both continue through Extract Target
        Reads before Mapping. -->
   <g aria-label="Animated workflow direction" style="isolation:isolate">
     <circle class="flow-marker" r="6" fill="#22ad64">
       <animateMotion dur="26s" begin="0s" repeatCount="indefinite"
-        keyPoints="0;1;1" keyTimes="0;.979;1" calcMode="linear"
+        keyPoints="0;0.448390429;1;1" keyTimes="0;0.428917386;0.956571233;1" calcMode="linear"
         path="M114 349H270C290 349 314 329 314 309V180C314 158 332 140 354 140H1204C1248 140 1280 181 1280 222V349H1232C1205 349 1198 308 1168 308S1129 349 1100 349H1060C1025 349 1020 308 980 308S925 349 900 349H860V254C860 226 882 203 910 203H1593C1615 203 1630 219 1630 239V349H2100"/>
     </circle>
     <circle class="flow-marker" r="6" fill="#22ad64">
       <animateMotion dur="26s" begin="0s" repeatCount="indefinite"
-        keyPoints="0;1;1" keyTimes="0;.962;1" calcMode="linear"
+        keyPoints="0;0.452120618;1;1" keyTimes="0;0.428917386;0.948679111;1" calcMode="linear"
         path="M114 349H270C290 349 314 329 314 309V180C314 158 332 140 354 140H1204C1248 140 1280 181 1280 222V349H1100H1060C1025 349 1020 390 980 390S925 349 900 349H860V254C860 226 882 203 910 203H1593C1615 203 1630 219 1630 239V349H2100"/>
     </circle>
 
