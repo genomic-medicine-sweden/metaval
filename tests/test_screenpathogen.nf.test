@@ -89,7 +89,7 @@ nextflow_pipeline {
 
                 // pathogens samtools coverage plot
                 { assert snapshot(
-                        getAllFilesFromDir("$outputDir/pathogens/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
+                    getAllFilesFromDir("$outputDir/pathogens/samtools/coverage_plot", include: ['*.png']).collect { file -> file.getName() + " exists: "+ file.exists() }
                 ).match("pathogens_samtools_coverage_plot") },
 
                 // pathogens samtools depth

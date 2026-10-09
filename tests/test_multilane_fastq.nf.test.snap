@@ -16,22 +16,22 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:41.389253117",
+        "timestamp": "2026-10-09T09:44:29.801642",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "consensus_filtered": {
         "content": [
             [
-                
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_medaka_sorted_filtered.fasta(Filtered consensus for verify species workflow) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:42.098475193",
+        "timestamp": "2026-10-09T09:44:31.140117",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "pathogens_samtools_coverage": {
@@ -43,10 +43,10 @@
                 "SRR13439799_taxid_488241_Influenza_A_virus_H2N2.txt:md5,52bcfbe305775478ce09df439ff95796"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:44.243479504",
+        "timestamp": "2026-10-09T09:44:33.59048",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "pathogens_igv": {
@@ -56,10 +56,10 @@
                 "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:43.476836928",
+        "timestamp": "2026-10-09T09:44:32.678159",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "minimap2_align": {
@@ -79,10 +79,10 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,b5a387febb590dc82fea618364ae2996"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:41.783620289",
+        "timestamp": "2026-10-09T09:44:30.5108",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "pathogen_bowtie2_align": {
@@ -93,10 +93,10 @@
                 ]
             ]
         ],
-        "timestamp": "2026-10-07T12:16:42.733763559",
+        "timestamp": "2026-10-09T09:44:31.814228",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "extracted_reads": {
@@ -116,10 +116,10 @@
                 "SRR13439790_taxid_1920753_Gamaleyavirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:34.101238856",
+        "timestamp": "2026-10-09T09:44:24.04524",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "minimap2_index": {
@@ -128,10 +128,10 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:41.602663679",
+        "timestamp": "2026-10-09T09:44:30.039003",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "samtools_coverage": {
@@ -143,10 +143,10 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.txt:md5,688f1924ca4a51c7a89dee4dd71a4dfd"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:45.296306558",
+        "timestamp": "2026-10-09T09:44:34.659411",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "igv": {
@@ -158,10 +158,10 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:42.264495059",
+        "timestamp": "2026-10-09T09:44:31.324804",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "blastx": {
@@ -175,10 +175,10 @@
                 "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blastx_filtered_summary.txt(centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:34.067123334",
+        "timestamp": "2026-10-09T09:44:24.016696",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "pathogen_bowtie2_build": {
@@ -192,10 +192,10 @@
                 "reference.fasta.rev.2.bt2l:md5,061d25379a3f57db6e974ba06aeed404"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:42.41658088",
+        "timestamp": "2026-10-09T09:44:31.521125",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "all_files": {
@@ -385,10 +385,10 @@
                 "verifyspecies/taxpasta_flagged/SRR13439799_MIX_NORMAL_kraken2.tsv"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:33.971875112",
+        "timestamp": "2026-10-09T09:44:23.950481",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "Concatenated reads": {
@@ -399,10 +399,10 @@
                 "SRR13439799.merged.fastq.gz contains concatenated reads: true"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:41.252027704",
+        "timestamp": "2026-10-09T09:44:29.696239",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "pathogens_samtools_depth": {
@@ -414,10 +414,10 @@
                 "SRR13439799_taxid_488241_Influenza_A_virus_H2N2.tsv:md5,d41d8cd98f00b204e9800998ecf8427e"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:44.74901001",
+        "timestamp": "2026-10-09T09:44:34.132549",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "-profile test_multilane_fastq": {
@@ -554,10 +554,10 @@
                 }
             }
         ],
-        "timestamp": "2026-10-07T12:16:33.912077844",
+        "timestamp": "2026-10-09T09:44:23.929038",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "samtools_depth": {
@@ -569,10 +569,10 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.tsv:md5,0053047ffc729c309c6271f45c5d63fd"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:45.963189812",
+        "timestamp": "2026-10-09T09:44:35.206603",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "consensus_raw": {
@@ -581,15 +581,12 @@
                 "SRR13439790_taxid_1920753_Shigella-virus-Moo19_samtools.fasta(Raw consensus for verify species workflow) contains string:true",
                 "SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_samtools.fasta(Raw consensus for verify species workflow) contains string:true",
                 "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_medaka_sorted.fasta(Raw consensus for verify species workflow) contains string:true"
-            ],
-            [
-                
             ]
         ],
-        "timestamp": "2026-10-07T12:16:41.946112192",
+        "timestamp": "2026-10-09T09:44:30.82304",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "blastn": {
@@ -607,10 +604,10 @@
                 "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blast_filtered_summary.txt(centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:34.037200423",
+        "timestamp": "2026-10-09T09:44:23.99049",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "pathogens_reads_blast": {
@@ -621,10 +618,10 @@
                 "SRR13439799_taxid_488241_Influenza_A_virus_H2N2_1.fasta.gz:md5,d41d8cd98f00b204e9800998ecf8427e"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:43.72659904",
+        "timestamp": "2026-10-09T09:44:33.038822",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "pathogens_blast": {
@@ -640,10 +637,10 @@
                 true
             ]
         ],
-        "timestamp": "2026-10-07T12:16:42.980811708",
+        "timestamp": "2026-10-09T09:44:32.101671",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "pathogens_reads_consensus": {
@@ -657,10 +654,10 @@
                 ]
             ]
         ],
-        "timestamp": "2026-10-07T12:16:43.98334998",
+        "timestamp": "2026-10-09T09:44:33.330444",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "pathogens_consensus": {
@@ -672,10 +669,10 @@
                 "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_medaka_sorted.fasta:md5,e1c0dd7352c0f3dd86236abc88c3c69e"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:43.227210711",
+        "timestamp": "2026-10-09T09:44:32.376411",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "samtools_coverage_plot": {
@@ -687,10 +684,10 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.png exists: true"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:45.681342767",
+        "timestamp": "2026-10-09T09:44:34.935505",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "report": {
@@ -699,10 +696,10 @@
                 "metaval_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:45.024346773",
+        "timestamp": "2026-10-09T09:44:34.399492",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "bowtie2_align": {
@@ -716,10 +713,10 @@
                 ]
             ]
         ],
-        "timestamp": "2026-10-07T12:16:41.356325928",
+        "timestamp": "2026-10-09T09:44:29.752676",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "pathogens_samtools_coverage_plot": {
@@ -730,10 +727,10 @@
                 "SRR13439799_taxid_211044_Influenza_A_virus_H1N1.png exists: true"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:44.499579121",
+        "timestamp": "2026-10-09T09:44:33.884714",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     },
     "taxpasta_flagged": {
@@ -747,10 +744,10 @@
                 "SRR13439799_MIX_NORMAL_kraken2.tsv:md5,e90c8869641cb34750e473c7777dd0e0"
             ]
         ],
-        "timestamp": "2026-10-07T12:16:46.880368362",
+        "timestamp": "2026-10-09T09:44:36.272191",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "26.04.6"
+            "nextflow": "25.10.4"
         }
     }
 }
