@@ -18,6 +18,7 @@ Initial release of genomic-medicine-sweden/metaval, created with the [nf-core](h
 - Subset reads for large files before BLAST
 - BLASTn and BLASTx
 - Mapping
+- Consensus
 - IGV
 - Screen pathogens:
   - Map reads to the pathogen genome database using Bowtie2 for short reads and Minimap2 for long reads

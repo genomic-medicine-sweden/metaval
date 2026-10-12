@@ -37,4 +37,4 @@ template:
   name: metaval
   org: genomic-medicine-sweden
   outdir: .
-  version: 1.0dev
+  version: 1.0.0
