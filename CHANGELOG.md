@@ -3,7 +3,7 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## v1.0dev - [unreleased<!-- TODO nf-core: replace with date on release -->]
+## v1.0.0 - [2026-11-02]
 
 Initial release of genomic-medicine-sweden/metaval, created with the [nf-core](https://nf-co.re/) template.
 
@@ -18,6 +18,7 @@ Initial release of genomic-medicine-sweden/metaval, created with the [nf-core](h
 - Subset reads for large files before BLAST
 - BLASTn and BLASTx
 - Mapping
+- Consensus
 - IGV
 - Screen pathogens:
   - Map reads to the pathogen genome database using Bowtie2 for short reads and Minimap2 for long reads
