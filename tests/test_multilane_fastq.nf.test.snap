@@ -16,7 +16,19 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:04.628825",
+        "timestamp": "2026-10-09T09:44:29.801642",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "consensus_filtered": {
+        "content": [
+            [
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_medaka_sorted_filtered.fasta(Filtered consensus for verify species workflow) contains string:true"
+            ]
+        ],
+        "timestamp": "2026-10-09T09:44:31.140117",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -31,7 +43,7 @@
                 "SRR13439799_taxid_488241_Influenza_A_virus_H2N2.txt:md5,52bcfbe305775478ce09df439ff95796"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:08.279455",
+        "timestamp": "2026-10-09T09:44:33.59048",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -44,7 +56,7 @@
                 "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:07.364338",
+        "timestamp": "2026-10-09T09:44:32.678159",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -67,7 +79,7 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,b5a387febb590dc82fea618364ae2996"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:05.238411",
+        "timestamp": "2026-10-09T09:44:30.5108",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -81,7 +93,7 @@
                 ]
             ]
         ],
-        "timestamp": "2026-10-02T13:34:06.39027",
+        "timestamp": "2026-10-09T09:44:31.814228",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -104,7 +116,7 @@
                 "SRR13439790_taxid_1920753_Gamaleyavirus.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-02T13:33:56.526589",
+        "timestamp": "2026-10-09T09:44:24.04524",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -116,7 +128,7 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:04.963157",
+        "timestamp": "2026-10-09T09:44:30.039003",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -131,7 +143,7 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.txt:md5,688f1924ca4a51c7a89dee4dd71a4dfd"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:09.469749",
+        "timestamp": "2026-10-09T09:44:34.659411",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -146,7 +158,7 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:05.754373",
+        "timestamp": "2026-10-09T09:44:31.324804",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -163,7 +175,7 @@
                 "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blastx_filtered_summary.txt(centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-02T13:33:56.490145",
+        "timestamp": "2026-10-09T09:44:24.016696",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -180,7 +192,7 @@
                 "reference.fasta.rev.2.bt2l:md5,061d25379a3f57db6e974ba06aeed404"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:05.95184",
+        "timestamp": "2026-10-09T09:44:31.521125",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -193,82 +205,6 @@
                 "analysis_ready_fastqs/SRR13439790_1.merged.fastq.gz",
                 "analysis_ready_fastqs/SRR13439790_2.merged.fastq.gz",
                 "analysis_ready_fastqs/SRR13439799.merged.fastq.gz",
-                "blast",
-                "blast/blastn",
-                "blast/blastn/centrifuge",
-                "blast/blastn/centrifuge/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_centrifuge_blast_filtered.txt",
-                "blast/blastn/centrifuge/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_centrifuge_blast_filtered_summary.txt",
-                "blast/blastn/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blast_filtered.txt",
-                "blast/blastn/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blast_filtered_summary.txt",
-                "blast/blastn/kraken2",
-                "blast/blastn/kraken2/SRR13439790_taxid_1920753_Gamaleyavirus_kraken2_blast_filtered.txt",
-                "blast/blastn/kraken2/SRR13439790_taxid_1920753_Gamaleyavirus_kraken2_blast_filtered_summary.txt",
-                "blast/blastn/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_blast_filtered.txt",
-                "blast/blastn/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_blast_filtered_summary.txt",
-                "blast/blastx",
-                "blast/blastx/centrifuge",
-                "blast/blastx/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blastx_filtered.txt",
-                "blast/blastx/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blastx_filtered_summary.txt",
-                "blast/blastx/kraken2",
-                "blast/blastx/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_blastx_filtered.txt",
-                "blast/blastx/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_blastx_filtered_summary.txt",
-                "consensus",
-                "consensus/filtered",
-                "consensus/filtered/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_medaka_sorted_filtered.fasta",
-                "consensus/raw",
-                "consensus/raw/SRR13439790_taxid_1920753_Shigella-virus-Moo19_samtools.fasta",
-                "consensus/raw/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_samtools.fasta",
-                "consensus/raw/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_medaka_sorted.fasta",
-                "extracted_reads",
-                "extracted_reads/centrifuge",
-                "extracted_reads/centrifuge/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126.extracted_centrifuge_read_1.fa",
-                "extracted_reads/centrifuge/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126.extracted_centrifuge_read_2.fa",
-                "extracted_reads/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1.extracted_centrifuge_read.fa",
-                "extracted_reads/diamond",
-                "extracted_reads/diamond/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_diamond_read_1.fa",
-                "extracted_reads/diamond/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_diamond_read_2.fa",
-                "extracted_reads/kraken2",
-                "extracted_reads/kraken2/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_1.fa",
-                "extracted_reads/kraken2/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_2.fa",
-                "extracted_reads/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1.extracted_kraken2_read.fa",
-                "igv",
-                "igv/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html",
-                "igv/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
-                "igv/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html",
-                "igv/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html",
-                "mapping",
-                "mapping/bowtie2",
-                "mapping/bowtie2/align",
-                "mapping/bowtie2/align/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam",
-                "mapping/bowtie2/align/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam.bai",
-                "mapping/bowtie2/align/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
-                "mapping/bowtie2/align/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
-                "mapping/bowtie2/build",
-                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126",
-                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2",
-                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.1.bt2",
-                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.2.bt2",
-                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.3.bt2",
-                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.4.bt2",
-                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.rev.1.bt2",
-                "mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.rev.2.bt2",
-                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19",
-                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2",
-                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.1.bt2",
-                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.2.bt2",
-                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.3.bt2",
-                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.4.bt2",
-                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.rev.1.bt2",
-                "mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2",
-                "mapping/minimap2",
-                "mapping/minimap2/align",
-                "mapping/minimap2/align/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam",
-                "mapping/minimap2/align/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai",
-                "mapping/minimap2/align/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam",
-                "mapping/minimap2/align/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai",
-                "mapping/minimap2/index",
-                "mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1",
-                "mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1/GCA_037915385.1_ASM3791538v1_genomic.fna.mmi",
                 "multiqc",
                 "multiqc/multiqc_data",
                 "multiqc/multiqc_data/llms-full.txt",
@@ -345,34 +281,111 @@
                 "pathogens/samtools/depth/SRR13439799_taxid_488241_Influenza_A_virus_H2N2.tsv",
                 "pipeline_info",
                 "pipeline_info/genomic-medicine-sweden_metaval_software_mqc_versions.yml",
-                "report",
-                "report/metaval_report.html",
-                "samtools",
-                "samtools/coverage",
-                "samtools/coverage/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1.txt",
-                "samtools/coverage/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
-                "samtools/coverage/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.txt",
-                "samtools/coverage/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.txt",
-                "samtools/coverage_plot",
-                "samtools/coverage_plot/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1.png",
-                "samtools/coverage_plot/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
-                "samtools/coverage_plot/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.png",
-                "samtools/coverage_plot/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.png",
-                "samtools/depth",
-                "samtools/depth/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1.tsv",
-                "samtools/depth/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
-                "samtools/depth/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.tsv",
-                "samtools/depth/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.tsv",
-                "taxpasta_flagged",
-                "taxpasta_flagged/SRR13439790_DNA_ELB_centrifuge.tsv",
-                "taxpasta_flagged/SRR13439790_DNA_ELB_diamond.tsv",
-                "taxpasta_flagged/SRR13439790_DNA_ELB_kraken2.tsv",
-                "taxpasta_flagged/SRR13439799_MIX_NORMAL_centrifuge.tsv",
-                "taxpasta_flagged/SRR13439799_MIX_NORMAL_diamond.tsv",
-                "taxpasta_flagged/SRR13439799_MIX_NORMAL_kraken2.tsv"
+                "verifyspecies",
+                "verifyspecies/blast",
+                "verifyspecies/blast/blastn",
+                "verifyspecies/blast/blastn/centrifuge",
+                "verifyspecies/blast/blastn/centrifuge/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_centrifuge_blast_filtered.txt",
+                "verifyspecies/blast/blastn/centrifuge/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_centrifuge_blast_filtered_summary.txt",
+                "verifyspecies/blast/blastn/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blast_filtered.txt",
+                "verifyspecies/blast/blastn/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blast_filtered_summary.txt",
+                "verifyspecies/blast/blastn/kraken2",
+                "verifyspecies/blast/blastn/kraken2/SRR13439790_taxid_1920753_Gamaleyavirus_kraken2_blast_filtered.txt",
+                "verifyspecies/blast/blastn/kraken2/SRR13439790_taxid_1920753_Gamaleyavirus_kraken2_blast_filtered_summary.txt",
+                "verifyspecies/blast/blastn/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_blast_filtered.txt",
+                "verifyspecies/blast/blastn/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_blast_filtered_summary.txt",
+                "verifyspecies/blast/blastx",
+                "verifyspecies/blast/blastx/centrifuge",
+                "verifyspecies/blast/blastx/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blastx_filtered.txt",
+                "verifyspecies/blast/blastx/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blastx_filtered_summary.txt",
+                "verifyspecies/blast/blastx/kraken2",
+                "verifyspecies/blast/blastx/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_blastx_filtered.txt",
+                "verifyspecies/blast/blastx/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_kraken2_blastx_filtered_summary.txt",
+                "verifyspecies/consensus",
+                "verifyspecies/consensus/filtered",
+                "verifyspecies/consensus/filtered/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_medaka_sorted_filtered.fasta",
+                "verifyspecies/consensus/raw",
+                "verifyspecies/consensus/raw/SRR13439790_taxid_1920753_Shigella-virus-Moo19_samtools.fasta",
+                "verifyspecies/consensus/raw/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_samtools.fasta",
+                "verifyspecies/consensus/raw/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_medaka_sorted.fasta",
+                "verifyspecies/extracted_reads",
+                "verifyspecies/extracted_reads/centrifuge",
+                "verifyspecies/extracted_reads/centrifuge/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126.extracted_centrifuge_read_1.fa",
+                "verifyspecies/extracted_reads/centrifuge/SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126.extracted_centrifuge_read_2.fa",
+                "verifyspecies/extracted_reads/centrifuge/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1.extracted_centrifuge_read.fa",
+                "verifyspecies/extracted_reads/diamond",
+                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_diamond_read_1.fa",
+                "verifyspecies/extracted_reads/diamond/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_diamond_read_2.fa",
+                "verifyspecies/extracted_reads/kraken2",
+                "verifyspecies/extracted_reads/kraken2/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_1.fa",
+                "verifyspecies/extracted_reads/kraken2/SRR13439790_taxid_1920753_Gamaleyavirus.extracted_kraken2_read_2.fa",
+                "verifyspecies/extracted_reads/kraken2/SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1.extracted_kraken2_read.fa",
+                "verifyspecies/igv",
+                "verifyspecies/igv/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_report.html",
+                "verifyspecies/igv/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
+                "verifyspecies/igv/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html",
+                "verifyspecies/igv/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_report.html",
+                "verifyspecies/mapping",
+                "verifyspecies/mapping/bowtie2",
+                "verifyspecies/mapping/bowtie2/align",
+                "verifyspecies/mapping/bowtie2/align/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam",
+                "verifyspecies/mapping/bowtie2/align/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1_sorted.bam.bai",
+                "verifyspecies/mapping/bowtie2/align/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
+                "verifyspecies/mapping/bowtie2/align/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
+                "verifyspecies/mapping/bowtie2/build",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.1.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.2.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.3.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.4.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.rev.1.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Chryseobacterium-sp-StRB126/bowtie2/GCA_000829375.1_ASM82937v1_genomic.fna.rev.2.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.1.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.2.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.3.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.4.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.rev.1.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Shigella-virus-Moo19/bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2",
+                "verifyspecies/mapping/minimap2",
+                "verifyspecies/mapping/minimap2/align",
+                "verifyspecies/mapping/minimap2/align/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam",
+                "verifyspecies/mapping/minimap2/align/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai",
+                "verifyspecies/mapping/minimap2/align/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam",
+                "verifyspecies/mapping/minimap2/align/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai",
+                "verifyspecies/mapping/minimap2/index",
+                "verifyspecies/mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1",
+                "verifyspecies/mapping/minimap2/index/mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1/GCA_037915385.1_ASM3791538v1_genomic.fna.mmi",
+                "verifyspecies/report",
+                "verifyspecies/report/metaval_report.html",
+                "verifyspecies/samtools",
+                "verifyspecies/samtools/coverage",
+                "verifyspecies/samtools/coverage/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1.txt",
+                "verifyspecies/samtools/coverage/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
+                "verifyspecies/samtools/coverage/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.txt",
+                "verifyspecies/samtools/coverage/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.txt",
+                "verifyspecies/samtools/coverage_plot",
+                "verifyspecies/samtools/coverage_plot/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1.png",
+                "verifyspecies/samtools/coverage_plot/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
+                "verifyspecies/samtools/coverage_plot/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.png",
+                "verifyspecies/samtools/coverage_plot/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.png",
+                "verifyspecies/samtools/depth",
+                "verifyspecies/samtools/depth/SRR13439790_centrifuge_taxid_878220_Chryseobacterium-sp-StRB126_mappingorganism_Chryseobacterium-sp-StRB126_GCA_000829375.1.tsv",
+                "verifyspecies/samtools/depth/SRR13439790_kraken2_taxid_1920753_Gamaleyavirus_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
+                "verifyspecies/samtools/depth/SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.tsv",
+                "verifyspecies/samtools/depth/SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.tsv",
+                "verifyspecies/taxpasta_flagged",
+                "verifyspecies/taxpasta_flagged/SRR13439790_DNA_ELB_centrifuge.tsv",
+                "verifyspecies/taxpasta_flagged/SRR13439790_DNA_ELB_diamond.tsv",
+                "verifyspecies/taxpasta_flagged/SRR13439790_DNA_ELB_kraken2.tsv",
+                "verifyspecies/taxpasta_flagged/SRR13439799_MIX_NORMAL_centrifuge.tsv",
+                "verifyspecies/taxpasta_flagged/SRR13439799_MIX_NORMAL_diamond.tsv",
+                "verifyspecies/taxpasta_flagged/SRR13439799_MIX_NORMAL_kraken2.tsv"
             ]
         ],
-        "timestamp": "2026-10-02T13:33:56.321202",
+        "timestamp": "2026-10-09T09:44:23.950481",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -381,12 +394,12 @@
     "Concatenated reads": {
         "content": [
             [
-                "SRR13439790_1.merged.fastq.gzfalse",
-                "SRR13439790_2.merged.fastq.gzfalse",
-                "SRR13439799.merged.fastq.gzfalse"
+                "SRR13439790_1.merged.fastq.gz contains concatenated reads: true",
+                "SRR13439790_2.merged.fastq.gz contains concatenated reads: true",
+                "SRR13439799.merged.fastq.gz contains concatenated reads: true"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:04.460229",
+        "timestamp": "2026-10-09T09:44:29.696239",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -401,7 +414,7 @@
                 "SRR13439799_taxid_488241_Influenza_A_virus_H2N2.tsv:md5,d41d8cd98f00b204e9800998ecf8427e"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:08.805381",
+        "timestamp": "2026-10-09T09:44:34.132549",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -541,7 +554,7 @@
                 }
             }
         ],
-        "timestamp": "2026-10-02T13:33:56.276661",
+        "timestamp": "2026-10-09T09:44:23.929038",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -556,7 +569,21 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.tsv:md5,0053047ffc729c309c6271f45c5d63fd"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:10.046429",
+        "timestamp": "2026-10-09T09:44:35.206603",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "consensus_raw": {
+        "content": [
+            [
+                "SRR13439790_taxid_1920753_Shigella-virus-Moo19_samtools.fasta(Raw consensus for verify species workflow) contains string:true",
+                "SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_samtools.fasta(Raw consensus for verify species workflow) contains string:true",
+                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_medaka_sorted.fasta(Raw consensus for verify species workflow) contains string:true"
+            ]
+        ],
+        "timestamp": "2026-10-09T09:44:30.82304",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -577,7 +604,7 @@
                 "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_centrifuge_blast_filtered_summary.txt(centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-02T13:33:56.447373",
+        "timestamp": "2026-10-09T09:44:23.99049",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -591,7 +618,7 @@
                 "SRR13439799_taxid_488241_Influenza_A_virus_H2N2_1.fasta.gz:md5,d41d8cd98f00b204e9800998ecf8427e"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:07.626722",
+        "timestamp": "2026-10-09T09:44:33.038822",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -600,32 +627,17 @@
     "pathogens_blast": {
         "content": [
             [
-                "SRR13439790_taxid_9606_Homo_sapiens_blast_filtered.txt contains string:true",
-                "SRR13439790_taxid_9606_Homo_sapiens_blast_filtered_summary.txt contains string:true",
-                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blast_filtered.txt contains string:true",
-                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blast_filtered_summary.txt contains string:true"
+                true,
+                true,
+                true,
+                true
             ],
             [
-                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered.txt contains string:true",
-                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_blastx_filtered_summary.txt contains string:true"
+                true,
+                true
             ]
         ],
-        "timestamp": "2026-10-02T13:34:06.715087",
-        "meta": {
-            "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
-        }
-    },
-    "consensus": {
-        "content": [
-            [
-                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_medaka_sorted_filtered.fasta:md5,d5a6f9476cfe3fec90abe5642a531e8a",
-                "SRR13439790_taxid_1920753_Shigella-virus-Moo19_samtools.fasta:md5,012b749fc43ff6bdbd44e22d9be6495d",
-                "SRR13439790_taxid_878220_Chryseobacterium-sp-StRB126_samtools.fasta:md5,b9ac0197121c67898bd9261982064c05",
-                "SRR13439799_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_medaka_sorted.fasta:md5,b46933d543f7f9ef15b9120cd3b63dce"
-            ]
-        ],
-        "timestamp": "2026-10-02T13:34:05.476728",
+        "timestamp": "2026-10-09T09:44:32.101671",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -635,14 +647,14 @@
         "content": [
             [
                 [
-                    "SRR13439790_taxid_9606_Homo_sapiens_sorted.bam pathogens reads consensus md5: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:NC_002205.1\tLN:2313, @SQ\tSN:NC_002206.1\tLN:2204, @SQ\tSN:NC_002207.1\tLN:1882, @SQ\tSN:NC_002208.1\tLN:1841, @SQ\tSN:NC_002209.1\tLN:1557, @SQ\tSN:NC_002210.1\tLN:1191, @SQ\tSN:NC_002211.1\tLN:1096, @SQ\tSN:NC_002204.1\tLN:2368, @SQ\tSN:NC_004910.1\tLN:2341, @SQ\tSN:NC_004911.1\tLN:2328, @SQ\tSN:NC_004912.1\tLN:2225, @SQ\tSN:NC_004908.1\tLN:1714, @SQ\tSN:NC_004905.2\tLN:1557, @SQ\tSN:NC_004909.1\tLN:1418, @SQ\tSN:NC_004907.1\tLN:1025, @SQ\tSN:NC_004906.1\tLN:890, @SQ\tSN:NC_006307.2\tLN:2365, @SQ\tSN:NC_006308.2\tLN:2363, @SQ\tSN:NC_006309.2\tLN:2183, @SQ\tSN:NC_006310.2\tLN:2073, @SQ\tSN:NC_006311.1\tLN:1807, @SQ\tSN:NC_006312.2\tLN:1180, @SQ\tSN:NC_006306.2\tLN:935, @SQ\tSN:NC_007357.1\tLN:2341, @SQ\tSN:NC_007358.1\tLN:2341, @SQ\tSN:NC_007359.1\tLN:2233, @SQ\tSN:NC_007362.1\tLN:1760, @SQ\tSN:NC_007360.1\tLN:1565, @SQ\tSN:NC_007361.1\tLN:1458, @SQ\tSN:NC_007363.1\tLN:1027, @SQ\tSN:NC_007364.1\tLN:865, @SQ\tSN:NC_007373.1\tLN:2341, @SQ\tSN:NC_007372.1\tLN:2341, @SQ\tSN:NC_007371.1\tLN:2233, @SQ\tSN:NC_007366.1\tLN:1762, @SQ\tSN:NC_007369.1\tLN:1566, @SQ\tSN:NC_007368.1\tLN:1467, @SQ\tSN:NC_007367.1\tLN:1027, @SQ\tSN:NC_007370.1\tLN:890, @SQ\tSN:NC_002023.1\tLN:2341, @SQ\tSN:NC_002021.1\tLN:2341, @SQ\tSN:NC_002022.1\tLN:2233, @SQ\tSN:NC_002017.1\tLN:1778, @SQ\tSN:NC_002019.1\tLN:1565, @SQ\tSN:NC_002018.1\tLN:1413, @SQ\tSN:NC_002016.1\tLN:1027, @SQ\tSN:NC_002020.1\tLN:890, @SQ\tSN:NC_007378.1\tLN:2341, @SQ\tSN:NC_007375.1\tLN:2341, @SQ\tSN:NC_007376.1\tLN:2233, @SQ\tSN:NC_007374.1\tLN:1773, @SQ\tSN:NC_007381.1\tLN:1497, @SQ\tSN:NC_007382.1\tLN:1410, @SQ\tSN:NC_007377.1\tLN:1027, @SQ\tSN:NC_007380.1\tLN:838, @SQ\tSN:NC_026422.1\tLN:2280, @SQ\tSN:NC_026423.1\tLN:2297, @SQ\tSN:NC_026424.1\tLN:2176, @SQ\tSN:NC_026425.1\tLN:1708, @SQ\tSN:NC_026426.1\tLN:1506, @SQ\tSN:NC_026429.1\tLN:1398, @SQ\tSN:NC_026427.1\tLN:985, @SQ\tSN:NC_026428.1\tLN:841, @SQ\tSN:NC_026438.1\tLN:2280, @SQ\tSN:NC_026435.1\tLN:2274, @SQ\tSN:NC_026437.1\tLN:2151, @SQ\tSN:NC_026433.1\tLN:1701, @SQ\tSN:NC_026436.1\tLN:1497, @SQ\tSN:NC_026434.1\tLN:1410, @SQ\tSN:NC_026431.1\tLN:982, @SQ\tSN:NC_026432.1\tLN:863, @SQ\tSN:NC_036616.1\tLN:2364, @SQ\tSN:NC_036615.1\tLN:2330, @SQ\tSN:NC_036619.1\tLN:2195, @SQ\tSN:NC_036618.1\tLN:2049, @SQ\tSN:NC_036617.1\tLN:1775, @SQ\tSN:NC_036620.1\tLN:1219, @SQ\tSN:NC_036621.1\tLN:868, @SQ\tSN:NC_060925.1\tLN:10001, @SQ\tSN:NC_060926.1\tLN:10001, @SQ\tSN:NC_060927.1\tLN:10001, @SQ\tSN:NC_060928.1\tLN:10001, @SQ\tSN:NC_060929.1\tLN:10001, @SQ\tSN:NC_060930.1\tLN:10001, @SQ\tSN:NC_060931.1\tLN:10001, @SQ\tSN:NC_060932.1\tLN:10001, @SQ\tSN:NC_060933.1\tLN:10001, @SQ\tSN:NC_060934.1\tLN:10001, @SQ\tSN:NC_060935.1\tLN:10001, @SQ\tSN:NC_060936.1\tLN:10001, @SQ\tSN:NC_060937.1\tLN:10001, @SQ\tSN:NC_060938.1\tLN:10001, @SQ\tSN:NC_060939.1\tLN:10001, @SQ\tSN:NC_060940.1\tLN:10001, @SQ\tSN:NC_060941.1\tLN:10001, @SQ\tSN:NC_060942.1\tLN:10001, @SQ\tSN:NC_060943.1\tLN:10001, @SQ\tSN:NC_060944.1\tLN:10001, @SQ\tSN:NC_060945.1\tLN:10001, @SQ\tSN:NC_060946.1\tLN:10001, @SQ\tSN:NC_060947.1\tLN:10001, @SQ\tSN:NC_060948.1\tLN:10001, @RG\tID:SRR13439790\tSM:SRR13439790, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-l --wrapper basic-0 -x ./bowtie2/reference.fasta --threads 4 --rg-id SRR13439790 --rg SM:SRR13439790 --passthrough -1 SRR13439790_1.merged.fastq.gz -2 SRR13439790_2.merged.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439790.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439790.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439790_aligned_pathogens_genome --threads 4 --reference reference.fasta -o SRR13439790_aligned_pathogens_genome.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439790_aligned_pathogens_genome.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439790_aligned_pathogens_genome_mapped --threads 4 -o SRR13439790_aligned_pathogens_genome_mapped.bam##idx##SRR13439790_aligned_pathogens_genome_mapped.bam.bai --write-index -, @PG\tID:samtools.5\tPN:samtools\tPP:samtools.4\tVN:1.24\tCL:samtools view --threads 1 -bh -o SRR13439790_taxid_9606_Homo_sapiens.bam SRR13439790_aligned_pathogens_genome_mapped.bam NC_060927.1 NC_060928.1 NC_060933.1 NC_060935.1 NC_060936.1 NC_060937.1 NC_060938.1 NC_060939.1 NC_060942.1 NC_060943.1 NC_060944.1 NC_060945.1 NC_060946.1 NC_060947.1 NC_060948.1, @PG\tID:samtools.6\tPN:samtools\tPP:samtools.5\tVN:1.24\tCL:samtools cat 1/SRR13439790_taxid_9606_Homo_sapiens.bam, @PG\tID:samtools.7\tPN:samtools\tPP:samtools.6\tVN:1.24\tCL:samtools sort -T SRR13439790_taxid_9606_Homo_sapiens_sorted --threads 4 -o SRR13439790_taxid_9606_Homo_sapiens_sorted.bam##idx##SRR13439790_taxid_9606_Homo_sapiens_sorted.bam.bai --write-index -]"
+                    "SRR13439790_taxid_9606_Homo_sapiens_sorted.bam pathogens reads consensus header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:NC_002205.1\tLN:2313, @SQ\tSN:NC_002206.1\tLN:2204, @SQ\tSN:NC_002207.1\tLN:1882, @SQ\tSN:NC_002208.1\tLN:1841, @SQ\tSN:NC_002209.1\tLN:1557, @SQ\tSN:NC_002210.1\tLN:1191, @SQ\tSN:NC_002211.1\tLN:1096, @SQ\tSN:NC_002204.1\tLN:2368, @SQ\tSN:NC_004910.1\tLN:2341, @SQ\tSN:NC_004911.1\tLN:2328, @SQ\tSN:NC_004912.1\tLN:2225, @SQ\tSN:NC_004908.1\tLN:1714, @SQ\tSN:NC_004905.2\tLN:1557, @SQ\tSN:NC_004909.1\tLN:1418, @SQ\tSN:NC_004907.1\tLN:1025, @SQ\tSN:NC_004906.1\tLN:890, @SQ\tSN:NC_006307.2\tLN:2365, @SQ\tSN:NC_006308.2\tLN:2363, @SQ\tSN:NC_006309.2\tLN:2183, @SQ\tSN:NC_006310.2\tLN:2073, @SQ\tSN:NC_006311.1\tLN:1807, @SQ\tSN:NC_006312.2\tLN:1180, @SQ\tSN:NC_006306.2\tLN:935, @SQ\tSN:NC_007357.1\tLN:2341, @SQ\tSN:NC_007358.1\tLN:2341, @SQ\tSN:NC_007359.1\tLN:2233, @SQ\tSN:NC_007362.1\tLN:1760, @SQ\tSN:NC_007360.1\tLN:1565, @SQ\tSN:NC_007361.1\tLN:1458, @SQ\tSN:NC_007363.1\tLN:1027, @SQ\tSN:NC_007364.1\tLN:865, @SQ\tSN:NC_007373.1\tLN:2341, @SQ\tSN:NC_007372.1\tLN:2341, @SQ\tSN:NC_007371.1\tLN:2233, @SQ\tSN:NC_007366.1\tLN:1762, @SQ\tSN:NC_007369.1\tLN:1566, @SQ\tSN:NC_007368.1\tLN:1467, @SQ\tSN:NC_007367.1\tLN:1027, @SQ\tSN:NC_007370.1\tLN:890, @SQ\tSN:NC_002023.1\tLN:2341, @SQ\tSN:NC_002021.1\tLN:2341, @SQ\tSN:NC_002022.1\tLN:2233, @SQ\tSN:NC_002017.1\tLN:1778, @SQ\tSN:NC_002019.1\tLN:1565, @SQ\tSN:NC_002018.1\tLN:1413, @SQ\tSN:NC_002016.1\tLN:1027, @SQ\tSN:NC_002020.1\tLN:890, @SQ\tSN:NC_007378.1\tLN:2341, @SQ\tSN:NC_007375.1\tLN:2341, @SQ\tSN:NC_007376.1\tLN:2233, @SQ\tSN:NC_007374.1\tLN:1773, @SQ\tSN:NC_007381.1\tLN:1497, @SQ\tSN:NC_007382.1\tLN:1410, @SQ\tSN:NC_007377.1\tLN:1027, @SQ\tSN:NC_007380.1\tLN:838, @SQ\tSN:NC_026422.1\tLN:2280, @SQ\tSN:NC_026423.1\tLN:2297, @SQ\tSN:NC_026424.1\tLN:2176, @SQ\tSN:NC_026425.1\tLN:1708, @SQ\tSN:NC_026426.1\tLN:1506, @SQ\tSN:NC_026429.1\tLN:1398, @SQ\tSN:NC_026427.1\tLN:985, @SQ\tSN:NC_026428.1\tLN:841, @SQ\tSN:NC_026438.1\tLN:2280, @SQ\tSN:NC_026435.1\tLN:2274, @SQ\tSN:NC_026437.1\tLN:2151, @SQ\tSN:NC_026433.1\tLN:1701, @SQ\tSN:NC_026436.1\tLN:1497, @SQ\tSN:NC_026434.1\tLN:1410, @SQ\tSN:NC_026431.1\tLN:982, @SQ\tSN:NC_026432.1\tLN:863, @SQ\tSN:NC_036616.1\tLN:2364, @SQ\tSN:NC_036615.1\tLN:2330, @SQ\tSN:NC_036619.1\tLN:2195, @SQ\tSN:NC_036618.1\tLN:2049, @SQ\tSN:NC_036617.1\tLN:1775, @SQ\tSN:NC_036620.1\tLN:1219, @SQ\tSN:NC_036621.1\tLN:868, @SQ\tSN:NC_060925.1\tLN:10001, @SQ\tSN:NC_060926.1\tLN:10001, @SQ\tSN:NC_060927.1\tLN:10001, @SQ\tSN:NC_060928.1\tLN:10001, @SQ\tSN:NC_060929.1\tLN:10001, @SQ\tSN:NC_060930.1\tLN:10001, @SQ\tSN:NC_060931.1\tLN:10001, @SQ\tSN:NC_060932.1\tLN:10001, @SQ\tSN:NC_060933.1\tLN:10001, @SQ\tSN:NC_060934.1\tLN:10001, @SQ\tSN:NC_060935.1\tLN:10001, @SQ\tSN:NC_060936.1\tLN:10001, @SQ\tSN:NC_060937.1\tLN:10001, @SQ\tSN:NC_060938.1\tLN:10001, @SQ\tSN:NC_060939.1\tLN:10001, @SQ\tSN:NC_060940.1\tLN:10001, @SQ\tSN:NC_060941.1\tLN:10001, @SQ\tSN:NC_060942.1\tLN:10001, @SQ\tSN:NC_060943.1\tLN:10001, @SQ\tSN:NC_060944.1\tLN:10001, @SQ\tSN:NC_060945.1\tLN:10001, @SQ\tSN:NC_060946.1\tLN:10001, @SQ\tSN:NC_060947.1\tLN:10001, @SQ\tSN:NC_060948.1\tLN:10001, @RG\tID:SRR13439790\tSM:SRR13439790, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-l --wrapper basic-0 -x ./bowtie2/reference.fasta --threads 4 --rg-id SRR13439790 --rg SM:SRR13439790 --passthrough -1 SRR13439790_1.merged.fastq.gz -2 SRR13439790_2.merged.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439790.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439790.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439790_aligned_pathogens_genome --threads 4 --reference reference.fasta -o SRR13439790_aligned_pathogens_genome.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439790_aligned_pathogens_genome.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439790_aligned_pathogens_genome_mapped --threads 4 -o SRR13439790_aligned_pathogens_genome_mapped.bam##idx##SRR13439790_aligned_pathogens_genome_mapped.bam.bai --write-index -, @PG\tID:samtools.5\tPN:samtools\tPP:samtools.4\tVN:1.24\tCL:samtools view --threads 1 -bh -o SRR13439790_taxid_9606_Homo_sapiens.bam SRR13439790_aligned_pathogens_genome_mapped.bam NC_060927.1 NC_060928.1 NC_060933.1 NC_060935.1 NC_060936.1 NC_060937.1 NC_060938.1 NC_060939.1 NC_060942.1 NC_060943.1 NC_060944.1 NC_060945.1 NC_060946.1 NC_060947.1 NC_060948.1, @PG\tID:samtools.6\tPN:samtools\tPP:samtools.5\tVN:1.24\tCL:samtools cat 1/SRR13439790_taxid_9606_Homo_sapiens.bam, @PG\tID:samtools.7\tPN:samtools\tPP:samtools.6\tVN:1.24\tCL:samtools sort -T SRR13439790_taxid_9606_Homo_sapiens_sorted --threads 4 -o SRR13439790_taxid_9606_Homo_sapiens_sorted.bam##idx##SRR13439790_taxid_9606_Homo_sapiens_sorted.bam.bai --write-index -]"
                 ],
                 [
-                    "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_sorted.bam pathogens reads consensus md5: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:NC_002205.1\tLN:2313, @SQ\tSN:NC_002206.1\tLN:2204, @SQ\tSN:NC_002207.1\tLN:1882, @SQ\tSN:NC_002208.1\tLN:1841, @SQ\tSN:NC_002209.1\tLN:1557, @SQ\tSN:NC_002210.1\tLN:1191, @SQ\tSN:NC_002211.1\tLN:1096, @SQ\tSN:NC_002204.1\tLN:2368, @SQ\tSN:NC_004910.1\tLN:2341, @SQ\tSN:NC_004911.1\tLN:2328, @SQ\tSN:NC_004912.1\tLN:2225, @SQ\tSN:NC_004908.1\tLN:1714, @SQ\tSN:NC_004905.2\tLN:1557, @SQ\tSN:NC_004909.1\tLN:1418, @SQ\tSN:NC_004907.1\tLN:1025, @SQ\tSN:NC_004906.1\tLN:890, @SQ\tSN:NC_006307.2\tLN:2365, @SQ\tSN:NC_006308.2\tLN:2363, @SQ\tSN:NC_006309.2\tLN:2183, @SQ\tSN:NC_006310.2\tLN:2073, @SQ\tSN:NC_006311.1\tLN:1807, @SQ\tSN:NC_006312.2\tLN:1180, @SQ\tSN:NC_006306.2\tLN:935, @SQ\tSN:NC_007357.1\tLN:2341, @SQ\tSN:NC_007358.1\tLN:2341, @SQ\tSN:NC_007359.1\tLN:2233, @SQ\tSN:NC_007362.1\tLN:1760, @SQ\tSN:NC_007360.1\tLN:1565, @SQ\tSN:NC_007361.1\tLN:1458, @SQ\tSN:NC_007363.1\tLN:1027, @SQ\tSN:NC_007364.1\tLN:865, @SQ\tSN:NC_007373.1\tLN:2341, @SQ\tSN:NC_007372.1\tLN:2341, @SQ\tSN:NC_007371.1\tLN:2233, @SQ\tSN:NC_007366.1\tLN:1762, @SQ\tSN:NC_007369.1\tLN:1566, @SQ\tSN:NC_007368.1\tLN:1467, @SQ\tSN:NC_007367.1\tLN:1027, @SQ\tSN:NC_007370.1\tLN:890, @SQ\tSN:NC_002023.1\tLN:2341, @SQ\tSN:NC_002021.1\tLN:2341, @SQ\tSN:NC_002022.1\tLN:2233, @SQ\tSN:NC_002017.1\tLN:1778, @SQ\tSN:NC_002019.1\tLN:1565, @SQ\tSN:NC_002018.1\tLN:1413, @SQ\tSN:NC_002016.1\tLN:1027, @SQ\tSN:NC_002020.1\tLN:890, @SQ\tSN:NC_007378.1\tLN:2341, @SQ\tSN:NC_007375.1\tLN:2341, @SQ\tSN:NC_007376.1\tLN:2233, @SQ\tSN:NC_007374.1\tLN:1773, @SQ\tSN:NC_007381.1\tLN:1497, @SQ\tSN:NC_007382.1\tLN:1410, @SQ\tSN:NC_007377.1\tLN:1027, @SQ\tSN:NC_007380.1\tLN:838, @SQ\tSN:NC_026422.1\tLN:2280, @SQ\tSN:NC_026423.1\tLN:2297, @SQ\tSN:NC_026424.1\tLN:2176, @SQ\tSN:NC_026425.1\tLN:1708, @SQ\tSN:NC_026426.1\tLN:1506, @SQ\tSN:NC_026429.1\tLN:1398, @SQ\tSN:NC_026427.1\tLN:985, @SQ\tSN:NC_026428.1\tLN:841, @SQ\tSN:NC_026438.1\tLN:2280, @SQ\tSN:NC_026435.1\tLN:2274, @SQ\tSN:NC_026437.1\tLN:2151, @SQ\tSN:NC_026433.1\tLN:1701, @SQ\tSN:NC_026436.1\tLN:1497, @SQ\tSN:NC_026434.1\tLN:1410, @SQ\tSN:NC_026431.1\tLN:982, @SQ\tSN:NC_026432.1\tLN:863, @SQ\tSN:NC_036616.1\tLN:2364, @SQ\tSN:NC_036615.1\tLN:2330, @SQ\tSN:NC_036619.1\tLN:2195, @SQ\tSN:NC_036618.1\tLN:2049, @SQ\tSN:NC_036617.1\tLN:1775, @SQ\tSN:NC_036620.1\tLN:1219, @SQ\tSN:NC_036621.1\tLN:868, @SQ\tSN:NC_060925.1\tLN:10001, @SQ\tSN:NC_060926.1\tLN:10001, @SQ\tSN:NC_060927.1\tLN:10001, @SQ\tSN:NC_060928.1\tLN:10001, @SQ\tSN:NC_060929.1\tLN:10001, @SQ\tSN:NC_060930.1\tLN:10001, @SQ\tSN:NC_060931.1\tLN:10001, @SQ\tSN:NC_060932.1\tLN:10001, @SQ\tSN:NC_060933.1\tLN:10001, @SQ\tSN:NC_060934.1\tLN:10001, @SQ\tSN:NC_060935.1\tLN:10001, @SQ\tSN:NC_060936.1\tLN:10001, @SQ\tSN:NC_060937.1\tLN:10001, @SQ\tSN:NC_060938.1\tLN:10001, @SQ\tSN:NC_060939.1\tLN:10001, @SQ\tSN:NC_060940.1\tLN:10001, @SQ\tSN:NC_060941.1\tLN:10001, @SQ\tSN:NC_060942.1\tLN:10001, @SQ\tSN:NC_060943.1\tLN:10001, @SQ\tSN:NC_060944.1\tLN:10001, @SQ\tSN:NC_060945.1\tLN:10001, @SQ\tSN:NC_060946.1\tLN:10001, @SQ\tSN:NC_060947.1\tLN:10001, @SQ\tSN:NC_060948.1\tLN:10001, @PG\tID:minimap2\tPN:minimap2\tVN:2.30-r1287\tCL:minimap2 --sam-hit-only -t 4 -a reference.fasta.mmi SRR13439799.merged.fastq.gz, @PG\tID:samtools\tPN:samtools\tPP:minimap2\tVN:1.23.1\tCL:samtools sort -@ 3 -o SRR13439799.bam##idx##SRR13439799.bam.bai --write-index, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439799.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439799_aligned_pathogens_genome --threads 4 --reference reference.fasta -o SRR13439799_aligned_pathogens_genome.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439799_aligned_pathogens_genome.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439799_aligned_pathogens_genome_mapped --threads 4 -o SRR13439799_aligned_pathogens_genome_mapped.bam##idx##SRR13439799_aligned_pathogens_genome_mapped.bam.bai --write-index -, @PG\tID:samtools.5\tPN:samtools\tPP:samtools.4\tVN:1.24\tCL:samtools view --threads 1 -bh -o SRR13439799_taxid_211044_Influenza_A_virus_H1N1.bam SRR13439799_aligned_pathogens_genome_mapped.bam NC_002023.1 NC_002022.1 NC_002019.1 NC_002020.1, @PG\tID:samtools.6\tPN:samtools\tPP:samtools.5\tVN:1.24\tCL:samtools cat 1/SRR13439799_taxid_211044_Influenza_A_virus_H1N1.bam, @PG\tID:samtools.7\tPN:samtools\tPP:samtools.6\tVN:1.24\tCL:samtools sort -T SRR13439799_taxid_211044_Influenza_A_virus_H1N1_sorted --threads 4 -o SRR13439799_taxid_211044_Influenza_A_virus_H1N1_sorted.bam##idx##SRR13439799_taxid_211044_Influenza_A_virus_H1N1_sorted.bam.bai --write-index -]"
+                    "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_sorted.bam pathogens reads consensus header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:NC_002205.1\tLN:2313, @SQ\tSN:NC_002206.1\tLN:2204, @SQ\tSN:NC_002207.1\tLN:1882, @SQ\tSN:NC_002208.1\tLN:1841, @SQ\tSN:NC_002209.1\tLN:1557, @SQ\tSN:NC_002210.1\tLN:1191, @SQ\tSN:NC_002211.1\tLN:1096, @SQ\tSN:NC_002204.1\tLN:2368, @SQ\tSN:NC_004910.1\tLN:2341, @SQ\tSN:NC_004911.1\tLN:2328, @SQ\tSN:NC_004912.1\tLN:2225, @SQ\tSN:NC_004908.1\tLN:1714, @SQ\tSN:NC_004905.2\tLN:1557, @SQ\tSN:NC_004909.1\tLN:1418, @SQ\tSN:NC_004907.1\tLN:1025, @SQ\tSN:NC_004906.1\tLN:890, @SQ\tSN:NC_006307.2\tLN:2365, @SQ\tSN:NC_006308.2\tLN:2363, @SQ\tSN:NC_006309.2\tLN:2183, @SQ\tSN:NC_006310.2\tLN:2073, @SQ\tSN:NC_006311.1\tLN:1807, @SQ\tSN:NC_006312.2\tLN:1180, @SQ\tSN:NC_006306.2\tLN:935, @SQ\tSN:NC_007357.1\tLN:2341, @SQ\tSN:NC_007358.1\tLN:2341, @SQ\tSN:NC_007359.1\tLN:2233, @SQ\tSN:NC_007362.1\tLN:1760, @SQ\tSN:NC_007360.1\tLN:1565, @SQ\tSN:NC_007361.1\tLN:1458, @SQ\tSN:NC_007363.1\tLN:1027, @SQ\tSN:NC_007364.1\tLN:865, @SQ\tSN:NC_007373.1\tLN:2341, @SQ\tSN:NC_007372.1\tLN:2341, @SQ\tSN:NC_007371.1\tLN:2233, @SQ\tSN:NC_007366.1\tLN:1762, @SQ\tSN:NC_007369.1\tLN:1566, @SQ\tSN:NC_007368.1\tLN:1467, @SQ\tSN:NC_007367.1\tLN:1027, @SQ\tSN:NC_007370.1\tLN:890, @SQ\tSN:NC_002023.1\tLN:2341, @SQ\tSN:NC_002021.1\tLN:2341, @SQ\tSN:NC_002022.1\tLN:2233, @SQ\tSN:NC_002017.1\tLN:1778, @SQ\tSN:NC_002019.1\tLN:1565, @SQ\tSN:NC_002018.1\tLN:1413, @SQ\tSN:NC_002016.1\tLN:1027, @SQ\tSN:NC_002020.1\tLN:890, @SQ\tSN:NC_007378.1\tLN:2341, @SQ\tSN:NC_007375.1\tLN:2341, @SQ\tSN:NC_007376.1\tLN:2233, @SQ\tSN:NC_007374.1\tLN:1773, @SQ\tSN:NC_007381.1\tLN:1497, @SQ\tSN:NC_007382.1\tLN:1410, @SQ\tSN:NC_007377.1\tLN:1027, @SQ\tSN:NC_007380.1\tLN:838, @SQ\tSN:NC_026422.1\tLN:2280, @SQ\tSN:NC_026423.1\tLN:2297, @SQ\tSN:NC_026424.1\tLN:2176, @SQ\tSN:NC_026425.1\tLN:1708, @SQ\tSN:NC_026426.1\tLN:1506, @SQ\tSN:NC_026429.1\tLN:1398, @SQ\tSN:NC_026427.1\tLN:985, @SQ\tSN:NC_026428.1\tLN:841, @SQ\tSN:NC_026438.1\tLN:2280, @SQ\tSN:NC_026435.1\tLN:2274, @SQ\tSN:NC_026437.1\tLN:2151, @SQ\tSN:NC_026433.1\tLN:1701, @SQ\tSN:NC_026436.1\tLN:1497, @SQ\tSN:NC_026434.1\tLN:1410, @SQ\tSN:NC_026431.1\tLN:982, @SQ\tSN:NC_026432.1\tLN:863, @SQ\tSN:NC_036616.1\tLN:2364, @SQ\tSN:NC_036615.1\tLN:2330, @SQ\tSN:NC_036619.1\tLN:2195, @SQ\tSN:NC_036618.1\tLN:2049, @SQ\tSN:NC_036617.1\tLN:1775, @SQ\tSN:NC_036620.1\tLN:1219, @SQ\tSN:NC_036621.1\tLN:868, @SQ\tSN:NC_060925.1\tLN:10001, @SQ\tSN:NC_060926.1\tLN:10001, @SQ\tSN:NC_060927.1\tLN:10001, @SQ\tSN:NC_060928.1\tLN:10001, @SQ\tSN:NC_060929.1\tLN:10001, @SQ\tSN:NC_060930.1\tLN:10001, @SQ\tSN:NC_060931.1\tLN:10001, @SQ\tSN:NC_060932.1\tLN:10001, @SQ\tSN:NC_060933.1\tLN:10001, @SQ\tSN:NC_060934.1\tLN:10001, @SQ\tSN:NC_060935.1\tLN:10001, @SQ\tSN:NC_060936.1\tLN:10001, @SQ\tSN:NC_060937.1\tLN:10001, @SQ\tSN:NC_060938.1\tLN:10001, @SQ\tSN:NC_060939.1\tLN:10001, @SQ\tSN:NC_060940.1\tLN:10001, @SQ\tSN:NC_060941.1\tLN:10001, @SQ\tSN:NC_060942.1\tLN:10001, @SQ\tSN:NC_060943.1\tLN:10001, @SQ\tSN:NC_060944.1\tLN:10001, @SQ\tSN:NC_060945.1\tLN:10001, @SQ\tSN:NC_060946.1\tLN:10001, @SQ\tSN:NC_060947.1\tLN:10001, @SQ\tSN:NC_060948.1\tLN:10001, @PG\tID:minimap2\tPN:minimap2\tVN:2.30-r1287\tCL:minimap2 --sam-hit-only -t 4 -a reference.fasta.mmi SRR13439799.merged.fastq.gz, @PG\tID:samtools\tPN:samtools\tPP:minimap2\tVN:1.23.1\tCL:samtools sort -@ 3 -o SRR13439799.bam##idx##SRR13439799.bam.bai --write-index, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439799.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439799_aligned_pathogens_genome --threads 4 --reference reference.fasta -o SRR13439799_aligned_pathogens_genome.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439799_aligned_pathogens_genome.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439799_aligned_pathogens_genome_mapped --threads 4 -o SRR13439799_aligned_pathogens_genome_mapped.bam##idx##SRR13439799_aligned_pathogens_genome_mapped.bam.bai --write-index -, @PG\tID:samtools.5\tPN:samtools\tPP:samtools.4\tVN:1.24\tCL:samtools view --threads 1 -bh -o SRR13439799_taxid_211044_Influenza_A_virus_H1N1.bam SRR13439799_aligned_pathogens_genome_mapped.bam NC_002023.1 NC_002022.1 NC_002019.1 NC_002020.1, @PG\tID:samtools.6\tPN:samtools\tPP:samtools.5\tVN:1.24\tCL:samtools cat 1/SRR13439799_taxid_211044_Influenza_A_virus_H1N1.bam, @PG\tID:samtools.7\tPN:samtools\tPP:samtools.6\tVN:1.24\tCL:samtools sort -T SRR13439799_taxid_211044_Influenza_A_virus_H1N1_sorted --threads 4 -o SRR13439799_taxid_211044_Influenza_A_virus_H1N1_sorted.bam##idx##SRR13439799_taxid_211044_Influenza_A_virus_H1N1_sorted.bam.bai --write-index -]"
                 ]
             ]
         ],
-        "timestamp": "2026-10-02T13:34:07.986596",
+        "timestamp": "2026-10-09T09:44:33.330444",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -651,10 +663,13 @@
     "pathogens_consensus": {
         "content": [
             [
-                
+                "SRR13439790_taxid_9606_Homo_sapiens_samtools_filtered.fasta:md5,7fb20076f0b1c292154921fe6cee38c6",
+                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_medaka_sorted_filtered.fasta:md5,10864e06487153a83202326f3e7cdf38",
+                "SRR13439790_taxid_9606_Homo_sapiens_samtools.fasta:md5,3d6e2a9b3a10a30e90f7961ea6d64677",
+                "SRR13439799_taxid_211044_Influenza_A_virus_H1N1_medaka_sorted.fasta:md5,e1c0dd7352c0f3dd86236abc88c3c69e"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:07.048106",
+        "timestamp": "2026-10-09T09:44:32.376411",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -669,7 +684,7 @@
                 "SRR13439799_kraken2_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1.png exists: true"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:09.761467",
+        "timestamp": "2026-10-09T09:44:34.935505",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -681,7 +696,7 @@
                 "metaval_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:09.128767",
+        "timestamp": "2026-10-09T09:44:34.399492",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -698,7 +713,7 @@
                 ]
             ]
         ],
-        "timestamp": "2026-10-02T13:34:04.563114",
+        "timestamp": "2026-10-09T09:44:29.752676",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -712,7 +727,7 @@
                 "SRR13439799_taxid_211044_Influenza_A_virus_H1N1.png exists: true"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:08.551971",
+        "timestamp": "2026-10-09T09:44:33.884714",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -729,7 +744,7 @@
                 "SRR13439799_MIX_NORMAL_kraken2.tsv:md5,e90c8869641cb34750e473c7777dd0e0"
             ]
         ],
-        "timestamp": "2026-10-02T13:34:11.068597",
+        "timestamp": "2026-10-09T09:44:36.272191",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
