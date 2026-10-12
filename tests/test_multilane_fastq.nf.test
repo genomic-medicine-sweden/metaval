@@ -64,7 +64,8 @@ nextflow_pipeline {
 
             //pathogens samtools depth
             def stable_content_pathogens_samtools_depth = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['pathogens/samtools/depth/*.tsv'], ignoreFile: 'tests/.nftignore')
-
+            // Consensus: partly unstable files see custom assertions
+            
             // samtools coverage
             def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
 

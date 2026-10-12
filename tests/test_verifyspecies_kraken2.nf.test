@@ -40,6 +40,8 @@ nextflow_pipeline {
 
             //viral taxid
             def stable_content_viral_taxids = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/viral_taxids/*'], ignoreFile: 'tests/.nftignore')
+            
+            // consensus partly unstable files; see custom assertions
 
             // samtools coverage
             def stable_content_samtools_coverage = getAllFilesFromDir(params.outdir, relative: false, includeDir: false, include :['verifyspecies/samtools/coverage/*.txt'], ignoreFile: 'tests/.nftignore')
