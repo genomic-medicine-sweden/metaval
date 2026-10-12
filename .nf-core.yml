@@ -1,4 +1,5 @@
 lint:
+  included_configs: False
   files_exist:
     - assets/nf-core-metaval_logo_light.png
     - docs/images/nf-core-metaval_logo_light.png
