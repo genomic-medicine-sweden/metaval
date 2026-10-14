@@ -302,7 +302,7 @@
                 "custom_config_version": {
                     "type": "string",
                     "description": "Git commit id for Institutional configs.",
-                    "default": "main",
+                    "default": "master",
                     "hidden": true,
                     "fa_icon": "fas fa-users-cog"
                 },
