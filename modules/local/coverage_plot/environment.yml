@@ -4,4 +4,4 @@ channels:
   - bioconda
 dependencies:
   - python=3.13
-  - matplotlib=3.7
+  - matplotlib=3.10
