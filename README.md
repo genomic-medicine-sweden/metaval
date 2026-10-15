@@ -1,106 +1,222 @@
-# ![nf-core/metaval](docs/images/nf-core-metaval_logo_light.png#gh-light-mode-only) ![nf-core/metaval](docs/images/nf-core-metaval_logo_dark.png#gh-dark-mode-only)
+<h1>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/metaval_logo_dark.svg">
+    <img alt="genomic-medicine-sweden/metaval" src="docs/images/metaval_logo_light.png", width="250">
+  </picture>
+</h1>
 
-[![GitHub Actions CI Status](https://github.com/nf-core/metaval/workflows/nf-core%20CI/badge.svg)](https://github.com/nf-core/metaval/actions?query=workflow%3A%22nf-core+CI%22)
-[![GitHub Actions Linting Status](https://github.com/nf-core/metaval/workflows/nf-core%20linting/badge.svg)](https://github.com/nf-core/metaval/actions?query=workflow%3A%22nf-core+linting%22)[![AWS CI](https://img.shields.io/badge/CI%20tests-full%20size-FF9900?labelColor=000000&logo=Amazon%20AWS)](https://nf-co.re/metaval/results)[![Cite with Zenodo](http://img.shields.io/badge/DOI-10.5281/zenodo.XXXXXXX-1073c8?labelColor=000000)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![Open in GitHub Codespaces](https://img.shields.io/badge/Open_In_GitHub_Codespaces-black?labelColor=grey&logo=github)](https://github.com/codespaces/new/genomic-medicine-sweden/metaval)
+[![GitHub Actions CI Status](https://github.com/genomic-medicine-sweden/metaval/actions/workflows/nf-test.yml/badge.svg)](https://github.com/genomic-medicine-sweden/metaval/actions/workflows/nf-test.yml)
+[![GitHub Actions Linting Status](https://github.com/genomic-medicine-sweden/metaval/actions/workflows/linting.yml/badge.svg)](https://github.com/genomic-medicine-sweden/metaval/actions/workflows/linting.yml)[![Cite with Zenodo](http://img.shields.io/badge/DOI-10.5281/zenodo.XXXXXXX-1073c8?labelColor=000000)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![nf-test](https://img.shields.io/badge/unit_tests-nf--test-337ab7.svg)](https://www.nf-test.com)
 
-[![Nextflow](https://img.shields.io/badge/nextflow%20DSL2-%E2%89%A523.04.0-23aa62.svg)](https://www.nextflow.io/)
+[![Nextflow](https://img.shields.io/badge/version-%E2%89%A525.10.4-green?style=flat&logo=nextflow&logoColor=white&color=%230DC09D&link=https%3A%2F%2Fnextflow.io)](https://www.nextflow.io/)
+[![nf-core template version](https://img.shields.io/badge/nf--core_template-4.0.3-green?style=flat&logo=nfcore&logoColor=white&color=%2324B064&link=https%3A%2F%2Fnf-co.re)](https://github.com/nf-core/tools/releases/tag/4.0.3)
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
 [![run with docker](https://img.shields.io/badge/run%20with-docker-0db7ed?labelColor=000000&logo=docker)](https://www.docker.com/)
 [![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
-[![Launch on Nextflow Tower](https://img.shields.io/badge/Launch%20%F0%9F%9A%80-Nextflow%20Tower-%234256e7)](https://tower.nf/launch?pipeline=https://github.com/nf-core/metaval)
-
-[![Get help on Slack](http://img.shields.io/badge/slack-nf--core%20%23metaval-4A154B?labelColor=000000&logo=slack)](https://nfcore.slack.com/channels/metaval)[![Follow on Twitter](http://img.shields.io/badge/twitter-%40nf__core-1DA1F2?labelColor=000000&logo=twitter)](https://twitter.com/nf_core)[![Follow on Mastodon](https://img.shields.io/badge/mastodon-nf__core-6364ff?labelColor=FFFFFF&logo=mastodon)](https://mstdn.science/@nf_core)[![Watch on YouTube](http://img.shields.io/badge/youtube-nf--core-FF0000?labelColor=000000&logo=youtube)](https://www.youtube.com/c/nf-core)
+[![Launch on Seqera Platform](https://img.shields.io/badge/Launch%20%F0%9F%9A%80-Seqera%20Platform-%234256e7)](https://cloud.seqera.io/launch?pipeline=https://github.com/genomic-medicine-sweden/metaval)
 
 ## Introduction
 
-**nf-core/metaval** is a bioinformatics pipeline that ...
+**genomic-medicine-sweden/metaval** is a bioinformatics pipeline for post-processing the results of [nf-core/taxprofiler](https://github.com/nf-core/taxprofiler). It verifies the taxa classified by the nf-core/taxprofiler pipeline using Nanopore and Illumina shotgun metagenomic sequencing data. At the moment, `genomic-medicine-sweden/metaval` only verifies the classification results from three taxonomic classifiers `Kraken2`, `Centrifuge` and `DIAMOND`.
 
-<!-- TODO nf-core:
-   Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
-   major pipeline sections and the types of output it produces. You're giving an overview to someone new
-   to nf-core here, in 15-20 seconds. For an example, see https://github.com/nf-core/rnaseq/blob/main/README.md#introduction
--->
+The pipeline, constructed using the `nf-core` [template](https://nf-co.re/tools#creating-a-new-pipeline), utilizing Docker/Singularity containers for easy installation and reproducible results. The implementation follows [Nextflow DSL2](https://www.nextflow.io/docs/latest/dsl1.html), employing one container per process for simplified maintenance and dependency management. Processes are sourced from [nf-core/modules](https://github.com/nf-core/modules) for broader accessibility within the Nextflow community.
 
-<!-- TODO nf-core: Include a figure that guides the user through the major workflow steps. Many nf-core
-     workflows use the "tube map" design for that. See https://nf-co.re/docs/contributing/design_guidelines#examples for examples.   -->
-<!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
+## Pipeline summary
 
-1. Read QC ([`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/))
-2. Present QC for raw reads ([`MultiQC`](http://multiqc.info/))
+<p align="center">
+     <img title="metaval workflow" src="docs/images/metaval_pipeline_metromap.svg" width="100%">
+</p>
+
+### Green Workflow - Pathogen Screening
+
+This workflow is activated by enabling the `--perform_screen_pathogens` option.
+
+1. **Map reads to pathogen genomes**
+   - Map reads to a predefined list of viral pathogen genomes using [Bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/) for Illumina reads or [minimap2](https://github.com/lh3/minimap2) for Nanopore reads. This step checks for the presence of known pathogens in the sample.
+
+2. **Call consensus**
+   - This step calls consensus sequences for reads mapped to pathogen genomes using either [samtools](http://www.htslib.org/) or [medaka](https://github.com/nanoporetech/medaka), depending on the read type. `samtools` can be used to generate consensus sequences for both Illumina and Nanopore reads, while `medaka` is typically used for Nanopore reads. The generated consensus sequence will be used as input for `BLAST`.
+
+3. **BLAST for pathogen identification**
+   - Use `BLAST` to identify the closest reference genomes for the target reads. There are two options: `BLASTx` using [DIAMOND](https://github.com/bbuchfink/diamond) based on the protein database, and [BLASTn](https://blast.ncbi.nlm.nih.gov/Blast.cgi) based on the nucleotide database.
+
+4. **Extract target reads**
+   - From the mapped reads, extract the target reads that match the predefined viral pathogens based on the result of `BLAST`.
+
+5. **Calculate coverage and depth**
+   - Calculate the coverage and depth of the reads mapped to a pathogen genome database using [samtools](<(http://www.htslib.org/)>).
+
+6. **Visualisation using IGV**
+   - Visualize the extracted reads using `IGV` (Integrative Genomics Viewer) to provide a graphical representation for detailed analysis.
+
+7. **Generate report**
+   - Generate a static HTML report summarizing the results of the pathogen screening workflow (It will be included in the future).
+
+8. **Generate MultiQC report**
+   - Generate a MultiQC HTML report. This report currently only includes information about the software versions and command lines used for the analysis.
+
+### Orange Workflow - Verify Identified Viruses
+
+This workflow is activated by enabling the `--perform_verify_species` option and disabling the `--taxid_list`.
+
+1. **Decontamination**
+   - Flag taxonomy tables generated by `TAXPASTA` to identify likely present species based on the comparison with the negative control. This step is crucial for filtering out false positives and background contamination from the results of metagenomics classifiers .
+
+2. **Extract viral TaxIDs**
+   - Extract **_viral_** TaxIDs predicted by taxonomic classification tools such as `Kraken2`, `Centrifuge`, and `DIAMOND`.
+
+3. **Extract reads**
+   - Extract the reads classified as viruses based on a list of identified TaxIDs.
+
+4. **de-novo assembly**
+   - This step performs de novo assembly for TaxIDs with a number of reads exceeding `params.min_read_counts`. [Spades](https://github.com/ablab/spades) is used for Illumina reads, and [Flye](https://github.com/mikolmogorov/Flye) is used for Nanopore reads. The resulting contig files will be used as input for `BLAST`.
+
+5. **BLAST**
+   - Use `BLAST` to identify the closest reference genomes for the target reads. There are two options: `BLASTx` using [DIAMOND](https://github.com/bbuchfink/diamond) based on the protein database, and [BLASTn](https://github.com/bbuchfink/diamond) based on the nucleotide database.
+
+6. **Mapping**
+   - Map the reads of TaxIDs to the closest reference genomes identified by `BLAST`. Use [Bowtie2](<(http://bowtie-bio.sourceforge.net/bowtie2/)>) for Illumina reads and [minimap2](https://github.com/lh3/minimap2) for Nanopore reads.
+
+7. **Coverage and depth**
+   - Calculate the coverage and depth of the mapped reads using [samtools](<(http://www.htslib.org/)>).
+
+8. **Visualisation using IGV**
+   - Visualize the mapped reads using [igv-reports](https://github.com/igvteam/igv-reports)
+
+9. **Generate report**
+   - Generate a standalone HTML report that summarises the results of the verify-species workflow. It includes the sample metadata, taxonomic table, BLAST results, coverage plot, and the extracted reads for a TaxID.
+
+10. **Generate MultiQC report**
+
+- Generate a MultiQC HTML report. This report currently only includes information about the software versions and command lines used for the analysis.
+
+## Blue Workflow - Verify User-Defined TaxIDs
+
+This workflow is activated by enabling the `--perform_verify_species` option and the `--taxid_list` option, allowing users to define a list of TaxIDs. It is not limited to `viral` TaxIDs and can include `bacteria`, `fungi`, `archaea`, `parasites`, or `plasmids`.
+
+All steps are the same as the **Orange Workflow** except using user-defined TaxIDs instead of extracting predefined viral TaxIDs.
 
 ## Usage
 
-:::note
-If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/usage/installation) on how
-to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/usage/introduction#how-to-run-a-pipeline)
-with `-profile test` before running the workflow on actual data.
-:::
-
-<!-- TODO nf-core: Describe the minimum required steps to execute the pipeline, e.g. how to prepare samplesheets.
-     Explain what rows and columns represent. For instance (please edit as appropriate):
+> [!NOTE]
+> If you are new to Nextflow and nf-core, please refer to [this page](https://nf-co.re/docs/get_started/environment_setup/overview) on how to set-up Nextflow. Make sure to [test your setup](https://nf-co.re/docs/get_started/run-your-first-pipeline) with `-profile test` before running the workflow on actual data.
 
 First, prepare a samplesheet with your input data that looks as follows:
 
 `samplesheet.csv`:
 
 ```csv
-sample,fastq_1,fastq_2
-CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
+sample,instrument_platform,na_content,is_ntc,sample_prep,fastq_1,fastq_2,kraken2_report,kraken2_result,kraken2_taxpasta,centrifuge_report,centrifuge_result,centrifuge_taxpasta,diamond,diamond_taxpasta
+sample1,ILLUMINA,DNA,false,prep1,sample1.unmapped_1.fastq.gz,sample1.unmapped_2.fastq.gz,sample1.kraken2.kraken2.report.txt,sample1.kraken2.kraken2.classifiedreads.txt,kraken2_kraken2-db.tsv,sample1.centrifuge.txt,sample1.centrifuge.results.txt,centrifuge_centrifuge-db.tsv,sample1.diamond.tsv,diamond_diamond-db.tsv
+sample2,ILLUMINA,DNA,true,prep1,sample2.unmapped_1.fastq.gz,sample2.unmapped_2.fastq.gz,sample2.kraken2.kraken2.report.txt,sample2.kraken2.kraken2.classifiedreads.txt,kraken2_kraken2-db.tsv,sample2.centrifuge.txt,sample2.centrifuge.results.txt,centrifuge_centrifuge-db.tsv,sample2.diamond.tsv,diamond_diamond-db.tsv
 ```
 
 Each row represents a fastq file (single-end) or a pair of fastq files (paired end).
 
--->
-
 Now, you can run the pipeline using:
 
-<!-- TODO nf-core: update the following command to include all required parameters for a minimal example -->
-
 ```bash
-nextflow run nf-core/metaval \
+nextflow run genomic-medicine-sweden/metaval \
    -profile <docker/singularity/.../institute> \
    --input samplesheet.csv \
-   --outdir <OUTDIR>
+   --outdir <OUTDIR> \
+   --perform_verify_species --extract_kraken2_reads
 ```
 
-:::warning
-Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those
-provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_;
-see [docs](https://nf-co.re/usage/configuration#custom-configuration-files).
-:::
+> [!WARNING]
+> Please provide pipeline parameters via the CLI or Nextflow `-params-file` option. Custom config files including those provided by the `-c` Nextflow option can be used to provide any configuration _**except for parameters**_; see [docs](https://nf-co.re/docs/usage/getting_started/configuration#custom-configuration-files).
 
-For more details and further functionality, please refer to the [usage documentation](https://nf-co.re/metaval/usage) and the [parameter documentation](https://nf-co.re/metaval/parameters).
+For more details and further functionality, please refer to the [usage documentation](https://github.com/genomic-medicine-sweden/metaval/blob/dev/docs/usage.md).
+
+## Expected input formats
+
+The examples below show the expected content format for each file type listed in the samplesheet: `kraken2_report`, `kraken2_results`, `centrifuge_report`, `centrifuge_results`, `diamond`, and the classifier-specific `taxpasta` columns.
+
+### Classification files
+
+`kraken2_report` / `centrifuge_report`
+
+```csv
+ 4.62 167021 167021 U 0 unclassified
+ 95.38 3445908 335 R 1 root
+ 95.36 3445179 323 R1 131567   cellular organisms
+ 93.28 3369988 622 D 2759     Eukaryota
+ 93.26 3369247 30 D1 33154       Opisthokonta
+```
+
+`kraken2_result`
+
+```csv
+C SRR13439790.3 9606 150|150 9606:4 0:18 9606:7 0:5 9606:15 0:19 9606:9 0:2 9606:13 33154:1 9606:9 0:9 9606:5 |:| 9606:26 0:1 9606:3 0:32 9606:2 0:10 9606:3 0:21 9606:17 0:1
+C SRR13439790.5 9606 103|103 9606:5 0:38 9606:5 0:3 9606:8 0:2 9606:8 |:| 9606:13 0:56
+C SRR13439790.7 9606 150|150 9606:60 0:4 9606:1 0:1 9606:6 0:26 9606:2 0:7 9606:9 |:| 0:5 9606:1 0:44 9606:4 0:7 9606:1 0:21 9606:20 2759:4 9606:9
+C SRR13439790.8 9606 107|107 0:3 9606:23 0:3 9606:14 0:16 9606:14 |:| 9606:3 0:51 9606:11 0:8
+C SRR13439790.9 9606 101|150 0:48 9606:1 0:18 |:| 0:8 9606:5 0:103
+```
+
+`centrifuge_result`
+
+```csv
+readID seqID taxID score 2ndBestScore hitLength queryLength numMatches
+SRR13439790.3 NT_187391.1 9606 1624 557 109 300 1
+SRR13439790.5 NC_000022.11 9606 905 169 96 206 1
+SRR13439790.7 NC_000007.14 9606 6025 961 125 300 1
+SRR13439790.9 unclassified 0 0 0 0 251 1
+```
+
+`diamond`
+
+```csv
+SRR13439790.3 0 0
+SRR13439790.3 0 0
+SRR13439790.5 0 0
+SRR13439790.5 0 0
+SRR13439790.7 0 0
+```
+
+`taxpasta`
+
+It should contain the columns `taxonomy_id`, `name`, `rank`, and `lineage`. Please check [metaval.config](https://github.com/nf-core/taxprofiler/tree/main/conf) in `nf-core/taxprofiler` to see how to generate the correct input for `gms/metaval`
+
+All taxpasta files share the same format. Below is an example of `kraken2_taxpasta` file:
+
+```csv
+taxonomy_id name rank lineage SRR13439799_kraken2db.kraken2.kraken2.report SRR13439802_kraken2db.kraken2.kraken2.report SRR13439790_kraken2db.kraken2.kraken2.report SRR13439813_kraken2db.kraken2.kraken2.report
+0 . . . 685 165966 33304 275483
+1 root no_rank . 0 133 73 111
+131567 cellular_organisms no_rank . 13 1644 73 264
+2759 Eukaryota superkingdom Eukaryota 0 503 120 38
+33154 Opisthokonta clade Eukaryota;Opisthokonta 1 10 3 0
+```
 
 ## Pipeline output
 
-To see the results of an example test run with a full size dataset refer to the [results](https://nf-co.re/metaval/results) tab on the nf-core website pipeline page.
 For more details about the output files and reports, please refer to the
-[output documentation](https://nf-co.re/metaval/output).
+[output documentation](https://github.com/genomic-medicine-sweden/metaval/blob/dev/docs/output.md).
 
 ## Credits
 
-nf-core/metaval was originally written by LilyAnderssonLee.
+genomic-medicine-sweden/metaval was originally written by [LilyAnderssonLee](https://github.com/LilyAnderssonLee) and [sofstam](https://github.com/sofstam).
 
-We thank the following people for their extensive assistance in the development of this pipeline:
-
-<!-- TODO nf-core: If applicable, make list of people who have also contributed -->
+We thank the following people for their assistance in the development of this pipeline:
+[maxulysse](https://github.com/maxulysse)
+[mashehu](https://github.com/mashehu)
+[ryanjameskennedy](https://github.com/ryanjameskennedy)
+[rannick](https://github.com/rannick)
+[AnnaNoren](https://github.com/AnnaNoren)
+[samuell](https://github.com/samuell)
 
 ## Contributions and Support
 
-If you would like to contribute to this pipeline, please see the [contributing guidelines](.github/CONTRIBUTING.md).
-
-For further information or help, don't hesitate to get in touch on the [Slack `#metaval` channel](https://nfcore.slack.com/channels/metaval) (you can join with [this invite](https://nf-co.re/join/slack)).
+If you would like to contribute to this pipeline, please see the [contributing guidelines](docs/CONTRIBUTING.md).
 
 ## Citations
 
-<!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
-<!-- If you use  nf-core/metaval for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
-
-<!-- TODO nf-core: Add bibliography of tools and data used in your pipeline -->
-
 An extensive list of references for the tools used by the pipeline can be found in the [`CITATIONS.md`](CITATIONS.md) file.
 
-You can cite the `nf-core` publication as follows:
+This pipeline uses code and infrastructure developed and maintained by the [nf-core](https://nf-co.re) community, reused here under the [MIT license](https://github.com/nf-core/tools/blob/main/LICENSE).
 
 > **The nf-core framework for community-curated bioinformatics pipelines.**
 >

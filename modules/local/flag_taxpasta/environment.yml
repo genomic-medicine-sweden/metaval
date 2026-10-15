@@ -1,0 +1,7 @@
+name: flag_taxpasta
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.13
+  - pandas=2.3.3
