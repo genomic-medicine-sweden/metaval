@@ -81,6 +81,7 @@
                 "verifyspecies/consensus/filtered/SRR13439813_taxid_1239384_Escherichia-phage-U1G_samtools_filtered.fasta",
                 "verifyspecies/consensus/filtered/SRR13439813_taxid_1239384_Escherichia-phage-vB-EcoP-PhAPEC5_samtools_filtered.fasta",
                 "verifyspecies/consensus/filtered/SRR13439813_taxid_1239384_Shigella-virus-Moo19_samtools_filtered.fasta",
+                "verifyspecies/consensus/filtered/SRR13439813_taxid_1391223_Escherichia-phage-phi-G17_samtools_filtered.fasta",
                 "verifyspecies/consensus/filtered/SRR13439813_taxid_1391223_Shigella-virus-Moo19_samtools_filtered.fasta",
                 "verifyspecies/consensus/filtered/SRR13439813_taxid_1395983_Shigella-virus-Moo19_samtools_filtered.fasta",
                 "verifyspecies/consensus/filtered/SRR13439813_taxid_1414738_Escherichia-phage-vB-EcoP-PhAPEC5_samtools_filtered.fasta",
@@ -110,6 +111,7 @@
                 "verifyspecies/consensus/raw/SRR13439813_taxid_1239384_Escherichia-phage-U1G_samtools.fasta",
                 "verifyspecies/consensus/raw/SRR13439813_taxid_1239384_Escherichia-phage-vB-EcoP-PhAPEC5_samtools.fasta",
                 "verifyspecies/consensus/raw/SRR13439813_taxid_1239384_Shigella-virus-Moo19_samtools.fasta",
+                "verifyspecies/consensus/raw/SRR13439813_taxid_1391223_Escherichia-phage-phi-G17_samtools.fasta",
                 "verifyspecies/consensus/raw/SRR13439813_taxid_1391223_Shigella-virus-Moo19_samtools.fasta",
                 "verifyspecies/consensus/raw/SRR13439813_taxid_1395983_Shigella-virus-Moo19_samtools.fasta",
                 "verifyspecies/consensus/raw/SRR13439813_taxid_1414738_Escherichia-phage-vB-EcoP-PhAPEC5_samtools.fasta",
@@ -283,6 +285,7 @@
                 "verifyspecies/igv/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_report.html",
                 "verifyspecies/igv/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_report.html",
                 "verifyspecies/igv/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
+                "verifyspecies/igv/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1_report.html",
                 "verifyspecies/igv/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
                 "verifyspecies/igv/SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html",
                 "verifyspecies/igv/SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_report.html",
@@ -329,6 +332,8 @@
                 "verifyspecies/mapping/bowtie2/align/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam.bai",
                 "verifyspecies/mapping/bowtie2/align/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
                 "verifyspecies/mapping/bowtie2/align/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
+                "verifyspecies/mapping/bowtie2/align/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1_sorted.bam",
+                "verifyspecies/mapping/bowtie2/align/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1_sorted.bam.bai",
                 "verifyspecies/mapping/bowtie2/align/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
                 "verifyspecies/mapping/bowtie2/align/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai",
                 "verifyspecies/mapping/bowtie2/align/SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam",
@@ -396,6 +401,14 @@
                 "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-U1G/bowtie2/GCA_020475385.1_ASM2047538v1_genomic.fna.4.bt2",
                 "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-U1G/bowtie2/GCA_020475385.1_ASM2047538v1_genomic.fna.rev.1.bt2",
                 "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-U1G/bowtie2/GCA_020475385.1_ASM2047538v1_genomic.fna.rev.2.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2/GCA_003307555.1_ASM330755v1_genomic.fna.1.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2/GCA_003307555.1_ASM330755v1_genomic.fna.2.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2/GCA_003307555.1_ASM330755v1_genomic.fna.3.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2/GCA_003307555.1_ASM330755v1_genomic.fna.4.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2/GCA_003307555.1_ASM330755v1_genomic.fna.rev.1.bt2",
+                "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-phi-G17/bowtie2/GCA_003307555.1_ASM330755v1_genomic.fna.rev.2.bt2",
                 "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-G7C",
                 "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-G7C/bowtie2",
                 "verifyspecies/mapping/bowtie2/build/mappingorganism_Escherichia-phage-vB-EcoP-G7C/bowtie2/GCA_000891295.1_ViralProj72371_genomic.fna.1.bt2",
@@ -463,6 +476,7 @@
                 "verifyspecies/samtools/coverage/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.txt",
                 "verifyspecies/samtools/coverage/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.txt",
                 "verifyspecies/samtools/coverage/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
+                "verifyspecies/samtools/coverage/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1.txt",
                 "verifyspecies/samtools/coverage/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
                 "verifyspecies/samtools/coverage/SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt",
                 "verifyspecies/samtools/coverage/SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.txt",
@@ -493,6 +507,7 @@
                 "verifyspecies/samtools/coverage_plot/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.png",
                 "verifyspecies/samtools/coverage_plot/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.png",
                 "verifyspecies/samtools/coverage_plot/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
+                "verifyspecies/samtools/coverage_plot/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1.png",
                 "verifyspecies/samtools/coverage_plot/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
                 "verifyspecies/samtools/coverage_plot/SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png",
                 "verifyspecies/samtools/coverage_plot/SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.png",
@@ -523,6 +538,7 @@
                 "verifyspecies/samtools/depth/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.tsv",
                 "verifyspecies/samtools/depth/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.tsv",
                 "verifyspecies/samtools/depth/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
+                "verifyspecies/samtools/depth/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1.tsv",
                 "verifyspecies/samtools/depth/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
                 "verifyspecies/samtools/depth/SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv",
                 "verifyspecies/samtools/depth/SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.tsv",
@@ -616,7 +632,7 @@
                 "verifyspecies/viral_taxids/SRR13439813_centrifuge_viral_taxids.tsv"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:29.716925",
+        "timestamp": "2026-10-16T12:00:00.491427",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -693,7 +709,7 @@
                 "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus_centrifuge.warnings.log exists: true"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:34.140859",
+        "timestamp": "2026-10-16T12:00:05.219807",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -708,7 +724,7 @@
                 "SRR13439813_centrifuge_viral_taxids.tsv:md5,2b897bc64173ff63d8831f4d8f5b4158"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:34.634924",
+        "timestamp": "2026-10-16T12:00:05.762369",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -747,6 +763,12 @@
                 "GCA_020475385.1_ASM2047538v1_genomic.fna.4.bt2:md5,b38127ab1e849b6b1d5cdb4455f3f9a8",
                 "GCA_020475385.1_ASM2047538v1_genomic.fna.rev.1.bt2:md5,57114de592c6b78f985ade01cc9ed7db",
                 "GCA_020475385.1_ASM2047538v1_genomic.fna.rev.2.bt2:md5,0cb9093469517550cb80b393122da29a",
+                "GCA_003307555.1_ASM330755v1_genomic.fna.1.bt2:md5,8488d530ab8c644857db6a9810e0bea4",
+                "GCA_003307555.1_ASM330755v1_genomic.fna.2.bt2:md5,64b2f88528b853c69032b1e2b61ad229",
+                "GCA_003307555.1_ASM330755v1_genomic.fna.3.bt2:md5,5f5a8436b2b7bd56f5328b7a911e2fd5",
+                "GCA_003307555.1_ASM330755v1_genomic.fna.4.bt2:md5,7d4acbffb24643b2aed5a3363d01b568",
+                "GCA_003307555.1_ASM330755v1_genomic.fna.rev.1.bt2:md5,9202bec95e80d204a183faeeeb5e9534",
+                "GCA_003307555.1_ASM330755v1_genomic.fna.rev.2.bt2:md5,edc751e43f471344a8435d113474fb15",
                 "GCA_000891295.1_ViralProj72371_genomic.fna.1.bt2:md5,5ed8b1bbd61ab59b5e19f50c94f74979",
                 "GCA_000891295.1_ViralProj72371_genomic.fna.2.bt2:md5,4cd9185a2a8c35062407a8ff7a9d0a37",
                 "GCA_000891295.1_ViralProj72371_genomic.fna.3.bt2:md5,5acf4da7fcdc1f5d5e88b17b858ff28d",
@@ -779,7 +801,7 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:30.846395",
+        "timestamp": "2026-10-16T12:00:01.49911",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -804,6 +826,7 @@
                 "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.tsv:md5,a835a374b5faccbb48180bba44012d13",
                 "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.tsv:md5,d692623ec08c42e136964b4f396fba13",
                 "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,be01f7a22897d66ff4d445462bd06233",
+                "SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1.tsv:md5,35c684dae52cada15b2e962fb045d0ac",
                 "SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,9915547c299d121b6071f90bf53c7696",
                 "SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,625cd6122d0694f86dbdc9bc0c7ab559",
                 "SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.tsv:md5,b34987ae9c0bde35c883a4b5766108e0",
@@ -819,7 +842,7 @@
                 "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,53a221adc95f3d7ce4555bd691f241ce"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:37.207241",
+        "timestamp": "2026-10-16T12:00:08.590526",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -841,6 +864,7 @@
                 "SRR13439813_taxid_1239384_Escherichia-phage-U1G_samtools_filtered.fasta(Filtered consensus for verify species workflow) contains string:true",
                 "SRR13439813_taxid_1239384_Escherichia-phage-vB-EcoP-PhAPEC5_samtools_filtered.fasta(Filtered consensus for verify species workflow) contains string:true",
                 "SRR13439813_taxid_1239384_Shigella-virus-Moo19_samtools_filtered.fasta(Filtered consensus for verify species workflow) contains string:true",
+                "SRR13439813_taxid_1391223_Escherichia-phage-phi-G17_samtools_filtered.fasta(Filtered consensus for verify species workflow) contains string:false",
                 "SRR13439813_taxid_1391223_Shigella-virus-Moo19_samtools_filtered.fasta(Filtered consensus for verify species workflow) contains string:true",
                 "SRR13439813_taxid_1395983_Shigella-virus-Moo19_samtools_filtered.fasta(Filtered consensus for verify species workflow) contains string:true",
                 "SRR13439813_taxid_1414738_Escherichia-phage-vB-EcoP-PhAPEC5_samtools_filtered.fasta(Filtered consensus for verify species workflow) contains string:true",
@@ -855,7 +879,7 @@
                 "SRR13439813_taxid_1604356_Shigella-virus-Moo19_samtools_filtered.fasta(Filtered consensus for verify species workflow) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:33.142324",
+        "timestamp": "2026-10-16T12:00:04.147804",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -880,6 +904,7 @@
                 "SRR13439813_taxid_1239384_Escherichia-phage-U1G_samtools.fasta(Raw consensus for verify species workflow) contains string:true",
                 "SRR13439813_taxid_1239384_Escherichia-phage-vB-EcoP-PhAPEC5_samtools.fasta(Raw consensus for verify species workflow) contains string:true",
                 "SRR13439813_taxid_1239384_Shigella-virus-Moo19_samtools.fasta(Raw consensus for verify species workflow) contains string:true",
+                "SRR13439813_taxid_1391223_Escherichia-phage-phi-G17_samtools.fasta(Raw consensus for verify species workflow) contains string:false",
                 "SRR13439813_taxid_1391223_Shigella-virus-Moo19_samtools.fasta(Raw consensus for verify species workflow) contains string:true",
                 "SRR13439813_taxid_1395983_Shigella-virus-Moo19_samtools.fasta(Raw consensus for verify species workflow) contains string:true",
                 "SRR13439813_taxid_1414738_Escherichia-phage-vB-EcoP-PhAPEC5_samtools.fasta(Raw consensus for verify species workflow) contains string:true",
@@ -895,7 +920,7 @@
                 "SRR13439813_taxid_1604356_Shigella-virus-Moo19_samtools.fasta(Raw consensus for verify species workflow) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:32.595162",
+        "timestamp": "2026-10-16T12:00:03.533877",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -934,7 +959,7 @@
                 "SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_centrifuge_blast_filtered_summary.txt(centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:29.890701",
+        "timestamp": "2026-10-16T12:00:00.673419",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -952,7 +977,7 @@
                 "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,cfa2b31fd6a5542b18b4cce5f48e0ed6"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:31.987851",
+        "timestamp": "2026-10-16T12:00:02.922474",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1073,7 +1098,7 @@
                 }
             }
         ],
-        "timestamp": "2026-10-09T08:53:29.697206",
+        "timestamp": "2026-10-16T12:00:00.465624",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1197,7 +1222,7 @@
                 "SRR13439813_taxid_697227_Escherichia-phage-IME08.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:30.688161",
+        "timestamp": "2026-10-16T12:00:01.320092",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1209,7 +1234,7 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:31.476395",
+        "timestamp": "2026-10-16T12:00:02.367094",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1234,6 +1259,7 @@
                 "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.png exists: true",
                 "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.png exists: true",
                 "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
+                "SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1.png exists: true",
                 "SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
                 "SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true",
                 "SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.png exists: true",
@@ -1249,7 +1275,7 @@
                 "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:36.661345",
+        "timestamp": "2026-10-16T12:00:08.035911",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1287,7 +1313,7 @@
                 "SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_centrifuge_2_fastqc.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:35.666876",
+        "timestamp": "2026-10-16T12:00:06.912188",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1312,6 +1338,7 @@
                 "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.txt:md5,42d8255e90e4fb24700d8c145cc2df33",
                 "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.txt:md5,26028896d01d16740a56931f4209020e",
                 "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,a2c944c92276270c876456b4fa0675cf",
+                "SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1.txt:md5,26057d78bbbfca9d699ed309f9a35631",
                 "SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,2ae47ab074d80acc4076cf0e34dbd160",
                 "SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,2ed27b7b7c691783830bfc26a0e41176",
                 "SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.txt:md5,2465c425af9baf5b9f6f3d528fca9215",
@@ -1327,7 +1354,7 @@
                 "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,33d44f15d9436784519b02c8c4d28d00"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:36.16407",
+        "timestamp": "2026-10-16T12:00:07.45528",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1339,7 +1366,7 @@
                 "metaval_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:35.140586",
+        "timestamp": "2026-10-16T12:00:06.36966",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1394,6 +1421,9 @@
                     "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
                 ],
                 [
+                    "SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MH358458.1\tLN:68270, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_003307555.1_ASM330755v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1 --threads 4 --reference GCA_003307555.1_ASM330755v1_genomic.fna -o SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1_sorted.bam.bai --write-index -]"
+                ],
+                [
                     "SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
                 ],
                 [
@@ -1434,7 +1464,7 @@
                 ]
             ]
         ],
-        "timestamp": "2026-10-09T08:53:30.798521",
+        "timestamp": "2026-10-16T12:00:01.448203",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1459,6 +1489,7 @@
                 "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_report.html exists: true",
                 "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_report.html exists: true",
                 "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true",
+                "SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Escherichia-phage-phi-G17_GCA_003307555.1_report.html exists: true",
                 "SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true",
                 "SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true",
                 "SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_report.html exists: true",
@@ -1474,7 +1505,7 @@
                 "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:33.640251",
+        "timestamp": "2026-10-16T12:00:04.682678",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1503,7 +1534,7 @@
                 "SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_centrifuge_blastx_filtered_summary.txt(centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:29.937493",
+        "timestamp": "2026-10-16T12:00:00.728815",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
@@ -1518,7 +1549,7 @@
                 "SRR13439813_DNA_HLSAN_centrifuge.tsv:md5,d4618a60f5ea9a739e436e2219b8447d"
             ]
         ],
-        "timestamp": "2026-10-09T08:53:37.952214",
+        "timestamp": "2026-10-16T12:00:09.388202",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "25.10.4"
