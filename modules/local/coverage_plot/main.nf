@@ -7,6 +7,7 @@ process COVERAGE_PLOT {
         ? 'https://depot.galaxyproject.org/singularity/matplotlib:3.5.1'
         : 'biocontainers/matplotlib:3.5.1'}"
 
+
     input:
     tuple val(meta), path(depth_file), path(coverage_file)
 
