@@ -92,7 +92,7 @@ nextflow_pipeline {
 
                 //bowtie2
                 { assert snapshot (
-                    bam_files_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] }
+                    bam_files_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align statistics: " + bam(file.toString()).getStatistics()] }
                 ).match("bowtie2_align")},
                 { assert snapshot (stable_content_bowtie2_build).match("bowtie2_build")},
 

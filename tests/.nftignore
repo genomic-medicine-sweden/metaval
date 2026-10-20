@@ -15,12 +15,12 @@ verifyspecies/blast/blastn/*/*.txt
 verifyspecies/blast/blastx/*/*.txt
 verifyspecies/igv/*.html
 verifyspecies/extracted_reads/*/*.fa
-verifyspecies/mapping/bowtie2/*/*.{bam,bai}
+verifyspecies/mapping/bowtie2/align/*.{bam,bai}
 verifyspecies/consensus/raw/*.fasta
 verifyspecies/consensus/filtered/*.fasta
 verifyspecies/report/*.html
 verifyspecies/samtools/coverage_plot/*.png
-verifyspecies/spades/{kraken2,diamond,centrifuge}/*.fa
+verifyspecies/spades/{kraken2,diamond,centrifuge}/*.{fa,log}
 pathogens/mapping/bowtie2/*/*.{bam,bai}
 pathogens/blast/*/*.txt
 pathogens/igv/*.html
