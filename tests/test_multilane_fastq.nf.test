@@ -164,7 +164,7 @@ nextflow_pipeline {
                 //pathogen mapping bowtie2
                 { assert snapshot (stable_content_pathogens_bowtie2_build).match("pathogen_bowtie2_build")},
                 { assert snapshot (
-                    bam_files_pathogens_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_pathogens_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align header: " + bam(file.toString()).getHeader()] }
+                    bam_files_pathogens_bowtie2_align.isEmpty() ? 'No BAM files' : bam_files_pathogens_bowtie2_align.collect { file -> [file.getName() + " bowtie2 align statistics: " + bam(file.toString()).getStatistics()] }
                 ).match("pathogen_bowtie2_align")},
 
                 // pathogen blast
@@ -187,7 +187,7 @@ nextflow_pipeline {
                 //pathogens reads consensus
                 { assert snapshot (
                     bam_files_pathogens_reads_consensus.isEmpty() ? 'No BAM files' : bam_files_pathogens_reads_consensus.collect { file ->
-                        [file.getName() + " pathogens reads consensus header: " + bam(file.toString()).getHeader()] }
+                        [file.getName() + " pathogens reads consensus statistics: " + bam(file.toString()).getStatistics()] }
                 ).match("pathogens_reads_consensus") },
 
                 // pathogens samtools coverage
