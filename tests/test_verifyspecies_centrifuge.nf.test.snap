@@ -616,10 +616,10 @@
                 "verifyspecies/viral_taxids/SRR13439813_centrifuge_viral_taxids.tsv"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:34.72883",
+        "timestamp": "2026-10-20T15:35:56.791114322",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "spades_centrifuge": {
@@ -693,10 +693,10 @@
                 "SRR13439813_taxid_68416_Woolly-monkey-hepatitis-B-virus_centrifuge.warnings.log exists: true"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:39.350533",
+        "timestamp": "2026-10-20T15:36:04.594663593",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "viral_taxids": {
@@ -708,10 +708,10 @@
                 "SRR13439813_centrifuge_viral_taxids.tsv:md5,2b897bc64173ff63d8831f4d8f5b4158"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:39.856678",
+        "timestamp": "2026-10-20T15:36:05.115606461",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "bowtie2_build": {
@@ -779,10 +779,10 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:35.772424",
+        "timestamp": "2026-10-20T15:35:59.293246189",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "samtools_depth": {
@@ -819,10 +819,10 @@
                 "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,53a221adc95f3d7ce4555bd691f241ce"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:42.479866",
+        "timestamp": "2026-10-20T15:36:07.804902077",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "consensus_filtered": {
@@ -855,10 +855,10 @@
                 "SRR13439813_taxid_1604356_Shigella-virus-Moo19_samtools_filtered.fasta(Filtered consensus for verify species workflow) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:38.334939",
+        "timestamp": "2026-10-20T15:36:03.556468065",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "consensus_raw": {
@@ -895,10 +895,10 @@
                 "SRR13439813_taxid_1604356_Shigella-virus-Moo19_samtools.fasta(Raw consensus for verify species workflow) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:37.751771",
+        "timestamp": "2026-10-20T15:36:02.822081736",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "blastn": {
@@ -934,10 +934,10 @@
                 "SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_centrifuge_blast_filtered_summary.txt(centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:34.895502",
+        "timestamp": "2026-10-20T15:35:57.029825509",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "minimap2_align": {
@@ -952,10 +952,10 @@
                 "SRR13439799_centrifuge_taxid_211044_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,cfa2b31fd6a5542b18b4cce5f48e0ed6"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:37.151228",
+        "timestamp": "2026-10-20T15:36:02.230984872",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "-profile test_verifyspecies_centrifuge": {
@@ -1073,10 +1073,10 @@
                 }
             }
         ],
-        "timestamp": "2026-10-19T10:18:34.703357",
+        "timestamp": "2026-10-20T15:35:56.758966905",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "extracted_reads": {
@@ -1197,10 +1197,10 @@
                 "SRR13439813_taxid_697227_Escherichia-phage-IME08.extracted_centrifuge_read_2.fa(extracted reads centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:35.639249",
+        "timestamp": "2026-10-20T15:35:58.780647441",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "minimap2_index": {
@@ -1209,10 +1209,10 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:36.608679",
+        "timestamp": "2026-10-20T15:36:01.652980963",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "samtools_coverage_plot": {
@@ -1249,10 +1249,10 @@
                 "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:41.953747",
+        "timestamp": "2026-10-20T15:36:07.272673772",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "fastqc": {
@@ -1287,10 +1287,10 @@
                 "SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_centrifuge_2_fastqc.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:40.911345",
+        "timestamp": "2026-10-20T15:36:06.124605239",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "samtools_coverage": {
@@ -1327,10 +1327,10 @@
                 "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,33d44f15d9436784519b02c8c4d28d00"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:41.425556",
+        "timestamp": "2026-10-20T15:36:06.6391541",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "report": {
@@ -1339,105 +1339,105 @@
                 "metaval_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:40.406862",
+        "timestamp": "2026-10-20T15:36:05.619557138",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "bowtie2_align": {
         "content": [
             [
                 [
-                    "SRR13439790_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439790\tSM:SRR13439790, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439790 --rg SM:SRR13439790 --passthrough -1 SRR13439790_taxid_10752_Enquatrovirus-N4.extracted_centrifuge_read_1.fastq.gz -2 SRR13439790_taxid_10752_Enquatrovirus-N4.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439790.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439790.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439790_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439790_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439790_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439790_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439790_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439790_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439790_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:150, meanReadLength:150, maxQuality:42, minQuality:42, meanQuality:42, readCount:2, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439790_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439790\tSM:SRR13439790, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439790 --rg SM:SRR13439790 --passthrough -1 SRR13439790_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7.extracted_centrifuge_read_1.fastq.gz -2 SRR13439790_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439790.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439790.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439790_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439790_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439790_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439790_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439790_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439790_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439790_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:150, meanReadLength:150, maxQuality:40, minQuality:40, meanQuality:40, readCount:2, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439790_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439790\tSM:SRR13439790, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439790 --rg SM:SRR13439790 --passthrough -1 SRR13439790_taxid_1414738_Shigella-phage-pSb-1.extracted_centrifuge_read_1.fastq.gz -2 SRR13439790_taxid_1414738_Shigella-phage-pSb-1.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439790.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439790.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439790_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439790_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439790_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439790_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439790_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439790_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439790_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align statistics: [maxReadLength:97, minReadLength:97, meanReadLength:97, maxQuality:3, minQuality:3, meanQuality:3, readCount:2, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439790_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439790\tSM:SRR13439790, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439790 --rg SM:SRR13439790 --passthrough -1 SRR13439790_taxid_1604356_Escherichia-phage-ECBP1.extracted_centrifuge_read_1.fastq.gz -2 SRR13439790_taxid_1604356_Escherichia-phage-ECBP1.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439790.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439790.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439790_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439790_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439790_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439790_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439790_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439790_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439790_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:150, meanReadLength:150, maxQuality:3, minQuality:3, meanQuality:3, readCount:2, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:JX415535.1\tLN:69855, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000900235.1_ViralProj177527_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1 --threads 4 --reference GCA_000900235.1_ViralProj177527_genomic.fna -o SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-ECBP1_GCA_000900235.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:66, meanReadLength:115, maxQuality:23, minQuality:0, meanQuality:5, readCount:28, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ394712.1\tLN:73275, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020475385.1_ASM2047538v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1 --threads 4 --reference GCA_020475385.1_ASM2047538v1_genomic.fna -o SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:30, meanReadLength:117, maxQuality:23, minQuality:0, meanQuality:5, readCount:38, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:HQ259105.1\tLN:72917, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000891295.1_ViralProj72371_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1 --threads 4 --reference GCA_000891295.1_ViralProj72371_genomic.fna -o SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:30, meanReadLength:121, maxQuality:40, minQuality:0, meanQuality:12, readCount:92, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MT682708.1\tLN:72896, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_013426605.1_ASM1342660v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1 --threads 4 --reference GCA_013426605.1_ASM1342660v1_genomic.fna -o SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:30, meanReadLength:104, maxQuality:42, minQuality:0, meanQuality:15, readCount:44, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1054461_Escherichia-phage-vB-EcoP-G7C.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1054461_Escherichia-phage-vB-EcoP-G7C_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:30, meanReadLength:132, maxQuality:42, minQuality:0, meanQuality:19, readCount:186, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:HQ259105.1\tLN:72917, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000891295.1_ViralProj72371_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_10752_Enquatrovirus-N4.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_10752_Enquatrovirus-N4.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1 --threads 4 --reference GCA_000891295.1_ViralProj72371_genomic.fna -o SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam bowtie2 align statistics: [maxReadLength:100, minReadLength:100, meanReadLength:100, maxQuality:0, minQuality:0, meanQuality:0, readCount:2, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_10752_Enquatrovirus-N4.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_10752_Enquatrovirus-N4.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_10752_Enquatrovirus-N4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:37, meanReadLength:136, maxQuality:42, minQuality:0, meanQuality:20, readCount:100, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:JX880034.1\tLN:72570, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000903115.1_ViralProj179425_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1 --threads 4 --reference GCA_000903115.1_ViralProj179425_genomic.fna -o SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:33, meanReadLength:117, maxQuality:42, minQuality:0, meanQuality:7, readCount:76, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ394712.1\tLN:73275, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020475385.1_ASM2047538v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1 --threads 4 --reference GCA_020475385.1_ASM2047538v1_genomic.fna -o SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-U1G_GCA_020475385.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:33, meanReadLength:120, maxQuality:23, minQuality:0, meanQuality:2, readCount:62, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:KF192075.1\tLN:71248, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000922515.1_ViralProj260483_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1 --threads 4 --reference GCA_000922515.1_ViralProj260483_genomic.fna -o SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:33, meanReadLength:110, maxQuality:40, minQuality:0, meanQuality:7, readCount:34, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1239384_Escherichia-phage-IME11.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1239384_Escherichia-phage-IME11_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:33, meanReadLength:132, maxQuality:42, minQuality:0, meanQuality:25, readCount:258, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1391223_Escherichia-phage-vB-EcoP-PhAPEC7_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:79, meanReadLength:139, maxQuality:42, minQuality:0, meanQuality:16, readCount:134, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1395983_Escherichia-phage-vB-EcoP-PhAPEC5_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:75, meanReadLength:138, maxQuality:42, minQuality:0, meanQuality:23, readCount:74, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:KF192075.1\tLN:71248, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000922515.1_ViralProj260483_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1414738_Shigella-phage-pSb-1.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1414738_Shigella-phage-pSb-1.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1 --threads 4 --reference GCA_000922515.1_ViralProj260483_genomic.fna -o SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-PhAPEC5_GCA_000922515.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:74, meanReadLength:132, maxQuality:24, minQuality:0, meanQuality:4, readCount:44, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MT682708.1\tLN:72896, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_013426605.1_ASM1342660v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1414738_Shigella-phage-pSb-1.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1414738_Shigella-phage-pSb-1.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1 --threads 4 --reference GCA_013426605.1_ASM1342660v1_genomic.fna -o SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Escherichia-phage-vB-EcoP-SP5M_GCA_013426605.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:56, meanReadLength:128, maxQuality:24, minQuality:0, meanQuality:2, readCount:46, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1414738_Shigella-phage-pSb-1.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1414738_Shigella-phage-pSb-1.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1414738_Shigella-phage-pSb-1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:48, meanReadLength:132, maxQuality:42, minQuality:0, meanQuality:26, readCount:146, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:KJ135004.2\tLN:72583, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000922735.2_ViralProj248626_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1458848_Escherichia-phage-Bp4.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1458848_Escherichia-phage-Bp4.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2 --threads 4 --reference GCA_000922735.2_ViralProj248626_genomic.fna -o SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_sorted.bam##idx##SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:54, meanReadLength:126, maxQuality:40, minQuality:0, meanQuality:12, readCount:64, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-St11Ph5_GCA_002956185.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MG208881.1\tLN:72444, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_002956185.1_ASM295618v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1458848_Escherichia-phage-Bp4.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1458848_Escherichia-phage-Bp4.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-St11Ph5_GCA_002956185.1 --threads 4 --reference GCA_002956185.1_ASM295618v1_genomic.fna -o SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-St11Ph5_GCA_002956185.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-St11Ph5_GCA_002956185.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-St11Ph5_GCA_002956185.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-St11Ph5_GCA_002956185.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-St11Ph5_GCA_002956185.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-St11Ph5_GCA_002956185.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:77, meanReadLength:123, maxQuality:3, minQuality:0, meanQuality:0, readCount:30, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:HQ259105.1\tLN:72917, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000891295.1_ViralProj72371_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1458848_Escherichia-phage-Bp4.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1458848_Escherichia-phage-Bp4.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1 --threads 4 --reference GCA_000891295.1_ViralProj72371_genomic.fna -o SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-G7C_GCA_000891295.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:72, meanReadLength:133, maxQuality:24, minQuality:0, meanQuality:14, readCount:32, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MW630115.1\tLN:72231, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_019095225.1_ASM1909522v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1458848_Escherichia-phage-Bp4.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1458848_Escherichia-phage-Bp4.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1 --threads 4 --reference GCA_019095225.1_ASM1909522v1_genomic.fna -o SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Escherichia-phage-vB-EcoP-ZQ2_GCA_019095225.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:72, meanReadLength:128, maxQuality:23, minQuality:0, meanQuality:8, readCount:30, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1458848_Escherichia-phage-Bp4.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1458848_Escherichia-phage-Bp4.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1458848_Escherichia-phage-Bp4_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:55, meanReadLength:134, maxQuality:42, minQuality:0, meanQuality:23, readCount:220, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:KJ135004.2\tLN:72583, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000922735.2_ViralProj248626_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1604356_Escherichia-phage-ECBP1.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1604356_Escherichia-phage-ECBP1.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2 --threads 4 --reference GCA_000922735.2_ViralProj248626_genomic.fna -o SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_sorted.bam##idx##SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-Bp4_GCA_000922735.2_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:36, meanReadLength:71, maxQuality:23, minQuality:0, meanQuality:2, readCount:22, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:JX880034.1\tLN:72570, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_000903115.1_ViralProj179425_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1604356_Escherichia-phage-ECBP1.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1604356_Escherichia-phage-ECBP1.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1 --threads 4 --reference GCA_000903115.1_ViralProj179425_genomic.fna -o SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Escherichia-phage-IME11_GCA_000903115.1_sorted.bam bowtie2 align statistics: [maxReadLength:126, minReadLength:83, meanReadLength:97, maxQuality:0, minQuality:0, meanQuality:0, readCount:10, duplicateReadCount:0, sorted:true]"
                 ],
                 [
-                    "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align header: [@HD\tVN:1.6\tSO:coordinate, @SQ\tSN:MZ358387.1\tLN:72458, @RG\tID:SRR13439813\tSM:SRR13439813, @PG\tID:bowtie2\tPN:bowtie2\tVN:2.5.4\tCL:\"/opt/conda/bin/bowtie2-align-s --wrapper basic-0 -x ./bowtie2/GCA_020882845.1_ASM2088284v1_genomic.fna --threads 4 --rg-id SRR13439813 --rg SM:SRR13439813 --passthrough -1 SRR13439813_taxid_1604356_Escherichia-phage-ECBP1.extracted_centrifuge_read_1.fastq.gz -2 SRR13439813_taxid_1604356_Escherichia-phage-ECBP1.extracted_centrifuge_read_2.fastq.gz\", @PG\tID:samtools\tPN:samtools\tPP:bowtie2\tVN:1.21\tCL:samtools view -f 3 --threads 4 -o SRR13439813.bam -, @PG\tID:samtools.1\tPN:samtools\tPP:samtools\tVN:1.24\tCL:samtools cat 1/SRR13439813.bam, @PG\tID:samtools.2\tPN:samtools\tPP:samtools.1\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1 --threads 4 --reference GCA_020882845.1_ASM2088284v1_genomic.fna -o SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam -, @PG\tID:samtools.3\tPN:samtools\tPP:samtools.2\tVN:1.24\tCL:samtools cat 1/SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.bam, @PG\tID:samtools.4\tPN:samtools\tPP:samtools.3\tVN:1.24\tCL:samtools sort -T SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted --threads 4 -o SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam##idx##SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam.bai --write-index -]"
+                    "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_sorted.bam bowtie2 align statistics: [maxReadLength:150, minReadLength:36, meanReadLength:134, maxQuality:42, minQuality:0, meanQuality:21, readCount:156, duplicateReadCount:0, sorted:true]"
                 ]
             ]
         ],
-        "timestamp": "2026-10-19T10:18:35.721523",
+        "timestamp": "2026-10-20T15:35:59.192951011",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "igv": {
@@ -1474,10 +1474,10 @@
                 "SRR13439813_centrifuge_taxid_1604356_Escherichia-phage-ECBP1_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:38.845339",
+        "timestamp": "2026-10-20T15:36:04.08524592",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "blastx": {
@@ -1503,10 +1503,10 @@
                 "SRR13439813_taxid_1604356_Escherichia-phage-ECBP1_centrifuge_blastx_filtered_summary.txt(centrifuge) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:34.988285",
+        "timestamp": "2026-10-20T15:35:57.399927221",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     },
     "taxpasta_flagged": {
@@ -1518,10 +1518,10 @@
                 "SRR13439813_DNA_HLSAN_centrifuge.tsv:md5,d4618a60f5ea9a739e436e2219b8447d"
             ]
         ],
-        "timestamp": "2026-10-19T10:18:43.234253",
+        "timestamp": "2026-10-20T15:36:08.946856342",
         "meta": {
             "nf-test": "0.9.5",
-            "nextflow": "25.10.4"
+            "nextflow": "26.04.6"
         }
     }
 }
