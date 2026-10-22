@@ -1,0 +1,26 @@
+{
+    "versions_diamond": {
+        "content": null,
+        "timestamp": "2026-09-02T13:24:09.065424",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "versions_all_classifiers": {
+        "content": null,
+        "timestamp": "2026-09-02T13:24:51.25206",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    },
+    "versions_kraken2": {
+        "content": null,
+        "timestamp": "2026-09-02T13:24:24.146982",
+        "meta": {
+            "nf-test": "0.9.5",
+            "nextflow": "25.10.4"
+        }
+    }
+}
