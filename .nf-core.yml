@@ -19,7 +19,7 @@ lint:
     - assets/email_template.txt
     - docs/README.md
     - docs/usage.md
-    - viralPathogenList.csv
+    - viral_pathogen_list.csv
     - README.md
   multiqc_config:
     - report_comment
@@ -32,7 +32,7 @@ nf_core_version: 4.1.0
 repository_type: pipeline
 template:
   author: LilyAnderssonLee
-  description: nf-core/taxprofiler post processing
+  description: nf-core/taxprofiler post processing; verification of classification results; consensus maps
   force: false
   is_nfcore: false
   name: metaval
