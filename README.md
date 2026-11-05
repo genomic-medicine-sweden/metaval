@@ -1,7 +1,7 @@
 <h1>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/metaval_logo_dark.svg">
-    <img alt="genomic-medicine-sweden/metaval" src="docs/images/metaval_logo_light.png", width="250">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/images/metaval_logo_dark.png">
+    <img alt="genomic-medicine-sweden/metaval" src="docs/images/metaval_logo_light.png" width="250">
   </picture>
 </h1>
 
@@ -11,7 +11,7 @@
 [![nf-test](https://img.shields.io/badge/unit_tests-nf--test-337ab7.svg)](https://www.nf-test.com)
 
 [![Nextflow](https://img.shields.io/badge/version-%E2%89%A525.10.4-green?style=flat&logo=nextflow&logoColor=white&color=%230DC09D&link=https%3A%2F%2Fnextflow.io)](https://www.nextflow.io/)
-[![nf-core template version](https://img.shields.io/badge/nf--core_template-4.0.3-green?style=flat&logo=nfcore&logoColor=white&color=%2324B064&link=https%3A%2F%2Fnf-co.re)](https://github.com/nf-core/tools/releases/tag/4.0.3)
+[![nf-core template version](https://img.shields.io/badge/nf--core_template-4.1.0-green?style=flat&logo=nfcore&logoColor=white&color=%2324B064&link=https%3A%2F%2Fnf-co.re)](https://github.com/nf-core/tools/releases/tag/4.1.0)
 [![run with conda](http://img.shields.io/badge/run%20with-conda-3EB049?labelColor=000000&logo=anaconda)](https://docs.conda.io/en/latest/)
 [![run with docker](https://img.shields.io/badge/run%20with-docker-0db7ed?labelColor=000000&logo=docker)](https://www.docker.com/)
 [![run with singularity](https://img.shields.io/badge/run%20with-singularity-1d355c.svg?labelColor=000000)](https://sylabs.io/docs/)
@@ -74,13 +74,13 @@ This workflow is activated by enabling the `--perform_verify_species` option and
    - This step performs de novo assembly for TaxIDs with a number of reads exceeding `params.min_read_counts`. [Spades](https://github.com/ablab/spades) is used for Illumina reads, and [Flye](https://github.com/mikolmogorov/Flye) is used for Nanopore reads. The resulting contig files will be used as input for `BLAST`.
 
 5. **BLAST**
-   - Use `BLAST` to identify the closest reference genomes for the target reads. There are two options: `BLASTx` using [DIAMOND](https://github.com/bbuchfink/diamond) based on the protein database, and [BLASTn](https://github.com/bbuchfink/diamond) based on the nucleotide database.
+   - Use `BLAST` to identify the closest reference genomes for the target reads. There are two options: `BLASTx` using [DIAMOND](https://blast.ncbi.nlm.nih.gov/Blast.cgi) based on the protein database, and [BLASTn](https://github.com/bbuchfink/diamond) based on the nucleotide database.
 
 6. **Mapping**
    - Map the reads of TaxIDs to the closest reference genomes identified by `BLAST`. Use [Bowtie2](<(http://bowtie-bio.sourceforge.net/bowtie2/)>) for Illumina reads and [minimap2](https://github.com/lh3/minimap2) for Nanopore reads.
 
 7. **Coverage and depth**
-   - Calculate the coverage and depth of the mapped reads using [samtools](<(http://www.htslib.org/)>).
+   - Calculate the coverage and depth of the mapped reads using [samtools](http://www.htslib.org/).
 
 8. **Visualisation using IGV**
    - Visualize the mapped reads using [igv-reports](https://github.com/igvteam/igv-reports)
@@ -194,7 +194,7 @@ taxonomy_id name rank lineage SRR13439799_kraken2db.kraken2.kraken2.report SRR13
 ## Pipeline output
 
 For more details about the output files and reports, please refer to the
-[output documentation](https://github.com/genomic-medicine-sweden/metaval/blob/dev/docs/output.md).
+[output documentation](https://github.com/genomic-medicine-sweden/metaval/blob/main/docs/output.md).
 
 ## Credits
 
