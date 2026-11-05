@@ -1,0 +1,43 @@
+process FILTER_BLAST {
+    tag "${meta.id}"
+    label 'process_low'
+
+    conda "${moduleDir}/environment.yml"
+    container "${workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container
+        ? 'https://depot.galaxyproject.org/singularity/pandas:2.2.1'
+        : 'biocontainers/pandas:2.2.1'}"
+
+    input:
+    tuple val(meta), path(blast_hits)
+    path header
+
+    output:
+    tuple val(meta), path('*_filtered.txt')        , emit: filtered_blast, optional: true
+    tuple val(meta), path('*_summary.txt')         , emit: summary       , optional: true
+    tuple val("${task.process}"), val("python"), eval("python --version | sed -e 's/Python //g'"), emit: versions_python, topic: versions
+    tuple val("${task.process}"), val("pandas"), eval("python -c \"import pandas; print(pandas.__version__)\""), emit: versions_pandas, topic: versions
+
+    when:
+    task.ext.when == null || task.ext.when
+
+    script:
+    def args = task.ext.args ?: ''
+    def prefix = task.ext.prefix ?: "${meta.id}"
+
+    """
+    filter_blast.py \\
+        --header ${header} \\
+        --input ${blast_hits} \\
+        --filtered-output ${prefix}_filtered.txt \\
+        --summary-output ${prefix}_filtered_summary.txt \\
+        ${args}
+
+    """
+
+    stub:
+    def prefix = task.ext.prefix ?: "${meta.id}"
+    """
+    touch ${prefix}_filtered.txt
+    touch ${prefix}_filtered_summary.txt
+    """
+}

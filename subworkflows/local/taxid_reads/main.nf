@@ -1,0 +1,215 @@
+//
+// EXTRACT READS
+//
+
+include { EXTRACT_VIRAL_TAXID as KRAKEN2_VIRAL_TAXID      } from '../../../modules/local/extract_viral_taxid'
+include { EXTRACT_VIRAL_TAXID as CENTRIFUGE_VIRAL_TAXID   } from '../../../modules/local/extract_viral_taxid'
+include { EXTRACT_VIRAL_TAXID as DIAMOND_VIRAL_TAXID      } from '../../../modules/local/extract_viral_taxid'
+include { KRAKENTOOLS_EXTRACTKRAKENREADS                  } from '../../../modules/nf-core/krakentools/extractkrakenreads'
+include { EXTRACTCENTRIFUGEREADS                          } from '../../../modules/local/extractcentrifugereads'
+include { EXTRACTDIAMONDREADS                            } from '../../../modules/local/extractdiamondreads'
+
+workflow TAXID_READS {
+
+    take:
+    ch_reads                   // channel:   [mandatory] [ meta, reads ]
+    ch_kraken2_taxpasta        // channel:   [mandatory] [ meta, kraken2_taxpasta ]
+    ch_kraken2_result          // channel:   [mandatory] [ meta, kraken2_result ]
+    ch_kraken2_report          // channel:   [mandatory] [ meta, kraken2_report ]
+    ch_centrifuge_taxpasta     // channel:   [mandatory] [ meta, centrifuge_taxpasta ]
+    ch_centrifuge_result       // channel:   [mandatory] [ meta, centrifuge_result ]
+    ch_centrifuge_report       // channel:   [mandatory] [ meta, centrifuge_report ]
+    ch_diamond_taxpasta        // channel:   [mandatory] [ meta, diamond_taxpasta ]
+    ch_diamond_tsv             // channel:   [mandatory] [ meta, diamond_tsv ]
+
+
+    main:
+    ch_versions      = channel.empty()
+    ch_taxid_reads   = channel.empty()
+
+    ch_phages_taxid = params.phages_taxid ?
+        channel.fromPath(params.phages_taxid, checkIfExists: true).first() :
+        channel.value([])
+    ch_taxid_list = params.taxid_list ?
+        channel.fromPath(params.taxid_list, checkIfExists: true)
+            .splitCsv(sep: '\t')
+            .map { row ->
+                def meta = row[0].trim()               // sample name
+                def classifer = row[1].trim().toLowerCase()
+                def taxid = row[2].trim()
+                def species = row[3].trim()
+                    .replaceAll(/[^A-Za-z0-9]/, '-')  // Replace special chars with dashes
+                    .replaceAll(/-+/, '-')            // Replace multiple dashes with single dash
+                    .replaceAll(/^-+|-+$/, '')        // Remove leading and trailing dashes
+                [ meta, classifer, taxid, species ]
+            }
+        : channel.empty()
+
+    ch_taxid_list_classifer = ch_taxid_list.branch{ _meta, classifer, _taxid, _species ->
+        kraken2: classifer == 'kraken2'
+        centrifuge: classifer == 'centrifuge'
+        diamond: classifer == 'diamond'
+    }
+
+    // Exyxtract kraken2 reads
+    if ( params.extract_kraken2_reads ) {
+        if ( params.taxid_list ) {
+            kraken2_combined = ch_kraken2_report
+                .map { meta, kraken2_report -> [ meta.subMap(meta.keySet() - 'tool'), kraken2_report ] }
+                .join (ch_kraken2_result, by: 0)
+                .join( ch_reads, by: 0)
+                .map { meta, kraken2_report, kraken2_result, reads ->
+                    [ meta.id, meta, kraken2_report, kraken2_result, reads ]
+                }
+                .combine ( ch_taxid_list_classifer.kraken2, by:0)
+                .multiMap { _samplename, meta, kraken2_report, kraken2_result, reads, _classifer, taxid, species ->
+                    def new_meta = meta + [taxid: taxid, species: species]
+                    taxid: taxid
+                    kraken2_result : [ new_meta, kraken2_result ]
+                    reads: [ new_meta, reads ]
+                    kraken2_report: [ new_meta, kraken2_report ]
+                }
+            KRAKENTOOLS_EXTRACTKRAKENREADS(
+                kraken2_combined.taxid,
+                kraken2_combined.kraken2_result,
+                kraken2_combined.reads,
+                kraken2_combined.kraken2_report
+            )
+            ch_taxid_reads_kraken2  = KRAKENTOOLS_EXTRACTKRAKENREADS.out.extracted_kraken2_reads
+                .map {meta,reads -> [ meta + [tool:"kraken2"], reads ]}
+        } else {
+            kraken2_output = ch_kraken2_taxpasta.join(ch_kraken2_report)
+            KRAKEN2_VIRAL_TAXID( [], ch_phages_taxid, kraken2_output)
+
+            kraken2_taxids = KRAKEN2_VIRAL_TAXID.out.viral_taxid
+                .map { meta, taxid_list -> [ meta.subMap( meta.keySet() - 'tool' ), taxid_list ] }
+                .splitCsv(sep: '\t')
+                .map {meta, row -> [meta, row[0], row[1]]} //[meta, taxid, species]
+
+            kraken2_combined = ch_kraken2_result
+                .join( ch_reads, by:0)
+                .join( ch_kraken2_report
+                    .map { meta, kraken2_report -> [ meta.subMap(meta.keySet() - 'tool'), kraken2_report ]}, by:0
+                )
+                .combine( kraken2_taxids, by:0 )
+                .multiMap { meta, kraken2_result, reads, kraken2_report, taxid, species ->
+                    def new_meta = meta + [ taxid: taxid, species: species ]
+                    taxid: taxid.trim()
+                    kraken2_result: [ new_meta, kraken2_result ]
+                    reads: [ new_meta, reads ]
+                    kraken2_report: [ new_meta, kraken2_report ]
+                }
+
+                KRAKENTOOLS_EXTRACTKRAKENREADS(
+                kraken2_combined.taxid,
+                kraken2_combined.kraken2_result,
+                kraken2_combined.reads,
+                kraken2_combined.kraken2_report
+                )
+            ch_taxid_reads_kraken2  = KRAKENTOOLS_EXTRACTKRAKENREADS.out.extracted_kraken2_reads
+                .map {meta,reads -> [ meta+[tool: "kraken2"]+ [taxid: meta.taxid], reads ]}
+        }
+        ch_taxid_reads              = ch_taxid_reads.mix(ch_taxid_reads_kraken2)
+    }
+
+    // Extract centrifuge reads
+    if ( params.extract_centrifuge_reads ) {
+        if ( params.taxid_list ) {
+            centrifuge_combined = ch_centrifuge_result
+                .join( ch_reads, by: 0 )
+                .map { meta, centrifuge_result, reads ->
+                    [ meta.id, meta, centrifuge_result, reads ]
+                }
+                .combine ( ch_taxid_list_classifer.centrifuge, by:0 )
+                .multiMap { _samplename, meta, centrifuge_result, reads, _classifer, taxid, species ->
+                    taxid: taxid
+                    centrifuge_result: [ meta + [taxid: taxid, species: species ], centrifuge_result, reads ]
+                }
+
+            EXTRACTCENTRIFUGEREADS(
+                centrifuge_combined.taxid,
+                centrifuge_combined.centrifuge_result
+            )
+            ch_taxid_reads_centrifuge  = EXTRACTCENTRIFUGEREADS.out.extracted_centrifuge_reads
+                .map {meta,reads -> [ meta + [tool:"centrifuge"], reads ]}
+
+        } else {
+            centrifuge_output = ch_centrifuge_taxpasta.join(ch_centrifuge_report)
+            CENTRIFUGE_VIRAL_TAXID( [], ch_phages_taxid, centrifuge_output )
+            centrifuge_taxids = CENTRIFUGE_VIRAL_TAXID.out.viral_taxid
+                .map { meta, taxid -> [ meta.subMap( meta.keySet() - 'tool' ), taxid ] }
+                .splitCsv(sep: '\t')
+                .map {meta, row -> [meta, row[0], row[1]]} //[meta, taxid, species]
+
+            centrifuge_combined = ch_centrifuge_result
+                .join( ch_reads, by:0 )
+                .combine( centrifuge_taxids, by:0 )
+                .multiMap { meta, centrifuge_result, reads, taxid, species ->
+                    taxid: taxid.trim()
+                    centrifuge_result: [ meta + [ taxid: taxid, species: species ], centrifuge_result, reads ]
+                }
+
+            EXTRACTCENTRIFUGEREADS(
+                centrifuge_combined.taxid,
+                centrifuge_combined.centrifuge_result
+            )
+            ch_taxid_reads_centrifuge  = EXTRACTCENTRIFUGEREADS.out.extracted_centrifuge_reads
+                .map {meta,reads -> [ meta+[tool:"centrifuge"], reads ]}
+        }
+        ch_taxid_reads             = ch_taxid_reads.mix(ch_taxid_reads_centrifuge)
+    }
+
+    // Extract diamond reads
+    if ( params.extract_diamond_reads ) {
+        if ( params.taxid_list ) {
+            diamond_combined = ch_diamond_tsv
+                .map { meta, diamond_tsv -> [meta.subMap( meta.keySet() - 'tool' ), diamond_tsv ] }
+                .join( ch_reads, by:0)
+                .map { meta, diamond_tsv, reads ->
+                    [ meta.id, meta, diamond_tsv, reads ]
+                }
+                .combine ( ch_taxid_list_classifer.diamond, by:0 )
+                .multiMap { _samplename, meta, diamond_tsv, reads, _classifer, taxid, species ->
+                    taxid: taxid
+                    diamond_tsv: [ meta + [ taxid: taxid, species: species ], diamond_tsv, reads ]
+                }
+
+            EXTRACTDIAMONDREADS(
+                diamond_combined.taxid,
+                params.evalue_threshold,
+                diamond_combined.diamond_tsv
+            )
+            ch_taxid_reads_diamond = EXTRACTDIAMONDREADS.out.extracted_diamond_reads
+                .map {meta,reads -> [ meta+[tool:"diamond"], reads ]}
+        } else {
+            diamond_output = ch_diamond_taxpasta.join(ch_diamond_tsv)
+            DIAMOND_VIRAL_TAXID( params.evalue_threshold, ch_phages_taxid, diamond_output )
+            diamond_taxids = DIAMOND_VIRAL_TAXID.out.viral_taxid
+                .map { meta, taxid -> [ meta.subMap( meta.keySet() - 'tool' ), taxid ] }
+                .splitCsv(sep: '\t')
+                .map {meta, row -> [meta, row[0], row[1]]} //[meta, taxid, species]
+
+            diamond_combined = ch_diamond_tsv
+                .map{ meta, diamond_tsv -> [meta.subMap( meta.keySet() - 'tool' ), diamond_tsv ] }
+                .join( ch_reads, by:0 )
+                .combine( diamond_taxids, by:0 )
+                .multiMap { meta, diamond, reads, taxid, species ->
+                    taxid: taxid.trim()
+                    diamond_tsv: [ meta + [ taxid: taxid, species: species ], diamond, reads ]
+                }
+
+            EXTRACTDIAMONDREADS(
+                diamond_combined.taxid,
+                params.evalue_threshold,
+                diamond_combined.diamond_tsv
+            )
+            ch_taxid_reads_diamond = EXTRACTDIAMONDREADS.out.extracted_diamond_reads
+                .map {meta,reads -> [ meta+[tool:"diamond"], reads ]}
+        }
+        ch_taxid_reads         = ch_taxid_reads.mix(ch_taxid_reads_diamond)
+    }
+
+    emit:
+    reads           = ch_taxid_reads       // channel: [ val (meta), [ reads ] ]
+    versions        = ch_versions          // channel: [ versions.yml ]
+}

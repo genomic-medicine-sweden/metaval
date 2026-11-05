@@ -1,36 +1,118 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://raw.githubusercontent.com/nf-core/metaval/main/assets/schema_input.json",
-    "title": "nf-core/metaval pipeline - params.input schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/genomic-medicine-sweden/metaval/main/assets/schema_input.json",
+    "title": "genomic-medicine-sweden/metaval pipeline - params.input schema",
     "description": "Schema for the file provided with params.input",
     "type": "array",
     "items": {
         "type": "object",
         "properties": {
             "sample": {
+                "type": ["string", "integer"],
+                "pattern": "^\\S+$",
+                "errorMessage": "Sample name must be provided and cannot contain spaces",
+                "meta": ["id"]
+            },
+            "instrument_platform": {
+                "type": "string",
+                "enum": ["ILLUMINA", "OXFORD_NANOPORE"],
+                "errorMessage": "Sequencing platform must be provided, must be a string value and must be one of 'ILLUMINA' or 'OXFORD_NANOPORE`.",
+                "meta": ["instrument_platform"]
+            },
+            "na_content": {
+                "type": "string",
+                "errorMessage": "Nucleic acid content must be provided, must be a string value, for example 'DNA', 'RNA' or 'MIX'.",
+                "meta": ["na_content"]
+            },
+            "is_ntc": {
+                "type": "boolean",
+                "errorMessage": "A boolean value for is_ntc must be provided.",
+                "meta": ["is_ntc"]
+            },
+            "sample_prep": {
                 "type": "string",
                 "pattern": "^\\S+$",
-                "errorMessage": "Sample name must be provided and cannot contain spaces"
+                "errorMessage": "Sample wetlab prep method must be provided and cannot contain spaces, for example 'ELB', 'HLSAN'. ",
+                "meta": ["sample_prep"]
             },
             "fastq_1": {
                 "type": "string",
-                "pattern": "^\\S+\\.f(ast)?q\\.gz$",
-                "errorMessage": "FastQ file for reads 1 must be provided, cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
+                "exists": true,
+                "format": "file-path",
+                "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.f(ast)?q\\.gz$",
+                "errorMessage": "The FASTQ file for short reads 1, long reads or merged paired-end reads must be provided, either from raw or filtered reads from `bbduk`/`nanoq`/`FiltLong` or from `Bowtie2`/`minimap2` unmapped reads against the human genome, cannot contain spaces and must have the extension '.fq.gz' or '.fastq.gz'."
             },
             "fastq_2": {
-                "errorMessage": "FastQ file for reads 2 cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'",
-                "anyOf": [
-                    {
-                        "type": "string",
-                        "pattern": "^\\S+\\.f(ast)?q\\.gz$"
-                    },
-                    {
-                        "type": "string",
-                        "maxLength": 0
-                    }
-                ]
+                "type": "string",
+                "exists": true,
+                "format": "file-path",
+                "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.f(ast)?q\\.gz$",
+                "errorMessage": "The FASTQ file for short reads 2, either from raw or filtered reads from `bbduk` or from`Bowtie2` unmapped read 2 against the human genome, cannot contain spaces and must have the extension '.fq.gz' or '.fastq.gz'."
+            },
+            "kraken2_report": {
+                "type": "string",
+                "exists": true,
+                "format": "file-path",
+                "pattern": "^\\S+\\.kraken2\\.kraken2\\.report\\.txt$",
+                "errorMessage": "Kraken2 classification report must be provided."
+            },
+            "kraken2_result": {
+                "type": "string",
+                "exists": true,
+                "format": "file-path",
+                "pattern": "^\\S+\\.kraken2\\.kraken2\\.classifiedreads\\.txt$",
+                "errorMessage": "Kraken2 classification results must be provided."
+            },
+            "kraken2_taxpasta": {
+                "type": "string",
+                "exists": true,
+                "format": "file-path",
+                "pattern": "^\\S+\\.tsv$",
+                "errorMessage": "Standardized kraken2 profiling with taxonomic information obtained from `taxpasta`."
+            },
+            "centrifuge_report": {
+                "type": "string",
+                "exists": true,
+                "format": "file-path",
+                "pattern": "^\\S+\\.centrifuge.txt$",
+                "errorMessage": "Centrifuge kreport file must be provided."
+            },
+            "centrifuge_result": {
+                "type": "string",
+                "exists": true,
+                "format": "file-path",
+                "pattern": "^\\S+\\.centrifuge.results.txt$",
+                "errorMessage": "Centrifuge result file must be provided and it should contain eight columns: readID, seqID, taxID, score, 2ndBestScore, hitLength, queryLength, numMatches."
+            },
+            "centrifuge_taxpasta": {
+                "type": "string",
+                "exists": true,
+                "format": "file-path",
+                "pattern": "^\\S+\\.tsv$",
+                "errorMessage": "Standardized centrifuge profiling with taxonomic information obtained from `taxpasta`."
+            },
+            "diamond": {
+                "type": "string",
+                "exists": true,
+                "format": "file-path",
+                "pattern": "^\\S+\\.tsv$",
+                "errorMessage": "`DIAMOND` classification results should be provided."
+            },
+            "diamond_taxpasta": {
+                "type": "string",
+                "exists": true,
+                "format": "file-path",
+                "pattern": "^\\S+\\.tsv$",
+                "errorMessage": "Standardized diamond profiling with taxonomic information obtained from `taxpasta`."
             }
         },
-        "required": ["sample", "fastq_1"]
+        "required": ["sample", "instrument_platform", "na_content", "is_ntc", "sample_prep", "fastq_1"],
+        "dependentRequired": {
+            "kraken2_result": ["kraken2_report"],
+            "kraken2_taxpasta": ["kraken2_report", "kraken2_result"],
+            "centrifuge_result": ["centrifuge_report"],
+            "centrifuge_taxpasta": ["centrifuge_report", "centrifuge_result"],
+            "diamond_taxpasta": ["diamond"]
+        }
     }
 }
