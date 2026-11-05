@@ -422,7 +422,7 @@ def sample_ntc_branch(taxpasta_channel) {
 // The input channels to FLAG_TAXPASTA process: [meta_sample, taxpasta_sample, meta_ntc, taxpasta_ntc]
 def taxpasta_sample_ntc_joined(ch_taxpasta_sample, ch_taxpasta_ntc) {
     return ch_taxpasta_sample
-        .join(ch_taxpasta_ntc, by: 0, remainder: true)
+        .combine(ch_taxpasta_ntc, by:0)
         .filter { entry ->
             // Keep sample-driven rows and discard NTC-only remainder rows from the join
             entry.size() >= 3 && entry[0] != null && entry[1] != null && entry[2] != null
