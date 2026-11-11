@@ -174,7 +174,6 @@
                 "verifyspecies/spades/diamond/SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond.spades.log",
                 "verifyspecies/taxpasta_flagged",
                 "verifyspecies/taxpasta_flagged/SRR13439790_DNA_ELB_diamond.tsv",
-                "verifyspecies/taxpasta_flagged/SRR13439799_MIX_NORMAL_diamond.tsv",
                 "verifyspecies/taxpasta_flagged/SRR13439802_DNA_HLSAN_diamond.tsv",
                 "verifyspecies/taxpasta_flagged/SRR13439813_DNA_HLSAN_diamond.tsv",
                 "verifyspecies/viral_taxids",
@@ -184,7 +183,7 @@
                 "verifyspecies/viral_taxids/SRR13439813_diamond_viral_taxids.tsv"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:10.354354044",
+        "timestamp": "2026-11-11T14:09:52.108350737",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -199,7 +198,7 @@
                 "SRR13439813_diamond_viral_taxids.tsv:md5,99c315cbd450d9f5985ce95adf418aa8"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:12.320591276",
+        "timestamp": "2026-11-11T14:09:56.940847015",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -240,7 +239,7 @@
                 "SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond.spades.log exists: true"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:12.215681361",
+        "timestamp": "2026-11-11T14:09:56.871050792",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -257,7 +256,7 @@
                 "GCA_020882845.1_ASM2088284v1_genomic.fna.rev.2.bt2:md5,f8ce76e79e194e6873f965a4d9381365"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:11.571953505",
+        "timestamp": "2026-11-11T14:09:56.401073747",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -272,7 +271,7 @@
                 "SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.tsv:md5,2e97515721c4072b7032ff14196e42a9"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:12.855467922",
+        "timestamp": "2026-11-11T14:09:58.947740969",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -287,7 +286,7 @@
                 "SRR13439813_taxid_2886042_Shigella-virus-Moo19_samtools_filtered.fasta(Filtered consensus for verify species workflow) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:11.982231983",
+        "timestamp": "2026-11-11T14:09:56.729554081",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -302,7 +301,7 @@
                 "SRR13439813_taxid_2886042_Shigella-virus-Moo19_samtools.fasta(Raw consensus for verify species workflow) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:11.888402722",
+        "timestamp": "2026-11-11T14:09:56.650993078",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -325,7 +324,7 @@
                 "SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond_blast_filtered_summary.txt(diamond) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:10.463826509",
+        "timestamp": "2026-11-11T14:09:52.155581742",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -343,7 +342,7 @@
                 "SRR13439799_diamond_taxid_11320_Influenza-A-virus_mappingorganism_Influenza-A-virus-A-Puerto-Rico-8-1934-H1N1_GCA_037915385.1_sorted.bam.bai:md5,e36afccb6d31ab7260ab9ab9c65a919a"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:11.782724818",
+        "timestamp": "2026-11-11T14:09:56.573982218",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -391,7 +390,7 @@
                 "SRR13439813_taxid_2886042_Shigella-virus-Moo19.extracted_diamond_read_2.fa(extracted reads diamond) contains string:true"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:11.431600459",
+        "timestamp": "2026-11-11T14:09:56.211942336",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -403,7 +402,7 @@
                 "GCA_037915385.1_ASM3791538v1_genomic.fna.mmi exists: true"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:11.677616624",
+        "timestamp": "2026-11-11T14:09:56.498470269",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -418,7 +417,7 @@
                 "SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.png exists: true"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:12.752924615",
+        "timestamp": "2026-11-11T14:09:57.224161284",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -532,7 +531,7 @@
                 }
             }
         ],
-        "timestamp": "2026-10-20T15:13:10.29677248",
+        "timestamp": "2026-11-11T14:09:52.082076921",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -554,7 +553,7 @@
                 "SRR13439813_taxid_2886042_Shigella-virus-Moo19_diamond_2_fastqc.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:12.528123323",
+        "timestamp": "2026-11-11T14:09:57.077412576",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -569,7 +568,7 @@
                 "SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1.txt:md5,fbfd16332f0c4360bf92adaea0f0b23f"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:12.634366156",
+        "timestamp": "2026-11-11T14:09:57.147847517",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -581,7 +580,7 @@
                 "metaval_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:12.425626397",
+        "timestamp": "2026-11-11T14:09:57.009250637",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -601,7 +600,7 @@
                 ]
             ]
         ],
-        "timestamp": "2026-10-20T15:13:11.546155131",
+        "timestamp": "2026-11-11T14:09:56.378607868",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -616,7 +615,7 @@
                 "SRR13439813_diamond_taxid_2886042_Shigella-virus-Moo19_mappingorganism_Shigella-virus-Moo19_GCA_020882845.1_report.html exists: true"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:12.080082681",
+        "timestamp": "2026-11-11T14:09:56.799722345",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
@@ -626,12 +625,11 @@
         "content": [
             [
                 "SRR13439790_DNA_ELB_diamond.tsv:md5,b886aa18c1c230ecc528106f36b3d885",
-                "SRR13439799_MIX_NORMAL_diamond.tsv:md5,8c466ba2eb831a9ce946625553f0d763",
                 "SRR13439802_DNA_HLSAN_diamond.tsv:md5,62c743a68a4128eba457792d744879bb",
-                "SRR13439813_DNA_HLSAN_diamond.tsv:md5,71e3ef5c6ee3ecab9a6556fde93a3b19"
+                "SRR13439813_DNA_HLSAN_diamond.tsv:md5,d4e550714e2dfe900a2c554597768b0e"
             ]
         ],
-        "timestamp": "2026-10-20T15:13:13.029339796",
+        "timestamp": "2026-11-11T14:09:59.135077837",
         "meta": {
             "nf-test": "0.9.5",
             "nextflow": "26.04.6"
