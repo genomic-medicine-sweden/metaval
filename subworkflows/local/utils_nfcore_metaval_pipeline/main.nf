@@ -422,20 +422,17 @@ def sample_ntc_branch(taxpasta_channel) {
 // The input channels to FLAG_TAXPASTA process: [meta_sample, taxpasta_sample, meta_ntc, taxpasta_ntc]
 def taxpasta_sample_ntc_joined(ch_taxpasta_sample, ch_taxpasta_ntc) {
     return ch_taxpasta_sample
-        .combine(ch_taxpasta_ntc, by:0)
-        .filter { entry ->
-            // Keep sample-driven rows and discard NTC-only remainder rows from the join
-            entry.size() >= 3 && entry[0] != null && entry[1] != null && entry[2] != null
-        }
-        .map { entry ->
-            if (entry.size() == 3) {
-                // No matched NTC for this sample; emit sample data with empty NTC placeholders
-                def (_key, meta_sample, taxpasta_sample) = entry
-                return [meta_sample, taxpasta_sample, [:], []]
-            } else {
-                // Matched key between sample and NTC rows
-                def (_key, meta_sample, taxpasta_sample, meta_ntc, taxpasta_ntc) = entry
-                return [meta_sample, taxpasta_sample, meta_ntc ?: [:], taxpasta_ntc ?: []]
+        .map { key, meta, tsv -> tuple(key, tuple(meta, tsv)) }
+        .groupTuple(by: 0)
+        .join(ch_taxpasta_ntc, by: 0, remainder: true)
+        .filter { entry -> entry[1] instanceof List }
+        .flatMap { entry ->
+            def samples = entry[1]
+            def ntc_meta = entry.size() > 2 ? (entry[2] ?: [:]) : [:]
+            def ntc_tsv = entry.size() > 3 ? (entry[3] ?: []) : []
+
+            samples.collect { meta, tsv ->
+                tuple(meta, tsv, ntc_meta, ntc_tsv)
             }
         }
 }
