@@ -46,9 +46,6 @@ workflow TAXID_BAM_FASTA {
     // Load accession2taxid map
     ch_accession2taxidmap = accession2taxid.splitCsv( header: false, sep: "\t" )
 
-    // Print the actual threshold received at runtime
-    log.info "TAXID_BAM_FASTA: min_read_counts = ${min_read_counts}"
-
     // Join accessions with taxids: [meta, accession, num_reads] + [accession, taxid, organism]
     ch_accession_taxid_with_meta = ch_accession_with_meta
         .combine(ch_accession2taxidmap)
