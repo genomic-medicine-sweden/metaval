@@ -58,6 +58,7 @@
                     "minimap2/index": {
                         "branch": "master",
                         "git_sha": "135d883a43b1a2324b4112cd270cf22e20835533",
+                    },
                     "fastqc": {
                         "branch": "master",
                         "git_sha": "18eb358065b06f2d3419e37383b002fe7db3da02",
