@@ -54,7 +54,6 @@ Each row represents one sample lane or run. Illumina samples can be single-end o
 | `diamond`             | For DIAMOND extraction    | Tab-separated per-read DIAMOND classification output.                      |
 | `diamond_taxpasta`    | For DIAMOND extraction    | Standardized Taxpasta profile.                                             |
 
-<<<<<<< HEAD
 Example:
 
 ```csv title="samplesheet.csv"
@@ -62,13 +61,6 @@ sample,instrument_platform,na_content,is_ntc,sample_prep,fastq_1,fastq_2,kraken2
 sample1,ILLUMINA,DNA,false,prep1,sample1_1.fastq.gz,sample1_2.fastq.gz,sample1.kraken2.kraken2.report.txt,sample1.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,sample1.centrifuge.txt,sample1.centrifuge.results.txt,centrifuge.tsv,sample1.diamond.tsv,diamond.tsv
 sample1_ntc,ILLUMINA,DNA,true,prep1,ntc_1.fastq.gz,ntc_2.fastq.gz,ntc.kraken2.kraken2.report.txt,ntc.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,ntc.centrifuge.txt,ntc.centrifuge.results.txt,centrifuge.tsv,ntc.diamond.tsv,diamond.tsv
 sample2,OXFORD_NANOPORE,RNA,false,prep2,sample2.fastq.gz,,sample2.kraken2.kraken2.report.txt,sample2.kraken2.kraken2.classifiedreads.txt,kraken2.tsv,sample2.centrifuge.txt,sample2.centrifuge.results.txt,centrifuge.tsv,sample2.diamond.tsv,diamond.tsv
-=======
-```csv title="samplesheet.csv"
-sample,fastq_1,fastq_2
-CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
-CONTROL_REP1,AEG588A1_S1_L003_R1_001.fastq.gz,AEG588A1_S1_L003_R2_001.fastq.gz
-CONTROL_REP1,AEG588A1_S1_L004_R1_001.fastq.gz,AEG588A1_S1_L004_R2_001.fastq.gz
->>>>>>> TEMPLATE
 ```
 
 ### Multilane FASTQs
@@ -77,7 +69,6 @@ For samples sequenced across multiple lanes or runs, provide one row per lane or
 
 Rows for the same sample must have identical metadata, including `instrument_platform`, `na_content`, `is_ntc`, `sample_prep`, and whether the reads are single-end or paired-end. Supplied classifier result, report, and Taxpasta file paths must also be identical across these rows.
 
-<<<<<<< HEAD
 Before either workflow processes the reads, the pipeline automatically concatenates the FASTQs for each sample. Single-end inputs produce one merged FASTQ; paired-end inputs produce separate merged FASTQs for read 1 and read 2. Merged files are published to `analysis_ready_fastqs/`. Samples with one input file per read direction proceed directly to the enabled workflows without producing merged files.
 
 ### Taxpasta requirements
@@ -92,17 +83,6 @@ When generating profiles with [nf-core/taxprofiler](https://github.com/nf-core/t
 --taxpasta_add_rank
 --taxpasta_add_name
 --taxpasta_taxonomy_dir
-=======
-```csv title="samplesheet.csv"
-sample,fastq_1,fastq_2
-CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
-CONTROL_REP2,AEG588A2_S2_L002_R1_001.fastq.gz,AEG588A2_S2_L002_R2_001.fastq.gz
-CONTROL_REP3,AEG588A3_S3_L002_R1_001.fastq.gz,AEG588A3_S3_L002_R2_001.fastq.gz
-TREATMENT_REP1,AEG588A4_S4_L003_R1_001.fastq.gz,
-TREATMENT_REP2,AEG588A5_S5_L003_R1_001.fastq.gz,
-TREATMENT_REP3,AEG588A6_S6_L003_R1_001.fastq.gz,
-TREATMENT_REP3,AEG588A6_S6_L004_R1_001.fastq.gz,
->>>>>>> TEMPLATE
 ```
 
 ## Shared reference inputs
@@ -112,11 +92,7 @@ TREATMENT_REP3,AEG588A6_S6_L004_R1_001.fastq.gz,
 When BLASTN is enabled, provide a BLAST database directory or `.tar.gz` archive:
 
 ```bash
-<<<<<<< HEAD
 --blastn_db /path/to/blastn_database
-=======
-nextflow run genomic-medicine-sweden/metaval --input ./samplesheet.csv --outdir ./results --genome GRCh37 -profile docker
->>>>>>> TEMPLATE
 ```
 
 Databases can be downloaded from the [NCBI BLAST database repository](https://ftp.ncbi.nlm.nih.gov/blast/db/). A virus-focused database can considerably reduce runtime compared with the complete `nt` database.
@@ -133,12 +109,7 @@ See the [DIAMOND documentation](https://github.com/bbuchfink/diamond) for databa
 
 ### Choosing BLAST modes
 
-<<<<<<< HEAD
 BLASTN and BLASTX are enabled by default. Disable either mode with `--skip_blastn` or `--skip_blastx`.
-=======
-> [!WARNING]
-> Do not use `-c <file>` to specify parameters as this will result in errors. Custom config files specified with `-c` must only be used for [tuning process resource specifications](https://nf-co.re/docs/running/run-pipelines#configuring-pipelines), other infrastructural tweaks (such as output directories), or module arguments (args).
->>>>>>> TEMPLATE
 
 Rules enforced by the pipeline:
 
@@ -164,7 +135,6 @@ Without `--taxid`, the pipeline extracts detected viral TaxIDs from enabled clas
 Optionally exclude phages, contaminants, or reagent-associated TaxIDs with a one-column file:
 
 ```bash
-<<<<<<< HEAD
 --phages_taxid /path/to/excluded_taxids.txt
 ```
 
@@ -186,18 +156,6 @@ SRR13439802	centrifuge	878220	Chryseobacterium sp. StRB126
 SRR13439813	centrifuge	878220	Chryseobacterium sp. StRB126
 SRR13439813	kraken2	878220	Chryseobacterium sp. StRB126
 SRR13439813	diamond	878220	Chryseobacterium sp. StRB126
-=======
-nextflow run genomic-medicine-sweden/metaval -profile docker -params-file params.yaml
-```
-
-with:
-
-```yaml title="params.yaml"
-input: './samplesheet.csv'
-outdir: './results/'
-genome: 'GRCh37'
-<...>
->>>>>>> TEMPLATE
 ```
 
 Run with:
@@ -465,11 +423,7 @@ Use this parameter to choose a configuration profile. Profiles can give configur
 Several generic profiles are bundled with the pipeline which instruct the pipeline to use software packaged using different methods (Docker, Singularity, Podman, Shifter, Charliecloud, Apptainer, Conda) - see below.
 
 > [!IMPORTANT]
-<<<<<<< HEAD
 > We highly recommend using Docker or Singularity containers for full pipeline reproducibility. When this is not possible, Conda is also supported.
-=======
-> We highly recommend the use of Docker or Singularity containers for full pipeline reproducibility, however when this is not possible, Conda is also supported.
->>>>>>> TEMPLATE
 
 The pipeline also dynamically loads configurations from [https://github.com/nf-core/configs](https://github.com/nf-core/configs) when it runs, making multiple config profiles for various institutional clusters available at run time. For more information and to check if your system is supported, please see the [nf-core/configs documentation](https://github.com/nf-core/configs#documentation).
 
@@ -512,11 +466,7 @@ Specify the path to a specific config file (this is a core Nextflow command). Se
 
 ### Resource requests
 
-<<<<<<< HEAD
 Although the pipeline's default requirements should work for most users and input data, you may need to customize the requested compute resources. Each pipeline step has default requirements for CPUs, memory, and execution time. For most steps, if a job exits with one of the error codes specified [here](https://github.com/nf-core/rnaseq/blob/4c27ef5610c87db00c3c5a3eed10b1d161abf575/conf/base.config#L18), it is automatically resubmitted with increased resource requests (twice the original request, then three times the original request). If it still fails after the third attempt, pipeline execution stops.
-=======
-Whilst the default requirements set within the pipeline will hopefully work for most people and with most input data, you may find that you want to customise the compute resources that the pipeline requests. Each step in the pipeline has a default set of requirements for number of CPUs, memory and time. For most of the pipeline steps, if the job exits with any of the error codes specified [here](https://github.com/nf-core/rnaseq/blob/4c27ef5610c87db00c3c5a3eed10b1d161abf575/conf/base.config#L18) it will automatically be resubmitted with higher resources request (2 x original, then 3 x original). If it still fails after the third attempt then the pipeline execution is stopped.
->>>>>>> TEMPLATE
 
 To change the resource requests, please see the [max resources](https://nf-co.re/docs/running/configuration/nextflow-for-your-system#set-max-resources) and [customise process resources](https://nf-co.re/docs/running/configuration/nextflow-for-your-system#customize-process-resources) section of the nf-core website.
 

@@ -32,7 +32,6 @@
             "sample_prep": {
                 "type": "string",
                 "pattern": "^\\S+$",
-<<<<<<< HEAD
                 "errorMessage": "Sample wetlab prep method must be provided and cannot contain spaces, for example 'ELB', 'HLSAN'. ",
                 "meta": ["sample_prep"]
             },
@@ -105,24 +104,6 @@
                 "format": "file-path",
                 "pattern": "^\\S+\\.tsv$",
                 "errorMessage": "Standardized diamond profiling with taxonomic information obtained from `taxpasta`."
-=======
-                "errorMessage": "Sample name must be provided and cannot contain spaces",
-                "meta": ["id"]
-            },
-            "fastq_1": {
-                "type": "string",
-                "format": "file-path",
-                "exists": true,
-                "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.f(ast)?q\\.gz$",
-                "errorMessage": "FastQ file for reads 1 must be provided, cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
-            },
-            "fastq_2": {
-                "type": "string",
-                "format": "file-path",
-                "exists": true,
-                "pattern": "^([\\S\\s]*\\/)?[^\\s\\/]+\\.f(ast)?q\\.gz$",
-                "errorMessage": "FastQ file for reads 2 cannot contain spaces and must have extension '.fq.gz' or '.fastq.gz'"
->>>>>>> TEMPLATE
             }
         },
         "required": ["sample", "instrument_platform", "na_content", "is_ntc", "sample_prep", "fastq_1"],

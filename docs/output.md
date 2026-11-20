@@ -305,7 +305,6 @@ FastQC is run on the extracted verify-species reads that produced filtered BLAST
 
 [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/) gives general quality metrics about your sequenced reads. It provides information about the quality score distribution across your reads, per base sequence content (%A/T/G/C), adapter contamination and overrepresented sequences. For further reading and documentation see the [FastQC help pages](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/).
 
-<<<<<<< HEAD
 ## Pathogen screening
 
 The pathogen-screening workflow is enabled with `--perform_screen_pathogens`. Reads are first mapped against the genome database supplied with `--pathogens_genomes`. Mapped reads are then separated by pathogen using `--accession2taxid` and validated with BLAST.
@@ -432,8 +431,6 @@ IGV reports visualize pathogen-specific mapped reads against their references.
 
 ## Shared pipeline outputs
 
-=======
->>>>>>> TEMPLATE
 ### MultiQC
 
 <details markdown="1">

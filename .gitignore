@@ -8,10 +8,5 @@ testing*
 *.pyc
 null/
 .lineage/
-<<<<<<< HEAD
-.nf-test.log
-.nf-test/
-=======
 .nf-test/
 .nf-test.log
->>>>>>> TEMPLATE
