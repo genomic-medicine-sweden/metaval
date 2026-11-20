@@ -1,130 +1,654 @@
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    PRINT PARAMS SUMMARY
+    IMPORT MODULES / SUBWORKFLOWS / FUNCTIONS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { paramsSummaryLog; paramsSummaryMap } from 'plugin/nf-validation'
+// Merge fastq files
+include { CAT_FASTQ                                             } from '../modules/nf-core/cat/fastq/main'
 
-def logo = NfcoreTemplate.logo(workflow, params.monochrome_logs)
-def citation = '\n' + WorkflowMain.citation(workflow) + '\n'
-def summary_params = paramsSummaryMap(workflow)
+// Flag taxonomy table
+include { FLAG_TAXPASTA                                         } from '../modules/local/flag_taxpasta'
 
-// Print parameter summary log to screen
-log.info logo + paramsSummaryLog(workflow) + citation
+// Extract reads of taxIDs
+include { TAXID_READS                                           } from '../subworkflows/local/taxid_reads'
+include { SEQKIT_FQ2FA                                          } from '../modules/nf-core/seqkit/fq2fa'
+include { PIGZ_UNCOMPRESS                                       } from '../modules/nf-core/pigz/uncompress'
 
-WorkflowMetaval.initialise(params, log)
+// SUBSET reads for BLAST
+include { SEQKIT_HEAD                                           } from '../modules/nf-core/seqkit/head'
 
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    CONFIG FILES
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
+// De novo for extracted taxIDs reads
+include { SPADES                                                } from '../modules/nf-core/spades'
+include { FLYE                                                  } from '../modules/nf-core/flye'
+include { PIGZ_UNCOMPRESS as PIGZ_UNCOMPRESS_SPADES_CONTIG      } from '../modules/nf-core/pigz/uncompress'
+include { PIGZ_UNCOMPRESS as PIGZ_UNCOMPRESS_SPADES_SCAFFOLD    } from '../modules/nf-core/pigz/uncompress'
+include { PIGZ_UNCOMPRESS as PIGZ_UNCOMPRESS_FLYE               } from '../modules/nf-core/pigz/uncompress'
 
-ch_multiqc_config          = Channel.fromPath("$projectDir/assets/multiqc_config.yml", checkIfExists: true)
-ch_multiqc_custom_config   = params.multiqc_config ? Channel.fromPath( params.multiqc_config, checkIfExists: true ) : Channel.empty()
-ch_multiqc_logo            = params.multiqc_logo   ? Channel.fromPath( params.multiqc_logo, checkIfExists: true ) : Channel.empty()
-ch_multiqc_custom_methods_description = params.multiqc_methods_description ? file(params.multiqc_methods_description, checkIfExists: true) : file("$projectDir/assets/methods_description_template.yml", checkIfExists: true)
+// BLAST
+include { BLAST                                                 } from '../subworkflows/local/blast'
+include { BLAST as BLAST_PATHOGEN                               } from '../subworkflows/local/blast'
 
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    IMPORT LOCAL MODULES/SUBWORKFLOWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
+// Mapping
+include { FETCH_BLAST_GENOMES                                   } from '../subworkflows/local/fetch_blast_genomes'
+include { MAPPING_SHORTREAD                                     } from '../subworkflows/local/mapping_shortread'
+include { MAPPING_LONGREAD                                      } from '../subworkflows/local/mapping_longread'
+include { MAPPING_SHORTREAD as MAPPING_SHORTREAD_PATHOGEN       } from '../subworkflows/local/mapping_shortread'
+include { MAPPING_LONGREAD as MAPPING_LONGREAD_PATHOGEN         } from '../subworkflows/local/mapping_longread'
+include { IGV                                                   } from '../subworkflows/local/igv'
+include { IGV as IGV_PATHOGEN                                   } from '../subworkflows/local/igv'
 
-//
-// SUBWORKFLOW: Consisting of a mix of local and nf-core/modules
-//
-include { INPUT_CHECK } from '../subworkflows/local/input_check'
+// Metaval static report
+include { METAVAL_REPORT                                        } from '../modules/local/metaval_report'
 
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    IMPORT NF-CORE MODULES/SUBWORKFLOWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
+// Calling consensus
+include { TAXID_BAM_FASTA as TAXID_BAM_FASTA_SHORTREAD          } from '../subworkflows/local/taxid_bam_fasta'
+include { TAXID_BAM_FASTA as TAXID_BAM_FASTA_LONGREAD           } from '../subworkflows/local/taxid_bam_fasta'
+include { CONSENSUS                                             } from '../subworkflows/local/consensus'
+include { CONSENSUS as CONSENSUS_SCREENPATHOGENS_LR             } from '../subworkflows/local/consensus'
+include { CONSENSUS as CONSENSUS_VERIFY_SPECIES                 } from '../subworkflows/local/consensus'
+include { CONSENSUS as CONSENSUS_VERIFY_SPECIES_LONGREAD        } from '../subworkflows/local/consensus'
 
-//
-// MODULE: Installed directly from nf-core/modules
-//
-include { FASTQC                      } from '../modules/nf-core/fastqc/main'
-include { MULTIQC                     } from '../modules/nf-core/multiqc/main'
-include { CUSTOM_DUMPSOFTWAREVERSIONS } from '../modules/nf-core/custom/dumpsoftwareversions/main'
-
+// Summary subworkflow
+include { FASTQC                                                } from '../modules/nf-core/fastqc'
+include { MULTIQC                                               } from '../modules/nf-core/multiqc'
+include { paramsSummaryMap                                      } from 'plugin/nf-schema'
+include { paramsSummaryMultiqc                                  } from '../subworkflows/nf-core/utils_nfcore_pipeline'
+include { softwareVersionsToYAML                                } from '../subworkflows/nf-core/utils_nfcore_pipeline'
+include { methodsDescriptionText                                } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
+include { sample_ntc_branch                                     } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
+include { taxpasta_sample_ntc_joined                            } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
+include { uniqueTaxonomicFiles                                  } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
+include { validateInputSamplesheet                              } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     RUN MAIN WORKFLOW
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-// Info required for completion email and summary
-def multiqc_report = []
-
 workflow METAVAL {
 
-    ch_versions = Channel.empty()
+    take:
+    ch_samplesheet // channel: samplesheet read in from --input
+    multiqc_config
+    multiqc_logo
+    multiqc_methods_description
+
+    outdir
+    main:
+
+    def ch_versions = channel.empty()
+    def ch_multiqc_files = channel.empty()
+    ch_fastqc_files = channel.empty()
+
+    // Filter samplesheet to exclude NTC if params.skip_ntc is true.
+    if (params.skip_ntc) {
+        ch_samplesheet_filtered = ch_samplesheet.filter {
+            meta,
+            _fastq_1,
+            _fastq_2,
+            _kraken2_report,
+            _kraken2_result,
+            _kraken2_taxpasta,
+            _centrifuge_report,
+            _centrifuge_result,
+            _centrifuge_taxpasta,
+            _diamond,
+            _diamond_taxpasta ->
+
+            return !meta.is_ntc
+        }
+    } else {
+        ch_samplesheet_filtered = ch_samplesheet
+    }
+
+    // Create input channels for CAT_FASTQ process to merge fastq files for samples with multiple fastq files.
+    ch_input = ch_samplesheet_filtered.map {
+        meta,
+        fastq_1,
+        fastq_2,
+        _kraken2_report,
+        _kraken2_result,
+        _kraken2_taxpasta,
+        _centrifuge_report,
+        _centrifuge_result,
+        _centrifuge_taxpasta,
+        _diamond,
+        _diamond_taxpasta ->
+
+        def reads = meta.single_end ? [fastq_1] : [fastq_1, fastq_2]
+        [ meta.id, meta, reads ]
+    }
+    .groupTuple(by: 0)
+    .map {grouped_sample ->
+        validateInputSamplesheet(grouped_sample)
+    }
+    .branch { meta, reads ->
+        to_merge: meta.single_end ? reads.size() > 1 : reads.size() > 2
+        no_merge: true
+    }
+
+    CAT_FASTQ( ch_input.to_merge )
+    ch_input_merged = CAT_FASTQ.out.reads
+        .mix(ch_input.no_merge)
+        .map{ meta, reads -> [meta, [reads].flatten()]}
+
+    // Create input channels for short reads and long reads for pathogen screening workflow
+    ch_input_filtered_merged = ch_input_merged.branch { meta, _reads ->
+        // reads channels
+        short_reads: meta.instrument_platform != 'OXFORD_NANOPORE'
+        long_reads: meta.instrument_platform == 'OXFORD_NANOPORE'
+    }
+    ch_short_reads = ch_input_filtered_merged.short_reads
+    ch_long_reads = ch_input_filtered_merged.long_reads
+
+    // Create input channels for flagging taxpasta
+    ch_taxonomy = uniqueTaxonomicFiles(ch_samplesheet)
+
+    // Create input for verifying species workflow
+    ch_verifyspecies = uniqueTaxonomicFiles(ch_samplesheet_filtered)
+        .join(ch_input_merged, by:0)
 
     //
-    // SUBWORKFLOW: Read in samplesheet, validate and stage input files
+    // Workflow: Extract reads and verification
     //
-    INPUT_CHECK (
-        file(params.input)
-    )
-    ch_versions = ch_versions.mix(INPUT_CHECK.out.versions)
-    // TODO: OPTIONAL, you can use nf-validation plugin to create an input channel from the samplesheet with Channel.fromSamplesheet("input")
-    // See the documentation https://nextflow-io.github.io/nf-validation/samplesheets/fromSamplesheet/
-    // ! There is currently no tooling to help you write a sample sheet schema
+
+    // Verify whether the taxonomic IDs identified by classification are true or false positives.
+    if ( params.perform_verify_species ) {
+
+        //
+        // LOCAL MODULE: FLAG_TAXPASTA:
+        //
+        // Flag taxonomy tables by comparing samples with the negative controls (NTC) that have the same meta.na_content and meta.sample_prep.
+
+        // Create the input channel for FLAG_TAXPASTA
+        ch_taxpasta_input = channel.empty()
+        // Kraken2
+        if ( params.extract_kraken2_reads ) {
+            ch_taxpasta_kraken2 = ch_taxonomy.map {
+                meta,
+                _kraken2_report,
+                _kraken2_result,
+                kraken2_taxpasta,
+                _centrifuge_report,
+                _centrifuge_result,
+                _centrifuge_taxpasta,
+                _diamond,
+                _diamond_taxpasta ->
+
+                [ meta + [ tool: "kraken2" ], kraken2_taxpasta ]
+            }
+            ch_taxpasta_kraken2 = sample_ntc_branch(ch_taxpasta_kraken2)
+            ch_taxpasta_kraken2_ntc = taxpasta_sample_ntc_joined(ch_taxpasta_kraken2.sample, ch_taxpasta_kraken2.ntc)
+            ch_taxpasta_input = ch_taxpasta_input.mix(ch_taxpasta_kraken2_ntc)
+        }
+        // Centrifuge
+        if ( params.extract_centrifuge_reads ) {
+            ch_taxpasta_centrifuge = ch_taxonomy.map {
+                meta,
+                _kraken2_report,
+                _kraken2_result,
+                _kraken2_taxpasta,
+                _centrifuge_report,
+                _centrifuge_result,
+                centrifuge_taxpasta,
+                _diamond,
+                _diamond_taxpasta ->
+
+                [ meta + [ tool: "centrifuge" ], centrifuge_taxpasta ]
+            }
+            ch_taxpasta_centrifuge = sample_ntc_branch(ch_taxpasta_centrifuge)
+            ch_taxpasta_centrifuge_ntc = taxpasta_sample_ntc_joined(ch_taxpasta_centrifuge.sample, ch_taxpasta_centrifuge.ntc)
+            ch_taxpasta_input = ch_taxpasta_input.mix(ch_taxpasta_centrifuge_ntc)
+        }
+        // DIAMOND
+        if ( params.extract_diamond_reads ) {
+            ch_taxpasta_diamond = ch_taxonomy.map {
+                meta,
+                _kraken2_report,
+                _kraken2_result,
+                _kraken2_taxpasta,
+                _centrifuge_report,
+                _centrifuge_result,
+                _centrifuge_taxpasta,
+                _diamond,
+                diamond_taxpasta ->
+
+                [ meta + [ tool: "diamond" ], diamond_taxpasta ]
+            }
+            ch_taxpasta_diamond = sample_ntc_branch(ch_taxpasta_diamond)
+            ch_taxpasta_diamond_ntc = taxpasta_sample_ntc_joined(ch_taxpasta_diamond.sample, ch_taxpasta_diamond.ntc)
+            ch_taxpasta_input = ch_taxpasta_input.mix(ch_taxpasta_diamond_ntc)
+        }
+
+        // The input channels to FLAG_TAXPASTA process: [ meta_sample, taxpasta_sample]; [ meta_ntc, taxpasta_ntc ]
+
+        FLAG_TAXPASTA(
+            ch_taxpasta_input.map {meta_sample, taxpasta_sample, _meta_ntc, _taxpasta_ntc ->
+                [meta_sample, taxpasta_sample]},
+            ch_taxpasta_input.map {_meta_sample, _taxpasta_sample, meta_ntc, taxpasta_ntc ->
+                [meta_ntc, taxpasta_ntc]}
+            )
+
+        //
+        // SUBWORKFLOW: TAXID_READS - extract reads
+        //
+
+        // Channels for extracting kraken2/centrifuge/diamond reads
+        ch_extract_reads = ch_verifyspecies.multiMap {
+            meta,
+            kraken2_report,
+            kraken2_result,
+            kraken2_taxpasta,
+            centrifuge_report,
+            centrifuge_result,
+            centrifuge_taxpasta,
+            diamond,
+            diamond_taxpasta,
+            reads ->
+
+            kraken2_taxpasta: [ meta + [ tool: "kraken2" ], kraken2_taxpasta ]
+            kraken2_report: [ meta + [ tool: "kraken2" ], kraken2_report ]
+            kraken2_result: [ meta, kraken2_result ]
+            reads: [ meta, reads ]
+            centrifuge_taxpasta: [ meta + [ tool: "centrifuge" ], centrifuge_taxpasta ]
+            centrifuge_report: [ meta + [ tool: "centrifuge" ], centrifuge_report ]
+            centrifuge_result: [ meta, centrifuge_result ]
+            diamond_taxpasta: [ meta + [ tool: "diamond" ], diamond_taxpasta ]
+            diamond_tsv: [ meta + [ tool: "diamond" ], diamond ]
+        }
+
+        TAXID_READS (
+        ch_extract_reads.reads,
+        ch_extract_reads.kraken2_taxpasta,
+        ch_extract_reads.kraken2_result,
+        ch_extract_reads.kraken2_report,
+        ch_extract_reads.centrifuge_taxpasta,
+        ch_extract_reads.centrifuge_result,
+        ch_extract_reads.centrifuge_report,
+        ch_extract_reads.diamond_taxpasta,
+        ch_extract_reads.diamond_tsv,
+        )
+        ch_versions            = ch_versions.mix( TAXID_READS.out.versions )
+
+        // Split single-end and paired-end read lists into one FASTQ per task,
+        // keeping read-pair identity in metadata.
+        ch_taxid_reads_indexed = TAXID_READS.out.reads
+            .flatMap { meta, reads ->
+                def read_list = reads instanceof List ? reads : [reads]
+                read_list.withIndex().collect { read, index ->
+                    [ meta + [ read_pair: index + 1 ], read ]
+                }
+            }
+
+        // Convert fastq.gz into fasta files
+        SEQKIT_FQ2FA( ch_taxid_reads_indexed )
+        PIGZ_UNCOMPRESS ( SEQKIT_FQ2FA.out.fasta )
+
+        //
+        // MODULE: DE NOVO - SPADES/FLYE
+        //
+
+        // Run de novo assembly if the number of reads exceeds the params.min_read_counts
+        ch_taxid_reads_filter = TAXID_READS.out.reads
+            .branch { meta, reads ->
+                blast_reads: meta.single_end
+                    ? reads.countFastq() < params.min_read_counts
+                    : reads[0].countFastq() < params.min_read_counts ||
+                    reads[1].countFastq() < params.min_read_counts
+
+                denovo: true
+            }
+
+        // Prepare de novo assembly reads channel for shortreads and longreads
+        ch_denovo = ch_taxid_reads_filter.denovo
+            .branch { meta, reads ->
+                shortreads: meta.instrument_platform != 'OXFORD_NANOPORE'
+                    return [ meta, reads, [], [] ]
+                longreads: meta.instrument_platform == 'OXFORD_NANOPORE'
+                    return [ meta, reads ]
+            }
+        // Short reads de novo assembly
+        ch_denovo_fasta = channel.empty()
+
+        if ( params.perform_shortread_denovo ) {
+            SPADES( ch_denovo.shortreads, [], [] )
+
+            PIGZ_UNCOMPRESS_SPADES_CONTIG( SPADES.out.contigs )
+            PIGZ_UNCOMPRESS_SPADES_SCAFFOLD( SPADES.out.scaffolds )
+
+            ch_spades_fasta = PIGZ_UNCOMPRESS_SPADES_SCAFFOLD.out.file
+                .mix(PIGZ_UNCOMPRESS_SPADES_CONTIG.out.file)
+                .groupTuple(by:0)
+                .map { meta, files ->
+                    def scaffolds = files.find { file -> file instanceof Path && file.name.endsWith('.scaffolds.fa') }
+                    def contigs = files.find { file -> file instanceof Path && file.name.endsWith('.contigs.fa') }
+                    [ meta, scaffolds ?: contigs ]
+                }
+
+            ch_denovo_fasta = ch_denovo_fasta.mix(ch_spades_fasta)
+        }
+        // Long reads de novo assembly
+        if ( params.perform_longread_denovo ) {
+            FLYE( ch_denovo.longreads, params.flye_mode )
+            PIGZ_UNCOMPRESS_FLYE( FLYE.out.fasta )
+            ch_denovo_fasta = ch_denovo_fasta.mix( PIGZ_UNCOMPRESS_FLYE.out.file )
+        }
+
+        //
+        // SUBWORKFLOW: BLAST
+        //
+
+        ch_blast_unique_taxid = channel.empty()
+        ch_blastn_report      = channel.empty()
+        ch_blastx_report      = channel.empty()
+        ch_blast_query_input  = channel.empty()
+
+        ch_blast_reads_fasta = PIGZ_UNCOMPRESS.out.file
+            .filter { meta, _fasta -> meta.single_end || meta.read_pair == 1 } // keeps the only read1 for paired-end reads
+            .map { meta, fasta -> [ meta.subMap(meta.keySet() - 'read_pair'), fasta ]}
+
+        // Prepare the query fasta file
+        if ( (!params.skip_blastn) || (!params.skip_blastx)) {
+            // Build ch_blast_query_input fasta file
+            // Option1: De novo assembly contigs/scaffolds for BLAST if the number of reads exceeds the params.min_read_counts
+            if ( params.perform_shortread_denovo || params.perform_longread_denovo ) {
+                ch_blast_reads_fasta = ch_taxid_reads_filter.blast_reads
+                    .join(ch_blast_reads_fasta)
+                    .map { meta, _reads, fasta -> [meta, fasta]}
+                ch_blast_query_input = ch_blast_reads_fasta.mix(ch_denovo_fasta)
+
+            } else {
+                // Option 2: when assembly is disabled, subset large read sets before BLAST.
+                ch_blast_query_branch = ch_blast_reads_fasta
+                    .branch { _meta, fasta ->
+                        direct: fasta.countFasta() <= params.subset_read_threshold
+                        subset: true
+                    }
+                SEQKIT_HEAD (
+                    ch_blast_query_branch.subset.map { meta, fasta ->
+                        [ meta, fasta, params.subset_read_threshold ]
+                    }
+                )
+
+                ch_blast_query_input = ch_blast_query_branch.direct.mix(SEQKIT_HEAD.out.subset)
+            }
+
+            BLAST(ch_blast_query_input, params.blastn_db, params.blastx_db)
+
+
+            ch_blast_unique_taxid = ch_blast_unique_taxid.mix(BLAST.out.unique_taxid)
+            ch_blastn_report = ch_blastn_report.mix(BLAST.out.blastn_filtered)
+            ch_blastx_report = ch_blastx_report.mix(BLAST.out.blastx_filtered)
+
+            // Perform FASTQC for reads with BLASTN hits
+            ch_fastqc_blastn = TAXID_READS.out.reads
+                .join( BLAST.out.blastn_filtered, by: 0 )
+                .map { meta, reads, _filtered_blast -> [ meta, reads ] }
+
+            ch_fastqc_blastx = TAXID_READS.out.reads
+                .join( BLAST.out.blastx_filtered, by: 0 )
+                .map { meta, reads, _filtered_blast -> [ meta, reads ] }
+
+            ch_fastqc_files = ch_fastqc_files.mix( ch_fastqc_blastn, ch_fastqc_blastx )
+
+            //
+            // MODULE: FASTQC
+            //
+            if (params.perform_fastqc) {
+                FASTQC(ch_fastqc_files )
+                ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.map{ _meta, file -> file })
+            }
+
+        }
+
+        //
+        // SUBWORKFLOW: MAPPING
+        //
+
+        // Optional mapping outputs for the static report
+        ch_coverage_tables = channel.empty()
+        ch_coverage_plots  = channel.empty()
+
+        if (params.perform_mapping) {
+            // Fetch genomes of blast hits
+            FETCH_BLAST_GENOMES (
+                params.taxid2genome,
+                ch_blast_unique_taxid,
+                TAXID_READS.out.reads )
+            // Mapping - short reads
+            ch_mapping_input_shortread = FETCH_BLAST_GENOMES.out.shortreads
+                .join(FETCH_BLAST_GENOMES.out.shortreads_genome, by:0)
+            MAPPING_SHORTREAD ( ch_mapping_input_shortread, true )
+
+            // Mapping - long reads
+            ch_mapping_input_longread = FETCH_BLAST_GENOMES.out.longreads
+                .join(FETCH_BLAST_GENOMES.out.longreads_genome, by:0)
+            MAPPING_LONGREAD ( ch_mapping_input_longread, true )
+
+            // Consensus
+
+            ch_bam_mapping_shortread = MAPPING_SHORTREAD.out.bam
+                .join(MAPPING_SHORTREAD.out.bai, by:0)
+            ch_consensus_shortread = MAPPING_SHORTREAD.out.bam.join(FETCH_BLAST_GENOMES.out.shortreads_genome, by:0)
+            ch_fasta_consensus_sr = ch_consensus_shortread.map { meta, _bam, fasta -> [meta, fasta] }
+            CONSENSUS_VERIFY_SPECIES ( ch_bam_mapping_shortread, ch_fasta_consensus_sr , params.consensus_min_bases )
+
+            ch_bam_mapping_longread = MAPPING_LONGREAD.out.bam
+                .join(MAPPING_LONGREAD.out.bai, by:0)
+            ch_consensus_longread = MAPPING_LONGREAD.out.bam.join(FETCH_BLAST_GENOMES.out.longreads_genome, by:0)
+            ch_fasta_consensus_lr = ch_consensus_longread.map { meta, _bam, fasta -> [meta, fasta] }
+
+            CONSENSUS_VERIFY_SPECIES_LONGREAD ( ch_bam_mapping_longread, ch_fasta_consensus_lr, params.consensus_min_bases )
+
+
+            // Coverage tables
+            ch_coverage_tables = ch_coverage_tables
+                .mix( MAPPING_SHORTREAD.out.coverage, MAPPING_LONGREAD.out.coverage )
+            // Coverage plots
+            ch_coverage_plots = ch_coverage_plots
+                .mix( MAPPING_SHORTREAD.out.coverage_plot, MAPPING_LONGREAD.out.coverage_plot )
+
+            //
+            // SUBWORKFLOW: IGV
+            //
+
+            // Filter channels to get bam files which contains mapped reads
+            // short reads
+            ch_igv_input_shortread = MAPPING_SHORTREAD.out.bam
+                .join(MAPPING_SHORTREAD.out.bai, by:0)
+                .join(FETCH_BLAST_GENOMES.out.shortreads_genome, by:0)
+
+            // long reads
+            ch_igv_input_longread = MAPPING_LONGREAD.out.bam
+                .join(MAPPING_LONGREAD.out.bai, by:0)
+                .join(FETCH_BLAST_GENOMES.out.longreads_genome, by:0)
+
+            // Prepare IGV input channels
+            ch_igv_input = channel.empty()
+            ch_igv_input = ch_igv_input.mix ( ch_igv_input_shortread, ch_igv_input_longread )
+            IGV( ch_igv_input )
+        }
+
+        //
+        // SUBWORKFLOW: STATIC REPORT
+        //
+
+        ch_samplesheet_report = channel.fromPath ( params.input, checkIfExists: true )
+        ch_flagged_taxpasta_report = FLAG_TAXPASTA.out.tsv.map { _meta, tsv -> tsv }.collect()
+        ch_reads_report_files      = ch_blast_query_input.map { _meta, fasta -> fasta }.collect()
+        ch_blastn_report_files     = ch_blastn_report.map { _meta, blastn -> blastn }.collect().ifEmpty([])
+        ch_blastx_report_files     = ch_blastx_report.map { _meta, blastx -> blastx }.collect().ifEmpty([])
+        ch_coverage_table_files    = ch_coverage_tables.map { _meta, table -> table }.collect().ifEmpty([])
+        ch_coverage_plot_files     = ch_coverage_plots.map { _meta, plot -> plot }.collect().ifEmpty([])
+
+        METAVAL_REPORT (
+            params.ticket_id,
+            ch_samplesheet_report,
+            ch_flagged_taxpasta_report,
+            ch_reads_report_files,
+            ch_blastn_report_files,
+            ch_blastx_report_files,
+            ch_coverage_table_files,
+            ch_coverage_plot_files
+        )
+
+    }
+    //
+    // WORKFLOW: Screen pathogens
+    //
+    //
+    // SUBWORKFLOW: MAPPING
+    //
+
+    if ( params.perform_screen_pathogens ) {
+        //ch_reference = channel.fromPath ( params.pathogens_genomes, checkIfExists: true )
+        ch_reference = file( params.pathogens_genomes, checkIfExists: true)
+        // Map short reads to the pathogens genome
+        ch_mapping_pathogen_shortread = ch_short_reads
+            .map { meta, reads -> [ meta, reads, ch_reference]}
+        MAPPING_SHORTREAD_PATHOGEN ( ch_mapping_pathogen_shortread, false )
+        ch_multiqc_files = ch_multiqc_files.mix(MAPPING_SHORTREAD_PATHOGEN.out.mqc)
+
+        // Map long reads to the pathogens genome
+        ch_mapping_pathogen_longread = ch_long_reads
+            .map { meta, reads -> [ meta, reads, ch_reference]}
+        MAPPING_LONGREAD_PATHOGEN ( ch_mapping_pathogen_longread, false )
+        ch_multiqc_files = ch_multiqc_files.mix(MAPPING_LONGREAD_PATHOGEN.out.mqc)
+
+        // Subset BAM file for each taxID
+        ch_accession2taxid = channel.fromPath ( params.accession2taxid, checkIfExists: true )
+
+        TAXID_BAM_FASTA_SHORTREAD (
+            MAPPING_SHORTREAD_PATHOGEN.out.bam,
+            MAPPING_SHORTREAD_PATHOGEN.out.bai,
+            ch_accession2taxid,
+            params.min_read_counts )
+
+        TAXID_BAM_FASTA_LONGREAD(
+            MAPPING_LONGREAD_PATHOGEN.out.bam,
+            MAPPING_LONGREAD_PATHOGEN.out.bai,
+            ch_accession2taxid,
+            params.min_read_counts )
+
+        // IGV
+        ch_igv_input_pathogen_shortread = TAXID_BAM_FASTA_SHORTREAD.out.taxid_bam
+            .join( TAXID_BAM_FASTA_SHORTREAD.out.taxid_bai )
+            .map { meta, bam, bai ->
+                [ meta, bam, bai, ch_reference ]
+            }
+        ch_igv_input_pathogen_longread = TAXID_BAM_FASTA_LONGREAD.out.taxid_bam
+            .join( TAXID_BAM_FASTA_LONGREAD.out.taxid_bai )
+            .map { meta, bam, bai ->
+                [ meta, bam, bai, ch_reference ]
+            }
+        ch_igv_input_pathogen = ch_igv_input_pathogen_shortread.mix( ch_igv_input_pathogen_longread )
+        IGV_PATHOGEN ( ch_igv_input_pathogen )
+
+        //
+        // SUBWORKFLOW: CONSENSUS - BAM file with the number of mapped reads > params.min_read_counts
+        //
+
+        ch_bam_filtered = channel.empty()
+        ch_bam_filtered_shortread = TAXID_BAM_FASTA_SHORTREAD.out.taxid_bam
+            .join(TAXID_BAM_FASTA_SHORTREAD.out.taxid_bai, by:0)
+        ch_fasta_consensus_screenpathogens_sr = ch_igv_input_pathogen_shortread
+            .map { meta, _bam, _bai, fasta ->
+                [meta, fasta]
+            }
+        CONSENSUS ( ch_bam_filtered_shortread, ch_fasta_consensus_screenpathogens_sr , params.consensus_min_bases )
+
+        ch_bam_filtered_longread = TAXID_BAM_FASTA_LONGREAD.out.taxid_bam
+            .join(TAXID_BAM_FASTA_LONGREAD.out.taxid_bai, by:0)
+        ch_bam_filtered = ch_bam_filtered.mix(ch_bam_filtered_shortread, ch_bam_filtered_longread)
+        ch_fasta_consensus_screenpathogens_lr = ch_igv_input_pathogen_longread
+            .map { meta, _bam, _bai, fasta ->
+                [meta, fasta]
+        }
+
+        CONSENSUS_SCREENPATHOGENS_LR ( ch_bam_filtered_longread,  ch_fasta_consensus_screenpathogens_lr , params.consensus_min_bases )
+
+        // BLAST
+        // For pair-end reads, only use read1 for BLAST
+        ch_shortread_pathogen_blast_read1 = TAXID_BAM_FASTA_SHORTREAD.out.taxid_fasta
+            .filter { _meta, reads ->
+                reads[0].countFasta() >= 1 && reads[1].countFasta() >= 1
+            }
+            .map { meta, reads -> [ meta, reads[0]] }
+        ch_longread_pathogen_blast = TAXID_BAM_FASTA_LONGREAD.out.taxid_fasta
+            .filter { _meta, reads ->
+                reads.countFasta() >= 1
+            }
+
+        ch_consensus_pathogen = CONSENSUS.out.consensus.mix(CONSENSUS_SCREENPATHOGENS_LR.out.consensus)
+
+	// Combine all BLAST queries
+	ch_blast_query_pathogen = ch_shortread_pathogen_blast_read1
+        .mix(ch_longread_pathogen_blast)
+        .mix(ch_consensus_pathogen)
+
+        BLAST_PATHOGEN( ch_blast_query_pathogen, params.blastn_db, params.blastx_db )
+
+        }
 
     //
-    // MODULE: Run FastQC
+    // Collate and save software versions
     //
-    FASTQC (
-        INPUT_CHECK.out.reads
-    )
-    ch_versions = ch_versions.mix(FASTQC.out.versions.first())
+    def topic_versions = channel.topic("versions")
+        .distinct()
+        .branch { entry ->
+            versions_file: entry instanceof Path
+            versions_tuple: true
+        }
 
-    CUSTOM_DUMPSOFTWAREVERSIONS (
-        ch_versions.unique().collectFile(name: 'collated_versions.yml')
-    )
+    def topic_versions_string = topic_versions.versions_tuple
+        .map { process, tool, version ->
+            [ process[process.lastIndexOf(':')+1..-1], "  ${tool}: ${version}" ]
+        }
+        .groupTuple(by:0)
+        .map { process, tool_versions ->
+            tool_versions.unique().sort()
+            "${process}:\n${tool_versions.join('\n')}"
+        }
+
+    def ch_collated_versions = softwareVersionsToYAML(ch_versions.mix(topic_versions.versions_file))
+        .mix(topic_versions_string)
+        .collectFile(
+            storeDir: "${outdir}/pipeline_info",
+            name:  'genomic-medicine-sweden_'  +  'metaval_software_'  + 'mqc_'  + 'versions.yml',
+            sort: true,
+            newLine: true
+        )
 
     //
     // MODULE: MultiQC
     //
-    workflow_summary    = WorkflowMetaval.paramsSummaryMultiqc(workflow, summary_params)
-    ch_workflow_summary = Channel.value(workflow_summary)
-
-    methods_description    = WorkflowMetaval.methodsDescriptionText(workflow, ch_multiqc_custom_methods_description, params)
-    ch_methods_description = Channel.value(methods_description)
-
-    ch_multiqc_files = Channel.empty()
+    ch_multiqc_files = ch_multiqc_files.mix(ch_collated_versions)
+    def ch_summary_params = paramsSummaryMap(workflow, parameters_schema: "nextflow_schema.json")
+    def ch_workflow_summary = channel.value(paramsSummaryMultiqc(ch_summary_params))
     ch_multiqc_files = ch_multiqc_files.mix(ch_workflow_summary.collectFile(name: 'workflow_summary_mqc.yaml'))
-    ch_multiqc_files = ch_multiqc_files.mix(ch_methods_description.collectFile(name: 'methods_description_mqc.yaml'))
-    ch_multiqc_files = ch_multiqc_files.mix(CUSTOM_DUMPSOFTWAREVERSIONS.out.mqc_yml.collect())
-    ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.collect{it[1]}.ifEmpty([]))
-
-    MULTIQC (
-        ch_multiqc_files.collect(),
-        ch_multiqc_config.toList(),
-        ch_multiqc_custom_config.toList(),
-        ch_multiqc_logo.toList()
+    def ch_multiqc_custom_methods_description = multiqc_methods_description
+        ? file(multiqc_methods_description, checkIfExists: true)
+        : file("${projectDir}/assets/methods_description_template.yml", checkIfExists: true)
+    def ch_methods_description = channel.value(methodsDescriptionText(ch_multiqc_custom_methods_description))
+    ch_multiqc_files = ch_multiqc_files.mix(ch_methods_description.collectFile(name: 'methods_description_mqc.yaml', sort: true))
+    MULTIQC(
+        ch_multiqc_files.flatten().collect().map { files ->
+            [
+                [id: 'gms/metaval'],
+                files,
+                multiqc_config
+                    ? file(multiqc_config, checkIfExists: true)
+                    : file("${projectDir}/assets/multiqc_config.yml", checkIfExists: true),
+                multiqc_logo ? file(multiqc_logo, checkIfExists: true) : [],
+                [],
+                [],
+            ]
+        }
     )
-    multiqc_report = MULTIQC.out.report.toList()
-}
-
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    COMPLETION EMAIL AND SUMMARY
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-
-workflow.onComplete {
-    if (params.email || params.email_on_fail) {
-        NfcoreTemplate.email(workflow, params, summary_params, projectDir, log, multiqc_report)
-    }
-    NfcoreTemplate.dump_parameters(workflow, params)
-    NfcoreTemplate.summary(workflow, params, log)
-    if (params.hook_url) {
-        NfcoreTemplate.IM_notification(workflow, params, summary_params, projectDir, log)
-    }
+    emit:
+    multiqc_report = MULTIQC.out.report.map { _meta, report -> [report] }.toList() // channel: /path/to/multiqc_report.html
+    versions       = ch_versions                 // channel: [ path(versions.yml) ]
 }
 
 /*

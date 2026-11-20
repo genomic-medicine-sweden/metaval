@@ -1,0 +1,95 @@
+{
+    "test_samtools_coverage_stub": {
+        "content": [
+            {
+                "coverage": [
+                    [
+                        {
+                            "id": "test"
+                        },
+                        "test.txt:md5,ea885d54c0223dff86e2e44f5bc08374"
+                    ]
+                ],
+                "versions_samtools": [
+                    [
+                        "SAMTOOLS_COVERAGE",
+                        "samtools",
+                        "1.23.1"
+                    ]
+                ]
+            }
+        ],
+        "meta": {
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-03-19T08:56:33.66881"
+    },
+    "test_samtools_coverage_bam": {
+        "content": [
+            {
+                "coverage": [
+                    [
+                        {
+                            "id": "test"
+                        },
+                        "test.txt:md5,99a521b3bf53b6acf8055a44a571ea84"
+                    ]
+                ],
+                "versions_samtools": [
+                    [
+                        "SAMTOOLS_COVERAGE",
+                        "samtools",
+                        "1.23.1"
+                    ]
+                ]
+            }
+        ],
+        "meta": {
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-03-19T08:56:13.846408"
+    },
+    "test_samtools_coverage_cram": {
+        "content": [
+            {
+                "0": [
+                    [
+                        {
+                            "id": "test"
+                        },
+                        "test.txt:md5,ce896534bac51cfcc97e5508ae907e99"
+                    ]
+                ],
+                "1": [
+                    [
+                        "SAMTOOLS_COVERAGE",
+                        "samtools",
+                        "1.23.1"
+                    ]
+                ],
+                "coverage": [
+                    [
+                        {
+                            "id": "test"
+                        },
+                        "test.txt:md5,ce896534bac51cfcc97e5508ae907e99"
+                    ]
+                ],
+                "versions_samtools": [
+                    [
+                        "SAMTOOLS_COVERAGE",
+                        "samtools",
+                        "1.23.1"
+                    ]
+                ]
+            }
+        ],
+        "meta": {
+            "nf-test": "0.9.3",
+            "nextflow": "25.10.4"
+        },
+        "timestamp": "2026-03-19T08:56:19.040435"
+    }
+}
