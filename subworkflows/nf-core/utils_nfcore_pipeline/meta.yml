@@ -13,10 +13,17 @@ input:
       description: |
         Nextflow CLI positional arguments
 output:
+<<<<<<< HEAD
   - success:
       type: boolean
       description: |
         Dummy output to indicate success
+=======
+  - valid_config:
+      type: boolean
+      description: |
+        Whether a custom configuration or profile was provided to the pipeline
+>>>>>>> TEMPLATE
 authors:
   - "@adamrtalbot"
 maintainers:

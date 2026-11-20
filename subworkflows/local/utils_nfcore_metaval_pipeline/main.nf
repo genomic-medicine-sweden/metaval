@@ -53,6 +53,7 @@ workflow PIPELINE_INITIALISATION {
     //
     // Validate parameters and generate parameter summary to stdout
     //
+<<<<<<< HEAD
         before_text = """
 ----------------------------------------------------
    ____ __  __ ____                       _                   _
@@ -71,6 +72,15 @@ workflow PIPELINE_INITIALISATION {
 * Software dependencies
     https://github.com/nf-core/taxprofiler/blob/main/CITATIONS.md
 """
+=======
+
+    def before_text = ""
+    def after_text = ""
+    if (monochrome_logs) {
+        before_text = before_text.replaceAll(/\033\[[0-9;]*m/, '')
+    }
+
+>>>>>>> TEMPLATE
     command = "nextflow run ${workflow.manifest.name} -profile <docker/singularity/.../institute> --input samplesheet.csv --outdir <OUTDIR>"
 
     UTILS_NFSCHEMA_PLUGIN (
@@ -83,7 +93,11 @@ workflow PIPELINE_INITIALISATION {
         before_text,
         after_text,
         command,
+<<<<<<< HEAD
         false
+=======
+        null
+>>>>>>> TEMPLATE
     )
 
     //
@@ -94,6 +108,7 @@ workflow PIPELINE_INITIALISATION {
     )
 
     //
+<<<<<<< HEAD
     // Create channel from input file provided through params.input
     //
 
@@ -170,6 +185,35 @@ workflow PIPELINE_INITIALISATION {
         }
     }
 
+=======
+    // Custom validation for pipeline parameters
+    //
+    validateInputParameters()
+
+    //
+    // Create channel from input file provided through params.input
+    //
+
+    channel
+        .fromList(samplesheetToList(input, "${projectDir}/assets/schema_input.json"))
+        .map {
+            meta, fastq_1, fastq_2 ->
+                if (!fastq_2) {
+                    return [ meta.id, meta + [ single_end:true ], [ fastq_1 ] ]
+                } else {
+                    return [ meta.id, meta + [ single_end:false ], [ fastq_1, fastq_2 ] ]
+                }
+        }
+        .groupTuple()
+        .map { samplesheet ->
+            validateInputSamplesheet(samplesheet)
+        }
+        .map {
+            meta, fastqs ->
+                return [ meta, fastqs.flatten() ]
+        }
+        .set { ch_samplesheet }
+>>>>>>> TEMPLATE
 
     emit:
     samplesheet = ch_samplesheet
@@ -208,7 +252,11 @@ workflow PIPELINE_COMPLETION {
                 plaintext_email,
                 outdir,
                 monochrome_logs,
+<<<<<<< HEAD
                 multiqc_reports.getVal(),
+=======
+                multiqc_reports.isBound() ? multiqc_reports.getVal() : [],
+>>>>>>> TEMPLATE
             )
         }
 
@@ -227,6 +275,7 @@ workflow PIPELINE_COMPLETION {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 //
+<<<<<<< HEAD
 // Validate channels from input samplesheet
 //
 def validateInputSamplesheet(input) {
@@ -300,6 +349,53 @@ def uniqueTaxonomicFiles(samplesheet) {
         }
         .distinct()
 }
+=======
+// Check and validate pipeline parameters
+//
+def validateInputParameters() {
+    genomeExistsError()
+}
+
+//
+// Validate channels from input samplesheet
+//
+def validateInputSamplesheet(input) {
+    def (metas, fastqs) = input[1..2]
+
+    // Check that multiple runs of the same sample are of the same datatype i.e. single-end / paired-end
+    def endedness_ok = metas.collect{ meta -> meta.single_end }.unique().size == 1
+    if (!endedness_ok) {
+        error("Please check input samplesheet -> Multiple runs of a sample must be of the same datatype i.e. single-end or paired-end: ${metas[0].id}")
+    }
+
+    return [ metas[0], fastqs ]
+}
+//
+// Get attribute from genome config file e.g. fasta
+//
+def getGenomeAttribute(attribute) {
+    if (params.genomes && params.genome && params.genomes.containsKey(params.genome)) {
+        if (params.genomes[ params.genome ].containsKey(attribute)) {
+            return params.genomes[ params.genome ][ attribute ]
+        }
+    }
+    return null
+}
+
+//
+// Exit pipeline if incorrect --genome key provided
+//
+def genomeExistsError() {
+    if (params.genomes && params.genome && !params.genomes.containsKey(params.genome)) {
+        def error_string = "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" +
+            "  Genome '${params.genome}' not found in any config files provided to the pipeline.\n" +
+            "  Currently, the available genome keys are:\n" +
+            "  ${params.genomes.keySet().join(", ")}\n" +
+            "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        error(error_string)
+    }
+}
+>>>>>>> TEMPLATE
 //
 // Generate methods description for MultiQC
 //
@@ -307,6 +403,7 @@ def toolCitationText() {
     // TODO nf-core: Optionally add in-text citation tools to this list.
     // Can use ternary operators to dynamically construct based conditions, e.g. params["run_xyz"] ? "Tool (Foo et al. 2023)" : "",
     // Uncomment function in methodsDescriptionText to render in MultiQC report
+<<<<<<< HEAD
     def screen_pathogens = [
         "Mapping reads to a list of viral pathogens genomes with: Bowtie2 (Langmead and Salzberg 2012) for short reads and minimap2 (Li 2018) for long reads,",
         "Consensus calling with either SAMtools (Danecek et al. 2021) or medaka (distributed under the terms of the Oxford Nanopore Technologies PLC. Public License Version 1.0),",
@@ -332,6 +429,15 @@ def toolCitationText() {
         "MultiQC (Ewels et al. 2016)."
     ].join(' ').trim().replaceAll("\\s+", " ").replaceAll("[,|.] +\\.", ".")
 
+=======
+    def citation_text = [
+            "Tools used in the workflow included:",
+            "FastQC (Andrews 2010),",
+            "MultiQC (Ewels et al. 2016)",
+            "."
+        ].join(' ').trim()
+
+>>>>>>> TEMPLATE
     return citation_text
 }
 
@@ -368,7 +474,11 @@ def methodsDescriptionText(mqc_methods_yaml) {
     meta["nodoi_text"] = meta.manifest_map.doi ? "" : "<li>If available, make sure to update the text to include the Zenodo DOI of version of the pipeline used. </li>"
 
     // Tool references
+<<<<<<< HEAD
     meta["tool_citations"] = toolCitationText().replaceAll(", \\.", ".").replaceAll("\\. \\.", ".").replaceAll(", \\.", ".")
+=======
+    meta["tool_citations"] = ""
+>>>>>>> TEMPLATE
     meta["tool_bibliography"] = ""
 
     // TODO nf-core: Only uncomment below if logic in toolCitationText/toolBibliographyText has been filled!
@@ -383,6 +493,7 @@ def methodsDescriptionText(mqc_methods_yaml) {
 
     return description_html.toString()
 }
+<<<<<<< HEAD
 
 //
 // Function that parses and returns the number of mapped reads from flagstat files
@@ -436,3 +547,5 @@ def taxpasta_sample_ntc_joined(ch_taxpasta_sample, ch_taxpasta_ntc) {
             }
         }
 }
+=======
+>>>>>>> TEMPLATE

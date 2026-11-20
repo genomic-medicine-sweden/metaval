@@ -3,6 +3,7 @@
     IMPORT MODULES / SUBWORKFLOWS / FUNCTIONS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
+<<<<<<< HEAD
 
 // Merge fastq files
 include { CAT_FASTQ                                             } from '../modules/nf-core/cat/fastq/main'
@@ -48,6 +49,14 @@ include { CONSENSUS                                             } from '../subwo
 include { CONSENSUS as CONSENSUS_SCREENPATHOGENS_LR             } from '../subworkflows/local/consensus'
 include { CONSENSUS as CONSENSUS_VERIFY_SPECIES                 } from '../subworkflows/local/consensus'
 include { CONSENSUS as CONSENSUS_VERIFY_SPECIES_LONGREAD        } from '../subworkflows/local/consensus'
+=======
+include { FASTQC                 } from '../modules/nf-core/fastqc/main'
+include { MULTIQC                } from '../modules/nf-core/multiqc/main'
+include { paramsSummaryMap       } from 'plugin/nf-schema'
+include { paramsSummaryMultiqc   } from '../subworkflows/nf-core/utils_nfcore_pipeline'
+include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
+include { methodsDescriptionText } from '../subworkflows/local/utils_nfcore_metaval_pipeline'
+>>>>>>> TEMPLATE
 
 // Summary subworkflow
 include { FASTQC                                                } from '../modules/nf-core/fastqc'
@@ -73,6 +82,7 @@ workflow METAVAL {
     multiqc_config
     multiqc_logo
     multiqc_methods_description
+<<<<<<< HEAD
 
     outdir
     main:
@@ -590,6 +600,28 @@ workflow METAVAL {
         BLAST_PATHOGEN( ch_blast_query_pathogen, params.blastn_db, params.blastx_db )
 
         }
+=======
+    outdir
+
+    main:
+>>>>>>> TEMPLATE
+
+    def ch_versions = channel.empty()
+    def ch_multiqc_files = channel.empty()
+    //
+    // Collate and save software versions
+    //
+<<<<<<< HEAD
+    def topic_versions = channel.topic("versions")
+        .distinct()
+        .branch { entry ->
+            versions_file: entry instanceof Path
+            versions_tuple: true
+        }
+
+=======
+    FASTQC(ch_samplesheet)
+    ch_multiqc_files = ch_multiqc_files.mix(FASTQC.out.zip.map{ _meta, file -> file })
 
     //
     // Collate and save software versions
@@ -601,6 +633,7 @@ workflow METAVAL {
             versions_tuple: true
         }
 
+>>>>>>> TEMPLATE
     def topic_versions_string = topic_versions.versions_tuple
         .map { process, tool, version ->
             [ process[process.lastIndexOf(':')+1..-1], "  ${tool}: ${version}" ]
@@ -615,7 +648,11 @@ workflow METAVAL {
         .mix(topic_versions_string)
         .collectFile(
             storeDir: "${outdir}/pipeline_info",
+<<<<<<< HEAD
             name:  'genomic-medicine-sweden_'  +  'metaval_software_'  + 'mqc_'  + 'versions.yml',
+=======
+            name:  'metaval_software_'  + 'mqc_'  + 'versions.yml',
+>>>>>>> TEMPLATE
             sort: true,
             newLine: true
         )
@@ -635,7 +672,11 @@ workflow METAVAL {
     MULTIQC(
         ch_multiqc_files.flatten().collect().map { files ->
             [
+<<<<<<< HEAD
                 [id: 'gms/metaval'],
+=======
+                [id: 'metaval'],
+>>>>>>> TEMPLATE
                 files,
                 multiqc_config
                     ? file(multiqc_config, checkIfExists: true)
@@ -646,8 +687,12 @@ workflow METAVAL {
             ]
         }
     )
+<<<<<<< HEAD
     emit:
     multiqc_report = MULTIQC.out.report.map { _meta, report -> [report] }.toList() // channel: /path/to/multiqc_report.html
+=======
+    emit:multiqc_report = MULTIQC.out.report.map { _meta, report -> [report] }.toList() // channel: /path/to/multiqc_report.html
+>>>>>>> TEMPLATE
     versions       = ch_versions                 // channel: [ path(versions.yml) ]
 }
 
