@@ -74,7 +74,6 @@
                 },
                 "extract_kraken2_reads": {
                     "type": "boolean",
-<<<<<<< HEAD
                     "description": "Extract reads classified by kraken2 according to taxonomic ID.",
                     "fa_icon": "fas fa-toggle-on"
                 },
@@ -290,19 +289,6 @@
                     "description": "Set the read count threshold for performing de novo assembly in species verifying workflow or consensus calling in pathogen screening workflow.",
                     "help_text": "The recommended minimum read-count threshold is 100, as de novo assembly may fail with too few reads.",
                     "fa_icon": "filter"
-=======
-                    "description": "Do not load the iGenomes reference config.",
-                    "fa_icon": "fas fa-ban",
-                    "hidden": true,
-                    "help_text": "Do not load `igenomes.config` when running the pipeline. You may choose this option if you observe clashes between custom parameters and those supplied in `igenomes.config`."
-                },
-                "igenomes_base": {
-                    "type": "string",
-                    "description": "The base path to the igenomes reference files",
-                    "fa_icon": "fas fa-ban",
-                    "hidden": true,
-                    "default": "s3://ngi-igenomes/igenomes/"
->>>>>>> TEMPLATE
                 }
             }
         },
@@ -433,20 +419,12 @@
                     "type": "string",
                     "fa_icon": "far fa-check-circle",
                     "description": "Base URL or local path to location of pipeline test dataset files",
-<<<<<<< HEAD
                     "default": "https://raw.githubusercontent.com/genomic-medicine-sweden/test-datasets/metaval/",
-=======
-                    "default": "https://raw.githubusercontent.com/nf-core/test-datasets/",
->>>>>>> TEMPLATE
                     "hidden": true
                 },
                 "trace_report_suffix": {
                     "type": "string",
-<<<<<<< HEAD
-                    "fa_icon": "far calendar",
-=======
                     "fa_icon": "far fa-calendar",
->>>>>>> TEMPLATE
                     "description": "Suffix to add to the trace report filename. Default is the date and time in the format yyyy-MM-dd_HH-mm-ss.",
                     "hidden": true
                 },
@@ -470,7 +448,6 @@
             "$ref": "#/$defs/input_output_options"
         },
         {
-<<<<<<< HEAD
             "$ref": "#/$defs/skip_ntc"
         },
         {
@@ -486,14 +463,6 @@
             "$ref": "#/$defs/institutional_config_options"
         },
         {
-=======
-            "$ref": "#/$defs/reference_genome_options"
-        },
-        {
-            "$ref": "#/$defs/institutional_config_options"
-        },
-        {
->>>>>>> TEMPLATE
             "$ref": "#/$defs/generic_options"
         }
     ]
