@@ -46,6 +46,9 @@ workflow TAXID_BAM_FASTA {
     // Load accession2taxid map
     ch_accession2taxidmap = accession2taxid.splitCsv( header: false, sep: "\t" )
 
+    // Print the actual threshold received at runtime
+    log.info "TAXID_BAM_FASTA: min_read_counts = ${min_read_counts}"
+
     // Join accessions with taxids: [meta, accession, num_reads] + [accession, taxid, organism]
     ch_accession_taxid_with_meta = ch_accession_with_meta
         .combine(ch_accession2taxidmap)
@@ -68,11 +71,8 @@ workflow TAXID_BAM_FASTA {
 
     // Prepare individual BAM files for each taxID with the number of mapped reads greater than params.min_read_counts
     ch_consensus_input = ch_accession_taxid_with_meta.pass
-        .dump(tag: 'taxid_pass')
-        .join( input_bam, by: 0 ) // Join by meta (index 0)
-        .dump(tag: 'after_join')
-        .map { meta, accession_list, taxid, organism, bam, bam_index ->
-            // Create new meta with taxid and organism information
+	.combine( input_bam, by: 0)
+        // Create new meta with taxid and organism information
             def new_meta = meta + [taxid: taxid, organism: organism, accessions: accession_list.flatten()]
             return [ new_meta, bam, bam_index ]
         }
