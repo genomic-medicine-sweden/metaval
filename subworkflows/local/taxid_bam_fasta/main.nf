@@ -68,9 +68,9 @@ workflow TAXID_BAM_FASTA {
 
     // Prepare individual BAM files for each taxID with the number of mapped reads greater than params.min_read_counts
     ch_consensus_input = ch_accession_taxid_with_meta.pass
-        .join( input_bam, by: 0 ) // Join by meta (index 0)
-        .map { meta, accession_list, taxid, organism, bam, bam_index ->
-            // Create new meta with taxid and organism information
+	.combine( input_bam, by: 0)
+	.map { meta, accession_list, taxid, organism, bam, bam_index ->
+        // Create new meta with taxid and organism information
             def new_meta = meta + [taxid: taxid, organism: organism, accessions: accession_list.flatten()]
             return [ new_meta, bam, bam_index ]
         }

@@ -286,7 +286,7 @@
                 "min_read_counts": {
                     "type": "integer",
                     "default": 100,
-                    "description": "Set the read count threshold for performing de novo assembly or consensus calling.",
+                    "description": "Set the read count threshold for performing de novo assembly in species verifying workflow or consensus calling in pathogen screening workflow.",
                     "help_text": "The recommended minimum read-count threshold is 100, as de novo assembly may fail with too few reads.",
                     "fa_icon": "filter"
                 }
