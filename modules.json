@@ -5,7 +5,6 @@
         "https://github.com/nf-core/modules.git": {
             "modules": {
                 "nf-core": {
-<<<<<<< HEAD
                     "bedtools/genomecov": {
                         "branch": "master",
                         "git_sha": "6d46786420b4d7bc88eba026eb389c0c5535d120",
@@ -36,11 +35,6 @@
                         "git_sha": "83ce9b314157a24d9a92f17a07ed5d55f30b78f9",
                         "installed_by": ["modules"]
                     },
-                    "fastqc": {
-                        "branch": "master",
-                        "git_sha": "6d46786420b4d7bc88eba026eb389c0c5535d120",
-                        "installed_by": ["modules"]
-                    },
                     "flye": {
                         "branch": "master",
                         "git_sha": "6d46786420b4d7bc88eba026eb389c0c5535d120",
@@ -64,11 +58,9 @@
                     "minimap2/index": {
                         "branch": "master",
                         "git_sha": "135d883a43b1a2324b4112cd270cf22e20835533",
-=======
                     "fastqc": {
                         "branch": "master",
                         "git_sha": "18eb358065b06f2d3419e37383b002fe7db3da02",
->>>>>>> TEMPLATE
                         "installed_by": ["modules"]
                     },
                     "multiqc": {
