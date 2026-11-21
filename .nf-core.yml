@@ -28,11 +28,12 @@ lint:
     - manifest.homePage
   template_strings:
     - assets/static_report/report.html.j2
-nf_core_version: 4.1.0
+nf_core_version: 4.2.0
 repository_type: pipeline
 template:
   author: LilyAnderssonLee
   description: nf-core/taxprofiler post processing; verification of classification results; consensus maps
+    results; consensus maps
   force: false
   is_nfcore: false
   name: metaval
