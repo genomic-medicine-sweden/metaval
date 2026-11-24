@@ -27,7 +27,5 @@ pathogens/igv/*.html
 pathogens/pathogen_reads/blast_input/*.{bam,bai}
 pathogens/pathogen_reads/consensus_input/*.{bam,bai}
 pathogens/samtools/coverage_plot/*.png
-multiqc/multiqc_data/llms-full.txt
-multiqc/multiqc_plots/{svg,pdf,png}/*.{svg,pdf,png}
-multiqc/multiqc_report.html
+fastqc/*_fastqc.{html,zip}
 pipeline_info/*.{html,json,txt,yml}

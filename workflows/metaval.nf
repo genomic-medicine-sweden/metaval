@@ -591,6 +591,8 @@ workflow METAVAL {
 
         }
 
+    def ch_versions = channel.empty()
+    def ch_multiqc_files = channel.empty()
     //
     // Collate and save software versions
     //

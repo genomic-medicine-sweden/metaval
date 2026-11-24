@@ -1,5 +1,8 @@
 lint:
+<<<<<<< HEAD
   included_configs: False
+=======
+>>>>>>> TEMPLATE
   files_exist:
     - assets/nf-core-metaval_logo_light.png
     - docs/images/nf-core-metaval_logo_light.png
@@ -21,6 +24,10 @@ lint:
     - docs/usage.md
     - viral_pathogen_list.csv
     - README.md
+<<<<<<< HEAD
+=======
+  included_configs: false
+>>>>>>> TEMPLATE
   multiqc_config:
     - report_comment
   nextflow_config:
@@ -28,12 +35,21 @@ lint:
     - manifest.homePage
   template_strings:
     - assets/static_report/report.html.j2
+<<<<<<< HEAD
 nf_core_version: 4.2.0
 repository_type: pipeline
 template:
   author: LilyAnderssonLee
   description: nf-core/taxprofiler post processing; verification of classification results; consensus maps
     results; consensus maps
+=======
+nf_core_version: 4.2.2
+repository_type: pipeline
+template:
+  author: LilyAnderssonLee
+  description: nf-core/taxprofiler post processing; verification of classification
+    results; consensus maps results; consensus maps
+>>>>>>> TEMPLATE
   force: false
   is_nfcore: false
   name: metaval
