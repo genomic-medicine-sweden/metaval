@@ -4,4 +4,4 @@ contact_links:
     about: Please join the nf-core community here
   - name: "Slack #metaval channel"
     url: https://nfcore.slack.com/channels/metaval
-    about: Discussion about the nf-core/metaval pipeline
+    about: Discussion about the genomic-medicine-sweden/metaval pipeline
