@@ -33,7 +33,7 @@ repository_type: pipeline
 template:
   author: LilyAnderssonLee
   description: nf-core/taxprofiler post processing; verification of classification
-    results; consensus maps results; consensus maps
+    results; 
   force: false
   is_nfcore: false
   name: metaval
