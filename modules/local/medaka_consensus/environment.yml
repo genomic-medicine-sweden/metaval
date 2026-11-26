@@ -2,5 +2,7 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
-  - bioconda::medaka=2.0.1
+  - bioconda::medaka=2.2.2
   - bioconda::seqkit=2.9.0
+  - conda-forge::findutils=4.10.0
+  - conda-forge::gzip=1.15

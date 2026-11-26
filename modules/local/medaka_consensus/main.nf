@@ -4,8 +4,8 @@ process MEDAKA_PARALLEL {
 
     conda "${moduleDir}/environment.yml"
     container "${workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container
-        ? 'https://community-cr-prod.seqera.io/docker/registry/v2/blobs/sha256/0c/0cf8c90f398d06071f4e19621314341d12804355ff9865223cb4d63266801685/data'
-        : 'community.wave.seqera.io/library/medaka_seqkit:d7f3867737c05c14'}"
+        ? 'https://community-cr-prod.seqera.io/docker/registry/v2/blobs/sha256/cc/ccb38a66658bc943fc2552c45a44fafc99bbed1eadfadf28e7ee6d053e6c7ac0/data'
+        : 'community.wave.seqera.io/library/medaka_seqkit_findutils_gzip:22224a673074d2a0'}"
 
     input:
     tuple val(meta), path(reads), path(assembly)
