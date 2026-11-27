@@ -101,7 +101,7 @@
             <div class="extracted-reads-list">
               {% for organism in classifier.extracted_organisms %}
               {% if organism.href %}
-              {% if detail_sections_zip_b64 is defined and organism.panel_id %}
+              {% if detail_payloads is defined and organism.panel_id %}
               <button
                 type="button"
                 class="extracted-read-chip"
@@ -177,7 +177,7 @@
             </div>
             <div class="taxpasta-stat">
               <div class="taxpasta-stat-label">Organisms shown</div>
-              <div class="taxpasta-stat-value" data-organisms-shown>0</div>
+              <div class="taxpasta-stat-value" data-organisms-shown>{{ classifier.table.rows|length }}</div>
             </div>
           </div>
           <div class="taxpasta-wrap">
@@ -196,58 +196,13 @@
                   {% endfor %}
                 </tr>
               </thead>
-              <tbody>
-                {% for table_row in classifier.table.rows %}
-                <tr
-                  class="taxonomy-row"
-                  data-superkingdom="{{ classifier.table.superkingdoms[loop.index0] }}"
-                  data-flag="{{ classifier.table.flags[loop.index0] }}"
-                  data-metaval-checked="{{ 'true' if classifier.table.metaval_checked[loop.index0] else 'false' }}"
-                  data-metaval-panel="{{ classifier.table.metaval_panel_ids[loop.index0] }}"
-                >
-                  <td>
-                    {% if classifier.table.lineages[loop.index0] %}
-                    <button
-                      type="button"
-                      class="lineage-toggle"
-                      data-lineage-target="{{ row.sample_id }}-{{ classifier_key }}-{{ loop.index0 }}"
-                    >
-                      Show
-                    </button>
-                    {% endif %}
-                  </td>
-                  {% for cell in table_row %}
-                  {% if classifier.table.headers[loop.index0] == "classifiers" %}
-                  <td class="taxonomy-classifiers">
-                    {% for label, value in cell %}
-                    <div class="taxonomy-classifier-line">
-                      <span
-                        class="taxonomy-classifier-label"
-                        title="{{ 'Kraken2' if label == 'K' else 'Centrifuge' if label == 'C' else 'Diamond' }}"
-                      >{{ label }}:</span>
-                      <span class="taxonomy-classifier-value">{{ value }}</span>
-                    </div>
-                    {% endfor %}
-                  </td>
-                  {% else %}
-                  <td title="{{ cell }}">{{ cell }}</td>
-                  {% endif %}
-                  {% endfor %}
-                </tr>
-                <tr
-                  class="taxpasta-lineage-row"
-                  id="{{ row.sample_id }}-{{ classifier_key }}-{{ loop.index0 }}"
-                  hidden
-                >
-                  <td colspan="{{ classifier.table.headers|length + 1 }}">
-                    <div class="lineage-text">
-                      <strong>lineage:</strong> {{ classifier.table.lineages[loop.index0] or "No lineage available." }}
-                    </div>
-                  </td>
-                </tr>
-                {% endfor %}
-              </tbody>
+              <tbody data-taxpasta-body></tbody>
             </table>
+            <div class="taxpasta-more" data-taxpasta-more hidden>
+              <span data-taxpasta-more-label></span>
+              <button type="button" class="taxpasta-more-button" data-taxpasta-more-button>Show more</button>
+            </div>
+            <script type="text/plain" data-taxpasta-gz>{{ classifier.table_gz }}</script>
           </div>
           {% else %}
           <div class="taxpasta-empty">No {{ classifier.label }} taxpasta table found for this sample.</div>
@@ -257,7 +212,7 @@
       </section>
       {% endfor %}
 
-      {% if detail_sections_zip_b64 is defined %}
+      {% if detail_payloads is defined %}
       <section
         id="organism-detail-panel"
         class="details-panel organism-detail-panel"
@@ -266,7 +221,12 @@
       >
         <div data-organism-detail-root></div>
       </section>
-      <script id="detail-sections-data" type="text/plain">{{ detail_sections_zip_b64 }}</script>
+      {% for payload in detail_payloads %}
+      <script type="text/plain" id="detail-data-{{ payload.panel_id }}">{{ payload.data }}</script>
+      {% for plot in payload.plots %}
+      <script type="text/plain" data-plot-for="{{ payload.panel_id }}">{{ plot }}</script>
+      {% endfor %}
+      {% endfor %}
       {% endif %}
     </section>
     <footer class="report-footer">
