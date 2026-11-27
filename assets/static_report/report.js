@@ -163,7 +163,7 @@ function buildProteinAlignment(queryAa, subjectAa, qstart, qend, sstart, send, w
     String(subjectEnd).length,
     String(Math.ceil(queryNtStart / 3)).length,
     String(Math.ceil(queryNtEnd / 3)).length,
-    3
+    3,
   );
   const padLabel = (value) => String(value).padEnd(labelWidth, " ");
   const padCoordinate = (value) => String(value).padStart(coordinateWidth, " ");
@@ -188,12 +188,12 @@ function buildProteinAlignment(queryAa, subjectAa, qstart, qend, sstart, send, w
 
     lines.push(
       `${padLabel("Query")} ${padCoordinate(queryAaCursor)}  ${escapeHtml(queryChunk)}  ${padCoordinate(
-        queryRange.last
+        queryRange.last,
       )}`,
       `${padLabel("")} ${" ".repeat(coordinateWidth)}  ${escapeHtml(matchChunk)}`,
       `${padLabel("Sbjct")} ${padCoordinate(subjectCursor)}  ${escapeHtml(subjectChunk)}  ${padCoordinate(
-        subjectRange.last
-      )}`
+        subjectRange.last,
+      )}`,
     );
 
     queryAaCursor = queryRange.next;
@@ -238,7 +238,7 @@ function buildBlastAlignment(rowMap, width = 60) {
     String(qend).length,
     String(sstart).length,
     String(send).length,
-    3
+    3,
   );
   const padLabel = (value) => String(value).padEnd(labelWidth, " ");
   const padCoordinate = (value) => String(value).padStart(coordinateWidth, " ");
@@ -263,12 +263,12 @@ function buildBlastAlignment(rowMap, width = 60) {
 
     lines.push(
       `${padLabel("Query")} ${padCoordinate(queryCursor)}  ${escapeHtml(queryChunk)}  ${padCoordinate(
-        queryRange.last
+        queryRange.last,
       )}`,
       `${padLabel("")} ${" ".repeat(coordinateWidth)}  ${escapeHtml(matchChunk)}`,
       `${padLabel("Sbjct")} ${padCoordinate(subjectCursor)}  ${escapeHtml(subjectChunk)}  ${padCoordinate(
-        subjectRange.last
-      )}`
+        subjectRange.last,
+      )}`,
     );
 
     queryCursor = queryRange.next;
@@ -310,26 +310,24 @@ function renderDetailTable(headers, rows, options = {}) {
   return `
         <div class="detail-table-wrap">
           <table${options.sortable ? " data-sortable-blast" : ""}${tableClass}${
-    options.blastAlignment ? ' data-blast-alignment="true"' : ""
-  }>
+            options.blastAlignment ? ' data-blast-alignment="true"' : ""
+          }>
             <thead>
               <tr>
                 ${visibleIndices
                   .map(
                     (item, visibleIndex) => `
                   <th${headerClass}${
-                      options.sortable
-                        ? ` data-sort-index="${detailSortCellIndex(visibleIndex, alignmentInsertIndex)}"`
-                        : ""
-                    } title="${escapeHtml(options.headerHelp?.[item.key] || item.header)}">${escapeHtml(
-                      item.header
-                    )}</th>
+                    options.sortable
+                      ? ` data-sort-index="${detailSortCellIndex(visibleIndex, alignmentInsertIndex)}"`
+                      : ""
+                  } title="${escapeHtml(options.headerHelp?.[item.key] || item.header)}">${escapeHtml(item.header)}</th>
                   ${
                     options.blastAlignment && visibleIndex + 1 === alignmentInsertIndex
                       ? '<th title="alignment preview">alignment</th>'
                       : ""
                   }
-                `
+                `,
                   )
                   .join("")}
                 ${
@@ -347,7 +345,7 @@ function renderDetailTable(headers, rows, options = {}) {
                   }
 
                   const rowMap = Object.fromEntries(
-                    headers.map((header, headerIndex) => [headerKeys[headerIndex], row[headerIndex] ?? ""])
+                    headers.map((header, headerIndex) => [headerKeys[headerIndex], row[headerIndex] ?? ""]),
                   );
                   return `
                   <tr class="blast-summary-row">
@@ -370,7 +368,7 @@ function renderDetailTable(headers, rows, options = {}) {
                       `
                           : ""
                       }
-                    `
+                    `,
                       )
                       .join("")}
                     ${
@@ -428,12 +426,12 @@ function renderReadsSections(readsSections) {
                 </label>
                 <pre data-read-content>${escapeHtml(entry.content)}</pre>
               </div>
-            `
+            `,
               )
               .join("")}
           </div>
         </div>
-      `
+      `,
     )
     .join("");
 }
@@ -567,7 +565,7 @@ function renderOrganismPanel(detail) {
               <div class="plot">
                 <img src="${escapeHtml(section.src)}" alt="${escapeHtml(section.name || section.src)}" />
               </div>
-              `
+              `,
                 )
                 .join("")}
             </div>
@@ -585,7 +583,7 @@ function renderOrganismPanel(detail) {
                 headerHelp: detailHeaderHelp,
               })}
             </div>
-          `
+          `,
           )
           .join("")
       : '<div class="muted">No coverage stats found.</div>';
@@ -708,11 +706,11 @@ function updateSampleSortHeaders() {
   sampleSortHeaders.forEach((header) => {
     header.classList.toggle(
       "is-asc",
-      header.dataset.sortKey === sampleSortState.key && sampleSortState.direction === "asc"
+      header.dataset.sortKey === sampleSortState.key && sampleSortState.direction === "asc",
     );
     header.classList.toggle(
       "is-desc",
-      header.dataset.sortKey === sampleSortState.key && sampleSortState.direction === "desc"
+      header.dataset.sortKey === sampleSortState.key && sampleSortState.direction === "desc",
     );
   });
 }
@@ -799,7 +797,7 @@ function renderTaxpastaLineageRow(data, index) {
   return `<tr class="taxpasta-lineage-row" data-lineage-for="${index}"><td colspan="${
     data.headers.length + 1
   }"><div class="lineage-text"><strong>lineage:</strong> ${escapeHtml(
-    lineage || "No lineage available."
+    lineage || "No lineage available.",
   )}</div></td></tr>`;
 }
 
@@ -820,7 +818,7 @@ function renderTaxpastaRow(state, index) {
             ([label, value]) =>
               `<div class="taxonomy-classifier-line"><span class="taxonomy-classifier-label" title="${
                 CLASSIFIER_LABEL_TITLES[label] || ""
-              }">${escapeHtml(label)}:</span><span class="taxonomy-classifier-value">${escapeHtml(value)}</span></div>`
+              }">${escapeHtml(label)}:</span><span class="taxonomy-classifier-value">${escapeHtml(value)}</span></div>`,
           )
           .join("");
         return `<td class="taxonomy-classifiers">${lines}</td>`;
@@ -1297,7 +1295,7 @@ document.querySelectorAll(".taxpasta-view").forEach((view) => {
   if (search) {
     search.addEventListener(
       "input",
-      debounce(() => applyTaxpastaFilter(view), 150)
+      debounce(() => applyTaxpastaFilter(view), 150),
     );
   }
   if (metavalOnlyButton) {
@@ -1325,7 +1323,7 @@ document.querySelectorAll(".taxpasta-view").forEach((view) => {
           renderMoreTaxpastaRows(view);
         }
       },
-      { passive: true }
+      { passive: true },
     );
   }
 });
