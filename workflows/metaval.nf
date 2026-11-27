@@ -590,7 +590,6 @@ workflow METAVAL {
         BLAST_PATHOGEN( ch_blast_query_pathogen, params.blastn_db, params.blastx_db )
 
         }
-
     //
     // Collate and save software versions
     //
