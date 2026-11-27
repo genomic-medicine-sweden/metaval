@@ -6,3 +6,4 @@ dependencies:
   - conda-forge::jinja2=3.1.6
   - conda-forge::python=3.13.2
   - conda-forge::biopython=1.85
+  - conda-forge::pillow=11.3.0

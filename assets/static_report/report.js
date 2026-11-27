@@ -3,14 +3,9 @@ const filters = Array.from(document.querySelectorAll("[data-filter-key]"));
 const panels = Array.from(document.querySelectorAll(".details-panel:not([data-organism-panel])"));
 const organismPanels = Array.from(document.querySelectorAll("[data-organism-panel]"));
 const organismPanel = document.getElementById("organism-detail-panel");
-const detailSectionsArchive = (() => {
-  const node = document.getElementById("detail-sections-data");
-  return node ? node.textContent.trim() : "";
-})();
 const sampleSortHeaders = Array.from(document.querySelectorAll(".sample-sort"));
 const sampleTableBody = document.querySelector(".panel .table-wrap table tbody");
 let sampleSortState = { key: "sample", direction: "asc" };
-let detailZipStatePromise = null;
 const detailCache = new Map();
 
 function escapeHtml(value) {
@@ -420,82 +415,15 @@ function renderReadsSections(readsSections) {
 }
 
 function decodeBase64ToBytes(base64Text) {
+  if (typeof Uint8Array.fromBase64 === "function") {
+    return Uint8Array.fromBase64(base64Text);
+  }
   const binary = atob(base64Text);
   const bytes = new Uint8Array(binary.length);
   for (let index = 0; index < binary.length; index += 1) {
     bytes[index] = binary.charCodeAt(index);
   }
   return bytes;
-}
-
-function ensureIsZipFile(view, bytesLength) {
-  for (let offset = bytesLength - 22; offset >= 0; offset -= 1) {
-    if (view.getUint32(offset, true) === 0x06054b50) {
-      return offset;
-    }
-  }
-
-  throw new Error("ZIP end-of-central-directory not found.");
-}
-
-function parseZipStoredEntries(bytes) {
-  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
-  const eocdOffset = ensureIsZipFile(view, bytes.length);
-
-  const totalEntries = view.getUint16(eocdOffset + 10, true);
-  const centralDirectoryOffset = view.getUint32(eocdOffset + 16, true);
-  const textDecoder = new TextDecoder();
-  const entries = new Map();
-  let cursor = centralDirectoryOffset;
-
-  for (let index = 0; index < totalEntries; index += 1) {
-    if (view.getUint32(cursor, true) !== 0x02014b50) {
-      throw new Error("Invalid ZIP central directory entry.");
-    }
-    const compressionMethod = view.getUint16(cursor + 10, true);
-    const compressedSize = view.getUint32(cursor + 20, true);
-    const filenameLength = view.getUint16(cursor + 28, true);
-    const extraLength = view.getUint16(cursor + 30, true);
-    const commentLength = view.getUint16(cursor + 32, true);
-    const localHeaderOffset = view.getUint32(cursor + 42, true);
-    const filenameBytes = bytes.slice(cursor + 46, cursor + 46 + filenameLength);
-    const filename = textDecoder.decode(filenameBytes);
-    entries.set(filename, {
-      compressionMethod,
-      compressedSize,
-      localHeaderOffset,
-    });
-    cursor += 46 + filenameLength + extraLength + commentLength;
-  }
-
-  return { bytes, entries };
-}
-
-async function loadDetailZipState() {
-  if (!detailSectionsArchive) {
-    return { bytes: new Uint8Array(), entries: new Map() };
-  }
-  if (!detailZipStatePromise) {
-    detailZipStatePromise = Promise.resolve(parseZipStoredEntries(decodeBase64ToBytes(detailSectionsArchive)));
-  }
-  return detailZipStatePromise;
-}
-
-function readStoredZipEntry(archive, filename) {
-  const entry = archive.entries.get(filename);
-  if (!entry || entry.compressionMethod !== 0) {
-    return null;
-  }
-
-  const view = new DataView(archive.bytes.buffer, archive.bytes.byteOffset, archive.bytes.byteLength);
-  const offset = entry.localHeaderOffset;
-  if (view.getUint32(offset, true) !== 0x04034b50) {
-    throw new Error("Invalid ZIP local file header.");
-  }
-  const filenameLength = view.getUint16(offset + 26, true);
-  const extraLength = view.getUint16(offset + 28, true);
-  const dataStart = offset + 30 + filenameLength + extraLength;
-  return archive.bytes.slice(dataStart, dataStart + entry.compressedSize);
 }
 
 async function gunzipBytes(bytes) {
@@ -506,16 +434,23 @@ async function gunzipBytes(bytes) {
   return response.text();
 }
 
+async function gunzipBase64(text) {
+  return gunzipBytes(decodeBase64ToBytes(text.trim()));
+}
+
 async function loadDetailData(panelId) {
   if (detailCache.has(panelId)) {
     return detailCache.get(panelId);
   }
-  const archive = await loadDetailZipState();
-  const entryBytes = readStoredZipEntry(archive, `details/${panelId}.json.gz`);
-  if (!entryBytes) {
+  const node = document.getElementById(`detail-data-${panelId}`);
+  if (!node) {
     return null;
   }
-  const detail = JSON.parse(await gunzipBytes(entryBytes));
+  const detail = JSON.parse(await gunzipBase64(node.textContent));
+  const plots = Array.from(document.querySelectorAll(`script[data-plot-for="${CSS.escape(panelId)}"]`));
+  (detail.coverage_plot_sections || []).forEach((section, index) => {
+    section.src = plots[index] ? plots[index].textContent.trim() : "";
+  });
   detailCache.set(panelId, detail);
   return detail;
 }
@@ -795,8 +730,110 @@ function closePanel(sampleId) {
   }
 }
 
-function applyTaxpastaFilter(view) {
+// Taxpasta tables are embedded as JSON and rendered on demand, a page of rows at a time,
+// so the browser never holds every table of every sample in the DOM at once.
+const TAXPASTA_PAGE_SIZE = 200;
+const CLASSIFIER_LABEL_TITLES = { K: "Kraken2", C: "Centrifuge", D: "Diamond" };
+const taxpastaStates = new WeakMap();
+
+function taxpastaCellText(cell) {
+  return Array.isArray(cell) ? cell.map((pair) => pair.join(": ")).join(" ") : String(cell ?? "");
+}
+
+const taxpastaLoading = new WeakMap();
+
+function getTaxpastaState(view) {
+  return taxpastaStates.get(view) || { data: null, matches: [], rendered: 0, openLineages: new Set() };
+}
+
+// Tables are stored gzip-compressed and unpacked the first time they are shown.
+function loadTaxpastaState(view) {
+  if (taxpastaStates.has(view)) {
+    return Promise.resolve(taxpastaStates.get(view));
+  }
+  if (!taxpastaLoading.has(view)) {
+    const node = view.querySelector("script[data-taxpasta-gz]");
+    const promise = (node ? gunzipBase64(node.textContent).then(JSON.parse) : Promise.resolve(null)).then((data) => {
+      const state = { data, matches: [], rendered: 0, openLineages: new Set(), searchText: null };
+      taxpastaStates.set(view, state);
+      return state;
+    });
+    taxpastaLoading.set(view, promise);
+  }
+  return taxpastaLoading.get(view);
+}
+
+function taxpastaSearchText(state) {
+  if (!state.searchText) {
+    state.searchText = state.data.rows.map((row) => row.map(taxpastaCellText).join(" ").toLowerCase());
+  }
+  return state.searchText;
+}
+
+function renderTaxpastaLineageRow(data, index) {
+  const lineage = data.lineages[index];
+  return `<tr class="taxpasta-lineage-row" data-lineage-for="${index}"><td colspan="${data.headers.length + 1}"><div class="lineage-text"><strong>lineage:</strong> ${escapeHtml(lineage || "No lineage available.")}</div></td></tr>`;
+}
+
+function renderTaxpastaRow(state, index) {
+  const { data } = state;
+  const row = data.rows[index];
+  const isOpen = state.openLineages.has(index);
+  const lineageCell = data.lineages[index]
+    ? `<button type="button" class="lineage-toggle${isOpen ? " is-open" : ""}" data-lineage-index="${index}">${isOpen ? "Hide" : "Show"}</button>`
+    : "";
+  const cells = row
+    .map((cell, cellIndex) => {
+      if (data.headers[cellIndex] === "classifiers" && Array.isArray(cell)) {
+        const lines = cell
+          .map(
+            ([label, value]) =>
+              `<div class="taxonomy-classifier-line"><span class="taxonomy-classifier-label" title="${CLASSIFIER_LABEL_TITLES[label] || ""}">${escapeHtml(label)}:</span><span class="taxonomy-classifier-value">${escapeHtml(value)}</span></div>`,
+          )
+          .join("");
+        return `<td class="taxonomy-classifiers">${lines}</td>`;
+      }
+      const text = escapeHtml(cell);
+      return `<td title="${text}">${text}</td>`;
+    })
+    .join("");
+  const panelId = escapeHtml((data.metaval_panel_ids || [])[index] || "");
+  const main = `<tr class="taxonomy-row" data-row-index="${index}" data-metaval-panel="${panelId}"><td>${lineageCell}</td>${cells}</tr>`;
+  return isOpen ? main + renderTaxpastaLineageRow(data, index) : main;
+}
+
+function renderMoreTaxpastaRows(view) {
+  const state = getTaxpastaState(view);
+  const body = view.querySelector("[data-taxpasta-body]");
+  if (!state.data || !body) {
+    return;
+  }
+  const next = state.matches.slice(state.rendered, state.rendered + TAXPASTA_PAGE_SIZE);
+  body.insertAdjacentHTML("beforeend", next.map((index) => renderTaxpastaRow(state, index)).join(""));
+  state.rendered += next.length;
+
+  const more = view.querySelector("[data-taxpasta-more]");
+  if (more) {
+    const remaining = state.matches.length - state.rendered;
+    more.hidden = remaining <= 0;
+    const label = more.querySelector("[data-taxpasta-more-label]");
+    if (label) {
+      label.textContent = `Showing ${state.rendered.toLocaleString()} of ${state.matches.length.toLocaleString()} rows`;
+    }
+    const button = more.querySelector("[data-taxpasta-more-button]");
+    if (button) {
+      button.textContent = `Show ${Math.min(remaining, TAXPASTA_PAGE_SIZE).toLocaleString()} more`;
+    }
+  }
+}
+
+async function applyTaxpastaFilter(view) {
   if (!view) {
+    return;
+  }
+  const state = await loadTaxpastaState(view);
+  const body = view.querySelector("[data-taxpasta-body]");
+  if (!state.data || !body) {
     return;
   }
 
@@ -805,36 +842,80 @@ function applyTaxpastaFilter(view) {
   const search = view.querySelector("[data-organism-search]");
   const metavalOnlyButton = view.querySelector("[data-metaval-only]");
   const counter = view.querySelector("[data-organisms-shown]");
-  const taxonomyRows = Array.from(view.querySelectorAll(".taxonomy-row"));
-  let shown = 0;
+  const superkingdom = filter ? filter.value : "all";
+  const flag = flagFilter ? flagFilter.value : "all";
   const searchValue = search ? search.value.trim().toLowerCase() : "";
   const metavalOnly = metavalOnlyButton ? metavalOnlyButton.dataset.active === "true" : false;
+  const { data } = state;
+  const searchText = searchValue ? taxpastaSearchText(state) : null;
 
-  taxonomyRows.forEach((row) => {
-    const matchesSuperkingdom = !filter || filter.value === "all" || row.dataset.superkingdom === filter.value;
-    const matchesFlag = !flagFilter || flagFilter.value === "all" || row.dataset.flag === flagFilter.value;
-    const matchesSearch = !searchValue || row.textContent.toLowerCase().includes(searchValue);
-    const matchesMetaval = !metavalOnly || row.dataset.metavalChecked === "true";
-    const matches = matchesSuperkingdom && matchesFlag && matchesSearch && matchesMetaval;
-    row.hidden = !matches;
-
-    const lineageRow = row.nextElementSibling;
-    if (lineageRow && lineageRow.classList.contains("taxpasta-lineage-row") && !matches) {
-      lineageRow.hidden = true;
-      const toggle = row.querySelector(".lineage-toggle");
-      if (toggle) {
-        toggle.textContent = "Show";
-      }
-    }
-
-    if (matches) {
-      shown += 1;
-    }
+  const matches = [];
+  for (let index = 0; index < data.rows.length; index += 1) {
+    if (superkingdom !== "all" && data.superkingdoms[index] !== superkingdom) continue;
+    if (flag !== "all" && data.flags[index] !== flag) continue;
+    if (metavalOnly && !data.metaval_checked[index]) continue;
+    if (searchText && !searchText[index].includes(searchValue)) continue;
+    matches.push(index);
+  }
+  // As before, lineages of rows that are filtered out are closed.
+  const matchSet = new Set(matches);
+  state.openLineages.forEach((index) => {
+    if (!matchSet.has(index)) state.openLineages.delete(index);
   });
 
-  if (counter) {
-    counter.textContent = String(shown);
+  state.matches = matches;
+  state.rendered = 0;
+  body.textContent = "";
+  renderMoreTaxpastaRows(view);
+  const wrap = view.querySelector(".taxpasta-wrap");
+  if (wrap) {
+    wrap.scrollTop = 0;
   }
+  if (counter) {
+    counter.textContent = String(matches.length);
+  }
+}
+
+function toggleTaxpastaLineage(button) {
+  const view = button.closest(".taxpasta-view");
+  const row = button.closest(".taxonomy-row");
+  if (!view || !row) {
+    return;
+  }
+  const state = getTaxpastaState(view);
+  const index = Number(button.dataset.lineageIndex);
+  const next = row.nextElementSibling;
+  if (state.openLineages.has(index)) {
+    state.openLineages.delete(index);
+    if (next && next.classList.contains("taxpasta-lineage-row")) {
+      next.remove();
+    }
+    button.textContent = "Show";
+    button.classList.remove("is-open");
+  } else {
+    state.openLineages.add(index);
+    row.insertAdjacentHTML("afterend", renderTaxpastaLineageRow(state.data, index));
+    button.textContent = "Hide";
+    button.classList.add("is-open");
+  }
+}
+
+function ensureTaxpastaRendered(view) {
+  if (!view) {
+    return;
+  }
+  const state = taxpastaStates.get(view);
+  if (!state || state.rendered === 0) {
+    applyTaxpastaFilter(view);
+  }
+}
+
+function debounce(fn, waitMs) {
+  let timer = null;
+  return (...args) => {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(() => fn(...args), waitMs);
+  };
 }
 
 function defaultTaxonomyWidth(headerName, measuredWidth) {
@@ -957,7 +1038,7 @@ function openPanel(sampleId, classifier = "kraken2", allowToggle = true, scrollB
 
   setClassifier(panel, classifier);
   panel.querySelectorAll(".taxpasta-table").forEach((table) => initResizableTable(table));
-  applyTaxpastaFilter(panel.querySelector(`[data-classifier-view="${classifier}"]`));
+  ensureTaxpastaRendered(panel.querySelector(`[data-classifier-view="${classifier}"]`));
   if (scrollBehavior) {
     scrollPanelIntoView(panel, classifier, scrollBehavior);
   }
@@ -1140,7 +1221,7 @@ panels.forEach((panel) => {
     button.addEventListener("click", () => {
       setClassifier(panel, button.dataset.classifierTab);
       panel.querySelectorAll(".taxpasta-table").forEach((table) => initResizableTable(table));
-      applyTaxpastaFilter(panel.querySelector(`[data-classifier-view="${button.dataset.classifierTab}"]`));
+      ensureTaxpastaRendered(panel.querySelector(`[data-classifier-view="${button.dataset.classifierTab}"]`));
     });
   });
 });
@@ -1182,7 +1263,7 @@ document.querySelectorAll(".taxpasta-view").forEach((view) => {
     flagFilter.addEventListener("change", () => applyTaxpastaFilter(view));
   }
   if (search) {
-    search.addEventListener("input", () => applyTaxpastaFilter(view));
+    search.addEventListener("input", debounce(() => applyTaxpastaFilter(view), 150));
   }
   if (metavalOnlyButton) {
     metavalOnlyButton.dataset.active = "false";
@@ -1194,30 +1275,34 @@ document.querySelectorAll(".taxpasta-view").forEach((view) => {
       applyTaxpastaFilter(view);
     });
   }
-  applyTaxpastaFilter(view);
+  // Rows are rendered when the table is first shown (openPanel / tab switch), not here.
+  const wrap = view.querySelector(".taxpasta-wrap");
+  if (wrap) {
+    wrap.addEventListener("scroll", () => {
+      const state = taxpastaStates.get(view);
+      if (state && state.rendered < state.matches.length && wrap.scrollTop + wrap.clientHeight >= wrap.scrollHeight - 200) {
+        renderMoreTaxpastaRows(view);
+      }
+    }, { passive: true });
+  }
 });
 
-document.querySelectorAll(".lineage-toggle").forEach((button) => {
-  button.addEventListener("click", (event) => {
-    event.stopPropagation();
-    const target = document.getElementById(button.dataset.lineageTarget);
-    if (!target) {
-      return;
-    }
-    const isHidden = target.hidden;
-    target.hidden = !isHidden;
-    button.textContent = isHidden ? "Hide" : "Show";
-    button.classList.toggle("is-open", isHidden);
-  });
-});
-
-document.querySelectorAll(".taxonomy-row").forEach((row) => {
-  if (!row.dataset.metavalPanel) {
+// One delegated listener replaces per-row listeners on every taxpasta row.
+document.addEventListener("click", (event) => {
+  const lineageButton = event.target.closest(".lineage-toggle");
+  if (lineageButton) {
+    toggleTaxpastaLineage(lineageButton);
     return;
   }
-  row.addEventListener("click", () => {
-    openOrganismPanel(row.dataset.metavalPanel);
-  });
+  const moreButton = event.target.closest("[data-taxpasta-more-button]");
+  if (moreButton) {
+    renderMoreTaxpastaRows(moreButton.closest(".taxpasta-view"));
+    return;
+  }
+  const taxonomyRow = event.target.closest(".taxonomy-row");
+  if (taxonomyRow && taxonomyRow.dataset.metavalPanel) {
+    openOrganismPanel(taxonomyRow.dataset.metavalPanel);
+  }
 });
 
 restorePanelFromUrl();

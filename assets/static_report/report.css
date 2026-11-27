@@ -434,9 +434,12 @@ button.extracted-read-chip {
   font-size: 0.98rem;
 }
 
+.taxpasta-table th {
+  position: relative;
+}
+
 .taxpasta-table th,
 .taxpasta-table td {
-  position: relative;
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 10px 12px;
@@ -527,6 +530,39 @@ button.extracted-read-chip {
 
 .is-resizing {
   cursor: col-resize;
+}
+
+.taxpasta-more {
+  position: sticky;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-top: 1px solid var(--line-soft);
+  background: #fbfdff;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.taxpasta-more[hidden] {
+  display: none;
+}
+
+.taxpasta-more-button {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--accent-strong);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.taxpasta-more-button:hover {
+  background: #f7f9fb;
 }
 
 .taxpasta-empty {

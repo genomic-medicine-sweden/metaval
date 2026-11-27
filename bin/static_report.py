@@ -8,7 +8,6 @@ import gzip
 import io
 import json
 import re
-import zipfile
 from datetime import date
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -80,6 +79,26 @@ def file_to_data_uri(path: Path) -> str:
     """Encode a .png file as a data URI for embedding in the report."""
     encoded = base64.b64encode(path.read_bytes()).decode("ascii")
     return f"data:image/png;base64,{encoded}"
+
+
+def plot_to_data_uri(path: Path) -> str:
+    """Embed a coverage plot; re-encode as lossless WebP (identical pixels, ~2x smaller)
+    when Pillow is installed, otherwise embed the PNG unchanged."""
+    try:
+        from PIL import Image
+    except ImportError:
+        return file_to_data_uri(path)
+    buffer = io.BytesIO()
+    with Image.open(path) as image:
+        image.save(buffer, format="WEBP", lossless=True, method=4)
+    if buffer.tell() >= path.stat().st_size:
+        return file_to_data_uri(path)
+    return "data:image/webp;base64," + base64.b64encode(buffer.getvalue()).decode("ascii")
+
+
+def gzip_b64(text: str) -> str:
+    """gzip + base64 a text payload for a <script type="text/plain"> block."""
+    return base64.b64encode(gzip.compress(text.encode("utf-8"), compresslevel=6)).decode("ascii")
 
 
 def read_samplesheet(samplesheet_path: Path) -> list[dict[str, str]]:
@@ -282,7 +301,7 @@ def build_detail_context(
     coverage_plot_sections = [
         {
             "name": path.name,
-            "src": file_to_data_uri(path),
+            "src": plot_to_data_uri(path),
         }
         for path in coverage_plot_files
     ]
@@ -494,6 +513,21 @@ def add_cross_classifier_counts(classifiers: dict[str, dict[str, object]], sampl
         ]
 
 
+def taxpasta_table_json(table: dict[str, object]) -> str:
+    """Serialise a taxpasta table for client-side rendering inside a <script> tag."""
+    payload = {
+        "headers": table["headers"],
+        "rows": table["rows"],
+        "lineages": table["lineages"],
+        "superkingdoms": table["superkingdoms"],
+        "flags": table["flags"],
+        "metaval_checked": table["metaval_checked"],
+        "metaval_panel_ids": table["metaval_panel_ids"],
+    }
+    # Escaping "<" keeps "</script>" or "<!--" in organism names from ending the tag.
+    return json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+
+
 def prepare_rows(
     rows: list[dict[str, str]],
     flagged_dir: Path,
@@ -556,6 +590,10 @@ def prepare_rows(
                 "extracted_organisms": extracted_organisms,
             }
         add_cross_classifier_counts(prepared["classifiers"], row["sample"])
+        for classifier_data in prepared["classifiers"].values():
+            table = classifier_data["table"]
+            if table:
+                classifier_data["table_gz"] = gzip_b64(taxpasta_table_json(table))
         prepared_rows.append(prepared)
     return prepared_rows
 
@@ -589,21 +627,21 @@ def build_html(
     environment = Environment(
         loader=FileSystemLoader(REPORT_TEMPLATE.parent),
         autoescape=select_autoescape(["html", "xml"]),
+        trim_blocks=True,
+        lstrip_blocks=True,
     )
     template = environment.get_template(REPORT_TEMPLATE.name)
-    archive_buffer = io.BytesIO()
-    with zipfile.ZipFile(archive_buffer, "w", compression=zipfile.ZIP_STORED) as archive:
-        for panel_id, detail in detail_sections.items():
-            detail_json = json.dumps(
-                detail,
-                ensure_ascii=False,
-                separators=(",", ":"),
-            ).encode("utf-8")
-            archive.writestr(
-                f"details/{panel_id}.json.gz",
-                gzip.compress(detail_json),
-            )
-    detail_sections_zip_b64 = base64.b64encode(archive_buffer.getvalue()).decode("ascii")
+    detail_payloads = []
+    for panel_id, detail in detail_sections.items():
+        plots = [section["src"] for section in detail["coverage_plot_sections"]]
+        detail = {
+            **detail,
+            "coverage_plot_sections": [
+                {"name": section["name"]} for section in detail["coverage_plot_sections"]
+            ],
+        }
+        detail_json = json.dumps(detail, ensure_ascii=False, separators=(",", ":"))
+        detail_payloads.append({"panel_id": panel_id, "data": gzip_b64(detail_json), "plots": plots})
     return template.render(
         report_title=REPORT_TITLE,
         sample_table_columns=SAMPLE_TABLE_COLUMNS,
@@ -615,7 +653,7 @@ def build_html(
         version=version,
         created_date=created_date,
         rows=prepare_rows(rows, flagged_dir, extracted_reads_index, detail_links),
-        detail_sections_zip_b64=detail_sections_zip_b64,
+        detail_payloads=detail_payloads,
     )
 
 
