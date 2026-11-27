@@ -163,7 +163,7 @@ function buildProteinAlignment(queryAa, subjectAa, qstart, qend, sstart, send, w
     String(subjectEnd).length,
     String(Math.ceil(queryNtStart / 3)).length,
     String(Math.ceil(queryNtEnd / 3)).length,
-    3,
+    3
   );
   const padLabel = (value) => String(value).padEnd(labelWidth, " ");
   const padCoordinate = (value) => String(value).padStart(coordinateWidth, " ");
@@ -187,9 +187,13 @@ function buildProteinAlignment(queryAa, subjectAa, qstart, qend, sstart, send, w
     const subjectRange = advanceAlignmentCoord(subjectCursor, subjectChunk, subjectStep);
 
     lines.push(
-      `${padLabel("Query")} ${padCoordinate(queryAaCursor)}  ${escapeHtml(queryChunk)}  ${padCoordinate(queryRange.last)}`,
+      `${padLabel("Query")} ${padCoordinate(queryAaCursor)}  ${escapeHtml(queryChunk)}  ${padCoordinate(
+        queryRange.last
+      )}`,
       `${padLabel("")} ${" ".repeat(coordinateWidth)}  ${escapeHtml(matchChunk)}`,
-      `${padLabel("Sbjct")} ${padCoordinate(subjectCursor)}  ${escapeHtml(subjectChunk)}  ${padCoordinate(subjectRange.last)}`,
+      `${padLabel("Sbjct")} ${padCoordinate(subjectCursor)}  ${escapeHtml(subjectChunk)}  ${padCoordinate(
+        subjectRange.last
+      )}`
     );
 
     queryAaCursor = queryRange.next;
@@ -234,7 +238,7 @@ function buildBlastAlignment(rowMap, width = 60) {
     String(qend).length,
     String(sstart).length,
     String(send).length,
-    3,
+    3
   );
   const padLabel = (value) => String(value).padEnd(labelWidth, " ");
   const padCoordinate = (value) => String(value).padStart(coordinateWidth, " ");
@@ -258,9 +262,13 @@ function buildBlastAlignment(rowMap, width = 60) {
     const subjectRange = advanceAlignmentCoord(subjectCursor, subjectChunk, subjectStep);
 
     lines.push(
-      `${padLabel("Query")} ${padCoordinate(queryCursor)}  ${escapeHtml(queryChunk)}  ${padCoordinate(queryRange.last)}`,
+      `${padLabel("Query")} ${padCoordinate(queryCursor)}  ${escapeHtml(queryChunk)}  ${padCoordinate(
+        queryRange.last
+      )}`,
       `${padLabel("")} ${" ".repeat(coordinateWidth)}  ${escapeHtml(matchChunk)}`,
-      `${padLabel("Sbjct")} ${padCoordinate(subjectCursor)}  ${escapeHtml(subjectChunk)}  ${padCoordinate(subjectRange.last)}`,
+      `${padLabel("Sbjct")} ${padCoordinate(subjectCursor)}  ${escapeHtml(subjectChunk)}  ${padCoordinate(
+        subjectRange.last
+      )}`
     );
 
     queryCursor = queryRange.next;
@@ -301,18 +309,34 @@ function renderDetailTable(headers, rows, options = {}) {
 
   return `
         <div class="detail-table-wrap">
-          <table${options.sortable ? " data-sortable-blast" : ""}${tableClass}${options.blastAlignment ? ' data-blast-alignment="true"' : ""}>
+          <table${options.sortable ? " data-sortable-blast" : ""}${tableClass}${
+    options.blastAlignment ? ' data-blast-alignment="true"' : ""
+  }>
             <thead>
               <tr>
                 ${visibleIndices
                   .map(
                     (item, visibleIndex) => `
-                  <th${headerClass}${options.sortable ? ` data-sort-index="${detailSortCellIndex(visibleIndex, alignmentInsertIndex)}"` : ""} title="${escapeHtml(options.headerHelp?.[item.key] || item.header)}">${escapeHtml(item.header)}</th>
-                  ${options.blastAlignment && visibleIndex + 1 === alignmentInsertIndex ? '<th title="alignment preview">alignment</th>' : ""}
-                `,
+                  <th${headerClass}${
+                      options.sortable
+                        ? ` data-sort-index="${detailSortCellIndex(visibleIndex, alignmentInsertIndex)}"`
+                        : ""
+                    } title="${escapeHtml(options.headerHelp?.[item.key] || item.header)}">${escapeHtml(
+                      item.header
+                    )}</th>
+                  ${
+                    options.blastAlignment && visibleIndex + 1 === alignmentInsertIndex
+                      ? '<th title="alignment preview">alignment</th>'
+                      : ""
+                  }
+                `
                   )
                   .join("")}
-                ${options.blastAlignment && alignmentInsertIndex === 0 ? '<th title="alignment preview">alignment</th>' : ""}
+                ${
+                  options.blastAlignment && alignmentInsertIndex === 0
+                    ? '<th title="alignment preview">alignment</th>'
+                    : ""
+                }
               </tr>
             </thead>
             <tbody>
@@ -323,7 +347,7 @@ function renderDetailTable(headers, rows, options = {}) {
                   }
 
                   const rowMap = Object.fromEntries(
-                    headers.map((header, headerIndex) => [headerKeys[headerIndex], row[headerIndex] ?? ""]),
+                    headers.map((header, headerIndex) => [headerKeys[headerIndex], row[headerIndex] ?? ""])
                   );
                   return `
                   <tr class="blast-summary-row">
@@ -346,7 +370,7 @@ function renderDetailTable(headers, rows, options = {}) {
                       `
                           : ""
                       }
-                    `,
+                    `
                       )
                       .join("")}
                     ${
@@ -404,12 +428,12 @@ function renderReadsSections(readsSections) {
                 </label>
                 <pre data-read-content>${escapeHtml(entry.content)}</pre>
               </div>
-            `,
+            `
               )
               .join("")}
           </div>
         </div>
-      `,
+      `
     )
     .join("");
 }
@@ -543,7 +567,7 @@ function renderOrganismPanel(detail) {
               <div class="plot">
                 <img src="${escapeHtml(section.src)}" alt="${escapeHtml(section.name || section.src)}" />
               </div>
-              `,
+              `
                 )
                 .join("")}
             </div>
@@ -561,7 +585,7 @@ function renderOrganismPanel(detail) {
                 headerHelp: detailHeaderHelp,
               })}
             </div>
-          `,
+          `
           )
           .join("")
       : '<div class="muted">No coverage stats found.</div>';
@@ -684,11 +708,11 @@ function updateSampleSortHeaders() {
   sampleSortHeaders.forEach((header) => {
     header.classList.toggle(
       "is-asc",
-      header.dataset.sortKey === sampleSortState.key && sampleSortState.direction === "asc",
+      header.dataset.sortKey === sampleSortState.key && sampleSortState.direction === "asc"
     );
     header.classList.toggle(
       "is-desc",
-      header.dataset.sortKey === sampleSortState.key && sampleSortState.direction === "desc",
+      header.dataset.sortKey === sampleSortState.key && sampleSortState.direction === "desc"
     );
   });
 }
@@ -772,7 +796,11 @@ function taxpastaSearchText(state) {
 
 function renderTaxpastaLineageRow(data, index) {
   const lineage = data.lineages[index];
-  return `<tr class="taxpasta-lineage-row" data-lineage-for="${index}"><td colspan="${data.headers.length + 1}"><div class="lineage-text"><strong>lineage:</strong> ${escapeHtml(lineage || "No lineage available.")}</div></td></tr>`;
+  return `<tr class="taxpasta-lineage-row" data-lineage-for="${index}"><td colspan="${
+    data.headers.length + 1
+  }"><div class="lineage-text"><strong>lineage:</strong> ${escapeHtml(
+    lineage || "No lineage available."
+  )}</div></td></tr>`;
 }
 
 function renderTaxpastaRow(state, index) {
@@ -780,7 +808,9 @@ function renderTaxpastaRow(state, index) {
   const row = data.rows[index];
   const isOpen = state.openLineages.has(index);
   const lineageCell = data.lineages[index]
-    ? `<button type="button" class="lineage-toggle${isOpen ? " is-open" : ""}" data-lineage-index="${index}">${isOpen ? "Hide" : "Show"}</button>`
+    ? `<button type="button" class="lineage-toggle${isOpen ? " is-open" : ""}" data-lineage-index="${index}">${
+        isOpen ? "Hide" : "Show"
+      }</button>`
     : "";
   const cells = row
     .map((cell, cellIndex) => {
@@ -788,7 +818,9 @@ function renderTaxpastaRow(state, index) {
         const lines = cell
           .map(
             ([label, value]) =>
-              `<div class="taxonomy-classifier-line"><span class="taxonomy-classifier-label" title="${CLASSIFIER_LABEL_TITLES[label] || ""}">${escapeHtml(label)}:</span><span class="taxonomy-classifier-value">${escapeHtml(value)}</span></div>`,
+              `<div class="taxonomy-classifier-line"><span class="taxonomy-classifier-label" title="${
+                CLASSIFIER_LABEL_TITLES[label] || ""
+              }">${escapeHtml(label)}:</span><span class="taxonomy-classifier-value">${escapeHtml(value)}</span></div>`
           )
           .join("");
         return `<td class="taxonomy-classifiers">${lines}</td>`;
@@ -1263,7 +1295,10 @@ document.querySelectorAll(".taxpasta-view").forEach((view) => {
     flagFilter.addEventListener("change", () => applyTaxpastaFilter(view));
   }
   if (search) {
-    search.addEventListener("input", debounce(() => applyTaxpastaFilter(view), 150));
+    search.addEventListener(
+      "input",
+      debounce(() => applyTaxpastaFilter(view), 150)
+    );
   }
   if (metavalOnlyButton) {
     metavalOnlyButton.dataset.active = "false";
@@ -1278,12 +1313,20 @@ document.querySelectorAll(".taxpasta-view").forEach((view) => {
   // Rows are rendered when the table is first shown (openPanel / tab switch), not here.
   const wrap = view.querySelector(".taxpasta-wrap");
   if (wrap) {
-    wrap.addEventListener("scroll", () => {
-      const state = taxpastaStates.get(view);
-      if (state && state.rendered < state.matches.length && wrap.scrollTop + wrap.clientHeight >= wrap.scrollHeight - 200) {
-        renderMoreTaxpastaRows(view);
-      }
-    }, { passive: true });
+    wrap.addEventListener(
+      "scroll",
+      () => {
+        const state = taxpastaStates.get(view);
+        if (
+          state &&
+          state.rendered < state.matches.length &&
+          wrap.scrollTop + wrap.clientHeight >= wrap.scrollHeight - 200
+        ) {
+          renderMoreTaxpastaRows(view);
+        }
+      },
+      { passive: true }
+    );
   }
 });
 
